@@ -4,7 +4,7 @@ export const requestPage = async (url) => {
     if (!url) url = "";
     
     try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/${url}`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/${url}`);
         return response.data;
     } catch (error) {
         throw error;
@@ -13,7 +13,7 @@ export const requestPage = async (url) => {
 
 export const requestPoet = async (id) => {
     try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/language/poets`, {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/language/poets`, {
             params: {id : id}
         });
         return response.data;
@@ -24,7 +24,7 @@ export const requestPoet = async (id) => {
 
 export const requestRecipe = async (id) => {
     try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/cuisine/recipes`, {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/cuisine/recipes`, {
             params: {id : id}
         });
         return response.data;
@@ -35,7 +35,7 @@ export const requestRecipe = async (id) => {
 
 export const requestMyth = async (id) => {
     try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/customs/myths`, {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/myths`, {
             params: {id : id}
         });
         return response.data;
