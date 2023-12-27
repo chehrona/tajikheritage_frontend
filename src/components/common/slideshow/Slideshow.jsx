@@ -47,7 +47,7 @@ export default function Slideshow({
                     return (
                         <ImageWrapper
                             key={i + 'b'}
-                            src={entry?.src}
+                            src={process.env.REACT_APP_BASE_URL + entry?.src}
                             width={screenSize}
                             translate={translate}
                         >

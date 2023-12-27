@@ -46,7 +46,7 @@ export default function PoetIntro({ poet, scrollToView }) {
                     </div>
                 </YearsContainer>
             </div>
-            <FadedImage src={poet?.img?.main} />
+            <FadedImage src={process.env.REACT_APP_BASE_URL + poet?.img?.main} />
             <PoetNameContainer>
                 <PoetName color={1}>{poet?.name[lang][0]}</PoetName>
                 <PoetName>{poet?.name[lang][1]}</PoetName>
