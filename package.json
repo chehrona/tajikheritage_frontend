@@ -3,7 +3,6 @@
   "name": "tajikheritage_frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://api.thetajikheritage.com",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
