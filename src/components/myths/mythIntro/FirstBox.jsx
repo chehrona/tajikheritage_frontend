@@ -26,7 +26,8 @@ export default function BoxOne({ myth, title }) {
         <BoxWrapper reverse={0}>
             <RightContainer ref={parentRef}>
                 <Slideshow
-                    screenSize={screenSize}
+                    width={screenSize}
+                    height={'35rem'}
                     slides={myth?.slides}
                 />
             </RightContainer>

@@ -31,7 +31,7 @@ export default function AwardDialog({ awardInfo, setShowAwardInfo, showAwardInfo
                     <InfoTitle>{awardInfo?.title}</InfoTitle>
                     <BodyContainer>
                         <Wrapper first={true}>
-                            <AwardImg src={awardInfo?.img} />
+                            <AwardImg src={process.env.REACT_APP_BASE_URL + awardInfo?.img} />
                         </Wrapper>
                         <Wrapper>
                             <Desc dangerouslySetInnerHTML={{__html: awardInfo?.desc}} />

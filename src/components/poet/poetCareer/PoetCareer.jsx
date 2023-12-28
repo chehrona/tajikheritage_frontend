@@ -3,23 +3,25 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import { useSetLang } from "../../../App";
 import { useMediaQuery } from 'react-responsive';
 
+import Slideshow from "../../common/slideshow/Slideshow";
+
 import { 
+    Year,
+    Line,
+    Desc,
+    Step,
+    Footer,
+    InfoContainer,
+    InfoWrapper,
+    DescWrapper,
+    StyledIconButton,
+    ImageWrapper,
+    InfoInnerContainer,
+    MobileFooter,
     MainContainer,
     YearSlider,
     UnitWrapper,
     YearWrapper,
-    Year,
-    Line,
-    InfoContainer,
-    InfoWrapper,
-    DescWrapper,
-    Footer,
-    Step, 
-    StyledIconButton,
-    Image,
-    Desc,
-    InfoInnerContainer,
-    MobileFooter
 } from "./poetCareerStyles";
 
 export default function PoetCareer({ points }) {
@@ -73,12 +75,19 @@ export default function PoetCareer({ points }) {
                 </UnitWrapper>
                 <InfoContainer ref={parentRef}>
                     <InfoInnerContainer translate={translate}>
-                        {points?.images?.map((img, i) => {
+                        {points[lang].map((entry, i) => {
                             return (
-                                <InfoWrapper key={img + i} ref={childRef}>
-                                    <Image src={img} />
+                                <InfoWrapper key={'a' + i} ref={childRef}>
+                                    <ImageWrapper>
+                                        <Slideshow
+                                            slides={entry.slides}
+                                            width={currentSize * 0.36}
+                                            height={"26rem"}
+                                            radius={1}
+                                        />
+                                    </ImageWrapper>
                                     <DescWrapper>
-                                        <Desc dangerouslySetInnerHTML={{__html: points?.text[lang][i]}} />
+                                        <Desc dangerouslySetInnerHTML={{__html: entry?.text}} />
                                         <Footer>
                                             <StyledIconButton left={1} onClick={handlePrev} disabled={i === 1}>
                                                 <ArrowForwardIos />

@@ -32,7 +32,8 @@ export default function FifthBox({ poet }) {
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
-                    screenSize={screenSize}
+                    width={screenSize}
+                    height={'30rem'}
                     slides={poet?.five[lang].slides}
                 />
             </RightContainer>

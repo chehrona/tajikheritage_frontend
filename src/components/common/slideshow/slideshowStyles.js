@@ -70,12 +70,14 @@ export const ImageWrapper = styled.div`
     background-repeat: no-repeat;
     transition: all 0.5s;
     position: relative;
-    height: 35rem;
     transition: all 0.5s;
     background-position: center center;
+    height: ${({ height }) => height && height};
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
     background: ${({ src }) => src && `url(${ src })`};
+    border-top-left-radius: ${({ radius }) => radius && `${radius}rem`};
+    border-bottom-left-radius: ${({ radius }) => radius && `${radius}rem`};
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ src }) => src && 'cover'};
 
@@ -142,11 +144,12 @@ export const ImgInfo = styled.div`
     position: absolute;
     z-index: 10;
     font-style: italic;
-    width: 100%;
+    margin: 0.25rem;
     text-align: left;
     color: #fcf6e9;
     bottom: 0rem;
-    background-color: #26262680;
+    background-color: #262626a6;
+    width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 
     ${({ up }) => up && `
@@ -155,6 +158,8 @@ export const ImgInfo = styled.div`
         background-color: transparent;
         width: auto;
         bottom: 3.5rem;
+        width: 100%;
+        margin: 0rem;
     `}
 
     @media (max-width: 480px) {

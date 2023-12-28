@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useSetLang } from "../../App";
 
 import { requestMyth } from "../../services/request";
-import myth from "./creature.json";
 
 import BoxOne from "../../components/myths/mythIntro/FirstBox";
 import BoxTwo from "../../components/myths/mythIntro/SecondBox";
@@ -17,21 +16,21 @@ import Sources from "../../components/common/sources/Sources";
 export default function MythPage() {
     const { id } = useParams();
     const { lang } = useSetLang();
-    // const [myth, setMyth] = useState();
+    const [myth, setMyth] = useState();
 
-    // const fetchData = async () => {
-    //     try {
-    //         const data = await requestMyth(id);
-    //         setMyth(data);
-    //     } catch (error) {
-    //         console.error("Error fetching data:", error);
-    //     }
-    // };
+    const fetchData = async () => {
+        try {
+            const data = await requestMyth(id);
+            setMyth(data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
-    // useEffect(() => {
-    //     // Get data
-    //     fetchData();
-    // }, []);
+    useEffect(() => {
+        // Get data
+        fetchData();
+    }, []);
 
     if (myth) {
         return (

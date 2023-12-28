@@ -88,7 +88,7 @@ export default function MovieDialog({ movieInfo, setShowMovieInfo, showMovieInfo
                             <StyledArrowButton arrow={1} onClick={handleExpand}>
                                 {fullSize ? <SlideDown /> : <SlideUp />}
                             </StyledArrowButton>
-                            <StudioName src={movieInfo?.studio}></StudioName>
+                            <StudioName src={process.env.REACT_APP_BASE_URL + movieInfo?.studio}></StudioName>
                             <InfoWrapper>
                                 <InfoTitle>{movieInfo?.title}</InfoTitle>
                                 <ReleaseInfo>
@@ -104,7 +104,7 @@ export default function MovieDialog({ movieInfo, setShowMovieInfo, showMovieInfo
                                 <div>{movieInfo?.director}</div>
                             </InfoWrapper>
                         </InnerBox>
-                        <MovieImg src={movieInfo?.img} />
+                        <MovieImg src={process.env.REACT_APP_BASE_URL + movieInfo?.img} />
                         <DirBox>
                             <StyledIconButton onClick={() => setShowVideo(true)}>
                                 <StyledPlayIcon />

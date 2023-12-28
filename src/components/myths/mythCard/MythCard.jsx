@@ -18,7 +18,7 @@ export default function MythCard({ myth, i }) {
             onMouseLeave={() => setHovered(0)}
         >
             <MythCardWrapper delay={`${0.01*i}s`}>
-                <MythImage src={hovered ? myth?.img?.animated[lang] : myth?.img?.static[lang]} />
+                <MythImage src={hovered ? process.env.REACT_APP_BASE_URL + myth?.img?.animated[lang] : process.env.REACT_APP_BASE_URL + myth?.img?.static[lang]} />
             </MythCardWrapper>
         </StyledLink>
     );

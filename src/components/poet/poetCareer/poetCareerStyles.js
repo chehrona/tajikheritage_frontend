@@ -235,15 +235,9 @@ export const StyledIconButton = styled(IconButton)`
     }
 `;
 
-export const Image = styled.img`
-    height: 100%;
-    width: 36%;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+export const ImageWrapper = styled.div`
+    width: 37.5%;
     transition: 100ms ease-in-out;
-    background: grey
-        url("/loader.svg") center
-        no-repeat;
     
     @media (max-width: 480px) {
         display: none;

@@ -15,7 +15,9 @@ import {
 
 export default function Slideshow({
     slides,
-    screenSize
+    width,
+    height,
+    radius
 }) {
     const { lang } = useSetLang();
     const [translate, setTranslate] = useState(0);
@@ -29,14 +31,14 @@ export default function Slideshow({
     const movePrev = () => {
         if (currentIndex > 0) {
             setCurrentIndex(prevState => prevState - 1);
-            setTranslate(prevState => prevState + screenSize);
+            setTranslate(prevState => prevState + width);
         }
     };
     
     const moveNext = () => {
         if (currentIndex < infoArr?.length - 1) {            
             setCurrentIndex(prevState => prevState + 1);
-            setTranslate(prevState => prevState - screenSize);
+            setTranslate(prevState => prevState - width);
         }
     };
 
@@ -47,11 +49,13 @@ export default function Slideshow({
                     return (
                         <ImageWrapper
                             key={i + 'b'}
-                            src={process.env.REACT_APP_BASE_URL + entry?.src}
-                            width={screenSize}
+                            src={process.env.REACT_APP_BASE_URL + entry?.img}
+                            width={width}
+                            height={height}
                             translate={translate}
+                            radius={radius}
                         >
-                            <ImgInfo dangerouslySetInnerHTML={{__html: entry?.info}} />
+                            {entry?.info && <ImgInfo dangerouslySetInnerHTML={{__html: entry?.info}} />}
                         </ImageWrapper>
                     )
                 })}

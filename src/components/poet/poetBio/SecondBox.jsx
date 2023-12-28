@@ -54,10 +54,10 @@ export default function SecondBox({ poet }) {
                 <Backdrop backdrop={process.env.REACT_APP_BASE_URL + poet?.backdrops[0]} />
             </InnerOverlay>
             <Slides>
-                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[poet?.two[lang].length - 1].image} />
+                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[poet?.two[lang].length - 1].img} />
                 <LineWrapper>
                     <SlideImg
-                        src={process.env.REACT_APP_BASE_URL + infoArr[0]?.image}
+                        src={process.env.REACT_APP_BASE_URL + infoArr[0]?.img}
                         show={1}
                     />
                     <Info>
@@ -65,7 +65,7 @@ export default function SecondBox({ poet }) {
                         <Text dangerouslySetInnerHTML={{__html: infoArr[0]?.desc}} />
                     </Info>
                 </LineWrapper>
-                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[1].image} />
+                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[1].img} />
             </Slides>
             <NavBox>
                 <FillerOne />

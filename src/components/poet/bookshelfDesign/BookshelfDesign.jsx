@@ -46,7 +46,11 @@ export default function BookshelfDesign({ shelfNum, work, overlay, setOverlay })
                         >
                             <span>
                                 <BookWrapper>
-                                    <Book data={shelfNum + i} src={book.cover} onClick={(e) => handleBookAction(e)}/>
+                                    <Book
+                                        data={shelfNum + i}
+                                        src={process.env.REACT_APP_BASE_URL + book.cover}
+                                        onClick={(e) => handleBookAction(e)}
+                                    />
                                 </BookWrapper>
                             </span>
                         </StyledTooltip>
