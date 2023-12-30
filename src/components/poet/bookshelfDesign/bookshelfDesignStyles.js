@@ -65,8 +65,9 @@ export const Book = styled.img`
     border-radius: 0.4rem;
     object-fit: cover;
     background: #0F0A00
-        url("/loader.svg") center
+        url("/loader.png") center
         no-repeat;
+    background-size: 50% auto;
 `;
 
 export const Shelf = styled.div`

@@ -14,8 +14,9 @@ export const StyledFrame = styled.iframe`
     height: 100vh;
     border: none;
     background: #202020
-        url("/loader.svg") center
+        url("/loader.png") center
         no-repeat;
+    background-size: 50% auto;
 `;
 
 export const Header = styled.div`

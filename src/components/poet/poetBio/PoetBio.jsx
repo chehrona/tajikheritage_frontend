@@ -17,11 +17,11 @@ export default function PoetBio({ poet }) {
  
     return (
         <MainContainer id='Biography'>
-            <FirstBox poet={poet?.bio.one} />
+            <FirstBox poet={poet?.bio?.one} />
             <SecondBox poet={poet?.bio} />
             <ThirdBox poet={poet?.bio} />
             <FifthBox poet={poet?.bio} />
-            <SixthBox poet={poet?.bio.six[lang]} />
+            <SixthBox poet={poet?.bio?.six[lang]} />
             <SeventhBox poet={poet?.bio} />
         </MainContainer>
     )

@@ -93,8 +93,9 @@ export const PoetImage = styled.img`
     margin: 0.3rem;
     box-shadow: 0rem 0rem 1rem rgba(189, 157, 82, 0.8);
     background: #0F0A00
-        url("/loader.svg") center
+        url("/loader.png") center
         no-repeat;
+    background-size: 50% auto;
 
     @media (max-width: 480px) {
         border-radius: 4.5rem;
