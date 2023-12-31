@@ -58,8 +58,9 @@ export default function BookshelfDesign({ shelfNum, work, overlay, setOverlay })
                 })}
             </BooksContainer>
             <Shelf />
-            {bookDialog && <BookDialog msg={work[overlay - shelfNum]?.msg} bookDialog={true} setBookDialog={setBookDialog} />}
-            {openBook && <BookReader book={work[overlay - shelfNum]} setOpenBook={setOpenBook} />}
+            {(work[overlay - shelfNum]?.msg && bookDialog) ?
+                <BookDialog msg={work[overlay - shelfNum]?.msg} setBookDialog={setBookDialog} />
+            : (openBook && <BookReader book={work[overlay - shelfNum]} setOpenBook={setOpenBook} />)}
         </section>
     )
 }

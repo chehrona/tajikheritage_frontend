@@ -1,6 +1,5 @@
 import React from "react";
 import { useSetLang } from "../../../App";
-import { useMediaQuery } from 'react-responsive';
 
 import Dialog from "../../common/dialog/Dialog";
 
@@ -12,9 +11,8 @@ import {
     BodyContainer,
 } from "./bookDialogStyles";
 
-export default function BookDialog({ msg, setBookDialog, bookDialog }) {
+export default function BookDialog({ msg, setBookDialog }) {
     const { lang } = useSetLang();
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function handleClose() {
         setBookDialog(false);
@@ -22,7 +20,7 @@ export default function BookDialog({ msg, setBookDialog, bookDialog }) {
 
     return (
         <Dialog
-            open={bookDialog}
+            open={true}
             width={"500px"}
             border={"1.5rem"}
             handleClose={handleClose}

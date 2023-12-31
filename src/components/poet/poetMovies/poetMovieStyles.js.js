@@ -42,8 +42,8 @@ export const MainContainer = styled.div`
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});
-        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-        clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
+        clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
         top: -5.99rem;
         box-sizing: border-box;

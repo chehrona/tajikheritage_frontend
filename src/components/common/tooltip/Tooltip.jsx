@@ -28,7 +28,7 @@ export const Tooltip = ({ key, content }) => {
             placement="top"
             title={content?.img ? (
                 <ImageWrapper>
-                    <StyledImage src={content?.img} />
+                    <StyledImage src={process.env.REACT_APP_BASE_URL + content?.img} />
                     <StyledTypography dangerouslySetInnerHTML={{ __html: content.text }} />
                 </ImageWrapper>) : (
                     <StyledTypography dangerouslySetInnerHTML={{ __html: content.text }} />)
