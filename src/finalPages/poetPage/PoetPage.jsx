@@ -15,6 +15,7 @@ import PoetCareer from "../../components/poet/poetCareer/PoetCareer";
 import SectionOptions from "../../components/poet/sectionOptions/SectionOptions";
 import Loader from "../../components/common/loader/Loader";
 import Fade from "../../components/common/transition/Transition";
+import Alert from "../../components/common/alert/Alert";
 
 import { 
     PageContainer,
@@ -25,6 +26,7 @@ export default function PoetPage() {
     const { id } = useParams();
     const { lang } = useSetLang();
     const [poet, setPoet] = useState();
+    const [error, setError] = useState(0);
     const [loading, setLoading] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -34,7 +36,7 @@ export default function PoetPage() {
             const data = await requestPoet(id);
             setPoet(data);
         } catch (error) {
-            console.error("Error fetching data:", error);
+            setError(1);
         } finally {
             setLoading(0);
         }
@@ -61,7 +63,7 @@ export default function PoetPage() {
     return (
         <>
             <Loader inProp={loading} />
-            {poet && (
+            {poet ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <PoetContainer>
@@ -82,7 +84,7 @@ export default function PoetPage() {
                         </PoetContainer>
                     </PageContainer>
                 </Fade>
-            )}
+            ) : (error && <Alert />)}
         </>
     ); 
 }

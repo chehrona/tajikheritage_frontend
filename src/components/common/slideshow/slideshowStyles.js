@@ -1,5 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { IconButton } from '@mui/material';
+
+const slideUp = keyframes`
+    from {
+        height: 1.8rem;
+    }
+    to {
+        height: 3rem;
+    }
+`;
+  
+//   @keyframes slideDown {
+//     from {
+//       bottom: 0;
+//     }
+//     to {
+//       bottom: -1.8rem;
+//     }
+//   }
 
 export const StyledIconButton = styled(IconButton)`
     width: 3.5rem;
@@ -67,17 +85,17 @@ export const ImageContainer = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-    background-repeat: no-repeat;
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s;
+    background-repeat: no-repeat;
     background-position: center center;
     height: ${({ height }) => height && height};
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
     background: ${({ src }) => src && `url(${ src })`};
-    border-top-left-radius: ${({ radius }) => radius && `${radius}rem`};
-    border-bottom-left-radius: ${({ radius }) => radius && `${radius}rem`};
+    border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
+    border-bottom-left-radius: ${({ bottomLeftRad }) => bottomLeftRad && `${bottomLeftRad}rem`};
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ src }) => src && 'cover'};
 
@@ -151,6 +169,8 @@ export const ImgInfo = styled.div`
     background-color: #262626a6;
     width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    animation: ${({ isHovered }) => (isHovered ? slideUp : 'slideDown')};
+    animation-duration: 500ms;
 
     ${({ up }) => up && `
         color: #0F0A00;
@@ -183,4 +203,13 @@ export const ImgInfo = styled.div`
             left: 3rem;
         `}
     }
+`;
+
+export const InfoCover = styled.div`
+    width: 100%;
+    bottom: 0rem;
+    height: 0.5rem;
+    z-index: 11;
+    position: absolute;
+    background-color: #0F0A00;
 `;

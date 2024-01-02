@@ -3,17 +3,15 @@ import styled from "styled-components";
 export const BoxWrapper = styled.div`
     width: 100%;
     display: flex;
-    border-bottom: 0.0625rem solid #bd9d52;
     max-height: 35rem;
+    border-bottom: 0.0625rem solid #bd9d52;
     flex-direction: ${({ reverse }) =>  reverse && "row-reverse"};
 `;
 
 export const RightContainer = styled.div`
     width: 29rem;
     height: 35rem;
-    /* max-height: 35rem; */
     position: relative;
-    /* overflow: hidden; */
     float: left;
 
     @media (max-width: 480px) {

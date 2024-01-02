@@ -83,7 +83,8 @@ export default function PoetCareer({ points }) {
                                             slides={entry.slides}
                                             width={currentSize * 0.36}
                                             height={"26rem"}
-                                            radius={1}
+                                            topLeftRad={1}
+                                            bottomLeftRad={1}
                                         />
                                     </ImageWrapper>
                                     <DescWrapper>

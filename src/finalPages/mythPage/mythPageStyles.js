@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Alert } from "@mui/material";
 
 export const PageContainer = styled.div`
     position: relative;
@@ -21,7 +22,6 @@ export const MythContainer = styled.div`
     background: #fcf6e9;
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
-    padding-top: 0.75rem;
 
     @media (max-width: 480px) {
         margin: 0rem;
@@ -34,54 +34,24 @@ export const MythContainer = styled.div`
     }
 `;
 
-export const BoxWrapper = styled.div`
-    display: flex;
-    min-height: 30rem;
-    width: 100%;
-`;
-
-export const Image = styled.img`
-    width: 50%;
-`;
-
-export const TextContainer = styled.div`
-    padding: 0rem 3rem;
-`;
-
-export const Title = styled.div`
-    width: 100%;
-    color: #000;
-    font-size: 4rem;
-    font-weight: 500;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-    font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0F0A00;
-
-    @media (max-width: 480px) {
-        font-size: 4.5rem;
-    }
-`;
-
-export const Subtitle = styled.div`
+export const StyledAlert = styled(Alert)`
     width: fit-content;
-    text-transform: uppercase;
-    border-right: 2px solid #ad0f0e;
-    border-bottom: 2px solid #ad0f0e;
-    padding: 0rem 0.35rem 0.15rem 0rem;
-    font-weight: 500;
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
-`;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    z-index: 20;
 
-export const TextWrapper = styled.div`
-    width: 100%;
-    color: #0F0A00;
-    font-size: 1.1rem;
-    position: relative;
-    line-height: 1.7rem;
+    &.MuiPaper-root {
+        font-family: 'IBM Plex Serif', serif;
+        font-size: 1rem;
+        justify-content: center;
 
-    @media (max-width: 1024px) {
-        font-size: 1.3rem;
+        svg {
+            font-size: 1.5rem;
+        }
+    }
+
+    &.MuiAlert-icon {
+        margin-right: 10px;
     }
 `;

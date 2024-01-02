@@ -6,6 +6,7 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import {
     Arrow,
     ImgInfo,
+    InfoCover,
     ImageContainer,
     ImageWrapper,
     ButtonWrapper,
@@ -17,10 +18,12 @@ export default function Slideshow({
     slides,
     width,
     height,
-    radius
+    topLeftRad,
+    bottomLeftRad
 }) {
     const { lang } = useSetLang();
     const [translate, setTranslate] = useState(0);
+    const [isHovered, setIsHovered] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [infoArr, setInfoArr] = useState([...slides]);
 
@@ -49,13 +52,22 @@ export default function Slideshow({
                     return (
                         <ImageWrapper
                             key={i + 'b'}
-                            src={process.env.REACT_APP_BASE_URL + entry?.img}
                             width={width}
                             height={height}
                             translate={translate}
-                            radius={radius}
+                            topLeftRad={topLeftRad}
+                            bottomLeftRad={bottomLeftRad}
+                            onMouseEnter={() => setIsHovered(1)}
+                            onMouseLeave={() => setIsHovered(0)}
+                            src={process.env.REACT_APP_BASE_URL + entry?.img}
                         >
-                            {entry?.info && <ImgInfo dangerouslySetInnerHTML={{__html: entry?.info}} />}
+                            {entry?.info && 
+                                <ImgInfo
+                                    isHovered={isHovered}
+                                    dangerouslySetInnerHTML={{__html: entry?.info}} 
+                                />
+                            } 
+                            {!isHovered && <InfoCover />}
                         </ImageWrapper>
                     )
                 })}

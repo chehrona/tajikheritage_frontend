@@ -12,7 +12,7 @@ import {
     RightContainer
 } from "./mythIntroStyles";
 
-export default function BoxOne({ myth, title }) {
+export default function BoxOne({ myth, title, topRightRad }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
 
@@ -29,6 +29,7 @@ export default function BoxOne({ myth, title }) {
                     width={screenSize}
                     height={'35rem'}
                     slides={myth?.slides}
+                    topLeftRad={topRightRad}
                 />
             </RightContainer>
             <TextContainer>

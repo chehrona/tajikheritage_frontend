@@ -20,12 +20,13 @@ export default function BoxTwo({ myth }) {
 
         setScreenSize(parentWidth);
     }, []);
-    
+
     return (
         <BoxWrapper reverse={1}>
             <RightContainer ref={parentRef}>
                 <Slideshow
-                    screenSize={screenSize}
+                    width={screenSize}
+                    height={'35rem'}
                     slides={myth?.slides}
                 />
             </RightContainer>
