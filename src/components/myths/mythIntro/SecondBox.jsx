@@ -7,8 +7,7 @@ import {
     BoxWrapper,
     SecondBox,
     Subtitle,
-    TextContainer,
-    RightContainer
+    SlideContainer
 } from "./mythIntroStyles";
 
 export default function BoxTwo({ myth }) {
@@ -23,17 +22,14 @@ export default function BoxTwo({ myth }) {
 
     return (
         <BoxWrapper reverse={1}>
-            <RightContainer ref={parentRef}>
+            <SlideContainer ref={parentRef} reverse={1}>
                 <Slideshow
                     width={screenSize}
-                    height={'35rem'}
                     slides={myth?.slides}
                 />
-            </RightContainer>
-            <TextContainer>
-                <Subtitle>{myth.subtitle}</Subtitle>
-                <DescWrapper desc={myth.body} TextWrapper={SecondBox} />
-            </TextContainer>
+            </SlideContainer>
+            <Subtitle dangerouslySetInnerHTML={{ __html: myth.subtitle}} reverse={1}></Subtitle>
+            <DescWrapper desc={myth.body} TextWrapper={SecondBox} />
         </BoxWrapper>
     );
 }

@@ -47,12 +47,12 @@ export default function MythPage() {
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <MythContainer>
-                            <BoxOne myth={myth.desc[lang][0]} title={myth.name[lang]} topRightRad={4} />
-                            <BoxTwo myth={myth.desc[lang][1]} padding={0} />
-                            <BoxOne myth={myth.desc[lang][2]} padding={0} />
-                            <BoxTwo myth={myth.desc[lang][3]} padding={0} />
-                            <BoxOne myth={myth.desc[lang][4]} padding={0} />
-                            <BoxTwo myth={myth.desc[lang][5]} padding={0} />
+                            <BoxOne myth={myth.desc[lang][0]} title={myth.name[lang]} topLeftRad={4} />
+                            <BoxTwo myth={myth.desc[lang][1]} />
+                            <BoxOne myth={myth.desc[lang][2]} />
+                            <BoxTwo myth={myth.desc[lang][3]} />
+                            <BoxOne myth={myth.desc[lang][4]} />
+                            <BoxTwo myth={myth.desc[lang][5]} />
                             <Sources
                                 data={myth.references[lang]}
                                 color={'#dedbdb'}

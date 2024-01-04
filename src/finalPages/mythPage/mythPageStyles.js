@@ -19,6 +19,7 @@ export const PageContainer = styled.div`
 
 export const MythContainer = styled.div`
     border-radius: 4rem;
+    min-height: 40rem;
     background: #fcf6e9;
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;

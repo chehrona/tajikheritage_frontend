@@ -85,12 +85,11 @@ export const ImageContainer = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-    transition: all 0.5s;
     position: relative;
-    transition: all 0.5s;
+    transition: transform 0.5s;
     background-repeat: no-repeat;
     background-position: center center;
-    height: ${({ height }) => height && height};
+    height: ${({ width }) => width && `${width*1.2049}px`};
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
     background: ${({ src }) => src && `url(${ src })`};
@@ -99,12 +98,19 @@ export const ImageWrapper = styled.div`
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ src }) => src && 'cover'};
 
-    @media (max-width: 480px) {
-        height: 23rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 40rem;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-image: ${({ overlay }) => overlay && `url(${ overlay })`};
+        border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
     }
 `;
 
@@ -160,9 +166,10 @@ export const StyledButton = styled(IconButton)`
 
 export const ImgInfo = styled.div`
     position: absolute;
-    z-index: 10;
+    z-index: 11;
     font-style: italic;
     margin: 0.25rem;
+    min-width: 20rem;
     text-align: left;
     color: #fcf6e9;
     bottom: 0rem;
@@ -196,7 +203,8 @@ export const ImgInfo = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.3rem;
-        bottom: 0.5rem;
+        bottom: 1rem;
+        min-width: 30rem;
 
         ${({ up }) => up && `
             bottom: 0rem;

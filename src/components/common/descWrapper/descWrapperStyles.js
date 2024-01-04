@@ -23,8 +23,7 @@ export const StyledSpan = styled.span`
     };
 
     .quoteWrapper {
-        margin-top: 1.3rem;
-        margin-left: 3rem;
+        margin-top: 1.3rem 0rem 0rem 3rem;
         font-style: italic;
         font-size: 1.2rem;
     }
@@ -49,9 +48,23 @@ export const StyledSpan = styled.span`
         }
     }
 
-    @media screen and (min-device-width: 481px) and (max-device-width: 960px) {
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         .quoteWrapper {
+            margin: 1.3rem 0rem 1rem 1.5rem;
             font-size: 1.45rem;
         }
+
+        .quoteContainer {
+            margin: 1rem 0rem;
+        }
+
+        .quoteContainer > div {
+            width: 100%;
+        }
+
+        .quoteSymbol {
+            height: 6rem;
+            width: 6rem;
+        };
     }
 `;

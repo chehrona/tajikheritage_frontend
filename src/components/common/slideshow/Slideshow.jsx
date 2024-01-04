@@ -17,7 +17,6 @@ import {
 export default function Slideshow({
     slides,
     width,
-    height,
     topLeftRad,
     bottomLeftRad
 }) {
@@ -53,13 +52,13 @@ export default function Slideshow({
                         <ImageWrapper
                             key={i + 'b'}
                             width={width}
-                            height={height}
                             translate={translate}
                             topLeftRad={topLeftRad}
                             bottomLeftRad={bottomLeftRad}
                             onMouseEnter={() => setIsHovered(1)}
                             onMouseLeave={() => setIsHovered(0)}
                             src={process.env.REACT_APP_BASE_URL + entry?.img}
+                            overlay={process.env.REACT_APP_BASE_URL + entry?.overlay}
                         >
                             {entry?.info && 
                                 <ImgInfo

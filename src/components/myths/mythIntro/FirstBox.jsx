@@ -8,11 +8,10 @@ import {
     Title,
     FirstBox,
     Subtitle,
-    TextContainer,
-    RightContainer
+    SlideContainer
 } from "./mythIntroStyles";
 
-export default function BoxOne({ myth, title, topRightRad }) {
+export default function BoxOne({ myth, title, topLeftRad }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
 
@@ -24,19 +23,16 @@ export default function BoxOne({ myth, title, topRightRad }) {
 
     return (
         <BoxWrapper reverse={0}>
-            <RightContainer ref={parentRef}>
+            <SlideContainer ref={parentRef} reverse={0} topLeftRad={topLeftRad}>
                 <Slideshow
                     width={screenSize}
-                    height={'35rem'}
                     slides={myth?.slides}
-                    topLeftRad={topRightRad}
+                    topLeftRad={topLeftRad}
                 />
-            </RightContainer>
-            <TextContainer>
-                {title && <Title>{title}</Title>}
-                <Subtitle>{myth.subtitle}</Subtitle>
-                <DescWrapper desc={myth.body} TextWrapper={FirstBox} />
-            </TextContainer>
+            </SlideContainer>
+            {title && <Title>{title}</Title>}
+            <Subtitle dangerouslySetInnerHTML={{ __html: myth.subtitle}} reverse={0}></Subtitle>
+            <DescWrapper desc={myth.body} TextWrapper={FirstBox} />
         </BoxWrapper>
     );
 }
