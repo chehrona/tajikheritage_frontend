@@ -33,8 +33,12 @@ export const MythCardWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        height: 13rem;
-        width: 13rem;
+        height: 23rem;
+        width: 23rem;
+        box-shadow: 0rem 0rem 0.6rem #504221d1;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         box-shadow: 0rem 0rem 0.6rem #504221d1;
     }
 `;

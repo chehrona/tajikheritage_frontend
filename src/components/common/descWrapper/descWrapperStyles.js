@@ -11,7 +11,6 @@ export const StyledSpan = styled.span`
     .quoteInnerBox {
         position: relative;
         display: flex;
-        margin: 0 auto;
         padding: 0rem 1rem;
         width: fit-content;
     }
@@ -64,18 +63,18 @@ export const StyledSpan = styled.span`
     }
 
     @media screen and (max-width: 480px) {
-        .quoteContainer > div {
-            width: 100%;
-        }
-
-        .quoteContainer {
-            margin: 1rem 0rem;
+        .quoteInnerBox {
+            display: block;
         }
 
         .quoteWrapper {
-            margin: 1.3rem 1rem 1rem 1.5rem;
+            margin: 1.3rem -1rem 0rem 0rem;
             font-size: 1.45rem;
         }
+
+        .quoteSymbol {
+            left: -1rem;
+        };
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

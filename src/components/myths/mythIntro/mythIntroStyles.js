@@ -14,7 +14,19 @@ export const BoxWrapper = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        ${({ reverse }) => reverse ? "padding-left: 2rem" : "padding-right: 2rem"};
+        ${({ reverse }) => reverse ? "padding: 0rem 0rem 1rem 2rem" : "padding: 0rem 2rem 1rem 0rem"};
+    }
+
+    @media (max-width: 480px) {
+        padding: 0rem;
+        display: flex;
+        flex-direction: column;
+
+        ::after {
+            content: "";
+            clear: none;
+            display: none;
+        }
     }
 `;
 
@@ -30,9 +42,10 @@ export const SlideContainer = styled.div`
     border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
 
     @media (max-width: 480px) {
-        width: 98.04%;
-        height: 100%;
-        margin-top: ${({ first }) => first && '-2rem'};
+        width: 100svw;
+        height: 120.49svw;
+        margin: 0rem 0rem 1rem 0rem;
+        border-top-left-radius: 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -52,6 +65,7 @@ export const Title = styled.div`
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
+        margin: -1rem 0rem 0rem 1.5rem;
     }
 `;
 
@@ -63,6 +77,15 @@ export const Subtitle = styled.span`
     text-transform: uppercase;
     border-right: 2px solid #ad0f0e;
     border-bottom: 2px solid #ad0f0e;
+
+    @media (max-width: 480px) {
+        margin-left: 1.5rem;
+        font-size: 1.35rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const FirstBox = styled.div`
@@ -77,12 +100,13 @@ export const FirstBox = styled.div`
         width: 0rem;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
         font-size: 1.3rem;
+        padding: 0.5rem 1.5rem 0rem 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding-left: 2rem;
+        padding: 0.25rem 0rem 0rem 2rem;
     }
 `;
 
@@ -98,11 +122,12 @@ export const SecondBox = styled.div`
         width: 0rem;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
         font-size: 1.3rem;
+        padding: 0.5rem 1.5rem 0rem 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding-right: 2rem;
+        padding: 0.25rem 2rem 0rem 0rem;
     }
 `;

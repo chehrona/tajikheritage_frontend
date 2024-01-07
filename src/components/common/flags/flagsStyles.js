@@ -47,10 +47,8 @@ export const StyledFlag = styled.div`
 `;
 
 export const FlagDropdown = styled.div`
-    display: flex;
+    display: ${({ showLangMenu }) => showLangMenu ? 'flex' : 'none'};
     flex-direction: column;
-    opacity: ${({ showLangMenu }) => showLangMenu ? 1 : 0};
-    visibility: ${({ showLangMenu }) => showLangMenu ? 'visible' : 'hidden'};
 `;
 
 export const StyledIconButton = styled(IconButton)`

@@ -57,7 +57,7 @@ export const BoxOne = styled.div`
     gap: 3rem;
     position: relative;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
         padding: 0rem 1.5rem 1rem 1.5rem;
         flex-wrap: wrap;
         margin-bottom: 3rem;

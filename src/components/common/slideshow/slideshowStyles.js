@@ -190,8 +190,8 @@ export const ImgInfo = styled.div`
     `}
 
     @media (max-width: 480px) {
-        font-size: 1.25rem;
-        line-height: 1.3rem;
+        font-size: 1.3rem;
+        line-height: 1.35rem;
         bottom: 0.5rem;
 
         ${({ up }) => up && `

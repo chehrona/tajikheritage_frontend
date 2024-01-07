@@ -215,7 +215,7 @@ export const stepInfo = [
         desc: {
             us: {
                 text: `The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. 
-                    As descendants of Sogdians, Bactrians and other East Iranian tribes, they were pivotal in establishing the early farming 
+                    As descendants of Sogdians, Bactrians and other Iranian tribes, they were pivotal in establishing the early farming 
                     traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of 
                     civilizations, which sculpted the unique identity of the Tajik people. 
                     <div class='space'></div>
@@ -224,7 +224,7 @@ export const stepInfo = [
                 },
             ru: {
                 text: `Таджики – коренной народ Центральной Азии, история которого насчитывает более двух тысячелетий. Будучи потомками 
-                    согдийцев, бактрийцев и других восточноиранских племен, они сыграли большую роль в установлении ранних традиций земледелия и торговли 
+                    согдийцев, бактрийцев и других иранских племен, они сыграли большую роль в установлении ранних традиций земледелия и торговли 
                     в регионе. На протяжении веков Центральная Азия превратилась в перекресток цивилизаций, который сформировал уникальную идентичность таджикского народа.
                     <div class='space'></div>
                     <div class='space'></div>`,
@@ -232,7 +232,7 @@ export const stepInfo = [
                 },
             tj: {
                 text: `Тоҷикон мардуми муқимии Осиёи Миёна буда, дорандаи таърихи беш аз ду ҳазорсола ҳастанд. Онҳо ҳамчун насли суғдиён, 
-                    бохтариён ва дигар қабилаҳои эрониёни шарқӣ ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа ҳиссаи бузурге гузоштаанд. Дар давоми 
+                    бохтариён ва дигар қабилаҳои эронӣ ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа ҳиссаи бузурге гузоштаанд. Дар давоми 
                     садсолаҳо, Осиёи Марказӣ ба чорроҳаи тамаддунҳо табдил ёфта, ба  
                     худшиносии мардуми тоҷик таъсири бузурге расонидааст.
                     <div class='space'></div>

@@ -22,7 +22,11 @@ export const MythBoxContainer = styled.div`
     justify-content: ${({ justify }) => justify && (justify <= 2 ? 'start' : 'center')};
 
     @media (max-width: 480px) {
-        gap: 1rem;
-        justify-content: space-between;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        justify-content: ${({ justify }) => justify && (justify <= 1 ? 'start' : 'center')};
     }
 `;
