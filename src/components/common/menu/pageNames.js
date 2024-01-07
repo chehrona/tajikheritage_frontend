@@ -15,7 +15,7 @@ module.exports.pageInfo = {
     ],
     tj: [
         {title: "Санъат ва ҳунар", desc: "Фарҳанги моддӣ", link: "/arts"},
-        {title: "Расму русум", desc: "Мероси ғайримоддӣ", link: "/customs"},
+        {title: "Расму оин", desc: "Мероси ғайримоддӣ", link: "/customs"},
         {title: "Ғизоҳо", desc: "Хӯрокпазӣ & хусусияти миллӣ", link: "/cuisine"},
         {title: "Забон ва адабиёт", desc: "Садоҳои гузашта ва ҳозира", link: "/language"},
         {title: "Таърих", desc: "Қадима, асрҳои миёна ва муосир", link: "/history"}

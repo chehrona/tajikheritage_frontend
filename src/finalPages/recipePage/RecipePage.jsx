@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { useParams } from "react-router-dom";
 
-import "./recipeClassStyles.css";
-
 import RecipeInfo from "../../components/food/recipeInfo/RecipeInfo";
 import RecipeIngredients from "../../components/food/recipeIngredients/RecipeIngredients";
 import Sources from "../../components/common/sources/Sources";

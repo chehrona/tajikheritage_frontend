@@ -16,7 +16,7 @@ export const stepInfo = [
                         many as old as the Eastern Iranian civilization itself.
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: '/arts'
+                    link: '/#/arts?us'
                 },
             ru: 
                 {
@@ -27,7 +27,7 @@ export const stepInfo = [
                         искусства и ремесел, многие из которых возникли наравне с формированием восточноиранской цивилизации.
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: '/arts?ru'
+                    link: '/#/arts?ru'
                 },
             tj: 
                 {
@@ -38,7 +38,7 @@ export const stepInfo = [
                         ки қадимии бисёрашон баробари қадимии тамаддуни эрониёни шарқӣ ҳастанд.
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: '/arts?tj'
+                    link: '/#/arts?tj'
                 },
         },
         outer: [
@@ -69,7 +69,7 @@ export const stepInfo = [
                         The culture values hospitality and finds artistic richness in classical poetry, folklore, and ornate handicrafts.
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: "/customs"
+                    link: "/#/customs?us"
                 },
             ru:  {
                     text: `Таджикские обычаи и традиции отражают смесь персидского, исламского, 
@@ -81,7 +81,7 @@ export const stepInfo = [
                         классической поэзии, фольклору и ремеслам.           
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: "/customs?ru"
+                    link: "/#/customs?ru"
                 },
             tj: {
                     text: `Дар урфу одат ва анъанаҳои тоҷикон омезиши маданияти форсӣ, исломӣ, зардуштӣ ва Осиёи Марказӣ зоҳир мешаванд.
@@ -91,7 +91,7 @@ export const stepInfo = [
                         Тоҷикон мардуми меҳмоннавоз буда, дар ин фарҳанг ашъори классикӣ, фолклор ва ҳунарҳои дастӣ ҷои махсусро ишғол мекунанд.
                         <div class='space'></div>
                         <div class='space'></div>`,
-                    link: "/customs?tj",
+                    link: "/#/customs?tj",
                 },
         },
         outer: [
@@ -121,7 +121,7 @@ export const stepInfo = [
                     the meat and vegetable-centric fare prevalent in the culinary practices of lowland Tajiks.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/cuisine"
+                link: "/#/cuisine?us"
             },
             ru: {
                 text: `Таджикская кухня, представляющая собой сложное сочетание влияний Ближнего Востока, Центральной, 
@@ -131,7 +131,7 @@ export const stepInfo = [
                     мясных и овощных блюд, преобладающих в кулинарии равнинных таджиков.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/cuisine?ru"
+                link: "/#/cuisine?ru"
             },
             tj: {
                 text: `Таомҳои тоҷикӣ дар натиҷаи таъсироти ғизоҳои Шарқи Наздик, Осиёи Миёна, Шарқӣ ва Ҷанубӣ ва дар садсолаи охир бо 
@@ -141,7 +141,7 @@ export const stepInfo = [
                     фарқ мекунанд.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/cuisine?tj"
+                link: "/#/cuisine?tj"
                 }
         },
         outer: [
@@ -173,7 +173,7 @@ export const stepInfo = [
                     serving as a bridge connecting the past and the present — defining who Tajiks are.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/language"
+                link: "/#/language?us"
                 },
             ru: {
                 text: `Языки, на которых говорят таджикские народы, независимо от того, принадлежат ли они к западному или 
@@ -182,7 +182,7 @@ export const stepInfo = [
                     свидетельством устойчивости и служат мостом, соединяющим прошлое и настоящее таджиков.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/language?ru"
+                link: "/#/language?ru"
                 },
             tj: {
                 text: `Забонҳои мардуми тоҷик, ки чи ба гурӯҳи забонҳои эронии ғарбӣ ва чи шарқӣ дахл доранд, 
@@ -191,7 +191,7 @@ export const stepInfo = [
                     тоҷикон буда, гузашташонро бо имрӯзашон мепайванданд.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/language?tj"
+                link: "/#/language?tj"
                 }
         },
         outer: [
@@ -215,30 +215,29 @@ export const stepInfo = [
         desc: {
             us: {
                 text: `The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. 
-                    As descendants of Sogdians, Bactrians and Khwarazmians, they were pivotal in establishing the early farming 
+                    As descendants of Sogdians, Bactrians and other East Iranian tribes, they were pivotal in establishing the early farming 
                     traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of 
-                    civilizations, resulting in a Turco-Persian symbiosis, which sculpted the unique identity of the Tajik people. 
+                    civilizations, which sculpted the unique identity of the Tajik people. 
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/history"
+                link: "/#/history?us"
                 },
             ru: {
                 text: `Таджики – коренной народ Центральной Азии, история которого насчитывает более двух тысячелетий. Будучи потомками 
-                    согдийцев, бактрийцев и хорезмийцев, они сыграли большую роль в установлении ранних традиций земледелия и торговли 
-                    в регионе. На протяжении веков Центральная Азия превратилась в перекресток цивилизаций, что привело к тюрко-персидскому 
-                    симбиозу, который сформировал уникальную идентичность таджикского народа.
+                    согдийцев, бактрийцев и других восточноиранских племен, они сыграли большую роль в установлении ранних традиций земледелия и торговли 
+                    в регионе. На протяжении веков Центральная Азия превратилась в перекресток цивилизаций, который сформировал уникальную идентичность таджикского народа.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/history?ru"
+                link: "/#/history?ru"
                 },
             tj: {
                 text: `Тоҷикон мардуми муқимии Осиёи Миёна буда, дорандаи таърихи беш аз ду ҳазорсола ҳастанд. Онҳо ҳамчун насли суғдиён, 
-                    бохтариён ва хоразмиён ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа ҳиссаи бузурге гузоштаанд. Дар давоми 
-                    садсолаҳо, Осиёи Марказӣ ба чорроҳаи тамаддунҳо табдил ёфта, ки дар натиҷа симбиози турку форс ба вуҷуд омада, ба  
+                    бохтариён ва дигар қабилаҳои эрониёни шарқӣ ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа ҳиссаи бузурге гузоштаанд. Дар давоми 
+                    садсолаҳо, Осиёи Марказӣ ба чорроҳаи тамаддунҳо табдил ёфта, ба  
                     худшиносии мардуми тоҷик таъсири бузурге расонидааст.
                     <div class='space'></div>
                     <div class='space'></div>`,
-                link: "/history?tj"
+                link: "/#/history?tj"
             }
         },
         outer: [
