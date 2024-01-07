@@ -6,7 +6,6 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import {
     Arrow,
     ImgInfo,
-    InfoCover,
     ImageContainer,
     ImageWrapper,
     ButtonWrapper,
@@ -66,7 +65,6 @@ export default function Slideshow({
                                     dangerouslySetInnerHTML={{__html: entry?.info}} 
                                 />
                             } 
-                            {!isHovered && <InfoCover />}
                         </ImageWrapper>
                     )
                 })}

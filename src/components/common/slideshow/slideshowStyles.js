@@ -176,8 +176,6 @@ export const ImgInfo = styled.div`
     background-color: #262626a6;
     width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    animation: ${({ isHovered }) => (isHovered ? slideUp : 'slideDown')};
-    animation-duration: 500ms;
 
     ${({ up }) => up && `
         color: #0F0A00;
@@ -211,13 +209,4 @@ export const ImgInfo = styled.div`
             left: 3rem;
         `}
     }
-`;
-
-export const InfoCover = styled.div`
-    width: 100%;
-    bottom: 0rem;
-    height: 0.5rem;
-    z-index: 11;
-    position: absolute;
-    background-color: #0F0A00;
 `;

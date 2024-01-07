@@ -32,15 +32,15 @@ function App() {
         }
     ), [lang, isPrint]);
 
-    // useEffect(() => {
-    //     const handleContextmenu = e => {
-    //         e.preventDefault();
-    //     }
-    //     document.addEventListener('contextmenu', handleContextmenu)
-    //     return function cleanup() {
-    //         document.removeEventListener('contextmenu', handleContextmenu)
-    //     }
-    // }, []);
+    useEffect(() => {
+        const handleContextmenu = e => {
+            e.preventDefault();
+        }
+        document.addEventListener('contextmenu', handleContextmenu)
+        return function cleanup() {
+            document.removeEventListener('contextmenu', handleContextmenu)
+        }
+    }, []);
 
     const handleScroll = () => {
         const currentScrollPos = parentRef.current.scrollTop;
