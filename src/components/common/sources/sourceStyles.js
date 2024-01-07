@@ -128,6 +128,7 @@ export const RefBox = styled.div`
     align-items: start;
     font-size: 1.1rem;
     line-height: 1.7rem;
+    position: relative;
 
     @media (max-width: 480px) {
         font-size: 1.3rem;
@@ -143,15 +144,15 @@ export const RefIndex = styled.div`
 export const SourceLink = styled.a`
     color: #bd9d52;
     margin-left: 0.5rem;
+    position: absolute;
+    margin-left: 5px;
+    bottom: -3.5px;
 
     &:link &:active {
         color: #bd9d52;
     }
 `;
 
-export const SpaceHolder = styled.div`
-    width: 0.5rem;
-    min-width: 1rem;
-    height: 100%;
-    background-color: green;
+export const SourceWrapper = styled.div`
+    display: inline-block;
 `;

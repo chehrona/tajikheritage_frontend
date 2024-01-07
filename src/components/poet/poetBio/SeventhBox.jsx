@@ -38,7 +38,6 @@ export default function SeventhBox({ poet }) {
             <RightContainer ref={parentRef}>
                 <Slideshow
                     width={screenSize}
-                    height={'30rem'}
                     slides={poet?.seven[lang].slides}
                 />
             </RightContainer>

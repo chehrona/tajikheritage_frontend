@@ -10,9 +10,12 @@ import Loader from "../../components/common/loader/Loader";
 
 import { PageContainer, RecipeBoxContainer } from './cuisinePageStyles';
 
+import { TempImg, TempPageContainer, TempTitle } from '../language/languagePageStyles';
+
+
 function Cuisine() {
     const location = useLocation();
-    const { setLang } = useSetLang();
+    const { setLang, lang } = useSetLang();
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(0);
 
@@ -28,30 +31,40 @@ function Cuisine() {
         }
     };
 
-    useEffect(() => {
-        // Get data
-        fetchData();
+    // useEffect(() => {
+    //     // Get data
+    //     fetchData();
 
-        if (location.search.length) {
-            setLang(location.search.substring(1));
-        }
-    }, []);
+    //     if (location.search.length) {
+    //         setLang(location.search.substring(1));
+    //     }
+    // }, []);
 
     return (
-        <>
-            <Loader inProp={loading} />
-            {recipes && (
-                <Fade inProp={!loading}>
-                    <PageContainer>
-                        <RecipeBoxContainer justify={recipes?.length}>
-                            {recipes?.map((recipe, i) => {
-                                return (<RecipeCard key={i} recipe={recipe} i={i} />);
-                            })}
-                        </RecipeBoxContainer>
-                    </PageContainer>
-                </Fade>
-            )}
-        </>
+        // <>
+        //     <Loader inProp={loading} />
+        //     {recipes && (
+        //         <Fade inProp={!loading}>
+        //             <PageContainer>
+        //                 <RecipeBoxContainer justify={recipes?.length}>
+        //                     {recipes?.map((recipe, i) => {
+        //                         return (<RecipeCard key={i} recipe={recipe} i={i} />);
+        //                     })}
+        //                 </RecipeBoxContainer>
+        //             </PageContainer>
+        //         </Fade>
+        //     )}
+        // </>
+        <TempPageContainer>
+            <TempTitle>
+                {
+                    lang === "us" ? "Exciting updates are on the way!" : (
+                    lang === "ru" ? "Обновления уже в пути!" : 
+                    "Навигариҳо дар роҳ ҳастанд!")
+                }
+            </TempTitle>
+            <TempImg src={'/loader.png'} />
+        </TempPageContainer>
     );
 }
 

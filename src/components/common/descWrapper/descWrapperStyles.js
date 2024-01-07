@@ -78,17 +78,13 @@ export const StyledSpan = styled.span`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        .quoteInnerBox {
+            display: block;
+        }
+        
         .quoteWrapper {
             margin: 1.3rem 0rem 1rem 1.5rem;
             font-size: 1.45rem;
-        }
-
-        .quoteContainer {
-            margin: 1rem 0rem;
-        }
-
-        .quoteContainer > div {
-            width: 100%;
         }
 
         .quoteSymbol {

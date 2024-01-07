@@ -33,6 +33,7 @@ export default function BoxOne({ myth, title, topLeftRad }) {
                 />
             </SlideContainer>
             {title && <Title>{title}</Title>}
+            {!isMobile && <div className="space"></div>}
             <Subtitle dangerouslySetInnerHTML={{ __html: myth.subtitle}} reverse={0}></Subtitle>
             <DescWrapper desc={myth.body} TextWrapper={FirstBox} />
         </BoxWrapper>

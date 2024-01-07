@@ -30,3 +30,21 @@ export const PoetBoxContainer = styled.div`
        gap: 2rem;
     }
 `;
+
+export const TempPageContainer = styled.div`
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const TempImg = styled.img`
+    height: 20rem;
+`;
+
+export const TempTitle = styled.div`
+    color: #fcf6e9;
+    margin: 2.5% 0% 5% 0%;
+    font-size: 1.5rem;
+`;

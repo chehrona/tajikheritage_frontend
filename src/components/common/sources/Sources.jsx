@@ -17,6 +17,7 @@ import {
     RefIndex,
     SourceLink,
     MainContainer,
+    SourceWrapper
 } from "./sourceStyles";
 
 export default function Sources({ data, color, title, background }) {
@@ -53,13 +54,15 @@ export default function Sources({ data, color, title, background }) {
                                         <RefIndex>
                                             <div>{i + 1}.</div>
                                         </RefIndex>
-                                        <Reference dangerouslySetInnerHTML={{__html: source?.name}} />
-                                        {source?.link.length ? (
-                                            <SourceLink href={source?.link} target="_blank">
-                                                <OpenInNew />
-                                            </SourceLink>
-                                        ) : null}
-                                    </RefBox>   
+                                        <SourceWrapper>
+                                            <Reference dangerouslySetInnerHTML={{ __html: source?.name }} />
+                                            {source?.link.length ? (
+                                                <SourceLink href={source?.link} target="_blank">
+                                                    <OpenInNew />
+                                                </SourceLink>
+                                            ) : null}
+                                        </SourceWrapper>
+                                    </RefBox>  
                                 )
                             })}
                         </RefWrapper>
