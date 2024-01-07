@@ -11,7 +11,7 @@ import {
     SlideContainer
 } from "./mythIntroStyles";
 
-export default function BoxTwo({ myth }) {
+export default function BoxTwo({ myth, noBorder }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
@@ -23,7 +23,7 @@ export default function BoxTwo({ myth }) {
     }, []);
 
     return (
-        <BoxWrapper reverse={1}>
+        <BoxWrapper reverse={1} noBorder={noBorder}>
             <SlideContainer ref={parentRef} reverse={1}>
                 <Slideshow
                     width={screenSize}

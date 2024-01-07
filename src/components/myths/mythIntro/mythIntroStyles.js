@@ -4,7 +4,7 @@ export const BoxWrapper = styled.div`
     width: 100%;
     position: relative;
     display: block;
-    border-bottom: 0.0625rem solid #bd9d52;
+    border-bottom:  ${({ noBorder }) => noBorder ? 'none' : '0.0625rem solid #bd9d52'};
     ${({ reverse }) => reverse ? "padding-left: 3rem" : "padding-right: 3rem"};
     
     ::after {

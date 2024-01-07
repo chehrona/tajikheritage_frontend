@@ -52,7 +52,7 @@ export default function MythPage() {
                             <BoxOne myth={myth.desc[lang][2]} />
                             <BoxTwo myth={myth.desc[lang][3]} />
                             <BoxOne myth={myth.desc[lang][4]} />
-                            <BoxTwo myth={myth.desc[lang][5]} />
+                            <BoxTwo myth={myth.desc[lang][5]} noBorder={1} />
                             <Sources
                                 data={myth.references[lang]}
                                 color={'#dedbdb'}

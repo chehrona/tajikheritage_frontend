@@ -24,7 +24,7 @@ export default function BoxOne({ myth, title, topLeftRad }) {
     }, []);
 
     return (
-        <BoxWrapper reverse={0}>
+        <BoxWrapper reverse={0} >
             <SlideContainer ref={parentRef} reverse={0} topLeftRad={topLeftRad}>
                 <Slideshow
                     width={screenSize}
