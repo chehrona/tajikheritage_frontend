@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { stepInfo } from "./helper";
+import { addVisit } from "../../services/request";
 
 import HomeStepper from '../../components/homeStepper/HomeStepper';
 import ImageBall from '../../components/imageBall/ImageBall';
@@ -12,7 +13,16 @@ function Home() {
     const divRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
     const [opacities, setOpacities] = useState([1, 0, 0, 0, 0]);
 
+    const recordVisit = async () => {
+        try {
+            await addVisit();
+        } catch (error) {
+            console.error("Error recording visit:", error);
+        }
+    };
+
     useEffect(() => {
+        recordVisit();
         // Scrolling
         const handleScroll = () => {
             const containerRect = containerRef.current.getBoundingClientRect();

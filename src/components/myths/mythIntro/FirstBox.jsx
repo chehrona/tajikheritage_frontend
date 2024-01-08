@@ -16,6 +16,7 @@ export default function BoxOne({ myth, title, topLeftRad }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const isTablet = useMediaQuery({ query: `(min-device-width: 481px) and (max-device-width: 1024px)` });
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -29,7 +30,7 @@ export default function BoxOne({ myth, title, topLeftRad }) {
                 <Slideshow
                     width={screenSize}
                     slides={myth?.slides}
-                    topLeftRad={isMobile ? 0 : topLeftRad}
+                    topLeftRad={isMobile ? 0 : (isTablet ? 2.5 : topLeftRad)}
                 />
             </SlideContainer>
             {title && <Title>{title}</Title>}

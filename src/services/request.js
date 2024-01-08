@@ -43,3 +43,13 @@ export const requestMyth = async (id) => {
         throw error;
     }
 };
+
+export const addVisit = async () => {
+    try {
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/visit`);
+        console.log(response, "res")
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};
