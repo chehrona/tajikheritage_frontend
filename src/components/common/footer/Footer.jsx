@@ -22,7 +22,7 @@ export default function Footer() {
                     The Tajik Heritage 2023
                 </Text>
                 <SocialsWrapper>
-                    <a href='https://www.pinterest.ca/tajik_heritage/' rel="noreferrer" target={'_blank'}>
+                    <a href='https://www.pinterest.ca/thetajikheritage/' rel="noreferrer" target={'_blank'}>
                         <StyledIconButton>
                             <StyledIcon src={pinIcon} rad={true} />
                         </StyledIconButton>
