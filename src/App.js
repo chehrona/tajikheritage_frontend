@@ -42,6 +42,15 @@ function App() {
         }
     }, []);
 
+    const handleCopy = async () => {
+        try {
+            const textToCopy = 'The text is copyright protected by thetajikheritage.com.';
+            await navigator.clipboard.writeText(textToCopy);
+        } catch (error) {
+            console.error('Unable to copy text to clipboard:', error);
+        }
+    };
+
     const handleScroll = () => {
         const currentScrollPos = parentRef.current.scrollTop;
         const parentHeight = parentRef.current.getBoundingClientRect().height;
@@ -57,7 +66,7 @@ function App() {
 
     return (
         <LangContext.Provider value={value}>
-            <div className='content-container' ref={parentRef} onScroll={handleScroll}>
+            <div className='content-container' ref={parentRef} onScroll={handleScroll} onCopy={handleCopy}>
                 {!isPrint && <Header setIsMenuShown={setIsMenuShown} isMenuShown={isMenuShown} />}
                 <Menu setIsMenuShown={setIsMenuShown} isMenuShown={isMenuShown} />
                 <Routes />

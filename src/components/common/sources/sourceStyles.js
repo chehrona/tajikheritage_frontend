@@ -97,6 +97,7 @@ export const RefWrapper = styled.div`
 
     @media (max-width: 480px) {
         padding: 1rem;
+        overflow-x: none;
     }
 `;
 
