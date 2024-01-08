@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Caveat:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 480px) {
@@ -80,13 +80,3 @@ sup, sub {
 sub { 
     top: 0.4rem; 
 }
-
-.emptyLine {
-    height: 2rem;
-    width: 100%;
-};
-
-.space {
-    height: 0.5rem;
-    width: 100%;
-};
