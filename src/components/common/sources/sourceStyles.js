@@ -83,6 +83,7 @@ export const RefContainer = styled.div`
 export const RefWrapper = styled.div`
     padding: 1rem 2rem 1rem 2rem;
     overflow-y: scroll;
+    overflow-x: hidden;
     margin: 0.5rem 0.25rem;
     display: ${({ open }) => open ? "block" : "none"};
 
@@ -97,7 +98,6 @@ export const RefWrapper = styled.div`
 
     @media (max-width: 480px) {
         padding: 1rem;
-        overflow-x: none;
     }
 `;
 
