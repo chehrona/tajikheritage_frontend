@@ -32,7 +32,8 @@ function App() {
         }
     ), [lang, isPrint]);
 
-    useEffect(() => {
+    useEffect(() => {      
+        // Prevent right click
         const handleContextmenu = e => {
             e.preventDefault();
         }

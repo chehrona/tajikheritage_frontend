@@ -252,3 +252,17 @@ export const stepInfo = [
         ],
     },
 ];
+
+export const storeVisit = (page) => {
+    const hasVisitedBefore = localStorage.getItem("th_Id");
+    let storageValue = '';
+
+    if (!hasVisitedBefore) {
+        storageValue = page + '_' + Math.random().toString(36).substring(2, 9);
+        localStorage.setItem("th_Id", storageValue);
+    } else {
+        storageValue = localStorage.getItem("th_Id", hasVisitedBefore);
+    }
+
+    return storageValue;
+};

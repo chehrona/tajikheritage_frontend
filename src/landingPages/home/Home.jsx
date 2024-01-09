@@ -15,7 +15,7 @@ function Home() {
 
     const recordVisit = async () => {
         try {
-            await addVisit();
+            await addVisit('home');
         } catch (error) {
             console.error("Error recording visit:", error);
         }
