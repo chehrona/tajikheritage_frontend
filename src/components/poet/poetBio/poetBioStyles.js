@@ -276,6 +276,7 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    pointer-events: auto;
 
     @media (max-width: 480px) {
         padding: 0.5rem 1.5rem 1.5rem 1.5rem;

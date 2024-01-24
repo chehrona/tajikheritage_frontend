@@ -3,7 +3,7 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import { useSetLang } from "../../../App";
 import { useMediaQuery } from 'react-responsive';
 
-import Slideshow from "../../common/slideshow/Slideshow";
+import { ImgInfo } from "../../common/slideshow/slideshowStyles";
 
 import { 
     Year,
@@ -22,6 +22,7 @@ import {
     YearSlider,
     UnitWrapper,
     YearWrapper,
+    Image
 } from "./poetCareerStyles";
 
 export default function PoetCareer({ points }) {
@@ -79,13 +80,14 @@ export default function PoetCareer({ points }) {
                             return (
                                 <InfoWrapper key={'a' + i} ref={childRef}>
                                     <ImageWrapper>
-                                        <Slideshow
-                                            slides={entry.slides}
+                                        <Image
+                                            src={process.env.REACT_APP_BASE_URL + entry.slides[0]?.img}
                                             width={currentSize * 0.36}
                                             height={"26rem"}
-                                            topLeftRad={1}
-                                            bottomLeftRad={1}
-                                        />
+                                        >
+                                            {entry.slides[0]?.info &&
+                                                <ImgInfo dangerouslySetInnerHTML={{__html: entry.slides[0]?.info}} />}
+                                        </Image>
                                     </ImageWrapper>
                                     <DescWrapper>
                                         <Desc dangerouslySetInnerHTML={{__html: entry?.text}} />

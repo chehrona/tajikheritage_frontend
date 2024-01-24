@@ -16,7 +16,7 @@ export const StyledFrame = styled.iframe`
     background: #202020
         url("/loader.png") center
         no-repeat;
-    background-size: 50% auto;
+    background-size: 20% auto;
 `;
 
 export const Header = styled.div`

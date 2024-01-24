@@ -13,18 +13,21 @@ import {
     StyledTooltip,
 } from "./bookshelfDesignStyles";
 
-export default function BookshelfDesign({ shelfNum, work, overlay, setOverlay }) {
+export default function BookshelfDesign({ shelfNum, work, poet }) {
     const [openBook, setOpenBook] = useState(false);
     const [bookDialog, setBookDialog] = useState(null);
+    const [bookIndex, setBookIndex] = useState(null);
 
     function handleBookAction(e) {
-        const bookIndex = e.target.getAttribute("data");
-        setOverlay(parseInt(bookIndex));
+        const index = e.target.getAttribute("data");
+        setBookIndex(index);
 
-        if (work[overlay - shelfNum]?.msg) {
+        if (poet[index]?.msg) {
             setBookDialog(true);
-        } else {
+            setOpenBook(false);
+        } else if (poet[index]?.source) {
             setOpenBook(true);
+            setBookDialog(false);
         }
     }
 
@@ -39,28 +42,25 @@ export default function BookshelfDesign({ shelfNum, work, overlay, setOverlay })
                 {work?.map((book, i) => {
                     return (
                         <StyledTooltip
-                            title={book.title}
+                            title={book?.title}
                             placement="top"
                             arrow={true}
                             key={i}
                         >
-                            <span>
-                                <BookWrapper>
-                                    <Book
-                                        data={shelfNum + i}
-                                        src={process.env.REACT_APP_BASE_URL + book.cover}
-                                        onClick={(e) => handleBookAction(e)}
-                                    />
-                                </BookWrapper>
-                            </span>
+                            <BookWrapper>
+                                <Book
+                                    data={shelfNum + i}
+                                    src={process.env.REACT_APP_BASE_URL + book?.cover}
+                                    onClick={(e) => handleBookAction(e)}
+                                />
+                            </BookWrapper>
                         </StyledTooltip>
                     )
                 })}
             </BooksContainer>
             <Shelf />
-            {(work[overlay - shelfNum]?.msg && bookDialog) ?
-                <BookDialog msg={work[overlay - shelfNum]?.msg} setBookDialog={setBookDialog} />
-            : (openBook && <BookReader book={work[overlay - shelfNum]} setOpenBook={setOpenBook} />)}
+            <BookDialog book={poet[bookIndex]} setBookDialog={setBookDialog} bookDialog={bookDialog} setBookIndex={setBookIndex} />
+            <BookReader book={poet[bookIndex]} setOpenBook={setOpenBook} openBook={openBook} setBookIndex={setBookIndex} />
         </section>
     )
 }

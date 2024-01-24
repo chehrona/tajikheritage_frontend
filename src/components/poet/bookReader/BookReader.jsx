@@ -15,15 +15,16 @@ import {
     StyledCloseIcon,
 } from "./bookReaderStyles";
 
-export default function BookReader({ book, setOpenBook }) {
+export default function BookReader({ book, setOpenBook, openBook, setBookIndex }) {
     const [pdfUrl, setPdfUrl] = useState("");
 
     function closeReader() {
         setOpenBook(false);
+        setBookIndex(null);
     }
 
-    useEffect(() => {
-        axios.get(book.link, { responseType: 'arraybuffer' })
+    useEffect(() => {    
+        axios.get(`${process.env.REACT_APP_BASE_URL + book?.source}`, { responseType: 'arraybuffer' })
             .then(response => {
                 const blob = new Blob([response.data], { type: 'application/pdf' });
                 const pdfUrl = URL.createObjectURL(blob);
@@ -31,11 +32,11 @@ export default function BookReader({ book, setOpenBook }) {
             })
             .catch(error => {
                 console.error('Error fetching PDF file:', error);
-            });
-    }, []);
+            })
+    }, [book?.source]);    
 
     return (
-        <StyledDialog open={true} fullScreen>
+        <StyledDialog open={openBook} fullScreen>
             <Header>
                 <LogoWrapper>
                     <StyledLink to={'/'}>
@@ -51,7 +52,7 @@ export default function BookReader({ book, setOpenBook }) {
                     </StyledIconButton>
                 </IconWrapper>
             </Header>
-            <StyledFrame src={`${pdfUrl}#toolbar=0`}></StyledFrame>
+            <StyledFrame src={`${pdfUrl}#toolbar=0`} />
         </StyledDialog>
     )
 }

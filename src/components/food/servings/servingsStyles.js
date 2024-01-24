@@ -1,6 +1,5 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const QuantityContainer = styled.div`
     display: flex;

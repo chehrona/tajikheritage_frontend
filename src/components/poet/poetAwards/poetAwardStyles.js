@@ -41,18 +41,15 @@ export const MainContainer = styled.div`
 export const AwardWrapper = styled.div`
     padding: 0rem 3rem 0rem 3rem;
     display: flex;
-    gap: 2.57%;
     flex-wrap: wrap;
-    justify-content: start;
-
+    justify-content: space-between;
+    
     @media (max-width: 480px) {
         padding: 0rem 1.5rem;
-        gap: 4.2%;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 2rem;
-        gap: 3.1%;
     }
 `;
 

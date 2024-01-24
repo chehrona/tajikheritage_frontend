@@ -5,7 +5,7 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100svh - 6rem);
+    min-height: 100svh;
 `;
 
 export const LoaderImg = styled.img`

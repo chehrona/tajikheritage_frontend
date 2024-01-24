@@ -28,7 +28,7 @@ export default function PoetAwards({ poet }) {
 
     return (
         <MainContainer id="Awards">
-            <AwardWrapper>
+            <AwardWrapper length={poet[lang]}>
                 {poet[lang].map((award, i) => {
                     return (
                         <AwardCard key={i} delay={`${0.05*i}s`}>

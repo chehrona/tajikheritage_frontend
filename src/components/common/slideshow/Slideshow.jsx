@@ -21,7 +21,6 @@ export default function Slideshow({
 }) {
     const { lang } = useSetLang();
     const [translate, setTranslate] = useState(0);
-    const [isHovered, setIsHovered] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [infoArr, setInfoArr] = useState([...slides]);
 
@@ -54,16 +53,11 @@ export default function Slideshow({
                             translate={translate}
                             topLeftRad={topLeftRad}
                             bottomLeftRad={bottomLeftRad}
-                            onMouseEnter={() => setIsHovered(1)}
-                            onMouseLeave={() => setIsHovered(0)}
                             src={process.env.REACT_APP_BASE_URL + entry?.img}
                             overlay={process.env.REACT_APP_BASE_URL + entry?.overlay}
                         >
                             {entry?.info && 
-                                <ImgInfo
-                                    isHovered={isHovered}
-                                    dangerouslySetInnerHTML={{__html: entry?.info}} 
-                                />
+                                <ImgInfo dangerouslySetInnerHTML={{__html: entry?.info}} />
                             } 
                         </ImageWrapper>
                     )

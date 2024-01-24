@@ -243,3 +243,17 @@ export const ImageWrapper = styled.div`
         display: none;
     }
 `;
+
+export const Image = styled.div`
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 26rem;
+    min-width: ${({ width }) => width && `${width}px`};
+    max-width: ${({ width }) => width && `${width}px`};
+    background: ${({ src }) => src && `url(${ src })`};
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    transform: translateX(${({ translate }) => `${translate}px`});
+    background-size: ${({ src }) => src && 'cover'};
+`;

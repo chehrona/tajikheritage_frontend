@@ -74,3 +74,13 @@ export const addVisit = async (page) => {
         throw error;
     }
 };
+
+export const addEmail = async (info) => {
+    try {
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/email`, { info });
+
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};

@@ -169,7 +169,6 @@ export const ImgInfo = styled.div`
     z-index: 11;
     font-style: italic;
     margin: 0.25rem;
-    min-width: 20rem;
     text-align: left;
     color: #fcf6e9;
     bottom: 0rem;

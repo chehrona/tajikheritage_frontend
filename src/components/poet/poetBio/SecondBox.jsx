@@ -4,6 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { ArrowForwardIos } from "@mui/icons-material";
 
+import { DescWrapper } from "../../common/descWrapper/DescWrapper";
+
 import { 
     Year,
     BoxTwo,
@@ -62,7 +64,7 @@ export default function SecondBox({ poet }) {
                     />
                     <Info>
                         <Year>{infoArr[0]?.year}</Year>
-                        <Text dangerouslySetInnerHTML={{__html: infoArr[0]?.desc}} />
+                        <DescWrapper desc={infoArr[0]?.desc} TextWrapper={Text} />
                     </Info>
                 </LineWrapper>
                 <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[1].img} />
