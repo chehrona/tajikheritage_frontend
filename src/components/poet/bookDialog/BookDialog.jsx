@@ -21,15 +21,24 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
     const { lang } = useSetLang();
     const [email, setEmail] = useState("");
     const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    function handleChange(e) {
+        setError(false);
+
+        const value = e.target.value.toLowerCase();
+        setEmail(value);
+    }
 
     function handleClose() {
         setBookDialog(false);
         setBookIndex(null);
         setEmail("");
         setError(false);
+        setSuccess(false);
     }
 
-    function handleSubmit() {
+    const handleSubmit = async () => {
         const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
         if (validEmail.test(email)) {
@@ -38,7 +47,14 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
                 email: email
             };
     
-            addEmail(info);
+            await addEmail(info)
+                .then((res) => res.status === 200 && setSuccess(true))
+                .finally(() => {
+                    setTimeout(() => {
+                        handleClose();
+                    }, 1000);
+                });
+        
         } else {
             setError(true);
         }
@@ -64,13 +80,16 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
                             <InputField
                                 placeholder={lang === "us" ? "Enter your email" : (lang === "ru" ? "Адрес электронной почты" : "Суроғаи почтаи электронӣ")}
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => handleChange(e)}
                             />
                             <StyledButton onClick={handleSubmit}>
                                 {lang === "us" ? "Submit" : (lang === "ru" ? "Ввод" : "Фирист")}
                             </StyledButton>
                         </InputWrapper>}
-                        <Error>{error && (lang === "us" ? "Invalid email" : (lang === "ru" ? "Неверный адрес" : "Почтаи электронӣ нодуруст"))}</Error>
+                        <Error error={error} success={success}>{error ? 
+                            (lang === "us" ? "Invalid email" : (lang === "ru" ? "Неверный адрес" : "Почтаи электронӣ нодуруст")) : (
+                                success && (lang === "us" ? "We got your email. Thank you." : (lang === "ru" ? "Неверный адрес" : "Почтаи электрониатонро гирифтем. Раҳмат.")))}
+                        </Error>
                     </BodyContainer>
                 </InfoContainer>
             </StyledContent>

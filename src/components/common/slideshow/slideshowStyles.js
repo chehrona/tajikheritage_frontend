@@ -89,10 +89,10 @@ export const ImageWrapper = styled.div`
     transition: transform 0.5s;
     background-repeat: no-repeat;
     background-position: center center;
-    height: ${({ width }) => width && `${width*1.2049}px`};
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
     background: ${({ src }) => src && `url(${ src })`};
+    height: ${({ width, height }) => height ? height : (width && `${width*1.2049}px`)};
     border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
     border-bottom-left-radius: ${({ bottomLeftRad }) => bottomLeftRad && `${bottomLeftRad}rem`};
     transform: translateX(${({ translate }) => `${translate}px`});
@@ -176,36 +176,15 @@ export const ImgInfo = styled.div`
     width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 
-    ${({ up }) => up && `
-        color: #0F0A00;
-        left: calc(50% + 1rem);
-        background-color: transparent;
-        width: auto;
-        bottom: 3.5rem;
-        width: 100%;
-        margin: 0rem;
-    `}
-
     @media (max-width: 480px) {
         font-size: 1.3rem;
         line-height: 1.35rem;
         bottom: 0.5rem;
-
-        ${({ up }) => up && `
-            bottom: -1rem;
-            left: 1.5rem;
-        `}
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.3rem;
-        bottom: 1rem;
-        min-width: 30rem;
-
-        ${({ up }) => up && `
-            bottom: 0rem;
-            left: 3rem;
-        `}
+        bottom: 0.75rem;
     }
 `;

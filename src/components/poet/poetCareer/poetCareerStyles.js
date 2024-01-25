@@ -145,19 +145,28 @@ export const Desc = styled.div`
     padding: 1.5rem 2rem 1.5rem 2rem;
     font-size: 1.1rem;
     line-height: 2rem;
+    height: 26rem;
     text-align: justify;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #bd9d52;
+        border-radius: 0.25rem;
+    }
 
     @media (max-width: 480px) {
         padding: 1.5rem;
         font-size: 1.3rem;
-
-        .imgDesc {
-            display: none;
-        }
+        height: 32.6rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
+        padding: 1.5rem 2rem 2.5rem 2rem;
     }
 `;
 
@@ -171,10 +180,15 @@ export const Footer = styled.div`
     position: absolute;
     bottom: 0.5rem;
     right: 0rem;
+    z-index: 10;
 
     @media (max-width: 480px) {
         display: none;
         visibility: hidden;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        bottom: 0rem;
     }
 `;
 

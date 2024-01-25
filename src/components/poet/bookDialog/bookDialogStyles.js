@@ -80,6 +80,6 @@ export const StyledButton = styled(Button)`
 
 export const Error = styled.div`
     font-size: 1rem;
-    color: #ad0f0e;
+    color: ${({ error, success }) => error ? '#ad0f0e' : (success && '#297309')};
     height: 1.75rem;
 `;

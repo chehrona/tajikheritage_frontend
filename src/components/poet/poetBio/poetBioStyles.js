@@ -89,6 +89,11 @@ export const Desc = styled.div`
     color: #333333;
 `;
 
+export const FirstBoxImg = styled.img`
+    width: 100%;
+    height: auto;
+`;
+
 // Box two ****************************
 export const BoxTwo = styled.div`
     margin-top: 1rem;
@@ -492,25 +497,18 @@ export const LeftContainer = styled.div`
 export const RightContainer = styled.div`
     width: 50%;
     height: 30rem;
-    background: #333333;
-    background: ${({ src }) => src && `url(${ src })`};
-    background-size: ${({ src }) => src ? 'cover' : 'contain'};
-    background-repeat: no-repeat;
-    background-position: center center;
     transition: all 0.5s;
     position: relative;
     overflow: hidden;
 
     @media (max-width: 480px) {
         width: 100%;
-        margin-top: ${({ first }) => first && '-2rem'};
-        height: ${({ first }) => first ? '17rem': '23rem'};
+        height: 23rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 100%;
-        height: ${({ first }) => first ? '30rem': '40rem'};
-        margin-top: ${({ first }) => first && '-2.5rem'};
+        height: 38rem;
     }
 `;
 
@@ -605,23 +603,13 @@ export const StyledButton = styled(IconButton)`
 `;
 
 export const ImgInfo = styled.div`
-    position: absolute;
     z-index: 10;
     font-style: italic;
     width: 100%;
     text-align: left;
-    color: #fcf6e9;
+    color: #0F0A00;
     bottom: 0.5rem;
-    background-color: #26262680;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-
-    ${({ up }) => up && `
-        color: #0F0A00;
-        left: calc(50% + 1rem);
-        background-color: transparent;
-        width: auto;
-        bottom: 3.5rem;
-    `}
 
     @media (max-width: 480px) {
         font-size: 1.25rem;
@@ -637,11 +625,5 @@ export const ImgInfo = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.3rem;
-        bottom: 0.5rem;
-
-        ${({ up }) => up && `
-            bottom: 0rem;
-            left: 3rem;
-        `}
     }
 `;

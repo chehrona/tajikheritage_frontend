@@ -7,7 +7,8 @@ import {
     RightContainer,
     ImgInfo,
     Year,
-    Desc
+    Desc,
+    FirstBoxImg
 } from './poetBioStyles';
 
 export default function FirstBox({ poet }) {
@@ -19,11 +20,10 @@ export default function FirstBox({ poet }) {
                 <Year color={'#000'}>{poet[lang]?.year}</Year>
                 <Desc dangerouslySetInnerHTML={{__html: poet[lang]?.desc}} />
             </LeftContainer>
-            <RightContainer src={process.env.REACT_APP_BASE_URL + poet?.img} first={1} />
-            <ImgInfo
-                up={1}
-                dangerouslySetInnerHTML={{__html: poet[lang]?.imgDesc}} 
-            />
+            <RightContainer>
+                <FirstBoxImg src={process.env.REACT_APP_BASE_URL + poet?.img} />
+                <ImgInfo dangerouslySetInnerHTML={{__html: poet[lang]?.imgDesc}} />
+            </RightContainer>
         </BoxOne>
     )
 }

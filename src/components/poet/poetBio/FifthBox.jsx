@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSetLang } from "../../../App";
+import { useMediaQuery } from 'react-responsive';
 
 import Slideshow from '../../common/slideshow/Slideshow';
 
@@ -15,6 +16,9 @@ export default function FifthBox({ poet }) {
     const { lang } = useSetLang();
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
+    const isMobile = useMediaQuery({ query: `(max-width: 1024px)` });
+    
+    let height = isMobile ? '38rem' : '30rem';
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -33,6 +37,7 @@ export default function FifthBox({ poet }) {
             <RightContainer ref={parentRef}>
                 <Slideshow
                     width={screenSize}
+                    height={height}
                     slides={poet?.five[lang].slides}
                 />
             </RightContainer>

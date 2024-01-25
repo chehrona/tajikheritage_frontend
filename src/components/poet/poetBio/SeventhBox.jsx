@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSetLang } from "../../../App";
+import { useMediaQuery } from "react-responsive";
 
 import Slideshow from '../../common/slideshow/Slideshow';
 
@@ -17,6 +18,9 @@ export default function SeventhBox({ poet }) {
     const { lang } = useSetLang();
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
+    const isMobile = useMediaQuery({ query: `(max-width: 1024px)` });
+
+    let height = isMobile ? '38rem' : '30rem';
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -37,6 +41,7 @@ export default function SeventhBox({ poet }) {
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
+                    height={height}
                     width={screenSize}
                     slides={poet?.seven[lang].slides}
                 />
