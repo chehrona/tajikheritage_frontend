@@ -76,7 +76,7 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
                     </InfoTitle>
                     <BodyContainer>
                         <Desc>{book?.msg}</Desc>
-                        {!book?.email && <InputWrapper>
+                        {book?.email && <InputWrapper>
                             <InputField
                                 placeholder={lang === "us" ? "Enter your email" : (lang === "ru" ? "Адрес электронной почты" : "Суроғаи почтаи электронӣ")}
                                 value={email}
@@ -88,7 +88,7 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
                         </InputWrapper>}
                         <Error error={error} success={success}>{error ? 
                             (lang === "us" ? "Invalid email" : (lang === "ru" ? "Неверный адрес" : "Почтаи электронӣ нодуруст")) : (
-                                success && (lang === "us" ? "We got your email. Thank you." : (lang === "ru" ? "Неверный адрес" : "Почтаи электрониатонро гирифтем. Раҳмат.")))}
+                                success && (lang === "us" ? "We got your email address. Thank you." : (lang === "ru" ? "Мы получили ваш адрес электронной почты. Спасибо." : "Почтаи электрониатонро гирифтем. Раҳмат.")))}
                         </Error>
                     </BodyContainer>
                 </InfoContainer>

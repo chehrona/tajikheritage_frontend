@@ -50,6 +50,8 @@ export const AwardWrapper = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 2rem;
+        justify-content: flex-start;
+        gap: 1.5rem;
     }
 `;
 

@@ -27,7 +27,6 @@ import {
     SlideUp,
     SlideDown,
     StyledArrowButton,
-    Cover
 } from "./movieDialogStyles";
 
 const ContentTransition = ({ children, ...props }) => (
@@ -72,9 +71,8 @@ export default function MovieDialog({ movieInfo, setShowMovieInfo, showMovieInfo
             >
                 {showVideo ? (
                     <InfoContainer>
-                        <Cover />
                         <StyledFrame
-                            src={`https://www.youtube-nocookie.com/embed/${movieInfo?.link}?autoplay=1&rel=0`}
+                            src={`https://www.youtube-nocookie.com/embed/${movieInfo?.link}?autoplay=1&rel=0&modestbranding=1`}
                             allow='autoplay; encrypted-media'
                             frameBorder="0"
                             fullWidth
@@ -99,7 +97,7 @@ export default function MovieDialog({ movieInfo, setShowMovieInfo, showMovieInfo
                                 </ReleaseInfo>
                                 <Desc expand={fullSize} dangerouslySetInnerHTML={{ __html: movieInfo?.desc}} />
                                 <Director>
-                                    {lang === 'us' ? 'Director' : 'Режиссёр'}
+                                    {lang === 'us' ? 'Director' : (lang === 'tj' ? 'Офаранда' : 'Режиссёр')}
                                 </Director>
                                 <div>{movieInfo?.director}</div>
                             </InfoWrapper>

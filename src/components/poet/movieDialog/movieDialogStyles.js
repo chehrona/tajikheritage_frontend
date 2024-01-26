@@ -313,14 +313,3 @@ export const SlideUp = styled(ArrowForwardIos)`
 export const SlideDown = styled(ArrowForwardIos)`
     transform: rotate(-180deg);
 `;
-
-export const Cover = styled.div`
-    background-color: #000000;
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    top: 0rem;
-    right: 0rem;
-    pointer-events: none;
-    cursor: none;
-`;
