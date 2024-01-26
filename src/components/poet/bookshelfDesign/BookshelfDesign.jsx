@@ -49,6 +49,7 @@ export default function BookshelfDesign({ shelfNum, work, poet }) {
                         >
                             <BookWrapper>
                                 <Book
+                                    grey={book?.msg}
                                     data={shelfNum + i}
                                     src={process.env.REACT_APP_BASE_URL + book?.cover}
                                     onClick={(e) => handleBookAction(e)}

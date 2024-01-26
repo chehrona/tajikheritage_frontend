@@ -68,6 +68,8 @@ export const Book = styled.img`
         url("/loader.png") center
         no-repeat;
     background-size: 50% auto;
+    filter: ${({ grey }) => grey && 'grayscale(0.5)'};
+    opacity: ${({ grey }) => grey && 0.5};
 `;
 
 export const Shelf = styled.div`
