@@ -87,6 +87,28 @@ export const Year = styled.div`
 
 export const Desc = styled.div`
     color: #333333;
+    
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding: 0rem 0rem 1rem 0rem;
+    }
+`;
+
+export const RightImageWrapper = styled.div`
+    width: 50%;
+    height: 30rem;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 480px) {
+        width: 100%;
+        height: 23rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        width: 100%;
+        height: 38rem;
+    }
 `;
 
 export const FirstBoxImg = styled.img`
@@ -483,14 +505,9 @@ export const LeftContainer = styled.div`
     position: relative;
     height: 100%;
 
-    @media (max-width: 480px) {
+    @media (max-width: 1024px) {
         width: 100%;
-        height: ${({ seven }) => seven ? '30rem': 'auto'};
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 100%;
-        height: ${({ seven }) => seven ? '40rem': 'auto'};
+        height: auto;
     }
 `;
 
@@ -508,7 +525,7 @@ export const RightContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 100%;
-        height: 38rem;
+        height: 40rem;
     }
 `;
 

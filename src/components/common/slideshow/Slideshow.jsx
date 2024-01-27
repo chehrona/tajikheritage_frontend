@@ -66,7 +66,7 @@ export default function Slideshow({
                 })}
             </ImageContainer>
             <ButtonWrapper>
-                <StyledButton left={true} onClick={movePrev} disabled={currentIndex === 0}>
+                <StyledButton left={1} onClick={movePrev} disabled={currentIndex === 0}>
                     <Arrow>
                         <ArrowForwardIos style={{marginLeft: '1px'}}/>
                     </Arrow>

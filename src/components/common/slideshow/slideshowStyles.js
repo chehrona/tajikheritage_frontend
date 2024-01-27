@@ -1,23 +1,5 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { IconButton } from '@mui/material';
-
-const slideUp = keyframes`
-    from {
-        height: 1.8rem;
-    }
-    to {
-        height: 3rem;
-    }
-`;
-  
-//   @keyframes slideDown {
-//     from {
-//       bottom: 0;
-//     }
-//     to {
-//       bottom: -1.8rem;
-//     }
-//   }
 
 export const StyledIconButton = styled(IconButton)`
     width: 3.5rem;
@@ -175,16 +157,15 @@ export const ImgInfo = styled.div`
     background-color: #262626a6;
     width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    height: auto;
 
     @media (max-width: 480px) {
         font-size: 1.3rem;
         line-height: 1.35rem;
-        bottom: 0.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
-        line-height: 1.3rem;
-        bottom: 0.75rem;
+        line-height: 1.4rem;
     }
 `;

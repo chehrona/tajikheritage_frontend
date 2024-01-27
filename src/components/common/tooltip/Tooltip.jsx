@@ -9,21 +9,20 @@ import {
     ImageWrapper
 } from "./tooltipStyles";
 
-export const Tooltip = ({ key, content }) => {
-    const [show, setShow] = useState(0);
+export const Tooltip = ({ content }) => {
+    const [show, setShow] = useState(false);
 
     function handleShow() {
-        setShow(1);
+        setShow(true);
     }
 
     function handleClickAway() {
-        setShow(0);
+        setShow(false);
     }
 
     return (
         <StyledTooltip
             open={show}
-            key={key}
             arrow
             placement="top"
             title={content?.img ? (

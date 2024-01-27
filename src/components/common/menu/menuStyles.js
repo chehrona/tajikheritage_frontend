@@ -68,15 +68,6 @@ export const Logo = styled.img`
     }
 `;
 
-export const LogoHalf = styled.img`
-    border-radius: 50%;
-    height: 43em;
-    width: 44.5em;
-    position: absolute;
-    top: 11em;
-    left: 5.25em;
-`;
-
 export const PageNamesContainer = styled.div`
     width: 40%;
     height: 100%;

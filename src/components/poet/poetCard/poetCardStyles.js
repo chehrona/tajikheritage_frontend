@@ -136,6 +136,10 @@ export const PoetNameBox = styled.div`
         line-height: 1.7rem;
         left: -0.5rem;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        top: 17rem;
+    }
 `;
 
 export const PoetDates = styled.div`

@@ -8,7 +8,6 @@ import {
     LogoContainer,
     Logo,
     PageName,
-    LogoHalf,
     PageNamesContainer,
     PageDesc,
     StyledLink, 
@@ -30,7 +29,6 @@ export default function Menu({ isMenuShown, setIsMenuShown }) {
             }}
         >
             <LogoContainer>
-                {/* <LogoHalf src="zarduzi.png"></LogoHalf> */}
                 <Logo src={'/tajiks.png'}></Logo>
             </LogoContainer>
             <PageNamesContainer>

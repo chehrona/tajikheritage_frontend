@@ -50,6 +50,7 @@ export const SlideContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 30rem;
+        height: 36.15rem;
         margin-bottom: 1rem;
         ${({ reverse }) => reverse ? "margin-left: 2rem" : "margin-right: 2rem"};
     }

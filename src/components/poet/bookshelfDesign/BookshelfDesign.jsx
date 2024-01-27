@@ -15,7 +15,7 @@ import {
 
 export default function BookshelfDesign({ shelfNum, work, poet }) {
     const [openBook, setOpenBook] = useState(false);
-    const [bookDialog, setBookDialog] = useState(null);
+    const [bookDialog, setBookDialog] = useState(false);
     const [bookIndex, setBookIndex] = useState(null);
 
     function handleBookAction(e) {

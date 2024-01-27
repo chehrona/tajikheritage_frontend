@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useSetLang } from "../../App";
 
 import { requestPage } from "../../services/request";
@@ -8,16 +7,11 @@ import PoetCard from '../../components/poet/poetCard/PoetCard';
 import Fade from '../../components/common/transition/Transition';
 import Loader from "../../components/common/loader/Loader";
 
-import { PageContainer, PoetBoxContainer, TempImg, TempPageContainer, TempTitle} from './languagePageStyles';
+import { PageContainer, PoetBoxContainer } from './languagePageStyles';
 
 function Language() {
-    const location = useLocation();
-    const { setLang } = useSetLang();
     const [poets, setPoets] = useState([]);
     const [loading, setLoading] = useState(0);
-
-    // Delete
-    const { lang } = useSetLang();
 
     const fetchData = async () => {
         try {
@@ -34,10 +28,6 @@ function Language() {
     useEffect(() => {
         // Get data
         fetchData();
-
-        if (location.search.length) {
-            setLang(location.search.substring(1));
-        }
     }, []);
 
     return (

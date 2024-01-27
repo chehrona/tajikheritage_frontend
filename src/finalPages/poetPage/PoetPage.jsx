@@ -27,18 +27,18 @@ export default function PoetPage() {
     const { lang } = useSetLang();
     const [poet, setPoet] = useState();
     const [error, setError] = useState(0);
-    const [loading, setLoading] = useState(0);
+    const [loading, setLoading] = useState(false);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const fetchData = async () => {
         try {
-            setLoading(1);
+            setLoading(true);
             const data = await requestPoet(id);
             setPoet(data);
         } catch (error) {
             setError(1);
         } finally {
-            setLoading(0);
+            setLoading(false);
         }
     };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSetLang } from "../../../App";
 import { langNames } from "./langNames";
 import { ClickAwayListener } from "@mui/material";
@@ -12,8 +12,8 @@ import {
 } from "./flagsStyles";
 
 export default function Flags() {
-    const [showLangMenu, setShowLangMenu] = useState(false),
-        { lang, setLang } = useSetLang();
+    const [showLangMenu, setShowLangMenu] = useState(false);
+    const { lang, setLang } = useSetLang();
 
     function showLangOptions() {
         setShowLangMenu(true);
@@ -21,7 +21,7 @@ export default function Flags() {
 
     function changeLang(e) {
         const iconTitle = e.currentTarget.getAttribute("data");
-
+        
         setLang(iconTitle);
         setShowLangMenu(false);
     }
@@ -29,6 +29,10 @@ export default function Flags() {
     function handleClickAway() {
         setShowLangMenu(false);
     }
+
+    useEffect(() => {
+        localStorage.setItem('lang', lang);
+    }, [lang]);
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>

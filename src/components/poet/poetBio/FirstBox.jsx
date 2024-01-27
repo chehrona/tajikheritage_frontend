@@ -4,7 +4,7 @@ import { useSetLang } from '../../../App';
 import {
     BoxOne,
     LeftContainer,
-    RightContainer,
+    RightImageWrapper,
     ImgInfo,
     Year,
     Desc,
@@ -20,10 +20,10 @@ export default function FirstBox({ poet }) {
                 <Year color={'#000'}>{poet[lang]?.year}</Year>
                 <Desc dangerouslySetInnerHTML={{__html: poet[lang]?.desc}} />
             </LeftContainer>
-            <RightContainer>
+            <RightImageWrapper>
                 <FirstBoxImg src={process.env.REACT_APP_BASE_URL + poet?.img} />
                 <ImgInfo dangerouslySetInnerHTML={{__html: poet[lang]?.imgDesc}} />
-            </RightContainer>
+            </RightImageWrapper>
         </BoxOne>
     )
 }

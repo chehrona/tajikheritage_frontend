@@ -18,12 +18,14 @@ export function useSetLang() {
 }
 
 function App() {
-    const [lang, setLang] = useState('us');
+    const [lang, setLang] = useState(() => {
+        return localStorage.getItem('lang') || 'us';
+    });
     const parentRef = useRef(null);
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);
     const [isPrint, setIsPrint] = useState(false);
-    const [isMenuShown, setIsMenuShown] = useState(null);
+    const [isMenuShown, setIsMenuShown] = useState(false);
 
     const value = useMemo(() => (
         {
