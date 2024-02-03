@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-import { requestPage } from "../../services/request";
+import { requestMiddlePage } from "../../services/request";
 
-import SectionCard from '../../components/common/sectionCard/SectionCard';
+import PoetCard from '../../components/poet/poetCard/PoetCard';
 import Fade from '../../components/common/transition/Transition';
 import Loader from "../../components/common/loader/Loader";
 
-import { PageContainer, SectionBoxContainer } from './languagePageStyles';
+import { PageContainer, PoetBoxContainer } from './poetsPageStyles';
 
-function Language() {
-    const [sections, setSections] = useState([]);
+function PoetsPage() {
+    const [poets, setPoets] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestPage("language");
-            setSections(data[0].sections);
+            const data = await requestMiddlePage("language/poets");
+            setPoets(data);
         } catch (error) {
             console.error("Error fetching data:", error);
         } finally {
@@ -32,14 +32,14 @@ function Language() {
     return (
         <>
             <Loader inProp={loading} />
-            {sections && (
+            {poets && (
                 <Fade inProp={!loading}>
-                    <PageContainer justify={sections?.length}>
-                        <SectionBoxContainer>
-                            {sections?.map((section, i) => {
-                                return (<SectionCard key={i} section={section} i={i} link={section?.link} />);
+                    <PageContainer justify={poets?.length}>
+                        <PoetBoxContainer>
+                            {poets?.map((poet, i) => {
+                                return (<PoetCard key={i} poet={poet} i={i} />);
                             })}
-                        </SectionBoxContainer>
+                        </PoetBoxContainer>
                     </PageContainer>
                 </Fade>
             )}
@@ -57,4 +57,4 @@ function Language() {
     );
 }
 
-export default Language;
+export default PoetsPage;

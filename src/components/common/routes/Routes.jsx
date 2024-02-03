@@ -8,6 +8,7 @@ import RecipePagePrint from '../../../finalPages/recipePage/RecipePagePrint';
 import Language from '../../../landingPages/language/Language';
 import Customs from '../../../landingPages/customs/Customs';
 import History from '../../../landingPages/history/History';
+import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 import PoetPage from '../../../finalPages/poetPage/PoetPage';
 import Home from '../../../landingPages/home/Home';
 import MythPage from '../../../finalPages/mythPage/MythPage';
@@ -24,6 +25,7 @@ export default function Routes() {
             <Route path="/cuisine/recipes/:id/print" element={<RecipePagePrint />} />
             <Route path="/cuisine" element={<Cuisine />} />
             <Route path="/language" element={<Language />} />
+            <Route path="/language/poets" element={<PoetsPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />
             <Route path="/history" element={<History />} />
             <Route path="/" element={<Home />} />

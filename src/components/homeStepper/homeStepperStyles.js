@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
     width: 100%;
-    height: calc(100svh - 10.23rem);
     overflow: hidden;
     position: relative;
     z-index: 1;
+    height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-		min-height: calc(100svh - 9.23rem);
+		min-height: calc(100svh - 8rem);
     }
 `;
 

@@ -32,7 +32,6 @@ export const PoetCardWrapper = styled.div`
     &:hover {
         border-radius: 1.5rem;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
-        transition: border-radius 250ms, box-shadow 400ms;
     }
 
     @media (max-width: 480px) {
@@ -161,6 +160,7 @@ export const PoetInfoContainer = styled.div`
     left: 2rem;
     bottom: 3rem;
     width: 20rem;
+    color: #dedbdb;
 
     @media (max-width: 480px) {
         display: none;

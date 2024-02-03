@@ -15,11 +15,23 @@ export const requestPage = async (url) => {
     }
 };
 
+export const requestMiddlePage = async (url) => {
+    try {
+        const userId = storeVisit(url);
+
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/${url}`, { params: { url, userId } });
+
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export const requestPoet = async (id) => {
     try {
-        const userId = storeVisit('language/poets');
+        const userId = storeVisit(`poets/${id}`);
 
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/language/poets`, {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/language/poet`, {
             params: {
                 id : id,
                 userId: userId
@@ -51,7 +63,7 @@ export const requestRecipe = async (id) => {
 
 export const requestMyth = async (id) => {
     try {
-        const userId = storeVisit('customs/myths');
+        const userId = storeVisit(`myths/${id}`);
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/myths`, {
             params: {
                 id : id,

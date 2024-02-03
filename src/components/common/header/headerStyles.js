@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderInnerBox = styled.div`
     background: #0F0A00;
-    height: 6rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ export const HeaderInnerBox = styled.div`
     margin: 0 auto;
 
     @media (max-width: 480px) {
-        height: 5rem;
+        height: 4.5rem;
     }
 `;
 
@@ -29,20 +29,16 @@ export const LogoWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
     margin-left: 1rem;
 
     @media (max-width: 480px) {
         margin-left: 0.25rem;
         margin-right: 0.25rem;
-        height: 4.5rem;
-        width: 4.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 5.5rem;
-        width: 5.5rem;
         margin-left: 0.5rem;
         padding-top: 0.25rem;
     }
@@ -79,7 +75,7 @@ export const TitleSpan = styled.span`
 export const MenuWrapper = styled.div`
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 4rem;
     width: 6rem;
 

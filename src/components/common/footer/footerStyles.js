@@ -16,8 +16,8 @@ export const FooterInnerContainer = styled.div`
     align-items: center;
     box-sizing: border-box;
     color: #ffffff;
-    max-height: 4.23rem;
-    min-height: 4.23rem;
+    max-height: 3.5rem;
+    min-height: 3.5rem;
     position: relative;
     z-index: 10;
     justify-content: center;
