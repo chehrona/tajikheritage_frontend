@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSetLang } from '../../App';
 import { useLocation } from 'react-router-dom';
-import { useSetLang } from "../../App";
 
 import { requestPage } from "../../services/request";
 
@@ -13,31 +13,36 @@ import { PageContainer, MythBoxContainer } from './customsPageStyles';
 
 function Customs() {
     const location = useLocation();
-    const { setLang } = useSetLang();
+    const { setTitle, lang } = useSetLang();
     const [myths, setMyths] = useState([]);
-    const [error, setError] = useState(0);
-    const [loading, setLoading] = useState(0);
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
         try {
-            setLoading(1);
+            setLoading(true);
             const data = await requestPage("customs");
             setMyths(data);
         } catch (error) {
-            setError(1);
+            setError(true);
         } finally {
-            setLoading(0);
+            setLoading(false);
         }
     };
 
     useEffect(() => {
         // Get data
         fetchData();
-
-        if (location.search.length) {
-            setLang(location.search.substring(1));
-        }
     }, []);
+
+    useEffect(() => {
+        if (myths) {
+            setTitle({
+                one: lang === 'us' ? '<i>Customs</i>' : (lang === 'ru' ? '<i>Обычаи</i>' : '<i>Расму оин</i>'),
+                two: ''
+            });
+        }
+    }, [lang, location.pathname, myths]);
 
     return (
         <>

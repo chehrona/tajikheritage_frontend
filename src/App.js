@@ -9,6 +9,8 @@ import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 const LangContext = createContext({
     lang: 'us',
     setLang: () => {},
+    title: {one: 'THE TAJIKS:', two: 'Iranians of the East'},
+    setTitle: () => {},
     isPrint: false,
     setIsPrint: () => {},
 });
@@ -22,6 +24,7 @@ function App() {
         return localStorage.getItem('lang') || 'us';
     });
     const parentRef = useRef(null);
+    const [title, setTitle] = useState({one: 'THE TAJIKS:', two: 'Iranians of the East'});
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);
     const [isPrint, setIsPrint] = useState(false);
@@ -30,9 +33,10 @@ function App() {
     const value = useMemo(() => (
         {
             lang, setLang,
+            title, setTitle,
             isPrint, setIsPrint
         }
-    ), [lang, isPrint]);
+    ), [lang, isPrint, title]);
 
     useEffect(() => {      
         // Prevent right click
@@ -46,12 +50,12 @@ function App() {
     }, []);
 
     const handleCopy = async () => {
-        try {
-            const textToCopy = 'The text is copyright protected by thetajikheritage.com.';
-            await navigator.clipboard.writeText(textToCopy);
-        } catch (error) {
-            console.error('Unable to copy text to clipboard:', error);
-        }
+        // try {
+        //     const textToCopy = 'The text is copyright protected by thetajikheritage.com.';
+        //     await navigator.clipboard.writeText(textToCopy);
+        // } catch (error) {
+        //     console.error('Unable to copy text to clipboard:', error);
+        // }
     };
 
     const handleScroll = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useSetLang } from "../../App";
 
 import { requestMyth } from "../../services/request";
@@ -17,21 +17,22 @@ import {
 } from "./mythPageStyles";
 
 export default function MythPage() {
+    const location = useLocation();
     const { id } = useParams();
-    const { lang } = useSetLang();
+    const { lang, setTitle } = useSetLang();
     const [myth, setMyth] = useState();
-    const [error, setError] = useState(0);
-    const [loading, setLoading] = useState(0);
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
         try {
-            setLoading(1);
+            setLoading(true);
             const data = await requestMyth(id);
             setMyth(data);
         } catch (error) {
-            setError(1);
+            setError(true);
         } finally {
-            setLoading(0);
+            setLoading(false);
         }
     };
 
@@ -39,6 +40,16 @@ export default function MythPage() {
         // Get data
         fetchData();
     }, []);
+
+    useEffect(() => {
+        if (myth) {
+            setTitle({
+                one: `<i>${myth.name[lang]}<i>`,
+                two: ''
+            });
+        }
+
+    }, [lang, location.pathname, myth]);
 
     return (
         <>

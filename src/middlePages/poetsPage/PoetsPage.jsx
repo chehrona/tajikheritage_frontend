@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSetLang } from '../../App';
+import { useLocation } from 'react-router-dom';
 
 import { requestMiddlePage } from "../../services/request";
 
@@ -9,6 +11,8 @@ import Loader from "../../components/common/loader/Loader";
 import { PageContainer, PoetBoxContainer } from './poetsPageStyles';
 
 function PoetsPage() {
+    const location = useLocation();
+    const { setTitle, lang } = useSetLang();
     const [poets, setPoets] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -28,6 +32,15 @@ function PoetsPage() {
         // Get data
         fetchData();
     }, []);
+
+    useEffect(() => {
+        if (poets) {
+            setTitle({
+                one: lang === 'us' ? '<i>Poets & writers</i>' : (lang === 'ru' ? '<i>Поэты и писатели</i>' : '<i>Шоиру нависандагон</i>'),
+                two: ''
+            });
+        }
+    }, [lang, location.pathname]);
 
     return (
         <>

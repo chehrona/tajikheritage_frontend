@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSetLang } from "../../App";
+import { useLocation } from 'react-router-dom';
 
 import { stepInfo } from "./helper";
 import { addVisit } from "../../services/request";
@@ -9,6 +11,8 @@ import ImageBall from '../../components/imageBall/ImageBall';
 import { InnerContainer, PageContainer } from './homePageStyles';
 
 function Home() {
+    const location = useLocation();
+    const { lang, setTitle } = useSetLang();
     const containerRef = useRef(null);
     const divRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
     const [opacities, setOpacities] = useState([1, 0, 0, 0, 0]);
@@ -29,7 +33,7 @@ function Home() {
             const containerTop = containerRect.top;
             const containerBottom = containerRect.bottom;
 
-            const newOpacities = divRefs.map((ref, index) => {
+            const newOpacities = divRefs.map((ref) => {
                 const divRect = ref.current.getBoundingClientRect();
                 const divTop = divRect.top;
                 const divBottom = divRect.bottom;
@@ -47,6 +51,13 @@ function Home() {
 
         containerRef.current.addEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        setTitle({
+            one: lang === 'us' ? 'THE TAJIKS:' : (lang === 'ru' ? 'ТАДЖИКИ:' : 'ТОҶИКОН:'),
+            two: lang === 'us' ? 'Iranians of the East' : (lang === 'ru' ? 'Иранцы Востока' : 'Эрониёни Шарқ')
+        });
+    }, [lang, location.pathname]);
 
     return (
         <PageContainer>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSetLang } from "../../../App";
 
 import {
     HeaderContainer,
@@ -16,23 +17,32 @@ import {
 } from "./headerStyles";
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
+    const { title, setTitle, lang } = useSetLang();
 
     function showMenu() {
         setIsMenuShown(prevState => !prevState);
+    }
+
+    function handleLogoClick() {
+        setIsMenuShown(false);
+        setTitle({
+            one: lang === 'us' ? 'THE TAJIKS:' : (lang === 'ru' ? 'ТАДЖИКИ:' : 'ТОҶИКОН:'),
+            two: lang === 'us' ? 'Iranians of the East' : (lang === 'ru' ? 'Иранцы Востока' : 'Эрониёни Шарқ')
+        });
     }
 
     return (
         <HeaderContainer>
             <HeaderInnerBox>
                 <LogoWrapper>
-                    <StyledLink to={'/'} onClick={() => setIsMenuShown(false)}>
+                    <StyledLink to={'/'} onClick={handleLogoClick}>
                         <Logo src={'/tajiks.png'}></Logo>
                     </StyledLink>
                 </LogoWrapper>
                 <TitleWrapper>
                     <Title>
-                        <TitleSpan>THE TAJIKS:</TitleSpan>
-                        Iranians of the East
+                        <TitleSpan dangerouslySetInnerHTML={{__html: title?.one}} />
+                        {title?.two}
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>
