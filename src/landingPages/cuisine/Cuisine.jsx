@@ -5,7 +5,7 @@ import { useSetLang } from "../../App";
 import { requestPage } from "../../services/request";
 
 import RecipeCard from '../../components/food/recipeCard/RecipeCard';
-import Fade from "../../components/common/transition/Transition";
+import Fade from "../../components/common/transition/Fade";
 import Loader from "../../components/common/loader/Loader";
 
 import { PageContainer, RecipeBoxContainer } from './cuisinePageStyles';

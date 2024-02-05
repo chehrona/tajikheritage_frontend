@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { requestMiddlePage } from "../../services/request";
 
 import PoetCard from '../../components/poet/poetCard/PoetCard';
-import Fade from '../../components/common/transition/Transition';
+import Fade from '../../components/common/transition/Fade';
 import Loader from "../../components/common/loader/Loader";
 
 import { PageContainer, PoetBoxContainer } from './poetsPageStyles';

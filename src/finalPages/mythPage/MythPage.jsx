@@ -7,7 +7,7 @@ import { requestMyth } from "../../services/request";
 import BoxOne from "../../components/myths/mythIntro/FirstBox";
 import BoxTwo from "../../components/myths/mythIntro/SecondBox";
 import Sources from "../../components/common/sources/Sources";
-import Fade from "../../components/common/transition/Transition";
+import Fade from "../../components/common/transition/Fade";
 import Loader from "../../components/common/loader/Loader";
 import Alert from "../../components/common/alert/Alert";
 

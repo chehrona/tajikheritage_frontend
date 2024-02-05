@@ -159,11 +159,6 @@ export const ImgInfo = styled.div`
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     height: auto;
 
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-        line-height: 1.35rem;
-    }
-
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.4rem;

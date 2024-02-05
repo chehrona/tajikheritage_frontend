@@ -14,7 +14,7 @@ import Sources from "../../components/common/sources/Sources";
 import PoetCareer from "../../components/poet/poetCareer/PoetCareer";
 import SectionOptions from "../../components/poet/sectionOptions/SectionOptions";
 import Loader from "../../components/common/loader/Loader";
-import Fade from "../../components/common/transition/Transition";
+import Fade from "../../components/common/transition/Fade";
 import Alert from "../../components/common/alert/Alert";
 
 import { 

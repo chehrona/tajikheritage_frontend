@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { requestPage } from "../../services/request";
 
 import MythCard from '../../components/myths/mythCard/MythCard';
-import Fade from "../../components/common/transition/Transition";
+import Fade from "../../components/common/transition/Fade";
 import Loader from "../../components/common/loader/Loader";
 import Alert from "../../components/common/alert/Alert";
 
