@@ -117,14 +117,6 @@ export const InfoBox = styled.div`
     border-radius: 1rem;
     display: flex;
 
-    @media (max-width: 480px) {
-        display: block;
-        min-width: calc(100vw - 3rem);
-        max-width: calc(100vw - 3rem);
-        height: 32.6rem;
-        border-radius: 1rem 1rem 0rem 0rem;
-    }
-
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         min-width: calc(100vw - 2rem - 100px);
         max-width: calc(100vw - 2rem - 100px);
@@ -148,8 +140,6 @@ export const InfoWrapper = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.4rem;
-        min-width: calc(100vw - 2rem - 100px);
-        max-width: calc(100vw - 2rem - 100px);
     }
 `;
 
@@ -162,6 +152,11 @@ export const StyledCloseButton = styled(IconButton)`
 
     &.MuiIconButton-root {
         position: absolute;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        top: 0.25rem;
+        right: 0.25rem;
     }
 `;
 
@@ -190,6 +185,11 @@ export const StyledExpandButton = styled(IconButton)`
     &.MuiIconButton-root {
         position: absolute;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        bottom: 0.45rem;
+        right: 0.65rem;
+    }
 `;
 
 export const StyledExpandIcon = styled(OpenInFull)`
@@ -214,7 +214,6 @@ export const Text = styled.div`
 `;
 
 export const DescWrapper = styled.div`
-    width: 65%;
     height: 100%;
     border-radius: 1rem;
     position: relative;
@@ -333,7 +332,6 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const ImageWrapper = styled.div`
-    width: 37.5%;
     transition: 100ms ease-in-out;
     
     @media (max-width: 480px) {
@@ -352,5 +350,5 @@ export const Image = styled.div`
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     transform: translateX(${({ translate }) => `${translate}px`});
-    background-size: ${({ src }) => src && 'cover'};
+    background-size: ${({ src }) => src && 'contain'};
 `;
