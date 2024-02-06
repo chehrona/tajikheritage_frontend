@@ -27,7 +27,7 @@ export const PageContainer = styled.div`
     }
 
 	@media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-		padding: 1.5rem 3.2rem;
+		padding: 1.5rem 4.2rem;
     }
 `;
 
@@ -35,16 +35,10 @@ export const SectionBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${({ justify }) => justify && (justify <= 2 ? 'start' : 'center')};
+    justify-content: space-between;
 
     @media (max-width: 480px) {
         gap: 1rem;
-        justify-content: space-between;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-       gap: 3rem;
-       justify-content: center;
     }
 `;
 

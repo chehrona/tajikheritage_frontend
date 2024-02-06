@@ -71,11 +71,11 @@ export const SectionTitle = styled.div`
     font-style: italic;
 
     @media (max-width: 480px) {
-        font-size: 1.25rem;
+        font-size: 1.64rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 2.7rem;
+        font-size: 2.2rem;
     }
 `;
 
