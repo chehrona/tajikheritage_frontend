@@ -17,7 +17,7 @@ import {
 } from "./headerStyles";
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
-    const { title, setTitle, lang } = useSetLang();
+    const { lang } = useSetLang();
 
     function showMenu() {
         setIsMenuShown(prevState => !prevState);
@@ -25,10 +25,6 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
 
     function handleLogoClick() {
         setIsMenuShown(false);
-        setTitle({
-            one: lang === 'us' ? 'THE TAJIKS:' : (lang === 'ru' ? 'ТАДЖИКИ:' : 'ТОҶИКОН:'),
-            two: lang === 'us' ? 'Iranians of the East' : (lang === 'ru' ? 'Иранцы Востока' : 'Эрониёни Шарқ')
-        });
     }
 
     return (
@@ -41,8 +37,8 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                 </LogoWrapper>
                 <TitleWrapper>
                     <Title>
-                        <TitleSpan dangerouslySetInnerHTML={{__html: title?.one}} />
-                        {title?.two}
+                        <TitleSpan dangerouslySetInnerHTML={{__html: lang === 'us' ? 'THE TAJIKS:' : (lang === 'ru' ? 'ТАДЖИКИ:' : 'ТОҶИКОН:')}} />
+                        {lang === 'us' ? 'Iranians of the East' : (lang === 'ru' ? 'Иранцы Востока' : 'Эрониёни Шарқ')}
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>

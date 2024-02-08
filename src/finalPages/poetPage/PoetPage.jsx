@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from "../../App";
 
@@ -24,8 +24,7 @@ import {
 
 export default function PoetPage() {
     const { id } = useParams();
-    const location = useLocation();
-    const { lang, setTitle } = useSetLang();
+    const { lang } = useSetLang();
     const [poet, setPoet] = useState();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -47,15 +46,6 @@ export default function PoetPage() {
         // Get data
         fetchData();
     }, []);
-
-    useEffect(() => {
-        if (poet) {
-            setTitle({
-                one: `<i>${poet?.name[lang][0]} ${poet?.name[lang][1]}</i>`,
-                two: ''
-            });
-        }
-    }, [lang, location.pathname, poet]);
 
     const scrollToView = (e) => {
         e.preventDefault();

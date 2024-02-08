@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSetLang } from '../../App';
-import { useLocation } from 'react-router-dom';
 
 import { requestPage } from "../../services/request";
 
@@ -11,8 +9,6 @@ import Loader from "../../components/common/loader/Loader";
 import { PageContainer, SectionBoxContainer } from './languagePageStyles';
 
 function Language() {
-    const location = useLocation();
-    const { setTitle, lang } = useSetLang();
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -32,15 +28,6 @@ function Language() {
         // Get data
         fetchData();
     }, []);
-
-    useEffect(() => {
-        if (sections) {
-            setTitle({
-                one: lang === 'us' ? '<i>Language & Literature</i>' : (lang === 'ru' ? '<i>Язык и литература</i>' : '<i>Забон ва адабиёт</i>'),
-                two: ''
-            });
-        }
-    }, [lang, location.pathname, sections]);
 
     return (
         <>

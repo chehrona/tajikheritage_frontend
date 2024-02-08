@@ -9,8 +9,6 @@ import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 const LangContext = createContext({
     lang: 'us',
     setLang: () => {},
-    title: {one: 'THE TAJIKS:', two: 'Iranians of the East'},
-    setTitle: () => {},
     isPrint: false,
     setIsPrint: () => {},
 });
@@ -24,7 +22,6 @@ function App() {
         return localStorage.getItem('lang') || 'us';
     });
     const parentRef = useRef(null);
-    const [title, setTitle] = useState({one: 'THE TAJIKS:', two: 'Iranians of the East'});
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);
     const [isPrint, setIsPrint] = useState(false);
@@ -33,10 +30,9 @@ function App() {
     const value = useMemo(() => (
         {
             lang, setLang,
-            title, setTitle,
             isPrint, setIsPrint
         }
-    ), [lang, isPrint, title]);
+    ), [lang, isPrint]);
 
     useEffect(() => {      
         // Prevent right click
