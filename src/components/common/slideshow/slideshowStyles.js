@@ -77,7 +77,7 @@ export const ImageWrapper = styled.div`
     height: ${({ width, height }) => height ? height : (width && `${width*1.2049}px`)};
     border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
     border-bottom-left-radius: ${({ bottomLeftRad }) => bottomLeftRad && `${bottomLeftRad}rem`};
-    transform: translateX(${({ translate }) => `${translate}px`});
+    transform: ${({ translate }) => `translateX(${translate}px)`};
     background-size: ${({ src }) => src && 'cover'};
 
     &::after {
@@ -159,7 +159,7 @@ export const ImgInfo = styled.div`
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     height: auto;
 
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    @media (max-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.4rem;
     }

@@ -1,24 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowForwardIos } from "@mui/icons-material";
-import { useSetLang } from "../../../App";
 import { useMediaQuery } from 'react-responsive';
+import { useSetLang } from "../../../App";
+
+import { ArrowForwardIos } from "@mui/icons-material";
+
+import InfoBox from "../../common/infoBox/InfoBox";
 
 import {
-    Text,
     Year,
     Line,
     Desc,
     Step,
     Image,
     Footer,
-    InfoBox,
     DescWrapper,
     ImageWrapper,
     InfoContainer,
-    StyledCloseIcon,
-    StyledExpandIcon,
     StyledIconButton,
-    StyledCloseButton,
     InfoInnerContainer,
     MobileFooter,
     MainContainer,
@@ -26,12 +24,10 @@ import {
     UnitWrapper,
     YearWrapper,
     InfoWrapper,
-    StyledExpandButton,
 } from "./poetCareerStyles";
 
 export default function PoetCareer({ points }) {
     const { lang } = useSetLang();
-    const [showInfo, setShowInfo] = useState(true);
     const parentRef = useRef(null);
     const childRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,7 +46,6 @@ export default function PoetCareer({ points }) {
         setTranslate(-translationValue);
         setCurrentSize(childWidth);
         setCurrentIndex(0);
-        setShowInfo(true);
     }, [lang]);
 
     const handleNext = () => {
@@ -84,29 +79,14 @@ export default function PoetCareer({ points }) {
                     <InfoInnerContainer translate={translate}>
                         {points[lang].map((entry, i) => {
                             return (
-                                <InfoBox key={'a' + i} ref={childRef}>
+                                <InfoWrapper key={'a' + i} ref={childRef}>
                                     <ImageWrapper>
                                         <Image
                                             src={process.env.REACT_APP_BASE_URL + entry.slides[0]?.img}
                                             width={currentSize * 0.36}
                                             height={"26rem"}
                                         >
-                                            {entry.slides[0]?.info && (
-                                                showInfo ? (
-                                                    <InfoWrapper>
-                                                        <Text dangerouslySetInnerHTML={{__html: entry.slides[0]?.info}} />
-                                                        <StyledCloseButton onClick={() => setShowInfo(false)}>
-                                                            <StyledCloseIcon />
-                                                        </StyledCloseButton>
-                                                    </InfoWrapper>
-                                                ) : (
-                                                    <>
-                                                        <StyledExpandButton onClick={() => setShowInfo(true)}>
-                                                            <StyledExpandIcon />
-                                                        </StyledExpandButton>
-                                                    </>
-                                                )
-                                            )}
+                                            {entry.slides[0]?.info && <InfoBox text={entry.slides[0]?.info} />}
                                         </Image>
                                     </ImageWrapper>
                                     <DescWrapper>
@@ -121,7 +101,7 @@ export default function PoetCareer({ points }) {
                                             </StyledIconButton>
                                         </Footer>
                                     </DescWrapper>
-                                </InfoBox>
+                                </InfoWrapper>
                             );
                         })}
                     </InfoInnerContainer>

@@ -53,8 +53,8 @@ export const SectionCardWrapper = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-radius: 1.5rem;
         transition: none;
-        height: 38rem;
-        width: 25rem;
+        height: 30.5rem;
+        width: 22rem;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
 
         &:hover {
@@ -69,9 +69,11 @@ export const SectionTitle = styled.div`
     font-weight: 500;
     font-family: "EB Garamond", serif;
     font-style: italic;
+    margin-bottom: 1rem;
 
     @media (max-width: 480px) {
-        font-size: 1.64rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -86,28 +88,20 @@ export const ImageWrapper = styled.div`
     background:
         url("/border.png") center
         no-repeat;
-    background-size: 100% auto;
+    background-size: contain;
     height: 100%;
     width: 100%;
     filter: drop-shadow(0px 0px 2.5px #bd9d52);
-
-    @media (max-width: 480px) {
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-    }
 `;
 
-export const SectionImage = styled.img`
-    height: auto;
+export const SectionImage = styled.div`
+    background-size: contain;
     width: 80%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 1px #dedbdb);
-
-    @media (max-width: 480px) {
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-    }
+    background-image: ${({ src }) => src && `url(${ src })`};
 `;
 
 export const StyledLink = styled(Link)`

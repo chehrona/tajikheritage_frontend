@@ -35,7 +35,7 @@ export const SectionBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     @media (max-width: 480px) {
         gap: 1rem;

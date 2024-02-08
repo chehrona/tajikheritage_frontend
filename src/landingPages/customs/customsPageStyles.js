@@ -22,6 +22,7 @@ export const MythBoxContainer = styled.div`
     justify-content: space-between;
 
     @media (max-width: 480px) {
+        justify-content: center;
         gap: 1rem;
     }
 `;

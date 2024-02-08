@@ -3,7 +3,7 @@ import { IconButton } from '@mui/material';
 
 export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
-    min-height: fit-content;
+    min-height: 20rem;
     padding-bottom: 3rem;
     background-color: #fcf6e9;
     font-size: 1.1rem;
@@ -80,7 +80,6 @@ export const Year = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 4rem;
         margin-bottom: ${({ align }) => align && '0rem'};
     }
 `;
@@ -632,11 +631,6 @@ export const ImgInfo = styled.div`
         font-size: 1.25rem;
         line-height: 1.3rem;
         bottom: 0.5rem;
-
-        ${({ up }) => up && `
-            bottom: -1rem;
-            left: 1.5rem;
-        `}
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
