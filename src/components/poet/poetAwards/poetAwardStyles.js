@@ -43,6 +43,7 @@ export const AwardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0.5rem;
     
     @media (max-width: 480px) {
         padding: 0rem 1.5rem;
