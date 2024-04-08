@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
-import { requestPage } from "../../services/request";
+import { requestMiddlePage } from "../../services/request";
 
-import MythCard from '../../components/myths/mythCard/MythCard';
+import SquareCard from '../../components/common/squareCard/SquareCard';
 import Fade from "../../components/common/transition/Fade";
 import Loader from "../../components/common/loader/Loader";
 import Alert from "../../components/common/alert/Alert";
 
-import { PageContainer, MythBoxContainer } from './customsPageStyles';
+import { PageContainer, InnerBoxContainer } from "./middlePageStyles";
 
-function Customs() {
-    const [myths, setMyths] = useState([]);
+function MiddlePage({ page }) {
+    const [items, setItems] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestPage("customs");
-            setMyths(data);
+            const data = await requestMiddlePage(page);
+
+            setItems(data);
         } catch (error) {
             setError(true);
         } finally {
@@ -34,14 +35,14 @@ function Customs() {
     return (
         <>
             <Loader inProp={loading} />
-            {myths ? (
+            {items ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
-                        <MythBoxContainer justify={myths?.length}>
-                            {myths?.map((myth, i) => {
-                                return (<MythCard key={i} myth={myth} i={i} />);
+                        <InnerBoxContainer justify={items?.length}>
+                            {items?.map((item, i) => {
+                                return (<SquareCard key={i} item={item} i={i} />);
                             })}
-                        </MythBoxContainer>
+                        </InnerBoxContainer>
                     </PageContainer>
                  </Fade>
             ) : (error && <Alert />)}
@@ -49,4 +50,4 @@ function Customs() {
     );
 }
 
-export default Customs;
+export default MiddlePage;

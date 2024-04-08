@@ -12,7 +12,6 @@ import { PageContainer, RecipeBoxContainer } from './cuisinePageStyles';
 
 import { TempImg, TempPageContainer, TempTitle } from '../language/languagePageStyles';
 
-
 function Cuisine() {
     const location = useLocation();
     const { setLang, lang } = useSetLang();

@@ -10,7 +10,9 @@ import {
     ImageWrapper,
     ButtonWrapper,
     SlideContainer,
-    StyledButton
+    StyledButton,
+    PlaceIndicator,
+    Circle
 } from './slideshowStyles';
 
 export default function Slideshow({
@@ -45,6 +47,13 @@ export default function Slideshow({
 
     return (
         <SlideContainer>
+            {slides.length > 1 && 
+                <PlaceIndicator>
+                    {slides?.map((slide, i) => {
+                        return <Circle selected={i === currentIndex} />
+                    })}
+                </PlaceIndicator>
+            }
             <ImageContainer>
                 {infoArr?.map((entry, i) => {
                     return (

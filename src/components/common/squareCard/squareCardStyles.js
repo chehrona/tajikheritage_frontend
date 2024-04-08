@@ -16,7 +16,7 @@ const slideOut = keyframes`
     }
 `;
 
-export const MythCardWrapper = styled.div`
+export const SquareCardWrapper = styled.div`
     opacity: 0;
     height: 25rem;
     width: 25rem;
@@ -43,7 +43,7 @@ export const MythCardWrapper = styled.div`
     }
 `;
 
-export const MythImage = styled.img`
+export const SquareImage = styled.img`
     height: 100%;
     width: 100%;
     border-radius: 0.7rem;

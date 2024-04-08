@@ -63,8 +63,23 @@ export const requestRecipe = async (id) => {
 
 export const requestMyth = async (id) => {
     try {
-        const userId = storeVisit(`myths/${id}`);
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/myths`, {
+        const userId = storeVisit(`myth/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/myth`, {
+            params: {
+                id : id,
+                userId: userId
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const requestTradition = async (id) => {
+    try {
+        const userId = storeVisit(`tradition/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/tradition`, {
             params: {
                 id : id,
                 userId: userId

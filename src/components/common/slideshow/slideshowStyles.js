@@ -41,14 +41,15 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const Arrow = styled.div`
-    color: #bd9d52;
+    color: #eac364;
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid #eac364;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #bd9d5266;
 
     &:hover {
         box-shadow: 0rem 0rem 0.3rem 0rem #dedbdb;
@@ -162,5 +163,29 @@ export const ImgInfo = styled.div`
     @media (max-width: 1024px) {
         font-size: 1.25rem;
         line-height: 1.4rem;
+    }
+`;
+
+export const PlaceIndicator = styled.div`
+    display: flex;
+    height: 1.1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0.25rem;
+    z-index: 1;
+`;
+
+export const Circle = styled.div`
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #bd9d52;
+    opacity: ${({ selected }) => selected ? "1" : "0.4"};
+    margin-right: 0.25rem;
+
+    &:last-child {
+        margin-right: 0rem;
     }
 `;

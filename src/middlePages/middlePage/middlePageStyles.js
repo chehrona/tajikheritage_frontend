@@ -15,7 +15,7 @@ export const PageContainer = styled.div`
     }
 `;
 
-export const MythBoxContainer = styled.div`
+export const InnerBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;

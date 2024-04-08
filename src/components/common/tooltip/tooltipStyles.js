@@ -53,4 +53,9 @@ export const StyledImage = styled.img`
 
 export const WordWrapper = styled.span`
     border-bottom: 1px dotted #70654a;
+
+    .termSpan {
+        font-weight: bold;
+        color: #bd9d52;
+    };
 `;

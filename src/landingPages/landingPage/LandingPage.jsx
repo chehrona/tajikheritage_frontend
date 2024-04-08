@@ -6,16 +6,16 @@ import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from "../../components/common/loader/Loader";
 
-import { PageContainer, SectionBoxContainer } from './languagePageStyles';
+import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 
-function Language() {
+function LandingPage({ page }) {
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestPage("language");
+            const data = await requestPage(page);
             setSections(data[0].sections);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -57,4 +57,4 @@ function Language() {
     );
 }
 
-export default Language;
+export default LandingPage;
