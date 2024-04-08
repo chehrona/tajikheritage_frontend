@@ -43,12 +43,12 @@ export const stepInfo = [
         },
         outer: [
             {size: 16, bottom: {d: "-3%", t: "-2%"}, right: {d: "27%", t: "18%"}},
-            {size: 12, bottom: {d: "3%", t: "25%"}, right: {d: "7.7%", t: "7%"}},
+            {size: 12, bottom: {d: "5%", t: "25%"}, right: {d: "8.7%", t: "7%"}},
             {size: 30, top: {d: "-13.2%", t: "-7.2%"}, right: {d: "-3%", t: "-4.5%"}}
         ],
         inner: [
             {size: 15, bottom: {d: "-1.75%", t: "-1.5%"}, right: {d: "27.5%", t: "18.5%"}, img: "/homeImages/craft3.png"},
-            {size: 11, bottom: {d: "3.5%", t: "25.5%"}, right: {d: "7.2%", t: "6.5%"}, img: "/homeImages/craft2.png"},
+            {size: 11, bottom: {d: "5.5%", t: "25.5%"}, right: {d: "8.2%", t: "6.5%"}, img: "/homeImages/craft2.png"},
             {size: 29, top: {d: "-13%", t: "-6.5%"}, right: {d: "-1.2%", t: "-2.2%"}, img: "/homeImages/craft1.png"}
         ],
     },

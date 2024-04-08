@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSetLang } from "../../App";
 
 import { stepInfo } from "./helper";
 import { addVisit } from "../../services/request";
@@ -6,10 +7,20 @@ import { addVisit } from "../../services/request";
 import HomeStepper from '../../components/homeStepper/HomeStepper';
 import ImageBall from '../../components/imageBall/ImageBall';
 
-import { InnerContainer, PageContainer } from './homePageStyles';
+import {
+    InnerContainer,
+    PageContainer,
+    ScrollWrapper,
+    Title,
+    IconWrapper,
+    Line,
+    Arrow,
+    Circle
+} from './homePageStyles';
 
 function Home() {
     const containerRef = useRef(null);
+    const { lang } = useSetLang();
     const divRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
     const [opacities, setOpacities] = useState([1, 0, 0, 0, 0]);
 
@@ -50,6 +61,14 @@ function Home() {
 
     return (
         <PageContainer>
+            <ScrollWrapper>
+                <Title>{lang === 'ru' ? 'ПРОКРУТИТЕ' : (lang === 'tj' ? 'ПОЁН КАШЕД' : 'SCROLL')}</Title>
+                <IconWrapper>
+                    <Line />
+                    <Arrow />
+                    <Circle />
+                </IconWrapper>
+            </ScrollWrapper>
             <InnerContainer>
                 <HomeStepper containerRef={containerRef} divRefs={divRefs} opacities={opacities} />
                 {stepInfo?.map((entry, i) => {

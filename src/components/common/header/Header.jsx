@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { useSetLang } from "../../../App";
 
 import {
@@ -13,11 +14,12 @@ import {
     Logo,
     TitleSpan,
     StyledCloseIcon,
-    StyledLink
+    StyledLink,
 } from "./headerStyles";
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang } = useSetLang();
+    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
         setIsMenuShown(prevState => !prevState);
@@ -42,6 +44,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>
+                    {!isMobile && <div>{lang === 'us' ? 'MENU' : 'МЕНЮ'}</div>}
                     <StyledIconButton onClick={showMenu}>
                         {isMenuShown ? <StyledCloseIcon /> : <StyledMenuIcon />}
                     </StyledIconButton>

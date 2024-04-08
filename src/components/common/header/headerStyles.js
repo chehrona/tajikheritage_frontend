@@ -77,22 +77,34 @@ export const MenuWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: 4rem;
-    width: 6rem;
+    width: 4rem;
+    margin-right: 0.75rem;
 
     @media (max-width: 480px) {
         width: 4rem;
-        margin-left: 0rem;
+        margin: 0rem;
     }
 `;
 
 export const StyledIconButton = styled(IconButton)`
     display: flex;
     justify-content: center;
-    width: 100%;
+
+    &.MuiIconButton-root {
+        padding: 8px 0px;
+        width: 3.5rem;
+        margin-right: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        &.MuiIconButton-root {
+            padding: 8px;
+        }
+    }
 `;
 
 export const StyledMenuIcon = styled(MenuIcon)`
-    color: #bd9d52;    
+    color: #bd9d52;
 
     &.MuiSvgIcon-root {
         width: 3.5rem;
