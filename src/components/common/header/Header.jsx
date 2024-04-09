@@ -44,7 +44,11 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>
-                    {!isMobile && <div>{lang === 'us' ? 'MENU' : 'МЕНЮ'}</div>}
+                    {!isMobile && 
+                        (isMenuShown ?
+                            <div>{lang === 'us' ? 'CLOSE' : (lang === 'ru' ? 'ЗАКРЫТЬ' : 'ПӮШЕД')}</div> : 
+                            <div>{lang === 'us' ? 'MENU' : 'МЕНЮ'}</div>
+                        )}
                     <StyledIconButton onClick={showMenu}>
                         {isMenuShown ? <StyledCloseIcon /> : <StyledMenuIcon />}
                     </StyledIconButton>

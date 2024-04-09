@@ -22,6 +22,7 @@ function Home() {
     const containerRef = useRef(null);
     const { lang } = useSetLang();
     const divRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+    const [scrollIndicator, setScrollIndicator] = useState(true);
     const [opacities, setOpacities] = useState([1, 0, 0, 0, 0]);
 
     const recordVisit = async () => {
@@ -48,6 +49,8 @@ function Home() {
                 if (divBottom < containerTop || divTop > containerBottom) {
                     return 0;
                 } else {
+                    setScrollIndicator(false);
+
                     const opacity = 1 - (Math.abs(containerTop - divTop) / (0.8 * containerRect.height));
                     return opacity;
                 }
@@ -61,14 +64,16 @@ function Home() {
 
     return (
         <PageContainer>
-            <ScrollWrapper>
-                <Title>{lang === 'ru' ? 'ПРОКРУТИТЕ' : (lang === 'tj' ? 'ПОЁН КАШЕД' : 'SCROLL')}</Title>
-                <IconWrapper>
-                    <Line />
-                    <Arrow />
-                    <Circle />
-                </IconWrapper>
-            </ScrollWrapper>
+            {scrollIndicator && 
+                <ScrollWrapper>
+                    <Title>{lang === 'ru' ? 'ПРОКРУТИТЕ' : (lang === 'tj' ? 'БА ПОЁН КАШЕД' : 'SCROLL')}</Title>
+                    <IconWrapper>
+                        <Line />
+                        <Arrow />
+                        <Circle />
+                    </IconWrapper>
+                </ScrollWrapper>
+            }
             <InnerContainer>
                 <HomeStepper containerRef={containerRef} divRefs={divRefs} opacities={opacities} />
                 {stepInfo?.map((entry, i) => {

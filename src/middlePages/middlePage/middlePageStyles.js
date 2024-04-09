@@ -19,7 +19,7 @@ export const InnerBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
 
     @media (max-width: 480px) {
         justify-content: center;

@@ -99,6 +99,8 @@ export const StyledIconButton = styled(IconButton)`
     @media (max-width: 480px) {
         &.MuiIconButton-root {
             padding: 8px;
+            width: 100%;
+            margin: 0rem;
         }
     }
 `;

@@ -1,5 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { South } from "@mui/icons-material";
+
+const bounce = keyframes`
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-1rem);} 
+    60% {transform: translateY(-0.5rem);} 
+`;
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
@@ -27,6 +33,12 @@ export const ScrollWrapper = styled.div`
     align-items: center;
     justify-content: center;
     right: 1rem;
+
+    @media (max-width: 480px) {
+		bottom: 8rem;
+        right: 2rem;
+        opacity: 1;
+    }
 `;
 
 export const Title = styled.div`
@@ -39,6 +51,7 @@ export const IconWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: ${bounce} 2s infinite;
 `;
 
 export const Line = styled.div`
