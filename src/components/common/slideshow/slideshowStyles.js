@@ -93,6 +93,7 @@ export const ImageWrapper = styled.div`
         background-position: center center;
         background-size: cover;
         background-image: ${({ overlay }) => overlay && `url(${ overlay })`};
+        filter: drop-shadow(0px 0px 1px #dedbdb);
         border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
     }
 `;

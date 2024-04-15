@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 100svh;
-	padding: 2rem 7rem 2rem 7rem;
+	padding: 2rem 4rem;
 	background: white;
 
 	@media (max-width: 480px) {
@@ -19,10 +19,10 @@ export const InnerBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: ${({ justify }) => justify && justify <= 2 ? 'flex-start' : 'space-between'};
 
     @media (max-width: 480px) {
         justify-content: center;
-        gap: 1rem;
+        gap: 2rem;
     }
 `;

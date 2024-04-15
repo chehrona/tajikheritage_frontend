@@ -20,7 +20,7 @@ export default function Slideshow({
     width,
     height,
     topLeftRad,
-    bottomLeftRad
+    bottomLeftRad,
 }) {
     const { lang } = useSetLang();
     const [translate, setTranslate] = useState(0);
