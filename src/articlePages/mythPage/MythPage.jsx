@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSetLang } from "../../App";
 
-import { requestMyth } from "../../services/request";
+import { requestArticleInfo } from "../../services/request";
 
 import BoxOne from "../../components/myths/mythIntro/FirstBox";
 import BoxTwo from "../../components/myths/mythIntro/SecondBox";
@@ -13,10 +13,10 @@ import Alert from "../../components/common/alert/Alert";
 
 import { 
     PageContainer,
-    MythContainer,
+    TextContainer,
 } from "./mythPageStyles";
 
-export default function MythPage() {
+export default function MythPage({ page }) {
     const { id } = useParams();
     const { lang } = useSetLang();
     const [myth, setMyth] = useState();
@@ -26,7 +26,7 @@ export default function MythPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestMyth(id);
+            const data = await requestArticleInfo(id, page);
             setMyth(data);
         } catch (error) {
             setError(true);
@@ -46,7 +46,7 @@ export default function MythPage() {
             {myth ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
-                        <MythContainer>
+                        <TextContainer>
                             <BoxOne myth={myth.desc[lang][0]} title={myth.name[lang]} topLeftRad={4} />
                             <BoxTwo myth={myth.desc[lang][1]} />
                             <BoxOne myth={myth.desc[lang][2]} />
@@ -59,7 +59,7 @@ export default function MythPage() {
                                 title={'#fcf6e9'}
                                 background={'#0F0A00'}
                             /> 
-                        </MythContainer>
+                        </TextContainer>
                     </PageContainer>
                 </Fade>
             ) : (error && <Alert />)}

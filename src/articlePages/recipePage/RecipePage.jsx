@@ -12,7 +12,7 @@ import Servings from "../../components/food/servings/Servings";
 import CookTime from "../../components/food/cookTime/CookTime";
 import PrintRecipe from "../../components/food/printRecipe/PrintRecipe";
 
-import { requestRecipe } from "../../services/request";
+import { requestArticleInfo } from "../../services/request";
 
 import { 
     PageContainer,
@@ -31,7 +31,7 @@ export default function RecipePage() {
 
     const fetchData = async () => {
         try {
-            const data = await requestRecipe(id);
+            const data = await requestArticleInfo(id, "cuisine/recipes");
             setRecipe(data);
         } catch (error) {
             console.error("Error fetching data:", error);

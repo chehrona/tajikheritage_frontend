@@ -69,11 +69,14 @@ export const SectionTitle = styled.div`
     font-weight: 500;
     font-family: "EB Garamond", serif;
     font-style: italic;
+    text-align: center;
     margin-bottom: 1rem;
+    line-height: ${({ length }) => length > 20 && '2.05rem'};
 
     @media (max-width: 480px) {
         font-size: 1.25rem;
         margin-bottom: 0.25rem;
+        line-height: ${({ length }) => length > 20 && '1.3rem'};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

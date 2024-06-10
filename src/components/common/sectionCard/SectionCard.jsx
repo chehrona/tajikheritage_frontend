@@ -19,7 +19,7 @@ export default function SectionCard({ section, link, i }) {
                 <ImageWrapper>
                     <SectionImage src={process.env.REACT_APP_BASE_URL + section?.img[lang]} />
                 </ImageWrapper>
-                <SectionTitle>{section?.title[lang]}</SectionTitle>
+                <SectionTitle length={section?.title[lang].length}>{section?.title[lang]}</SectionTitle>
             </SectionCardWrapper>
         </StyledLink>
     );

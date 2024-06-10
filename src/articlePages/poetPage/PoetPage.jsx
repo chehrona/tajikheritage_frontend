@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from "../../App";
 
-import { requestPoet } from "../../services/request";
+import { requestArticleInfo, requestPoet } from "../../services/request";
 
 import PoetBio from "../../components/poet/poetBio/PoetBio";
 import PoetIntro from "../../components/poet/poetIntro/PoetIntro";
@@ -33,7 +33,7 @@ export default function PoetPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestPoet(id);
+            const data = await requestArticleInfo(id, "language/poets");
             setPoet(data);
         } catch (error) {
             setError(true);

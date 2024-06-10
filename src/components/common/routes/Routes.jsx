@@ -5,7 +5,6 @@ import { Routes as ServerRoutes, Route, useLocation } from 'react-router-dom';
 import Home from '../../../landingPages/home/Home';
 import Cuisine from '../../../landingPages/cuisine/Cuisine';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
-import Arts from '../../../landingPages/arts/Arts';
 import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
 import History from '../../../landingPages/history/History';
 import LangsPage from '../../../middlePages/langsPage/LangsPage';
@@ -26,14 +25,16 @@ export default function Routes() {
     
     return (
         <ServerRoutes location={location} key={location.pathname}>
-            <Route path="/arts" element={<Arts />} />
+            <Route path="/arts" element={<LandingPage page={"arts"} />} />
             <Route path="/customs" element={<LandingPage page={"customs"} />} />
             <Route path="/language" element={<LandingPage page={"language"} />} />
             <Route path="/customs/myths" element={<MiddlePage page={"customs/myths"} />} />
+            <Route path="/customs/myths/:id" element={<MythPage page={"customs/myths"} />} />
+            <Route path="/arts/jewellery" element={<MiddlePage page={"arts/jewels"} />} />
+            <Route path="/arts/jewellery/:id" element={<MythPage page={"arts/jewels"} />} />
             <Route path="/customs/traditions" element={<MiddlePage page={"customs/traditions"} />} />
             <Route path="/language/proverbs" element={<MiddlePage page={"language/proverbs"} />} />
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
-            <Route path="/customs/myths/:id" element={<MythPage />} />
             <Route path="/customs/traditions/:id" element={<TraditionPage />} />
             <Route path="/cuisine/recipes/:id" element={<RecipePage />} />
             <Route path="/cuisine/recipes/:id/print" element={<RecipePagePrint />} />

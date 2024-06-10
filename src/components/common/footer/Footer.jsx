@@ -32,6 +32,11 @@ export default function Footer() {
                             <StyledIcon src={instIcon} rad={false} />
                         </StyledIconButton>
                     </a>
+                    <a href='https://www.facebook.com/profile.php?id=61559405503836' rel="noreferrer" target={'_blank'}>
+                        <StyledIconButton>
+                            <StyledIcon src={mailIcon} rad={false} />
+                        </StyledIconButton>
+                    </a>
                     <a href='mailto:thetajikheritage@gmail.com' rel="noreferrer" target={'_blank'}>
                         <StyledIconButton>
                             <StyledIcon src={mailIcon} rad={false} />

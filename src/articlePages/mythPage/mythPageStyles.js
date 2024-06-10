@@ -17,7 +17,7 @@ export const PageContainer = styled.div`
     }
 `;
 
-export const MythContainer = styled.div`
+export const TextContainer = styled.div`
     border-radius: 4rem;
     min-height: 40rem;
     background: #fcf6e9;

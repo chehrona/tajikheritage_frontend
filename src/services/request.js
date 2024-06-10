@@ -27,64 +27,17 @@ export const requestMiddlePage = async (url) => {
     }
 };
 
-export const requestPoet = async (id) => {
+export const requestArticleInfo = async (id, page) => {
     try {
-        const userId = storeVisit(`poets/${id}`);
+        const userId = storeVisit(`${page}/${id}`);
 
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/language/poet`, {
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/${page.substring(0, page.length - 1)}`, {
             params: {
                 id : id,
                 userId: userId
             }
         });
 
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};
-
-export const requestRecipe = async (id) => {
-    try {
-        const userId = storeVisit('cuisine/recipes');
-
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/cuisine/recipes`, {
-            params: {
-                id : id,
-                userId: userId
-            }
-        });
-
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};
-
-export const requestMyth = async (id) => {
-    try {
-        const userId = storeVisit(`myth/${id}`);
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/myth`, {
-            params: {
-                id : id,
-                userId: userId
-            }
-        });
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};
-
-export const requestTradition = async (id) => {
-    try {
-        const userId = storeVisit(`tradition/${id}`);
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/customs/tradition`, {
-            params: {
-                id : id,
-                userId: userId
-            }
-        });
         return response.data;
     } catch (error) {
         throw error;

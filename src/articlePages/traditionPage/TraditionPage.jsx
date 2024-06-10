@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSetLang } from "../../App";
 
-import { requestTradition } from "../../services/request";
+import { requestArticleInfo } from "../../services/request";
 
 import BoxOne from "../../components/myths/mythIntro/FirstBox";
 import BoxTwo from "../../components/myths/mythIntro/SecondBox";
@@ -26,7 +26,7 @@ export default function TraditionPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestTradition(id);
+            const data = await requestArticleInfo(id, "customs/traditions");
             setTradition(data);
         } catch (error) {
             setError(true);
