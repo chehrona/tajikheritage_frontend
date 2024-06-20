@@ -1,19 +1,19 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 import { Tooltip, tooltipClasses } from '@mui/material';
 
 export const StyledTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
-    ))(() => ({
-        [`& .${tooltipClasses.tooltip}`]: {
-            fontSize: 'inherit',
-            fontWeight: 'normal',
-        },
-        [`& .${tooltipClasses.tooltipArrow}`]: {
-            backgroundColor: '#70654a',
-        },
-        [`& .${tooltipClasses.arrow}`]: {
-            color: '#70654a'
-        },
+))(() => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        fontSize: 'inherit',
+        fontWeight: 'normal',
+    },
+    [`& .${tooltipClasses.tooltipArrow}`]: {
+        backgroundColor: '#70654a',
+    },
+    [`& .${tooltipClasses.arrow}`]: {
+        color: '#70654a',
+    },
 }));
 
 export const StyledTypography = styled.div`
@@ -57,5 +57,5 @@ export const WordWrapper = styled.span`
     .termSpan {
         font-weight: bold;
         color: #bd9d52;
-    };
+    }
 `;

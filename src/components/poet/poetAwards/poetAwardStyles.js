@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { Info } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import styled, { keyframes } from 'styled-components';
+import { Info } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 
 const slideOut = keyframes`
     0% {
@@ -25,8 +25,8 @@ export const MainContainer = styled.div`
     padding: 3rem 0rem 3rem 0rem;
 
     &:before {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});
@@ -44,7 +44,7 @@ export const AwardWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem;
-    
+
     @media (max-width: 480px) {
         padding: 0rem 1.5rem;
     }
@@ -69,7 +69,7 @@ export const AwardCard = styled.div`
     box-shadow: 0rem 0rem 0.5rem 0.1rem #504221;
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     @media (max-width: 480px) {
         width: 9rem;
@@ -97,8 +97,8 @@ export const Face = styled.div`
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: ${({ back }) => back && "rotateY(180deg)"};
-    background: ${({ back }) => back ? "#504221d1" : "#0F0A00"};
+    transform: ${({ back }) => back && 'rotateY(180deg)'};
+    background: ${({ back }) => (back ? '#504221d1' : '#0F0A00')};
     background-image: ${({ back }) => back && "url(${'/noise.png'})"};
     border-radius: 1rem;
     padding: 0.8rem;
@@ -122,7 +122,7 @@ export const Year = styled.div`
     font-size: 3rem;
 
     @media (max-width: 480px) {
-       font-size: 2rem;        
+        font-size: 2rem;
     }
 `;
 

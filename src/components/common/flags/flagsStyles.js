@@ -1,9 +1,9 @@
-import { IconButton, Tooltip, tooltipClasses } from "@mui/material";
-import styled from "styled-components";
-import khorLogo from "./images/khorasan.png";
-import usLogo from "./images/united-states.png";
-import ruLogo from "./images/russia.png";
-import tjLogo from "./images/tajikistan.png";
+import { IconButton, Tooltip, tooltipClasses } from '@mui/material';
+import styled from 'styled-components';
+import khorLogo from './images/khorasan.png';
+import usLogo from './images/united-states.png';
+import ruLogo from './images/russia.png';
+import tjLogo from './images/tajikistan.png';
 
 export const FlagWrapper = styled.div`
     width: fit-content;
@@ -29,12 +29,15 @@ export const StyledFlag = styled.div`
     height: 1.5rem;
     background-size: 100%;
     background-repeat: no-repeat;
-    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem #0F0A00b2;
-    background-image: ${({lang}) => 
-        lang === "kh" ? `url(${khorLogo})` :
-        lang === "us" ? `url(${usLogo})` :
-        lang === "ru" ? `url(${ruLogo})` :
-        `url(${tjLogo})`};
+    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem #0f0a00b2;
+    background-image: ${({ lang }) =>
+        lang === 'kh'
+            ? `url(${khorLogo})`
+            : lang === 'us'
+            ? `url(${usLogo})`
+            : lang === 'ru'
+            ? `url(${ruLogo})`
+            : `url(${tjLogo})`};
 
     @media (max-width: 480px) {
         height: 2rem;
@@ -48,7 +51,7 @@ export const StyledFlag = styled.div`
 `;
 
 export const FlagDropdown = styled.div`
-    display: ${({ showLangMenu }) => showLangMenu ? 'flex' : 'none'};
+    display: ${({ showLangMenu }) => (showLangMenu ? 'flex' : 'none')};
     flex-direction: column;
 `;
 
@@ -74,22 +77,22 @@ export const StyledIconButton = styled(IconButton)`
 
 export const StyledTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
-    ))(() => ({
+))(() => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        fontSize: 'inherit',
+        fontFamily: 'inherit',
+        fontWeight: 'normal',
+        padding: '0.5rem 1rem',
+    },
+    [`& .${tooltipClasses.tooltipArrow}`]: {
+        backgroundColor: '#70654a',
+    },
+    [`& .${tooltipClasses.arrow}`]: {
+        color: '#70654a',
+    },
+    '@media (max-width: 1024px)': {
         [`& .${tooltipClasses.tooltip}`]: {
-            fontSize: 'inherit',
-            fontFamily: 'inherit',
-            fontWeight: 'normal',
-            padding: '0.5rem 1rem',
+            display: 'none',
         },
-        [`& .${tooltipClasses.tooltipArrow}`]: {
-            backgroundColor: '#70654a',
-        },
-        [`& .${tooltipClasses.arrow}`]: {
-            color: '#70654a'
-        },
-        '@media (max-width: 1024px)': {
-            [`& .${tooltipClasses.tooltip}`]: {
-                display: 'none',
-            },
-        },
+    },
 }));

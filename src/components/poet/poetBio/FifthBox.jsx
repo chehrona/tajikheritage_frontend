@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useSetLang } from "../../../App";
+import { useSetLang } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import Slideshow from '../../common/slideshow/Slideshow';
@@ -17,9 +17,11 @@ export default function FifthBox({ poet }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({ query: `(min-device-width: 481px) and (max-device-width: 1024px)` });
+    const isTablet = useMediaQuery({
+        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
+    });
 
-    let height = isMobile ? '23rem' : (isTablet ? '40rem' : '30rem');
+    let height = isMobile ? '23rem' : isTablet ? '40rem' : '30rem';
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -31,8 +33,14 @@ export default function FifthBox({ poet }) {
         <BoxSeven>
             <LeftContainer>
                 <FamilyDesc>
-                    <Year align={true} color={'#000'}>{poet?.five[lang].year}</Year>
-                    <div dangerouslySetInnerHTML={{__html: poet?.five[lang].desc}}></div>
+                    <Year align={true} color={'#000'}>
+                        {poet?.five[lang].year}
+                    </Year>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: poet?.five[lang].desc,
+                        }}
+                    ></div>
                 </FamilyDesc>
             </LeftContainer>
             <RightContainer ref={parentRef}>
@@ -43,5 +51,5 @@ export default function FifthBox({ poet }) {
                 />
             </RightContainer>
         </BoxSeven>
-    )
+    );
 }

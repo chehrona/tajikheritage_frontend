@@ -1,25 +1,31 @@
-import React from "react";
+import React from 'react';
 
-import { useSetLang } from "../../../App";
+import { useSetLang } from '../../../App';
 
-import { 
+import {
     SectionCardWrapper,
     SectionImage,
     SectionTitle,
     ImageWrapper,
-    StyledLink
-} from "./sectionCardStyles";
+    StyledLink,
+} from './sectionCardStyles';
 
 export default function SectionCard({ section, link, i }) {
     const { lang } = useSetLang();
 
     return (
         <StyledLink to={link}>
-            <SectionCardWrapper delay={`${0.01*i}s`}>
+            <SectionCardWrapper delay={`${0.01 * i}s`}>
                 <ImageWrapper>
-                    <SectionImage src={process.env.REACT_APP_BASE_URL + section?.img[lang]} />
+                    <SectionImage
+                        src={
+                            process.env.REACT_APP_BASE_URL + section?.img[lang]
+                        }
+                    />
                 </ImageWrapper>
-                <SectionTitle length={section?.title[lang].length}>{section?.title[lang]}</SectionTitle>
+                <SectionTitle length={section?.title[lang].length}>
+                    {section?.title[lang]}
+                </SectionTitle>
             </SectionCardWrapper>
         </StyledLink>
     );

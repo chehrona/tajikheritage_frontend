@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { DialogContent, Button } from "@mui/material";
+import styled from 'styled-components';
+import { DialogContent, Button } from '@mui/material';
 
 export const Desc = styled.div`
     width: 100%;
     height: 100%;
-    color: #0F0A00;
+    color: #0f0a00;
     line-height: 1.5rem;
     text-align: center;
 
@@ -51,7 +51,7 @@ export const InputWrapper = styled.div`
 
 export const InputField = styled.input`
     background: transparent;
-    border: 0.0625rem solid #0F0A00;
+    border: 0.0625rem solid #0f0a00;
     outline: none;
     width: 100%;
     font-size: 1.1rem;
@@ -80,6 +80,7 @@ export const StyledButton = styled(Button)`
 
 export const Error = styled.div`
     font-size: 1rem;
-    color: ${({ error, success }) => error ? '#ad0f0e' : (success && '#297309')};
+    color: ${({ error, success }) =>
+        error ? '#ad0f0e' : success && '#297309'};
     height: 1.75rem;
 `;

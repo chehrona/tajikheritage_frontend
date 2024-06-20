@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from "../../App";
+import { useSetLang } from '../../App';
 
-import { requestArticleInfo, requestPoet } from "../../services/request";
+import { requestArticleInfo, requestPoet } from '../../services/request';
 
-import PoetBio from "../../components/poet/poetBio/PoetBio";
-import PoetIntro from "../../components/poet/poetIntro/PoetIntro";
-import PoetWorks from "../../components/poet/poetWorks/PoetWorks";
-import PoetAwards from "../../components/poet/poetAwards/PoetAwards";
-import PoetMovies from "../../components/poet/poetMovies/PoetMovies";
-import Sources from "../../components/common/sources/Sources";
-import PoetCareer from "../../components/poet/poetCareer/PoetCareer";
-import SectionOptions from "../../components/poet/sectionOptions/SectionOptions";
-import Loader from "../../components/common/loader/Loader";
-import Fade from "../../components/common/transition/Fade";
-import Alert from "../../components/common/alert/Alert";
+import PoetBio from '../../components/poet/poetBio/PoetBio';
+import PoetIntro from '../../components/poet/poetIntro/PoetIntro';
+import PoetWorks from '../../components/poet/poetWorks/PoetWorks';
+import PoetAwards from '../../components/poet/poetAwards/PoetAwards';
+import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
+import Sources from '../../components/common/sources/Sources';
+import PoetCareer from '../../components/poet/poetCareer/PoetCareer';
+import SectionOptions from '../../components/poet/sectionOptions/SectionOptions';
+import Loader from '../../components/common/loader/Loader';
+import Fade from '../../components/common/transition/Fade';
+import Alert from '../../components/common/alert/Alert';
 
-import { 
-    PageContainer,
-    PoetContainer,
-} from "./poetPageStyles";
+import { PageContainer, PoetContainer } from './poetPageStyles';
 
 export default function PoetPage() {
     const { id } = useParams();
@@ -33,7 +30,7 @@ export default function PoetPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, "language/poets");
+            const data = await requestArticleInfo(id, 'language/poets');
             setPoet(data);
         } catch (error) {
             setError(true);
@@ -49,13 +46,13 @@ export default function PoetPage() {
 
     const scrollToView = (e) => {
         e.preventDefault();
-        const target = e.target.getAttribute("data");
-        const parent = document.querySelector(".content-container");
-        
+        const target = e.target.getAttribute('data');
+        const parent = document.querySelector('.content-container');
+
         if (parent) {
             parent.scrollTo({
                 top: document.querySelector(target).offsetTop,
-                behavior: "smooth",
+                behavior: 'smooth',
             });
         }
     };
@@ -67,8 +64,16 @@ export default function PoetPage() {
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <PoetContainer>
-                            <PoetIntro poet={poet} scrollToView={scrollToView} />
-                            {isMobile && <SectionOptions poet={poet} scrollToView={scrollToView} />}
+                            <PoetIntro
+                                poet={poet}
+                                scrollToView={scrollToView}
+                            />
+                            {isMobile && (
+                                <SectionOptions
+                                    poet={poet}
+                                    scrollToView={scrollToView}
+                                />
+                            )}
                             <PoetBio poet={poet} />
                             <PoetWorks poet={poet?.works} />
                             <PoetMovies poet={poet?.movies} />
@@ -84,7 +89,9 @@ export default function PoetPage() {
                         </PoetContainer>
                     </PageContainer>
                 </Fade>
-            ) : (error && <Alert />)}
+            ) : (
+                error && <Alert />
+            )}
         </>
-    ); 
+    );
 }

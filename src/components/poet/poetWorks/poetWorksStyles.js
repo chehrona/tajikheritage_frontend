@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     color: white;
     position: relative;
     background-image: url(${'/noise.png'});
     padding: 6rem 0rem 9rem 0rem;
 
     &:before {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useSetLang } from "../../../App";
+import React, { useState } from 'react';
+import { useSetLang } from '../../../App';
 
-import { addEmail } from "../../../services/request";
+import { addEmail } from '../../../services/request';
 
-import Dialog from "../../common/dialog/Dialog";
+import Dialog from '../../common/dialog/Dialog';
 
 import {
     Desc,
@@ -14,12 +14,17 @@ import {
     InputWrapper,
     InputField,
     StyledButton,
-    Error
-} from "./bookDialogStyles";
+    Error,
+} from './bookDialogStyles';
 
-export default function BookDialog({ book, setBookDialog, bookDialog, setBookIndex }) {
+export default function BookDialog({
+    book,
+    setBookDialog,
+    bookDialog,
+    setBookIndex,
+}) {
     const { lang } = useSetLang();
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState('');
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -33,7 +38,7 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
     function handleClose() {
         setBookDialog(false);
         setBookIndex(null);
-        setEmail("");
+        setEmail('');
         setError(false);
         setSuccess(false);
     }
@@ -44,9 +49,9 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
         if (validEmail.test(email)) {
             const info = {
                 title: book?.title,
-                email: email
+                email: email,
             };
-    
+
             await addEmail(info)
                 .then((res) => res.status === 200 && setSuccess(true))
                 .finally(() => {
@@ -54,41 +59,66 @@ export default function BookDialog({ book, setBookDialog, bookDialog, setBookInd
                         handleClose();
                     }, 1000);
                 });
-        
         } else {
             setError(true);
         }
-    }
+    };
 
     return (
         <Dialog
             open={bookDialog}
-            width={"500px"}
-            border={"1.5rem"}
+            width={'500px'}
+            border={'1.5rem'}
             handleClose={handleClose}
-            backdrop={"rgba(15 10 0 / 30%)"}
-            background={"#fcf6e9"}
+            backdrop={'rgba(15 10 0 / 30%)'}
+            background={'#fcf6e9'}
         >
             <StyledContent>
                 <InfoContainer>
                     <InfoTitle>
-                        {lang === "us" ? "Apologies!" : (lang === "ru" ? "Извините!" : "Бубахшед!")}
+                        {lang === 'us'
+                            ? 'Apologies!'
+                            : lang === 'ru'
+                            ? 'Извините!'
+                            : 'Бубахшед!'}
                     </InfoTitle>
                     <BodyContainer>
                         <Desc>{book?.msg}</Desc>
-                        {book?.email && <InputWrapper>
-                            <InputField
-                                placeholder={lang === "us" ? "Enter your email" : (lang === "ru" ? "Адрес электронной почты" : "Суроғаи почтаи электронӣ")}
-                                value={email}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            <StyledButton onClick={handleSubmit}>
-                                {lang === "us" ? "Submit" : (lang === "ru" ? "Ввод" : "Фирист")}
-                            </StyledButton>
-                        </InputWrapper>}
-                        <Error error={error} success={success}>{error ? 
-                            (lang === "us" ? "Invalid email" : (lang === "ru" ? "Неверный адрес" : "Почтаи электронӣ нодуруст")) : (
-                                success && (lang === "us" ? "We got your email address. Thank you." : (lang === "ru" ? "Мы получили ваш адрес электронной почты. Спасибо." : "Почтаи электрониатонро гирифтем. Раҳмат.")))}
+                        {book?.email && (
+                            <InputWrapper>
+                                <InputField
+                                    placeholder={
+                                        lang === 'us'
+                                            ? 'Enter your email'
+                                            : lang === 'ru'
+                                            ? 'Адрес электронной почты'
+                                            : 'Суроғаи почтаи электронӣ'
+                                    }
+                                    value={email}
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                <StyledButton onClick={handleSubmit}>
+                                    {lang === 'us'
+                                        ? 'Submit'
+                                        : lang === 'ru'
+                                        ? 'Ввод'
+                                        : 'Фирист'}
+                                </StyledButton>
+                            </InputWrapper>
+                        )}
+                        <Error error={error} success={success}>
+                            {error
+                                ? lang === 'us'
+                                    ? 'Invalid email'
+                                    : lang === 'ru'
+                                    ? 'Неверный адрес'
+                                    : 'Почтаи электронӣ нодуруст'
+                                : success &&
+                                  (lang === 'us'
+                                      ? 'We got your email address. Thank you.'
+                                      : lang === 'ru'
+                                      ? 'Мы получили ваш адрес электронной почты. Спасибо.'
+                                      : 'Почтаи электрониатонро гирифтем. Раҳмат.')}
                         </Error>
                     </BodyContainer>
                 </InfoContainer>

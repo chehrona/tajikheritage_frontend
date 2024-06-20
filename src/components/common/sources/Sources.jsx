@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useSetLang } from "../../../App";
-import { IconButton, ClickAwayListener } from "@mui/material";
+import React, { useState } from 'react';
+import { useSetLang } from '../../../App';
+import { IconButton, ClickAwayListener } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
 
 import {
@@ -17,8 +17,8 @@ import {
     RefIndex,
     SourceLink,
     MainContainer,
-    SourceWrapper
-} from "./sourceStyles";
+    SourceWrapper,
+} from './sourceStyles';
 
 export default function Sources({ data, color, title, background }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(0);
@@ -34,8 +34,16 @@ export default function Sources({ data, color, title, background }) {
                 <DropDownContainer>
                     <IconContainer>
                         <Line right={1} />
-                        <IconButton onClick={() => setIsDropdownOpen(prevState => !prevState)}>
-                            {isDropdownOpen ? <StyledUpIcon /> : <StyledDownIcon />}
+                        <IconButton
+                            onClick={() =>
+                                setIsDropdownOpen((prevState) => !prevState)
+                            }
+                        >
+                            {isDropdownOpen ? (
+                                <StyledUpIcon />
+                            ) : (
+                                <StyledDownIcon />
+                            )}
                         </IconButton>
                         <Line right={0} />
                     </IconContainer>
@@ -46,7 +54,11 @@ export default function Sources({ data, color, title, background }) {
                     >
                         <RefWrapper open={isDropdownOpen}>
                             <SubTitle title={title}>
-                                {lang === 'ru' ? 'Литература' : (lang === 'tj' ? 'Адабиёт' : 'References')}
+                                {lang === 'ru'
+                                    ? 'Литература'
+                                    : lang === 'tj'
+                                    ? 'Адабиёт'
+                                    : 'References'}
                             </SubTitle>
                             {data.map((source, i) => {
                                 return (
@@ -55,20 +67,27 @@ export default function Sources({ data, color, title, background }) {
                                             <div>{i + 1}.</div>
                                         </RefIndex>
                                         <SourceWrapper>
-                                            <Reference dangerouslySetInnerHTML={{ __html: source?.name }} />
+                                            <Reference
+                                                dangerouslySetInnerHTML={{
+                                                    __html: source?.name,
+                                                }}
+                                            />
                                             {source?.link.length ? (
-                                                <SourceLink href={source?.link} target="_blank">
+                                                <SourceLink
+                                                    href={source?.link}
+                                                    target="_blank"
+                                                >
                                                     <OpenInNew />
                                                 </SourceLink>
                                             ) : null}
                                         </SourceWrapper>
-                                    </RefBox>  
-                                )
+                                    </RefBox>
+                                );
                             })}
                         </RefWrapper>
                     </RefContainer>
                 </DropDownContainer>
             </ClickAwayListener>
         </MainContainer>
-    )
+    );
 }

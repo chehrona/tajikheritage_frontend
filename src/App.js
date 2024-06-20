@@ -1,4 +1,11 @@
-import { useContext, createContext, useMemo, useState, useRef, useEffect } from 'react';
+import {
+    useContext,
+    createContext,
+    useMemo,
+    useState,
+    useRef,
+    useEffect,
+} from 'react';
 import Header from './components/common/header/Header';
 import Menu from './components/common/menu/Menu';
 import Footer from './components/common/footer/Footer';
@@ -27,22 +34,25 @@ function App() {
     const [isPrint, setIsPrint] = useState(false);
     const [isMenuShown, setIsMenuShown] = useState(false);
 
-    const value = useMemo(() => (
-        {
-            lang, setLang,
-            isPrint, setIsPrint
-        }
-    ), [lang, isPrint]);
+    const value = useMemo(
+        () => ({
+            lang,
+            setLang,
+            isPrint,
+            setIsPrint,
+        }),
+        [lang, isPrint],
+    );
 
-    useEffect(() => {      
+    useEffect(() => {
         // Prevent right click
-        const handleContextmenu = e => {
+        const handleContextmenu = (e) => {
             e.preventDefault();
-        }
-        document.addEventListener('contextmenu', handleContextmenu)
+        };
+        document.addEventListener('contextmenu', handleContextmenu);
         return function cleanup() {
-            document.removeEventListener('contextmenu', handleContextmenu)
-        }
+            document.removeEventListener('contextmenu', handleContextmenu);
+        };
     }, []);
 
     const handleCopy = async () => {
@@ -58,22 +68,38 @@ function App() {
         const currentScrollPos = parentRef.current.scrollTop;
         const parentHeight = parentRef.current.getBoundingClientRect().height;
 
-        if (currentScrollPos < position && currentScrollPos > parentHeight/2) {
+        if (
+            currentScrollPos < position &&
+            currentScrollPos > parentHeight / 2
+        ) {
             setShowArrow(1);
         } else {
             setShowArrow(0);
         }
 
         setPosition(currentScrollPos);
-    }
+    };
 
     return (
         <LangContext.Provider value={value}>
-            <div className='content-container' ref={parentRef} onScroll={handleScroll} onCopy={handleCopy}>
-                {!isPrint && <Header setIsMenuShown={setIsMenuShown} isMenuShown={isMenuShown} />}
-                <Menu setIsMenuShown={setIsMenuShown} isMenuShown={isMenuShown} />
+            <div
+                className="content-container"
+                ref={parentRef}
+                onScroll={handleScroll}
+                onCopy={handleCopy}
+            >
+                {!isPrint && (
+                    <Header
+                        setIsMenuShown={setIsMenuShown}
+                        isMenuShown={isMenuShown}
+                    />
+                )}
+                <Menu
+                    setIsMenuShown={setIsMenuShown}
+                    isMenuShown={isMenuShown}
+                />
                 <Routes />
-                <div className='fixed-container'>
+                <div className="fixed-container">
                     {!isPrint && <Flags />}
                     {showArrow ? <ScrollUpArrow parentRef={parentRef} /> : null}
                 </div>

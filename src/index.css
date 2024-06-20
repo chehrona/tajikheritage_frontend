@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    background: #0F0A00;
+    background: #0f0a00;
     margin: 0;
     height: 100%;
     width: 100%;
@@ -30,12 +30,12 @@ body * {
 }
 
 .content-container {
-    position: relative; 
+    position: relative;
     max-width: 1440px;
     height: 100svh;
     overflow-y: scroll;
     margin: 0 auto;
-    background: #0F0A00;
+    background: #0f0a00;
 }
 
 .content-container::-webkit-scrollbar {
@@ -67,16 +67,17 @@ body * {
     width: 100%;
 }
 
-sup, sub {
+sup,
+sub {
     vertical-align: baseline;
     position: relative;
     top: -0.5rem;
     color: #92793f;
     font-size: 0.75rem;
     font-style: normal;
-    font-family: "IBM Plex Serif", serif;
+    font-family: 'IBM Plex Serif', serif;
 }
 
-sub { 
-    top: 0.4rem; 
+sub {
+    top: 0.4rem;
 }

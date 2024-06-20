@@ -1,31 +1,31 @@
-import React from "react";
-import { useSetLang } from "../../../App";
-import { pageInfo } from "./pageNames";
+import React from 'react';
+import { useSetLang } from '../../../App';
+import { pageInfo } from './pageNames';
 
-import { Slide} from "@mui/material";
+import { Slide } from '@mui/material';
 
-import { 
+import {
     LogoContainer,
     Logo,
     PageName,
     PageNamesContainer,
     PageDesc,
-    StyledLink, 
-    StyledMenu
-} from "./menuStyles";
+    StyledLink,
+    StyledMenu,
+} from './menuStyles';
 
 export default function Menu({ isMenuShown, setIsMenuShown }) {
     const { lang } = useSetLang();
 
-    return (    
+    return (
         <StyledMenu
             open={isMenuShown}
             TransitionComponent={Slide}
             TransitionProps={{
-                duration: 200
+                duration: 200,
             }}
             sx={{
-                zIndex: '10'
+                zIndex: '10',
             }}
         >
             <LogoContainer>
@@ -40,10 +40,9 @@ export default function Menu({ isMenuShown, setIsMenuShown }) {
                                 <PageDesc>{entry.desc}</PageDesc>
                             </div>
                         </StyledLink>
-                    )
+                    );
                 })}
             </PageNamesContainer>
         </StyledMenu>
-    )
-
+    );
 }

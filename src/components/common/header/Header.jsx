@@ -1,6 +1,6 @@
-import React from "react";
-import { useMediaQuery } from "react-responsive";
-import { useSetLang } from "../../../App";
+import React from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { useSetLang } from '../../../App';
 
 import {
     HeaderContainer,
@@ -15,14 +15,14 @@ import {
     TitleSpan,
     StyledCloseIcon,
     StyledLink,
-} from "./headerStyles";
+} from './headerStyles';
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang } = useSetLang();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
-        setIsMenuShown(prevState => !prevState);
+        setIsMenuShown((prevState) => !prevState);
     }
 
     function handleLogoClick() {
@@ -39,21 +39,41 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                 </LogoWrapper>
                 <TitleWrapper>
                     <Title>
-                        <TitleSpan dangerouslySetInnerHTML={{__html: lang === 'us' ? 'THE TAJIKS:' : (lang === 'ru' ? 'ТАДЖИКИ:' : 'ТОҶИКОН:')}} />
-                        {lang === 'us' ? 'Iranians of the East' : (lang === 'ru' ? 'Иранцы Востока' : 'Эрониёни Шарқ')}
+                        <TitleSpan
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    lang === 'us'
+                                        ? 'THE TAJIKS:'
+                                        : lang === 'ru'
+                                        ? 'ТАДЖИКИ:'
+                                        : 'ТОҶИКОН:',
+                            }}
+                        />
+                        {lang === 'us'
+                            ? 'Iranians of the East'
+                            : lang === 'ru'
+                            ? 'Иранцы Востока'
+                            : 'Эрониёни Шарқ'}
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>
-                    {!isMobile && 
-                        (isMenuShown ?
-                            <div>{lang === 'us' ? 'CLOSE' : (lang === 'ru' ? 'ЗАКРЫТЬ' : 'ПӮШЕД')}</div> : 
+                    {!isMobile &&
+                        (isMenuShown ? (
+                            <div>
+                                {lang === 'us'
+                                    ? 'CLOSE'
+                                    : lang === 'ru'
+                                    ? 'ЗАКРЫТЬ'
+                                    : 'ПӮШЕД'}
+                            </div>
+                        ) : (
                             <div>{lang === 'us' ? 'MENU' : 'МЕНЮ'}</div>
-                        )}
+                        ))}
                     <StyledIconButton onClick={showMenu}>
                         {isMenuShown ? <StyledCloseIcon /> : <StyledMenuIcon />}
                     </StyledIconButton>
                 </MenuWrapper>
             </HeaderInnerBox>
         </HeaderContainer>
-    )
-} 
+    );
+}

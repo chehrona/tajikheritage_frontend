@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useSetLang } from "../../../App";
+import React, { useState } from 'react';
+import { useSetLang } from '../../../App';
 
-import AwardDialog from "../awardDialog/AwardDialog";
+import AwardDialog from '../awardDialog/AwardDialog';
 
 import {
     MainContainer,
     AwardCard,
-    Title, 
+    Title,
     Image,
     InnerContainer,
     Face,
@@ -14,7 +14,7 @@ import {
     StyledIconButton,
     StyledInfoIcon,
     AwardWrapper,
-} from "./poetAwardStyles";
+} from './poetAwardStyles';
 
 export default function PoetAwards({ poet }) {
     const { lang } = useSetLang();
@@ -23,7 +23,7 @@ export default function PoetAwards({ poet }) {
 
     function handleAwardDialog(e, award) {
         setShowAwardInfo(true);
-        setAwardInfo(award)
+        setAwardInfo(award);
     }
 
     return (
@@ -31,28 +31,39 @@ export default function PoetAwards({ poet }) {
             <AwardWrapper length={poet[lang]}>
                 {poet[lang].map((award, i) => {
                     return (
-                        <AwardCard key={i} delay={`${0.05*i}s`}>
+                        <AwardCard key={i} delay={`${0.05 * i}s`}>
                             <InnerContainer>
                                 <Face>
-                                    <Image src={process.env.REACT_APP_BASE_URL + award.img} />
+                                    <Image
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            award.img
+                                        }
+                                    />
                                 </Face>
                                 <Face back={true}>
                                     <Title>{award.title}</Title>
                                     {award.years.map((year) => {
-                                        return (
-                                            <Year key={year}>{year}</Year>
-                                        )
+                                        return <Year key={year}>{year}</Year>;
                                     })}
-                                    <StyledIconButton onClick={(e) => handleAwardDialog(e, award)}>
+                                    <StyledIconButton
+                                        onClick={(e) =>
+                                            handleAwardDialog(e, award)
+                                        }
+                                    >
                                         <StyledInfoIcon />
                                     </StyledIconButton>
                                 </Face>
                             </InnerContainer>
                         </AwardCard>
-                    )})
-                }
+                    );
+                })}
             </AwardWrapper>
-            <AwardDialog awardInfo={awardInfo} showAwardInfo={showAwardInfo} setShowAwardInfo={setShowAwardInfo} />
+            <AwardDialog
+                awardInfo={awardInfo}
+                showAwardInfo={showAwardInfo}
+                setShowAwardInfo={setShowAwardInfo}
+            />
         </MainContainer>
-    )
+    );
 }

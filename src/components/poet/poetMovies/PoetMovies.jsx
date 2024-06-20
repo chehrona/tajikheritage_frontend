@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import { useSetLang } from "../../../App";
-import MovieDialog from "../movieDialog/MovieDialog";
+import React, { useState } from 'react';
+import { useSetLang } from '../../../App';
+import MovieDialog from '../movieDialog/MovieDialog';
 
-import { MainContainer, MovieCard, Image, StyledIconButton, StyledExpand, MovieWrapper } from "./poetMovieStyles.js";
+import {
+    MainContainer,
+    MovieCard,
+    Image,
+    StyledIconButton,
+    StyledExpand,
+    MovieWrapper,
+} from './poetMovieStyles.js';
 
 export default function PoetMovies({ poet }) {
     const { lang } = useSetLang();
@@ -19,14 +26,18 @@ export default function PoetMovies({ poet }) {
             <MovieWrapper>
                 {poet[lang].map((movie, i) => {
                     return (
-                        <MovieCard key={i} delay={`${0.1*i}s`}>
-                            <Image src={process.env.REACT_APP_BASE_URL + movie.img} />
-                            <StyledIconButton onClick={(e) => handleMovieDialog(e, movie)}>
+                        <MovieCard key={i} delay={`${0.1 * i}s`}>
+                            <Image
+                                src={process.env.REACT_APP_BASE_URL + movie.img}
+                            />
+                            <StyledIconButton
+                                onClick={(e) => handleMovieDialog(e, movie)}
+                            >
                                 <StyledExpand />
                             </StyledIconButton>
                         </MovieCard>
-                    )})
-                }
+                    );
+                })}
             </MovieWrapper>
             <MovieDialog
                 movieInfo={movieInfo}

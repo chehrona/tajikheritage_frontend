@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { useSetLang } from "../../../App";
+import { useSetLang } from '../../../App';
 
 import {
     InfoWrapper,
@@ -8,8 +8,8 @@ import {
     StyledCloseButton,
     StyledExpandButton,
     StyledCloseIcon,
-    StyledExpandIcon
-} from "./infoBoxStyles";
+    StyledExpandIcon,
+} from './infoBoxStyles';
 
 export default function InfoBox({ text }) {
     const { lang } = useSetLang();
@@ -19,18 +19,16 @@ export default function InfoBox({ text }) {
         setShowInfo(true);
     }, [lang]);
 
-    return (
-        showInfo ? (
-            <InfoWrapper>
-                <Text dangerouslySetInnerHTML={{__html: text}} />
-                <StyledCloseButton onClick={() => setShowInfo(false)}>
-                    <StyledCloseIcon />
-                </StyledCloseButton>
-            </InfoWrapper>
-        ) : (
-            <StyledExpandButton onClick={() => setShowInfo(true)}>
-                <StyledExpandIcon />
-            </StyledExpandButton>
-        )
+    return showInfo ? (
+        <InfoWrapper>
+            <Text dangerouslySetInnerHTML={{ __html: text }} />
+            <StyledCloseButton onClick={() => setShowInfo(false)}>
+                <StyledCloseIcon />
+            </StyledCloseButton>
+        </InfoWrapper>
+    ) : (
+        <StyledExpandButton onClick={() => setShowInfo(true)}>
+            <StyledExpandIcon />
+        </StyledExpandButton>
     );
 }

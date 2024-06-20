@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { IconButton } from "@mui/material";
-import { ChevronRight } from "@mui/icons-material";
+import styled, { keyframes } from 'styled-components';
+import { IconButton } from '@mui/material';
+import { ChevronRight } from '@mui/icons-material';
 
 const bounce = keyframes`
     0%, 20%, 50%, 80%, 100% {
@@ -37,8 +37,8 @@ export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
 
     &:before {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});
@@ -77,7 +77,7 @@ export const MovieCard = styled.div`
     box-shadow: 0rem 0rem 0.6rem #504221;
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     @media (max-width: 480px) {
         height: 17.15rem;
@@ -108,10 +108,10 @@ export const StyledIconButton = styled(IconButton)`
 
     &.MuiIconButton-root {
         position: absolute;
-        background: #0F0A00;
+        background: #0f0a00;
 
         &:hover {
-            background: #0F0A00;
+            background: #0f0a00;
         }
     }
 

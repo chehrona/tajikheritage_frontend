@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 
 import { Zoom } from '@mui/material';
 
 import {
     StyledDialog,
     StyledCloseButton,
-    StyledCloseIcon
-} from "./dialogStyles";
+    StyledCloseIcon,
+} from './dialogStyles';
 
 const Transition = ({ children, ...props }) => (
-    <Zoom {...props}>
-        {children}
-    </Zoom>
+    <Zoom {...props}>{children}</Zoom>
 );
 
 export default function Dialog({
@@ -22,7 +20,7 @@ export default function Dialog({
     backdrop,
     background,
     height,
-    border
+    border,
 }) {
     return (
         <StyledDialog
@@ -31,7 +29,7 @@ export default function Dialog({
             TransitionComponent={Transition}
             TransitionProps={{
                 in: open,
-                easing: {enter: "linear", exit: "linear"}
+                easing: { enter: 'linear', exit: 'linear' },
             }}
             width={width}
             border={border}

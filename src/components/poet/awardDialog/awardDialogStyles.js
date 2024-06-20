@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { DialogContent } from "@mui/material";
+import styled from 'styled-components';
+import { DialogContent } from '@mui/material';
 
 export const Desc = styled.div`
     width: 100%;
@@ -58,14 +58,14 @@ export const BodyContainer = styled.div`
 
 export const Wrapper = styled.div`
     height: 100%;
-    width: ${({ first }) => first ? "25%" : "75%"};
+    width: ${({ first }) => (first ? '25%' : '75%')};
 
     @media (max-width: 480px) {
         width: 100%;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: ${({ first }) => first ? "24.5%" : "76.5%"};
+        width: ${({ first }) => (first ? '24.5%' : '76.5%')};
     }
 `;
 
@@ -74,7 +74,7 @@ export const AwardImg = styled.img`
     height: 15rem;
     width: 11rem;
     padding: 1rem;
-    background: #0F0A00;
+    background: #0f0a00;
     background-image: url(${'/noise.png'});
     box-shadow: 0rem 0rem 0.4rem 0.01rem #bd9d52;
 

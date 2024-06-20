@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { South } from "@mui/icons-material";
+import styled, { keyframes } from 'styled-components';
+import { South } from '@mui/icons-material';
 
 const bounce = keyframes`
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
@@ -9,20 +9,25 @@ const bounce = keyframes`
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
-    background-color: #0F0A00;
+    background-color: #0f0a00;
     overflow: hidden;
     min-height: calc(100svh - 9.23rem);
 
     @media (max-width: 480px) {
-		min-height: calc(100svh - 8.73rem);
+        min-height: calc(100svh - 8.73rem);
     }
 `;
 
 export const InnerContainer = styled.div`
     height: 100%;
     display: flex;
-    background: 
-        linear-gradient(90deg, rgba(189, 157, 82, 0.05), rgba(189, 157, 82, 0.07), rgba(189, 157, 82, 0.09), rgba(189, 157, 82, 0.11));
+    background: linear-gradient(
+        90deg,
+        rgba(189, 157, 82, 0.05),
+        rgba(189, 157, 82, 0.07),
+        rgba(189, 157, 82, 0.09),
+        rgba(189, 157, 82, 0.11)
+    );
     position: relative;
 `;
 
@@ -35,7 +40,7 @@ export const ScrollWrapper = styled.div`
     right: 1rem;
 
     @media (max-width: 480px) {
-		bottom: 8rem;
+        bottom: 8rem;
         right: 2rem;
         opacity: 1;
     }

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled, {keyframes} from "styled-components";
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -22,12 +22,12 @@ export const PoetCardWrapper = styled.div`
     height: 35rem;
     color: #fcf6e9;
     cursor: pointer;
-    background: #0F0A00;
+    background: #0f0a00;
     position: relative;
     border-radius: 0.7rem;
     transition: border-radius 250ms, box-shadow 400ms;
     animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     &:hover {
         border-radius: 1.5rem;
@@ -91,9 +91,7 @@ export const PoetImage = styled.img`
     width: 13.5rem;
     margin: 0.3rem;
     box-shadow: 0rem 0rem 1rem rgba(189, 157, 82, 0.8);
-    background: #0F0A00
-        url("/loader.png") center
-        no-repeat;
+    background: #0f0a00 url('/loader.png') center no-repeat;
     background-size: 50% auto;
 
     @media (max-width: 480px) {
@@ -111,7 +109,7 @@ export const PoetImage = styled.img`
 
 export const PoetName = styled.div`
     font-size: 2.5rem;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     text-shadow: 0rem 0rem 0.25rem black;
 

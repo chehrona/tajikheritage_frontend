@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
     min-height: fit-content;
     padding-bottom: 8rem;
-    background-color: #0F0A00;
+    background-color: #0f0a00;
     position: relative;
     height: 21rem;
 
     &:after {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});
@@ -22,10 +22,10 @@ export const MainContainer = styled.div`
     }
 
     &:before {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
-        background: #0F0A00;
+        background: #0f0a00;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;

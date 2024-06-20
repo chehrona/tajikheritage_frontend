@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -28,7 +28,7 @@ const slideUp = keyframes`
 `;
 
 export const MainContainer = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -36,8 +36,8 @@ export const MainContainer = styled.div`
     overflow: hidden;
 
     &:after {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
@@ -46,7 +46,7 @@ export const MainContainer = styled.div`
         bottom: -0.01rem;
         box-sizing: border-box;
     }
-    
+
     @media (max-width: 480px) {
         border-radius: 0rem;
         flex-direction: column-reverse;
@@ -75,7 +75,7 @@ export const FadedImage = styled.img`
     width: 47rem;
     min-height: 50rem;
     height: auto;
-    background: #0F0A00;
+    background: #0f0a00;
     transform-origin: center;
     border-radius: 5rem 4rem 0rem 5rem;
 
@@ -124,7 +124,7 @@ export const TitleSpan = styled.span`
     opacity: 0;
     transform: translateY(-100%);
     animation: ${slideUp} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     &:hover {
         text-shadow: 0.1rem 1rem 2rem #dedbdb;
@@ -135,7 +135,7 @@ export const TitleSpan = styled.span`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         text-shadow: 0.1rem 1rem 2rem #dedbdb;
         font-size: 1.75rem;
-        
+
         &:hover {
             font-size: 1.75rem;
         }
@@ -153,7 +153,9 @@ export const PoetName = styled.div`
     -webkit-text-stroke-color: #bd9d52;
     animation: ${slideOut} 1s ease-in-out forwards;
 
-    ${({ color }) => color && `
+    ${({ color }) =>
+        color &&
+        `
         animation-delay: 0s;
         color: transparent;
         margin-right: 2rem;
@@ -168,7 +170,9 @@ export const PoetName = styled.div`
         text-shadow: 0rem 0rem 2rem black;
         -webkit-text-stroke-width: 0.22rem;
 
-        ${({ color }) => color && `
+        ${({ color }) =>
+            color &&
+            `
             color: #dedbdb;
             text-align: right;
             margin-right: 2rem;
@@ -241,5 +245,5 @@ export const NumSpan = styled.span`
     display: inline-block;
     opacity: 0;
     animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 `;

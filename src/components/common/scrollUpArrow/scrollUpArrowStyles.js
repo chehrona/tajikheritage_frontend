@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { IconButton } from "@mui/material";
+import styled from 'styled-components';
+import { IconButton } from '@mui/material';
 
 export const MainContainer = styled.div`
     cursor: pointer;
@@ -38,5 +38,5 @@ export const Arrow = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem #0F0A00b2;
+    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem #0f0a00b2;
 `;

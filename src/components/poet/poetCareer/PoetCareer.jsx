@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from "../../../App";
+import { useSetLang } from '../../../App';
 
-import { ArrowForwardIos } from "@mui/icons-material";
+import { ArrowForwardIos } from '@mui/icons-material';
 
-import InfoBox from "../../common/infoBox/InfoBox";
+import InfoBox from '../../common/infoBox/InfoBox';
 
 import {
     Year,
@@ -24,7 +24,7 @@ import {
     UnitWrapper,
     YearWrapper,
     InfoWrapper,
-} from "./poetCareerStyles";
+} from './poetCareerStyles';
 
 export default function PoetCareer({ points }) {
     const { lang } = useSetLang();
@@ -40,7 +40,7 @@ export default function PoetCareer({ points }) {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
         const childWidth = childRef?.current?.getBoundingClientRect().width;
 
-        const difference = parentWidth/2 - (childWidth/2 + gap);
+        const difference = parentWidth / 2 - (childWidth / 2 + gap);
         const translationValue = childWidth - difference;
 
         setTranslate(-translationValue);
@@ -49,21 +49,21 @@ export default function PoetCareer({ points }) {
     }, [lang]);
 
     const handleNext = () => {
-        if (currentIndex < points?.years?.length - 1) {            
-            setCurrentIndex(prevState => prevState + 1);
+        if (currentIndex < points?.years?.length - 1) {
+            setCurrentIndex((prevState) => prevState + 1);
             setTranslate((prevState) => prevState - currentSize - gap);
         }
-    }
+    };
 
     const handlePrev = () => {
         if (currentIndex > 0) {
-            setCurrentIndex(prevState => prevState - 1);
+            setCurrentIndex((prevState) => prevState - 1);
             setTranslate((prevState) => prevState + currentSize + gap);
         }
-    }
+    };
 
     return (
-        <MainContainer id='Career'>
+        <MainContainer id="Career">
             <YearSlider>
                 <UnitWrapper>
                     <Line />
@@ -71,7 +71,7 @@ export default function PoetCareer({ points }) {
                         return (
                             <YearWrapper key={i + 1} size={i === currentIndex}>
                                 <Year show={i !== currentIndex}>{point}</Year>
-                            </YearWrapper>   
+                            </YearWrapper>
                         );
                     })}
                 </UnitWrapper>
@@ -82,21 +82,43 @@ export default function PoetCareer({ points }) {
                                 <InfoWrapper key={'a' + i} ref={childRef}>
                                     <ImageWrapper>
                                         <Image
-                                            src={process.env.REACT_APP_BASE_URL + entry.slides[0]?.img}
+                                            src={
+                                                process.env.REACT_APP_BASE_URL +
+                                                entry.slides[0]?.img
+                                            }
                                             width={currentSize * 0.36}
-                                            height={"26rem"}
+                                            height={'26rem'}
                                         >
-                                            {entry.slides[0]?.info && <InfoBox text={entry.slides[0]?.info} />}
+                                            {entry.slides[0]?.info && (
+                                                <InfoBox
+                                                    text={entry.slides[0]?.info}
+                                                />
+                                            )}
                                         </Image>
                                     </ImageWrapper>
                                     <DescWrapper>
-                                        <Desc dangerouslySetInnerHTML={{__html: entry?.text}} />
+                                        <Desc
+                                            dangerouslySetInnerHTML={{
+                                                __html: entry?.text,
+                                            }}
+                                        />
                                         <Footer>
-                                            <StyledIconButton left={1} onClick={handlePrev} disabled={i === 1}>
+                                            <StyledIconButton
+                                                left={1}
+                                                onClick={handlePrev}
+                                                disabled={i === 1}
+                                            >
                                                 <ArrowForwardIos />
                                             </StyledIconButton>
-                                            <Step>{`${currentIndex + 1}/${points?.years.length}`}</Step>
-                                            <StyledIconButton onClick={handleNext} disabled={i === points?.years?.length}>
+                                            <Step>{`${currentIndex + 1}/${
+                                                points?.years.length
+                                            }`}</Step>
+                                            <StyledIconButton
+                                                onClick={handleNext}
+                                                disabled={
+                                                    i === points?.years?.length
+                                                }
+                                            >
                                                 <ArrowForwardIos />
                                             </StyledIconButton>
                                         </Footer>
@@ -106,11 +128,22 @@ export default function PoetCareer({ points }) {
                         })}
                     </InfoInnerContainer>
                     <MobileFooter>
-                        <StyledIconButton left={1} onClick={handlePrev} disabled={currentIndex === 0}>
+                        <StyledIconButton
+                            left={1}
+                            onClick={handlePrev}
+                            disabled={currentIndex === 0}
+                        >
                             <ArrowForwardIos />
                         </StyledIconButton>
-                        <Step>{`${currentIndex + 1}/${points?.years.length}`}</Step>
-                        <StyledIconButton onClick={handleNext} disabled={currentIndex === points?.years?.length - 1}>
+                        <Step>{`${currentIndex + 1}/${
+                            points?.years.length
+                        }`}</Step>
+                        <StyledIconButton
+                            onClick={handleNext}
+                            disabled={
+                                currentIndex === points?.years?.length - 1
+                            }
+                        >
                             <ArrowForwardIos />
                         </StyledIconButton>
                     </MobileFooter>

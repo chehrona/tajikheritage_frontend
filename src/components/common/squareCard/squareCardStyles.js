@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled, {keyframes} from "styled-components";
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -20,13 +20,13 @@ export const SquareCardWrapper = styled.div`
     opacity: 0;
     height: 25rem;
     width: 25rem;
-    color: #0F0A00;
+    color: #0f0a00;
     cursor: pointer;
     position: relative;
     border-radius: 0.7rem;
     animation: ${slideOut} 1s ease-in-out forwards;
     transition: border-radius 250ms, box-shadow 400ms;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     &:hover {
         box-shadow: 0rem 0rem 0.6rem #504221d1;

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSetLang } from "../../App";
+import { useSetLang } from '../../App';
 
-import { requestPage } from "../../services/request";
+import { requestPage } from '../../services/request';
 
 import RecipeCard from '../../components/food/recipeCard/RecipeCard';
-import Fade from "../../components/common/transition/Fade";
-import Loader from "../../components/common/loader/Loader";
+import Fade from '../../components/common/transition/Fade';
+import Loader from '../../components/common/loader/Loader';
 
 import { PageContainer, RecipeBoxContainer } from './cuisinePageStyles';
 
-import { TempImg, TempPageContainer, TempTitle } from '../language/languagePageStyles';
+import {
+    TempImg,
+    TempPageContainer,
+    TempTitle,
+} from '../language/languagePageStyles';
 
 function Cuisine() {
     const location = useLocation();
@@ -21,10 +25,10 @@ function Cuisine() {
     const fetchData = async () => {
         try {
             setLoading(1);
-            const data = await requestPage("cuisine");
+            const data = await requestPage('cuisine');
             setRecipes(data);
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error('Error fetching data:', error);
         } finally {
             setLoading(0);
         }
@@ -56,11 +60,11 @@ function Cuisine() {
         // </>
         <TempPageContainer>
             <TempTitle>
-                {
-                    lang === "us" ? "Exciting updates are on the way!" : (
-                    lang === "ru" ? "Обновления уже в пути!" : 
-                    "Навигариҳо дар роҳ ҳастанд!")
-                }
+                {lang === 'us'
+                    ? 'Exciting updates are on the way!'
+                    : lang === 'ru'
+                    ? 'Обновления уже в пути!'
+                    : 'Навигариҳо дар роҳ ҳастанд!'}
             </TempTitle>
             <TempImg src={'/loader.png'} />
         </TempPageContainer>

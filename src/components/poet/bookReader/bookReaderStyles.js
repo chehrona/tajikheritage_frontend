@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Dialog, IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
-import { Close } from "@mui/icons-material";
+import styled from 'styled-components';
+import { Dialog, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Close } from '@mui/icons-material';
 
 export const StyledDialog = styled(Dialog)`
     height: 100%;
@@ -13,14 +13,12 @@ export const StyledFrame = styled.iframe`
     width: 100vw;
     height: 100vh;
     border: none;
-    background: #202020
-        url("/loader.png") center
-        no-repeat;
+    background: #202020 url('/loader.png') center no-repeat;
     background-size: 20% auto;
 `;
 
 export const Header = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     height: 5rem;
     width: 100%;
     position: absolute;

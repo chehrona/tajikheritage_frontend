@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
-import { Menu } from "@mui/material";
+import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
+import { Menu } from '@mui/material';
 
 export const StyledMenu = styled(Menu)`
     & .MuiPopper-root {
@@ -54,7 +54,7 @@ export const LogoContainer = styled.div`
         top: 50%;
         transform: translateY(-50%);
     }
-`
+`;
 
 export const Logo = styled.img`
     border-radius: 50%;

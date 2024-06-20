@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
-
+import styled from 'styled-components';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 export const MainContainer = styled.div`
     border-radius: 0rem 0rem 4rem 4rem;
@@ -46,8 +45,8 @@ export const Line = styled.div`
     height: 0.1rem;
     width: 15rem;
     background: #504221d1;
-    margin-right: ${({ right }) => right ? "0.3rem" : "0rem"};
-    margin-left: ${({ right }) => right ? "0rem" : "0.3rem"};
+    margin-right: ${({ right }) => (right ? '0.3rem' : '0rem')};
+    margin-left: ${({ right }) => (right ? '0rem' : '0.3rem')};
 
     @media (max-width: 480px) {
         width: 10rem;
@@ -70,13 +69,14 @@ export const RefContainer = styled.div`
     position: relative;
     transition: all 0.5s linear 0s;
     color: ${({ color }) => color && color};
-    height: ${({ open }) => open ? "15rem" : "0rem"};
+    height: ${({ open }) => (open ? '15rem' : '0rem')};
     background: ${({ background }) => background && background};
-    box-shadow: ${({ open, background }) => open && `0rem 0rem 0.4rem 0.01rem ${background}`};
+    box-shadow: ${({ open, background }) =>
+        open && `0rem 0rem 0.4rem 0.01rem ${background}`};
     display: flex;
 
     @media (max-width: 480px) {
-        height: ${({ open }) => open ? "30rem" : "0rem"};
+        height: ${({ open }) => (open ? '30rem' : '0rem')};
     }
 `;
 
@@ -85,7 +85,7 @@ export const RefWrapper = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
     margin: 0.5rem 0.25rem;
-    display: ${({ open }) => open ? "block" : "none"};
+    display: ${({ open }) => (open ? 'block' : 'none')};
 
     ::-webkit-scrollbar {
         width: 0.5rem;

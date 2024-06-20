@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 import { IconButton } from '@mui/material';
 
 export const MainContainer = styled.div`
@@ -14,10 +14,10 @@ export const MainContainer = styled.div`
         font-size: 1.3rem;
 
         &:after {
-            content: "";
-            padding: 3rem;  
+            content: '';
+            padding: 3rem;
             width: 100%;
-            background: #0F0A00;
+            background: #0f0a00;
             background-image: url(${'/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
@@ -33,10 +33,10 @@ export const MainContainer = styled.div`
         position: relative;
 
         &:after {
-            content: "";
-            padding: 3rem;  
+            content: '';
+            padding: 3rem;
             width: 100%;
-            background: #0F0A00;
+            background: #0f0a00;
             background-image: url(${'/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
@@ -53,7 +53,7 @@ export const BoxOne = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0rem 3rem 1rem 3rem;
-    color: #0F0A00;
+    color: #0f0a00;
     gap: 3rem;
     position: relative;
 
@@ -70,7 +70,7 @@ export const BoxOne = styled.div`
 
 export const Year = styled.div`
     font-size: 3.5rem;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     margin-bottom: 0.5rem;
     text-align: ${({ align }) => align && 'center'};
     color: ${({ color }) => color && color};
@@ -86,7 +86,7 @@ export const Year = styled.div`
 
 export const Desc = styled.div`
     color: #333333;
-    
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 0rem 1rem 0rem;
     }
@@ -124,7 +124,7 @@ export const BoxTwo = styled.div`
     align-items: center;
     position: relative;
     justify-content: space-between;
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0F0A00;
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0f0a00;
 
     @media (max-width: 480px) {
         margin-bottom: 0.5rem;
@@ -151,7 +151,7 @@ export const Backdrop = styled.div`
     opacity: 0.2;
     filter: grayscale(1);
     background-size: cover;
-    background-image: ${({ backdrop }) => `url(${ backdrop })`};
+    background-image: ${({ backdrop }) => `url(${backdrop})`};
 
     @media (max-width: 480px) {
         opacity: 0.15;
@@ -178,9 +178,12 @@ export const Slides = styled.div`
 export const SlideImg = styled.img`
     width: 18rem;
     display: block;
-    filter: grayscale(1) ${({ show }) => show ? 'brightness(100%)': 'brightness(60%)'};
-    box-shadow: ${({ show }) => 
-        show ? '0rem 0rem 0.5rem 0.1rem #dedbdb' : '0rem 0rem 1rem 0.2rem #504221e6'};
+    filter: grayscale(1)
+        ${({ show }) => (show ? 'brightness(100%)' : 'brightness(60%)')};
+    box-shadow: ${({ show }) =>
+        show
+            ? '0rem 0rem 0.5rem 0.1rem #dedbdb'
+            : '0rem 0rem 1rem 0.2rem #504221e6'};
 
     @media (max-width: 480px) {
         display: ${({ show }) => !show && 'none'};
@@ -193,11 +196,11 @@ export const NavBox = styled.div`
     position: absolute;
     right: 0rem;
     display: flex;
-    ${({ bottom }) => bottom ? 'bottom: 0rem' : 'top: 8rem'};
+    ${({ bottom }) => (bottom ? 'bottom: 0rem' : 'top: 8rem')};
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 5rem;
-        ${({ bottom }) => bottom ? 'bottom: 3rem' : 'top: 8rem'};
+        ${({ bottom }) => (bottom ? 'bottom: 3rem' : 'top: 8rem')};
     }
 `;
 
@@ -228,7 +231,8 @@ export const StyledIconButton = styled(IconButton)`
     height: 3.5rem;
 
     &.MuiIconButton-root {
-        transform: ${({ bottom }) => bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
+        transform: ${({ bottom }) =>
+            bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
         margin-bottom: ${({ bottom }) => bottom && '-0.5rem'};
         margin-top: ${({ bottom }) => !bottom && '-0.5rem'};
     }
@@ -241,8 +245,9 @@ export const StyledIconButton = styled(IconButton)`
             position: absolute;
             bottom: 0.5rem;
             margin: 0rem;
-            transform: ${({ bottom }) => bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
-            ${({ bottom }) => bottom ? 'right: 0.8rem' : 'left: 0.8rem'};
+            transform: ${({ bottom }) =>
+                bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
+            ${({ bottom }) => (bottom ? 'right: 0.8rem' : 'left: 0.8rem')};
         }
 
         &:disabled {
@@ -255,7 +260,8 @@ export const StyledIconButton = styled(IconButton)`
         height: 4.5rem;
 
         &.MuiIconButton-root {
-            transform: ${({ bottom }) => bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
+            transform: ${({ bottom }) =>
+                bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
             margin-bottom: ${({ bottom }) => bottom && '-0.6rem'};
             margin-top: ${({ bottom }) => !bottom && '-0.6rem'};
         }
@@ -386,7 +392,7 @@ export const QuoteSymbol = styled.div`
 
 export const Quote = styled.div`
     font-size: 2.2rem;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     font-style: bold;
     text-align: center;
     padding: 1rem 0rem;
@@ -406,7 +412,7 @@ export const TextWrapper = styled.div`
     @media (max-width: 480px) {
         column-count: 1;
     }
-    
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         column-gap: 2rem;
     }
@@ -451,8 +457,8 @@ export const ImageWrapper = styled.div`
     height: 30rem;
     transition: all 0.5s;
     min-width: ${({ width }) => width && `${width}px`};
-    max-width: ${({ width }) => width && `${width}px`};;
-    background: ${({ src }) => src && `url(${ src })`};
+    max-width: ${({ width }) => width && `${width}px`};
+    background: ${({ src }) => src && `url(${src})`};
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ src }) => src && 'cover'};
 
@@ -476,7 +482,7 @@ export const ButtonWrapper = styled.div`
 export const BoxSix = styled.div`
     width: 100%;
     text-align: center;
-    color: #0F0A00;
+    color: #0f0a00;
     padding: 1.5rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
@@ -548,7 +554,7 @@ export const BackImg = styled.div`
     background-position: center center;
     opacity: 0.2;
     filter: grayscale(1);
-    background-image: ${({ src }) => `url(${ src })`};
+    background-image: ${({ src }) => `url(${src})`};
 
     @media (max-width: 480px) {
         margin-top: -3rem;
@@ -566,9 +572,9 @@ export const FinalQuote = styled.div`
     font-style: italic;
     padding-right: 10%;
     padding-left: 10%;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     transform: translate(-50%, -50%);
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0F0A00;
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0f0a00;
 
     @media (max-width: 1024px) {
         line-height: 2.4rem;
@@ -599,7 +605,7 @@ export const StyledButton = styled(IconButton)`
         position: absolute;
         top: 50%;
         z-index: 10;
-        ${({ left }) => left ? 'left: 0.5rem' : 'right: 0.5rem'};
+        ${({ left }) => (left ? 'left: 0.5rem' : 'right: 0.5rem')};
         transform: translateY(-50%) ${({ left }) => left && 'rotate(-180deg)'};
     }
 
@@ -623,7 +629,7 @@ export const ImgInfo = styled.div`
     font-style: italic;
     width: 100%;
     text-align: left;
-    color: #0F0A00;
+    color: #0f0a00;
     bottom: 0.5rem;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 

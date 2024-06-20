@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { PlayArrow, ArrowForwardIos } from "@mui/icons-material";
-import { IconButton, DialogContent } from "@mui/material";
+import styled, { keyframes } from 'styled-components';
+import { PlayArrow, ArrowForwardIos } from '@mui/icons-material';
+import { IconButton, DialogContent } from '@mui/material';
 
 const bounce = keyframes`
     0%, 20%, 50%, 80%, 100% {
@@ -23,7 +23,9 @@ export const Desc = styled.div`
         line-height: 1.8rem;
         position: relative;
 
-        ${({ expand }) => !expand && `
+        ${({ expand }) =>
+            !expand &&
+            `
             &:after {
                 content: "";
                 height: 20rem;
@@ -109,7 +111,9 @@ export const InnerBox = styled.div`
     position: relative;
     padding: 2rem;
 
-    ${({ width }) => width && `
+    ${({ width }) =>
+        width &&
+        `
         background: #0F0A00;
         position: relative;
     `}
@@ -121,7 +125,7 @@ export const InnerBox = styled.div`
         border-radius: 2rem;
         overflow-x: hidden;
         position: absolute;
-        top: ${({ expand }) => expand ? '0rem' : '40%'};
+        top: ${({ expand }) => (expand ? '0rem' : '40%')};
         display: ${({ width }) => width && 'none'};
         transition: all 0.5s;
     }
@@ -152,8 +156,8 @@ export const InfoWrapper = styled.div`
     margin-top: 1rem;
 
     @media (max-width: 1024px) {
-       margin-top: 2rem;
-       padding-right: 0%;
+        margin-top: 2rem;
+        padding-right: 0%;
     }
 `;
 
@@ -168,8 +172,8 @@ export const InfoTitle = styled.div`
     text-shadow: 0.0625rem 0.0625rem 0.1875rem #504221e6;
 
     @media (max-width: 480px) {
-       font-size: 3rem;
-       line-height: 3.3rem;
+        font-size: 3rem;
+        line-height: 3.3rem;
     }
 `;
 
@@ -227,7 +231,7 @@ export const ReleaseInfo = styled.div`
     @media (max-width: 480px) {
         height: 3rem;
         gap: 0rem;
-    } 
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 3rem;
@@ -240,7 +244,7 @@ export const InfoBox = styled.div`
     align-items: center;
     padding: 1rem;
     margin: 3rem 0rem;
-    width: ${({ year }) => year ? '4rem' : '10rem'};
+    width: ${({ year }) => (year ? '4rem' : '10rem')};
 
     @media (max-width: 480px) {
         margin: 1rem 0rem;

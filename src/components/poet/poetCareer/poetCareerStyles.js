@@ -1,16 +1,16 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 import { IconButton } from '@mui/material';
 
 export const MainContainer = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     position: relative;
     background-image: url(${'/noise.png'});
     padding-bottom: 9rem;
     padding-top: 9rem;
 
     &:before {
-        content: "";
-        padding: 3rem;  
+        content: '';
+        padding: 3rem;
         width: 100%;
         background: #fcf6e9;
         background-image: url(${'/noise.png'});
@@ -53,7 +53,7 @@ export const UnitWrapper = styled.div`
 
 export const YearWrapper = styled.div`
     z-index: 1;
-    background: #0F0A00;
+    background: #0f0a00;
     border-radius: 1.5rem;
     position: relative;
     background-image: url(${'/noise.png'});
@@ -61,7 +61,9 @@ export const YearWrapper = styled.div`
     height: 0rem;
     border: 0.5rem solid #bd9d52;
 
-    ${({ size }) => size && `
+    ${({ size }) =>
+        size &&
+        `
         padding: 0rem 0.5rem;
         width: fit-content;
         height: fit-content;
@@ -70,7 +72,7 @@ export const YearWrapper = styled.div`
 `;
 
 export const Year = styled.div`
-    display: ${({ show }) => show && "none"};
+    display: ${({ show }) => show && 'none'};
     margin: 0.4rem 1rem 0.4rem 1rem;
 `;
 
@@ -208,7 +210,7 @@ export const Step = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
 
     @media (max-width: 480px) {
         font-size: 2rem;
@@ -242,7 +244,7 @@ export const StyledIconButton = styled(IconButton)`
 
 export const ImageWrapper = styled.div`
     transition: 100ms ease-in-out;
-    
+
     @media (max-width: 480px) {
         display: none;
     }
@@ -255,7 +257,7 @@ export const Image = styled.div`
     height: 26rem;
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
-    background: ${({ src }) => src && `url(${ src })`};
+    background: ${({ src }) => src && `url(${src})`};
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     transform: translateX(${({ translate }) => `${translate}px`});

@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const slideOut = keyframes`
     0% {
@@ -27,11 +27,11 @@ export const SectionCardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #0F0A00;
+    background: #0f0a00;
     border-radius: 0.7rem;
     transition: border-radius 250ms, box-shadow 400ms;
     animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 
     &:hover {
         border-radius: 1.5rem;
@@ -67,7 +67,7 @@ export const SectionCardWrapper = styled.div`
 export const SectionTitle = styled.div`
     font-size: 2rem;
     font-weight: 500;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     text-align: center;
     margin-bottom: 1rem;
@@ -88,9 +88,7 @@ export const ImageWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-        url("/border.png") center
-        no-repeat;
+    background: url('/border.png') center no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
@@ -104,7 +102,7 @@ export const SectionImage = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 1px #dedbdb);
-    background-image: ${({ src }) => src && `url(${ src })`};
+    background-image: ${({ src }) => src && `url(${src})`};
 `;
 
 export const StyledLink = styled(Link)`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { IconButton } from '@mui/material';
 
 export const StyledIconButton = styled(IconButton)`
@@ -6,7 +6,8 @@ export const StyledIconButton = styled(IconButton)`
     height: 3.5rem;
 
     &.MuiIconButton-root {
-        transform: ${({ bottom }) => bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
+        transform: ${({ bottom }) =>
+            bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
         margin-bottom: ${({ bottom }) => bottom && '-0.5rem'};
         margin-top: ${({ bottom }) => !bottom && '-0.5rem'};
     }
@@ -19,8 +20,9 @@ export const StyledIconButton = styled(IconButton)`
             position: absolute;
             bottom: 0.5rem;
             margin: 0rem;
-            transform: ${({ bottom }) => bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
-            ${({ bottom }) => bottom ? 'right: 0.8rem' : 'left: 0.8rem'};
+            transform: ${({ bottom }) =>
+                bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
+            ${({ bottom }) => (bottom ? 'right: 0.8rem' : 'left: 0.8rem')};
         }
 
         &:disabled {
@@ -33,7 +35,8 @@ export const StyledIconButton = styled(IconButton)`
         height: 4.5rem;
 
         &.MuiIconButton-root {
-            transform: ${({ bottom }) => bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
+            transform: ${({ bottom }) =>
+                bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
             margin-bottom: ${({ bottom }) => bottom && '-0.6rem'};
             margin-top: ${({ bottom }) => !bottom && '-0.6rem'};
         }
@@ -74,15 +77,18 @@ export const ImageWrapper = styled.div`
     background-position: center center;
     min-width: ${({ width }) => width && `${width}px`};
     max-width: ${({ width }) => width && `${width}px`};
-    background: ${({ src }) => src && `url(${ src })`};
-    height: ${({ width, height }) => height ? height : (width && `${width*1.2049}px`)};
-    border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
-    border-bottom-left-radius: ${({ bottomLeftRad }) => bottomLeftRad && `${bottomLeftRad}rem`};
+    background: ${({ src }) => src && `url(${src})`};
+    height: ${({ width, height }) =>
+        height ? height : width && `${width * 1.2049}px`};
+    border-top-left-radius: ${({ topLeftRad }) =>
+        topLeftRad && `${topLeftRad}rem`};
+    border-bottom-left-radius: ${({ bottomLeftRad }) =>
+        bottomLeftRad && `${bottomLeftRad}rem`};
     transform: ${({ translate }) => `translateX(${translate}px)`};
     background-size: ${({ src }) => src && 'cover'};
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -92,9 +98,10 @@ export const ImageWrapper = styled.div`
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        background-image: ${({ overlay }) => overlay && `url(${ overlay })`};
+        background-image: ${({ overlay }) => overlay && `url(${overlay})`};
         filter: drop-shadow(0px 0px 1px #dedbdb);
-        border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
+        border-top-left-radius: ${({ topLeftRad }) =>
+            topLeftRad && `${topLeftRad}rem`};
     }
 `;
 
@@ -113,8 +120,8 @@ export const SlideContainer = styled.div`
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: center center;
-    background: ${({ src }) => src && `url(${ src })`};
-    background-size: ${({ src }) => src ? 'cover' : 'contain'};
+    background: ${({ src }) => src && `url(${src})`};
+    background-size: ${({ src }) => (src ? 'cover' : 'contain')};
 `;
 
 export const StyledButton = styled(IconButton)`
@@ -129,7 +136,7 @@ export const StyledButton = styled(IconButton)`
         position: absolute;
         top: 50%;
         z-index: 10;
-        ${({ left }) => left ? 'left: 0.5rem' : 'right: 0.5rem'};
+        ${({ left }) => (left ? 'left: 0.5rem' : 'right: 0.5rem')};
         transform: translateY(-50%) ${({ left }) => left && 'rotate(-180deg)'};
     }
 
@@ -183,7 +190,7 @@ export const Circle = styled.div`
     height: 0.5rem;
     border-radius: 50%;
     background-color: #bd9d52;
-    opacity: ${({ selected }) => selected ? "1" : "0.4"};
+    opacity: ${({ selected }) => (selected ? '1' : '0.4')};
     margin-right: 0.25rem;
 
     &:last-child {

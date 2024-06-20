@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { requestPage } from "../../services/request";
+import { requestPage } from '../../services/request';
 
 import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Fade from '../../components/common/transition/Fade';
-import Loader from "../../components/common/loader/Loader";
+import Loader from '../../components/common/loader/Loader';
 
 import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 
@@ -18,7 +18,7 @@ function LandingPage({ page }) {
             const data = await requestPage(page);
             setSections(data[0].sections);
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error('Error fetching data:', error);
         } finally {
             setLoading(false);
         }
@@ -37,7 +37,14 @@ function LandingPage({ page }) {
                     <PageContainer justify={sections?.length}>
                         <SectionBoxContainer>
                             {sections?.map((section, i) => {
-                                return (<SectionCard key={i} section={section} i={i} link={section?.link} />);
+                                return (
+                                    <SectionCard
+                                        key={i}
+                                        section={section}
+                                        i={i}
+                                        link={section?.link}
+                                    />
+                                );
                             })}
                         </SectionBoxContainer>
                     </PageContainer>
@@ -48,7 +55,7 @@ function LandingPage({ page }) {
         //     <TempTitle>
         //         {
         //             lang === "us" ? "Exciting updates are on the way!" : (
-        //             lang === "ru" ? "Обновления уже в пути!" : 
+        //             lang === "ru" ? "Обновления уже в пути!" :
         //             "Навигариҳо дар роҳ ҳастанд!")
         //         }
         //     </TempTitle>

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useSetLang } from "../../../App";
+import React, { useState, useEffect } from 'react';
+import { useSetLang } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
-import { ArrowForwardIos } from "@mui/icons-material";
+import { ArrowForwardIos } from '@mui/icons-material';
 
-import { DescWrapper } from "../../common/descWrapper/DescWrapper";
+import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
-import { 
+import {
     Year,
     BoxTwo,
     Slides,
@@ -23,7 +23,7 @@ import {
     FillerOne,
     FillerTwo,
     StyledIconButton,
-} from "./poetBioStyles";
+} from './poetBioStyles';
 
 export default function SecondBox({ poet }) {
     const { lang } = useSetLang();
@@ -41,7 +41,7 @@ export default function SecondBox({ poet }) {
             setInfoArr([...infoArr]);
         }
     };
-    
+
     const moveDown = () => {
         if (infoArr.length > 1) {
             const movedItem = infoArr.shift();
@@ -53,10 +53,19 @@ export default function SecondBox({ poet }) {
     return (
         <BoxTwo>
             <InnerOverlay>
-                <Backdrop backdrop={process.env.REACT_APP_BASE_URL + poet?.backdrops[0]} />
+                <Backdrop
+                    backdrop={
+                        process.env.REACT_APP_BASE_URL + poet?.backdrops[0]
+                    }
+                />
             </InnerOverlay>
             <Slides>
-                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[poet?.two[lang].length - 1].img} />
+                <SlideImg
+                    src={
+                        process.env.REACT_APP_BASE_URL +
+                        infoArr[poet?.two[lang].length - 1].img
+                    }
+                />
                 <LineWrapper>
                     <SlideImg
                         src={process.env.REACT_APP_BASE_URL + infoArr[0]?.img}
@@ -64,10 +73,15 @@ export default function SecondBox({ poet }) {
                     />
                     <Info>
                         <Year>{infoArr[0]?.year}</Year>
-                        <DescWrapper desc={infoArr[0]?.desc} TextWrapper={Text} />
+                        <DescWrapper
+                            desc={infoArr[0]?.desc}
+                            TextWrapper={Text}
+                        />
                     </Info>
                 </LineWrapper>
-                <SlideImg src={process.env.REACT_APP_BASE_URL + infoArr[1].img} />
+                <SlideImg
+                    src={process.env.REACT_APP_BASE_URL + infoArr[1].img}
+                />
             </Slides>
             <NavBox>
                 <FillerOne />
@@ -91,34 +105,41 @@ export default function SecondBox({ poet }) {
                     <StyledIconButton
                         bottom={1}
                         onClick={moveDown}
-                        disabled={infoArr[0] === poet?.two[lang][infoArr?.length - 1]}
+                        disabled={
+                            infoArr[0] === poet?.two[lang][infoArr?.length - 1]
+                        }
                     >
                         <Arrow>
-                            <ArrowForwardIos style={{marginLeft: '1px'}}/>
+                            <ArrowForwardIos style={{ marginLeft: '1px' }} />
                         </Arrow>
                     </StyledIconButton>
                     <Line />
                 </NavWrapper>
             </NavBox>
-            {isMobile && <div>
-                <StyledIconButton
-                    bottom={1}
-                    onClick={moveDown}
-                    disabled={infoArr[0] === poet?.two[lang][poet?.two[lang].length - 1]}
-                >
-                    <Arrow>
-                        <ArrowForwardIos style={{marginLeft: '1px'}}/>
-                    </Arrow>
-                </StyledIconButton>
-                <StyledIconButton
-                    onClick={moveUp}
-                    disabled={infoArr[0] === poet?.two[lang][0]}
-                >
-                    <Arrow>
-                        <ArrowForwardIos />
-                    </Arrow>
-                </StyledIconButton>
-            </div>}
+            {isMobile && (
+                <div>
+                    <StyledIconButton
+                        bottom={1}
+                        onClick={moveDown}
+                        disabled={
+                            infoArr[0] ===
+                            poet?.two[lang][poet?.two[lang].length - 1]
+                        }
+                    >
+                        <Arrow>
+                            <ArrowForwardIos style={{ marginLeft: '1px' }} />
+                        </Arrow>
+                    </StyledIconButton>
+                    <StyledIconButton
+                        onClick={moveUp}
+                        disabled={infoArr[0] === poet?.two[lang][0]}
+                    >
+                        <Arrow>
+                            <ArrowForwardIos />
+                        </Arrow>
+                    </StyledIconButton>
+                </div>
+            )}
         </BoxTwo>
-    )
+    );
 }

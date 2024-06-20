@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { IconButton } from '@mui/material';
-import { Close, OpenInFull } from "@mui/icons-material";
+import { Close, OpenInFull } from '@mui/icons-material';
 
 export const InfoWrapper = styled.div`
     display: flex;

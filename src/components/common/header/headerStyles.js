@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import { Close, Menu as MenuIcon } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Close, Menu as MenuIcon } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     width: 100%;
 `;
 
 export const HeaderInnerBox = styled.div`
-    background: #0F0A00;
+    background: #0f0a00;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@ export const StyledMenuIcon = styled(MenuIcon)`
 
 export const StyledCloseIcon = styled(Close)`
     color: #bd9d52;
-    
+
     &.MuiSvgIcon-root {
         width: 3.5rem;
         height: 2.5rem;

@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { ArrowUpward } from "@mui/icons-material";
+import { ArrowUpward } from '@mui/icons-material';
 
-import { MainContainer, StyledIconButton, Arrow } from "./scrollUpArrowStyles";
+import { MainContainer, StyledIconButton, Arrow } from './scrollUpArrowStyles';
 
 export default function ScrollUpArrow({ parentRef }) {
-
     const handleScrollToTop = () => {
         parentRef.current.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: 'smooth',
         });
-    }
+    };
 
     return (
         <MainContainer onClick={handleScrollToTop}>
@@ -21,5 +20,5 @@ export default function ScrollUpArrow({ parentRef }) {
                 </Arrow>
             </StyledIconButton>
         </MainContainer>
-    )
+    );
 }

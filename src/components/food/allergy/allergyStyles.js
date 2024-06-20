@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AllergyContainer = styled.div`
     gap: 2rem;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useSetLang } from "../../App";
+import React, { useState, useEffect, useRef } from 'react';
+import { useSetLang } from '../../App';
 
-import { stepInfo } from "./helper";
-import { addVisit } from "../../services/request";
+import { stepInfo } from './helper';
+import { addVisit } from '../../services/request';
 
 import HomeStepper from '../../components/homeStepper/HomeStepper';
 import ImageBall from '../../components/imageBall/ImageBall';
@@ -15,13 +15,19 @@ import {
     IconWrapper,
     Line,
     Arrow,
-    Circle
+    Circle,
 } from './homePageStyles';
 
 function Home() {
     const containerRef = useRef(null);
     const { lang } = useSetLang();
-    const divRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+    const divRefs = [
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null),
+    ];
     const [scrollIndicator, setScrollIndicator] = useState(true);
     const [opacities, setOpacities] = useState([1, 0, 0, 0, 0]);
 
@@ -29,7 +35,7 @@ function Home() {
         try {
             await addVisit('home');
         } catch (error) {
-            console.error("Error recording visit:", error);
+            console.error('Error recording visit:', error);
         }
     };
 
@@ -51,34 +57,52 @@ function Home() {
                 } else {
                     setScrollIndicator(false);
 
-                    const opacity = 1 - (Math.abs(containerTop - divTop) / (0.8 * containerRect.height));
+                    const opacity =
+                        1 -
+                        Math.abs(containerTop - divTop) /
+                            (0.8 * containerRect.height);
                     return opacity;
                 }
             });
 
             setOpacities(newOpacities);
-        }
+        };
 
         containerRef.current.addEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <PageContainer>
-            {scrollIndicator && 
+            {scrollIndicator && (
                 <ScrollWrapper>
-                    <Title>{lang === 'ru' ? 'ПРОКРУТИТЕ' : (lang === 'tj' ? 'БА ПОЁН КАШЕД' : 'SCROLL')}</Title>
+                    <Title>
+                        {lang === 'ru'
+                            ? 'ПРОКРУТИТЕ'
+                            : lang === 'tj'
+                            ? 'БА ПОЁН КАШЕД'
+                            : 'SCROLL'}
+                    </Title>
                     <IconWrapper>
                         <Line />
                         <Arrow />
                         <Circle />
                     </IconWrapper>
                 </ScrollWrapper>
-            }
+            )}
             <InnerContainer>
-                <HomeStepper containerRef={containerRef} divRefs={divRefs} opacities={opacities} />
+                <HomeStepper
+                    containerRef={containerRef}
+                    divRefs={divRefs}
+                    opacities={opacities}
+                />
                 {stepInfo?.map((entry, i) => {
                     return (
-                        <ImageBall key={i} entry={entry} index={i} opacities={opacities} />
+                        <ImageBall
+                            key={i}
+                            entry={entry}
+                            index={i}
+                            opacities={opacities}
+                        />
                     );
                 })}
             </InnerContainer>
