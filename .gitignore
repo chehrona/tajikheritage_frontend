@@ -1,5 +1,4 @@
 node_modules
 build
 .env
-creature.json
 .DS_Store

@@ -42,7 +42,7 @@ export default function PoetPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    });
 
     const scrollToView = (e) => {
         e.preventDefault();
