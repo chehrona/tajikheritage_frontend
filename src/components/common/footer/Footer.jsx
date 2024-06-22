@@ -2,6 +2,7 @@ import React from 'react';
 import pinIcon from './icons/pin.png';
 import instIcon from './icons/inst.png';
 import mailIcon from './icons/mail.png';
+import facebookIcon from './icons/facebook.png';
 
 import {
     FooterContainer,
@@ -46,7 +47,7 @@ export default function Footer() {
                         target={'_blank'}
                     >
                         <StyledIconButton>
-                            <StyledIcon src={mailIcon} rad={false} />
+                            <StyledIcon src={facebookIcon} rad={false} />
                         </StyledIconButton>
                     </a>
                     <a

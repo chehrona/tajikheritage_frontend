@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from '../../App';
 
-import { requestArticleInfo, requestPoet } from '../../services/request';
+import { requestArticleInfo } from '../../services/request';
 
 import PoetBio from '../../components/poet/poetBio/PoetBio';
 import PoetIntro from '../../components/poet/poetIntro/PoetIntro';
@@ -23,7 +23,7 @@ export default function PoetPage() {
     const { id } = useParams();
     const { lang } = useSetLang();
     const [poet, setPoet] = useState();
-    const [error, setError] = useState(false);
+    const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -33,7 +33,14 @@ export default function PoetPage() {
             const data = await requestArticleInfo(id, 'language/poets');
             setPoet(data);
         } catch (error) {
-            setError(true);
+            if (error.response) {
+                if (
+                    error.response.status === 404 ||
+                    error.response.status === 500
+                ) {
+                    setError(error.response.data.message);
+                }
+            }
         } finally {
             setLoading(false);
         }
@@ -60,7 +67,7 @@ export default function PoetPage() {
     return (
         <>
             <Loader inProp={loading} />
-            {poet ? (
+            {!loading && poet ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <PoetContainer>
@@ -90,7 +97,7 @@ export default function PoetPage() {
                     </PageContainer>
                 </Fade>
             ) : (
-                error && <Alert />
+                !loading && <Alert message={error} />
             )}
         </>
     );

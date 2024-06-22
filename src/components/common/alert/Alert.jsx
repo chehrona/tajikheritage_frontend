@@ -4,16 +4,8 @@ import { useSetLang } from '../../../App';
 
 import { StyledAlert } from './alertStyles';
 
-export default function Alert() {
+export default function Alert({ message }) {
     const { lang } = useSetLang();
 
-    return (
-        <StyledAlert severity="error">
-            {lang === 'us'
-                ? 'Sorry, there was an error. Reload the page'
-                : lang === 'ru'
-                ? 'Извините произошла ошибка. Перезагрузите страницу'
-                : 'Бубахшед, хатогие рух дод. Саҳифаро аз нав кунед'}
-        </StyledAlert>
-    );
+    return <StyledAlert severity="error">{message[lang]}</StyledAlert>;
 }

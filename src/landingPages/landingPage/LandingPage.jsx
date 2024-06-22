@@ -5,12 +5,14 @@ import { requestPage } from '../../services/request';
 import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
+import Alert from '../../components/common/alert/Alert';
 
 import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 
 function LandingPage({ page }) {
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState({});
 
     const fetchData = async () => {
         try {
@@ -18,7 +20,14 @@ function LandingPage({ page }) {
             const data = await requestPage(page);
             setSections(data[0].sections);
         } catch (error) {
-            console.error('Error fetching data:', error);
+            if (error.response) {
+                if (
+                    error.response.status === 404 ||
+                    error.response.status === 500
+                ) {
+                    setError(error.response.data.message);
+                }
+            }
         } finally {
             setLoading(false);
         }
@@ -32,7 +41,7 @@ function LandingPage({ page }) {
     return (
         <>
             <Loader inProp={loading} />
-            {sections && (
+            {!loading && sections.length > 0 ? (
                 <Fade inProp={!loading}>
                     <PageContainer justify={sections?.length}>
                         <SectionBoxContainer>
@@ -49,6 +58,8 @@ function LandingPage({ page }) {
                         </SectionBoxContainer>
                     </PageContainer>
                 </Fade>
+            ) : (
+                !loading && <Alert message={error} />
             )}
         </>
         // <TempPageContainer>

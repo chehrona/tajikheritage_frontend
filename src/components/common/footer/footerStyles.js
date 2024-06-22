@@ -15,7 +15,7 @@ export const FooterInnerContainer = styled.div`
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #959595;
     max-height: 3.5rem;
     min-height: 3.5rem;
     position: relative;
@@ -53,7 +53,7 @@ export const SocialsWrapper = styled.div`
     position: absolute;
     right: 1rem;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.25rem;
 
     @media (max-width: 480px) {
         gap: 0rem;
@@ -64,11 +64,10 @@ export const SocialsWrapper = styled.div`
 export const StyledIcon = styled.img`
     width: 1.5rem;
     height: 1.5rem;
-    filter: brightness(150%) grayscale(100%);
     border-radius: ${({ rad }) => (rad ? '100%' : '0%')};
 
     &:hover {
-        filter: grayscale(0%);
+        filter: brightness(150%);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

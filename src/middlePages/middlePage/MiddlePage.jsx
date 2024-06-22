@@ -11,7 +11,7 @@ import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {
     const [items, setItems] = useState([]);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
@@ -21,7 +21,15 @@ function MiddlePage({ page }) {
 
             setItems(data);
         } catch (error) {
-            setError(true);
+            console.log(error, 'middle page');
+            if (error.response) {
+                if (
+                    error.response.status === 404 ||
+                    error.response.status === 500
+                ) {
+                    setError(error.response.data.message);
+                }
+            }
         } finally {
             setLoading(false);
         }
@@ -35,18 +43,18 @@ function MiddlePage({ page }) {
     return (
         <>
             <Loader inProp={loading} />
-            {items ? (
+            {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
-                        <InnerBoxContainer justify={items?.length}>
-                            {items?.map((item, i) => {
-                                return <SquareCard key={i} item={item} i={i} />;
-                            })}
+                        <InnerBoxContainer justify={items.length}>
+                            {items.map((item, i) => (
+                                <SquareCard key={i} item={item} i={i} />
+                            ))}
                         </InnerBoxContainer>
                     </PageContainer>
                 </Fade>
             ) : (
-                error && <Alert />
+                !loading && error && <Alert message={error} />
             )}
         </>
     );
