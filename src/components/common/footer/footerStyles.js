@@ -11,6 +11,7 @@ export const FooterContainer = styled.div`
 export const FooterInnerContainer = styled.div`
     background: #0f0a00;
     max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -20,11 +21,10 @@ export const FooterInnerContainer = styled.div`
     min-height: 3.5rem;
     position: relative;
     z-index: 10;
-    justify-content: center;
+    justify-content: space-between;
 
     @media (max-width: 480px) {
-        justify-content: start;
-        padding-left: 15%;
+        flex-direction: column;
     }
 `;
 
@@ -36,8 +36,10 @@ export const Text = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: calc(100% - 24rem);
 
     @media (max-width: 480px) {
+        width: 100%;
         font-size: 1.3rem;
     }
 
@@ -49,11 +51,12 @@ export const Text = styled.div`
 export const SocialsWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 1rem;
     flex-direction: row;
     gap: 0.25rem;
+    width: 12rem;
+    min-width: 12rem;
+    margin-right: 0.5rem;
+    justify-content: space-around;
 
     @media (max-width: 480px) {
         gap: 0rem;

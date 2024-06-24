@@ -1,7 +1,10 @@
 import React from 'react';
+
+// Hooks
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from '../../../App';
 
+// Styles
 import {
     HeaderContainer,
     HeaderInnerBox,
@@ -15,6 +18,8 @@ import {
     TitleSpan,
     StyledCloseIcon,
     StyledLink,
+    ButtonWrapper,
+    ButtonText,
 } from './headerStyles';
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
@@ -22,6 +27,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
+        console.log('here');
         setIsMenuShown((prevState) => !prevState);
     }
 
@@ -57,21 +63,39 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>
-                    {!isMobile &&
-                        (isMenuShown ? (
-                            <div>
-                                {lang === 'us'
-                                    ? 'CLOSE'
-                                    : lang === 'ru'
-                                    ? 'ЗАКРЫТЬ'
-                                    : 'ПӮШЕД'}
-                            </div>
+                    {!isMobile ? (
+                        isMenuShown ? (
+                            <ButtonWrapper onClick={showMenu}>
+                                <ButtonText>
+                                    {lang === 'us'
+                                        ? 'CLOSE'
+                                        : lang === 'ru'
+                                        ? 'ЗАКРЫТЬ'
+                                        : 'ПӮШЕД'}
+                                </ButtonText>
+                                <StyledCloseIcon />
+                            </ButtonWrapper>
                         ) : (
-                            <div>{lang === 'us' ? 'MENU' : 'МЕНЮ'}</div>
-                        ))}
-                    <StyledIconButton onClick={showMenu}>
-                        {isMenuShown ? <StyledCloseIcon /> : <StyledMenuIcon />}
-                    </StyledIconButton>
+                            <ButtonWrapper onClick={showMenu}>
+                                <ButtonText>
+                                    {lang === 'us'
+                                        ? 'MENU'
+                                        : lang === 'ru'
+                                        ? 'МЕНЮ'
+                                        : 'МЕНЮ'}
+                                </ButtonText>
+                                <StyledMenuIcon />
+                            </ButtonWrapper>
+                        )
+                    ) : (
+                        <StyledIconButton onClick={showMenu}>
+                            {isMenuShown ? (
+                                <StyledCloseIcon />
+                            ) : (
+                                <StyledMenuIcon />
+                            )}
+                        </StyledIconButton>
+                    )}
                 </MenuWrapper>
             </HeaderInnerBox>
         </HeaderContainer>

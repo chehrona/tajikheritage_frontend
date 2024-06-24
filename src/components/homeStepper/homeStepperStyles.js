@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     width: 100%;
@@ -8,7 +8,8 @@ export const MainContainer = styled.div`
     height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-		min-height: calc(100svh - 8rem);
+        height: calc(100svh - 10rem);
+        min-height: calc(100svh - 10rem);
     }
 `;
 
@@ -23,10 +24,10 @@ export const SemiCircle = styled.div`
     background-color: #bd9d52;
 
     &::before {
-        content: "";
+        content: '';
         height: 3rem;
         width: 3rem;
-        background: #0F0A00;
+        background: #0f0a00;
         position: absolute;
         left: -1.5rem;
         box-sizing: border-box;
@@ -134,21 +135,21 @@ export const LargeTitle = styled.div`
     font-family: 'EB Garamond', serif;
     text-shadow: 1rem 0rem 0rem #504221;
     font-size: ${({ fontSize }) => fontSize && `${fontSize.d}rem`};
-    opacity: ${({ fontSize }) => fontSize ? "1" : "0"};
+    opacity: ${({ fontSize }) => (fontSize ? '1' : '0')};
     line-height: ${({ fontSize }) => fontSize && `${fontSize.d - 1}rem`};
     margin-top: ${({ margin }) => margin && `${margin.d}rem`};
 
     @media (max-width: 480px) {
         width: 100%;
         padding-top: 0rem;
-        opacity: ${({ fontSize }) => fontSize.m ? "1" : "0"};
+        opacity: ${({ fontSize }) => (fontSize.m ? '1' : '0')};
         font-size: ${({ fontSize }) => fontSize && `${fontSize.m}rem`};
         line-height: ${({ fontSize }) => fontSize && `${fontSize.m - 0.5}rem`};
         margin-top: ${({ margin }) => margin && `${margin.m}%`};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        opacity: ${({ fontSize }) => fontSize.t ? "1" : "0"};
+        opacity: ${({ fontSize }) => (fontSize.t ? '1' : '0')};
         font-size: ${({ fontSize }) => fontSize && `${fontSize.t}rem`};
         line-height: ${({ fontSize }) => fontSize && `${fontSize.t - 0.5}rem`};
         margin-top: ${({ margin }) => margin && `${margin.t}%`};
@@ -185,8 +186,8 @@ export const OtherSteps = styled.div`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    ${({ bottom }) => bottom ? "bottom: 0rem" : "top: 0rem"};
-    justify-content: ${({ bottom }) => bottom ? "end" : "start"};
+    ${({ bottom }) => (bottom ? 'bottom: 0rem' : 'top: 0rem')};
+    justify-content: ${({ bottom }) => (bottom ? 'end' : 'start')};
 
     @media (max-width: 480px) {
         display: none;
@@ -198,71 +199,65 @@ export const OtherSteps = styled.div`
 `;
 
 export const StyledButton = styled.div`
-        color: #bd9d52;
-        height: fit-content;
-        font-weight: 500;
-        padding: 0rem 0rem 0.25rem 0rem;
-        width: ${({ lang }) => lang && 
-            lang === 'ru' ? '30%' : 
-            (lang === 'tj' ? '35%' : '17%')};
+    color: #bd9d52;
+    height: fit-content;
+    font-weight: 500;
+    padding: 0rem 0rem 0.25rem 0rem;
+    width: ${({ lang }) =>
+        lang && lang === 'ru' ? '30%' : lang === 'tj' ? '35%' : '17%'};
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 0.1rem;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        background-color: #ffffff;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-in-out;
+        width: ${({ lang }) =>
+            lang && lang === 'ru' ? '30%' : lang === 'tj' ? '35%' : '17%'};
+    }
+
+    &:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    &:hover {
+        border-right: 0.1rem solid #ffffff;
+    }
+
+    @media (max-width: 480px) {
+        border-right: 0.1rem solid #ffffff;
+        border-bottom: 0.1rem solid #ffffff;
+        width: ${({ lang }) =>
+            lang && lang === 'ru' ? '46%' : lang === 'tj' ? '54%' : '26%'};
 
         &::before {
-            content: '';
-            position: absolute;
-            height: 0.1rem;
-            bottom: 0;
-            left: 0;
-            transform: scaleX(0);
-            background-color: #ffffff;
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-in-out;
-            width: ${({ lang }) => lang && 
-                lang === 'ru' ? '30%' : 
-                (lang === 'tj' ? '35%' : '17%')};
-        }
-
-        &:hover::before {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+            display: none;
         }
 
         &:hover {
             border-right: 0.1rem solid #ffffff;
         }
+    }
 
-        @media (max-width: 480px) {
-            border-right: 0.1rem solid #ffffff;
-            border-bottom: 0.1rem solid #ffffff;
-            width: ${({ lang }) => lang && 
-                lang === 'ru' ? '46%' : 
-                (lang === 'tj' ? '54%' : '26%')
-            };
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        border-right: 0.1rem solid #ffffff;
+        border-bottom: 0.1rem solid #ffffff;
+        width: ${({ lang }) =>
+            lang && lang === 'ru' ? '41%' : lang === 'tj' ? '47%' : '23.5%'};
 
-            &::before {
-                display: none;
-            }
-
-            &:hover {
-                border-right: 0.1rem solid #ffffff;
-            }
+        &::before {
+            display: none;
         }
 
-        @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        &:hover {
             border-right: 0.1rem solid #ffffff;
-            border-bottom: 0.1rem solid #ffffff;
-            width: ${({ lang }) => lang && 
-                lang === 'ru' ? '41%' : 
-                (lang === 'tj' ? '47%' : '23.5%')
-            };
-
-            &::before {
-                display: none;
-            }
-
-            &:hover {
-                border-right: 0.1rem solid #ffffff;
-            }
         }
+    }
 `;
 
 export const Link = styled.a`

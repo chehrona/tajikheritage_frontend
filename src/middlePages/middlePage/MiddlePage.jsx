@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
+// Services
 import { requestMiddlePage } from '../../services/request';
 
+// Components
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
+import SearchBar from '../../components/common/searchBar/SearchBar';
 
+// Styles
 import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {
@@ -21,7 +25,6 @@ function MiddlePage({ page }) {
 
             setItems(data);
         } catch (error) {
-            console.log(error, 'middle page');
             if (error.response) {
                 if (
                     error.response.status === 404 ||
@@ -46,6 +49,7 @@ function MiddlePage({ page }) {
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
+                        <SearchBar items={items} setItems={setItems} />
                         <InnerBoxContainer justify={items.length}>
                             {items.map((item, i) => (
                                 <SquareCard key={i} item={item} i={i} />

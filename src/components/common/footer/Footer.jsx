@@ -18,6 +18,7 @@ export default function Footer() {
     return (
         <FooterContainer>
             <FooterInnerContainer>
+                <SocialsWrapper />
                 <Text>
                     <StyledCopyrightIcon />
                     The Tajik Heritage 2023

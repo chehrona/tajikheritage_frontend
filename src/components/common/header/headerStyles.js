@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
+import { IconButton, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
@@ -19,9 +19,12 @@ export const HeaderInnerBox = styled.div`
     z-index: 11;
     max-width: 1920px;
     margin: 0 auto;
+    justify-content: space-between;
+    padding: 0rem 0.25rem 0rem 1rem;
 
     @media (max-width: 480px) {
         height: 4.5rem;
+        padding: 0rem 0.25rem;
     }
 `;
 
@@ -31,7 +34,6 @@ export const LogoWrapper = styled.div`
     justify-content: center;
     height: 4rem;
     width: 4rem;
-    margin-left: 1rem;
 
     @media (max-width: 480px) {
         margin-left: 0.25rem;
@@ -45,7 +47,6 @@ export const LogoWrapper = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-    width: 100%;
     display: flex;
     justify-content: center;
     font-size: 2rem;
@@ -77,13 +78,29 @@ export const MenuWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: 4rem;
-    width: 4rem;
-    margin-right: 0.75rem;
+    width: fit-content;
 
     @media (max-width: 480px) {
-        width: 4rem;
+        width: 3rem;
         margin: 0rem;
     }
+`;
+
+export const ButtonWrapper = styled.div`
+    display: flex;
+    width: 6.5rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+`;
+
+export const ButtonText = styled.div`
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: -0.25rem;
+    font-weight: normal;
+    font-family: 'IBM Plex Serif', serif;
 `;
 
 export const StyledIconButton = styled(IconButton)`

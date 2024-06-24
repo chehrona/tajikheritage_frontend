@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useSetLang } from "../../App";
+import React, { useEffect, useState } from 'react';
+
+// Hooks
+import { useSetLang } from '../../App';
 import { useMediaQuery } from 'react-responsive';
 
-import { stepInfo } from "../../landingPages/home/helper"; 
+import { stepInfo } from '../../landingPages/home/helper';
 
+// Styles
 import {
     MainContainer,
     SemiCircle,
@@ -18,8 +21,8 @@ import {
     StepperContainer,
     StyledButton,
     Link,
-    ImageSemiCircle
-} from "./homeStepperStyles";
+    ImageSemiCircle,
+} from './homeStepperStyles';
 
 export default function HomeStepper({ containerRef, divRefs, opacities }) {
     const { lang } = useSetLang();
@@ -32,34 +35,34 @@ export default function HomeStepper({ containerRef, divRefs, opacities }) {
             rootMargin: '0px',
             threshold: 0.7,
         };
-      
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setVisibleStepIndex(index);
-                    }
-                });
-            },
-            options
-        );
-      
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setVisibleStepIndex(index);
+                }
+            });
+        }, options);
+
         const stepElements = Array.from(containerRef.current.children);
         stepElements.forEach((element) => {
             observer.observe(element);
         });
-      
+
         return () => {
             observer.disconnect();
         };
-    }, [divRefs]);      
+    }, [divRefs]);
 
     return (
         <MainContainer>
-                <SemiCircle />
+            <SemiCircle />
             <OtherSteps>
                 <NumLine />
-                <Step>{stepInfo[visibleStepIndex - 1]?.num || stepInfo[stepInfo.length - 1]?.num}</Step>
+                <Step>
+                    {stepInfo[visibleStepIndex - 1]?.num ||
+                        stepInfo[stepInfo.length - 1]?.num}
+                </Step>
             </OtherSteps>
             <StepperContainer ref={containerRef}>
                 {stepInfo.map((step, i) => {
@@ -71,14 +74,28 @@ export default function HomeStepper({ containerRef, divRefs, opacities }) {
                         >
                             <IndicatorStep>{step?.num}</IndicatorStep>
                             <TitleWrapper>
-                                <LargeTitle fontSize={step?.text[lang].font} margin={step?.text[lang]?.margin}>{step?.text[lang].text}</LargeTitle>
+                                <LargeTitle
+                                    fontSize={step?.text[lang].font}
+                                    margin={step?.text[lang]?.margin}
+                                >
+                                    {step?.text[lang].text}
+                                </LargeTitle>
                                 <Desc>
                                     <div
-                                        dangerouslySetInnerHTML={{__html: step?.desc[lang].text}}
+                                        dangerouslySetInnerHTML={{
+                                            __html: step?.desc[lang].text,
+                                        }}
                                     />
-                                    <Link href={step?.desc[lang].link} target="_blank">
+                                    <Link
+                                        href={step?.desc[lang].link}
+                                        target="_blank"
+                                    >
                                         <StyledButton lang={lang}>
-                                            {lang === 'ru' ? 'УЗНАТЬ БОЛЬШЕ' : (lang === 'tj' ? 'БИСЁРТАР ОМӮЗЕД' : 'EXPLORE')}
+                                            {lang === 'ru'
+                                                ? 'УЗНАТЬ БОЛЬШЕ'
+                                                : lang === 'tj'
+                                                ? 'БИСЁРТАР ОМӮЗЕД'
+                                                : 'EXPLORE'}
                                         </StyledButton>
                                     </Link>
                                 </Desc>
@@ -86,10 +103,16 @@ export default function HomeStepper({ containerRef, divRefs, opacities }) {
                         </StepperBox>
                     );
                 })}
-                {isMobile && <ImageSemiCircle src={stepInfo[visibleStepIndex]?.inner[2].img} />}
+                {isMobile && (
+                    <ImageSemiCircle
+                        src={stepInfo[visibleStepIndex]?.inner[2].img}
+                    />
+                )}
             </StepperContainer>
             <OtherSteps bottom={1}>
-                <Step>{stepInfo[visibleStepIndex + 1]?.num || stepInfo[0]?.num}</Step>
+                <Step>
+                    {stepInfo[visibleStepIndex + 1]?.num || stepInfo[0]?.num}
+                </Step>
                 <NumLine />
             </OtherSteps>
         </MainContainer>
