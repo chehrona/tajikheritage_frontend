@@ -14,7 +14,7 @@ export const PageContainer = styled.div`
     min-height: calc(100svh - 9.23rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100svh - 8.73rem);
+        min-height: calc(100svh - 10.5rem);
     }
 `;
 

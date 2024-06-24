@@ -8,8 +8,8 @@ export const MainContainer = styled.div`
     height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-        height: calc(100svh - 10rem);
-        min-height: calc(100svh - 10rem);
+        min-height: calc(100svh - 10.5rem);
+        height: calc(100svh - 10.5rem);
     }
 `;
 

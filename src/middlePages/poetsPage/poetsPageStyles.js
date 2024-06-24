@@ -8,6 +8,7 @@ export const PageContainer = styled.div`
 
     @media (max-width: 480px) {
         padding: 1.5rem 3.2rem 1.5rem 3.2rem;
+        min-height: calc(100svh - 10.5rem);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

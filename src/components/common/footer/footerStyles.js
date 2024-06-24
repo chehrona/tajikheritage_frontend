@@ -24,7 +24,10 @@ export const FooterInnerContainer = styled.div`
     justify-content: space-between;
 
     @media (max-width: 480px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-top: 1rem;
+        padding: 1rem 0rem 0.5rem 0rem;
     }
 `;
 
@@ -59,8 +62,9 @@ export const SocialsWrapper = styled.div`
     justify-content: space-around;
 
     @media (max-width: 480px) {
-        gap: 0rem;
-        right: 0rem;
+        gap: 0.55rem;
+        width: 15rem;
+        margin: 0rem 0rem 0.5rem 0rem;
     }
 `;
 
@@ -82,11 +86,5 @@ export const StyledIcon = styled.img`
 export const StyledIconButton = styled(IconButton)`
     &.MuiIconButton-root {
         padding: 0.6rem;
-    }
-
-    @media (max-width: 480px) {
-        &.MuiIconButton-root {
-            margin-left: 0.5rem;
-        }
     }
 `;
