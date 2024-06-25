@@ -66,6 +66,12 @@ export const SocialsWrapper = styled.div`
         width: 15rem;
         margin: 0rem 0rem 0.5rem 0rem;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        width: 14rem;
+        min-width: 14rem;
+        margin-right: 0.25rem;
+    }
 `;
 
 export const StyledIcon = styled.img`

@@ -51,7 +51,10 @@ export default function Slideshow({
                 <PlaceIndicator>
                     {slides?.map((slide, i) => {
                         return (
-                            <Circle key={slide} selected={i === currentIndex} />
+                            <Circle
+                                key={slide?.id}
+                                selected={i === currentIndex}
+                            />
                         );
                     })}
                 </PlaceIndicator>
@@ -60,7 +63,7 @@ export default function Slideshow({
                 {infoArr?.map((entry) => {
                     return (
                         <ImageWrapper
-                            key={entry?.img}
+                            key={`${entry?.id}.1`}
                             width={width}
                             height={height}
                             translate={translate}

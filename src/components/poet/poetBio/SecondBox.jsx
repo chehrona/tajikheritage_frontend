@@ -61,6 +61,7 @@ export default function SecondBox({ poet }) {
             </InnerOverlay>
             <Slides>
                 <SlideImg
+                    id={infoArr[poet?.two[lang].length - 1]._id}
                     src={
                         process.env.REACT_APP_BASE_URL +
                         infoArr[poet?.two[lang].length - 1].img
@@ -68,6 +69,7 @@ export default function SecondBox({ poet }) {
                 />
                 <LineWrapper>
                     <SlideImg
+                        id={infoArr[0]._id}
                         src={process.env.REACT_APP_BASE_URL + infoArr[0]?.img}
                         show={1}
                     />
@@ -80,6 +82,7 @@ export default function SecondBox({ poet }) {
                     </Info>
                 </LineWrapper>
                 <SlideImg
+                    id={infoArr[1]._id}
                     src={process.env.REACT_APP_BASE_URL + infoArr[1].img}
                 />
             </Slides>

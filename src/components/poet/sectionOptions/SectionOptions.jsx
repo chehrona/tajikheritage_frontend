@@ -1,6 +1,13 @@
+/* 
+This component contains the list of sections presented at the intro of the poet page. 
+When clicked, it takes the user to that section, such as work, career, etc.
+*/
 import React from 'react';
+
+// Hooks
 import { useSetLang } from '../../../App';
 
+// Styled components
 import {
     MainContainer,
     SectionTitle,

@@ -26,6 +26,10 @@ export const HeaderInnerBox = styled.div`
         height: 4.5rem;
         padding: 0rem 0.25rem;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding-left: 0.85rem;
+    }
 `;
 
 export const LogoWrapper = styled.div`
@@ -36,13 +40,10 @@ export const LogoWrapper = styled.div`
     width: 4rem;
 
     @media (max-width: 480px) {
+        height: 3.5rem;
+        width: 3.5rem;
         margin-left: 0.25rem;
         margin-right: 0.25rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        margin-left: 0.5rem;
-        padding-top: 0.25rem;
     }
 `;
 

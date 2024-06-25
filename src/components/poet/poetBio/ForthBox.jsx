@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSetLang } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
@@ -6,15 +6,13 @@ import Slideshow from '../../common/slideshow/Slideshow';
 
 import {
     BoxSeven,
-    FinalQuote,
+    FamilyDesc,
     LeftContainer,
     RightContainer,
-    BackImg,
-    Overlay,
-    Author,
+    Year,
 } from './poetBioStyles';
 
-export default function SeventhBox({ poet }) {
+export default function ForthBox({ poet }) {
     const { lang } = useSetLang();
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
@@ -34,25 +32,22 @@ export default function SeventhBox({ poet }) {
     return (
         <BoxSeven>
             <LeftContainer>
-                <Overlay>
-                    <BackImg
-                        src={process.env.REACT_APP_BASE_URL + poet.backdrops[2]}
-                    />
-                </Overlay>
-                <FinalQuote>
-                    {poet?.seven[lang].desc}
-                    <Author
+                <FamilyDesc>
+                    <Year align={true} color={'#000'}>
+                        {poet?.four[lang].year}
+                    </Year>
+                    <div
                         dangerouslySetInnerHTML={{
-                            __html: poet?.seven[lang].author,
+                            __html: poet?.four[lang].desc,
                         }}
-                    />
-                </FinalQuote>
+                    ></div>
+                </FamilyDesc>
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
-                    height={height}
                     width={screenSize}
-                    slides={poet?.seven[lang].slides}
+                    height={height}
+                    slides={poet?.four[lang].slides}
                 />
             </RightContainer>
         </BoxSeven>

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+// Services
 import { requestMiddlePage } from '../../services/request';
 
+// Components
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
+import SearchBar from '../../components/common/searchBar/SearchBar';
 
+// Styled components
 import { PageContainer, PoetBoxContainer } from './poetsPageStyles';
 
 function PoetsPage() {
@@ -35,6 +39,7 @@ function PoetsPage() {
             {poets && (
                 <Fade inProp={!loading}>
                     <PageContainer justify={poets?.length}>
+                        <SearchBar items={poets} setItems={setPoets} />
                         <PoetBoxContainer>
                             {poets?.map((poet, i) => {
                                 return <PoetCard key={i} poet={poet} i={i} />;

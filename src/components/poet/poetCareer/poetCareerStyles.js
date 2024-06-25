@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { IconButton } from '@mui/material';
 
 export const MainContainer = styled.div`
@@ -93,7 +93,7 @@ export const InfoContainer = styled.div`
     height: 27rem;
 
     @media (max-width: 480px) {
-        height: 35rem;
+        height: 35.5rem;
     }
 `;
 
@@ -117,6 +117,12 @@ export const InfoWrapper = styled.div`
     background: #fcf6e9;
     border-radius: 1rem;
     display: flex;
+
+    @media (max-width: 480px) {
+        height: 34rem;
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         min-width: calc(100vw - 2rem - 100px);
@@ -193,7 +199,7 @@ export const MobileFooter = styled.div`
         justify-content: center;
         align-items: center;
         width: calc(100vw - 3rem);
-        height: 2.5rem;
+        height: 3rem;
         background: #fcf6e9;
         border-radius: 0rem 0rem 1rem 1rem;
         position: absolute;

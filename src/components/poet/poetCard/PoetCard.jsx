@@ -1,6 +1,9 @@
 import React from 'react';
+
+// Hooks
 import { useSetLang } from '../../../App';
 
+// Styled components
 import {
     PoetCardWrapper,
     PoetImage,

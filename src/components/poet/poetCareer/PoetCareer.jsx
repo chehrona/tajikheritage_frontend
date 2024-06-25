@@ -69,7 +69,10 @@ export default function PoetCareer({ points }) {
                     <Line />
                     {points?.years?.map((point, i) => {
                         return (
-                            <YearWrapper key={i + 1} size={i === currentIndex}>
+                            <YearWrapper
+                                key={`${point}.point`}
+                                size={i === currentIndex}
+                            >
                                 <Year show={i !== currentIndex}>{point}</Year>
                             </YearWrapper>
                         );
@@ -87,7 +90,7 @@ export default function PoetCareer({ points }) {
                                                 entry.slides[0]?.img
                                             }
                                             width={currentSize * 0.36}
-                                            height={'26rem'}
+                                            // height={'26rem'}
                                         >
                                             {entry.slides[0]?.info && (
                                                 <InfoBox

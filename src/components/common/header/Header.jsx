@@ -4,7 +4,7 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from '../../../App';
 
-// Styles
+// Styled components
 import {
     HeaderContainer,
     HeaderInnerBox,

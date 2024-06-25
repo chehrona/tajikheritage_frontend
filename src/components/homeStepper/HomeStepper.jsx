@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { stepInfo } from '../../landingPages/home/helper';
 
-// Styles
+// Styled components
 import {
     MainContainer,
     SemiCircle,

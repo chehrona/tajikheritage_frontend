@@ -10,7 +10,7 @@ import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 
-// Styles
+// Styled components
 import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {

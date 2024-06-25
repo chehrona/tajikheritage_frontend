@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react';
+
+// Hooks
 import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from '../../App';
 
+// Services
 import { requestArticleInfo } from '../../services/request';
 
+// Sections
 import PoetBio from '../../components/poet/poetBio/PoetBio';
 import PoetIntro from '../../components/poet/poetIntro/PoetIntro';
 import PoetWorks from '../../components/poet/poetWorks/PoetWorks';
+import PoetCareer from '../../components/poet/poetCareer/PoetCareer';
 import PoetAwards from '../../components/poet/poetAwards/PoetAwards';
 import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
 import Sources from '../../components/common/sources/Sources';
-import PoetCareer from '../../components/poet/poetCareer/PoetCareer';
 import SectionOptions from '../../components/poet/sectionOptions/SectionOptions';
+
+// Components
 import Loader from '../../components/common/loader/Loader';
 import Fade from '../../components/common/transition/Fade';
 import Alert from '../../components/common/alert/Alert';
 
+// Styled components
 import { PageContainer, PoetContainer } from './poetPageStyles';
 
 export default function PoetPage() {
@@ -49,7 +56,7 @@ export default function PoetPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    });
+    }, []);
 
     const scrollToView = (e) => {
         e.preventDefault();
