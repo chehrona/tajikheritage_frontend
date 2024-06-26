@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 // Hooks
-import { useMediaQuery } from 'react-responsive';
 import { useSetLang } from '../../../App';
 
 // Helper
@@ -16,27 +15,43 @@ import {
     InputAlert,
 } from './searchBarStyles';
 
-export default function SearchBar({ items, setItems }) {
+export default function SearchBar({ items, setItems, allItems }) {
     const { lang } = useSetLang();
     const [value, setValue] = useState('');
     const [noMatch, setNoMatch] = useState(false);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const handleSearch = (e) => {
         setNoMatch(false);
         const enteredValue = e.currentTarget.value.toLowerCase();
 
-        const filtered = items?.filter((entry) => {
-            return Object.values(entry.name).some((name) =>
-                name.toLowerCase().startsWith(enteredValue),
-            );
-        });
+        if (enteredValue.length > 0) {
+            const filtered = items?.filter((entry) => {
+                const nameCopy = { ...entry.name };
 
-        if (filtered.length > 0) {
-            setItems(filtered);
+                for (const key in nameCopy) {
+                    if (
+                        nameCopy.hasOwnProperty(key) &&
+                        Array.isArray(nameCopy[key])
+                    ) {
+                        nameCopy[key] = nameCopy[key].join(' ');
+                    }
+                }
+
+                return Object.values(nameCopy).some((name) =>
+                    name.toLowerCase().includes(enteredValue),
+                );
+            });
+
+            if (filtered.length > 0) {
+                setItems(filtered);
+            } else {
+                setNoMatch(true);
+                setItems(allItems);
+            }
         } else {
-            setNoMatch(true);
+            setItems(allItems);
         }
+
         setValue(enteredValue);
     };
 

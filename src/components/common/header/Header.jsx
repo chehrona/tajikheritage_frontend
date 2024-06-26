@@ -27,7 +27,6 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
-        console.log('here');
         setIsMenuShown((prevState) => !prevState);
     }
 

@@ -15,6 +15,7 @@ import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {
     const [items, setItems] = useState([]);
+    const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -24,6 +25,7 @@ function MiddlePage({ page }) {
             const data = await requestMiddlePage(page);
 
             setItems(data);
+            setAllItems(data);
         } catch (error) {
             if (error.response) {
                 if (
@@ -49,7 +51,11 @@ function MiddlePage({ page }) {
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
-                        <SearchBar items={items} setItems={setItems} />
+                        <SearchBar
+                            items={items}
+                            setItems={setItems}
+                            allItems={allItems}
+                        />
                         <InnerBoxContainer justify={items.length}>
                             {items.map((item, i) => (
                                 <SquareCard key={i} item={item} i={i} />

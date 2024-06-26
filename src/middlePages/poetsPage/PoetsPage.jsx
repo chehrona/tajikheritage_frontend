@@ -14,6 +14,7 @@ import { PageContainer, PoetBoxContainer } from './poetsPageStyles';
 
 function PoetsPage() {
     const [poets, setPoets] = useState([]);
+    const [allItems, setAllItems] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
@@ -21,6 +22,7 @@ function PoetsPage() {
             setLoading(true);
             const data = await requestMiddlePage('language/poets');
             setPoets(data);
+            setAllItems(data);
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
@@ -39,7 +41,11 @@ function PoetsPage() {
             {poets && (
                 <Fade inProp={!loading}>
                     <PageContainer justify={poets?.length}>
-                        <SearchBar items={poets} setItems={setPoets} />
+                        <SearchBar
+                            items={poets}
+                            setItems={setPoets}
+                            allItems={allItems}
+                        />
                         <PoetBoxContainer>
                             {poets?.map((poet, i) => {
                                 return <PoetCard key={i} poet={poet} i={i} />;

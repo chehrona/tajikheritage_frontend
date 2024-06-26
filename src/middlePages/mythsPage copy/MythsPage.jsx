@@ -29,8 +29,6 @@ function MythsPage() {
     useEffect(() => {
         // Get data
         fetchData();
-
-        console.log('here');
     }, []);
 
     return (
