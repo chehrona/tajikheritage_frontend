@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
+// Hooks
+import { useGlobalData } from '../../App';
+
+// Services
 import { requestPage } from '../../services/request';
 
+// Components
 import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 
+// Styled components
 import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 
 function LandingPage({ page }) {
+    const { title, setTitle } = useGlobalData();
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({});
@@ -19,6 +26,23 @@ function LandingPage({ page }) {
             setLoading(true);
             const data = await requestPage(page);
             setSections(data[0].sections);
+
+            let tempHeader = { ...title };
+            for (const key in title) {
+                let titleArr = [...title[key]];
+
+                // New title
+                const newItem = [`${data[0].header[key].toUpperCase()}`, ''];
+
+                // Check if the new item already exists in the array
+                if (!titleArr.some((item) => item[0] === newItem[0])) {
+                    titleArr[1] = newItem;
+                }
+
+                tempHeader[key] = titleArr;
+            }
+
+            setTitle(tempHeader);
         } catch (error) {
             if (error.response) {
                 if (

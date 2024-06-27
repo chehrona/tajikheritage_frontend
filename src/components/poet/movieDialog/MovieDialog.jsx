@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Slide } from '@mui/material';
 
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import Dialog from '../../common/dialog/Dialog';
@@ -43,7 +43,7 @@ export default function MovieDialog({
     const [showVideo, setShowVideo] = useState(false);
     const isMobile = useMediaQuery({ query: `(max-width: 1024px)` });
     const iframeRef = useRef(null);
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [fullSize, setFullSize] = useState(0);
 
     function handleClose() {

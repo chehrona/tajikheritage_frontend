@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { langNames } from './langNames';
 import { ClickAwayListener } from '@mui/material';
 
@@ -13,7 +13,7 @@ import {
 
 export default function Flags() {
     const [showLangMenu, setShowLangMenu] = useState(false);
-    const { lang, setLang } = useSetLang();
+    const { lang, setLang } = useGlobalData();
 
     function showLangOptions() {
         setShowLangMenu(true);

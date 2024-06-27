@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { pageInfo } from './pageNames';
 
 import { Slide } from '@mui/material';
@@ -15,7 +15,7 @@ import {
 } from './menuStyles';
 
 export default function Menu({ isMenuShown, setIsMenuShown }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <StyledMenu

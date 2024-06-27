@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 import { PageContainer } from './artsPageStyles';
 
@@ -11,7 +11,7 @@ import {
 
 function Arts() {
     // Delete
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         // <PageContainer></PageContainer>

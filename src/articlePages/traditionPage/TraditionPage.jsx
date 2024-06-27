@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useSetLang } from "../../App";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useGlobalData } from '../../App';
 
-import { requestArticleInfo } from "../../services/request";
+import { requestArticleInfo } from '../../services/request';
 
-import BoxOne from "../../components/myths/mythIntro/FirstBox";
-import BoxTwo from "../../components/myths/mythIntro/SecondBox";
-import Sources from "../../components/common/sources/Sources";
-import Fade from "../../components/common/transition/Fade";
-import Loader from "../../components/common/loader/Loader";
-import Alert from "../../components/common/alert/Alert";
+import BoxOne from '../../components/myths/mythIntro/FirstBox';
+import BoxTwo from '../../components/myths/mythIntro/SecondBox';
+import Sources from '../../components/common/sources/Sources';
+import Fade from '../../components/common/transition/Fade';
+import Loader from '../../components/common/loader/Loader';
+import Alert from '../../components/common/alert/Alert';
 
-import { 
-    PageContainer,
-    MythContainer,
-} from "./traditionPageStyles";
+import { PageContainer, MythContainer } from './traditionPageStyles';
 
 export default function TraditionPage() {
     const { id } = useParams();
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [tradition, setTradition] = useState();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -26,7 +23,7 @@ export default function TraditionPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, "customs/traditions");
+            const data = await requestArticleInfo(id, 'customs/traditions');
             setTradition(data);
         } catch (error) {
             setError(true);
@@ -62,7 +59,9 @@ export default function TraditionPage() {
                         </MythContainer>
                     </PageContainer>
                 </Fade>
-            ) : (error && <Alert />)}
+            ) : (
+                error && <Alert />
+            )}
         </>
     );
 }

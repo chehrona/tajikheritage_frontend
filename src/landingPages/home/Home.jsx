@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 import { stepInfo } from './helper';
 import { addVisit } from '../../services/request';
@@ -20,7 +20,7 @@ import {
 
 function Home() {
     const containerRef = useRef(null);
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const divRefs = [
         useRef(null),
         useRef(null),

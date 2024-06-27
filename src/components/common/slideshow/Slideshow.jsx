@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import { ArrowForwardIos } from '@mui/icons-material';
 
@@ -22,7 +22,7 @@ export default function Slideshow({
     topLeftRad,
     bottomLeftRad,
 }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [translate, setTranslate] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [infoArr, setInfoArr] = useState([...slides]);

@@ -1,28 +1,40 @@
-import React from "react";
-import { useSetLang } from "../../../App";
+import React from 'react';
+import { useGlobalData } from '../../../App';
 
-import { 
+import {
     MainContainer,
     SubTitle,
     Ingredient,
-    Amount
-} from "./recipeIngredientsStyles";
+    Amount,
+} from './recipeIngredientsStyles';
 
 export default function RecipeIngredients({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <MainContainer>
-            <SubTitle>{lang === "us" ? "Ingredients" : (lang === "ru" ? "Ингредиенты" : "Маҳсулот")}</SubTitle>
+            <SubTitle>
+                {lang === 'us'
+                    ? 'Ingredients'
+                    : lang === 'ru'
+                    ? 'Ингредиенты'
+                    : 'Маҳсулот'}
+            </SubTitle>
             {recipe.ingredients[lang].map((piece, i) => {
                 return (
                     <Ingredient key={i}>
-                        <Amount dangerouslySetInnerHTML={{__html: piece?.amount}} />
-                        <Amount dangerouslySetInnerHTML={{__html: piece?.unit}} />
-                        <Amount dangerouslySetInnerHTML={{__html: piece?.item}} />
+                        <Amount
+                            dangerouslySetInnerHTML={{ __html: piece?.amount }}
+                        />
+                        <Amount
+                            dangerouslySetInnerHTML={{ __html: piece?.unit }}
+                        />
+                        <Amount
+                            dangerouslySetInnerHTML={{ __html: piece?.item }}
+                        />
                     </Ingredient>
-                )
+                );
             })}
         </MainContainer>
-    )
+    );
 }

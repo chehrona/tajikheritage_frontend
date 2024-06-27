@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 import { requestArticleInfo } from '../../services/request';
 
@@ -15,7 +15,7 @@ import { PageContainer, TextContainer } from './mythPageStyles';
 
 export default function MythPage({ page }) {
     const { id } = useParams();
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [myth, setMyth] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);

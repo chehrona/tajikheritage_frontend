@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import MovieDialog from '../movieDialog/MovieDialog';
 
 import {
@@ -12,7 +12,7 @@ import {
 } from './poetMovieStyles.js';
 
 export default function PoetMovies({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [showMovieInfo, setShowMovieInfo] = useState(false);
     const [movieInfo, setMovieInfo] = useState(null);
 

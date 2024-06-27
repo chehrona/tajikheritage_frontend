@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import Slideshow from '../../common/slideshow/Slideshow';
@@ -15,7 +15,7 @@ import {
 } from './poetBioStyles';
 
 export default function SixthBox({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });

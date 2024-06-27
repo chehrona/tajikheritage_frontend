@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import { ArrowForwardIos } from '@mui/icons-material';
@@ -26,7 +26,7 @@ import {
 } from './poetBioStyles';
 
 export default function SecondBox({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [infoArr, setInfoArr] = useState([...poet?.two[lang]]);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import BookshelfDesign from '../bookshelfDesign/BookshelfDesign';
 import { MainContainer } from './poetWorksStyles';
 
 export default function PoetWorks({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const numBooks = poet[lang].length;
     let shelfNum;

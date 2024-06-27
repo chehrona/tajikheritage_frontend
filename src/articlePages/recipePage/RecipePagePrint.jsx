@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useSetLang } from "../../App";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useGlobalData } from '../../App';
+import { useParams } from 'react-router-dom';
 
-import { IconButton } from "@mui/material";
+import { IconButton } from '@mui/material';
 
 import {
     MainContainer,
@@ -35,28 +35,24 @@ import {
     Header,
     Logo,
     LogoWrapper,
-    StyledLink
-} from './recipePagePrintStyles'
+    StyledLink,
+} from './recipePagePrintStyles';
 
 export default function RecipePagePrint() {
     // const { id } = useParams(),
     //     recipe = recipes.filter((recipe) => recipe.id === id)[0],
-    //     { lang, setIsPrint } = useSetLang(),
+    //     { lang, setIsPrint } = useGlobalData(),
     //     [servings, setServings] = useState(recipe?.startServing),
     //     [showTop, setShowTop] = useState(true);
-
     // useEffect(() => {
     //     setIsPrint(true);
     // }, []);
-
     // useEffect(() => {
     //     if (!showTop) {
     //         window.print();
     //     }
     //     setShowTop(true);
-
     // }, [showTop]);
-
     // function reduceServings() {
     //     let inputValue = servings;
     //     if (inputValue > 1) {
@@ -66,18 +62,15 @@ export default function RecipePagePrint() {
     //         alert(recipe?.servingAlert[lang]);
     //     }
     // }
-
     // function increaseServings(e) {
     //     let inputValue = servings;
     //     inputValue = inputValue + 1;
     //     setServings(inputValue);
     // }
-
     // function getServings(e) {
     //     let inputValue = e.target.value;
     //     setServings(inputValue);
     // }
-
     // return (
     //     <MainContainer>
     //         <Header>
@@ -95,7 +88,7 @@ export default function RecipePagePrint() {
     //             {showTop && <ServeBox>
     //                 <QuantityContainer>
     //                     <div>
-    //                         {lang === 'ru' ? 'Порции' : 
+    //                         {lang === 'ru' ? 'Порции' :
     //                         (lang === 'tj' ? 'Портсия' : 'Servings')}
     //                     </div>
     //                     <ServeContainer>
@@ -109,7 +102,7 @@ export default function RecipePagePrint() {
     //                     </ServeContainer>
     //                 </QuantityContainer>
     //                 <PrintContainer>
-    //                     <div>{lang === 'ru' ? 'Расспечатать' : 
+    //                     <div>{lang === 'ru' ? 'Расспечатать' :
     //                         (lang === 'tj' ? 'Чоп кунед' : 'Print')}
     //                     </div>
     //                     <IconButton onClick={() => setShowTop(false)}>
@@ -160,7 +153,7 @@ export default function RecipePagePrint() {
     //                                     <div>{i + 1}.</div>
     //                                 </StepIndex>
     //                                 <Ingredient key={i} dangerouslySetInnerHTML={{__html: entry}}></Ingredient>
-    //                             </DirectionBox>     
+    //                             </DirectionBox>
     //                         )
     //                     })}
     //                 </div>

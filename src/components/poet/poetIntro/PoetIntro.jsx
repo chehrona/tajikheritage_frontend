@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     MainContainer,
@@ -16,7 +16,7 @@ import {
 } from './poetIntroStyles';
 
 export default function PoetIntro({ poet, scrollToView }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const yearOne = poet?.years[lang][0].split('');
     const yearTwo = poet?.years[lang][1].split('');
 

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Styled components
 import {
@@ -23,7 +23,8 @@ import {
 } from './headerStyles';
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
-    const { lang } = useSetLang();
+    const { lang, title } = useGlobalData();
+    const [scrollPosition, setScrollPosition] = useState(-1);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
@@ -34,6 +35,23 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
         setIsMenuShown(false);
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            // Increment position
+            setScrollPosition((prevIndex) => {
+                const nextIndex = (prevIndex + 1) % title[lang].length;
+                return nextIndex;
+            });
+        };
+
+        handleScroll();
+        setInterval(() => {
+            handleScroll();
+        }, 5000);
+
+        return () => clearInterval();
+    }, []);
+
     return (
         <HeaderContainer>
             <HeaderInnerBox>
@@ -42,23 +60,30 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                         <Logo src={'/tajiks.png'}></Logo>
                     </StyledLink>
                 </LogoWrapper>
-                <TitleWrapper>
+                <TitleWrapper transform={scrollPosition}>
                     <Title>
                         <TitleSpan
                             dangerouslySetInnerHTML={{
-                                __html:
-                                    lang === 'us'
-                                        ? 'THE TAJIKS:'
-                                        : lang === 'ru'
-                                        ? 'ТАДЖИКИ:'
-                                        : 'ТОҶИКОН:',
+                                __html: title[lang][0][0],
                             }}
                         />
-                        {lang === 'us'
-                            ? 'Iranians of the East'
-                            : lang === 'ru'
-                            ? 'Иранцы Востока'
-                            : 'Эрониёни Шарқ'}
+                        {title[lang][0][1]}
+                    </Title>
+                    <Title>
+                        <TitleSpan
+                            dangerouslySetInnerHTML={{
+                                __html: title[lang][1][0],
+                            }}
+                        />
+                        {title[lang][1][1]}
+                    </Title>
+                    <Title>
+                        <TitleSpan
+                            dangerouslySetInnerHTML={{
+                                __html: title[lang][2][0],
+                            }}
+                        />
+                        {title[lang][2][1]}
                     </Title>
                 </TitleWrapper>
                 <MenuWrapper>

@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { useSetLang } from "../../../App";
+import React, { useState } from 'react';
+import { useGlobalData } from '../../../App';
 
-import { DescWrapper } from "../../common/descWrapper/DescWrapper";
+import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
-import { 
+import {
     InfoContainer,
     MainTitle,
     HistoryInfo,
     ImageContainer,
     MainImage,
-    StyledPinIcon
-} from "./recipeInfoStyles";
+    StyledPinIcon,
+} from './recipeInfoStyles';
 
 export default function RecipeInfo({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [pinHovered, setPinHovered] = useState(false);
 
     // const PinterestPinCreator = ({ imageUrl, description, url }) => {
@@ -27,18 +27,24 @@ export default function RecipeInfo({ recipe }) {
     //       />
     //     );
     //   };
-    
+
     return (
         <InfoContainer>
-            <ImageContainer onMouseEnter={() => setPinHovered(true)} onMouseLeave={() => setPinHovered(false)}>
+            <ImageContainer
+                onMouseEnter={() => setPinHovered(true)}
+                onMouseLeave={() => setPinHovered(false)}
+            >
                 {/* {pinHovered &&  */}
-                    {/* <PinterestPinCreator imageUrl={recipe?.pinMedia} description={"hello"} url={recipe?.pinUrl}>
+                {/* <PinterestPinCreator imageUrl={recipe?.pinMedia} description={"hello"} url={recipe?.pinUrl}>
                     </PinterestPinCreator> */}
                 {/* } */}
                 <MainImage src={recipe?.mainImg} />
             </ImageContainer>
             <MainTitle>{recipe.title[lang]}</MainTitle>
-            <DescWrapper desc={recipe?.history[lang]} TextWrapper={HistoryInfo} />
+            <DescWrapper
+                desc={recipe?.history[lang]}
+                TextWrapper={HistoryInfo}
+            />
         </InfoContainer>
-    )
+    );
 }

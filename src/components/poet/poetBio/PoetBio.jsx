@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hooks
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Components
 import FirstBox from './FirstBox';
@@ -15,7 +15,7 @@ import SixthBox from './SixthBox';
 import { MainContainer } from './poetBioStyles';
 
 export default function PoetBio({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <MainContainer id="Biography">

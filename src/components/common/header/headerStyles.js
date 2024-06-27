@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
-import { IconButton, Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
@@ -21,6 +21,7 @@ export const HeaderInnerBox = styled.div`
     margin: 0 auto;
     justify-content: space-between;
     padding: 0rem 0.25rem 0rem 1rem;
+    overflow: hidden;
 
     @media (max-width: 480px) {
         height: 4.5rem;
@@ -49,9 +50,19 @@ export const LogoWrapper = styled.div`
 
 export const TitleWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: 2rem;
     font-family: 'EB Garamond', serif;
+    position: absolute;
+    left: 5rem;
+    top: 0rem;
+    width: calc(100% - 12.5rem);
+    text-align: center;
+    transition: 0.5s all;
+    transform: ${({ transform }) =>
+        transform && `translateY(${(-100 / 3) * transform}%)`};
 
     @media (max-width: 480px) {
         font-size: 1.64rem;
@@ -65,6 +76,11 @@ export const TitleWrapper = styled.div`
 export const Title = styled.div`
     font-style: italic;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
 `;
 
 export const TitleSpan = styled.span`

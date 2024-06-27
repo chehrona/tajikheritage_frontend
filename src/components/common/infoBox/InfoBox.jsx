@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     InfoWrapper,
@@ -12,7 +12,7 @@ import {
 } from './infoBoxStyles';
 
 export default function InfoBox({ text }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [showInfo, setShowInfo] = useState(true);
 
     useEffect(() => {

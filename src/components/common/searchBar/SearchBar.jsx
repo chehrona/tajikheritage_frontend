@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Hooks
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Helper
 import { placeholder, alert } from './helper';
@@ -16,7 +16,7 @@ import {
 } from './searchBarStyles';
 
 export default function SearchBar({ items, setItems, allItems }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [value, setValue] = useState('');
     const [noMatch, setNoMatch] = useState(false);
 

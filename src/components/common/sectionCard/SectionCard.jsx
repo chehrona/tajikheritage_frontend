@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     SectionCardWrapper,
@@ -11,7 +11,7 @@ import {
 } from './sectionCardStyles';
 
 export default function SectionCard({ section, link, i }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <StyledLink to={link}>

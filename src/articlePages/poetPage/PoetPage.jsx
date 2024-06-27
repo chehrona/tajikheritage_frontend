@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Hooks
 import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 // Services
 import { requestArticleInfo } from '../../services/request';
@@ -28,7 +28,7 @@ import { PageContainer, PoetContainer } from './poetPageStyles';
 
 export default function PoetPage() {
     const { id } = useParams();
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [poet, setPoet] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);

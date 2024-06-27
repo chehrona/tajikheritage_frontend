@@ -1,10 +1,10 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import { SquareCardWrapper, SquareImage, StyledLink } from './squareCardStyles';
 
 export default function SquareCard({ item, i }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <StyledLink to={item?.id}>

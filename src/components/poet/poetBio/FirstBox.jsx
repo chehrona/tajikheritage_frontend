@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     BoxOne,
@@ -12,7 +12,7 @@ import {
 } from './poetBioStyles';
 
 export default function FirstBox({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <BoxOne>

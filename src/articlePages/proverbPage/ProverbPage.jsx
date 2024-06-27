@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 import { requestArticleInfo } from '../../services/request';
 
@@ -15,7 +15,7 @@ import { PageContainer, ProverbContainer } from './proverbPageStyles';
 
 export default function ProverbPage() {
     const { id } = useParams();
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [proverb, setProverb] = useState();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);

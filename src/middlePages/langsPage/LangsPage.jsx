@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 import { useLocation } from 'react-router-dom';
 
 import { requestMiddlePage } from '../../services/request';
@@ -17,7 +17,7 @@ import {
 
 function PoetsPage() {
     // Delete
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         // <PageContainer></PageContainer>

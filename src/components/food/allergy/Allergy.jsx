@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     AllergyContainer,
@@ -12,7 +12,7 @@ import {
 } from './allergyStyles';
 
 export default function Allergy({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <AllergyContainer>

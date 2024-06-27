@@ -1,4 +1,4 @@
-import {
+import React, {
     useContext,
     createContext,
     useMemo,
@@ -6,6 +6,11 @@ import {
     useRef,
     useEffect,
 } from 'react';
+
+// Helper
+import { header } from './components/common/header/helper';
+
+// Components
 import Header from './components/common/header/Header';
 import Menu from './components/common/menu/Menu';
 import Footer from './components/common/footer/Footer';
@@ -13,21 +18,24 @@ import Routes from './components/common/routes/Routes';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 
-const LangContext = createContext({
+const DataContext = createContext({
+    title: header,
+    setTitle: () => {},
     lang: 'us',
     setLang: () => {},
     isPrint: false,
     setIsPrint: () => {},
 });
 
-export function useSetLang() {
-    return useContext(LangContext);
+export function useGlobalData() {
+    return useContext(DataContext);
 }
 
 function App() {
     const [lang, setLang] = useState(() => {
         return localStorage.getItem('lang') || 'us';
     });
+    const [title, setTitle] = useState(header);
     const parentRef = useRef(null);
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);
@@ -36,12 +44,14 @@ function App() {
 
     const value = useMemo(
         () => ({
+            title,
+            setTitle,
             lang,
             setLang,
             isPrint,
             setIsPrint,
         }),
-        [lang, isPrint],
+        [lang, isPrint, title],
     );
 
     useEffect(() => {
@@ -81,7 +91,7 @@ function App() {
     };
 
     return (
-        <LangContext.Provider value={value}>
+        <DataContext.Provider value={value}>
             <div
                 className="content-container"
                 ref={parentRef}
@@ -90,6 +100,7 @@ function App() {
             >
                 {!isPrint && (
                     <Header
+                        title={title}
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
                     />
@@ -105,7 +116,7 @@ function App() {
                 </div>
                 {!isPrint ? <Footer /> : null}
             </div>
-        </LangContext.Provider>
+        </DataContext.Provider>
     );
 }
 

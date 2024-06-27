@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hooks
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Styled components
 import {
@@ -16,7 +16,7 @@ import {
 } from './poetCardStyles';
 
 export default function PoetCard({ poet, i }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <StyledLink to={'/language/poets/' + poet?.id}>

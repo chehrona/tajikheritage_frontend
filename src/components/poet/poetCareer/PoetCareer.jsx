@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import { ArrowForwardIos } from '@mui/icons-material';
 
@@ -27,7 +27,7 @@ import {
 } from './poetCareerStyles';
 
 export default function PoetCareer({ points }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const parentRef = useRef(null);
     const childRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
