@@ -1,12 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Hooks
 import { useGlobalData } from '../../App';
 
+// Helpers
+import { header } from '../../components/common/header/helper';
 import { stepInfo } from './helper';
+
+// Services
 import { addVisit } from '../../services/request';
 
+// Components
 import HomeStepper from '../../components/homeStepper/HomeStepper';
 import ImageBall from '../../components/imageBall/ImageBall';
 
+// Styled components
 import {
     InnerContainer,
     PageContainer,
@@ -20,7 +28,7 @@ import {
 
 function Home() {
     const containerRef = useRef(null);
-    const { lang } = useGlobalData();
+    const { lang, setTitle } = useGlobalData();
     const divRefs = [
         useRef(null),
         useRef(null),
@@ -40,6 +48,7 @@ function Home() {
     };
 
     useEffect(() => {
+        setTitle(header);
         recordVisit();
         // Scrolling
         const handleScroll = () => {

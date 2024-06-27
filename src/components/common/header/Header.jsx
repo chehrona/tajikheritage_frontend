@@ -24,7 +24,7 @@ import {
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang, title } = useGlobalData();
-    const [scrollPosition, setScrollPosition] = useState(-1);
+    const [scrollPosition, setScrollPosition] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
@@ -44,7 +44,6 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
             });
         };
 
-        handleScroll();
         setInterval(() => {
             handleScroll();
         }, 5000);
