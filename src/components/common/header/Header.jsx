@@ -24,7 +24,6 @@ import {
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang, title } = useGlobalData();
-    const singleTitle = title[lang][0][0] === title[lang][1][0];
     const [titleOrder, setTitleOrder] = useState([0, 1, 2]);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -44,7 +43,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                 newOrder.push(first);
                 return newOrder;
             });
-        }, 6000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
@@ -58,27 +57,16 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                     </StyledLink>
                 </LogoWrapper>
                 <TitleWrapper>
-                    {!singleTitle ? (
-                        titleOrder.map((order, i) => (
-                            <Title key={order} index={i}>
-                                <TitleSpan
-                                    dangerouslySetInnerHTML={{
-                                        __html: title[lang][order][0],
-                                    }}
-                                />
-                                {title[lang][order][1]}
-                            </Title>
-                        ))
-                    ) : (
-                        <Title key={title[lang][(0)[0]]} singleTitle={true}>
+                    {titleOrder.map((order, i) => (
+                        <Title key={order} index={i}>
                             <TitleSpan
                                 dangerouslySetInnerHTML={{
-                                    __html: title[lang][0][0],
+                                    __html: title[lang][order][0],
                                 }}
                             />
-                            {title[lang][0][1]}
+                            {title[lang][order][1]}
                         </Title>
-                    )}
+                    ))}
                 </TitleWrapper>
                 <MenuWrapper>
                     {!isMobile ? (

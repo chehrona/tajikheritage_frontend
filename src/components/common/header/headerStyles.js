@@ -76,13 +76,9 @@ export const Title = styled.div`
     height: 100%;
     position: absolute;
     left: 5rem;
-    top: ${({ singleTitle }) => (singleTitle ? '0rem' : '-5rem')};
-    ${({ singleTitle, index }) =>
-        !singleTitle &&
-        `
-            transform: ${index && `translateY(${5 * index}rem)`};
-            transition: transform 0.5s ease;
-        `}
+    top: -5rem;
+    transform: ${({ index }) => index && `translateY(${5 * index}rem)`};
+    transition: transform 0.5s ease;
 `;
 
 export const TitleSpan = styled.span`
