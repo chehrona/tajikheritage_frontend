@@ -24,7 +24,7 @@ import {
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang, title } = useGlobalData();
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [titleOrder, setTitleOrder] = useState([0, 1, 2]);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     function showMenu() {
@@ -36,19 +36,16 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
     }
 
     useEffect(() => {
-        const handleScroll = () => {
-            // Increment position
-            setScrollPosition((prevIndex) => {
-                const nextIndex = (prevIndex + 1) % title[lang].length;
-                return nextIndex;
+        const interval = setInterval(() => {
+            setTitleOrder((prevOrder) => {
+                const newOrder = [...prevOrder];
+                const first = newOrder.shift();
+                newOrder.push(first);
+                return newOrder;
             });
-        };
-
-        setInterval(() => {
-            handleScroll();
         }, 5000);
 
-        return () => clearInterval();
+        return () => clearInterval(interval);
     }, []);
 
     return (
@@ -59,31 +56,17 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                         <Logo src={'/tajiks.png'}></Logo>
                     </StyledLink>
                 </LogoWrapper>
-                <TitleWrapper transform={scrollPosition}>
-                    <Title>
-                        <TitleSpan
-                            dangerouslySetInnerHTML={{
-                                __html: title[lang][0][0],
-                            }}
-                        />
-                        {title[lang][0][1]}
-                    </Title>
-                    <Title>
-                        <TitleSpan
-                            dangerouslySetInnerHTML={{
-                                __html: title[lang][1][0],
-                            }}
-                        />
-                        {title[lang][1][1]}
-                    </Title>
-                    <Title>
-                        <TitleSpan
-                            dangerouslySetInnerHTML={{
-                                __html: title[lang][2][0],
-                            }}
-                        />
-                        {title[lang][2][1]}
-                    </Title>
+                <TitleWrapper>
+                    {titleOrder.map((order, i) => (
+                        <Title key={order} index={i}>
+                            <TitleSpan
+                                dangerouslySetInnerHTML={{
+                                    __html: title[lang][order][0],
+                                }}
+                            />
+                            {title[lang][order][1]}
+                        </Title>
+                    ))}
                 </TitleWrapper>
                 <MenuWrapper>
                     {!isMobile ? (

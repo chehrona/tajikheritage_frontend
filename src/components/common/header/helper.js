@@ -1,17 +1,17 @@
 export const header = {
     us: [
         ['THE TAJIKS:', 'Iranians of the East'],
-        ['hello 1', ''],
-        ['hello 2', ''],
+        ['THE TAJIKS:', 'Iranians of the East'],
+        ['THE TAJIKS:', 'Iranians of the East'],
     ],
     ru: [
         ['ТАДЖИКИ:', 'Иранцы Востока'],
-        ['hello 1', ''],
-        ['hello 2', ''],
+        ['ТАДЖИКИ:', 'Иранцы Востока'],
+        ['ТАДЖИКИ:', 'Иранцы Востока'],
     ],
     tj: [
         ['ТОҶИКОН:', 'Эрониёни Шарқ'],
-        ['hello 1', ''],
-        ['hello 2', ''],
+        ['ТОҶИКОН:', 'Эрониёни Шарқ'],
+        ['ТОҶИКОН:', 'Эрониёни Шарқ'],
     ],
 };

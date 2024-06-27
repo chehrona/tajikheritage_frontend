@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ export const HeaderInnerBox = styled.div`
     max-width: 1920px;
     margin: 0 auto;
     justify-content: space-between;
-    padding: 0rem 0.25rem 0rem 1rem;
+    padding: 0rem 0.45rem 0rem 1rem;
     overflow: hidden;
 
     @media (max-width: 480px) {
@@ -55,14 +55,7 @@ export const TitleWrapper = styled.div`
     align-items: center;
     font-size: 2rem;
     font-family: 'EB Garamond', serif;
-    position: absolute;
-    left: 5rem;
-    top: 0rem;
-    width: calc(100% - 12.5rem);
     text-align: center;
-    transition: 0.5s all;
-    transform: ${({ transform }) =>
-        transform && `translateY(${(-100 / 3) * transform}%)`};
 
     @media (max-width: 480px) {
         font-size: 1.64rem;
@@ -79,8 +72,13 @@ export const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 5rem;
+    width: calc(100% - 12.5rem);
+    height: 100%;
+    position: absolute;
+    left: 5rem;
+    top: -5rem;
+    transform: ${({ index }) => index && `translateY(${5 * index}rem)`};
+    transition: transform 0.5s ease;
 `;
 
 export const TitleSpan = styled.span`
