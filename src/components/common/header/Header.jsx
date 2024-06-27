@@ -39,7 +39,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
         const interval = setInterval(() => {
             setTitleOrder((prevOrder) => {
                 const newOrder = [...prevOrder];
-                const first = newOrder.splice(1, 1);
+                const first = newOrder.shift();
                 newOrder.push(first);
                 return newOrder;
             });
