@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+
+// Hooks
 import { useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
 
+// Services
 import { requestArticleInfo } from '../../services/request';
 
+// Components
 import BoxOne from '../../components/myths/mythIntro/FirstBox';
 import BoxTwo from '../../components/myths/mythIntro/SecondBox';
 import Sources from '../../components/common/sources/Sources';
@@ -11,6 +15,7 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 
+// Styled components
 import { PageContainer, TextContainer } from './mythPageStyles';
 
 export default function MythPage({ page }) {
