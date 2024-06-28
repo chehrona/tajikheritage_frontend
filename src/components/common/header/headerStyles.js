@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -79,6 +79,13 @@ export const Title = styled.div`
     top: -5rem;
     transform: ${({ index }) => index && `translateY(${5 * index}rem)`};
     transition: transform 0.5s ease;
+
+    @media (max-width: 480px) {
+        left: 4.15rem;
+        width: calc(100% - 7.15rem);
+        top: -4.5rem;
+        transform: ${({ index }) => index && `translateY(${4.5 * index}rem)`};
+    }
 `;
 
 export const TitleSpan = styled.span`
