@@ -1,7 +1,9 @@
 import React from 'react';
 
+// Hooks
 import { useGlobalData } from '../../../App';
 
+// Styled components
 import {
     SectionCardWrapper,
     SectionImage,
