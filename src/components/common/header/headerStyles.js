@@ -82,10 +82,17 @@ export const Title = styled.div`
 
     @media (max-width: 480px) {
         left: 4.15rem;
-        width: calc(100% - 7.15rem);
         top: -4.5rem;
+        max-width: calc(100% - 7.15rem);
+        width: calc(100% - 7.15rem);
         transform: ${({ index }) => index && `translateY(${4.5 * index}rem)`};
     }
+`;
+
+export const MainTitle = styled.div`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export const TitleSpan = styled.span`

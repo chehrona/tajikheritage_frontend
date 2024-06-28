@@ -15,6 +15,7 @@ import {
     StyledIconButton,
     StyledMenuIcon,
     Logo,
+    MainTitle,
     TitleSpan,
     StyledCloseIcon,
     StyledLink,
@@ -64,7 +65,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                                     __html: title[lang][order][0],
                                 }}
                             />
-                            {title[lang][order][1]}
+                            <MainTitle>{title[lang][order][1]}</MainTitle>
                         </Title>
                     ))}
                 </TitleWrapper>

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+// Hooks
+import { useGlobalData } from '../../App';
+
 // Services
-import { requestMiddlePage } from '../../services/request';
+import { requestPage, requestMiddlePage } from '../../services/request';
 
 // Components
 import SquareCard from '../../components/common/squareCard/SquareCard';
@@ -14,6 +17,7 @@ import SearchBar from '../../components/common/searchBar/SearchBar';
 import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {
+    const { title, setTitle } = useGlobalData();
     const [items, setItems] = useState([]);
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
@@ -26,6 +30,37 @@ function MiddlePage({ page }) {
 
             setItems(data);
             setAllItems(data);
+
+            // Setting the title
+            const headerData = await requestPage(
+                page.substring(0, page.indexOf('/')),
+            );
+
+            let tempHeader = { ...title };
+
+            headerData.forEach((entry) => {
+                entry.sections.forEach((section) => {
+                    if (
+                        section.link === page.substring(page.indexOf('/') + 1)
+                    ) {
+                        for (const key in title) {
+                            let titleArr = [...title[key]];
+
+                            // New title
+                            const newItem = [
+                                `${headerData[0].header[key].toUpperCase()}:`,
+                                `${section.title[key]}`,
+                            ];
+
+                            titleArr[1] = newItem;
+
+                            tempHeader[key] = titleArr;
+                        }
+                    }
+                });
+            });
+
+            setTitle(tempHeader);
         } catch (error) {
             if (error.response) {
                 if (

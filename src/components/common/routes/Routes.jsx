@@ -41,11 +41,11 @@ export default function Routes() {
             />
             <Route
                 path="/arts/jewelry"
-                element={<MiddlePage page={'arts/jewels'} />}
+                element={<MiddlePage page={'arts/jewelry'} />}
             />
             <Route
                 path="/arts/jewelry/:id"
-                element={<MythPage page={'arts/jewels'} />}
+                element={<MythPage page={'arts/jewelry'} />}
             />
             <Route
                 path="/customs/traditions"

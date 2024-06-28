@@ -20,7 +20,7 @@ import { PageContainer, TextContainer } from './mythPageStyles';
 
 export default function MythPage({ page }) {
     const { id } = useParams();
-    const { lang } = useGlobalData();
+    const { lang, title, setTitle } = useGlobalData();
     const [myth, setMyth] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
@@ -30,6 +30,26 @@ export default function MythPage({ page }) {
             setLoading(true);
             const data = await requestArticleInfo(id, page);
             setMyth(data);
+
+            // Setting the title
+            let tempHeader = { ...title };
+            for (const key in tempHeader) {
+                let titleArr = [...title[key]];
+
+                const pageName = titleArr[1][1];
+
+                // New title
+                const newItem = [
+                    `${pageName.toUpperCase()}:`,
+                    `${data.name[key]}`,
+                ];
+
+                titleArr[1] = newItem;
+
+                tempHeader[key] = titleArr;
+            }
+
+            setTitle(tempHeader);
         } catch (error) {
             if (error.response) {
                 if (
