@@ -10,10 +10,10 @@ import {
 } from './tooltipStyles';
 
 export const Tooltip = ({ content }) => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(0);
 
     function handleShow() {
-        setShow(true);
+        setShow(1);
     }
 
     function handleClickAway() {
