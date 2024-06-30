@@ -37,11 +37,11 @@ export default function Routes() {
             />
             <Route
                 path="/customs/myths/:id"
-                element={<MythPage page={'customs/myths'} />}
+                element={<MythPage page={'customs/myth'} />}
             />
             <Route
                 path="/arts/jewelry"
-                element={<MiddlePage page={'arts/jewelry'} />}
+                element={<MiddlePage page={'arts/jewels'} />}
             />
             <Route
                 path="/arts/jewelry/:id"
@@ -56,7 +56,7 @@ export default function Routes() {
                 element={<MiddlePage page={'language/proverbs'} />}
             />
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
-            <Route path="/customs/traditions/:id" element={<TraditionPage />} />
+            <Route path="/customs/tradition/:id" element={<TraditionPage />} />
             <Route path="/cuisine/recipes/:id" element={<RecipePage />} />
             <Route
                 path="/cuisine/recipes/:id/print"

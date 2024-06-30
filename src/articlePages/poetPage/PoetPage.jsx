@@ -37,7 +37,7 @@ export default function PoetPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'language/poets');
+            const data = await requestArticleInfo(id, 'languages/poets');
             setPoet(data);
         } catch (error) {
             if (error.response) {
