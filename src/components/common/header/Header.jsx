@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Hooks
 import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../App';
+import { useLocation } from 'react-router-dom';
 
 // Styled components
 import {
@@ -21,10 +22,12 @@ import {
     StyledLink,
     ButtonWrapper,
     ButtonText,
+    Semicolon,
 } from './headerStyles';
 
 export default function Header({ setIsMenuShown, isMenuShown }) {
     const { lang, title } = useGlobalData();
+    const location = useLocation();
     const [titleOrder, setTitleOrder] = useState([0, 1, 2]);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -47,7 +50,7 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <HeaderContainer>
@@ -64,7 +67,11 @@ export default function Header({ setIsMenuShown, isMenuShown }) {
                                 dangerouslySetInnerHTML={{
                                     __html: title[lang][order][0],
                                 }}
+                                isElipsis={title[lang][order][0] > 10}
                             />
+                            {title[lang][order][1].length ? (
+                                <Semicolon>{':'}</Semicolon>
+                            ) : null}
                             <MainTitle>{title[lang][order][1]}</MainTitle>
                         </Title>
                     ))}

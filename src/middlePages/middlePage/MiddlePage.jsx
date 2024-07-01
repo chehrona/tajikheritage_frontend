@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../App';
+import { useLocation } from 'react-router-dom';
 
 // Services
 import { requestPage, requestMiddlePage } from '../../services/request';
@@ -17,7 +18,8 @@ import SearchBar from '../../components/common/searchBar/SearchBar';
 import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 
 function MiddlePage({ page }) {
-    const { title, setTitle } = useGlobalData();
+    const location = useLocation();
+    const { lang, title, setTitle } = useGlobalData();
     const [items, setItems] = useState([]);
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
@@ -41,15 +43,15 @@ function MiddlePage({ page }) {
             headerData.forEach((entry) => {
                 entry.sections.forEach((section) => {
                     if (
-                        section.link === page.substring(page.indexOf('/') + 1)
+                        section.link === page.substring(page.indexOf('_') + 1)
                     ) {
                         for (const key in title) {
                             let titleArr = [...title[key]];
 
                             // New title
                             const newItem = [
-                                `${headerData[0].header[key].toUpperCase()}:`,
-                                `${section.title[key]}`,
+                                `${headerData[0].header[key].toUpperCase()}`,
+                                `${section?.title[key]}`,
                             ];
 
                             titleArr[1] = newItem;
@@ -78,7 +80,7 @@ function MiddlePage({ page }) {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <>

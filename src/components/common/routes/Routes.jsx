@@ -14,10 +14,8 @@ import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
-
 import MythPage from '../../../articlePages/mythPage/MythPage';
 import TraditionPage from '../../../articlePages/traditionPage/TraditionPage';
-
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
 
 export default function Routes() {
@@ -32,16 +30,16 @@ export default function Routes() {
                 element={<LandingPage page={'language'} />}
             />
             <Route
-                path="/customs/myths"
-                element={<MiddlePage page={'customs/myths'} />}
+                path="/customs/mythology"
+                element={<MiddlePage page={'customs/all_mythology'} />}
             />
             <Route
-                path="/customs/myths/:id"
-                element={<MythPage page={'customs/myth'} />}
+                path="/customs/mythology/:id"
+                element={<MythPage page={'customs/mythology/'} />}
             />
             <Route
                 path="/arts/jewelry"
-                element={<MiddlePage page={'arts/jewels'} />}
+                element={<MiddlePage page={'arts/all_jewelry'} />}
             />
             <Route
                 path="/arts/jewelry/:id"
@@ -49,11 +47,11 @@ export default function Routes() {
             />
             <Route
                 path="/customs/traditions"
-                element={<MiddlePage page={'customs/traditions'} />}
+                element={<MiddlePage page={'customs/all_traditions'} />}
             />
             <Route
                 path="/language/proverbs"
-                element={<MiddlePage page={'language/proverbs'} />}
+                element={<MiddlePage page={'language/all_proverbs'} />}
             />
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
             <Route path="/customs/tradition/:id" element={<TraditionPage />} />

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 // Hooks
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../App';
 
 // Services
-import { requestArticleInfo } from '../../services/request';
+import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Sections
 import PoetBio from '../../components/poet/poetBio/PoetBio';
@@ -28,7 +28,8 @@ import { PageContainer, PoetContainer } from './poetPageStyles';
 
 export default function PoetPage() {
     const { id } = useParams();
-    const { lang } = useGlobalData();
+    const location = useLocation();
+    const { title, setTitle, lang } = useGlobalData();
     const [poet, setPoet] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
@@ -37,8 +38,35 @@ export default function PoetPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'languages/poets');
+            const data = await requestArticleInfo(id, 'language/poet');
             setPoet(data);
+
+            // Setting the title
+            const headerData = await requestPage('language');
+
+            let tempHeader = { ...title };
+
+            headerData.forEach((entry) => {
+                entry.sections.forEach((section) => {
+                    if (section.link === 'poets') {
+                        for (const key in title) {
+                            let titleArr = [...title[key]];
+
+                            // New title
+                            const newItem = [
+                                `${section.title[key].toUpperCase()}`,
+                                `${data.name[key][1]}`,
+                            ];
+
+                            titleArr[1] = newItem;
+
+                            tempHeader[key] = titleArr;
+                        }
+                    }
+                });
+            });
+
+            setTitle(tempHeader);
         } catch (error) {
             if (error.response) {
                 if (
@@ -56,7 +84,7 @@ export default function PoetPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     const scrollToView = (e) => {
         e.preventDefault();

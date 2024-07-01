@@ -1,20 +1,25 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const BoxWrapper = styled.div`
     width: 100%;
     position: relative;
     display: block;
-    border-bottom:  ${({ noBorder }) => noBorder ? 'none' : '0.0625rem solid #bd9d52'};
-    ${({ reverse }) => reverse ? "padding-left: 3rem" : "padding-right: 3rem"};
-    
+    border-bottom: ${({ noBorder }) =>
+        noBorder ? 'none' : '0.0625rem solid #bd9d52'};
+    ${({ reverse }) =>
+        reverse ? 'padding-left: 3rem' : 'padding-right: 3rem'};
+
     ::after {
-        content: "";
+        content: '';
         clear: both;
         display: table;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        ${({ reverse }) => reverse ? "padding: 0rem 0rem 1rem 2rem" : "padding: 0rem 2rem 1rem 0rem"};
+        ${({ reverse }) =>
+            reverse
+                ? 'padding: 0rem 0rem 1rem 2rem'
+                : 'padding: 0rem 2rem 1rem 0rem'};
     }
 
     @media (max-width: 480px) {
@@ -23,7 +28,7 @@ export const BoxWrapper = styled.div`
         flex-direction: column;
 
         ::after {
-            content: "";
+            content: '';
             clear: none;
             display: none;
         }
@@ -35,11 +40,11 @@ export const SlideContainer = styled.div`
     height: 35rem;
     z-index: 2;
     position: relative;
-    background-color: #0F0A00;
     margin-bottom: 2rem;
-    float: ${({ reverse }) =>  reverse ? "right": "left"};
-    ${({ reverse }) => reverse ? "margin-left: 3rem" : "margin-right: 3rem"};
-    border-top-left-radius: ${({ topLeftRad }) => topLeftRad && `${topLeftRad}rem`};
+    float: ${({ reverse }) => (reverse ? 'right' : 'left')};
+    ${({ reverse }) => (reverse ? 'margin-left: 3rem' : 'margin-right: 3rem')};
+    border-top-left-radius: ${({ topLeftRad }) =>
+        topLeftRad && `${topLeftRad}rem`};
 
     @media (max-width: 480px) {
         width: 100svw;
@@ -52,7 +57,8 @@ export const SlideContainer = styled.div`
         width: 30rem;
         height: 36.15rem;
         margin-bottom: 1rem;
-        ${({ reverse }) => reverse ? "margin-left: 2rem" : "margin-right: 2rem"};
+        ${({ reverse }) =>
+            reverse ? 'margin-left: 2rem' : 'margin-right: 2rem'};
     }
 `;
 
@@ -62,7 +68,7 @@ export const Title = styled.div`
     font-weight: 500;
     font-style: italic;
     font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0F0A00;
+    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0f0a00;
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
@@ -91,7 +97,7 @@ export const Subtitle = styled.span`
 
 export const FirstBox = styled.div`
     width: 100%;
-    color: #0F0A00;
+    color: #0f0a00;
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
@@ -114,7 +120,7 @@ export const FirstBox = styled.div`
 
 export const SecondBox = styled.div`
     width: 100%;
-    color: #0F0A00;
+    color: #0f0a00;
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;

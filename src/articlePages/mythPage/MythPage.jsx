@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 // Hooks
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
 
 // Services
-import { requestArticleInfo } from '../../services/request';
+import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Components
 import BoxOne from '../../components/myths/mythIntro/FirstBox';
@@ -20,6 +20,7 @@ import { PageContainer, TextContainer } from './mythPageStyles';
 
 export default function MythPage({ page }) {
     const { id } = useParams();
+    const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();
     const [myth, setMyth] = useState();
     const [error, setError] = useState({});
@@ -32,22 +33,33 @@ export default function MythPage({ page }) {
             setMyth(data);
 
             // Setting the title
+            const headerData = await requestPage(
+                page.substring(0, page.indexOf('/')),
+            );
+
             let tempHeader = { ...title };
-            for (const key in tempHeader) {
-                let titleArr = [...title[key]];
 
-                const pageName = titleArr[1][1];
+            headerData.forEach((entry) => {
+                entry.sections.forEach((section) => {
+                    if (
+                        section.link === page.substring(page.indexOf('/') + 1)
+                    ) {
+                        for (const key in title) {
+                            let titleArr = [...title[key]];
 
-                // New title
-                const newItem = [
-                    `${pageName.toUpperCase()}:`,
-                    `${data.name[key]}`,
-                ];
+                            // New title
+                            const newItem = [
+                                `${section.title[key].toUpperCase()}`,
+                                `${data.name[key]}`,
+                            ];
 
-                titleArr[1] = newItem;
+                            titleArr[1] = newItem;
 
-                tempHeader[key] = titleArr;
-            }
+                            tempHeader[key] = titleArr;
+                        }
+                    }
+                });
+            });
 
             setTitle(tempHeader);
         } catch (error) {
@@ -67,7 +79,7 @@ export default function MythPage({ page }) {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../App';
+import { useLocation } from 'react-router-dom';
 
 // Services
 import { requestPage, requestMiddlePage } from '../../services/request';
@@ -16,7 +17,8 @@ import SearchBar from '../../components/common/searchBar/SearchBar';
 import { PageContainer, PoetBoxContainer } from './poetsPageStyles';
 
 function PoetsPage() {
-    const { title, setTitle } = useGlobalData();
+    const location = useLocation();
+    const { lang, title, setTitle } = useGlobalData();
     const [poets, setPoets] = useState([]);
     const [allItems, setAllItems] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -24,12 +26,12 @@ function PoetsPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestMiddlePage('languages/poets');
+            const data = await requestMiddlePage('language/all_poets');
             setPoets(data);
             setAllItems(data);
 
             // Setting the title
-            const headerData = await requestPage('languages');
+            const headerData = await requestPage('language');
 
             let tempHeader = { ...title };
 
@@ -38,15 +40,10 @@ function PoetsPage() {
                     if (section.link === 'poets') {
                         for (const key in title) {
                             let titleArr = [...title[key]];
-                            console.log(
-                                headerData[0].header[key],
-                                '888',
-                                section.title[key],
-                                'section title ***********',
-                            );
+
                             // New title
                             const newItem = [
-                                `${headerData[0].header[key].toUpperCase()}:`,
+                                `${headerData[0].header[key].toUpperCase()}`,
                                 `${section.title[key]}`,
                             ];
 
@@ -69,7 +66,7 @@ function PoetsPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <>

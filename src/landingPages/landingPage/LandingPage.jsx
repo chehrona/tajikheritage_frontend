@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../App';
+import { useLocation } from 'react-router-dom';
 
 // Services
 import { requestPage } from '../../services/request';
@@ -16,7 +17,8 @@ import Alert from '../../components/common/alert/Alert';
 import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 
 function LandingPage({ page }) {
-    const { title, setTitle } = useGlobalData();
+    const location = useLocation();
+    const { lang, title, setTitle } = useGlobalData();
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({});
@@ -34,10 +36,7 @@ function LandingPage({ page }) {
                 // New title
                 const newItem = [`${data[0].header[key].toUpperCase()}`, ''];
 
-                // Check if the new item already exists in the array
-                if (!titleArr.some((item) => item[0] === newItem[0])) {
-                    titleArr[1] = newItem;
-                }
+                titleArr[1] = newItem;
 
                 tempHeader[key] = titleArr;
             }
@@ -60,7 +59,7 @@ function LandingPage({ page }) {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <>
