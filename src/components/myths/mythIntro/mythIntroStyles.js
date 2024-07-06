@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 export const BoxWrapper = styled.div`
     width: 100%;
@@ -66,6 +66,7 @@ export const Title = styled.div`
     color: #000;
     font-size: 4rem;
     font-weight: 500;
+    padding-top: 0.5rem;
     font-style: italic;
     font-family: 'EB Garamond', serif;
     text-shadow: 0.0625rem 0.0625rem 0.0875rem #0f0a00;

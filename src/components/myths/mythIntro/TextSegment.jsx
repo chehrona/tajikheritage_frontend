@@ -12,11 +12,18 @@ import {
     BoxWrapper,
     Title,
     FirstBox,
+    SecondBox,
     Subtitle,
     SlideContainer,
 } from './mythIntroStyles';
 
-export default function BoxOne({ myth, title, topLeftRad }) {
+export default function TextSegment({
+    myth,
+    title,
+    topLeftRad,
+    reverse,
+    noBorder,
+}) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
@@ -31,8 +38,12 @@ export default function BoxOne({ myth, title, topLeftRad }) {
     }, []);
 
     return (
-        <BoxWrapper reverse={0}>
-            <SlideContainer ref={parentRef} reverse={0} topLeftRad={topLeftRad}>
+        <BoxWrapper reverse={reverse} noBorder={noBorder}>
+            <SlideContainer
+                ref={parentRef}
+                reverse={reverse}
+                topLeftRad={topLeftRad}
+            >
                 <Slideshow
                     width={screenSize}
                     slides={myth?.slides}
@@ -43,9 +54,12 @@ export default function BoxOne({ myth, title, topLeftRad }) {
             {!isMobile && <div className="space"></div>}
             <Subtitle
                 dangerouslySetInnerHTML={{ __html: myth.subtitle }}
-                reverse={0}
+                reverse={reverse}
             ></Subtitle>
-            <DescWrapper desc={myth.body} TextWrapper={FirstBox} />
+            <DescWrapper
+                desc={myth.body}
+                TextWrapper={reverse ? SecondBox : FirstBox}
+            />
         </BoxWrapper>
     );
 }

@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { Alert } from "@mui/material";
+import styled from 'styled-components';
+import { Alert } from '@mui/material';
 
 export const PageContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     min-height: 40rem;
     background-color: white;
-    padding: 2rem 3.7rem 2.8rem 3.2rem;
-    
+    padding: 5.5rem 3.7rem 2.8rem 3.2rem;
+
     @media (max-width: 480px) {
         padding: 0rem;
     }
@@ -22,7 +22,7 @@ export const ProverbContainer = styled.div`
     min-height: 40rem;
     background: #fcf6e9;
     background-image: url(${'/noise.png'});
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
+    box-shadow: 0.8rem -3.5rem 0rem 0.08rem #504221d1;
 
     @media (max-width: 480px) {
         margin: 0rem;
@@ -35,24 +35,27 @@ export const ProverbContainer = styled.div`
     }
 `;
 
-export const StyledAlert = styled(Alert)`
-    width: fit-content;
+export const LogoWrapper = styled.div`
+    width: calc(100% - 6.9rem);
     position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    z-index: 20;
+    top: 2.5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
-    &.MuiPaper-root {
-        font-family: 'IBM Plex Serif', serif;
-        font-size: 1rem;
-        justify-content: center;
+export const Logo = styled.img`
+    margin: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    background-color: red;
+`;
 
-        svg {
-            font-size: 1.5rem;
-        }
-    }
-
-    &.MuiAlert-icon {
-        margin-right: 10px;
-    }
+export const QuoteWrapper = styled.div`
+    width: 100%;
+    background-color: green;
+    min-height: 4rem;
+    height: 4rem;
+    margin-top: 8rem;
 `;

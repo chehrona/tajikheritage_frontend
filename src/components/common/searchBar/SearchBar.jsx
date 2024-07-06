@@ -24,15 +24,22 @@ export default function SearchBar({ items, setItems, allItems }) {
         setNoMatch(false);
         const enteredValue = e.currentTarget.value.toLowerCase();
 
+        console.log(items);
         if (enteredValue.length > 0) {
+            const lowerEnteredValue = enteredValue.toLowerCase();
             const filtered = items?.filter((entry) =>
-                entry.tags.some((tag) =>
-                    tag.toLowerCase().includes(enteredValue),
-                ),
+                entry?.tags?.some((tag) => {
+                    const lowerTagValue = tag.toLowerCase();
+                    return (
+                        lowerTagValue.includes(lowerEnteredValue) ||
+                        lowerEnteredValue.includes(lowerTagValue)
+                    );
+                }),
             );
 
             if (filtered.length > 0) {
                 setItems(filtered);
+                setNoMatch(false);
             } else {
                 setNoMatch(true);
                 setItems(allItems);

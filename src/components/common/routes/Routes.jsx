@@ -61,7 +61,7 @@ export default function Routes() {
                 element={<RecipePagePrint />}
             />
             <Route path="/cuisine" element={<Cuisine />} />
-            <Route path="/language/langs" element={<LangsPage />} />
+            <Route path="/language/languages" element={<LangsPage />} />
             <Route path="/language/poets" element={<PoetsPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />
             <Route path="/history" element={<History />} />

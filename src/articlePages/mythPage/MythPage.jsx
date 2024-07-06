@@ -8,8 +8,7 @@ import { useGlobalData } from '../../App';
 import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Components
-import BoxOne from '../../components/myths/mythIntro/FirstBox';
-import BoxTwo from '../../components/myths/mythIntro/SecondBox';
+import TextSegment from '../../components/myths/mythIntro/TextSegment';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
@@ -88,16 +87,20 @@ export default function MythPage({ page }) {
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <TextContainer>
-                            <BoxOne
-                                myth={myth.desc[lang][0]}
-                                title={myth.name[lang]}
-                                topLeftRad={4}
-                            />
-                            <BoxTwo myth={myth.desc[lang][1]} />
-                            <BoxOne myth={myth.desc[lang][2]} />
-                            <BoxTwo myth={myth.desc[lang][3]} />
-                            <BoxOne myth={myth.desc[lang][4]} />
-                            <BoxTwo myth={myth.desc[lang][5]} noBorder={1} />
+                            {myth.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        reverse={i % 2 > 0}
+                                        myth={entry}
+                                        title={i === 0 && myth.name[lang]}
+                                        topLeftRad={i === 0 ? 4 : 0}
+                                        noBorder={
+                                            i === myth.desc[lang].length - 1 &&
+                                            1
+                                        }
+                                    />
+                                );
+                            })}
                             <Sources
                                 data={myth.references[lang]}
                                 color={'#dedbdb'}

@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+
+// Hooks
+import { useParams, useLocation } from 'react-router-dom';
 import { useGlobalData } from '../../App';
 
-import { requestArticleInfo } from '../../services/request';
+// Service
+import { requestPage, requestArticleInfo } from '../../services/request';
 
-import BoxOne from '../../components/myths/mythIntro/FirstBox';
+// Components
+import BoxOne from '../../components/myths/mythIntro/TextSegment';
 import BoxTwo from '../../components/myths/mythIntro/SecondBox';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 
-import { PageContainer, ProverbContainer } from './proverbPageStyles';
+// Styled components
+import {
+    PageContainer,
+    ProverbContainer,
+    LogoWrapper,
+    Logo,
+    QuoteWrapper,
+} from './proverbPageStyles';
 
 export default function ProverbPage() {
     const { id } = useParams();
-    const { lang } = useGlobalData();
+    const location = useLocation();
+    const { lang, title, setTitle } = useGlobalData();
     const [proverb, setProverb] = useState();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -23,10 +35,44 @@ export default function ProverbPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'language/proverbs');
+            const data = await requestArticleInfo(id, 'language/proverb/');
             setProverb(data);
+
+            // Setting the title
+            const headerData = await requestPage('language');
+
+            let tempHeader = { ...title };
+
+            headerData.forEach((entry) => {
+                entry.sections.forEach((section) => {
+                    if (section.link === 'proverbs') {
+                        for (const key in title) {
+                            let titleArr = [...title[key]];
+
+                            // New title
+                            const newItem = [
+                                `${section.title[key].toUpperCase()}`,
+                                `${data.name[key][1]}`,
+                            ];
+
+                            titleArr[1] = newItem;
+
+                            tempHeader[key] = titleArr;
+                        }
+                    }
+                });
+            });
+
+            setTitle(tempHeader);
         } catch (error) {
-            setError(true);
+            if (error.response) {
+                if (
+                    error.response.status === 404 ||
+                    error.response.status === 500
+                ) {
+                    setError(error.response.data.message);
+                }
+            }
         } finally {
             setLoading(false);
         }
@@ -35,7 +81,7 @@ export default function ProverbPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, []);
+    }, [location.pathname, lang]);
 
     return (
         <>
@@ -44,19 +90,15 @@ export default function ProverbPage() {
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <ProverbContainer>
-                            <BoxOne
-                                proverb={proverb.desc[lang][0]}
-                                title={proverb.name[lang]}
-                                topLeftRad={4}
-                            />
-                            <BoxTwo proverb={proverb.desc[lang][1]} />
-                            <BoxOne proverb={proverb.desc[lang][2]} />
-                            <BoxTwo proverb={proverb.desc[lang][3]} />
-                            <BoxOne proverb={proverb.desc[lang][4]} />
-                            <BoxTwo
-                                proverb={proverb.desc[lang][5]}
-                                noBorder={1}
-                            />
+                            <LogoWrapper>
+                                <Logo
+                                    src={
+                                        process.env.REACT_APP_BASE_URL +
+                                        proverb?.logo
+                                    }
+                                />
+                            </LogoWrapper>
+                            <QuoteWrapper>{proverb.quote[lang]}</QuoteWrapper>
                             <Sources
                                 data={proverb.references[lang]}
                                 color={'#dedbdb'}

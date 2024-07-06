@@ -1,6 +1,9 @@
 import React from 'react';
+
+// Hooks
 import { useGlobalData } from '../../../App';
 
+// Styled components
 import { SquareCardWrapper, SquareImage, StyledLink } from './squareCardStyles';
 
 export default function SquareCard({ item, i }) {
