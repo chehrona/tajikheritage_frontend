@@ -78,7 +78,7 @@ export default function MythPage({ page }) {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
 
     return (
         <>

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useGlobalData } from '../../../App';
 
+// Material UI
 import { ArrowForwardIos } from '@mui/icons-material';
 
+// Hooks
+import { useGlobalData } from '../../../App';
+
+// Styled components
 import {
     Arrow,
     ImgInfo,

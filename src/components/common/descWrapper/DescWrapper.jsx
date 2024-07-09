@@ -1,5 +1,9 @@
 import React from 'react';
+
+// Components
 import { Tooltip } from '../tooltip/Tooltip';
+
+// Styled components
 import { StyledSpan } from './descWrapperStyles';
 
 export const DescWrapper = ({ desc, TextWrapper }) => {

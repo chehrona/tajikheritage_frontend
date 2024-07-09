@@ -8,20 +8,28 @@ import { useGlobalData } from '../../App';
 import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Components
-import BoxOne from '../../components/myths/mythIntro/TextSegment';
-import BoxTwo from '../../components/myths/mythIntro/SecondBox';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
+import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
 
 // Styled components
 import {
     PageContainer,
     ProverbContainer,
     LogoWrapper,
-    Logo,
+    LogoContainer,
+    LogoOuter,
+    LogoInner,
     QuoteWrapper,
+    TextSegment,
+    Subtitle,
+    Shadow,
+    SvgContainer,
+    TextContainer,
+    Text,
+    SectionBox,
 } from './proverbPageStyles';
 
 export default function ProverbPage() {
@@ -35,7 +43,7 @@ export default function ProverbPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'language/proverb/');
+            const data = await requestArticleInfo(id, 'language/proverb');
             setProverb(data);
 
             // Setting the title
@@ -45,7 +53,7 @@ export default function ProverbPage() {
 
             headerData.forEach((entry) => {
                 entry.sections.forEach((section) => {
-                    if (section.link === 'proverbs') {
+                    if (section.link === '') {
                         for (const key in title) {
                             let titleArr = [...title[key]];
 
@@ -81,7 +89,12 @@ export default function ProverbPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
+
+    const toggleAudio = (e) => {
+        const audioFile = e.currentTarget.children[0];
+        audioFile.play();
+    };
 
     return (
         <>
@@ -89,16 +102,72 @@ export default function ProverbPage() {
             {proverb ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
+                        <Shadow />
                         <ProverbContainer>
-                            <LogoWrapper>
-                                <Logo
-                                    src={
-                                        process.env.REACT_APP_BASE_URL +
-                                        proverb?.logo
-                                    }
-                                />
-                            </LogoWrapper>
-                            <QuoteWrapper>{proverb.quote[lang]}</QuoteWrapper>
+                            <LogoContainer>
+                                <LogoWrapper onClick={(e) => toggleAudio(e)}>
+                                    <audio
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            proverb?.sound
+                                        }
+                                    ></audio>
+                                    <LogoOuter
+                                        lang={lang}
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            proverb?.logo.outer
+                                        }
+                                    />
+                                    <LogoInner
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            proverb?.logo.inner
+                                        }
+                                    />{' '}
+                                </LogoWrapper>
+                                <SvgContainer viewBox="0 0 200 200">
+                                    <path
+                                        id="text-path"
+                                        stroke="none"
+                                        fill="none"
+                                        d="M 100, 200 C 155.23, 200 200, 155.23 200, 100 C 200, 44.77 155.23, 0 100, 0 C 44.77, 0 0, 44.77 0, 100 C 0, 155.23 44.77, 200 100, 200 Z"
+                                    />
+                                    <Text>
+                                        <textPath
+                                            href="#text-path"
+                                            startOffset="50%"
+                                            textAnchor="middle"
+                                        >
+                                            {lang === 'us'
+                                                ? '• CLICK TO HEAR •'
+                                                : lang === 'ru'
+                                                ? '• ПОСЛУШАТЬ •'
+                                                : ''}
+                                        </textPath>
+                                    </Text>
+                                </SvgContainer>
+                            </LogoContainer>
+                            <QuoteWrapper>{proverb?.quote[lang]}</QuoteWrapper>
+                            <TextContainer>
+                                {proverb.desc[lang].map((entry) => {
+                                    return (
+                                        <TextSegment
+                                            key={`${entry.id}_${entry.subtitle}`}
+                                        >
+                                            <Subtitle
+                                                dangerouslySetInnerHTML={{
+                                                    __html: entry.subtitle,
+                                                }}
+                                            ></Subtitle>
+                                            <DescWrapper
+                                                desc={entry.body}
+                                                TextWrapper={SectionBox}
+                                            />
+                                        </TextSegment>
+                                    );
+                                })}
+                            </TextContainer>
                             <Sources
                                 data={proverb.references[lang]}
                                 color={'#dedbdb'}
