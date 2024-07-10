@@ -8,7 +8,7 @@ import { useGlobalData } from '../../App';
 import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Components
-import TextSegment from '../../components/myths/mythIntro/TextSegment';
+import TextSegment from '../../components/common/articelTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
@@ -91,7 +91,7 @@ export default function MythPage({ page }) {
                                 return (
                                     <TextSegment
                                         reverse={i % 2 > 0}
-                                        myth={entry}
+                                        data={entry}
                                         title={i === 0 && myth.name[lang]}
                                         topLeftRad={i === 0 ? 4 : 0}
                                         noBorder={

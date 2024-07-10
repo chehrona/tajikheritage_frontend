@@ -136,13 +136,7 @@ export const QuoteWrapper = styled.div`
 `;
 
 export const TextContainer = styled.div`
-    padding: 0rem 3rem 1rem 3rem;
-`;
-
-export const TextSegment = styled.div`
-    width: 100%;
-    min-height: 5rem;
-    height: fit-content;
+    padding-bottom: 1rem;
 `;
 
 export const Subtitle = styled.div`

@@ -12,7 +12,7 @@ import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
+import TextSegment from '../../components/common/articelTextSegment/TextSegment';
 
 // Styled components
 import {
@@ -23,7 +23,7 @@ import {
     LogoOuter,
     LogoInner,
     QuoteWrapper,
-    TextSegment,
+    // TextSegment,
     Subtitle,
     Shadow,
     SvgContainer,
@@ -154,21 +154,15 @@ export default function ProverbPage() {
                                 }}
                             />
                             <TextContainer>
-                                {proverb.desc[lang].map((entry) => {
+                                {proverb.desc[lang].map((entry, i) => {
                                     return (
                                         <TextSegment
-                                            key={`${entry.id}_${entry.subtitle}`}
-                                        >
-                                            <Subtitle
-                                                dangerouslySetInnerHTML={{
-                                                    __html: entry.subtitle,
-                                                }}
-                                            ></Subtitle>
-                                            <DescWrapper
-                                                desc={entry.body}
-                                                TextWrapper={SectionBox}
-                                            />
-                                        </TextSegment>
+                                            reverse={i % 2 > 0}
+                                            data={entry}
+                                            title={false}
+                                            topLeftRad={0}
+                                            noBorder={true}
+                                        />
                                     );
                                 })}
                             </TextContainer>

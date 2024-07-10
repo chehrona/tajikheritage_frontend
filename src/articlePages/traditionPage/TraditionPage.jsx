@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
 
 import { requestArticleInfo } from '../../services/request';
-
-import BoxOne from '../../components/myths/mythIntro/TextSegment';
-import BoxTwo from '../../components/myths/mythIntro/SecondBox';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';

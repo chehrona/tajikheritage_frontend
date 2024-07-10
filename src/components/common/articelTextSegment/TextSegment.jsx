@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 // Components
-import Slideshow from '../../common/slideshow/Slideshow';
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import Slideshow from '../slideshow/Slideshow';
+import { DescWrapper } from '../descWrapper/DescWrapper';
 
 // Styled components
 import {
@@ -15,10 +15,10 @@ import {
     SecondBox,
     Subtitle,
     SlideContainer,
-} from './mythIntroStyles';
+} from './textSegmentStyles';
 
 export default function TextSegment({
-    myth,
+    data,
     title,
     topLeftRad,
     reverse,
@@ -39,25 +39,28 @@ export default function TextSegment({
 
     return (
         <BoxWrapper reverse={reverse} noBorder={noBorder}>
-            <SlideContainer
-                ref={parentRef}
-                reverse={reverse}
-                topLeftRad={topLeftRad}
-            >
-                <Slideshow
-                    width={screenSize}
-                    slides={myth?.slides}
-                    topLeftRad={isMobile ? 0 : isTablet ? 2.5 : topLeftRad}
-                />
-            </SlideContainer>
+            {data?.slides.length > 0 ? (
+                <SlideContainer
+                    ref={parentRef}
+                    reverse={reverse}
+                    topLeftRad={topLeftRad}
+                >
+                    <Slideshow
+                        width={screenSize}
+                        slides={data?.slides}
+                        topLeftRad={isMobile ? 0 : isTablet ? 2.5 : topLeftRad}
+                    />
+                </SlideContainer>
+            ) : null}
             {title && <Title>{title}</Title>}
             {!isMobile && <div className="space"></div>}
             <Subtitle
-                dangerouslySetInnerHTML={{ __html: myth.subtitle }}
+                dangerouslySetInnerHTML={{ __html: data.subtitle }}
                 reverse={reverse}
+                length={!data?.slides.length > 0}
             ></Subtitle>
             <DescWrapper
-                desc={myth.body}
+                desc={data.body}
                 TextWrapper={reverse ? SecondBox : FirstBox}
             />
         </BoxWrapper>
