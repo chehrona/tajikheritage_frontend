@@ -148,7 +148,11 @@ export default function ProverbPage() {
                                     </Text>
                                 </SvgContainer>
                             </LogoContainer>
-                            <QuoteWrapper>{proverb?.quote[lang]}</QuoteWrapper>
+                            <QuoteWrapper
+                                dangerouslySetInnerHTML={{
+                                    __html: proverb?.quote[lang],
+                                }}
+                            />
                             <TextContainer>
                                 {proverb.desc[lang].map((entry) => {
                                     return (
