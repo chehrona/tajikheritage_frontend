@@ -57,8 +57,8 @@ export const SlideContainer = styled.div`
         width: 30rem;
         height: 36.15rem;
         margin-bottom: 1rem;
-        ${({ reverse, length }) =>
-            reverse && length ? 'margin-left: 2rem' : 'margin-right: 2rem'};
+        ${({ reverse }) =>
+            reverse ? 'margin-left: 2rem' : 'margin-right: 2rem'};
     }
 `;
 
@@ -85,7 +85,7 @@ export const Subtitle = styled.span`
     text-transform: uppercase;
     border-right: 2px solid #ad0f0e;
     border-bottom: 2px solid #ad0f0e;
-    ${({ length }) => (length ? 'margin-left: 3rem' : 'margin-right: 3rem')};
+    ${({ reverse, length }) => !reverse && length && 'margin-left: 3rem'};
 
     @media (max-width: 480px) {
         margin-left: 1.5rem;

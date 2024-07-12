@@ -55,9 +55,9 @@ export default function TextSegment({
             {title && <Title>{title}</Title>}
             {!isMobile && <div className="space"></div>}
             <Subtitle
-                dangerouslySetInnerHTML={{ __html: data.subtitle }}
+                length={data.slides.length === 0}
                 reverse={reverse}
-                length={!data?.slides.length > 0}
+                dangerouslySetInnerHTML={{ __html: data.subtitle }}
             ></Subtitle>
             <DescWrapper
                 desc={data.body}

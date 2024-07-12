@@ -105,7 +105,10 @@ export default function ProverbPage() {
                         <Shadow />
                         <ProverbContainer>
                             <LogoContainer>
-                                <LogoWrapper onClick={(e) => toggleAudio(e)}>
+                                <LogoWrapper
+                                    onClick={(e) => toggleAudio(e)}
+                                    lang={lang}
+                                >
                                     <audio
                                         src={
                                             process.env.REACT_APP_BASE_URL +
@@ -149,6 +152,7 @@ export default function ProverbPage() {
                                 </SvgContainer>
                             </LogoContainer>
                             <QuoteWrapper
+                                lang={lang}
                                 dangerouslySetInnerHTML={{
                                     __html: proverb?.quote[lang],
                                 }}

@@ -128,7 +128,8 @@ export const QuoteWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4.5rem 3rem 1rem 3rem;
+    padding: ${({ lang }) =>
+        lang === 'tj' ? '3rem 3rem 2rem 3rem' : '4.5rem 3rem 1rem 3rem'};
     font-size: 2.5rem;
     font-family: 'EB Garamond', serif;
     font-style: italic;
