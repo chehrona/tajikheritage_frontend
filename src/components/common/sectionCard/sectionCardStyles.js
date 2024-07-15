@@ -39,8 +39,8 @@ export const SectionCardWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        height: 19.025rem;
-        width: 12.5rem;
+        height: 19.786rem;
+        width: 13rem;
         transition: none;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
 

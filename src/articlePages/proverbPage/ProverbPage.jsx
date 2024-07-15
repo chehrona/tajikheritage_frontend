@@ -23,13 +23,10 @@ import {
     LogoOuter,
     LogoInner,
     QuoteWrapper,
-    // TextSegment,
-    Subtitle,
     Shadow,
     SvgContainer,
     TextContainer,
     Text,
-    SectionBox,
 } from './proverbPageStyles';
 
 export default function ProverbPage() {
@@ -92,8 +89,10 @@ export default function ProverbPage() {
     }, [location.pathname]);
 
     const toggleAudio = (e) => {
-        const audioFile = e.currentTarget.children[0];
-        audioFile.play();
+        if (lang !== 'tj') {
+            const audioFile = e.currentTarget.children[0];
+            audioFile.play();
+        }
     };
 
     return (

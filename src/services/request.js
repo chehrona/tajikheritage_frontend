@@ -79,3 +79,46 @@ export const addEmail = async (info) => {
         throw error;
     }
 };
+
+export const sendLogin = async (info) => {
+    try {
+        const response = await axios.post(
+            `${process.env.REACT_APP_BASE_URL}/admin/login`,
+            { info },
+        );
+
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getSections = async () => {
+    try {
+        const response = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}/${'admin/content'}`,
+        );
+
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const uploadSectionImage = async (formData) => {
+    try {
+        const response = await axios.put(
+            `${process.env.REACT_APP_BASE_URL}/admin/section`,
+            formData,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            },
+        );
+
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};

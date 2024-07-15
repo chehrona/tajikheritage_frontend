@@ -25,6 +25,8 @@ const DataContext = createContext({
     setLang: () => {},
     isPrint: false,
     setIsPrint: () => {},
+    showAdmin: true,
+    setShowAdmin: () => {},
 });
 
 export function useGlobalData() {
@@ -40,6 +42,7 @@ function App() {
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);
     const [isPrint, setIsPrint] = useState(false);
+    const [showAdmin, setShowAdmin] = useState(true);
     const [isMenuShown, setIsMenuShown] = useState(false);
 
     const value = useMemo(
@@ -50,8 +53,10 @@ function App() {
             setLang,
             isPrint,
             setIsPrint,
+            showAdmin,
+            setShowAdmin,
         }),
-        [lang, isPrint, title],
+        [lang, isPrint, title, showAdmin],
     );
 
     useEffect(() => {

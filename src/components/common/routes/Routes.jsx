@@ -10,6 +10,8 @@ import History from '../../../landingPages/history/History';
 import LangsPage from '../../../middlePages/langsPage/LangsPage';
 import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
+import LoginPage from '../../../admin/login/LoginPage';
+import ManagementPage from '../../../landingPages/management/ManagementPage';
 
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
@@ -66,6 +68,8 @@ export default function Routes() {
             <Route path="/language/poets/:id" element={<PoetPage />} />
             <Route path="/history" element={<History />} />
             <Route path="/" element={<Home />} />
+            <Route path="/admin/login" element={<LoginPage />} />
+            <Route path="/admin/content" element={<ManagementPage />} />
         </ServerRoutes>
     );
 }

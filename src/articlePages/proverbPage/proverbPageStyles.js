@@ -64,16 +64,23 @@ export const LogoContainer = styled.div`
     justify-content: center;
     width: 100%;
     z-index: 2;
+
+    @media (max-width: 480px) {
+        top: -3.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const LogoWrapper = styled.div`
-    cursor: pointer;
     position: absolute;
     top: 0rem;
     left: 50%;
     z-index: 3;
     transform: translateX(-50%);
     transition: transform 0.25s ease-in-out;
+    cursor: ${({ lang }) => lang !== 'tj' && 'pointer'};
 
     &:hover {
         ${({ lang }) =>
@@ -95,6 +102,14 @@ export const LogoOuter = styled.img`
         css`
             animation: ${spin} 10s linear infinite;
         `}
+
+    @media (max-width: 480px) {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const LogoInner = styled.img`
@@ -103,6 +118,11 @@ export const LogoInner = styled.img`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 1024px) {
+        height: 7rem;
+        width: 7rem;
+    }
 `;
 
 export const SvgContainer = styled.svg`
@@ -111,6 +131,11 @@ export const SvgContainer = styled.svg`
     height: 7rem;
     z-index: 2;
     top: -1rem;
+
+    @media (max-width: 1024px) {
+        height: 9rem;
+        width: 9rem;
+    }
 `;
 
 export const Text = styled.text`
@@ -128,12 +153,17 @@ export const QuoteWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: ${({ lang }) =>
-        lang === 'tj' ? '3rem 3rem 2rem 3rem' : '4.5rem 3rem 1rem 3rem'};
     font-size: 2.5rem;
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: bold;
+    padding: ${({ lang }) =>
+        lang === 'tj' ? '3rem 3rem 2rem 3rem' : '4.5rem 3rem 1rem 3rem'};
+
+    @media (max-width: 1024px) {
+        padding: ${({ lang }) =>
+            lang === 'tj' ? '4rem 1.5rem' : '5.5rem 1.5rem 1rem 1.5rem'};
+    }
 `;
 
 export const TextContainer = styled.div`

@@ -40,6 +40,7 @@ export const SectionBoxContainer = styled.div`
 
     @media (max-width: 480px) {
         gap: 1rem;
+        justify-content: space-between;
     }
 `;
 

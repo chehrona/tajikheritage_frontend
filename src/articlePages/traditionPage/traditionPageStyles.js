@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Alert } from '@mui/material';
 
 export const PageContainer = styled.div`
     position: relative;
