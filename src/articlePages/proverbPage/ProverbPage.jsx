@@ -34,7 +34,7 @@ export default function ProverbPage() {
     const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();
     const [proverb, setProverb] = useState();
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
@@ -180,7 +180,10 @@ export default function ProverbPage() {
                     </PageContainer>
                 </Fade>
             ) : (
-                error && <Alert />
+                !loading &&
+                error[lang]?.length > 0 && (
+                    <Alert message={error} type={'error'} />
+                )
             )}
         </>
     );

@@ -21,7 +21,7 @@ function LandingPage({ page }) {
     const { lang, title, setTitle } = useGlobalData();
     const [sections, setSections] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState({});
+    const [error, setError] = useState('');
 
     const fetchData = async () => {
         try {
@@ -82,7 +82,10 @@ function LandingPage({ page }) {
                     </PageContainer>
                 </Fade>
             ) : (
-                !loading && error.length > 0 && <Alert message={error} />
+                !loading &&
+                error[lang]?.length > 0 && (
+                    <Alert message={error} type={'error'} />
+                )
             )}
         </>
     );

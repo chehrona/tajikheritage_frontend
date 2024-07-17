@@ -24,7 +24,6 @@ export default function SearchBar({ items, setItems, allItems }) {
         setNoMatch(false);
         const enteredValue = e.currentTarget.value.toLowerCase();
 
-        console.log(items);
         if (enteredValue.length > 0) {
             const lowerEnteredValue = enteredValue.toLowerCase();
             const filtered = items?.filter((entry) =>
