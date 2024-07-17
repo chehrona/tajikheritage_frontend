@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../App';
+
+// Components
+import Alert from '../../common/alert/Alert';
 
 // Styled components
 import {
@@ -18,11 +21,20 @@ import {
 
 export default function PoetCard({ poet, i }) {
     const { lang } = useGlobalData();
+    const [error, setError] = useState('');
+
+    const handleNoContent = () => {
+        setError({
+            us: 'Article is not available yet',
+            ru: 'Статья еще не доступна',
+            tj: 'Мақола ҳанӯз вуҷуд надорад',
+        });
+    };
 
     return (
         <>
             {poet?.disabled ? (
-                <CardContainer to={'/language/poets/' + poet?.id}>
+                <CardContainer onClick={handleNoContent}>
                     <PoetCardWrapper delay={`${0.01 * i}s`}>
                         <PoetImgContainer>
                             <PoetImage
@@ -68,6 +80,7 @@ export default function PoetCard({ poet, i }) {
                     </PoetCardWrapper>
                 </StyledLink>
             )}
+            {error[lang]?.length > 0 && <Alert message={error} type={'info'} />}
         </>
     );
 }

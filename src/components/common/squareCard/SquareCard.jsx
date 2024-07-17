@@ -25,6 +25,7 @@ export default function SquareCard({ item, i }) {
             tj: 'Мақола ҳанӯз вуҷуд надорад',
         });
     };
+
     return (
         <>
             {item?.disabled ? (
