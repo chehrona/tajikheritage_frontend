@@ -37,7 +37,8 @@ export const Shadow = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         top: 1.5rem;
-        width: calc(100% - 2.15rem);
+        left: 1.3rem;
+        width: calc(100% - 2.2rem);
         border-radius: 2.5rem 2.5rem 0rem 0rem;
     }
 `;
@@ -190,7 +191,9 @@ export const QuoteWrapper = styled.div`
 
     @media (max-width: 1024px) {
         padding: ${({ lang }) =>
-            lang === 'tj' ? '4rem 1.5rem' : '5.5rem 1.5rem 1rem 1.5rem'};
+            lang === 'tj'
+                ? '4rem 1.5rem 2.5rem 1.5rem'
+                : '5.5rem 1.5rem 1rem 1.5rem'};
     }
 `;
 
