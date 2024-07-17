@@ -22,7 +22,7 @@ export default function SquareCard({ item, i }) {
         setError({
             us: 'Article is not available yet',
             ru: 'Статья еще не доступна',
-            tj: 'Мақола ҳанӯз дастрас нест',
+            tj: 'Мақола ҳанӯз вуҷуд надорад',
         });
     };
     return (
