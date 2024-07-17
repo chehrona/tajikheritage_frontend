@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import {
     MainContainer,
@@ -10,7 +10,7 @@ import {
 } from './cookTimeStyles';
 
 export default function CookTime({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     return (

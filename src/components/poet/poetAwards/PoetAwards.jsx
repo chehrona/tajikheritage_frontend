@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import AwardDialog from '../awardDialog/AwardDialog';
 
@@ -17,7 +17,7 @@ import {
 } from './poetAwardStyles';
 
 export default function PoetAwards({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [showAwardInfo, setShowAwardInfo] = useState(false);
     const [awardInfo, setAwardInfo] = useState(null);
 

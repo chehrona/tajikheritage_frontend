@@ -1,6 +1,9 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
 
+// Hooks
+import { useGlobalData } from '../../../App';
+
+// Styled components
 import {
     BoxOne,
     LeftContainer,
@@ -12,7 +15,7 @@ import {
 } from './poetBioStyles';
 
 export default function FirstBox({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <BoxOne>

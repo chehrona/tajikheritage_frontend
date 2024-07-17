@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Hooks
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Helper
 import { placeholder, alert } from './helper';
@@ -16,7 +16,7 @@ import {
 } from './searchBarStyles';
 
 export default function SearchBar({ items, setItems, allItems }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [value, setValue] = useState('');
     const [noMatch, setNoMatch] = useState(false);
 
@@ -25,25 +25,20 @@ export default function SearchBar({ items, setItems, allItems }) {
         const enteredValue = e.currentTarget.value.toLowerCase();
 
         if (enteredValue.length > 0) {
-            const filtered = items?.filter((entry) => {
-                const nameCopy = { ...entry.name };
-
-                for (const key in nameCopy) {
-                    if (
-                        nameCopy.hasOwnProperty(key) &&
-                        Array.isArray(nameCopy[key])
-                    ) {
-                        nameCopy[key] = nameCopy[key].join(' ');
-                    }
-                }
-
-                return Object.values(nameCopy).some((name) =>
-                    name.toLowerCase().includes(enteredValue),
-                );
-            });
+            const lowerEnteredValue = enteredValue.toLowerCase();
+            const filtered = items?.filter((entry) =>
+                entry?.tags?.some((tag) => {
+                    const lowerTagValue = tag.toLowerCase();
+                    return (
+                        lowerTagValue.includes(lowerEnteredValue) ||
+                        lowerEnteredValue.includes(lowerTagValue)
+                    );
+                }),
+            );
 
             if (filtered.length > 0) {
                 setItems(filtered);
+                setNoMatch(false);
             } else {
                 setNoMatch(true);
                 setItems(allItems);

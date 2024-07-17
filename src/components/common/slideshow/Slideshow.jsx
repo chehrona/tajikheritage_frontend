@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useSetLang } from '../../../App';
 
+// Material UI
 import { ArrowForwardIos } from '@mui/icons-material';
 
+// Hooks
+import { useGlobalData } from '../../../App';
+
+// Styled components
 import {
     Arrow,
     ImgInfo,
@@ -15,14 +19,8 @@ import {
     Circle,
 } from './slideshowStyles';
 
-export default function Slideshow({
-    slides,
-    width,
-    height,
-    topLeftRad,
-    bottomLeftRad,
-}) {
-    const { lang } = useSetLang();
+export default function Slideshow({ slides, width, height, topLeftRad }) {
+    const { lang } = useGlobalData();
     const [translate, setTranslate] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [infoArr, setInfoArr] = useState([...slides]);
@@ -68,7 +66,6 @@ export default function Slideshow({
                             height={height}
                             translate={translate}
                             topLeftRad={topLeftRad}
-                            bottomLeftRad={bottomLeftRad}
                             src={process.env.REACT_APP_BASE_URL + entry?.img}
                             overlay={
                                 process.env.REACT_APP_BASE_URL + entry?.overlay

@@ -1,8 +1,8 @@
-import React from "react";
-import { useEffect } from "react";
-import { useSetLang } from "../../../App";
+import React from 'react';
+import { useEffect } from 'react';
+import { useGlobalData } from '../../../App';
 
-import { IconButton } from "@mui/material";
+import { IconButton } from '@mui/material';
 
 import {
     QuantityContainer,
@@ -11,15 +11,15 @@ import {
     StyledMinusIcon,
     SubTitle,
     ServeContainer,
-} from "./servingsStyles"
+} from './servingsStyles';
 
 export default function Servings({ servings, setServings }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     useEffect(() => {
         if (servings?.length > 0 && !parseInt(servings)) {
             setServings(1);
-        } 
+        }
 
         if (servings?.length > 0 && servings < 0) {
             setServings(1);
@@ -48,18 +48,24 @@ export default function Servings({ servings, setServings }) {
     return (
         <QuantityContainer>
             <SubTitle>
-                {lang === 'ru' ? 'Порции' : 
-                (lang === 'tj' ? 'Портсия' : 'Servings')}
+                {lang === 'ru'
+                    ? 'Порции'
+                    : lang === 'tj'
+                    ? 'Портсия'
+                    : 'Servings'}
             </SubTitle>
             <ServeContainer>
                 <IconButton onClick={reduceServings}>
                     <StyledMinusIcon />
                 </IconButton>
-                <ServeAmount value={servings} onChange={(e) => getServings(e)}/>
+                <ServeAmount
+                    value={servings}
+                    onChange={(e) => getServings(e)}
+                />
                 <IconButton onClick={increaseServings}>
                     <StyledAddIcon />
                 </IconButton>
             </ServeContainer>
         </QuantityContainer>
-    )
+    );
 }

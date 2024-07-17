@@ -82,8 +82,6 @@ export const ImageWrapper = styled.div`
         height ? height : width && `${width * 1.2049}px`};
     border-top-left-radius: ${({ topLeftRad }) =>
         topLeftRad && `${topLeftRad}rem`};
-    border-bottom-left-radius: ${({ bottomLeftRad }) =>
-        bottomLeftRad && `${bottomLeftRad}rem`};
     transform: ${({ translate }) => `translateX(${translate}px)`};
     background-size: ${({ src }) => src && 'cover'};
 

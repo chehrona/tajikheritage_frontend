@@ -6,6 +6,12 @@ import { IconButton } from '@mui/material';
 export const FooterContainer = styled.div`
     background: #0f0a00;
     width: 100%;
+
+    @media (max-width: 480px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const FooterInnerContainer = styled.div`
@@ -26,8 +32,10 @@ export const FooterInnerContainer = styled.div`
     @media (max-width: 480px) {
         flex-direction: column-reverse;
         justify-content: center;
-        margin-top: 1rem;
-        padding: 1rem 0rem 0.5rem 0rem;
+        max-height: 5rem;
+        min-height: 5rem;
+        margin: 0.75rem 0.5rem;
+        width: fit-content;
     }
 `;
 
@@ -83,9 +91,13 @@ export const StyledIcon = styled.img`
         filter: brightness(150%);
     }
 
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    @media (max-device-width: 1024px) {
         width: 2rem;
         height: 2rem;
+
+        &:hover {
+            filter: brightness(100%);
+        }
     }
 `;
 

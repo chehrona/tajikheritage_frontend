@@ -1,5 +1,5 @@
-import React from "react";
-import { useSetLang } from "../../../App";
+import React from 'react';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import {
@@ -7,30 +7,39 @@ import {
     PrintContainer,
     PrintBox,
     StyledButton,
-} from "./printRecipeStyles"
+} from './printRecipeStyles';
 
 export default function PrintRecipe({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     return (
         <PrintContainer>
-            {!isMobile && 
+            {!isMobile && (
                 <SubTitle>
-                    {lang === 'ru' ? 'Расспечатать' : 
-                    (lang === 'tj' ? 'Чоп кунед' : 'Print')}
+                    {lang === 'ru'
+                        ? 'Расспечатать'
+                        : lang === 'tj'
+                        ? 'Чоп кунед'
+                        : 'Print'}
                 </SubTitle>
-            }
-            <StyledButton to={"/cuisine" + recipe?.link + "/print"} target={"_blank"}>
+            )}
+            <StyledButton
+                to={'/cuisine' + recipe?.link + '/print'}
+                target={'_blank'}
+            >
                 {isMobile ? (
                     <SubTitle>
-                        {lang === 'ru' ? 'Расспечатать' : 
-                        (lang === 'tj' ? 'Чоп кунед' : 'Print')}
+                        {lang === 'ru'
+                            ? 'Расспечатать'
+                            : lang === 'tj'
+                            ? 'Чоп кунед'
+                            : 'Print'}
                     </SubTitle>
                 ) : (
                     <PrintBox src={'/printIcons/print.png'}></PrintBox>
                 )}
             </StyledButton>
         </PrintContainer>
-    )
+    );
 }

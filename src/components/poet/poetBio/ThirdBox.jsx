@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
@@ -13,7 +13,7 @@ import {
 } from './poetBioStyles';
 
 export default function ThirdBox({ poet }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <BoxThree>

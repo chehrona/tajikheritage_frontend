@@ -125,11 +125,13 @@ export const TitleSpan = styled.span`
     transform: translateY(-100%);
     animation: ${slideUp} 1s ease-in-out forwards;
     animation-delay: ${({ delay }) => (delay ? delay : '0s')};
+    transition: font-size 0.25s ease-in-out;
 
     &:hover {
         text-shadow: 0.1rem 1rem 2rem #dedbdb;
         font-size: 1.6rem;
         cursor: pointer;
+        transition: font-size 0.25s ease-in-out;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

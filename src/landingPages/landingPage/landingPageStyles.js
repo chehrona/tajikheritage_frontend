@@ -23,7 +23,7 @@ export const PageContainer = styled.div`
     background: white;
 
     @media (max-width: 480px) {
-        padding: 1.5rem 3.2rem 1.5rem 3.2rem;
+        padding: 1.5rem 2.5rem 1.5rem 2.5rem;
         min-height: calc(100svh - 10.5rem);
     }
 
@@ -40,25 +40,12 @@ export const SectionBoxContainer = styled.div`
 
     @media (max-width: 480px) {
         gap: 1rem;
+        justify-content: space-between;
     }
-`;
 
-export const TempPageContainer = styled.div`
-    min-height: 100svh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-export const TempImg = styled.img`
-    height: 20rem;
-`;
-
-export const TempTitle = styled.div`
-    color: #fcf6e9;
-    margin: 2.5% 0% 5% 0%;
-    font-size: 1.5rem;
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        justify-content: space-between;
+    }
 `;
 
 export const SectionCardWrapper = styled.div`

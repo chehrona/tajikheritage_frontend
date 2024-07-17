@@ -1,18 +1,56 @@
-import React from 'react';
-import { useSetLang } from '../../../App';
+import React, { useState } from 'react';
 
-import { SquareCardWrapper, SquareImage, StyledLink } from './squareCardStyles';
+// Hooks
+import { useGlobalData } from '../../../App';
+
+// Components
+import Alert from '../alert/Alert';
+
+// Styled components
+import {
+    SquareCardWrapper,
+    SquareImage,
+    StyledLink,
+    CardsContainer,
+} from './squareCardStyles';
 
 export default function SquareCard({ item, i }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
+    const [error, setError] = useState('');
 
+    const handleNoContent = () => {
+        setError({
+            us: 'Article is not available yet',
+            ru: 'Статья еще не доступна',
+            tj: 'Мақола ҳанӯз вуҷуд надорад',
+        });
+    };
     return (
-        <StyledLink to={item?.id}>
-            <SquareCardWrapper delay={`${0.01 * i}s`}>
-                <SquareImage
-                    src={process.env.REACT_APP_BASE_URL + item?.img?.[lang]}
-                />
-            </SquareCardWrapper>
-        </StyledLink>
+        <>
+            {item?.disabled ? (
+                <CardsContainer onClick={handleNoContent}>
+                    <SquareCardWrapper delay={`${0.01 * i}s`}>
+                        <SquareImage
+                            src={
+                                process.env.REACT_APP_BASE_URL +
+                                item?.img?.[lang]
+                            }
+                        />
+                    </SquareCardWrapper>
+                </CardsContainer>
+            ) : (
+                <StyledLink to={item?.id}>
+                    <SquareCardWrapper delay={`${0.01 * i}s`}>
+                        <SquareImage
+                            src={
+                                process.env.REACT_APP_BASE_URL +
+                                item?.img?.[lang]
+                            }
+                        />
+                    </SquareCardWrapper>
+                </StyledLink>
+            )}
+            {error[lang]?.length > 0 && <Alert message={error} type={'info'} />}
+        </>
     );
 }

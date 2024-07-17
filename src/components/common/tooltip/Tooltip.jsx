@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
+// Material UI
 import { ClickAwayListener } from '@mui/material';
 
+// Styled components
 import {
     StyledTooltip,
     WordWrapper,
@@ -47,8 +50,8 @@ export const Tooltip = ({ content }) => {
                     <WordWrapper
                         dangerouslySetInnerHTML={{ __html: content.word }}
                         onClick={handleShow}
-                        onMouseEnter={() => setShow(1)}
-                        onMouseLeave={() => setShow(0)}
+                        onMouseEnter={() => setShow(true)}
+                        onMouseLeave={() => setShow(false)}
                     />
                 </ClickAwayListener>
             </span>

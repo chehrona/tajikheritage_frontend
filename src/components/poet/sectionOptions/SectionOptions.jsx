@@ -5,7 +5,7 @@ When clicked, it takes the user to that section, such as work, career, etc.
 import React from 'react';
 
 // Hooks
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 // Styled components
 import {
@@ -16,7 +16,7 @@ import {
 } from './sectionOptionStyles';
 
 export default function SectionOptions({ poet, scrollToView }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     return (
         <MainContainer>

@@ -18,13 +18,13 @@ export const requestPage = async (url) => {
     }
 };
 
-export const requestMiddlePage = async (url) => {
+export const requestMiddlePage = async (page) => {
     try {
-        const userId = storeVisit(url);
+        const userId = storeVisit(page);
 
         const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${url}`,
-            { params: { url, userId } },
+            `${process.env.REACT_APP_BASE_URL}/${page}`,
+            { params: { userId } },
         );
 
         return response.data;
@@ -38,10 +38,7 @@ export const requestArticleInfo = async (id, page) => {
         const userId = storeVisit(`${page}/${id}`);
 
         const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${page.substring(
-                0,
-                page.length - 1,
-            )}`,
+            `${process.env.REACT_APP_BASE_URL}/${page}`,
             {
                 params: {
                     id: id,
@@ -75,6 +72,49 @@ export const addEmail = async (info) => {
         const response = await axios.post(
             `${process.env.REACT_APP_BASE_URL}/email`,
             { info },
+        );
+
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const sendLogin = async (info) => {
+    try {
+        const response = await axios.post(
+            `${process.env.REACT_APP_BASE_URL}/admin/login`,
+            { info },
+        );
+
+        return response;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getSections = async () => {
+    try {
+        const response = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}/${'admin/content'}`,
+        );
+
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const uploadSectionImage = async (formData) => {
+    try {
+        const response = await axios.put(
+            `${process.env.REACT_APP_BASE_URL}/admin/section`,
+            formData,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            },
         );
 
         return response;

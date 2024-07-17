@@ -6,18 +6,16 @@ import Home from '../../../landingPages/home/Home';
 import Cuisine from '../../../landingPages/cuisine/Cuisine';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
 import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
-import History from '../../../landingPages/history/History';
 import LangsPage from '../../../middlePages/langsPage/LangsPage';
 import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
+import LoginPage from '../../../admin/login/LoginPage';
+import ManagementPage from '../../../landingPages/management/ManagementPage';
 
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
-
 import MythPage from '../../../articlePages/mythPage/MythPage';
-import TraditionPage from '../../../articlePages/traditionPage/TraditionPage';
-
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
 
 export default function Routes() {
@@ -31,43 +29,48 @@ export default function Routes() {
                 path="/language"
                 element={<LandingPage page={'language'} />}
             />
+            <Route path="/history" element={<LandingPage page={'history'} />} />
             <Route
-                path="/customs/myths"
-                element={<MiddlePage page={'customs/myths'} />}
+                path="/history/mythology"
+                element={<MiddlePage page={'history/all_mythology'} />}
             />
             <Route
-                path="/customs/myths/:id"
-                element={<MythPage page={'customs/myths'} />}
+                path="/history/mythology/:id"
+                element={<MythPage page={'history/mythology/'} />}
             />
             <Route
                 path="/arts/jewelry"
-                element={<MiddlePage page={'arts/jewels'} />}
+                element={<MiddlePage page={'arts/all_jewelry'} />}
             />
             <Route
                 path="/arts/jewelry/:id"
-                element={<MythPage page={'arts/jewels'} />}
+                element={<MythPage page={'arts/jewelry'} />}
             />
             <Route
                 path="/customs/traditions"
-                element={<MiddlePage page={'customs/traditions'} />}
+                element={<MiddlePage page={'customs/all_traditions'} />}
             />
             <Route
                 path="/language/proverbs"
-                element={<MiddlePage page={'language/proverbs'} />}
+                element={<MiddlePage page={'language/all_proverbs'} />}
             />
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
-            <Route path="/customs/traditions/:id" element={<TraditionPage />} />
+            <Route
+                path="/customs/traditions/:id"
+                element={<MythPage page={'customs/tradition/'} />}
+            />
             <Route path="/cuisine/recipes/:id" element={<RecipePage />} />
             <Route
                 path="/cuisine/recipes/:id/print"
                 element={<RecipePagePrint />}
             />
             <Route path="/cuisine" element={<Cuisine />} />
-            <Route path="/language/langs" element={<LangsPage />} />
+            <Route path="/language/languages" element={<LangsPage />} />
             <Route path="/language/poets" element={<PoetsPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />
-            <Route path="/history" element={<History />} />
             <Route path="/" element={<Home />} />
+            <Route path="/admin/login" element={<LoginPage />} />
+            <Route path="/admin/content" element={<ManagementPage />} />
         </ServerRoutes>
     );
 }

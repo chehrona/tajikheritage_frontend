@@ -3,88 +3,88 @@ export const stepInfo = [
         num: '01',
         text: {
             us: {
-                text: 'Arts & crafts',
-                font: { d: 9.8, m: 7.1, t: 10 },
-                margin: { d: -1, m: -15, t: 22 },
+                text: 'Language & literature',
+                font: { d: 6.8, m: 4.35, t: 6.85 },
+                margin: { d: 3, m: -13, t: 30 },
             },
             ru: {
-                text: 'Искусства & ремесла',
-                font: { d: 7.1, m: 4.4, t: 7 },
-                margin: { d: 1, m: -13, t: 30 },
+                text: 'Язык & литература',
+                font: { d: 6.8, m: 4.2, t: 6.8 },
+                margin: { d: 2, m: -13, t: 25 },
             },
             tj: {
-                text: 'Санъат & ҳунар',
-                font: { d: 8.9, m: 6.1, t: 8.65 },
-                margin: { d: -1, m: -15, t: 29 },
+                text: 'Забон & адабиёт',
+                font: { d: 9, m: 5.7, t: 9 },
+                margin: { d: -1, m: -13, t: 27 },
             },
         },
         desc: {
             us: {
-                text: `Handicrafts serve as a tangible representation of the intellectual and aesthetic essence 
-                        of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.
-                        <div class='space'></div>
-                        There are nearly 200 unique arts and crafts still practiced within the Tajik communities, 
-                        many as old as the Eastern Iranian civilization itself.
-                        <div class='space'></div>
-                        <div class='space'></div>`,
-                link: '/#/arts?us',
+                text: `The languages spoken by the Tajik peoples, whether belonging to the Western or 
+                    Eastern Iranian language continua, lie at the core of their identity and have 
+                    been paramount for their survival.
+                    <div class='space'></div>
+                    They encode Tajik people's unique worldviews, their ancestral wisdom, 
+                    their stories, and their songs. These languages stand as a testament of resilience, 
+                    serving as a bridge connecting the past and the present — defining who Tajiks are.
+                    <div class='space'></div>
+                    <div class='space'></div>`,
+                link: '/#/language?us',
             },
             ru: {
-                text: `Народные промыслы являются воплощением и интеллектуального, и эстетического 
-                        наследия таджиков. Они неразрывно связаны с их образом жизни, культурой и мифологией.
-                        <div class='space'></div>
-                        Среди таджиков до сих пор сохранилось около 200 уникальных видов 
-                        искусства и ремесел, многие из которых возникли наравне с формированием восточноиранской цивилизации.
-                        <div class='space'></div>
-                        <div class='space'></div>`,
-                link: '/#/arts?ru',
+                text: `Языки, на которых говорят таджикские народы, независимо от того, принадлежат ли они к западному или 
+                    восточно-иранскому языковому континууму, лежат в основе их идентичности и имеют первостепенное значение для их выживания.
+                    В них закодированы уникальное мировоззрение, исконная мудрость, рассказы и песни таджикского народа. Эти языки являются 
+                    свидетельством устойчивости и служат мостом, соединяющим прошлое и настоящее таджиков.
+                    <div class='space'></div>
+                    <div class='space'></div>`,
+                link: '/#/language?ru',
             },
             tj: {
-                text: `Ҳунарҳои мардумӣ намунаи моддии фикрӣ ва зебоишиносии тоҷикон буда, 
-                        бо тарзи зиндагӣ, фарҳанг ва асотири тоҷикон пайвастаанд.
-                        <div class='space'></div>
-                        Дар байни тоҷикони олам, то ҳол, тахминан 200 намуди ҳунарҳои хос ва беҳамто вуҷуд доранд, 
-                        ки қадимии бисёрашон баробари қадимии тамаддуни эрониёни шарқӣ ҳастанд.
-                        <div class='space'></div>
-                        <div class='space'></div>`,
-                link: '/#/arts?tj',
+                text: `Забонҳои мардуми тоҷик, ки чи ба гурӯҳи забонҳои эронии ғарбӣ ва чи шарқӣ дахл доранд, 
+                    сарчашмаи ҳастӣ ва қавитарин исботи фарҳанги куҳани тоҷикон ҳастанд. Онҳо ҷаҳонбинии махсус, 
+                    ҳикмати аҷдодӣ, достонҳо ва таронаҳои тоҷиконро дар бар мегиранд. Ин забонҳо сабаби зинда мондани 
+                    тоҷикон буда, гузашташонро бо имрӯзашон мепайванданд.
+                    <div class='space'></div>
+                    <div class='space'></div>`,
+                link: '/#/language?tj',
             },
         },
         outer: [
             {
                 size: 16,
-                bottom: { d: '-3%', t: '-2%' },
-                right: { d: '27%', t: '18%' },
+                top: { d: '1.2%', t: '53.5%' },
+                right: { d: '0%', t: '3%' },
             },
             {
                 size: 12,
-                bottom: { d: '5%', t: '25%' },
-                right: { d: '8.7%', t: '7%' },
+                top: { d: '0%', t: '4%' },
+                right: { d: '30%', t: '51%' },
             },
             {
                 size: 30,
-                top: { d: '-13.2%', t: '-7.2%' },
-                right: { d: '-3%', t: '-4.5%' },
+                bottom: { d: '-8%', t: '62%' },
+                right: { d: '9.5%', t: '-5%' },
             },
         ],
         inner: [
             {
                 size: 15,
-                bottom: { d: '-1.75%', t: '-1.5%' },
-                right: { d: '27.5%', t: '18.5%' },
-                img: '/homeImages/craft3.png',
+                top: { d: '-1%', t: '54%' },
+                right: { d: '2%', t: '3%' },
+                img: '/homeImages/lang3.png',
             },
             {
                 size: 11,
-                bottom: { d: '5.5%', t: '25.5%' },
-                right: { d: '8.2%', t: '6.5%' },
-                img: '/homeImages/craft2.png',
+                top: { d: '1.5%', t: '4.5%' },
+                right: { d: '29.5%', t: '50%' },
+                img: '/homeImages/lang2.png',
             },
             {
                 size: 29,
-                top: { d: '-13%', t: '-6.5%' },
-                right: { d: '-1.2%', t: '-2.2%' },
-                img: '/homeImages/craft1.png',
+                bottom: { d: '-6.75%', t: '62.5%' },
+                right: { d: '10%', t: '-4.5%' },
+                img: '/homeImages/lang1.png',
             },
         ],
     },
@@ -183,6 +183,95 @@ export const stepInfo = [
         num: '03',
         text: {
             us: {
+                text: 'Arts & crafts',
+                font: { d: 9.8, m: 7.1, t: 10 },
+                margin: { d: -1, m: -15, t: 22 },
+            },
+            ru: {
+                text: 'Искусства & ремесла',
+                font: { d: 7.1, m: 4.4, t: 7 },
+                margin: { d: 1, m: -13, t: 30 },
+            },
+            tj: {
+                text: 'Санъат & ҳунар',
+                font: { d: 8.9, m: 6.1, t: 8.65 },
+                margin: { d: -1, m: -15, t: 29 },
+            },
+        },
+        desc: {
+            us: {
+                text: `Handicrafts serve as a tangible representation of the intellectual and aesthetic essence 
+                        of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.
+                        <div class='space'></div>
+                        There are nearly 200 unique arts and crafts still practiced within the Tajik communities, 
+                        many as old as the Eastern Iranian civilization itself.
+                        <div class='space'></div>
+                        <div class='space'></div>`,
+                link: '/#/arts?us',
+            },
+            ru: {
+                text: `Народные промыслы являются воплощением и интеллектуального, и эстетического 
+                        наследия таджиков. Они неразрывно связаны с их образом жизни, культурой и мифологией.
+                        <div class='space'></div>
+                        Среди таджиков до сих пор сохранилось около 200 уникальных видов 
+                        искусства и ремесел, многие из которых возникли наравне с формированием восточноиранской цивилизации.
+                        <div class='space'></div>
+                        <div class='space'></div>`,
+                link: '/#/arts?ru',
+            },
+            tj: {
+                text: `Ҳунарҳои мардумӣ намунаи моддии фикрӣ ва зебоишиносии тоҷикон буда, 
+                        бо тарзи зиндагӣ, фарҳанг ва асотири тоҷикон пайвастаанд.
+                        <div class='space'></div>
+                        Дар байни тоҷикони олам, то ҳол, тахминан 200 намуди ҳунарҳои хос ва беҳамто вуҷуд доранд, 
+                        ки қадимии бисёрашон баробари қадимии тамаддуни эрониёни шарқӣ ҳастанд.
+                        <div class='space'></div>
+                        <div class='space'></div>`,
+                link: '/#/arts?tj',
+            },
+        },
+        outer: [
+            {
+                size: 16,
+                bottom: { d: '-3%', t: '-2%' },
+                right: { d: '27%', t: '18%' },
+            },
+            {
+                size: 12,
+                bottom: { d: '5%', t: '25%' },
+                right: { d: '8.7%', t: '7%' },
+            },
+            {
+                size: 30,
+                top: { d: '-13.2%', t: '-7.2%' },
+                right: { d: '-3%', t: '-4.5%' },
+            },
+        ],
+        inner: [
+            {
+                size: 15,
+                bottom: { d: '-1.75%', t: '-1.5%' },
+                right: { d: '27.5%', t: '18.5%' },
+                img: '/homeImages/craft3.png',
+            },
+            {
+                size: 11,
+                bottom: { d: '5.5%', t: '25.5%' },
+                right: { d: '8.2%', t: '6.5%' },
+                img: '/homeImages/craft2.png',
+            },
+            {
+                size: 29,
+                top: { d: '-13%', t: '-6.5%' },
+                right: { d: '-1.2%', t: '-2.2%' },
+                img: '/homeImages/craft1.png',
+            },
+        ],
+    },
+    {
+        num: '04',
+        text: {
+            us: {
                 text: 'Cuisine',
                 font: { d: 11, m: 6.8, t: 11 },
                 margin: { d: 3.5, m: -15, t: 30 },
@@ -268,95 +357,7 @@ export const stepInfo = [
             },
         ],
     },
-    {
-        num: '04',
-        text: {
-            us: {
-                text: 'Language & literature',
-                font: { d: 6.8, m: 4.35, t: 6.85 },
-                margin: { d: 3, m: -13, t: 30 },
-            },
-            ru: {
-                text: 'Язык & литература',
-                font: { d: 6.8, m: 4.2, t: 6.8 },
-                margin: { d: 2, m: -13, t: 25 },
-            },
-            tj: {
-                text: 'Забон & адабиёт',
-                font: { d: 9, m: 5.7, t: 9 },
-                margin: { d: -1, m: -13, t: 27 },
-            },
-        },
-        desc: {
-            us: {
-                text: `The languages spoken by the Tajik peoples, whether belonging to the Western or 
-                    Eastern Iranian language continua, lie at the core of their identity and have 
-                    been paramount for their survival.
-                    <div class='space'></div>
-                    They encode Tajik people's unique worldviews, their ancestral wisdom, 
-                    their stories, and their songs. These languages stand as a testament of resilience, 
-                    serving as a bridge connecting the past and the present — defining who Tajiks are.
-                    <div class='space'></div>
-                    <div class='space'></div>`,
-                link: '/#/language?us',
-            },
-            ru: {
-                text: `Языки, на которых говорят таджикские народы, независимо от того, принадлежат ли они к западному или 
-                    восточно-иранскому языковому континууму, лежат в основе их идентичности и имеют первостепенное значение для их выживания.
-                    В них закодированы уникальное мировоззрение, исконная мудрость, рассказы и песни таджикского народа. Эти языки являются 
-                    свидетельством устойчивости и служат мостом, соединяющим прошлое и настоящее таджиков.
-                    <div class='space'></div>
-                    <div class='space'></div>`,
-                link: '/#/language?ru',
-            },
-            tj: {
-                text: `Забонҳои мардуми тоҷик, ки чи ба гурӯҳи забонҳои эронии ғарбӣ ва чи шарқӣ дахл доранд, 
-                    сарчашмаи ҳастӣ ва қавитарин исботи фарҳанги куҳани тоҷикон ҳастанд. Онҳо ҷаҳонбинии махсус, 
-                    ҳикмати аҷдодӣ, достонҳо ва таронаҳои тоҷиконро дар бар мегиранд. Ин забонҳо сабаби зинда мондани 
-                    тоҷикон буда, гузашташонро бо имрӯзашон мепайванданд.
-                    <div class='space'></div>
-                    <div class='space'></div>`,
-                link: '/#/language?tj',
-            },
-        },
-        outer: [
-            {
-                size: 16,
-                top: { d: '1.2%', t: '53.5%' },
-                right: { d: '0%', t: '3%' },
-            },
-            {
-                size: 12,
-                top: { d: '0%', t: '4%' },
-                right: { d: '30%', t: '51%' },
-            },
-            {
-                size: 30,
-                bottom: { d: '-8%', t: '62%' },
-                right: { d: '9.5%', t: '-5%' },
-            },
-        ],
-        inner: [
-            {
-                size: 15,
-                top: { d: '-1%', t: '54%' },
-                right: { d: '2%', t: '3%' },
-                img: '/homeImages/lang3.png',
-            },
-            {
-                size: 11,
-                top: { d: '1.5%', t: '4.5%' },
-                right: { d: '29.5%', t: '50%' },
-                img: '/homeImages/lang2.png',
-            },
-            {
-                size: 29,
-                bottom: { d: '-6.75%', t: '62.5%' },
-                right: { d: '10%', t: '-4.5%' },
-                img: '/homeImages/lang1.png',
-            },
-        ],
-    },
+
     {
         num: '05',
         text: {

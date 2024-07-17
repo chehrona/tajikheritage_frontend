@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 
 import { addEmail } from '../../../services/request';
 
@@ -23,7 +23,7 @@ export default function BookDialog({
     bookDialog,
     setBookIndex,
 }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const [email, setEmail] = useState('');
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);

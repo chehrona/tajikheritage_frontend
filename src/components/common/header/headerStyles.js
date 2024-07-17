@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
-import { IconButton, Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
@@ -20,7 +20,8 @@ export const HeaderInnerBox = styled.div`
     max-width: 1920px;
     margin: 0 auto;
     justify-content: space-between;
-    padding: 0rem 0.25rem 0rem 1rem;
+    padding: 0rem 0.45rem 0rem 1rem;
+    overflow: hidden;
 
     @media (max-width: 480px) {
         height: 4.5rem;
@@ -49,12 +50,15 @@ export const LogoWrapper = styled.div`
 
 export const TitleWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: 2rem;
     font-family: 'EB Garamond', serif;
+    text-align: center;
 
     @media (max-width: 480px) {
-        font-size: 1.64rem;
+        font-size: 1.52rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -65,13 +69,53 @@ export const TitleWrapper = styled.div`
 export const Title = styled.div`
     font-style: italic;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 12.5rem);
+    height: 100%;
+    position: absolute;
+    left: 5rem;
+    top: -5rem;
+    transform: ${({ index }) => index && `translateY(${5 * index}rem)`};
+    transition: transform 0.5s ease;
+
+    @media (max-width: 480px) {
+        left: 4.15rem;
+        top: -4.5rem;
+        max-width: calc(100% - 7.65rem);
+        width: calc(100% - 7.65rem);
+        padding: 0rem 0.5rem;
+        transform: ${({ index }) => index && `translateY(${4.5 * index}rem)`};
+    }
 `;
 
 export const TitleSpan = styled.span`
     font-style: normal;
     font-weight: bold;
-    margin-right: 0.4rem;
     color: #bd9d52;
+    ${({ isElipsis }) => {
+        isElipsis &&
+            css`
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            `;
+    }}
+`;
+
+export const Semicolon = styled.div`
+    width: fit-content;
+    font-style: normal;
+    color: #bd9d52;
+    font-family: 'EB Garamond', serif;
+`;
+
+export const MainTitle = styled.div`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.4rem;
 `;
 
 export const MenuWrapper = styled.div`
@@ -163,4 +207,6 @@ export const Logo = styled.img`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
 `;

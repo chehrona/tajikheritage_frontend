@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { useSetLang } from '../../../App';
+// Hooks
+import { useGlobalData } from '../../../App';
 
+// Styled components
 import { StyledAlert } from './alertStyles';
 
-export default function Alert({ message }) {
-    const { lang } = useSetLang();
+export default function Alert({ message, type }) {
+    const { lang } = useGlobalData();
+    const [currentMessage, setCurrentMessage] = useState(message[lang]);
+    const [visible, setVisible] = useState(true);
 
-    return <StyledAlert severity="error">{message[lang]}</StyledAlert>;
+    useEffect(() => {
+        setCurrentMessage(message[lang]);
+        setVisible(true);
+        const timer = setTimeout(() => {
+            setVisible(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, [message, lang]);
+
+    if (!visible) return null;
+
+    return <StyledAlert severity={type}>{currentMessage}</StyledAlert>;
 }

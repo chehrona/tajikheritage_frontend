@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 
-import { useSetLang } from "../../../App";
+import { useGlobalData } from '../../../App';
 
-import { VolumeUp } from "@mui/icons-material";
+import { VolumeUp } from '@mui/icons-material';
 
-import { 
+import {
     RecipeCardWrapper,
     RecipeImage,
     RecipeSubtitle,
     RecipeNameBox,
     StyledIconButton,
     RecipeInfo,
-    StyledLink
-} from "./recipeCardStyles";
+    StyledLink,
+} from './recipeCardStyles';
 
 export default function RecipeCard({ recipe }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     function toggleAudio(e) {
         const audioFile = e.currentTarget.children[0];
@@ -24,7 +24,7 @@ export default function RecipeCard({ recipe }) {
 
     return (
         <RecipeCardWrapper>
-            <StyledLink to={"/cuisine/recipes/" + recipe?.id}>
+            <StyledLink to={'/cuisine/recipes/' + recipe?.id}>
                 <RecipeImage src={recipe?.imageName} />
             </StyledLink>
             <RecipeNameBox>

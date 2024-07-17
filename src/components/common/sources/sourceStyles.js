@@ -85,6 +85,7 @@ export const RefWrapper = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
     margin: 0.5rem 0.25rem;
+    width: 100%;
     display: ${({ open }) => (open ? 'block' : 'none')};
 
     ::-webkit-scrollbar {

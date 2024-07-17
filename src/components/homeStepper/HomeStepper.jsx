@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Hooks
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 import { useMediaQuery } from 'react-responsive';
 
 import { stepInfo } from '../../landingPages/home/helper';
@@ -25,7 +25,7 @@ import {
 } from './homeStepperStyles';
 
 export default function HomeStepper({ containerRef, divRefs, opacities }) {
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const [visibleStepIndex, setVisibleStepIndex] = useState(0);
 

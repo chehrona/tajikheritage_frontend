@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSetLang } from '../../App';
+import { useGlobalData } from '../../App';
 
 import { requestPage } from '../../services/request';
 
@@ -18,7 +18,7 @@ import {
 
 function Cuisine() {
     const location = useLocation();
-    const { setLang, lang } = useSetLang();
+    const { setLang, lang } = useGlobalData();
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(0);
 

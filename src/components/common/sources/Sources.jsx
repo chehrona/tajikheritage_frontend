@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSetLang } from '../../../App';
+import { useGlobalData } from '../../../App';
 import { IconButton, ClickAwayListener } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
 
@@ -22,7 +22,7 @@ import {
 
 export default function Sources({ data, color, title, background }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(0);
-    const { lang } = useSetLang();
+    const { lang } = useGlobalData();
 
     function handleClickAway() {
         setIsDropdownOpen(0);
