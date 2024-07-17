@@ -60,7 +60,7 @@ export default function TextSegment({
                 dangerouslySetInnerHTML={{ __html: data.subtitle }}
             ></Subtitle>
             <DescWrapper
-                desc={data.body}
+                desc={data?.body}
                 TextWrapper={reverse ? SecondBox : FirstBox}
             />
         </BoxWrapper>

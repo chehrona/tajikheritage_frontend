@@ -160,6 +160,7 @@ export default function ProverbPage() {
                                 {proverb.desc[lang].map((entry, i) => {
                                     return (
                                         <TextSegment
+                                            key={`${proverb?.quote[lang]}_${i}`}
                                             reverse={i % 2 > 0}
                                             data={entry}
                                             title={false}
