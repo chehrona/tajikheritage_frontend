@@ -53,8 +53,8 @@ export const SectionCardWrapper = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-radius: 1.5rem;
         transition: none;
-        height: 30.5rem;
-        width: 22rem;
+        height: 34.66rem;
+        width: 25rem;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
 
         &:hover {
@@ -93,6 +93,11 @@ export const ImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     filter: drop-shadow(0px 0px 2.5px #bd9d52);
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 90%;
+        width: 90%;
+    }
 `;
 
 export const SectionImage = styled.div`

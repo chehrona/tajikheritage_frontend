@@ -23,7 +23,7 @@ export const PageContainer = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 1.5rem 1.8rem 2rem 1.2rem;
+        padding: 5rem 1.8rem 2rem 1.2rem;
     }
 `;
 
@@ -34,6 +34,12 @@ export const Shadow = styled.div`
     width: calc(100% - 6rem);
     background-color: #70654a;
     border-radius: 4rem 4rem 0rem 0rem;
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        top: 1.5rem;
+        width: calc(100% - 2.15rem);
+        border-radius: 2.5rem 2.5rem 0rem 0rem;
+    }
 `;
 
 export const ProverbContainer = styled.div`
@@ -53,6 +59,7 @@ export const ProverbContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-radius: 2.5rem;
+        box-shadow: 0.8rem 0.5rem 0rem 0.08rem #70654a;
     }
 `;
 
@@ -67,6 +74,10 @@ export const LogoContainer = styled.div`
 
     @media (max-width: 480px) {
         top: -3.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        top: -3rem;
     }
 `;
 
@@ -112,6 +123,11 @@ export const LogoOuter = styled.img`
         height: 7rem;
         width: 7rem;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 6rem;
+        width: 6rem;
+    }
 `;
 
 export const LogoInner = styled.img`
@@ -121,9 +137,14 @@ export const LogoInner = styled.img`
     left: 50%;
     transform: translateX(-50%);
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
         height: 7rem;
         width: 7rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 6rem;
+        width: 6rem;
     }
 `;
 
@@ -134,9 +155,14 @@ export const SvgContainer = styled.svg`
     z-index: 2;
     top: -1rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
         height: 9rem;
         width: 9rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 8rem;
+        width: 8rem;
     }
 `;
 

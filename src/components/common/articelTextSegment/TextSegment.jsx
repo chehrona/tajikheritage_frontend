@@ -50,7 +50,6 @@ export default function TextSegment({
                 </SlideContainer>
             ) : null}
             {title && <Title>{title}</Title>}
-            {!isMobile && <div className="space"></div>}
             <Subtitle
                 length={data.slides.length === 0}
                 reverse={reverse}

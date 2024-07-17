@@ -70,6 +70,7 @@ export const Title = styled.div`
     font-style: italic;
     font-family: 'EB Garamond', serif;
     text-shadow: 0.0625rem 0.0625rem 0.0875rem #0f0a00;
+    margin-bottom: 0.5rem;
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
@@ -88,12 +89,13 @@ export const Subtitle = styled.span`
     ${({ reverse, length }) => !reverse && length && 'margin-left: 3rem'};
 
     @media (max-width: 480px) {
-        margin-left: 1.5rem;
+        margin: 1rem 0rem 0rem 1.5rem;
         font-size: 1.35rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
+        ${({ reverse, length }) => !reverse && length && 'margin-left: 2rem'};
     }
 `;
 
