@@ -21,7 +21,6 @@ export const SquareCardWrapper = styled.div`
     height: 25rem;
     width: 25rem;
     color: #0f0a00;
-    cursor: pointer;
     position: relative;
     border-radius: 0.7rem;
     animation: ${slideOut} 1s ease-in-out forwards;
@@ -52,4 +51,11 @@ export const SquareImage = styled.img`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+`;
+
+export const CardsContainer = styled.div`
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
 `;

@@ -86,7 +86,7 @@ export default function ProverbPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [location.pathname, lang]);
 
     const toggleAudio = (e) => {
         if (lang !== 'tj') {

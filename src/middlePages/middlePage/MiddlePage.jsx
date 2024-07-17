@@ -101,7 +101,7 @@ function MiddlePage({ page }) {
                     </PageContainer>
                 </Fade>
             ) : (
-                !loading && error && <Alert message={error} />
+                !loading && error.length > 0 && <Alert message={error} />
             )}
         </>
     );

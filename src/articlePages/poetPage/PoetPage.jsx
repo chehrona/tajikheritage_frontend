@@ -132,7 +132,7 @@ export default function PoetPage() {
                     </PageContainer>
                 </Fade>
             ) : (
-                !loading && <Alert message={error} />
+                !loading && error.length > 0 && <Alert message={error} />
             )}
         </>
     );

@@ -68,9 +68,6 @@ export const LogoContainer = styled.div`
     @media (max-width: 480px) {
         top: -3.5rem;
     }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-    }
 `;
 
 export const LogoWrapper = styled.div`
@@ -92,6 +89,14 @@ export const LogoWrapper = styled.div`
                 transition: transform 0.25s ease-in-out;
             `}
     }
+
+    @media (max-device-width: 1024px) {
+        &:hover {
+            filter: none;
+            transform: translateX(-50%);
+            transition: transform 0.25s ease-in-out;
+        }
+    }
 `;
 
 export const LogoOuter = styled.img`
@@ -106,9 +111,6 @@ export const LogoOuter = styled.img`
     @media (max-width: 480px) {
         height: 7rem;
         width: 7rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
     }
 `;
 
