@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
+import { useMediaQuery } from 'react-responsive';
 
 // Services
 import { requestPage, requestArticleInfo } from '../../services/request';
@@ -24,6 +25,10 @@ export default function MythPage({ page }) {
     const [myth, setMyth] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
+    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const isTablet = useMediaQuery({
+        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
+    });
 
     const fetchData = async () => {
         try {
@@ -90,10 +95,19 @@ export default function MythPage({ page }) {
                             {myth.desc[lang].map((entry, i) => {
                                 return (
                                     <TextSegment
+                                        key={`${myth?.name[lang]}_${i}`}
                                         reverse={i % 2 > 0}
                                         data={entry}
                                         title={i === 0 && myth.name[lang]}
-                                        topLeftRad={i === 0 ? 4 : 0}
+                                        topLeftRad={
+                                            isMobile
+                                                ? 0
+                                                : i === 0
+                                                ? isTablet
+                                                    ? 2.5
+                                                    : 4
+                                                : 0
+                                        }
                                         noBorder={
                                             i === myth.desc[lang].length - 1 &&
                                             1

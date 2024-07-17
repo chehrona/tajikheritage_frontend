@@ -6,7 +6,6 @@ import Home from '../../../landingPages/home/Home';
 import Cuisine from '../../../landingPages/cuisine/Cuisine';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
 import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
-import History from '../../../landingPages/history/History';
 import LangsPage from '../../../middlePages/langsPage/LangsPage';
 import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
@@ -17,7 +16,6 @@ import ManagementPage from '../../../landingPages/management/ManagementPage';
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
 import MythPage from '../../../articlePages/mythPage/MythPage';
-import TraditionPage from '../../../articlePages/traditionPage/TraditionPage';
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
 
 export default function Routes() {

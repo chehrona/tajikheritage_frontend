@@ -21,7 +21,6 @@ export const PoetCardWrapper = styled.div`
     width: 23rem;
     height: 35rem;
     color: #fcf6e9;
-    cursor: pointer;
     background: #0f0a00;
     position: relative;
     border-radius: 0.7rem;
@@ -173,4 +172,11 @@ export const PoetInfoContainer = styled.div`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+`;
+
+export const CardContainer = styled.div`
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
 `;

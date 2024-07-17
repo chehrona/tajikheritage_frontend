@@ -19,13 +19,7 @@ import {
     Circle,
 } from './slideshowStyles';
 
-export default function Slideshow({
-    slides,
-    width,
-    height,
-    topLeftRad,
-    bottomLeftRad,
-}) {
+export default function Slideshow({ slides, width, height, topLeftRad }) {
     const { lang } = useGlobalData();
     const [translate, setTranslate] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,7 +66,6 @@ export default function Slideshow({
                             height={height}
                             translate={translate}
                             topLeftRad={topLeftRad}
-                            bottomLeftRad={bottomLeftRad}
                             src={process.env.REACT_APP_BASE_URL + entry?.img}
                             overlay={
                                 process.env.REACT_APP_BASE_URL + entry?.overlay
