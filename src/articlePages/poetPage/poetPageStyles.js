@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     min-height: 40rem;
     background-color: white;
-    padding: 2rem 3.7rem 2.8rem 3.2rem;
-    
+    padding: 2rem 3.8rem 2.8rem 3.2rem;
     @media (max-width: 480px) {
         padding: 0rem;
     }

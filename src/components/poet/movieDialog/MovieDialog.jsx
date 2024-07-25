@@ -1,11 +1,16 @@
 import React, { useState, useRef } from 'react';
+
+// Material UI
 import { Slide } from '@mui/material';
 
+// Hooks
 import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
+// Components
 import Dialog from '../../common/dialog/Dialog';
 
+// Styled components
 import {
     Desc,
     StyledIconButton,

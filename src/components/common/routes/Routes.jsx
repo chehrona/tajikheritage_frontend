@@ -7,16 +7,20 @@ import Cuisine from '../../../landingPages/cuisine/Cuisine';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
 import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
 import LangsPage from '../../../middlePages/langsPage/LangsPage';
-import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
-import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
 import LoginPage from '../../../admin/login/LoginPage';
 import ManagementPage from '../../../landingPages/management/ManagementPage';
+
+// Middle pages
+import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
+import EtymologyPage from '../../../middlePages/wordsPage/EtymologyPage';
+import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
 import MythPage from '../../../articlePages/mythPage/MythPage';
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
+import WordPage from '../../../articlePages/wordPage/WordPage';
 
 export default function Routes() {
     const location = useLocation();
@@ -67,6 +71,8 @@ export default function Routes() {
             <Route path="/cuisine" element={<Cuisine />} />
             <Route path="/language/languages" element={<LangsPage />} />
             <Route path="/language/poets" element={<PoetsPage />} />
+            <Route path="/language/etymology" element={<EtymologyPage />} />
+            <Route path="/language/etymology/:id" element={<WordPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />
             <Route path="/" element={<Home />} />
             <Route path="/admin/login" element={<LoginPage />} />

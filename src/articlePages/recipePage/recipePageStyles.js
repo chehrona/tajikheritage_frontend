@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 40rem;
     background-color: white;
-    padding: 2rem 3.7rem 2.8rem 3.2rem;
-    
+    padding: 2rem 3.8rem 2.8rem 3.2rem;
     @media (max-width: 480px) {
         padding: 0rem;
     }
@@ -16,7 +15,7 @@ export const PageContainer = styled.div`
 `;
 
 export const RecipeContainer = styled.div`
-    color: #0F0A00;
+    color: #0f0a00;
     padding: 3rem;
     border-radius: 4rem;
     background-color: #fcf6e9;

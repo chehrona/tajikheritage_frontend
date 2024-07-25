@@ -4,8 +4,15 @@ export const MainContainer = styled.div`
     background-color: #0f0a00;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    min-height: 300vh;
+`;
+
+export const LoaderContainer = styled.div`
+    display: flex;
+    justify-content: center;
     align-items: center;
-    min-height: 100svh;
+    height: 100svh;
 `;
 
 export const LoaderImg = styled.img`

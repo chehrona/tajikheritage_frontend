@@ -20,9 +20,9 @@ export default function SquareCard({ item, i }) {
 
     const handleNoContent = () => {
         setError({
-            us: 'Article is not available yet',
-            ru: 'Статья еще не доступна',
-            tj: 'Мақола ҳанӯз вуҷуд надорад',
+            us: 'Article is not available yet.',
+            ru: 'Статья еще не доступна.',
+            tj: 'Мақола ҳанӯз вуҷуд надорад.',
         });
     };
 

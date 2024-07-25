@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
+
+// Hooks
 import { useGlobalData } from '../../../App';
+
+// Helper
 import { langNames } from './langNames';
+
+// Material UI
 import { ClickAwayListener } from '@mui/material';
 
+// Styled components
 import {
     StyledFlag,
     FlagWrapper,

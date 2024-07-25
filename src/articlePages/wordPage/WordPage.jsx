@@ -1,42 +1,48 @@
 import React, { useState, useEffect } from 'react';
 
 // Hooks
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
+import { useMediaQuery } from 'react-responsive';
 
-// Service
+// Services
 import { requestPage, requestArticleInfo } from '../../services/request';
+
+// Material UI
+import { VolumeUp } from '@mui/icons-material';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import TextSegment from '../../components/common/articelTextSegment/TextSegment';
-import LogoBox from './components/LogoBox';
+import TextBox from './TextBox';
 
 // Styled components
 import {
     PageContainer,
-    ProverbContainer,
-    QuoteWrapper,
-    Shadow,
     TextContainer,
-} from './proverbPageStyles';
+    WordTitle,
+    StyledIconButton,
+} from './wordPageStyles';
 
-export default function ProverbPage() {
+export default function WordPage({ page }) {
     const { id } = useParams();
     const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();
-    const [proverb, setProverb] = useState();
-    const [error, setError] = useState('');
+    const [word, setWord] = useState();
+    const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
+    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const isTablet = useMediaQuery({
+        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
+    });
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'language/proverb');
-            setProverb(data);
+            const data = await requestArticleInfo(id, 'language/word/');
+            setWord(data);
 
             // Setting the title
             const headerData = await requestPage('language');
@@ -45,14 +51,17 @@ export default function ProverbPage() {
 
             headerData.forEach((entry) => {
                 entry.sections.forEach((section) => {
-                    if (section.link === '') {
+                    if (section.link === 'etymology') {
                         for (const key in title) {
                             let titleArr = [...title[key]];
 
                             // New title
                             const newItem = [
                                 `${section.title[key].toUpperCase()}`,
-                                `${data.name[key][1]}`,
+                                `${data.title[key].substring(
+                                    0,
+                                    data.title[key].indexOf('|'),
+                                )}`,
                             ];
 
                             titleArr[1] = newItem;
@@ -81,51 +90,52 @@ export default function ProverbPage() {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
+
+    const toggleAudio = (e) => {
+        if (lang !== 'tj') {
+            const audioFile = e.currentTarget.children[0];
+            audioFile.play();
+        }
+    };
 
     return (
         <>
             <Loader inProp={loading} />
-            {proverb ? (
+            {!loading && word ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
-                        <Shadow />
-                        <ProverbContainer>
-                            <LogoBox proverb={proverb} />
-                            <QuoteWrapper
-                                lang={lang}
-                                dangerouslySetInnerHTML={{
-                                    __html: proverb?.quote[lang],
-                                }}
-                            />
-                            <TextContainer>
-                                {proverb.desc[lang].map((entry, i) => {
-                                    return (
-                                        <TextSegment
-                                            key={`${proverb?.quote[lang]}_${i}`}
-                                            reverse={i % 2 > 0}
-                                            data={entry}
-                                            title={false}
-                                            topLeftRad={0}
-                                            noBorder={true}
-                                        />
-                                    );
-                                })}
-                            </TextContainer>
+                        <TextContainer>
+                            <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
+                            <StyledIconButton onClick={(e) => toggleAudio(e)}>
+                                <audio
+                                    src={
+                                        process.env.REACT_APP_BASE_URL +
+                                        word?.sound
+                                    }
+                                ></audio>
+                                <VolumeUp />
+                            </StyledIconButton>
+                            {word.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextBox
+                                        key={`${word?._id}_${i}`}
+                                        id={`${word?._id}_${i}`}
+                                        data={entry}
+                                    />
+                                );
+                            })}
                             <Sources
-                                data={proverb.references[lang]}
+                                data={word.references[lang]}
                                 color={'#dedbdb'}
                                 title={'#fcf6e9'}
                                 background={'#0F0A00'}
                             />
-                        </ProverbContainer>
+                        </TextContainer>
                     </PageContainer>
                 </Fade>
             ) : (
-                !loading &&
-                error[lang]?.length > 0 && (
-                    <Alert message={error} type={'error'} />
-                )
+                !loading && error.length > 0 && <Alert message={error} />
             )}
         </>
     );

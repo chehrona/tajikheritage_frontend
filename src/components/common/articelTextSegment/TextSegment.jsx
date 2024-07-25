@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Hooks
-import { useMediaQuery } from 'react-responsive';
-
 // Components
 import Slideshow from '../slideshow/Slideshow';
 import { DescWrapper } from '../descWrapper/DescWrapper';
@@ -26,7 +23,6 @@ export default function TextSegment({
 }) {
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -36,7 +32,7 @@ export default function TextSegment({
 
     return (
         <BoxWrapper reverse={reverse} noBorder={noBorder}>
-            {data?.slides.length > 0 ? (
+            {data.slides && data?.slides.length > 0 ? (
                 <SlideContainer
                     ref={parentRef}
                     reverse={reverse}

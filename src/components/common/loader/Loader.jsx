@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Transition } from 'react-transition-group';
 
-import { MainContainer, LoaderImg } from './loaderStyles';
+import { MainContainer, LoaderImg, LoaderContainer } from './loaderStyles';
 
 const duration = 350;
 
@@ -31,7 +31,9 @@ const Loader = ({ inProp }) => {
                     }}
                 >
                     <MainContainer>
-                        <LoaderImg src={'/loader.png'} />
+                        <LoaderContainer>
+                            <LoaderImg src={'/loader.png'} />
+                        </LoaderContainer>
                     </MainContainer>
                 </div>
             )}

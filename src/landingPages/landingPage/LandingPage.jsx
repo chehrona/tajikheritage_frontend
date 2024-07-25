@@ -66,8 +66,8 @@ function LandingPage({ page }) {
             <Loader inProp={loading} />
             {!loading && sections.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageContainer justify={sections?.length}>
-                        <SectionBoxContainer>
+                    <PageContainer>
+                        <SectionBoxContainer justify={sections?.length}>
                             {sections?.map((section, i) => {
                                 return (
                                     <SectionCard

@@ -110,7 +110,7 @@ export const SubTitle = styled.div`
     margin-bottom: 1rem;
     color: ${({ title }) => title && title};
 
-    @media (max-width: 480px) {
+    @media (max-width: 1024px) {
         font-size: 2.5rem;
         margin-bottom: 0.5rem;
     }
@@ -120,7 +120,7 @@ export const Reference = styled.span`
     font-size: 1.1rem;
     line-height: 1.7rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: 1024px) {
         font-size: 1.3rem;
     }
 `;
