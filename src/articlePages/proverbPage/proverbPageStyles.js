@@ -159,6 +159,7 @@ export const SvgContainer = styled.svg`
     @media (max-width: 480px) {
         height: 9rem;
         width: 9rem;
+        top: 9.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -175,6 +176,16 @@ export const Text = styled.text`
     fill: #ad0f0e;
     font-weight: bold;
     letter-spacing: 2.5px;
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
 `;
 
 export const QuoteWrapper = styled.div`

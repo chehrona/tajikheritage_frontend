@@ -74,7 +74,7 @@ export const SectionTitle = styled.div`
     line-height: ${({ length }) => length > 20 && '2.05rem'};
 
     @media (max-width: 480px) {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         margin-bottom: 0.25rem;
         line-height: ${({ length }) => length > 20 && '1.3rem'};
     }
