@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { StyledSpan } from '../../components/common/descWrapper/descWrapperStyles';
 
@@ -12,20 +12,12 @@ export const PageContainer = styled.div`
     align-items: center;
 
     @media (max-width: 480px) {
-        padding: 1.5rem 3.2rem 1.5rem 3.2rem;
+        padding: 1.5rem 0rem;
         min-height: calc(100svh - 10.5rem);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 1.5rem 4.2rem;
-    }
-`;
-
-export const InnerBoxContainer = styled.div`
-    padding-top: 2rem;
-
-    @media (max-width: 480px) {
-        gap: 2rem;
     }
 `;
 
@@ -35,6 +27,16 @@ export const PageTitle = styled.div`
     color: #0f0a00;
     font-family: 'EB Garamond', serif;
     margin-bottom: 1rem;
+    text-align: center;
+`;
+
+export const InnerBoxContainer = styled.div`
+    padding-top: 2rem;
+
+    @media (max-width: 480px) {
+        gap: 2rem;
+        padding: 1rem 1.5rem;
+    }
 `;
 
 export const FooterTitle = styled.div`
@@ -71,6 +73,14 @@ export const ArticleWrapper = styled.div`
     padding: 1rem;
     position: relative;
     background-image: url(${'/noise.png'});
+
+    @media (max-width: 480px) {
+        width: 100%;
+        height: 15rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const WordTitle = styled.div`
@@ -78,6 +88,13 @@ export const WordTitle = styled.div`
     font-size: 1.15rem;
     color: #bd9d52;
     margin-bottom: 0.25rem;
+
+    @media (max-width: 480px) {
+        font-size: 1.45rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const WordDesc = styled(StyledSpan)`
@@ -99,6 +116,13 @@ export const WordDesc = styled(StyledSpan)`
             rgba(15, 10, 0, 0.75)
         );
     }
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const LinkBox = styled(Link)`
@@ -106,18 +130,29 @@ export const LinkBox = styled(Link)`
     align-items: center;
     position: absolute;
     width: 100%;
-    border-radius: 0.7rem;
+    border-radius: 0rem 0rem 0.7rem 0.7rem;
     bottom: 0rem;
     left: 0rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     cursor: pointer;
     text-decoration: none;
     background-color: #0f0a00;
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
 export const Instruction = styled.div`
     color: #fcf6e9;
     width: calc(100% - 3rem);
+
+    @media (max-width: 480px) {
+        width: calc(100% - 4rem);
+    }
 `;
 
 export const StyledLink = styled.div`
@@ -125,18 +160,8 @@ export const StyledLink = styled.div`
     height: 3rem;
 
     @media (max-width: 480px) {
-        width: 5.5rem;
-        height: 5.5rem;
-        position: absolute;
-        bottom: 0.5rem;
-        margin: 0rem;
-        transform: ${({ bottom }) =>
-            bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
-        ${({ bottom }) => (bottom ? 'right: 0.8rem' : 'left: 0.8rem')};
-
-        &:disabled {
-            display: none;
-        }
+        width: 4rem;
+        height: 4rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -176,6 +201,7 @@ export const TextContainer = styled.div`
         margin: 0rem;
         border-radius: 0rem;
         box-shadow: 0rem 0rem 0rem 0rem;
+        padding: 0.5rem 0rem 1.5rem 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

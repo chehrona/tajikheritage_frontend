@@ -200,35 +200,3 @@ export const QuoteWrapper = styled.div`
 export const TextContainer = styled.div`
     padding-bottom: 1rem;
 `;
-
-export const Subtitle = styled.div`
-    font-weight: 500;
-    font-size: 1.15rem;
-    width: fit-content;
-    padding-right: 0.25rem;
-    text-transform: uppercase;
-    border-right: 2px solid #ad0f0e;
-    border-bottom: 2px solid #ad0f0e;
-`;
-
-export const SectionBox = styled.div`
-    width: 100%;
-    color: #0f0a00;
-    font-size: 1.1rem;
-    position: relative;
-    line-height: 1.7rem;
-
-    ::-webkit-scrollbar {
-        width: 0rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-        padding: 0.5rem 1.5rem 0rem 1.5rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
-        padding: 0.25rem 2rem 0rem 0rem;
-    }
-`;

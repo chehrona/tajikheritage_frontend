@@ -61,7 +61,7 @@ export default function Routes() {
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
             <Route
                 path="/customs/traditions/:id"
-                element={<MythPage page={'customs/tradition/'} />}
+                element={<MythPage page={'customs/traditions/'} />}
             />
             <Route path="/cuisine/recipes/:id" element={<RecipePage />} />
             <Route

@@ -50,7 +50,7 @@ export default function Slideshow({ slides, width, height, topLeftRad }) {
                     {slides?.map((slide, i) => {
                         return (
                             <Circle
-                                key={slide?.id}
+                                key={`${slide?.img}.1`}
                                 selected={i === currentIndex}
                             />
                         );
@@ -61,7 +61,7 @@ export default function Slideshow({ slides, width, height, topLeftRad }) {
                 {infoArr?.map((entry) => {
                     return (
                         <ImageWrapper
-                            key={`${entry?.id}.1`}
+                            key={`${entry?.img}.2`}
                             width={width}
                             height={height}
                             translate={translate}

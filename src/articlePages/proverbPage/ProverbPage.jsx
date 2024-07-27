@@ -112,12 +112,14 @@ export default function ProverbPage() {
                                     );
                                 })}
                             </TextContainer>
-                            <Sources
-                                data={proverb.references[lang]}
-                                color={'#dedbdb'}
-                                title={'#fcf6e9'}
-                                background={'#0F0A00'}
-                            />
+                            {proverb.references ? (
+                                <Sources
+                                    data={proverb.references[lang]}
+                                    color={'#dedbdb'}
+                                    title={'#fcf6e9'}
+                                    background={'#0F0A00'}
+                                />
+                            ) : null}
                         </ProverbContainer>
                     </PageContainer>
                 </Fade>

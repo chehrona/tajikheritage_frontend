@@ -4,9 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalData } from '../../App';
 import { useLocation } from 'react-router-dom';
 
-// Material UI
-import { ArrowForwardIos } from '@mui/icons-material';
-
 // Helper
 import { etymArticle } from './helper';
 
@@ -19,6 +16,7 @@ import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
+import ArticleCard from './components/ArticleCard';
 
 // Styled components
 import {
@@ -26,13 +24,6 @@ import {
     InnerBoxContainer,
     FooterTitle,
     ArticleContainer,
-    ArticleWrapper,
-    WordTitle,
-    WordDesc,
-    LinkBox,
-    Instruction,
-    StyledLink,
-    Arrow,
     TextContainer,
     Subtitle,
     FirstBox,
@@ -55,6 +46,7 @@ function EtymologyPage() {
 
             setItems(data);
             setAllItems(data);
+
             // Setting the title
             const headerData = await requestPage('language');
 
@@ -144,32 +136,12 @@ function EtymologyPage() {
                                     : 'Калимаҳои нав:'}
                             </FooterTitle>
                             <ArticleContainer>
-                                {items.map((item, i) => {
+                                {items.map((item) => {
                                     return (
-                                        <ArticleWrapper key={item.key}>
-                                            <WordTitle>
-                                                {item.title[lang]}
-                                            </WordTitle>
-                                            <WordDesc
-                                                dangerouslySetInnerHTML={{
-                                                    __html: item,
-                                                }}
-                                            ></WordDesc>
-                                            <LinkBox to={item?.id}>
-                                                <Instruction>
-                                                    {lang === 'us'
-                                                        ? 'Read article'
-                                                        : lang === 'ru'
-                                                        ? 'Читать статью'
-                                                        : 'Мақоларо хонед'}
-                                                </Instruction>
-                                                <StyledLink>
-                                                    <Arrow>
-                                                        <ArrowForwardIos />
-                                                    </Arrow>
-                                                </StyledLink>
-                                            </LinkBox>
-                                        </ArticleWrapper>
+                                        <ArticleCard
+                                            key={item.key}
+                                            data={item}
+                                        />
                                     );
                                 })}
                             </ArticleContainer>

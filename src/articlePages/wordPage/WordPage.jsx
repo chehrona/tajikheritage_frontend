@@ -3,28 +3,28 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../App';
-import { useMediaQuery } from 'react-responsive';
 
 // Services
 import { requestPage, requestArticleInfo } from '../../services/request';
-
-// Material UI
-import { VolumeUp } from '@mui/icons-material';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import TextBox from './TextBox';
+import SoundButton from '../../components/common/soundButton/SoundButton';
+import TextBox from './components/TextBox';
 
 // Styled components
 import {
     PageContainer,
     TextContainer,
     WordTitle,
-    StyledIconButton,
+    Transcript,
+    PronunciationWrapper,
 } from './wordPageStyles';
+
+import data from './data.json';
 
 export default function WordPage({ page }) {
     const { id } = useParams();
@@ -33,55 +33,51 @@ export default function WordPage({ page }) {
     const [word, setWord] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({
-        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
-    });
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestArticleInfo(id, 'language/word/');
-            setWord(data);
+            // const data = await requestArticleInfo(id, 'language/word/');
+            setWord(data[0]);
 
-            // Setting the title
-            const headerData = await requestPage('language');
+            // // Setting the title
+            // const headerData = await requestPage('language');
 
-            let tempHeader = { ...title };
+            // let tempHeader = { ...title };
 
-            headerData.forEach((entry) => {
-                entry.sections.forEach((section) => {
-                    if (section.link === 'etymology') {
-                        for (const key in title) {
-                            let titleArr = [...title[key]];
+            // headerData.forEach((entry) => {
+            //     entry.sections.forEach((section) => {
+            //         if (section.link === 'etymology') {
+            //             for (const key in title) {
+            //                 let titleArr = [...title[key]];
 
-                            // New title
-                            const newItem = [
-                                `${section.title[key].toUpperCase()}`,
-                                `${data.title[key].substring(
-                                    0,
-                                    data.title[key].indexOf('|'),
-                                )}`,
-                            ];
+            //                 // New title
+            //                 const newItem = [
+            //                     `${section.title[key].toUpperCase()}`,
+            //                     `${data.title[key].substring(
+            //                         0,
+            //                         data.title[key].indexOf('|'),
+            //                     )}`,
+            //                 ];
 
-                            titleArr[1] = newItem;
+            //                 titleArr[1] = newItem;
 
-                            tempHeader[key] = titleArr;
-                        }
-                    }
-                });
-            });
+            //                 tempHeader[key] = titleArr;
+            //             }
+            //         }
+            //     });
+            // });
 
-            setTitle(tempHeader);
+            // setTitle(tempHeader);
         } catch (error) {
-            if (error.response) {
-                if (
-                    error.response.status === 404 ||
-                    error.response.status === 500
-                ) {
-                    setError(error.response.data.message);
-                }
-            }
+            // if (error.response) {
+            //     if (
+            //         error.response.status === 404 ||
+            //         error.response.status === 500
+            //     ) {
+            //         setError(error.response.data.message);
+            //     }
+            // }
         } finally {
             setLoading(false);
         }
@@ -92,13 +88,6 @@ export default function WordPage({ page }) {
         fetchData();
     }, [location.pathname]);
 
-    const toggleAudio = (e) => {
-        if (lang !== 'tj') {
-            const audioFile = e.currentTarget.children[0];
-            audioFile.play();
-        }
-    };
-
     return (
         <>
             <Loader inProp={loading} />
@@ -107,15 +96,10 @@ export default function WordPage({ page }) {
                     <PageContainer>
                         <TextContainer>
                             <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
-                            <StyledIconButton onClick={(e) => toggleAudio(e)}>
-                                <audio
-                                    src={
-                                        process.env.REACT_APP_BASE_URL +
-                                        word?.sound
-                                    }
-                                ></audio>
-                                <VolumeUp />
-                            </StyledIconButton>
+                            <PronunciationWrapper>
+                                <Transcript>{word.transcript}</Transcript>
+                                <SoundButton data={word.sound} />
+                            </PronunciationWrapper>
                             {word.desc[lang].map((entry, i) => {
                                 return (
                                     <TextBox
@@ -125,13 +109,13 @@ export default function WordPage({ page }) {
                                     />
                                 );
                             })}
-                            <Sources
-                                data={word.references[lang]}
-                                color={'#dedbdb'}
-                                title={'#fcf6e9'}
-                                background={'#0F0A00'}
-                            />
                         </TextContainer>
+                        <Sources
+                            data={word.references[lang]}
+                            color={'#dedbdb'}
+                            title={'#fcf6e9'}
+                            background={'#0F0A00'}
+                        />
                     </PageContainer>
                 </Fade>
             ) : (

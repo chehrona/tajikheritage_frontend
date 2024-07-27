@@ -98,7 +98,11 @@ export const RefWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding: 0.75rem 2rem 1rem 1.75rem;
     }
 `;
 

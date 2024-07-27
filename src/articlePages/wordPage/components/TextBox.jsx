@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Components
-import { Tooltip } from '../../components/common/tooltip/Tooltip';
+import { Tooltip } from '../../../components/common/tooltip/Tooltip';
 
 // Styled components
 import {
@@ -9,7 +9,7 @@ import {
     Subtitle,
     WordDesc,
     TableImage,
-} from './wordPageStyles';
+} from '../wordPageStyles';
 
 export default function TextBox({ data, id }) {
     const [expanded, setExpanded] = useState(false);
@@ -41,7 +41,8 @@ export default function TextBox({ data, id }) {
                                     setExpanded((prevState) => !prevState)
                                 }
                                 expanded={expanded}
-                                src={`${process.env.REACT_APP_BASE_URL}${data.body[element]}`}
+                                src={require('../table1_us.jpg')}
+                                // src={`${process.env.REACT_APP_BASE_URL}${data.body[element]}`}
                             />
                         );
                     default:

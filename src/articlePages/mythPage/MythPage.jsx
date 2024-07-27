@@ -46,7 +46,8 @@ export default function MythPage({ page }) {
             headerData.forEach((entry) => {
                 entry.sections.forEach((section) => {
                     if (
-                        section.link === page.substring(page.indexOf('/') + 1)
+                        section.link ===
+                        page.substring(page.indexOf('/') + 1, page.length - 1)
                     ) {
                         for (const key in title) {
                             let titleArr = [...title[key]];

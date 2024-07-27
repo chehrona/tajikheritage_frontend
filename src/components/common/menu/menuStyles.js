@@ -115,4 +115,33 @@ export const PageDesc = styled.div`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    padding: 0rem 1rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 0.3rem 0rem #0f0a00;
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+    user-select: none;
+
+    &:hover {
+        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #bd9d52;
+    }
+
+    &:active {
+        box-shadow: 0rem 0rem 0.1rem 0.05rem #bd9d52;
+        transform: translate(1px, 1px);
+    }
+
+    @media (max-device-width: 480px) {
+        &:hover {
+            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+        }
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        width: 75%;
+        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+
+        &:hover {
+            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+        }
+    }
 `;
