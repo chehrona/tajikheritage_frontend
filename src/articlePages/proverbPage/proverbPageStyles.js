@@ -159,7 +159,7 @@ export const SvgContainer = styled.svg`
     @media (max-width: 480px) {
         height: 9rem;
         width: 9rem;
-        top: 9.5rem;
+        top: 0.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
