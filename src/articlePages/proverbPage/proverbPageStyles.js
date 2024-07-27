@@ -154,17 +154,20 @@ export const SvgContainer = styled.svg`
     width: 7rem;
     height: 7rem;
     z-index: 2;
-    top: -1rem;
+    top: -0.75rem;
 
     @media (max-width: 480px) {
-        height: 9rem;
-        width: 9rem;
-        top: 5rem;
+        height: 9.8rem;
+        width: 9.8rem;
+        top: 4rem;
+        margin-left: -0.8rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 8rem;
-        width: 8rem;
+        height: 9rem;
+        width: 9.5rem;
+        top: 3.2rem;
+        margin-left: -0.8rem;
     }
 `;
 
@@ -183,7 +186,7 @@ export const Text = styled.text`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.75rem;
+        font-size: 1.85rem;
         letter-spacing: 3px;
     }
 `;
