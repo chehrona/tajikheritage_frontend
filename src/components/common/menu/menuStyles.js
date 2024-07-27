@@ -134,6 +134,11 @@ export const StyledLink = styled(Link)`
         &:hover {
             box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
         }
+
+        &:active {
+            box-shadow: 0rem 0rem 0.1rem 0.05rem #0f0a00;
+            transform: translate(1px, 1px);
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -142,6 +147,11 @@ export const StyledLink = styled(Link)`
 
         &:hover {
             box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+        }
+
+        &:active {
+            box-shadow: 0rem 0rem 0.1rem 0.05rem #0f0a00;
+            transform: translate(1px, 1px);
         }
     }
 `;

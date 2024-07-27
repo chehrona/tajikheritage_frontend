@@ -109,9 +109,7 @@ function ManagementPage() {
         }
     };
 
-    const handleUrlChange = () => {
-        console.log('hello');
-    };
+    const handleUrlChange = () => {};
 
     return (
         <MainContainer>
