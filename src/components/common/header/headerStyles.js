@@ -146,6 +146,10 @@ export const ButtonText = styled.div`
     margin-right: -0.25rem;
     font-weight: normal;
     font-family: 'IBM Plex Serif', serif;
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const StyledIconButton = styled(IconButton)`
