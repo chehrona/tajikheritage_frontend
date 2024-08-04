@@ -32,7 +32,7 @@ export const PageContainer = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 1.5rem 4.2rem;
+        padding: 1.5rem 1.8rem 2rem 1.2rem;
     }
 `;
 
@@ -43,6 +43,14 @@ export const PageTitle = styled.div`
     font-family: 'EB Garamond', serif;
     margin-bottom: 1rem;
     text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 2.25rem;
+    }
 `;
 
 export const InnerBoxContainer = styled.div`
@@ -61,6 +69,14 @@ export const FooterTitle = styled.div`
     color: #0f0a00;
     font-family: 'EB Garamond', serif;
     margin-bottom: 1rem;
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 2.25rem;
+    }
 `;
 
 export const ArticleContainer = styled.div`
@@ -77,6 +93,7 @@ export const ArticleContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         justify-content: space-between;
+        gap: 2rem;
     }
 `;
 
@@ -106,6 +123,8 @@ export const ArticleWrapper = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 15rem;
+        width: 27rem;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
     }
 `;
@@ -126,7 +145,7 @@ export const WordTitle = styled.div`
 `;
 
 export const WordDesc = styled(StyledSpan)`
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 100%;
     height: calc(100% - 5.25rem);
     color: #fcf6e9;
@@ -172,6 +191,7 @@ export const LinkBox = styled(Link)`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
     }
 `;
 
@@ -188,21 +208,9 @@ export const ArrowWrapper = styled.div`
     width: 3rem;
     height: 3rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: 1024px) {
         width: 4rem;
         height: 4rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 4.5rem;
-        height: 4.5rem;
-
-        &.MuiIconButton-root {
-            transform: ${({ bottom }) =>
-                bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
-            margin-bottom: ${({ bottom }) => bottom && '-0.6rem'};
-            margin-top: ${({ bottom }) => !bottom && '-0.6rem'};
-        }
     }
 `;
 
@@ -256,7 +264,7 @@ export const FirstBox = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
-        padding: 0.25rem 0rem 0rem 2rem;
+        padding-top: 0.25rem;
     }
 `;
 

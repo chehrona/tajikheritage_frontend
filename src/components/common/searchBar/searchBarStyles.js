@@ -35,6 +35,14 @@ export const InputField = styled.input`
         color: #a39f9b;
         opacity: 1;
     }
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const StyledSearchIcon = styled(Search)`
