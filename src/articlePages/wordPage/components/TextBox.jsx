@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 // Components
 import { Tooltip } from '../../../components/common/tooltip/Tooltip';
+import SoundButton from '../../../components/common/soundButton/SoundButton';
 
 // Styled components
 import {
@@ -9,6 +10,7 @@ import {
     Subtitle,
     WordDesc,
     TableImage,
+    SoundBox,
 } from '../wordPageStyles';
 
 export default function TextBox({ data, id }) {
@@ -33,6 +35,21 @@ export default function TextBox({ data, id }) {
                         return (
                             <Tooltip key={key} content={data.body[element]} />
                         );
+                    case element.startsWith('sound'):
+                        return (
+                            <SoundBox key={key}>
+                                <WordDesc
+                                    dangerouslySetInnerHTML={{
+                                        __html: data.body[element].text,
+                                    }}
+                                />{' '}
+                                {data.body[element].source.length > 0 ? (
+                                    <SoundButton
+                                        data={data.body[element].source}
+                                    />
+                                ) : null}
+                            </SoundBox>
+                        );
                     case element.startsWith('table'):
                         return (
                             <TableImage
@@ -41,8 +58,7 @@ export default function TextBox({ data, id }) {
                                     setExpanded((prevState) => !prevState)
                                 }
                                 expanded={expanded}
-                                src={require('../table1_us.jpg')}
-                                // src={`${process.env.REACT_APP_BASE_URL}${data.body[element]}`}
+                                src={`${process.env.REACT_APP_BASE_URL}${data.body[element]}`}
                             />
                         );
                     default:

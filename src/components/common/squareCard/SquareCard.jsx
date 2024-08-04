@@ -7,12 +7,7 @@ import { useGlobalData } from '../../../App';
 import Alert from '../alert/Alert';
 
 // Styled components
-import {
-    SquareCardWrapper,
-    SquareImage,
-    StyledLink,
-    CardsContainer,
-} from './squareCardStyles';
+import { SquareCardWrapper, SquareImage, StyledLink } from './squareCardStyles';
 
 export default function SquareCard({ item, i }) {
     const { lang } = useGlobalData();
@@ -20,16 +15,16 @@ export default function SquareCard({ item, i }) {
 
     const handleNoContent = () => {
         setError({
-            us: 'Article is not available yet.',
-            ru: 'Статья еще не доступна.',
-            tj: 'Мақола ҳанӯз вуҷуд надорад.',
+            us: 'Article is not available yet',
+            ru: 'Статья еще не доступна',
+            tj: 'Мақола ҳанӯз вуҷуд надорад',
         });
     };
 
     return (
         <>
             {item?.disabled ? (
-                <CardsContainer onClick={handleNoContent}>
+                <StyledLink onClick={handleNoContent} disabled={item.disabled}>
                     <SquareCardWrapper delay={`${0.01 * i}s`}>
                         <SquareImage
                             src={
@@ -38,7 +33,7 @@ export default function SquareCard({ item, i }) {
                             }
                         />
                     </SquareCardWrapper>
-                </CardsContainer>
+                </StyledLink>
             ) : (
                 <StyledLink to={item?.id}>
                     <SquareCardWrapper delay={`${0.01 * i}s`}>

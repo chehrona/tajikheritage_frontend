@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../App';
@@ -30,6 +30,13 @@ import {
     TextWrapper,
     PageTitle,
 } from './etymologyStyles';
+
+const compareArrays = (arr1, arr2) => {
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+    return arr1.every((value, index) => value === arr2[index]);
+};
 
 function EtymologyPage() {
     const location = useLocation();
@@ -92,6 +99,11 @@ function EtymologyPage() {
         fetchData();
     }, [location.pathname, lang]);
 
+    const areArraysEqual = useMemo(
+        () => compareArrays(items, allItems),
+        [items, allItems],
+    );
+
     return (
         <>
             <Loader inProp={loading} />
@@ -110,42 +122,63 @@ function EtymologyPage() {
                             setItems={setItems}
                             allItems={allItems}
                         />
-                        <TextContainer>
-                            {etymArticle?.desc[lang].map((entry, i) => {
-                                return (
-                                    <TextWrapper key={`etym_${lang}_${i}`}>
-                                        <Subtitle
-                                            dangerouslySetInnerHTML={{
-                                                __html: entry.subtitle,
-                                            }}
-                                        ></Subtitle>
-                                        <DescWrapper
-                                            desc={entry?.body}
-                                            TextWrapper={FirstBox}
-                                        />
-                                    </TextWrapper>
-                                );
-                            })}
-                        </TextContainer>
-                        <InnerBoxContainer>
-                            <FooterTitle>
-                                {lang === 'us'
-                                    ? 'Latest words:'
-                                    : lang === 'ru'
-                                    ? 'Новые слова:'
-                                    : 'Калимаҳои нав:'}
-                            </FooterTitle>
-                            <ArticleContainer>
-                                {items.map((item) => {
+                        {areArraysEqual ? (
+                            <>
+                                <TextContainer>
+                                    {etymArticle?.desc[lang].map((entry, i) => {
+                                        return (
+                                            <TextWrapper
+                                                key={`etym_${lang}_${i}`}
+                                            >
+                                                <Subtitle
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: entry.subtitle,
+                                                    }}
+                                                ></Subtitle>
+                                                <DescWrapper
+                                                    desc={entry?.body}
+                                                    TextWrapper={FirstBox}
+                                                />
+                                            </TextWrapper>
+                                        );
+                                    })}
+                                </TextContainer>
+                                <InnerBoxContainer>
+                                    <FooterTitle>
+                                        {lang === 'us'
+                                            ? 'Latest words:'
+                                            : lang === 'ru'
+                                            ? 'Новые слова:'
+                                            : 'Калимаҳои нав:'}
+                                    </FooterTitle>
+                                    <ArticleContainer
+                                        center={allItems.length % 3 === 0}
+                                    >
+                                        {allItems.map((item, i) => {
+                                            return (
+                                                <ArticleCard
+                                                    i={i}
+                                                    key={item.key}
+                                                    data={item}
+                                                />
+                                            );
+                                        })}
+                                    </ArticleContainer>
+                                </InnerBoxContainer>
+                            </>
+                        ) : (
+                            <ArticleContainer center={items.length % 3 === 0}>
+                                {items.map((item, i) => {
                                     return (
                                         <ArticleCard
+                                            i={i}
                                             key={item.key}
                                             data={item}
                                         />
                                     );
                                 })}
                             </ArticleContainer>
-                        </InnerBoxContainer>
+                        )}
                     </PageContainer>
                 </Fade>
             ) : (

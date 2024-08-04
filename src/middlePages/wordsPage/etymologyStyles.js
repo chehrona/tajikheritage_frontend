@@ -1,6 +1,21 @@
-import styled from 'styled-components/macro';
+import styled, { keyframes } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { StyledSpan } from '../../components/common/descWrapper/descWrapperStyles';
+
+const slideOut = keyframes`
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+`;
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
@@ -32,6 +47,7 @@ export const PageTitle = styled.div`
 
 export const InnerBoxContainer = styled.div`
     padding-top: 2rem;
+    width: 100%;
 
     @media (max-width: 480px) {
         gap: 2rem;
@@ -52,8 +68,7 @@ export const ArticleContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${({ justify }) =>
-        justify % 3 > 3 ? 'center' : 'flex-start'};
+    justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
 
     @media (max-width: 480px) {
         gap: 1rem;
@@ -73,13 +88,25 @@ export const ArticleWrapper = styled.div`
     padding: 1rem;
     position: relative;
     background-image: url(${'/noise.png'});
+    animation: ${slideOut} 1s ease-in-out forwards;
+    overflow: hidden;
+    transition: border-radius 250ms, box-shadow 400ms;
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
+    filter: ${({ disabled }) =>
+        disabled ? 'brightness(0.5)' : 'brightness(1)'};
+
+    &:hover {
+        box-shadow: 0rem 0rem 0.6rem #504221d1;
+    }
 
     @media (max-width: 480px) {
         width: 100%;
         height: 15rem;
+        box-shadow: 0rem 0rem 0.6rem #504221d1;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        box-shadow: 0rem 0rem 0.6rem #504221d1;
     }
 `;
 
@@ -134,9 +161,9 @@ export const LinkBox = styled(Link)`
     bottom: 0rem;
     left: 0rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    cursor: pointer;
     text-decoration: none;
     background-color: #0f0a00;
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 
     @media (max-width: 480px) {
         font-size: 1.3rem;
@@ -155,7 +182,7 @@ export const Instruction = styled.div`
     }
 `;
 
-export const StyledLink = styled.div`
+export const ArrowWrapper = styled.div`
     width: 3rem;
     height: 3rem;
 

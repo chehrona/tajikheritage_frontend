@@ -20,8 +20,8 @@ export const InnerBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${({ justify }) =>
-        justify && justify <= 2 ? 'flex-start' : 'space-between'};
+    justify-content: ${({ center }) =>
+        center && center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
         justify-content: center;

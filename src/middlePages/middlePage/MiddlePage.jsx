@@ -93,7 +93,7 @@ function MiddlePage({ page }) {
                             setItems={setItems}
                             allItems={allItems}
                         />
-                        <InnerBoxContainer justify={items.length}>
+                        <InnerBoxContainer center={items.length % 3 === 0}>
                             {items.map((item, i) => (
                                 <SquareCard key={i} item={item} i={i} />
                             ))}

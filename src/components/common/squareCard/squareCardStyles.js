@@ -51,11 +51,7 @@ export const SquareImage = styled.img`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
-`;
-
-export const CardsContainer = styled.div`
-    text-decoration: none;
-    color: inherit;
-    cursor: auto;
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+    filter: ${({ disabled }) =>
+        disabled ? 'brightness(0.5)' : 'brightness(1)'};
 `;

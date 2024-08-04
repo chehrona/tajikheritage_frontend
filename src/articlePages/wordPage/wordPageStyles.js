@@ -19,7 +19,7 @@ export const PageContainer = styled.div`
     }
 `;
 
-export const TextContainer = styled.div`
+export const BodyContainer = styled.div`
     padding: 2rem 0rem;
     min-height: 40rem;
     border-radius: 4rem;
@@ -37,6 +37,8 @@ export const TextContainer = styled.div`
         border-radius: 2.5rem;
     }
 `;
+
+export const TextContainer = styled.div``;
 
 export const WordTitle = styled.div`
     font-weight: bold;
@@ -81,6 +83,7 @@ export const Transcript = styled.div`
 
 export const TextBoxWrapper = styled.div`
     padding: 0.5rem 3rem;
+    font-size: 1.1rem;
 
     @media (max-width: 480px) {
         padding: 0.5rem 1.5rem;
@@ -118,7 +121,7 @@ export const WordDesc = styled(StyledSpan)`
 export const TableImage = styled.img`
     margin: 0.5rem 0rem;
     transition: 0.3s ease-in-out;
-    width: ${({ expanded }) => (expanded ? '100%' : '30%')};
+    height: ${({ expanded }) => (expanded ? '100svh' : '40svh')};
     border-radius: ${({ expanded }) => (expanded ? '1rem' : '0.75rem')};
     cursor: ${({ expanded }) => (expanded ? 'zoom-in' : 'zoom-in')};
 
@@ -132,4 +135,10 @@ export const TableImage = styled.img`
         font-size: 1.3rem;
         ${({ reverse, length }) => !reverse && length && 'margin-left: 2rem'};
     }
+`;
+
+export const SoundBox = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 0rem 0rem 0.75rem 0rem;
 `;
