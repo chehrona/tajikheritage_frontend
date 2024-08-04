@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Hooks
 import { useMediaQuery } from 'react-responsive';
 
+// Components
 import Slideshow from '../../common/slideshow/Slideshow';
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import ArticleSubtitle from '../../common/articleSubtitle/ArticleSubtitle';
 
-import {
-    BoxWrapper,
-    SecondBox,
-    Subtitle,
-    SlideContainer,
-} from './mythIntroStyles';
+// Styled components
+import { BoxWrapper, SecondBox, SlideContainer } from './mythIntroStyles';
 
 export default function BoxTwo({ myth, noBorder }) {
     const parentRef = useRef(null);
@@ -28,10 +28,7 @@ export default function BoxTwo({ myth, noBorder }) {
                 <Slideshow width={screenSize} slides={myth?.slides} />
             </SlideContainer>
             {!isMobile && <div className="space"></div>}
-            <Subtitle
-                dangerouslySetInnerHTML={{ __html: myth.subtitle }}
-                reverse={1}
-            ></Subtitle>
+            <ArticleSubtitle subtitle={myth.subtitle} reverse={true} />
             <DescWrapper desc={myth.body} TextWrapper={SecondBox} />
         </BoxWrapper>
     );

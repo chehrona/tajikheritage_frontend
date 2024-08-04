@@ -17,6 +17,7 @@ import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
 import ArticleCard from './components/ArticleCard';
+import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
 
 // Styled components
 import {
@@ -25,7 +26,6 @@ import {
     FooterTitle,
     ArticleContainer,
     TextContainer,
-    Subtitle,
     FirstBox,
     TextWrapper,
     PageTitle,
@@ -130,11 +130,9 @@ function EtymologyPage() {
                                             <TextWrapper
                                                 key={`etym_${lang}_${i}`}
                                             >
-                                                <Subtitle
-                                                    dangerouslySetInnerHTML={{
-                                                        __html: entry.subtitle,
-                                                    }}
-                                                ></Subtitle>
+                                                <ArticleSubtitle
+                                                    subtitle={entry.subtitle}
+                                                />
                                                 <DescWrapper
                                                     desc={entry?.body}
                                                     TextWrapper={FirstBox}

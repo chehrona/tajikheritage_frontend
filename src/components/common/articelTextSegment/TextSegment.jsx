@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Components
 import Slideshow from '../slideshow/Slideshow';
 import { DescWrapper } from '../descWrapper/DescWrapper';
+import ArticleSubtitle from '../articleSubtitle/ArticleSubtitle';
 
 // Styled components
 import {
@@ -10,7 +11,6 @@ import {
     Title,
     FirstBox,
     SecondBox,
-    Subtitle,
     SlideContainer,
 } from './textSegmentStyles';
 
@@ -46,11 +46,11 @@ export default function TextSegment({
                 </SlideContainer>
             ) : null}
             {title && <Title>{title}</Title>}
-            <Subtitle
+            <ArticleSubtitle
                 length={data.slides.length === 0}
                 reverse={reverse}
-                dangerouslySetInnerHTML={{ __html: data.subtitle }}
-            ></Subtitle>
+                subtitle={data.subtitle}
+            ></ArticleSubtitle>
             <DescWrapper
                 desc={data?.body}
                 TextWrapper={reverse ? SecondBox : FirstBox}

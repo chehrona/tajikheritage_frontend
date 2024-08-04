@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 // Components
 import { Tooltip } from '../../../components/common/tooltip/Tooltip';
 import SoundButton from '../../../components/common/soundButton/SoundButton';
+import ArticleSubtitle from '../../../components/common/articleSubtitle/ArticleSubtitle';
 
 // Styled components
 import {
     TextBoxWrapper,
-    Subtitle,
     WordDesc,
     TableImage,
     SoundBox,
@@ -18,7 +18,7 @@ export default function TextBox({ data, id }) {
 
     return (
         <TextBoxWrapper>
-            <Subtitle dangerouslySetInnerHTML={{ __html: data.subtitle }} />
+            <ArticleSubtitle subtitle={data.subtitle} />
             {Object.keys(data.body).map((element) => {
                 const key = `${id}_${element}`;
                 switch (true) {

@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Hooks
 import { useMediaQuery } from 'react-responsive';
 
+// Components
 import Slideshow from '../../common/slideshow/Slideshow';
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import ArticleSubtitle from '../../common/articleSubtitle/ArticleSubtitle';
 
-import {
-    BoxWrapper,
-    Title,
-    FirstBox,
-    Subtitle,
-    SlideContainer,
-} from './mythIntroStyles';
+// Styled components
+import { BoxWrapper, Title, FirstBox, SlideContainer } from './mythIntroStyles';
 
 export default function BoxOne({ myth, title, topLeftRad }) {
     const parentRef = useRef(null);
@@ -37,10 +36,7 @@ export default function BoxOne({ myth, title, topLeftRad }) {
             </SlideContainer>
             {title && <Title>{title}</Title>}
             {!isMobile && <div className="space"></div>}
-            <Subtitle
-                dangerouslySetInnerHTML={{ __html: myth.subtitle }}
-                reverse={0}
-            ></Subtitle>
+            <ArticleSubtitle subtitle={myth.subtitle} />
             <DescWrapper desc={myth.body} TextWrapper={FirstBox} />
         </BoxWrapper>
     );
