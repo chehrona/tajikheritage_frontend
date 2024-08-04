@@ -121,6 +121,7 @@ export const WordTitle = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.5rem;
     }
 `;
 
@@ -149,6 +150,7 @@ export const WordDesc = styled(StyledSpan)`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
     }
 `;
 

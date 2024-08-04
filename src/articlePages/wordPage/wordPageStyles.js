@@ -51,6 +51,7 @@ export const WordTitle = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.75rem;
     }
 `;
 
@@ -78,6 +79,7 @@ export const Transcript = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.5rem;
     }
 `;
 
@@ -86,10 +88,12 @@ export const TextBoxWrapper = styled.div`
     font-size: 1.1rem;
 
     @media (max-width: 480px) {
+        font-size: 1.3rem;
         padding: 0.5rem 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
     }
 `;
 
@@ -132,7 +136,8 @@ export const TableImage = styled.img`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
+        height: auto;
+        width: ${({ expanded }) => (expanded ? '100%' : '50%')};
         ${({ reverse, length }) => !reverse && length && 'margin-left: 2rem'};
     }
 `;
