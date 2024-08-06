@@ -18,14 +18,13 @@ import TextBox from './components/TextBox';
 // Styled components
 import {
     PageContainer,
-    TextContainer,
     WordTitle,
     Transcript,
     PronunciationWrapper,
     BodyContainer,
 } from './wordPageStyles';
 
-export default function WordPage({ page }) {
+export default function WordPage() {
     const { id } = useParams();
     const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();
@@ -99,7 +98,7 @@ export default function WordPage({ page }) {
                                 <Transcript>{word.transcript}</Transcript>
                                 <SoundButton data={word.audio} />
                             </PronunciationWrapper>
-                            <TextContainer>
+                            <div>
                                 {word.desc[lang].map((entry, i) => {
                                     return (
                                         <TextBox
@@ -109,7 +108,7 @@ export default function WordPage({ page }) {
                                         />
                                     );
                                 })}
-                            </TextContainer>
+                            </div>
                             <Sources
                                 data={word.references[lang]}
                                 color={'#dedbdb'}

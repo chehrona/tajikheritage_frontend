@@ -136,7 +136,7 @@ export const WordTitle = styled.div`
     margin-bottom: 0.25rem;
 
     @media (max-width: 480px) {
-        font-size: 1.45rem;
+        font-size: 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
