@@ -11,9 +11,9 @@ import {
     LogoInner,
     SvgContainer,
     Text,
-} from '../proverbPageStyles';
+} from './proverbSoundBoxStyles';
 
-export default function LogoBox({ proverb }) {
+export default function ProverbSoundBox({ proverb }) {
     const { lang } = useGlobalData();
 
     const toggleAudio = (e) => {

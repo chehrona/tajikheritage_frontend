@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../App';
+import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
-import { stepInfo } from '../../landingPages/home/helper';
+// Helper
+import { stepInfo } from './helper';
 
 // Styled components
 import {

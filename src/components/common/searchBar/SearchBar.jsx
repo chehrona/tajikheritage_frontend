@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import { placeholder, alert } from './helper';
+import alert from '../../../miscellanious/alertMessages.json';
+import placeholder from '../../../miscellanious/staticTexts.json';
 
 // Components
 import {
@@ -55,12 +56,12 @@ export default function SearchBar({ items, setItems, allItems }) {
             <InputWrapper>
                 <StyledSearchIcon />
                 <InputField
-                    placeholder={placeholder[lang]}
+                    placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
                     value={value}
                     onChange={(e) => handleSearch(e)}
                 />
             </InputWrapper>
-            {noMatch && <InputAlert>{alert[lang]}</InputAlert>}
+            {noMatch && <InputAlert>{alert.SEARCH_NOT_FOUND[lang]}</InputAlert>}
         </SearchContainer>
     );
 }

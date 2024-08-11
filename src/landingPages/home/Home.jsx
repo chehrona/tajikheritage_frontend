@@ -5,14 +5,15 @@ import { useGlobalData } from '../../App';
 
 // Helpers
 import { header } from '../../components/common/header/helper';
-import { stepInfo } from './helper';
+import scrollText from '../../miscellanious/staticTexts.json';
+import { stepInfo } from '../../components/home/homeStepper/helper';
 
 // Services
 import { addVisit } from '../../services/request';
 
 // Components
-import HomeStepper from '../../components/homeStepper/HomeStepper';
-import ImageBall from '../../components/imageBall/ImageBall';
+import HomeStepper from '../../components/home/homeStepper/HomeStepper';
+import ImageBall from '../../components/home/imageBall/ImageBall';
 
 // Styled components
 import {
@@ -84,13 +85,7 @@ function Home() {
         <PageContainer>
             {scrollIndicator && (
                 <ScrollWrapper>
-                    <Title>
-                        {lang === 'ru'
-                            ? 'ПРОКРУТИТЕ'
-                            : lang === 'tj'
-                            ? 'БА ПОЁН КАШЕД'
-                            : 'SCROLL'}
-                    </Title>
+                    <Title>{scrollText.HOME_SCROLL[lang]}</Title>
                     <IconWrapper>
                         <Line />
                         <Arrow />

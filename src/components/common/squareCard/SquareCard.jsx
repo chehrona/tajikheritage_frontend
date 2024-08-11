@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../../App';
 
+// Helper
+import alert from '../../../miscellanious/alertMessages.json';
+
 // Components
 import Alert from '../alert/Alert';
 
@@ -11,14 +14,10 @@ import { SquareCardWrapper, SquareImage, StyledLink } from './squareCardStyles';
 
 export default function SquareCard({ item, i }) {
     const { lang } = useGlobalData();
-    const [error, setError] = useState('');
+    const [error, setError] = useState(false);
 
     const handleNoContent = () => {
-        setError({
-            us: 'Article is not available yet',
-            ru: 'Статья еще не доступна',
-            tj: 'Мақола ҳанӯз вуҷуд надорад',
-        });
+        setError(true);
     };
 
     return (
@@ -46,7 +45,9 @@ export default function SquareCard({ item, i }) {
                     </SquareCardWrapper>
                 </StyledLink>
             )}
-            {error[lang]?.length > 0 && <Alert message={error} type={'info'} />}
+            {error && (
+                <Alert message={alert.ARTICLE_UNAVAILABLE} type={'info'} />
+            )}
         </>
     );
 }

@@ -121,13 +121,7 @@ export default function PoetPage() {
                             <PoetMovies poet={poet?.movies} />
                             <PoetCareer points={poet?.career} />
                             <PoetAwards poet={poet?.awards} />
-                            <Sources
-                                data={poet?.references[lang]}
-                                line={'#504221d1'}
-                                color={'#dedbdb'}
-                                title={'#fcf6e9'}
-                                background={'#0F0A00'}
-                            />
+                            <Sources data={poet?.references[lang]} />
                         </PoetContainer>
                     </PageContainer>
                 </Fade>

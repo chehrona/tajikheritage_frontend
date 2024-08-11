@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 // Helper
 import { etymArticle } from './helper';
+import staticText from '../../miscellanious/staticTexts.json';
 
 // Services
 import { requestPage, requestMiddlePage } from '../../services/request';
@@ -18,6 +19,7 @@ import SearchBar from '../../components/common/searchBar/SearchBar';
 import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
 import ArticleCard from './components/ArticleCard';
 import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
+import AlphabetList from '../../components/etymWord/letterList/AlphabetList';
 
 // Styled components
 import {
@@ -111,17 +113,14 @@ function EtymologyPage() {
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <PageTitle>
-                            {lang === 'us'
-                                ? 'Which Word Would You Like to Explore?'
-                                : lang === 'ru'
-                                ? 'Какое слово вы хотели бы изучить?'
-                                : 'Кадом калимаро омӯхтан мехоҳед?'}
+                            {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
                         <SearchBar
                             items={items}
                             setItems={setItems}
                             allItems={allItems}
                         />
+                        <AlphabetList setItems={setItems} allItems={allItems} />
                         {areArraysEqual ? (
                             <>
                                 <TextContainer>
@@ -143,11 +142,7 @@ function EtymologyPage() {
                                 </TextContainer>
                                 <InnerBoxContainer>
                                     <FooterTitle>
-                                        {lang === 'us'
-                                            ? 'Latest words:'
-                                            : lang === 'ru'
-                                            ? 'Новые слова:'
-                                            : 'Калимаҳои нав:'}
+                                        {staticText.ETYM_PAGE_FOOTER[lang]}
                                     </FooterTitle>
                                     <ArticleContainer
                                         center={allItems.length % 3 === 0}

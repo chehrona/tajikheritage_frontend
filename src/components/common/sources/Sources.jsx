@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+
+// Hooks
 import { useGlobalData } from '../../../App';
+
+// Helper
+import titleHeader from '../../../miscellanious/staticTexts.json';
+
+// Material UI
 import { IconButton, ClickAwayListener } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
 
+// Styled components
 import {
     DropDownContainer,
     IconContainer,
@@ -20,7 +28,7 @@ import {
     SourceWrapper,
 } from './sourceStyles';
 
-export default function Sources({ data, color, title, background }) {
+export default function Sources({ data }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(0);
     const { lang } = useGlobalData();
 
@@ -47,18 +55,10 @@ export default function Sources({ data, color, title, background }) {
                         </IconButton>
                         <Line right={0} />
                     </IconContainer>
-                    <RefContainer
-                        open={isDropdownOpen}
-                        color={color}
-                        background={background}
-                    >
+                    <RefContainer open={isDropdownOpen}>
                         <RefWrapper open={isDropdownOpen}>
-                            <SubTitle title={title}>
-                                {lang === 'ru'
-                                    ? 'Литература'
-                                    : lang === 'tj'
-                                    ? 'Адабиёт'
-                                    : 'References'}
+                            <SubTitle>
+                                {titleHeader.SOURCES_HEADER[lang]}
                             </SubTitle>
                             {data.map((source, i) => {
                                 return (

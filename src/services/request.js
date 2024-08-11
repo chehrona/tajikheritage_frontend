@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { storeVisit } from '../landingPages/home/helper';
+import { storeVisit } from '../components/home/homeStepper/helper';
 
 export const requestPage = async (url) => {
     if (!url) url = '';
@@ -118,6 +118,19 @@ export const uploadSectionImage = async (formData) => {
         );
 
         return response;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const requestAllWordForLetter = async (letter, lang) => {
+    try {
+        const response = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}/language/all_letter`,
+            { params: { letter, lang } },
+        );
+
+        return response.data;
     } catch (error) {
         throw error;
     }

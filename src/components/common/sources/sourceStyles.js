@@ -62,18 +62,17 @@ export const StyledUpIcon = styled(ExpandLess)`
 `;
 
 export const RefContainer = styled.div`
+    display: flex;
     max-width: 100%;
     margin-top: 0.8rem;
     border-radius: 1rem;
     display: block;
     position: relative;
     transition: all 0.5s linear 0s;
-    color: ${({ color }) => color && color};
+    color: #dedbdb;
+    background: #0f0a00;
     height: ${({ open }) => (open ? '15rem' : '0rem')};
-    background: ${({ background }) => background && background};
-    box-shadow: ${({ open, background }) =>
-        open && `0rem 0rem 0.4rem 0.01rem ${background}`};
-    display: flex;
+    box-shadow: ${({ open }) => open && `0rem 0rem 0.4rem 0.01rem #0F0A00`};
 
     @media (max-width: 480px) {
         height: ${({ open }) => (open ? '30rem' : '0rem')};
@@ -112,7 +111,7 @@ export const SubTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     margin-bottom: 1rem;
-    color: ${({ title }) => title && title};
+    color: #fcf6e9;
 
     @media (max-width: 1024px) {
         font-size: 2.5rem;

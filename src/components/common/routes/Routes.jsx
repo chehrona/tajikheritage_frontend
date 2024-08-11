@@ -3,12 +3,11 @@ import { Routes as ServerRoutes, Route, useLocation } from 'react-router-dom';
 
 // Landing pages
 import Home from '../../../landingPages/home/Home';
-import Cuisine from '../../../landingPages/cuisine/Cuisine';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
 import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
-import LangsPage from '../../../middlePages/langsPage/LangsPage';
 import LoginPage from '../../../admin/login/LoginPage';
 import ManagementPage from '../../../landingPages/management/ManagementPage';
+import TempPage from '../tempPage/TempPage';
 
 // Middle pages
 import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
@@ -18,7 +17,7 @@ import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
-import MythPage from '../../../articlePages/mythPage/MythPage';
+import GenericArticlePage from '../../../articlePages/generticArticlePage/GenerticArticlePage';
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
 import WordPage from '../../../articlePages/wordPage/WordPage';
 
@@ -40,7 +39,7 @@ export default function Routes() {
             />
             <Route
                 path="/history/mythology/:id"
-                element={<MythPage page={'history/mythology/'} />}
+                element={<GenericArticlePage page={'history/mythology/'} />}
             />
             <Route
                 path="/arts/jewelry"
@@ -48,7 +47,7 @@ export default function Routes() {
             />
             <Route
                 path="/arts/jewelry/:id"
-                element={<MythPage page={'arts/jewelry'} />}
+                element={<GenericArticlePage page={'arts/jewelry'} />}
             />
             <Route
                 path="/customs/traditions"
@@ -61,15 +60,15 @@ export default function Routes() {
             <Route path="/language/proverbs/:id" element={<ProverbPage />} />
             <Route
                 path="/customs/traditions/:id"
-                element={<MythPage page={'customs/traditions/'} />}
+                element={<GenericArticlePage page={'customs/traditions/'} />}
             />
             <Route path="/cuisine/recipes/:id" element={<RecipePage />} />
             <Route
                 path="/cuisine/recipes/:id/print"
                 element={<RecipePagePrint />}
             />
-            <Route path="/cuisine" element={<Cuisine />} />
-            <Route path="/language/languages" element={<LangsPage />} />
+            <Route path="/cuisine" element={<TempPage />} />
+            <Route path="/language/languages" element={<TempPage />} />
             <Route path="/language/poets" element={<PoetsPage />} />
             <Route path="/language/etymology" element={<EtymologyPage />} />
             <Route path="/language/etymology/:id" element={<WordPage />} />

@@ -12,8 +12,8 @@ import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import TextSegment from '../../components/common/articelTextSegment/TextSegment';
-import LogoBox from './components/LogoBox';
+import TextSegment from '../../components/common/articleTextSegment/TextSegment';
+import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
 import {
@@ -91,7 +91,7 @@ export default function ProverbPage() {
                     <PageContainer>
                         <Shadow />
                         <ProverbContainer>
-                            <LogoBox proverb={proverb} />
+                            <ProverbSoundBox proverb={proverb} />
                             <QuoteWrapper
                                 lang={lang}
                                 dangerouslySetInnerHTML={{
@@ -113,12 +113,7 @@ export default function ProverbPage() {
                                 })}
                             </TextContainer>
                             {proverb.references ? (
-                                <Sources
-                                    data={proverb.references[lang]}
-                                    color={'#dedbdb'}
-                                    title={'#fcf6e9'}
-                                    background={'#0F0A00'}
-                                />
+                                <Sources data={proverb.references[lang]} />
                             ) : null}
                         </ProverbContainer>
                     </PageContainer>

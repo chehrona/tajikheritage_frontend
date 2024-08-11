@@ -9,16 +9,16 @@ import { useMediaQuery } from 'react-responsive';
 import { requestPage, requestArticleInfo } from '../../services/request';
 
 // Components
-import TextSegment from '../../components/common/articelTextSegment/TextSegment';
+import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 
 // Styled components
-import { PageContainer, TextContainer } from './mythPageStyles';
+import { PageContainer, TextContainer } from './genericArticlePageStyles';
 
-export default function MythPage({ page }) {
+export default function GenericArticlePage({ page }) {
     const { id } = useParams();
     const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components/macro';
+import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { StyledSpan } from '../../components/common/descWrapper/descWrapperStyles';
 

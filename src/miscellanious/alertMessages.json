@@ -1,0 +1,17 @@
+{
+    "WORDS_NOT_FOUND": {
+        "tj": "Ягон калима ёфт нашуд",
+        "ru": "Ничего не найдено",
+        "us": "No words found"
+    },
+    "SEARCH_NOT_FOUND": {
+        "us": "No items match your search",
+        "ru": "По вашему запросу ничего не найдено",
+        "tj": "Аз рӯи дархости шумо чизе ёфт нашуд"
+    },
+    "ARTICLE_UNAVAILABLE": {
+        "us": "Article is not available yet",
+        "ru": "Статья еще не доступна",
+        "tj": "Мақола ҳанӯз вуҷуд надорад"
+    }
+}

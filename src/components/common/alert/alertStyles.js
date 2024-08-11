@@ -10,7 +10,7 @@ export const StyledAlert = styled(Alert)`
 
     &.MuiPaper-root {
         font-family: 'IBM Plex Serif', serif;
-        font-size: 1rem;
+        font-size: 1.1rem;
         justify-content: center;
         align-items: center;
 
