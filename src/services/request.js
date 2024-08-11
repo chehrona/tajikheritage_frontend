@@ -1,5 +1,10 @@
 import axios from 'axios';
+
+// Helper
 import { storeVisit } from '../components/home/homeStepper/helper';
+
+// API URL
+const apiUrl = process.env.REACT_APP_BASE_URL;
 
 export const requestPage = async (url) => {
     if (!url) url = '';
@@ -7,10 +12,9 @@ export const requestPage = async (url) => {
     try {
         const userId = storeVisit(url);
 
-        const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${url}`,
-            { params: { url, userId } },
-        );
+        const response = await axios.get(`${apiUrl}/${url}`, {
+            params: { url, userId },
+        });
 
         return response.data;
     } catch (error) {
@@ -22,10 +26,9 @@ export const requestMiddlePage = async (page) => {
     try {
         const userId = storeVisit(page);
 
-        const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${page}`,
-            { params: { userId } },
-        );
+        const response = await axios.get(`${apiUrl}/${page}`, {
+            params: { userId },
+        });
 
         return response.data;
     } catch (error) {
@@ -37,15 +40,12 @@ export const requestArticleInfo = async (id, page) => {
     try {
         const userId = storeVisit(`${page}/${id}`);
 
-        const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${page}`,
-            {
-                params: {
-                    id: id,
-                    userId: userId,
-                },
+        const response = await axios.get(`${apiUrl}/${page}`, {
+            params: {
+                id: id,
+                userId: userId,
             },
-        );
+        });
 
         return response.data;
     } catch (error) {
@@ -56,10 +56,7 @@ export const requestArticleInfo = async (id, page) => {
 export const addVisit = async (page) => {
     try {
         const userId = storeVisit(page);
-        const response = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}/visit`,
-            { userId, page },
-        );
+        const response = await axios.post(`${apiUrl}/visit`, { userId, page });
 
         return response;
     } catch (error) {
@@ -69,10 +66,7 @@ export const addVisit = async (page) => {
 
 export const addEmail = async (info) => {
     try {
-        const response = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}/email`,
-            { info },
-        );
+        const response = await axios.post(`${apiUrl}/email`, { info });
 
         return response;
     } catch (error) {
@@ -82,10 +76,7 @@ export const addEmail = async (info) => {
 
 export const sendLogin = async (info) => {
     try {
-        const response = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}/admin/login`,
-            { info },
-        );
+        const response = await axios.post(`${apiUrl}/admin/login`, { info });
 
         return response;
     } catch (error) {
@@ -95,9 +86,7 @@ export const sendLogin = async (info) => {
 
 export const getSections = async () => {
     try {
-        const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/${'admin/content'}`,
-        );
+        const response = await axios.get(`${apiUrl}/${'admin/content'}`);
 
         return response.data;
     } catch (error) {
@@ -107,15 +96,11 @@ export const getSections = async () => {
 
 export const uploadSectionImage = async (formData) => {
     try {
-        const response = await axios.put(
-            `${process.env.REACT_APP_BASE_URL}/admin/section`,
-            formData,
-            {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
+        const response = await axios.put(`${apiUrl}/admin/section`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
             },
-        );
+        });
 
         return response;
     } catch (error) {
@@ -125,10 +110,9 @@ export const uploadSectionImage = async (formData) => {
 
 export const requestAllWordForLetter = async (letter, lang) => {
     try {
-        const response = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/language/all_letter`,
-            { params: { letter, lang } },
-        );
+        const response = await axios.get(`${apiUrl}/language/all_letter`, {
+            params: { letter, lang },
+        });
 
         return response.data;
     } catch (error) {

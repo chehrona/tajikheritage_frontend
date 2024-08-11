@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import titleHeader from '../../../miscellanious/staticTexts.json';
+import titleHeader from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { IconButton, ClickAwayListener } from '@mui/material';

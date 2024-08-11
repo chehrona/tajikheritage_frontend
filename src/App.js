@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 
 // Helper
-import headerText from './miscellanious/staticTexts.json';
+import headerText from './miscellaneous/staticTexts.json';
 
 // Components
 import Header from './components/common/header/Header';

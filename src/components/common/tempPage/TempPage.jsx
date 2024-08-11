@@ -4,7 +4,7 @@ import React from 'react';
 import { useGlobalData } from '../../../App';
 
 //Helper
-import info from '../../../miscellanious/staticTexts.json';
+import info from '../../../miscellaneous/staticTexts.json';
 
 // Styled components
 import { TempImg, TempPageContainer, TempTitle } from './tempPageStyles';

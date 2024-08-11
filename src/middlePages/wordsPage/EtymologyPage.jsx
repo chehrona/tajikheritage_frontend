@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 // Helper
 import { etymArticle } from './helper';
-import staticText from '../../miscellanious/staticTexts.json';
+import staticText from '../../miscellaneous/staticTexts.json';
 
 // Services
 import { requestPage, requestMiddlePage } from '../../services/request';
@@ -17,9 +17,9 @@ import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
-import ArticleCard from './components/ArticleCard';
+import WordCard from '../../components/etymology/wordCard/WordCard';
 import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
-import AlphabetList from '../../components/etymWord/letterList/AlphabetList';
+import AlphabetList from '../../components/etymology/letterList/AlphabetList';
 
 // Styled components
 import {
@@ -149,7 +149,7 @@ function EtymologyPage() {
                                     >
                                         {allItems.map((item, i) => {
                                             return (
-                                                <ArticleCard
+                                                <WordCard
                                                     i={i}
                                                     key={item.key}
                                                     data={item}
@@ -163,7 +163,7 @@ function EtymologyPage() {
                             <ArticleContainer center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (
-                                        <ArticleCard
+                                        <WordCard
                                             i={i}
                                             key={item.key}
                                             data={item}

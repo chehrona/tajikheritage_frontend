@@ -7,8 +7,8 @@ import { useGlobalData } from '../../../App';
 import { requestAllWordForLetter } from '../../../services/request';
 
 // Helper
-import letters from '../../../miscellanious/staticTexts.json';
-import alert from '../../../miscellanious/alertMessages.json';
+import letters from '../../../miscellaneous/staticTexts.json';
+import alert from '../../../miscellaneous/alertMessages.json';
 
 // Components
 import Alert from '../../common/alert/Alert';

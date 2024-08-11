@@ -6,35 +6,34 @@ import { useGlobalData } from '../../../App';
 // Material UI
 import { ArrowForwardIos } from '@mui/icons-material';
 
+// Helper
+import alert from '../../../miscellaneous/alertMessages.json';
+
 // Components
-import Alert from '../../../components/common/alert/Alert';
+import Alert from '../../common/alert/Alert';
 
 // Styled components
 import {
-    ArticleWrapper,
+    CardWrapper,
     WordTitle,
     WordDesc,
     LinkBox,
     Instruction,
     ArrowWrapper,
     Arrow,
-} from '../etymologyStyles';
+} from './wordCardStyles';
 
-export default function ArticleCard({ data, i }) {
+export default function WordCard({ data, i }) {
     const { lang } = useGlobalData();
-    const [error, setError] = useState('');
+    const [error, setError] = useState(false);
 
     const handleNoContent = () => {
-        setError({
-            us: 'Article is not available yet',
-            ru: 'Статья еще не доступна',
-            tj: 'Мақола ҳанӯз вуҷуд надорад',
-        });
+        setError(true);
     };
 
     return (
         <>
-            <ArticleWrapper delay={`${0.01 * i}s`} disabled={data.disabled}>
+            <CardWrapper delay={`${0.01 * i}s`} disabled={data.disabled}>
                 <WordTitle>{data.title[lang]}</WordTitle>
                 <WordDesc
                     dangerouslySetInnerHTML={{
@@ -72,8 +71,10 @@ export default function ArticleCard({ data, i }) {
                         </ArrowWrapper>
                     </LinkBox>
                 )}
-            </ArticleWrapper>
-            {error[lang]?.length > 0 && <Alert message={error} type={'info'} />}
+            </CardWrapper>
+            {error && (
+                <Alert message={alert.ARTICLE_UNAVAILABLE} type={'info'} />
+            )}
         </>
     );
 }

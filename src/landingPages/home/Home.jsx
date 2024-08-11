@@ -4,8 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useGlobalData } from '../../App';
 
 // Helpers
-import { header } from '../../components/common/header/helper';
-import scrollText from '../../miscellanious/staticTexts.json';
+import staticText from '../../miscellaneous/staticTexts.json';
 import { stepInfo } from '../../components/home/homeStepper/helper';
 
 // Services
@@ -49,7 +48,7 @@ function Home() {
     };
 
     useEffect(() => {
-        setTitle(header);
+        setTitle(staticText.HEADER);
         recordVisit();
         // Scrolling
         const handleScroll = () => {
@@ -85,7 +84,7 @@ function Home() {
         <PageContainer>
             {scrollIndicator && (
                 <ScrollWrapper>
-                    <Title>{scrollText.HOME_SCROLL[lang]}</Title>
+                    <Title>{staticText.HOME_SCROLL[lang]}</Title>
                     <IconWrapper>
                         <Line />
                         <Arrow />

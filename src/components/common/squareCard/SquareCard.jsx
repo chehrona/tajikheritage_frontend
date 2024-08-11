@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import alert from '../../../miscellanious/alertMessages.json';
+import alert from '../../../miscellaneous/alertMessages.json';
 
 // Components
 import Alert from '../alert/Alert';

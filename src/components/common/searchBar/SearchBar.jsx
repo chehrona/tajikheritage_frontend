@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import alert from '../../../miscellanious/alertMessages.json';
-import placeholder from '../../../miscellanious/staticTexts.json';
+import alert from '../../../miscellaneous/alertMessages.json';
+import placeholder from '../../../miscellaneous/staticTexts.json';
 
 // Components
 import {
