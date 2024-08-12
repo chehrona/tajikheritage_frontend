@@ -14,9 +14,8 @@ import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-
-// Styled components
-import { PageContainer, TextContainer } from './genericArticlePageStyles';
+import TextListContainer from '../../components/common/textListContainer/TextListContainer';
+import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 export default function GenericArticlePage({ page }) {
     const { id } = useParams();
@@ -91,8 +90,8 @@ export default function GenericArticlePage({ page }) {
             <Loader inProp={loading} />
             {!loading && data ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
-                        <TextContainer>
+                    <PageFirstContainer>
+                        <TextListContainer height={40}>
                             {data.desc[lang].map((entry, i) => {
                                 return (
                                     <TextSegment
@@ -122,8 +121,8 @@ export default function GenericArticlePage({ page }) {
                                 title={'#fcf6e9'}
                                 background={'#0F0A00'}
                             />
-                        </TextContainer>
-                    </PageContainer>
+                        </TextListContainer>
+                    </PageFirstContainer>
                 </Fade>
             ) : (
                 !loading && error.length > 0 && <Alert message={error} />

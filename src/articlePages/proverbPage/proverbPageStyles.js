@@ -16,7 +16,7 @@ export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 40rem;
     background-color: white;
-    padding: 5rem 3.7rem 2.8rem 3.2rem;
+    padding: 5rem 3.86rem 2.8rem 3.2rem;
 
     @media (max-width: 480px) {
         padding: 0rem;
@@ -31,7 +31,7 @@ export const Shadow = styled.div`
     height: 8rem;
     position: absolute;
     top: 2rem;
-    width: calc(100% - 6rem);
+    width: calc(100% - 6.2rem);
     background-color: #70654a;
     border-radius: 4rem 4rem 0rem 0rem;
 

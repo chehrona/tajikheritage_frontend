@@ -4,13 +4,13 @@ export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 40rem;
     background-color: white;
-    padding: 2rem 3.8rem 2.8rem 3.2rem;
+    padding: 2rem 3.2rem 2.8rem 3.2rem;
     @media (max-width: 480px) {
         padding: 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 1.5rem 1.8rem 2rem 1.2rem;
+        padding: 1.5rem 1.2rem 2rem 1.2rem;
     }
 `;
 
@@ -20,6 +20,7 @@ export const RecipeContainer = styled.div`
     border-radius: 4rem;
     background-color: #fcf6e9;
     background-image: url(${'/noise.png'});
+    margin-right: 0.86rem;
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
 
     @media (max-width: 480px) {

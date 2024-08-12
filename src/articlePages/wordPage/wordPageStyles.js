@@ -1,30 +1,13 @@
 import styled from 'styled-components/macro';
 import { StyledSpan } from '../../components/common/descWrapper/descWrapperStyles';
 
-export const PageContainer = styled.div`
-    position: relative;
-    box-sizing: border-box;
-    min-height: 40rem;
-    background-color: white;
-    padding: 2rem 3.8rem 2.8rem 3.2rem;
-
-    @media (max-width: 480px) {
-        padding: 0rem;
-        font-size: 1.3rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
-        padding: 1.5rem 1.8rem 2rem 1.2rem;
-    }
-`;
-
 export const BodyContainer = styled.div`
     padding: 2rem 0rem;
     min-height: 40rem;
     border-radius: 4rem;
     background: #fcf6e9;
     background-image: url(${'/noise.png'});
+    margin-right: 0.86rem;
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
 
     @media (max-width: 480px) {
@@ -37,8 +20,6 @@ export const BodyContainer = styled.div`
         border-radius: 2.5rem;
     }
 `;
-
-export const TextContainer = styled.div``;
 
 export const WordTitle = styled.div`
     font-weight: bold;
@@ -56,7 +37,6 @@ export const WordTitle = styled.div`
     }
 `;
 
-// SoundBox
 export const PronunciationWrapper = styled.div`
     display: flex;
     align-items: center;

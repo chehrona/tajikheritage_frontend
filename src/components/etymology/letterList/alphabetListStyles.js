@@ -6,12 +6,22 @@ export const AlphabetContainer = styled.div`
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     overflow: scroll;
     scroll-behavior: smooth;
 
     ::-webkit-scrollbar {
         display: none;
+    }
+
+    @media (max-width: 480px) {
+        gap: 1rem;
+        width: calc(100% - 3rem);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        gap: 1rem;
     }
 `;
 
@@ -41,6 +51,9 @@ export const LetterButton = styled(IconButton)`
     }
 
     @media (max-device-width: 1024px) {
+        width: 3.5rem;
+        height: 3.5rem;
+
         &.MuiIconButton-root {
             &:hover {
                 transition: none;

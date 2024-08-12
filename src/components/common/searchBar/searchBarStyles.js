@@ -19,6 +19,10 @@ export const InputWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 480px) {
+        width: 31rem;
+    }
 `;
 
 export const InputField = styled.input`
@@ -37,11 +41,11 @@ export const InputField = styled.input`
     }
 
     @media (max-width: 480px) {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
 `;
 
@@ -52,10 +56,25 @@ export const StyledSearchIcon = styled(Search)`
         width: 1.8rem;
         height: 1.8rem;
     }
+
+    @media (max-width: 480px) {
+        &.MuiSvgIcon-root {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+    }
 `;
 
 export const InputAlert = styled.div`
     color: #ad0f0e;
     height: 1.5rem;
     margin: 0.35rem 0rem 0rem -2.75rem;
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: 1.3rem;
+    }
 `;

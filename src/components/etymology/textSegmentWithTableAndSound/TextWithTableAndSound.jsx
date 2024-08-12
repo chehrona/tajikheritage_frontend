@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 // Components
-import { Tooltip } from '../../../components/common/tooltip/Tooltip';
-import SoundButton from '../../../components/common/soundButton/SoundButton';
-import ArticleSubtitle from '../../../components/common/articleSubtitle/ArticleSubtitle';
+import { Tooltip } from '../../common/tooltip/Tooltip';
+import SoundButton from '../../common/soundButton/SoundButton';
+import ArticleSubtitle from '../../common/articleSubtitle/ArticleSubtitle';
 
 // Styled components
 import {
@@ -11,9 +11,9 @@ import {
     WordDesc,
     TableImage,
     SoundBox,
-} from '../wordPageStyles';
+} from './textSegmentWithTableAndSoundStyles';
 
-export default function TextBox({ data, id }) {
+export default function TextSegmentWithTableAndSound({ data, id }) {
     const [expanded, setExpanded] = useState(false);
 
     return (

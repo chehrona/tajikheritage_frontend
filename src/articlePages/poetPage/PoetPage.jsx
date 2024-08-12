@@ -22,9 +22,8 @@ import SectionOptions from '../../components/poet/sectionOptions/SectionOptions'
 import Loader from '../../components/common/loader/Loader';
 import Fade from '../../components/common/transition/Fade';
 import Alert from '../../components/common/alert/Alert';
-
-// Styled components
-import { PageContainer, PoetContainer } from './poetPageStyles';
+import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import TextListContainer from '../../components/common/textListContainer/TextListContainer';
 
 export default function PoetPage() {
     const { id } = useParams();
@@ -104,8 +103,8 @@ export default function PoetPage() {
             <Loader inProp={loading} />
             {!loading && poet ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
-                        <PoetContainer>
+                    <PageFirstContainer>
+                        <TextListContainer height={40}>
                             <PoetIntro
                                 poet={poet}
                                 scrollToView={scrollToView}
@@ -122,8 +121,8 @@ export default function PoetPage() {
                             <PoetCareer points={poet?.career} />
                             <PoetAwards poet={poet?.awards} />
                             <Sources data={poet?.references[lang]} />
-                        </PoetContainer>
-                    </PageContainer>
+                        </TextListContainer>
+                    </PageFirstContainer>
                 </Fade>
             ) : (
                 !loading &&

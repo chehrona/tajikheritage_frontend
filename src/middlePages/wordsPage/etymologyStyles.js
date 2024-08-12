@@ -1,38 +1,4 @@
-import styled, { keyframes } from 'styled-components/macro';
-
-const slideOut = keyframes`
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-`;
-
-export const PageContainer = styled.div`
-    box-sizing: border-box;
-    min-height: 100svh;
-    padding: 2rem 3.8rem 2.8rem 3.2rem;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (max-width: 480px) {
-        padding: 1.5rem 0rem;
-        min-height: calc(100svh - 10.5rem);
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 1.5rem 1.8rem 2rem 1.2rem;
-    }
-`;
+import styled from 'styled-components/macro';
 
 export const PageTitle = styled.div`
     font-size: 1.75rem;
@@ -58,6 +24,10 @@ export const InnerBoxContainer = styled.div`
     @media (max-width: 480px) {
         gap: 2rem;
         padding: 1rem 1.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        gap: 1rem;
     }
 `;
 
@@ -87,31 +57,11 @@ export const CardsContainer = styled.div`
 
     @media (max-width: 480px) {
         gap: 1rem;
+        padding: ${({ show }) => show && '0.5rem 1.5rem 2rem 1.5rem'};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         gap: 2rem;
-    }
-`;
-
-export const TextContainer = styled.div`
-    border-radius: 4rem;
-    min-height: 30rem;
-    background: #fcf6e9;
-    background-image: url(${'/noise.png'});
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
-    padding: 1rem 3rem 2rem 3rem;
-    animation: ${slideOut} 1s ease-in-out forwards;
-
-    @media (max-width: 480px) {
-        margin: 0rem;
-        border-radius: 0rem;
-        box-shadow: 0rem 0rem 0rem 0rem;
-        padding: 0.5rem 0rem 1.5rem 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-radius: 2.5rem;
     }
 `;
 
@@ -138,5 +88,9 @@ export const FirstBox = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-    margin-top: 1rem;
+    padding: 1rem 3rem;
+
+    @media (max-width: 480px) {
+        padding: 0.5rem 1.5rem;
+    }
 `;

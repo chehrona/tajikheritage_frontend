@@ -13,11 +13,11 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
-import TextBox from './components/TextBox';
+import TextSegmentWithTableAndSound from '../../components/etymology/textSegmentWithTableAndSound/TextWithTableAndSound';
+import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 // Styled components
 import {
-    PageContainer,
     WordTitle,
     Transcript,
     PronunciationWrapper,
@@ -91,7 +91,7 @@ export default function WordPage() {
             <Loader inProp={loading} />
             {!loading && word ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
+                    <PageFirstContainer>
                         <BodyContainer>
                             <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
                             <PronunciationWrapper>
@@ -101,7 +101,7 @@ export default function WordPage() {
                             <div>
                                 {word.desc[lang].map((entry, i) => {
                                     return (
-                                        <TextBox
+                                        <TextSegmentWithTableAndSound
                                             key={`${word?._id}_${i}`}
                                             id={`${word?._id}_${i}`}
                                             data={entry}
@@ -116,7 +116,7 @@ export default function WordPage() {
                                 background={'#0F0A00'}
                             />
                         </BodyContainer>
-                    </PageContainer>
+                    </PageFirstContainer>
                 </Fade>
             ) : (
                 !loading && error.length > 0 && <Alert message={error} />

@@ -88,6 +88,7 @@ export default function ProverbPage() {
             <Loader inProp={loading} />
             {proverb ? (
                 <Fade inProp={!loading}>
+                    {/* Don't change to PageFirstContainer due to padding */}
                     <PageContainer>
                         <Shadow />
                         <ProverbContainer>

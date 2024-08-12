@@ -20,14 +20,14 @@ import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
 import WordCard from '../../components/etymology/wordCard/WordCard';
 import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
 import AlphabetList from '../../components/etymology/letterList/AlphabetList';
+import TextListContainer from '../../components/common/textListContainer/TextListContainer';
+import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 // Styled components
 import {
-    PageContainer,
     InnerBoxContainer,
     FooterTitle,
     CardsContainer,
-    TextContainer,
     FirstBox,
     TextWrapper,
     PageTitle,
@@ -111,7 +111,7 @@ function EtymologyPage() {
             <Loader inProp={loading} />
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
+                    <PageFirstContainer>
                         <PageTitle>
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
@@ -123,7 +123,7 @@ function EtymologyPage() {
                         <AlphabetList setItems={setItems} allItems={allItems} />
                         {areArraysEqual ? (
                             <>
-                                <TextContainer>
+                                <TextListContainer height={30}>
                                     {etymArticle?.desc[lang].map((entry, i) => {
                                         return (
                                             <TextWrapper
@@ -139,7 +139,7 @@ function EtymologyPage() {
                                             </TextWrapper>
                                         );
                                     })}
-                                </TextContainer>
+                                </TextListContainer>
                                 <InnerBoxContainer>
                                     <FooterTitle>
                                         {staticText.ETYM_PAGE_FOOTER[lang]}
@@ -160,7 +160,10 @@ function EtymologyPage() {
                                 </InnerBoxContainer>
                             </>
                         ) : (
-                            <CardsContainer center={items.length % 3 === 0}>
+                            <CardsContainer
+                                center={items.length % 3 === 0}
+                                show={true}
+                            >
                                 {items.map((item, i) => {
                                     return (
                                         <WordCard
@@ -172,7 +175,7 @@ function EtymologyPage() {
                                 })}
                             </CardsContainer>
                         )}
-                    </PageContainer>
+                    </PageFirstContainer>
                 </Fade>
             ) : (
                 !loading &&

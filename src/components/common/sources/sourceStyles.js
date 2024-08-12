@@ -64,14 +64,15 @@ export const StyledUpIcon = styled(ExpandLess)`
 export const RefContainer = styled.div`
     display: flex;
     max-width: 100%;
-    margin-top: 0.8rem;
     border-radius: 1rem;
+    margin-top: 0.8rem;
     display: block;
     position: relative;
-    transition: all 0.5s linear 0s;
     color: #dedbdb;
     background: #0f0a00;
+    transition: all 0.5s linear 0s;
     height: ${({ open }) => (open ? '15rem' : '0rem')};
+    padding: ${({ open }) => open && '0.8rem 0rem 1.75rem 0rem'};
     box-shadow: ${({ open }) => open && `0rem 0rem 0.4rem 0.01rem #0F0A00`};
 
     @media (max-width: 480px) {
@@ -80,11 +81,12 @@ export const RefContainer = styled.div`
 `;
 
 export const RefWrapper = styled.div`
-    padding: 1rem 2rem 1rem 2rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
+    max-height: 100%;
     margin: 0.5rem 0.25rem;
-    width: 100%;
+    width: calc(100% - 0.5rem);
+    padding: 0rem 2rem 1rem 2rem;
     display: ${({ open }) => (open ? 'block' : 'none')};
 
     ::-webkit-scrollbar {
@@ -97,7 +99,7 @@ export const RefWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: 1rem 1.5rem;
+        padding: 0.2rem 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
