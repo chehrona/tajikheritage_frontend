@@ -5,7 +5,8 @@ import { useGlobalData } from '../../../App';
 import { useMediaQuery } from 'react-responsive';
 
 // Helper
-import { stepInfo } from './helper';
+// import { stepInfo } from './helper';
+import { stepInfo } from './helperTemp';
 
 // Styled components
 import {

@@ -22,7 +22,7 @@ export default function GenericArticlePage({ page }) {
     const { id } = useParams();
     const location = useLocation();
     const { lang, title, setTitle } = useGlobalData();
-    const [myth, setMyth] = useState();
+    const [data, setData] = useState();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState(false);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
@@ -34,7 +34,7 @@ export default function GenericArticlePage({ page }) {
         try {
             setLoading(true);
             const data = await requestArticleInfo(id, page);
-            setMyth(data);
+            setData(data);
 
             // Setting the title
             const headerData = await requestPage(
@@ -89,17 +89,17 @@ export default function GenericArticlePage({ page }) {
     return (
         <>
             <Loader inProp={loading} />
-            {!loading && myth ? (
+            {!loading && data ? (
                 <Fade inProp={!loading}>
                     <PageContainer>
                         <TextContainer>
-                            {myth.desc[lang].map((entry, i) => {
+                            {data.desc[lang].map((entry, i) => {
                                 return (
                                     <TextSegment
-                                        key={`${myth?.name[lang]}_${i}`}
+                                        key={`${data?.name[lang]}_${i}`}
                                         reverse={i % 2 > 0}
                                         data={entry}
-                                        title={i === 0 && myth.name[lang]}
+                                        title={i === 0 && data.name[lang]}
                                         topLeftRad={
                                             isMobile
                                                 ? 0
@@ -110,14 +110,14 @@ export default function GenericArticlePage({ page }) {
                                                 : 0
                                         }
                                         noBorder={
-                                            i === myth.desc[lang].length - 1 &&
+                                            i === data.desc[lang].length - 1 &&
                                             1
                                         }
                                     />
                                 );
                             })}
                             <Sources
-                                data={myth.references[lang]}
+                                data={data.references[lang]}
                                 color={'#dedbdb'}
                                 title={'#fcf6e9'}
                                 background={'#0F0A00'}

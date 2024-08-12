@@ -1,12 +1,5 @@
 module.exports.pageInfo = {
     us: [
-        { title: 'Arts & Crafts', desc: 'Material culture', link: '/arts' },
-        { title: 'Customs', desc: 'Intangible heritage', link: '/customs' },
-        {
-            title: 'Cuisine',
-            desc: 'Food & national identity',
-            link: '/cuisine',
-        },
         {
             title: 'Language & Literature',
             desc: 'Sounds of the past and present',
@@ -17,8 +10,25 @@ module.exports.pageInfo = {
             desc: 'Ancient, medieval and modern',
             link: '/history',
         },
+        { title: 'Arts & Crafts', desc: 'Material culture', link: '/arts' },
+        { title: 'Customs', desc: 'Intangible heritage', link: '/customs' },
+        {
+            title: 'Cuisine',
+            desc: 'Food & national identity',
+            link: '/cuisine',
+        },
     ],
     ru: [
+        {
+            title: 'Язык и литература',
+            desc: 'Звуки прошлого и настоящего',
+            link: '/language',
+        },
+        {
+            title: 'История',
+            desc: 'Древняя, средневековая и современная',
+            link: '/history',
+        },
         {
             title: 'Искусства & ремесла',
             desc: 'Материальная культура',
@@ -30,25 +40,8 @@ module.exports.pageInfo = {
             desc: 'Кулинарная & национальная самобытность',
             link: '/cuisine',
         },
-        {
-            title: 'Язык и литература',
-            desc: 'Звуки прошлого и настоящего',
-            link: '/language',
-        },
-        {
-            title: 'История',
-            desc: 'Древняя, средневековая и современная',
-            link: '/history',
-        },
     ],
     tj: [
-        { title: 'Санъат ва ҳунар', desc: 'Фарҳанги моддӣ', link: '/arts' },
-        { title: 'Расму оин', desc: 'Мероси ғайримоддӣ', link: '/customs' },
-        {
-            title: 'Ғизоҳо',
-            desc: 'Хӯрокпазӣ & хусусияти миллӣ',
-            link: '/cuisine',
-        },
         {
             title: 'Забон ва адабиёт',
             desc: 'Садоҳои гузашта ва ҳозира',
@@ -58,6 +51,13 @@ module.exports.pageInfo = {
             title: 'Таърих',
             desc: 'Қадима, асрҳои миёна ва муосир',
             link: '/history',
+        },
+        { title: 'Санъат ва ҳунар', desc: 'Фарҳанги моддӣ', link: '/arts' },
+        { title: 'Расму оин', desc: 'Мероси ғайримоддӣ', link: '/customs' },
+        {
+            title: 'Ғизоҳо',
+            desc: 'Хӯрокпазӣ & хусусияти миллӣ',
+            link: '/cuisine',
         },
     ],
     kh: [

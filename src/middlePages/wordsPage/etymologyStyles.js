@@ -1,4 +1,19 @@
-import styled from 'styled-components/macro';
+import styled, { keyframes } from 'styled-components/macro';
+
+const slideOut = keyframes`
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+`;
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
@@ -62,20 +77,19 @@ export const FooterTitle = styled.div`
     }
 `;
 
-export const ArticleContainer = styled.div`
+export const CardsContainer = styled.div`
     width: 100%;
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
+    justify-content: ${({ center }) =>
+        center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
         gap: 1rem;
-        justify-content: space-between;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        justify-content: space-between;
         gap: 2rem;
     }
 `;
@@ -87,6 +101,7 @@ export const TextContainer = styled.div`
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
     padding: 1rem 3rem 2rem 3rem;
+    animation: ${slideOut} 1s ease-in-out forwards;
 
     @media (max-width: 480px) {
         margin: 0rem;

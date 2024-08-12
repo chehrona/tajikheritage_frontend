@@ -5,7 +5,8 @@ import { useGlobalData } from '../../App';
 
 // Helpers
 import staticText from '../../miscellaneous/staticTexts.json';
-import { stepInfo } from '../../components/home/homeStepper/helper';
+// import { stepInfo } from '../../components/home/homeStepper/helper';
+import { stepInfo } from '../../components/home/homeStepper/helperTemp';
 
 // Services
 import { addVisit } from '../../services/request';

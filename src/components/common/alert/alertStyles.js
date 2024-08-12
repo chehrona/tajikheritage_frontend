@@ -1,5 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Alert } from '@mui/material';
+
+const slideOut = keyframes`
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+`;
 
 export const StyledAlert = styled(Alert)`
     width: fit-content;
@@ -7,6 +19,7 @@ export const StyledAlert = styled(Alert)`
     right: 0.5rem;
     top: 0.5rem;
     z-index: 20;
+    animation: ${slideOut} 0.5s ease-in-out forwards;
 
     &.MuiPaper-root {
         font-family: 'IBM Plex Serif', serif;

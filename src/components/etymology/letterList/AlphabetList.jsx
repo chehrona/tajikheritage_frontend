@@ -46,9 +46,7 @@ export default function AlphabetList({ setItems, allItems }) {
                     );
                 })}
             </AlphabetContainer>
-            {noMatch && (
-                <Alert message={alert.WORDS_NOT_FOUND} type={'error'} />
-            )}
+            {noMatch && <Alert message={alert.WORDS_NOT_FOUND} type={'info'} />}
         </>
     );
 }

@@ -26,7 +26,7 @@ import {
     PageContainer,
     InnerBoxContainer,
     FooterTitle,
-    ArticleContainer,
+    CardsContainer,
     TextContainer,
     FirstBox,
     TextWrapper,
@@ -144,7 +144,7 @@ function EtymologyPage() {
                                     <FooterTitle>
                                         {staticText.ETYM_PAGE_FOOTER[lang]}
                                     </FooterTitle>
-                                    <ArticleContainer
+                                    <CardsContainer
                                         center={allItems.length % 3 === 0}
                                     >
                                         {allItems.map((item, i) => {
@@ -156,11 +156,11 @@ function EtymologyPage() {
                                                 />
                                             );
                                         })}
-                                    </ArticleContainer>
+                                    </CardsContainer>
                                 </InnerBoxContainer>
                             </>
                         ) : (
-                            <ArticleContainer center={items.length % 3 === 0}>
+                            <CardsContainer center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (
                                         <WordCard
@@ -170,7 +170,7 @@ function EtymologyPage() {
                                         />
                                     );
                                 })}
-                            </ArticleContainer>
+                            </CardsContainer>
                         )}
                     </PageContainer>
                 </Fade>
