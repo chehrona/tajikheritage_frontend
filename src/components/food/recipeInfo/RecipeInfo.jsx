@@ -17,7 +17,6 @@ export default function RecipeInfo({ recipe }) {
     const [pinHovered, setPinHovered] = useState(false);
 
     // const PinterestPinCreator = ({ imageUrl, description, url }) => {
-    //     console.log(imageUrl, description, url)
     //     return (
     //       <PinItButton
     //         media={imageUrl}

@@ -22,6 +22,7 @@ export const CardsContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 2.5rem;
     justify-content: ${({ center }) =>
         center ? 'space-between' : 'flex-start'};
 
