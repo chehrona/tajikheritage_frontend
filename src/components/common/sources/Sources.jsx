@@ -7,19 +7,18 @@ import { useGlobalData } from '../../../App';
 import titleHeader from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
-import { IconButton, ClickAwayListener } from '@mui/material';
+import { ClickAwayListener } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
+
+// Components
+import OrnateLine from '../ornateLine/OrnateLine';
 
 // Styled components
 import {
     DropDownContainer,
-    IconContainer,
-    Line,
     RefContainer,
-    StyledDownIcon,
     Reference,
     SubTitle,
-    StyledUpIcon,
     RefWrapper,
     RefBox,
     RefIndex,
@@ -29,8 +28,8 @@ import {
 } from './sourceStyles';
 
 export default function Sources({ data }) {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(0);
     const { lang } = useGlobalData();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     function handleClickAway() {
         setIsDropdownOpen(0);
@@ -40,21 +39,10 @@ export default function Sources({ data }) {
         <MainContainer>
             <ClickAwayListener onClickAway={handleClickAway}>
                 <DropDownContainer>
-                    <IconContainer>
-                        <Line right={1} />
-                        <IconButton
-                            onClick={() =>
-                                setIsDropdownOpen((prevState) => !prevState)
-                            }
-                        >
-                            {isDropdownOpen ? (
-                                <StyledUpIcon />
-                            ) : (
-                                <StyledDownIcon />
-                            )}
-                        </IconButton>
-                        <Line right={0} />
-                    </IconContainer>
+                    <OrnateLine
+                        setIsDropdownOpen={setIsDropdownOpen}
+                        isDropdownOpen={isDropdownOpen}
+                    />
                     <RefContainer open={isDropdownOpen}>
                         <RefWrapper open={isDropdownOpen}>
                             <SubTitle>

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     border-radius: 4rem;
     background: #fcf6e9;
-    background-image: url(${'/noise.png'});
     margin-right: 0.8rem;
+    background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
     min-height: ${({ height }) => height && `${height}rem`};
 

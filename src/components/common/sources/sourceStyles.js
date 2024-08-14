@@ -30,29 +30,6 @@ export const DropDownContainer = styled.div`
     }
 `;
 
-export const IconContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.4;
-
-    &:hover {
-        opacity: 1;
-    }
-`;
-
-export const Line = styled.div`
-    height: 0.1rem;
-    width: 15rem;
-    background: #504221d1;
-    margin-right: ${({ right }) => (right ? '0.3rem' : '0rem')};
-    margin-left: ${({ right }) => (right ? '0rem' : '0.3rem')};
-
-    @media (max-width: 480px) {
-        width: 10rem;
-    }
-`;
-
 export const StyledDownIcon = styled(ExpandMore)`
     color: #504221d1;
 `;
@@ -62,7 +39,6 @@ export const StyledUpIcon = styled(ExpandLess)`
 `;
 
 export const RefContainer = styled.div`
-    display: flex;
     max-width: 100%;
     border-radius: 1rem;
     margin-top: 0.8rem;

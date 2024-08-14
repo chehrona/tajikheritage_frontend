@@ -4,7 +4,6 @@ import { Search } from '@mui/icons-material';
 export const SearchContainer = styled.div`
     width: 100%;
     height: 5.5rem;
-    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +20,7 @@ export const InputWrapper = styled.div`
     align-items: center;
 
     @media (max-width: 480px) {
-        width: 31rem;
+        width: 100%;
     }
 `;
 
@@ -61,6 +60,7 @@ export const StyledSearchIcon = styled(Search)`
         &.MuiSvgIcon-root {
             width: 2.25rem;
             height: 2.25rem;
+            margin-left: 1.5rem;
         }
     }
 `;

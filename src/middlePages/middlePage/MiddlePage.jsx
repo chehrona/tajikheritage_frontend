@@ -24,6 +24,7 @@ function MiddlePage({ page }) {
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [value, setValue] = useState('');
 
     const fetchData = async () => {
         try {
@@ -92,6 +93,8 @@ function MiddlePage({ page }) {
                             items={items}
                             setItems={setItems}
                             allItems={allItems}
+                            setValue={setValue}
+                            value={value}
                         />
                         <InnerBoxContainer center={items.length % 3 === 0}>
                             {items.map((item, i) => (

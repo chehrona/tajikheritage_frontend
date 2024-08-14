@@ -22,6 +22,7 @@ function PoetsPage() {
     const [poets, setPoets] = useState([]);
     const [allItems, setAllItems] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [value, setValue] = useState('');
 
     const fetchData = async () => {
         try {
@@ -78,6 +79,8 @@ function PoetsPage() {
                             items={poets}
                             setItems={setPoets}
                             allItems={allItems}
+                            setValue={setValue}
+                            value={value}
                         />
                         <PoetBoxContainer>
                             {poets?.map((poet, i) => {

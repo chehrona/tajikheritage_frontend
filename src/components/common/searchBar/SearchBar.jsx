@@ -16,14 +16,19 @@ import {
     InputAlert,
 } from './searchBarStyles';
 
-export default function SearchBar({ items, setItems, allItems }) {
+export default function SearchBar({
+    items,
+    setItems,
+    allItems,
+    setValue,
+    value,
+}) {
     const { lang } = useGlobalData();
-    const [value, setValue] = useState('');
     const [noMatch, setNoMatch] = useState(false);
 
     const handleSearch = (e) => {
         setNoMatch(false);
-        const enteredValue = e.currentTarget.value.toLowerCase();
+        const enteredValue = e.currentTarget.value;
 
         if (enteredValue.length > 0) {
             const lowerEnteredValue = enteredValue.toLowerCase();

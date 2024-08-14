@@ -5,7 +5,6 @@ import { useGlobalData } from '../../App';
 import { useLocation } from 'react-router-dom';
 
 // Helper
-import { etymArticle } from './helper';
 import staticText from '../../miscellaneous/staticTexts.json';
 
 // Services
@@ -16,22 +15,13 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
-import { DescWrapper } from '../../components/common/descWrapper/DescWrapper';
 import WordCard from '../../components/etymology/wordCard/WordCard';
-import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
-import AlphabetList from '../../components/etymology/letterList/AlphabetList';
-import TextListContainer from '../../components/common/textListContainer/TextListContainer';
+import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import OrnateLine from '../../components/common/ornateLine/OrnateLine';
 
 // Styled components
-import {
-    InnerBoxContainer,
-    FooterTitle,
-    CardsContainer,
-    FirstBox,
-    TextWrapper,
-    PageTitle,
-} from './etymologyStyles';
+import { CardsContainer, PageTitle } from './etymologyStyles';
 
 const compareArrays = (arr1, arr2) => {
     if (arr1.length !== arr2.length) {
@@ -47,6 +37,8 @@ function EtymologyPage() {
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [value, setValue] = useState('');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(true);
 
     const fetchData = async () => {
         try {
@@ -116,64 +108,40 @@ function EtymologyPage() {
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
                         <SearchBar
+                            value={value}
                             items={items}
+                            setValue={setValue}
                             setItems={setItems}
                             allItems={allItems}
                         />
-                        <AlphabetList setItems={setItems} allItems={allItems} />
+                        <OrnateLine
+                            setIsDropdownOpen={setIsDropdownOpen}
+                            isDropdownOpen={isDropdownOpen}
+                        />
                         {areArraysEqual ? (
+                            <LetterStack
+                                setValue={setValue}
+                                setItems={setItems}
+                                allItems={allItems}
+                                isDropdownOpen={isDropdownOpen}
+                            />
+                        ) : (
                             <>
-                                <TextListContainer height={30}>
-                                    {etymArticle?.desc[lang].map((entry, i) => {
+                                <CardsContainer
+                                    center={items.length % 3 === 0}
+                                    show={true}
+                                >
+                                    {items.map((item, i) => {
                                         return (
-                                            <TextWrapper
-                                                key={`etym_${lang}_${i}`}
-                                            >
-                                                <ArticleSubtitle
-                                                    subtitle={entry.subtitle}
-                                                />
-                                                <DescWrapper
-                                                    desc={entry?.body}
-                                                    TextWrapper={FirstBox}
-                                                />
-                                            </TextWrapper>
+                                            <WordCard
+                                                i={i}
+                                                key={item.key}
+                                                data={item}
+                                            />
                                         );
                                     })}
-                                </TextListContainer>
-                                <InnerBoxContainer>
-                                    <FooterTitle>
-                                        {staticText.ETYM_PAGE_FOOTER[lang]}
-                                    </FooterTitle>
-                                    <CardsContainer
-                                        center={allItems.length % 3 === 0}
-                                    >
-                                        {allItems.map((item, i) => {
-                                            return (
-                                                <WordCard
-                                                    i={i}
-                                                    key={item.key}
-                                                    data={item}
-                                                />
-                                            );
-                                        })}
-                                    </CardsContainer>
-                                </InnerBoxContainer>
+                                </CardsContainer>
                             </>
-                        ) : (
-                            <CardsContainer
-                                center={items.length % 3 === 0}
-                                show={true}
-                            >
-                                {items.map((item, i) => {
-                                    return (
-                                        <WordCard
-                                            i={i}
-                                            key={item.key}
-                                            data={item}
-                                        />
-                                    );
-                                })}
-                            </CardsContainer>
                         )}
                     </PageFirstContainer>
                 </Fade>
