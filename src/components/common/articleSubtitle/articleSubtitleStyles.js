@@ -11,7 +11,7 @@ export const Subtitle = styled.span`
     ${({ reverse, length }) => !reverse && length && 'margin-left: 3rem'};
 
     @media (max-width: 480px) {
-        margin: 1rem 0rem 0rem 1.5rem;
+        margin: 1rem 0rem 0rem 0rem;
         font-size: 1.35rem;
     }
 
