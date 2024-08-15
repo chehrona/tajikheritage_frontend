@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
     background: white;
 
     @media (max-width: 480px) {
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem 2rem;
         min-height: calc(100svh - 10.5rem);
     }
 
