@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../App';
@@ -13,13 +13,16 @@ import {
     InputWrapper,
     InputField,
     StyledSearchIcon,
+    StyledClearIcon,
     InputAlert,
+    StyledIconButton,
 } from './searchBarStyles';
 
 export default function SearchBar({ items, setItems, allItems }) {
     const { lang } = useGlobalData();
     const [noMatch, setNoMatch] = useState(false);
     const [value, setValue] = useState('');
+    const inputRef = useRef(null);
 
     const handleSearch = (e) => {
         setNoMatch(false);
@@ -51,15 +54,28 @@ export default function SearchBar({ items, setItems, allItems }) {
         setValue(enteredValue);
     };
 
+    const handleClear = () => {
+        setValue('');
+        setNoMatch(false);
+        setItems(allItems);
+        inputRef.current.focus();
+    };
+
     return (
         <SearchContainer>
             <InputWrapper>
                 <StyledSearchIcon />
                 <InputField
+                    ref={inputRef}
                     placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
                     value={value}
                     onChange={(e) => handleSearch(e)}
                 />
+                {value.length ? (
+                    <StyledIconButton onClick={handleClear}>
+                        <StyledClearIcon />
+                    </StyledIconButton>
+                ) : null}
             </InputWrapper>
             {noMatch && <InputAlert>{alert.SEARCH_NOT_FOUND[lang]}</InputAlert>}
         </SearchContainer>

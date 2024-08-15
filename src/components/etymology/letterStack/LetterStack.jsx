@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../App';
-import { useMediaQuery } from 'react-responsive';
 
 //Helper
-import letters from '../../../miscellaneous/staticTexts.json';
+import placeholder from '../../../miscellaneous/staticTexts.json';
 import alert from '../../../miscellaneous/alertMessages.json';
 
+// Components
+import VerticalLetters from '../letterShapes/VerticalLetters';
+import OvalLetters from '../letterShapes/OvalLetters';
+import CircleLetters from '../letterShapes/CircleLetters';
+import Instruction from '../letterShapes/Instruction';
+
 // Styled components
-import { LetterWrapper, LetterContainer } from './letterStackStyles';
+import { LetterContainer } from './letterStackStyles';
 import {
     SearchContainer,
     InputWrapper,
     StyledSearchIcon,
     InputField,
     InputAlert,
+    StyledIconButton,
+    StyledClearIcon,
 } from '../../common/searchBar/searchBarStyles';
+import Alert from '../../common/alert/Alert';
 
 export default function LetterStack({
     setItems,
@@ -26,12 +34,9 @@ export default function LetterStack({
 }) {
     const { lang } = useGlobalData();
     const [noMatch, setNoMatch] = useState(false);
+    const [error, setError] = useState(false);
     const [value, setValue] = useState('');
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-
-    const lettersToRender = isMobile
-        ? letters.ETYM_PAGE_LETTERS.m
-        : letters.ETYM_PAGE_LETTERS.d;
+    const inputRef = useRef(null);
 
     const filterItems = (input) => {
         setNoMatch(false);
@@ -55,13 +60,15 @@ export default function LetterStack({
             setIsDropdownOpen(false);
         } else {
             setItems(allItems);
-            setNoMatch(true);
+            setError();
             setIsDropdownOpen(true);
-        }
-    };
 
-    const handleClick = (letter) => {
-        setValue(letter);
+            if (input.length === 1 && input === input.toUpperCase()) {
+                setError(true);
+            } else {
+                setNoMatch(true);
+            }
+        }
     };
 
     const handleSearch = (e) => {
@@ -80,16 +87,29 @@ export default function LetterStack({
         }
     }, [value]);
 
+    const handleClear = () => {
+        setValue('');
+        setNoMatch(false);
+        setItems(allItems);
+        inputRef.current.focus();
+    };
+
     return (
         <>
             <SearchContainer>
                 <InputWrapper>
                     <StyledSearchIcon />
                     <InputField
+                        ref={inputRef}
+                        placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
                         value={value}
-                        onChange={handleSearch}
-                        placeholder={letters.SEARCH_BAR_PLACEHOLDER[lang]}
+                        onChange={(e) => handleSearch(e)}
                     />
+                    {value.length ? (
+                        <StyledIconButton onClick={handleClear}>
+                            <StyledClearIcon />
+                        </StyledIconButton>
+                    ) : null}
                 </InputWrapper>
                 {noMatch && (
                     <InputAlert>{alert.SEARCH_NOT_FOUND[lang]}</InputAlert>
@@ -97,48 +117,16 @@ export default function LetterStack({
             </SearchContainer>
             {isDropdownOpen ? (
                 <LetterContainer>
-                    {lettersToRender[lang].map((letter, index) => {
-                        const {
-                            position: { l: left, t: top },
-                            shape,
-                            char,
-                        } = letter;
-
-                        return (
-                            <LetterWrapper
-                                top={top}
-                                left={left}
-                                shape={shape}
-                                open={isDropdownOpen}
-                                onClick={() => handleClick(char)}
-                                empty={char.startsWith('/storage')}
-                                key={`${[lang]}_${char}_${index}`}
-                            >
-                                {char.startsWith('/storage') ? (
-                                    <img
-                                        alt="filler"
-                                        shape={shape}
-                                        src={
-                                            process.env.REACT_APP_BASE_URL +
-                                            char
-                                        }
-                                    />
-                                ) : char === 'i' ? (
-                                    <span>
-                                        {lang === 'us'
-                                            ? 'Click on a letter'
-                                            : lang === 'ru'
-                                            ? 'Нажмите на букву'
-                                            : 'Ҳарферо зер кунед'}
-                                    </span>
-                                ) : (
-                                    <span>{char}</span>
-                                )}
-                            </LetterWrapper>
-                        );
-                    })}
+                    <OvalLetters open={isDropdownOpen} setValue={setValue} />
+                    <VerticalLetters
+                        open={isDropdownOpen}
+                        setValue={setValue}
+                    />
+                    <CircleLetters open={isDropdownOpen} setValue={setValue} />
+                    <Instruction open={isDropdownOpen} />
                 </LetterContainer>
             ) : null}
+            {error && <Alert message={alert.WORDS_NOT_FOUND} type={'error'} />}
         </>
     );
 }

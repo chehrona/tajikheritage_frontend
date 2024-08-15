@@ -25,7 +25,8 @@ export const InnerBoxContainer = styled.div`
         center && center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
-        justify-content: center;
         gap: 2rem;
+        margin-top: 1.5rem;
+        justify-content: center;
     }
 `;

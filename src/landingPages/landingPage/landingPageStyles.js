@@ -36,8 +36,8 @@ export const SectionBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${({ justify }) =>
-        justify % 3 > 3 ? 'center' : 'flex-start'};
+    justify-content: ${({ center }) =>
+        center && center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
         gap: 1rem;

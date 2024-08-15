@@ -45,12 +45,6 @@ const bubbleOut = keyframes`
     }
 `;
 
-const getRandomDelay = () => {
-    const minDelay = 0;
-    const maxDelay = 1;
-    return `${Math.random() * (maxDelay - minDelay) + minDelay}s`;
-};
-
 export const LetterContainer = styled.div`
     position: relative;
     height: 27rem;
@@ -65,57 +59,11 @@ export const LetterContainer = styled.div`
     @media (max-width: 480px) {
         width: 100%;
         height: 100svh;
-        margin-left: 1rem;
+        margin: 2rem 0rem 1.5rem 1rem;
     }
 `;
 
-const shapeStyles = ({ shape }) => {
-    switch (shape) {
-        case 'v':
-            return css`
-                width: ${stanWidth * 2}rem;
-                transform: rotateZ(90deg);
-
-                span {
-                    transform: rotateZ(-90deg);
-                }
-
-                img {
-                    transform: rotateZ(-90deg);
-                    width: 5rem;
-                    height: auto;
-                }
-            `;
-        case 'o':
-            return css`
-                width: ${stanWidth * 2}rem;
-
-                img {
-                    height: 100%;
-                }
-            `;
-        case 'i':
-            return css`
-                font-size: 1.75rem;
-                font-weight: normal;
-                padding: 0.5rem;
-                width: ${stanWidth * 3}rem;
-                pointer-events: none;
-                background-image: url('/noise.png');
-            `;
-        default:
-            return css`
-                width: 5.25rem;
-
-                img {
-                    width: 80%;
-                    height: 80%;
-                }
-            `;
-    }
-};
-
-const hoverEffect = ({ empty, shape }) =>
+const hoverEffect = ({ empty }) =>
     !empty &&
     css`
         cursor: pointer;
@@ -123,12 +71,6 @@ const hoverEffect = ({ empty, shape }) =>
         transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
             opacity 0.5s ease-in-out;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
-
-        ${shape === 'v' &&
-        css`
-            transform: rotateZ(90deg) translateZ(1rem) translateX(0rem)
-                scale(1.05);
-        `}
     `;
 
 const emptyBackground = ({ empty }) =>
@@ -138,7 +80,7 @@ const emptyBackground = ({ empty }) =>
         background-image: url('/noise.png');
     `;
 
-export const LetterWrapper = styled.div`
+export const WrapperBase = styled.div`
     color: #bd9d52;
     font-family: 'EB Garamond', serif;
     height: ${stanHeight}rem;
@@ -157,18 +99,17 @@ export const LetterWrapper = styled.div`
         open
             ? css`
                   opacity: 0;
-                  animation: ${bubbleIn} 300ms ease-in-out forwards;
-                  animation-delay: ${getRandomDelay()};
                   transition: opacity 150ms;
+                  animation: ${bubbleIn} 300ms ease-in-out forwards;
+                  animation-delay: ${({ delay }) => delay && `${delay}s`};
               `
             : css`
                   opacity: 1;
-                  animation: ${bubbleOut} 300ms ease-in-out forwards;
-                  animation-delay: ${getRandomDelay()};
                   transition: opacity 150ms;
+                  animation: ${bubbleOut} 300ms ease-in-out forwards;
+                  animation-delay: ${({ delay }) => delay && `${delay}s`};
               `};
 
-    ${shapeStyles}
     ${emptyBackground}
 
     &:hover {
@@ -179,4 +120,59 @@ export const LetterWrapper = styled.div`
     span {
         will-change: color;
     }
+`;
+
+export const OvalWrapper = styled(WrapperBase)`
+    width: ${stanWidth * 2}rem;
+    ${emptyBackground}
+
+    img {
+        height: 100%;
+    }
+
+    &:hover {
+        ${hoverEffect}
+    }
+`;
+
+export const VerticalWrapper = styled(WrapperBase)`
+    width: ${stanWidth * 2}rem;
+    transform: rotateZ(90deg);
+
+    span {
+        transform: rotateZ(-90deg);
+    }
+
+    img {
+        transform: rotateZ(-90deg);
+        width: 5rem;
+        height: auto;
+    }
+
+    &:hover {
+        ${hoverEffect}
+        transform: rotateZ(90deg) translateZ(1rem) translateX(0rem) scale(1.05);
+    }
+`;
+
+export const CircleWrapper = styled(WrapperBase)`
+    width: ${stanWidth}rem;
+
+    img {
+        width: 80%;
+        height: 80%;
+    }
+
+    &:hover {
+        ${hoverEffect}
+    }
+`;
+
+export const InstructionWrapper = styled(WrapperBase)`
+    font-size: 1.75rem;
+    font-weight: normal;
+    padding: 0.5rem;
+    width: ${stanWidth * 3}rem;
+    pointer-events: none;
+    background-image: url('/noise.png');
 `;

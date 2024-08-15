@@ -4,553 +4,1064 @@
         "ru": "Какое слово вы хотели бы изучить?",
         "us": "Which Word Would You Like to Explore?"
     },
-    "ETYM_PAGE_FOOTER": {
-        "us": "Latest words:",
-        "ru": "Новые слова:",
-        "tj": "Калимаҳои нав:"
-    },
-    "ETYM_PAGE_LETTERS": {
+    "ETYM_PAGE_LETTERS_OVALS": {
         "d": {
             "tj": [
                 {
-                    "char": "А",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "Б",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "В",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
                     "char": "Г",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "Ғ",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 6 }
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.62
                 },
                 {
                     "char": "Д",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 7 }
-                },
-                {
-                    "char": "Е",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 9 }
-                },
-                {
-                    "char": "Ё",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 10 }
-                },
-                {
-                    "char": "Ж",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
+                    "position": { "t": 0, "l": 7 },
+                    "delay": 0.45
                 },
                 {
                     "char": "З",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 2 }
+                    "position": { "t": 1, "l": 2 },
+                    "delay": 0.61
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 1, "l": 9 },
+                    "delay": 0.92
+                },
+                {
+                    "char": "Й",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.28
+                },
+                {
+                    "char": "Л",
+                    "position": { "t": 2, "l": 6 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "Ф",
+                    "position": { "t": 3, "l": 8 },
+                    "delay": 0.63
+                },
+                {
+                    "char": "/storage/language/etymology/img-6.png",
+                    "position": { "t": 4, "l": 1 },
+                    "delay": 0.93
+                },
+                {
+                    "char": "Ш",
+                    "position": { "t": 4, "l": 5 },
+                    "delay": 0.89
+                }
+            ],
+            "ru": [
+                {
+                    "char": "Г",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.29
+                },
+                {
+                    "char": "Е",
+                    "position": { "t": 0, "l": 7 },
+                    "delay": 0.17
                 },
                 {
                     "char": "И",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 7 }
+                    "position": { "t": 1, "l": 2 },
+                    "delay": 0.53
+                },
+                {
+                    "char": "Л",
+                    "position": { "t": 1, "l": 9 },
+                    "delay": 0.57
+                },
+                {
+                    "char": "М",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.24
+                },
+                {
+                    "char": "П",
+                    "position": { "t": 2, "l": 6 },
+                    "delay": 0.24
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 3, "l": 8 },
+                    "delay": 0.87
+                }
+            ],
+            "us": [
+                {
+                    "char": "D",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.61
+                },
+                {
+                    "char": "E",
+                    "position": { "t": 0, "l": 7 },
+                    "delay": 0.49
+                },
+                {
+                    "char": "I",
+                    "position": { "t": 1, "l": 2 },
+                    "delay": 0.56
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 1, "l": 9 },
+                    "delay": 0.87
+                },
+                {
+                    "char": "L",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.25
+                },
+                {
+                    "char": "O",
+                    "position": { "t": 2, "l": 6 },
+                    "delay": 0.16
+                },
+                {
+                    "char": "/storage/language/etymology/img-6.png",
+                    "position": { "t": 3, "l": 8 },
+                    "delay": 0.65
+                }
+            ]
+        },
+        "m": {
+            "tj": [
+                {
+                    "char": "Д",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 4, "l": 1 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "О",
+                    "position": { "t": 5, "l": 3 },
+                    "delay": 0.11
+                },
+                {
+                    "char": "П",
+                    "position": { "t": 6, "l": 0 },
+                    "delay": 0.26
+                },
+                {
+                    "char": "Ӯ",
+                    "position": { "t": 7, "l": 2 },
+                    "delay": 0.33
+                },
+                {
+                    "char": "Э",
+                    "position": { "t": 9, "l": 1 },
+                    "delay": 0.83
+                }
+            ],
+            "ru": [
+                {
+                    "char": "Е",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 4, "l": 1 },
+                    "delay": 0.23
+                },
+                {
+                    "char": "Р",
+                    "position": { "t": 5, "l": 3 },
+                    "delay": 0.52
+                },
+                {
+                    "char": "/storage/language/etymology/img-6.png",
+                    "position": { "t": 6, "l": 0 },
+                    "delay": 0.83
+                },
+                {
+                    "char": "Х",
+                    "position": { "t": 7, "l": 2 },
+                    "delay": 0.59
+                }
+            ],
+            "us": [
+                {
+                    "char": "F",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "/storage/language/etymology/img-2.png",
+                    "position": { "t": 4, "l": 1 },
+                    "delay": 0.56
+                },
+                {
+                    "char": "S",
+                    "position": { "t": 5, "l": 3 },
+                    "delay": 0.37
+                },
+                {
+                    "char": "T",
+                    "position": { "t": 6, "l": 0 },
+                    "delay": 0.31
+                },
+                {
+                    "char": "Y",
+                    "position": { "t": 7, "l": 2 },
+                    "delay": 0.91
+                }
+            ]
+        }
+    },
+    "ETYM_PAGE_LETTERS_CIRCLES": {
+        "d": {
+            "tj": [
+                {
+                    "char": "Б",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.74
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.39
+                },
+                {
+                    "char": "В",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.27
+                },
+                {
+                    "char": "Ғ",
+                    "position": { "t": 0, "l": 6 },
+                    "delay": 0.14
+                },
+                {
+                    "char": "Е",
+                    "position": { "t": 0, "l": 9 },
+                    "delay": 0.88
+                },
+                {
+                    "char": "Ё",
+                    "position": { "t": 0, "l": 10 },
+                    "delay": 0.53
+                },
+                {
+                    "char": "Ж",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.19
+                },
+                {
+                    "char": "И",
+                    "position": { "t": 1, "l": 7 },
+                    "delay": 0.36
                 },
                 {
                     "char": "i",
                     "shape": "i",
-                    "position": { "t": 1, "l": 4 }
+                    "position": { "t": 1, "l": 4 },
+                    "delay": 0.17
                 },
                 {
                     "char": "Ӣ",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 8 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 9 }
+                    "position": { "t": 1, "l": 8 },
+                    "delay": 0.23
                 },
                 {
                     "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "Й",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.72
                 },
                 {
                     "char": "К",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.81
                 },
                 {
                     "char": "Қ",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 5 }
-                },
-                {
-                    "char": "Л",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 6 }
+                    "position": { "t": 2, "l": 5 },
+                    "delay": 0.75
                 },
                 {
                     "char": "М",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 8 }
+                    "position": { "t": 2, "l": 8 },
+                    "delay": 0.37
                 },
                 {
                     "char": "Н",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 9 }
+                    "position": { "t": 2, "l": 9 },
+                    "delay": 0.84
                 },
                 {
                     "char": "О",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 10 }
+                    "position": { "t": 2, "l": 10 },
+                    "delay": 0.15
                 },
                 {
                     "char": "П",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.32
                 },
                 {
                     "char": "Р",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.77
                 },
                 {
                     "char": "С",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.95
                 },
                 {
                     "char": "Т",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.26
                 },
                 {
                     "char": "У",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 5 }
+                    "position": { "t": 3, "l": 5 },
+                    "delay": 0.66
                 },
                 {
                     "char": "Ӯ ",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 6 }
+                    "position": { "t": 3, "l": 6 },
+                    "delay": 0.31
                 },
                 {
                     "char": "/storage/language/etymology/img-5.png",
-                    "shape": "с",
-                    "position": { "t": 3, "l": 7 }
+                    "position": { "t": 3, "l": 7 },
+                    "delay": 0
                 },
-                {
-                    "char": "Ф",
-                    "shape": "o",
-                    "position": { "t": 3, "l": 8 }
-                },
-                {
-                    "char": "Х",
-                    "shape": "v",
-                    "position": { "t": 3.5, "l": 9.5 }
-                },
-
                 {
                     "char": "Ҳ",
-                    "shape": "с",
-                    "position": { "t": 4, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-6.png",
-                    "shape": "o",
-                    "position": { "t": 4, "l": 1 }
+                    "position": { "t": 4, "l": 0 },
+                    "delay": 0.18
                 },
                 {
                     "char": "Ч",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 3 }
+                    "position": { "t": 4, "l": 3 },
+                    "delay": 0.55
                 },
                 {
                     "char": "Ҷ",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 4 }
-                },
-                {
-                    "char": "Ш",
-                    "shape": "o",
-                    "position": { "t": 4, "l": 5 }
+                    "position": { "t": 4, "l": 4 },
+                    "delay": 0.78
                 },
                 {
                     "char": "Э",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 7 }
+                    "position": { "t": 4, "l": 7 },
+                    "delay": 0.49
                 },
                 {
                     "char": "Ю",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 8 }
+                    "position": { "t": 4, "l": 8 },
+                    "delay": 0.69
                 },
                 {
                     "char": "Я",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 9 }
+                    "position": { "t": 4, "l": 9 },
+                    "delay": 0.34
+                }
+            ],
+            "ru": [
+                {
+                    "char": "Б",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.68
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.55
+                },
+                {
+                    "char": "В",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.33
+                },
+                {
+                    "char": "Д",
+                    "position": { "t": 0, "l": 6 },
+                    "delay": 0.94
+                },
+                {
+                    "char": "Ё",
+                    "position": { "t": 0, "l": 9 },
+                    "delay": 0.81
+                },
+                {
+                    "char": "Ж",
+                    "position": { "t": 0, "l": 10 },
+                    "delay": 0.71
+                },
+                {
+                    "char": "З",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.43
+                },
+                {
+                    "char": "Й",
+                    "position": { "t": 1, "l": 7 },
+                    "delay": 0.32
+                },
+                {
+                    "char": "К",
+                    "position": { "t": 1, "l": 8 },
+                    "delay": 0.96
+                },
+                {
+                    "char": "/storage/language/etymology/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.79
+                },
+                {
+                    "char": "Н",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.49
+                },
+                {
+                    "char": "О",
+                    "position": { "t": 2, "l": 5 },
+                    "delay": 0.65
+                },
+                {
+                    "char": "Р",
+                    "position": { "t": 2, "l": 8 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "С",
+                    "position": { "t": 2, "l": 9 },
+                    "delay": 0.88
+                },
+                {
+                    "char": "Т",
+                    "position": { "t": 2, "l": 10 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "У",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.51
+                },
+                {
+                    "char": "Ф",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.39
+                },
+                {
+                    "char": "Х",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.62
+                },
+                {
+                    "char": "Ч",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.77
+                },
+                {
+                    "char": "Ш",
+                    "position": { "t": 3, "l": 5 },
+                    "delay": 0.46
+                },
+                {
+                    "char": "Э",
+                    "position": { "t": 3, "l": 6 },
+                    "delay": 0.93
+                },
+                {
+                    "char": "Ю",
+                    "position": { "t": 3, "l": 7 },
+                    "delay": 0.13
+                },
+                {
+                    "char": "Я",
+                    "position": { "t": 3, "l": 10 },
+                    "delay": 0.38
+                }
+            ],
+            "us": [
+                {
+                    "char": "B",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.95
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.41
+                },
+                {
+                    "char": "C",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.79
+                },
+                {
+                    "char": "/storage/language/etymology/img-3.png",
+                    "position": { "t": 0, "l": 6 },
+                    "delay": 0.17
+                },
+                {
+                    "char": "F",
+                    "position": { "t": 0, "l": 9 },
+                    "delay": 0.23
+                },
+                {
+                    "char": "G",
+                    "position": { "t": 0, "l": 10 },
+                    "delay": 0.37
+                },
+                {
+                    "char": "H",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.57
+                },
+                {
+                    "char": "J",
+                    "position": { "t": 1, "l": 7 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "K",
+                    "position": { "t": 1, "l": 8 },
+                    "delay": 0.78
+                },
+                {
+                    "char": "/storage/language/etymology/img-5.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.33
+                },
+                {
+                    "char": "M",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.68
+                },
+                {
+                    "char": "N",
+                    "position": { "t": 2, "l": 5 },
+                    "delay": 0.73
+                },
+                {
+                    "char": "P",
+                    "position": { "t": 2, "l": 8 },
+                    "delay": 0.12
+                },
+                {
+                    "char": "R",
+                    "position": { "t": 2, "l": 9 },
+                    "delay": 0.35
+                },
+                {
+                    "char": "S",
+                    "position": { "t": 2, "l": 10 },
+                    "delay": 0.71
+                },
+                {
+                    "char": "T",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.87
+                },
+                {
+                    "char": "U",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.52
+                },
+                {
+                    "char": "/storage/language/etymology/img-7.png",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.43
+                },
+                {
+                    "char": "V",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.19
+                },
+                {
+                    "char": "W",
+                    "position": { "t": 3, "l": 5 },
+                    "delay": 0.81
+                },
+                {
+                    "char": "X",
+                    "position": { "t": 3, "l": 6 },
+                    "delay": 0.94
+                },
+                {
+                    "char": "Y",
+                    "position": { "t": 3, "l": 7 },
+                    "delay": 0.56
+                },
+                {
+                    "char": "Z",
+                    "position": { "t": 3, "l": 10 },
+                    "delay": 0.82
+                }
+            ]
+        },
+        "m": {
+            "tj": [
+                {
+                    "char": "Б",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.77
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.62
+                },
+                {
+                    "char": "В",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.89
+                },
+                {
+                    "char": "Г",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.36
+                },
+                {
+                    "char": "Ғ",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.69
+                },
+                {
+                    "char": "/storage/language/etymology/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.95
+                },
+                {
+                    "char": "Е",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.27
+                },
+                {
+                    "char": "Ё",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.12
+                },
+                {
+                    "char": "Ж",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.35
+                },
+                {
+                    "char": "З",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.82
+                },
+                {
+                    "char": "И",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.97
+                },
+                {
+                    "char": "Ӣ",
+                    "position": { "t": 4, "l": 0 },
+                    "delay": 0.47
+                },
+                {
+                    "char": "Й",
+                    "position": { "t": 4, "l": 3 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "К",
+                    "position": { "t": 4, "l": 4 },
+                    "delay": 0.32
+                },
+                {
+                    "char": "Л",
+                    "position": { "t": 5, "l": 0 },
+                    "delay": 0.86
+                },
+                {
+                    "char": "М",
+                    "position": { "t": 5, "l": 1 },
+                    "delay": 0.93
+                },
+                {
+                    "char": "Н",
+                    "position": { "t": 5, "l": 2 },
+                    "delay": 0.22
+                },
+                {
+                    "char": "Р",
+                    "position": { "t": 6, "l": 2 },
+                    "delay": 0.49
+                },
+                {
+                    "char": "/storage/language/etymology/img-5.png",
+                    "position": { "t": 6, "l": 3 },
+                    "delay": 0.44
+                },
+                {
+                    "char": "С",
+                    "position": { "t": 6, "l": 4 },
+                    "delay": 0.92
+                },
+                {
+                    "char": "Т",
+                    "position": { "t": 7, "l": 0 },
+                    "delay": 0.57
+                },
+                {
+                    "char": "У",
+                    "position": { "t": 7, "l": 1 },
+                    "delay": 0.74
+                },
+                {
+                    "char": "Ф",
+                    "position": { "t": 7, "l": 4 },
+                    "delay": 0.39
+                },
+                {
+                    "char": "Х",
+                    "position": { "t": 8, "l": 0 },
+                    "delay": 0.52
+                },
+                {
+                    "char": "/storage/language/etymology/img-7.png",
+                    "position": { "t": 8, "l": 1 },
+                    "delay": 0.88
+                },
+                {
+                    "char": "Ҳ",
+                    "position": { "t": 8, "l": 2 },
+                    "delay": 0.76
+                },
+                {
+                    "char": "Ч",
+                    "position": { "t": 8, "l": 3 },
+                    "delay": 0.83
+                },
+                {
+                    "char": "Ҷ",
+                    "position": { "t": 8, "l": 4 },
+                    "delay": 0.47
+                },
+                {
+                    "char": "Ш",
+                    "position": { "t": 9, "l": 0 },
+                    "delay": 0.69
+                },
+                {
+                    "char": "Ю",
+                    "position": { "t": 9, "l": 3 },
+                    "delay": 0.98
+                },
+                {
+                    "char": "Я",
+                    "position": { "t": 9, "l": 4 },
+                    "delay": 0.91
+                }
+            ],
+            "ru": [
+                {
+                    "char": "Б",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.97
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.31
+                },
+                {
+                    "char": "В",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.25
+                },
+                {
+                    "char": "Г",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.41
+                },
+                {
+                    "char": "Д",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "/storage/language/etymology/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.12
+                },
+                {
+                    "char": "Ё",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.78
+                },
+                {
+                    "char": "Ж",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.86
+                },
+                {
+                    "char": "З",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.46
+                },
+                {
+                    "char": "И",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.35
+                },
+                {
+                    "char": "Й",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.62
+                },
+                {
+                    "char": "К",
+                    "position": { "t": 4, "l": 0 },
+                    "delay": 0.98
+                },
+                {
+                    "char": "Л",
+                    "position": { "t": 4, "l": 3 },
+                    "delay": 0.47
+                },
+                {
+                    "char": "М",
+                    "position": { "t": 4, "l": 4 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "Н",
+                    "position": { "t": 5, "l": 0 },
+                    "delay": 0.92
+                },
+                {
+                    "char": "О",
+                    "position": { "t": 5, "l": 1 },
+                    "delay": 0.11
+                },
+                {
+                    "char": "П",
+                    "position": { "t": 5, "l": 2 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "С",
+                    "position": { "t": 6, "l": 2 },
+                    "delay": 0.17
+                },
+                {
+                    "char": "/storage/language/etymology/img-5.png",
+                    "position": { "t": 6, "l": 3 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "Т",
+                    "position": { "t": 6, "l": 4 },
+                    "delay": 0.31
+                },
+                {
+                    "char": "У",
+                    "position": { "t": 7, "l": 0 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "Ф",
+                    "position": { "t": 7, "l": 1 },
+                    "delay": 0.79
+                },
+                {
+                    "char": "Ч",
+                    "position": { "t": 7, "l": 4 },
+                    "delay": 0.72
+                },
+                {
+                    "char": "Ш",
+                    "position": { "t": 8, "l": 0 },
+                    "delay": 0.84
+                },
+                {
+                    "char": "/storage/language/etymology/img-7.png",
+                    "position": { "t": 8, "l": 1 },
+                    "delay": 0.14
+                },
+                {
+                    "char": "Э",
+                    "position": { "t": 8, "l": 2 },
+                    "delay": 0.95
+                },
+                {
+                    "char": "Ю",
+                    "position": { "t": 8, "l": 3 },
+                    "delay": 0.23
+                },
+                {
+                    "char": "Я",
+                    "position": { "t": 8, "l": 4 },
+                    "delay": 0.63
+                }
+            ],
+            "us": [
+                {
+                    "char": "B",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.19
+                },
+                {
+                    "char": "/storage/language/etymology/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.73
+                },
+                {
+                    "char": "C",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.46
+                },
+                {
+                    "char": "D",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.91
+                },
+                {
+                    "char": "E",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.25
+                },
+                {
+                    "char": "/storage/language/etymology/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.48
+                },
+                {
+                    "char": "G",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.97
+                },
+                {
+                    "char": "H",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.22
+                },
+                {
+                    "char": "I",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "J",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.77
+                },
+                {
+                    "char": "K",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.93
+                },
+                {
+                    "char": "L",
+                    "position": { "t": 4, "l": 0 },
+                    "delay": 0.22
+                },
+                {
+                    "char": "M",
+                    "position": { "t": 4, "l": 3 },
+                    "delay": 0.89
+                },
+                {
+                    "char": "N",
+                    "position": { "t": 4, "l": 4 },
+                    "delay": 0.28
+                },
+                {
+                    "char": "O",
+                    "position": { "t": 5, "l": 0 },
+                    "delay": 0.45
+                },
+                {
+                    "char": "P",
+                    "position": { "t": 5, "l": 1 },
+                    "delay": 0.51
+                },
+                {
+                    "char": "R",
+                    "position": { "t": 5, "l": 2 },
+                    "delay": 0.72
+                },
+                {
+                    "char": "U",
+                    "position": { "t": 6, "l": 2 },
+                    "delay": 0.63
+                },
+                {
+                    "char": "/storage/language/etymology/img-5.png",
+                    "position": { "t": 6, "l": 3 },
+                    "delay": 0.52
+                },
+                {
+                    "char": "V",
+                    "position": { "t": 6, "l": 4 },
+                    "delay": 0.16
+                },
+                {
+                    "char": "W",
+                    "position": { "t": 7, "l": 0 },
+                    "delay": 0.81
+                },
+                {
+                    "char": "X",
+                    "position": { "t": 7, "l": 1 },
+                    "delay": 0.34
+                },
+                {
+                    "char": "Z",
+                    "position": { "t": 7, "l": 4 },
+                    "delay": 0.38
+                }
+            ]
+        }
+    },
+    "ETYM_PAGE_LETTERS_VERTICALS": {
+        "d": {
+            "tj": [
+                {
+                    "char": "А",
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.56
+                },
+                {
+                    "char": "/storage/language/etymology/img-4.png",
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.43
+                },
+                {
+                    "char": "Х",
+                    "position": { "t": 3.5, "l": 9.5 },
+                    "delay": 0.41
                 }
             ],
             "ru": [
                 {
                     "char": "А",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "Б",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "В",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
-                    "char": "Г",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "Д",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 6 }
-                },
-                {
-                    "char": "Е",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 7 }
-                },
-                {
-                    "char": "Ё",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 9 }
-                },
-                {
-                    "char": "Ж",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 10 }
-                },
-                {
-                    "char": "З",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
-                },
-                {
-                    "char": "И",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 2 }
-                },
-                {
-                    "char": "Й",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 7 }
-                },
-                {
-                    "char": "i",
-                    "shape": "i",
-                    "position": { "t": 1, "l": 4 }
-                },
-                {
-                    "char": "К",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 8 }
-                },
-                {
-                    "char": "Л",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 9 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "М",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
-                },
-                {
-                    "char": "Н",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.45
                 },
                 {
                     "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
-                },
-                {
-                    "char": "О",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 5 }
-                },
-                {
-                    "char": "П",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 6 }
-                },
-                {
-                    "char": "Р",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 8 }
-                },
-                {
-                    "char": "С",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 9 }
-                },
-                {
-                    "char": "Т",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 10 }
-                },
-                {
-                    "char": "У",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
-                },
-                {
-                    "char": "Ф",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
-                },
-                {
-                    "char": "Х",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
-                },
-                {
-                    "char": "Ч",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
-                },
-                {
-                    "char": "Ш",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 5 }
-                },
-                {
-                    "char": "Э",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 6 }
-                },
-                {
-                    "char": "Ю",
-                    "shape": "с",
-                    "position": { "t": 3, "l": 7 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 3, "l": 8 }
-                },
-                {
-                    "char": "Я",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 10 }
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.27
                 }
             ],
             "us": [
                 {
                     "char": "A",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "B",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "C",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
-                    "char": "D",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 6 }
-                },
-                {
-                    "char": "E",
-                    "shape": "o",
-                    "position": { "t": 0, "l": 7 }
-                },
-                {
-                    "char": "F",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 9 }
-                },
-                {
-                    "char": "G",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 10 }
-                },
-                {
-                    "char": "H",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
-                },
-                {
-                    "char": "I",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 2 }
-                },
-                {
-                    "char": "J",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 7 }
-                },
-                {
-                    "char": "i",
-                    "shape": "i",
-                    "position": { "t": 1, "l": 4 }
-                },
-                {
-                    "char": "K",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 8 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 9 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-5.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "L",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
-                },
-                {
-                    "char": "M",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.31
                 },
                 {
                     "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
-                },
-                {
-                    "char": "N",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 5 }
-                },
-                {
-                    "char": "O",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 6 }
-                },
-                {
-                    "char": "P",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 8 }
-                },
-                {
-                    "char": "R",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 9 }
-                },
-                {
-                    "char": "S",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 10 }
-                },
-                {
-                    "char": "T",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
-                },
-                {
-                    "char": "U",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-7.png",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
-                },
-                {
-                    "char": "V",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
-                },
-                {
-                    "char": "W",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 5 }
-                },
-                {
-                    "char": "X",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 6 }
-                },
-                {
-                    "char": "Y",
-                    "shape": "с",
-                    "position": { "t": 3, "l": 7 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-6.png",
-                    "shape": "o",
-                    "position": { "t": 3, "l": 8 }
-                },
-                {
-                    "char": "Z",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 10 }
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.89
                 }
             ]
         },
@@ -558,544 +1069,51 @@
             "tj": [
                 {
                     "char": "А",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "Б",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "В",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
-                    "char": "Г",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "Ғ",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
-                },
-                {
-                    "char": "i",
-                    "shape": "i",
-                    "position": { "t": 1, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "Д",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
-                },
-                {
-                    "char": "Е",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.21
                 },
                 {
                     "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
-                },
-                {
-                    "char": "Ё",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
-                },
-                {
-                    "char": "Ж",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
-                },
-                {
-                    "char": "З",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
-                },
-                {
-                    "char": "И",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
-                },
-                {
-                    "char": "Ӣ",
-                    "shape": "с",
-                    "position": { "t": 4, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 4, "l": 1 }
-                },
-                {
-                    "char": "Й",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 3 }
-                },
-                {
-                    "char": "К",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 4 }
-                },
-                {
-                    "char": "Л",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 0 }
-                },
-                {
-                    "char": "М",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 1 }
-                },
-                {
-                    "char": "Н",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 2 }
-                },
-                {
-                    "char": "О",
-                    "shape": "o",
-                    "position": { "t": 5, "l": 3 }
-                },
-                {
-                    "char": "П",
-                    "shape": "o",
-                    "position": { "t": 6, "l": 0 }
-                },
-                {
-                    "char": "Р",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-5.png",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 3 }
-                },
-                {
-                    "char": "С",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 4 }
-                },
-                {
-                    "char": "Т",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 0 }
-                },
-                {
-                    "char": "У",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 1 }
-                },
-                {
-                    "char": "Ӯ",
-                    "shape": "o",
-                    "position": { "t": 7, "l": 2 }
-                },
-                {
-                    "char": "Ф",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 4 }
-                },
-                {
-                    "char": "Х",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-7.png",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 1 }
-                },
-                {
-                    "char": "Ҳ",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 2 }
-                },
-                {
-                    "char": "Ч",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 3 }
-                },
-                {
-                    "char": "Ҷ",
-                    "shape": "с",
-                    "position": { "t": 8, "l": 4 }
-                },
-                {
-                    "char": "Ш",
-                    "shape": "c",
-                    "position": { "t": 9, "l": 0 }
-                },
-                {
-                    "char": "Э",
-                    "shape": "o",
-                    "position": { "t": 9, "l": 1 }
-                },
-                {
-                    "char": "Ю",
-                    "shape": "с",
-                    "position": { "t": 9, "l": 3 }
-                },
-                {
-                    "char": "Я",
-                    "shape": "c",
-                    "position": { "t": 9, "l": 4 }
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.78
                 }
             ],
             "ru": [
                 {
                     "char": "А",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "Б",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "В",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
-                    "char": "Г",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "Д",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
-                },
-                {
-                    "char": "i",
-                    "shape": "i",
-                    "position": { "t": 1, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "Е",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
-                },
-                {
-                    "char": "Ё",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.16
                 },
                 {
                     "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
-                },
-                {
-                    "char": "Ж",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
-                },
-                {
-                    "char": "З",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
-                },
-                {
-                    "char": "И",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
-                },
-                {
-                    "char": "Й",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
-                },
-                {
-                    "char": "К",
-                    "shape": "с",
-                    "position": { "t": 4, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 4, "l": 1 }
-                },
-                {
-                    "char": "Л",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 3 }
-                },
-                {
-                    "char": "М",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 4 }
-                },
-                {
-                    "char": "Н",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 0 }
-                },
-                {
-                    "char": "О",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 1 }
-                },
-                {
-                    "char": "П",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 2 }
-                },
-                {
-                    "char": "Р",
-                    "shape": "o",
-                    "position": { "t": 5, "l": 3 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-6.png",
-                    "shape": "o",
-                    "position": { "t": 6, "l": 0 }
-                },
-                {
-                    "char": "С",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-5.png",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 3 }
-                },
-                {
-                    "char": "Т",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 4 }
-                },
-                {
-                    "char": "У",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 0 }
-                },
-                {
-                    "char": "Ф",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 1 }
-                },
-                {
-                    "char": "Х",
-                    "shape": "o",
-                    "position": { "t": 7, "l": 2 }
-                },
-                {
-                    "char": "Ч",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 4 }
-                },
-                {
-                    "char": "Ш",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-7.png",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 1 }
-                },
-                {
-                    "char": "Э",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 2 }
-                },
-                {
-                    "char": "Ю",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 3 }
-                },
-                {
-                    "char": "Я",
-                    "shape": "c",
-                    "position": { "t": 8, "l": 4 }
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.53
                 }
             ],
             "us": [
                 {
                     "char": "A",
-                    "shape": "v",
-                    "position": { "t": 0.5, "l": -0.5 }
-                },
-                {
-                    "char": "B",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 1 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-1.png",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 2 }
-                },
-                {
-                    "char": "C",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 3 }
-                },
-                {
-                    "char": "D",
-                    "shape": "c",
-                    "position": { "t": 0, "l": 4 }
-                },
-                {
-                    "char": "E",
-                    "shape": "c",
-                    "position": { "t": 1, "l": 1 }
-                },
-                {
-                    "char": "i",
-                    "shape": "i",
-                    "position": { "t": 1, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-3.png",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 0 }
-                },
-                {
-                    "char": "F",
-                    "shape": "o",
-                    "position": { "t": 2, "l": 1 }
-                },
-                {
-                    "char": "G",
-                    "shape": "c",
-                    "position": { "t": 2, "l": 3 }
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.67
                 },
                 {
                     "char": "/storage/language/etymology/img-4.png",
-                    "shape": "v",
-                    "position": { "t": 2.5, "l": 3.5 }
-                },
-                {
-                    "char": "H",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 0 }
-                },
-                {
-                    "char": "I",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 1 }
-                },
-                {
-                    "char": "J",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 2 }
-                },
-                {
-                    "char": "K",
-                    "shape": "c",
-                    "position": { "t": 3, "l": 3 }
-                },
-                {
-                    "char": "L",
-                    "shape": "с",
-                    "position": { "t": 4, "l": 0 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 4, "l": 1 }
-                },
-                {
-                    "char": "M",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 3 }
-                },
-                {
-                    "char": "N",
-                    "shape": "c",
-                    "position": { "t": 4, "l": 4 }
-                },
-                {
-                    "char": "O",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 0 }
-                },
-                {
-                    "char": "P",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 1 }
-                },
-                {
-                    "char": "R",
-                    "shape": "c",
-                    "position": { "t": 5, "l": 2 }
-                },
-                {
-                    "char": "S",
-                    "shape": "o",
-                    "position": { "t": 5, "l": 3 }
-                },
-                {
-                    "char": "T",
-                    "shape": "o",
-                    "position": { "t": 6, "l": 0 }
-                },
-                {
-                    "char": "U",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 2 }
-                },
-                {
-                    "char": "/storage/language/etymology/img-5.png",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 3 }
-                },
-                {
-                    "char": "V",
-                    "shape": "c",
-                    "position": { "t": 6, "l": 4 }
-                },
-                {
-                    "char": "W",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 0 }
-                },
-                {
-                    "char": "X",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 1 }
-                },
-                {
-                    "char": "Y",
-                    "shape": "o",
-                    "position": { "t": 7, "l": 2 }
-                },
-                {
-                    "char": "Z",
-                    "shape": "c",
-                    "position": { "t": 7, "l": 4 }
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.81
                 }
             ]
+        }
+    },
+    "ETYM_PAGE_LETTERS_INSTRUCTION": {
+        "d": {
+            "tj": [{ "char": "i", "position": { "t": 1, "l": 4 } }],
+            "ru": [{ "char": "i", "position": { "t": 1, "l": 4 } }],
+            "us": [{ "char": "i", "position": { "t": 1, "l": 4 } }]
+        },
+        "m": {
+            "tj": [{ "char": "i", "position": { "t": 1, "l": 2 } }],
+            "ru": [{ "char": "i", "position": { "t": 1, "l": 2 } }],
+            "us": [{ "char": "i", "position": { "t": 1, "l": 2 } }]
         }
     },
     "SEARCH_BAR_PLACEHOLDER": {

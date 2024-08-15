@@ -25,5 +25,6 @@ export const PoetBoxContainer = styled.div`
 
     @media (max-width: 480px) {
         gap: 1rem;
+        margin-top: 1.5rem;
     }
 `;

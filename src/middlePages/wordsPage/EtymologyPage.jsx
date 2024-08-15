@@ -107,10 +107,8 @@ function EtymologyPage() {
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
                         <LetterStack
-                            items={items}
                             setItems={setItems}
                             allItems={allItems}
-                            noChange={areArraysEqual}
                             isDropdownOpen={isDropdownOpen}
                             setIsDropdownOpen={setIsDropdownOpen}
                         />
