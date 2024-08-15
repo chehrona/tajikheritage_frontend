@@ -44,7 +44,7 @@ export const CardWrapper = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 15rem;
-        width: 30rem;
+        width: 23rem;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
     }
 `;
