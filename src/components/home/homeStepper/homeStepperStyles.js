@@ -143,6 +143,7 @@ export const LargeTitle = styled.div`
         width: 100%;
         padding-top: 0rem;
         opacity: ${({ fontSize }) => (fontSize.m ? '1' : '0')};
+        text-shadow: 0.5rem 0rem 0rem #504221;
         font-size: ${({ fontSize }) => fontSize && `${fontSize.m}rem`};
         line-height: ${({ fontSize }) => fontSize && `${fontSize.m - 0.5}rem`};
         margin-top: ${({ margin }) => margin && `${margin.m}%`};
