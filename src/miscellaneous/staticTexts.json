@@ -986,11 +986,6 @@
                     "position": { "t": 1, "l": 2 }
                 },
                 {
-                    "char": "/storage/language/etymology/img-2.png",
-                    "shape": "o",
-                    "position": { "t": 1, "l": 9 }
-                },
-                {
                     "char": "/storage/language/etymology/img-3.png",
                     "shape": "c",
                     "position": { "t": 2, "l": 0 }
