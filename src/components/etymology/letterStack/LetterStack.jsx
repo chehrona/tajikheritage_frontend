@@ -8,9 +8,6 @@ import { useMediaQuery } from 'react-responsive';
 import letters from '../../../miscellaneous/staticTexts.json';
 import alert from '../../../miscellaneous/alertMessages.json';
 
-// Components
-import OrnateLine from '../../common/ornateLine/OrnateLine';
-
 // Styled components
 import { LetterWrapper, LetterContainer } from './letterStackStyles';
 import {
@@ -98,10 +95,6 @@ export default function LetterStack({
                     <InputAlert>{alert.SEARCH_NOT_FOUND[lang]}</InputAlert>
                 )}
             </SearchContainer>
-            <OrnateLine
-                isDropdownOpen={isDropdownOpen}
-                setIsDropdownOpen={setIsDropdownOpen}
-            />
             {isDropdownOpen ? (
                 <LetterContainer>
                     {lettersToRender[lang].map((letter, index) => {
