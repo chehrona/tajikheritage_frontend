@@ -7,7 +7,7 @@ export const SearchContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 6.5rem;
@@ -78,7 +78,6 @@ export const StyledSearchIcon = styled(Search)`
 export const InputAlert = styled.div`
     color: #ad0f0e;
     height: 1.5rem;
-    margin: 0.35rem 0rem 0rem -2.75rem;
 
     @media (max-width: 480px) {
         font-size: 1.3rem;
