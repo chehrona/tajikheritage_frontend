@@ -14,14 +14,15 @@ import { requestPage, requestMiddlePage } from '../../services/request';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import SearchBar from '../../components/common/searchBar/SearchBar';
 import WordCard from '../../components/etymology/wordCard/WordCard';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
-import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
-import OrnateLine from '../../components/common/ornateLine/OrnateLine';
 
 // Styled components
-import { CardsContainer, PageTitle } from './etymologyStyles';
+import {
+    CardsContainer,
+    PageTitle,
+    PageFirstContainer,
+} from './etymologyStyles';
 
 const compareArrays = (arr1, arr2) => {
     if (arr1.length !== arr2.length) {
@@ -37,7 +38,6 @@ function EtymologyPage() {
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    const [value, setValue] = useState('');
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
 
     const fetchData = async () => {
@@ -75,6 +75,8 @@ function EtymologyPage() {
 
             setTitle(tempHeader);
         } catch (error) {
+            console.error('An error occurred in fetchData:', error);
+
             if (error.response) {
                 if (
                     error.response.status === 404 ||
@@ -107,41 +109,26 @@ function EtymologyPage() {
                         <PageTitle>
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
-                        <SearchBar
-                            value={value}
+                        <LetterStack
                             items={items}
-                            setValue={setValue}
                             setItems={setItems}
                             allItems={allItems}
-                        />
-                        <OrnateLine
-                            setIsDropdownOpen={setIsDropdownOpen}
+                            noChange={areArraysEqual}
                             isDropdownOpen={isDropdownOpen}
+                            setIsDropdownOpen={setIsDropdownOpen}
                         />
-                        {areArraysEqual ? (
-                            <LetterStack
-                                setValue={setValue}
-                                setItems={setItems}
-                                allItems={allItems}
-                                isDropdownOpen={isDropdownOpen}
-                            />
-                        ) : (
-                            <>
-                                <CardsContainer
-                                    center={items.length % 3 === 0}
-                                    show={true}
-                                >
-                                    {items.map((item, i) => {
-                                        return (
-                                            <WordCard
-                                                i={i}
-                                                key={item.key}
-                                                data={item}
-                                            />
-                                        );
-                                    })}
-                                </CardsContainer>
-                            </>
+                        {!isDropdownOpen && !areArraysEqual && (
+                            <CardsContainer center={items.length % 3 === 0}>
+                                {items.map((item, i) => {
+                                    return (
+                                        <WordCard
+                                            i={i}
+                                            key={item.key}
+                                            data={item}
+                                        />
+                                    );
+                                })}
+                            </CardsContainer>
                         )}
                     </PageFirstContainer>
                 </Fade>

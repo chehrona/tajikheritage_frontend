@@ -1,4 +1,12 @@
 import styled from 'styled-components/macro';
+import { MainContainer } from '../../components/common/pageFirstContainer/pageFirstContainerStyles';
+
+export const PageFirstContainer = styled(MainContainer)`
+    @media (max-width: 480px) {
+        padding: 1.5rem 2.5rem;
+        font-size: 1.3rem;
+    }
+`;
 
 export const PageTitle = styled.div`
     font-size: 1.75rem;
@@ -20,31 +28,18 @@ export const PageTitle = styled.div`
 export const CardsContainer = styled.div`
     width: 100%;
     gap: 3rem;
+    height: 27rem;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
+    margin-top: 2.25rem;
     justify-content: ${({ center }) =>
         center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
         gap: 1rem;
-        padding: ${({ show }) => show && '0.5rem 1.5rem 2rem 1.5rem'};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         gap: 2rem;
     }
 `;
-
-// export const BodyWrapper = styled.div`
-//     background-color: red;
-//     margin-top: 0.5rem;
-//     display: flex;
-//     max-width: 100%;
-//     transition: all 0.5s linear 0s;
-//     height: ${({ open }) => (open ? '27rem' : '0rem')};
-
-//     @media (max-width: 480px) {
-//         height: ${({ open }) => (open ? '30rem' : '0rem')};
-//     }
-// `;

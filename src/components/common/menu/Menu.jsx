@@ -1,9 +1,15 @@
 import React from 'react';
+
+// Hooks
 import { useGlobalData } from '../../../App';
+
+// Helper
 import { pageInfo } from './pageNames';
 
+// Material UI
 import { Slide } from '@mui/material';
 
+// Styled components
 import {
     LogoContainer,
     Logo,

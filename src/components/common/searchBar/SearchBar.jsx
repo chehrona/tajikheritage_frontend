@@ -16,15 +16,10 @@ import {
     InputAlert,
 } from './searchBarStyles';
 
-export default function SearchBar({
-    items,
-    setItems,
-    allItems,
-    setValue,
-    value,
-}) {
+export default function SearchBar({ items, setItems, allItems }) {
     const { lang } = useGlobalData();
     const [noMatch, setNoMatch] = useState(false);
+    const [value, setValue] = useState('');
 
     const handleSearch = (e) => {
         setNoMatch(false);

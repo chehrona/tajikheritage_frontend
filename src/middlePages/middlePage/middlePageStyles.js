@@ -20,6 +20,7 @@ export const InnerBoxContainer = styled.div`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 2.25rem;
     justify-content: ${({ center }) =>
         center && center ? 'space-between' : 'flex-start'};
 

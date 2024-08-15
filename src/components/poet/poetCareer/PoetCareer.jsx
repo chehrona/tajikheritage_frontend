@@ -90,7 +90,6 @@ export default function PoetCareer({ points }) {
                                                 entry.slides[0]?.img
                                             }
                                             width={currentSize * 0.36}
-                                            // height={'26rem'}
                                         >
                                             {entry.slides[0]?.info && (
                                                 <InfoBox

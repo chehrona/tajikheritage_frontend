@@ -22,6 +22,11 @@ export const InputWrapper = styled.div`
     @media (max-width: 480px) {
         width: 100%;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        width: 35rem;
+        height: 4rem;
+    }
 `;
 
 export const InputField = styled.input`
@@ -45,6 +50,7 @@ export const InputField = styled.input`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.35rem;
+        width: 28.5rem;
     }
 `;
 

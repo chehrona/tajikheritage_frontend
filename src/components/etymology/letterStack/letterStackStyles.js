@@ -51,16 +51,22 @@ const getRandomDelay = () => {
     return `${Math.random() * (maxDelay - minDelay) + minDelay}s`;
 };
 
-export const MainContainer = styled.div`
+export const LetterContainer = styled.div`
     position: relative;
     height: 27rem;
     width: 58rem;
-    margin-top: 1rem;
+    margin-top: 2.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 480px) {
+        width: 100%;
+        height: 100svh;
+        background-color: red;
+    }
 `;
 
 const shapeStyles = ({ shape }) => {
@@ -113,14 +119,15 @@ const hoverEffect = ({ empty, shape }) =>
     !empty &&
     css`
         cursor: pointer;
-        transform: translateZ(1rem) translateX(0rem) scaleX(1.05) scaleY(1.05);
-        transition: transform 0.25s ease-in-out;
+        transform: translateZ(1rem) translateX(0rem) scale(1.05);
+        transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+            opacity 0.5s ease-in-out;
         box-shadow: 0rem 0rem 0.6rem #504221d1;
 
         ${shape === 'v' &&
         css`
             transform: rotateZ(90deg) translateZ(1rem) translateX(0rem)
-                scaleX(1.05) scaleY(1.05);
+                scale(1.05);
         `}
     `;
 
@@ -144,6 +151,7 @@ export const LetterWrapper = styled.div`
     font-size: 2.5rem;
     left: ${({ left }) => `${left * stanWidth}rem`};
     top: ${({ top }) => `${top * stanWidth}rem`};
+    will-change: transform;
 
     ${({ open }) =>
         open
@@ -169,6 +177,6 @@ export const LetterWrapper = styled.div`
     }
 
     span {
-        transform: ${({ shape }) => (shape !== 'v' ? 'none' : '')};
+        will-change: color;
     }
 `;

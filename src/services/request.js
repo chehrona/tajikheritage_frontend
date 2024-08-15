@@ -107,15 +107,3 @@ export const uploadSectionImage = async (formData) => {
         throw error;
     }
 };
-
-export const requestAllWordForLetter = async (letter, lang) => {
-    try {
-        const response = await axios.get(`${apiUrl}/language/all_letter`, {
-            params: { letter, lang },
-        });
-
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};

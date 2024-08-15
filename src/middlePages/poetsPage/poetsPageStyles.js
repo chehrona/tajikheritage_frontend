@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
     background: white;
 
     @media (max-width: 480px) {
-        padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+        padding: 1.5rem 2.5rem;
         min-height: calc(100svh - 10.5rem);
     }
 
@@ -21,6 +21,7 @@ export const PoetBoxContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 2.25rem;
 
     @media (max-width: 480px) {
         gap: 1rem;

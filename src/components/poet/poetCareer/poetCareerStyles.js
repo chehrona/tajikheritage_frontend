@@ -165,7 +165,9 @@ export const Desc = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
-        padding: 1.5rem 2rem 2.5rem 2rem;
+        height: 23rem;
+        margin: 0.5rem 0.25rem;
+        padding: 1rem 1.75rem 2rem 1.5rem;
     }
 `;
 
@@ -268,4 +270,8 @@ export const Image = styled.div`
     border-bottom-left-radius: 1rem;
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ src }) => src && 'contain'};
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        background-size: ${({ src }) => src && 'cover'};
+    }
 `;

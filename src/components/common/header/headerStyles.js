@@ -29,7 +29,7 @@ export const HeaderInnerBox = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding-left: 0.85rem;
+        padding: 0rem 1.75rem 0rem 1.15rem;
     }
 `;
 
@@ -120,10 +120,10 @@ export const MainTitle = styled.div`
 
 export const MenuWrapper = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 4rem;
-    width: fit-content;
+    width: 10rem;
 
     @media (max-width: 480px) {
         width: 3rem;
@@ -135,7 +135,7 @@ export const ButtonWrapper = styled.div`
     display: flex;
     width: 6.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 `;
