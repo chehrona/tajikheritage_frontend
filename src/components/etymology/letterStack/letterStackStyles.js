@@ -65,6 +65,7 @@ export const LetterContainer = styled.div`
     @media (max-width: 480px) {
         width: 100%;
         height: 100svh;
+        margin-left: 0.5rem;
     }
 `;
 
