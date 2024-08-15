@@ -1,12 +1,4 @@
 import styled from 'styled-components/macro';
-import { MainContainer } from '../../components/common/pageFirstContainer/pageFirstContainerStyles';
-
-export const PageFirstContainer = styled(MainContainer)`
-    @media (max-width: 480px) {
-        padding: 1.5rem 2.5rem;
-        font-size: 1.3rem;
-    }
-`;
 
 export const PageTitle = styled.div`
     font-size: 1.75rem;

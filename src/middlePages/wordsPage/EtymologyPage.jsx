@@ -18,11 +18,8 @@ import WordCard from '../../components/etymology/wordCard/WordCard';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 
 // Styled components
-import {
-    CardsContainer,
-    PageTitle,
-    PageFirstContainer,
-} from './etymologyStyles';
+import { CardsContainer, PageTitle } from './etymologyStyles';
+import { PageContainer } from '../middlePage/middlePageStyles';
 
 const compareArrays = (arr1, arr2) => {
     if (arr1.length !== arr2.length) {
@@ -105,7 +102,7 @@ function EtymologyPage() {
             <Loader inProp={loading} />
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageFirstContainer>
+                    <PageContainer>
                         <PageTitle>
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
@@ -130,7 +127,7 @@ function EtymologyPage() {
                                 })}
                             </CardsContainer>
                         )}
-                    </PageFirstContainer>
+                    </PageContainer>
                 </Fade>
             ) : (
                 !loading &&
