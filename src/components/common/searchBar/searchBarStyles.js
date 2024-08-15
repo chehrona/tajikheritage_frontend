@@ -8,6 +8,10 @@ export const SearchContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        width: 6rem;
+    }
 `;
 
 export const InputWrapper = styled.div`
