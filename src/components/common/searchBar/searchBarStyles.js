@@ -10,7 +10,7 @@ export const SearchContainer = styled.div`
     justify-content: flex-start;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 6rem;
+        height: 6.5rem;
     }
 `;
 
