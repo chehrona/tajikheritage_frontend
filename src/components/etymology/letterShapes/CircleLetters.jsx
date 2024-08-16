@@ -10,7 +10,7 @@ import letters from '../../../miscellaneous/staticTexts.json';
 // Styled components
 import { CircleWrapper } from '../letterStack/letterStackStyles';
 
-export default function OvalLetters({ open, setValue }) {
+export default function OvalLetters({ open, handleClick }) {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -33,7 +33,7 @@ export default function OvalLetters({ open, setValue }) {
                         delay={delay}
                         key={`${[lang]}_${char}_${index}`}
                         empty={char.startsWith('/storage')}
-                        onClick={() => setValue(char)}
+                        onClick={() => handleClick(char)}
                     >
                         {char.startsWith('/storage') ? (
                             <img

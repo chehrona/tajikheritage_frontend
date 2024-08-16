@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../App';
@@ -20,13 +20,6 @@ import LetterStack from '../../components/etymology/letterStack/LetterStack';
 // Styled components
 import { CardsContainer, PageTitle } from './etymologyStyles';
 import { PageContainer } from '../middlePage/middlePageStyles';
-
-const compareArrays = (arr1, arr2) => {
-    if (arr1.length !== arr2.length) {
-        return false;
-    }
-    return arr1.every((value, index) => value === arr2[index]);
-};
 
 function EtymologyPage() {
     const location = useLocation();
@@ -92,11 +85,6 @@ function EtymologyPage() {
         fetchData();
     }, [location.pathname, lang]);
 
-    const areArraysEqual = useMemo(
-        () => compareArrays(items, allItems),
-        [items, allItems],
-    );
-
     return (
         <>
             <Loader inProp={loading} />
@@ -112,7 +100,7 @@ function EtymologyPage() {
                             isDropdownOpen={isDropdownOpen}
                             setIsDropdownOpen={setIsDropdownOpen}
                         />
-                        {!isDropdownOpen && !areArraysEqual && (
+                        {!isDropdownOpen && (
                             <CardsContainer center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (

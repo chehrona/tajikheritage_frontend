@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../../App';
 
-//Helper
+// Helper
 import placeholder from '../../../miscellaneous/staticTexts.json';
 import alert from '../../../miscellaneous/alertMessages.json';
 
@@ -39,8 +39,6 @@ export default function LetterStack({
     const inputRef = useRef(null);
 
     const filterItems = (input) => {
-        setNoMatch(false);
-
         const lowerEnteredValue = input.toLowerCase();
 
         const filtered = allItems?.filter((entry) =>
@@ -60,7 +58,6 @@ export default function LetterStack({
             setIsDropdownOpen(false);
         } else {
             setItems(allItems);
-            setError();
             setIsDropdownOpen(true);
 
             if (input.length === 1 && input === input.toUpperCase()) {
@@ -74,7 +71,15 @@ export default function LetterStack({
     const handleSearch = (e) => {
         const enteredValue = e.currentTarget.value;
 
+        setNoMatch(false);
+        setError(false);
         setValue(enteredValue);
+    };
+
+    const handleClick = (char) => {
+        setNoMatch(false);
+        setError(false);
+        setValue(char);
     };
 
     useEffect(() => {
@@ -82,7 +87,6 @@ export default function LetterStack({
             filterItems(value);
         } else {
             setItems(allItems);
-            setNoMatch(false);
             setIsDropdownOpen(true);
         }
     }, [value]);
@@ -90,6 +94,7 @@ export default function LetterStack({
     const handleClear = () => {
         setValue('');
         setNoMatch(false);
+        setError(false);
         setItems(allItems);
         inputRef.current.focus();
     };
@@ -103,7 +108,7 @@ export default function LetterStack({
                         ref={inputRef}
                         placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
                         value={value}
-                        onChange={(e) => handleSearch(e)}
+                        onChange={handleSearch}
                     />
                     {value.length ? (
                         <StyledIconButton onClick={handleClear}>
@@ -117,12 +122,18 @@ export default function LetterStack({
             </SearchContainer>
             {isDropdownOpen ? (
                 <LetterContainer>
-                    <OvalLetters open={isDropdownOpen} setValue={setValue} />
+                    <OvalLetters
+                        open={isDropdownOpen}
+                        handleClick={handleClick}
+                    />
                     <VerticalLetters
                         open={isDropdownOpen}
-                        setValue={setValue}
+                        handleClick={handleClick}
                     />
-                    <CircleLetters open={isDropdownOpen} setValue={setValue} />
+                    <CircleLetters
+                        open={isDropdownOpen}
+                        handleClick={handleClick}
+                    />
                     <Instruction open={isDropdownOpen} />
                 </LetterContainer>
             ) : null}

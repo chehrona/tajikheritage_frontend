@@ -19,7 +19,7 @@ export const StyledAlert = styled(Alert)`
     right: 0.5rem;
     top: 0.5rem;
     z-index: 20;
-    animation: ${slideOut} 0.5s ease-in-out forwards;
+    animation: ${slideOut} 0.25s ease-in-out forwards;
 
     &.MuiPaper-root {
         font-family: 'IBM Plex Serif', serif;
