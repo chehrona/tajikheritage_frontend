@@ -12,6 +12,7 @@ import VerticalLetters from '../letterShapes/VerticalLetters';
 import OvalLetters from '../letterShapes/OvalLetters';
 import CircleLetters from '../letterShapes/CircleLetters';
 import Instruction from '../letterShapes/Instruction';
+import Alert from '../../common/alert/Alert';
 
 // Styled components
 import { LetterContainer } from './letterStackStyles';
@@ -24,7 +25,6 @@ import {
     StyledIconButton,
     StyledClearIcon,
 } from '../../common/searchBar/searchBarStyles';
-import Alert from '../../common/alert/Alert';
 
 export default function LetterStack({
     setItems,
