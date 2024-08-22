@@ -4,7 +4,7 @@ import React from 'react';
 import { useGlobalData } from '../../../App';
 
 //Helper
-import info from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Styled components
 import { TempImg, TempPageContainer, TempTitle } from './tempPageStyles';
@@ -15,7 +15,7 @@ function TempPage() {
 
     return (
         <TempPageContainer>
-            <TempTitle>{info.TEMP_PAGE_INFO[lang]}</TempTitle>
+            <TempTitle>{staticText.TEMP_PAGE_INFO[lang]}</TempTitle>
             <TempImg src={'/loader.png'} />
         </TempPageContainer>
     );

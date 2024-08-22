@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 
 // Helper
-import headerText from './miscellaneous/staticTexts.json';
+import staticText from './miscellaneous/staticTexts.json';
 
 // Components
 import Header from './components/common/header/Header';
@@ -19,7 +19,7 @@ import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 
 const DataContext = createContext({
-    title: headerText.HEADER,
+    title: staticText.HEADER,
     setTitle: () => {},
     lang: 'us',
     setLang: () => {},
@@ -37,7 +37,7 @@ function App() {
     const [lang, setLang] = useState(() => {
         return localStorage.getItem('lang') || 'us';
     });
-    const [title, setTitle] = useState(headerText.HEADER);
+    const [title, setTitle] = useState(staticText.HEADER);
     const parentRef = useRef(null);
     const [position, setPosition] = useState(0);
     const [showArrow, setShowArrow] = useState(0);

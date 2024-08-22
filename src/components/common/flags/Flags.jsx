@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import { langNames } from './langNames';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { ClickAwayListener } from '@mui/material';
@@ -48,7 +48,7 @@ export default function Flags() {
                     {lang !== 'us' && (
                         <StyledIconButton data="us" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['us']}
+                                title={staticText.LANGS['us']}
                                 placement="right"
                                 arrow
                             >
@@ -61,7 +61,7 @@ export default function Flags() {
                     {lang !== 'tj' && (
                         <StyledIconButton data="tj" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['tj']}
+                                title={staticText.LANGS['tj']}
                                 placement="right"
                                 arrow
                             >
@@ -72,14 +72,14 @@ export default function Flags() {
                         </StyledIconButton>
                     )}
                     {/* {lang !== 'kh' && <StyledIconButton data='kh' onClick={changeLang}>
-                        <StyledTooltip title={langNames['kh']} placement="right" arrow>
+                        <StyledTooltip title={staticText.LANGS['kh']} placement="right" arrow>
                             <span><StyledFlag lang={'kh'} hovered={"true"}></StyledFlag></span>
                         </StyledTooltip>  
                     </StyledIconButton>} */}
                     {lang !== 'ru' && (
                         <StyledIconButton data="ru" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['ru']}
+                                title={staticText.LANGS['ru']}
                                 placement="right"
                                 arrow
                             >
@@ -92,7 +92,7 @@ export default function Flags() {
                 </FlagDropdown>
                 <StyledIconButton onMouseEnter={showLangOptions}>
                     <StyledTooltip
-                        title={langNames[lang]}
+                        title={staticText.LANGS[lang]}
                         placement="right"
                         arrow
                     >

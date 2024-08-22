@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import placeholder from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 import alert from '../../../miscellaneous/alertMessages.json';
 
 // Components
@@ -106,7 +106,7 @@ export default function LetterStack({
                     <StyledSearchIcon />
                     <InputField
                         ref={inputRef}
-                        placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
+                        placeholder={staticText.SEARCH_BAR_PLACEHOLDER[lang]}
                         value={value}
                         onChange={handleSearch}
                     />

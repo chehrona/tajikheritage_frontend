@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import letters from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Styled components
 import { OvalWrapper } from '../letterStack/letterStackStyles';
@@ -15,8 +15,8 @@ export default function OvalLetters({ open, handleClick }) {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const lettersToRender = isMobile
-        ? letters.ETYM_PAGE_LETTERS_OVALS.m[lang]
-        : letters.ETYM_PAGE_LETTERS_OVALS.d[lang];
+        ? staticText.ETYM_PAGE_LETTERS_OVALS.m[lang]
+        : staticText.ETYM_PAGE_LETTERS_OVALS.d[lang];
 
     return (
         <>

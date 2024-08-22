@@ -5,7 +5,7 @@ import { useGlobalData } from '../../../App';
 
 // Helper
 import alert from '../../../miscellaneous/alertMessages.json';
-import placeholder from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Components
 import {
@@ -67,7 +67,7 @@ export default function SearchBar({ items, setItems, allItems }) {
                 <StyledSearchIcon />
                 <InputField
                     ref={inputRef}
-                    placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
+                    placeholder={staticText.SEARCH_BAR_PLACEHOLDER[lang]}
                     value={value}
                     onChange={(e) => handleSearch(e)}
                 />

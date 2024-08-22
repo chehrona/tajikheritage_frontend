@@ -74,7 +74,7 @@ export default function Routes() {
             <Route path="/language/etymology/:id" element={<WordPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />
             <Route path="/" element={<Home />} />
-            <Route path="/admin/login" element={<LoginPage />} />
+            <Route path="/admin" element={<LoginPage />} />
             <Route path="/admin/content" element={<ManagementPage />} />
         </ServerRoutes>
     );

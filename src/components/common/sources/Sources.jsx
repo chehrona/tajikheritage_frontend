@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../App';
 
 // Helper
-import titleHeader from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { ClickAwayListener } from '@mui/material';
@@ -46,7 +46,7 @@ export default function Sources({ data }) {
                     <RefContainer open={isDropdownOpen}>
                         <RefWrapper open={isDropdownOpen}>
                             <SubTitle>
-                                {titleHeader.SOURCES_HEADER[lang]}
+                                {staticText.SOURCES_HEADER[lang]}
                             </SubTitle>
                             {data.map((source, i) => {
                                 return (
