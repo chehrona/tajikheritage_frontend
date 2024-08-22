@@ -25,7 +25,7 @@ export const TableImage = styled.img`
     transition: 0.3s ease-in-out;
     height: ${({ expanded }) => (expanded ? '100svh' : '40svh')};
     border-radius: ${({ expanded }) => (expanded ? '1rem' : '0.75rem')};
-    cursor: ${({ expanded }) => (expanded ? 'zoom-in' : 'zoom-in')};
+    cursor: ${({ expanded }) => (expanded ? 'zoom-out' : 'zoom-in')};
 
     @media (max-width: 480px) {
         width: 100%;
