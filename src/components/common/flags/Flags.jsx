@@ -41,6 +41,16 @@ export default function Flags() {
         localStorage.setItem('lang', lang);
     }, [lang]);
 
+    useEffect(() => {
+        if (showLangMenu) {
+            const handleMenu = setTimeout(() => {
+                setShowLangMenu(false);
+            }, 5000);
+
+            return () => clearTimeout(handleMenu);
+        }
+    }, [showLangMenu]);
+
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <FlagWrapper>
