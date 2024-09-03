@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
 import { ArrowForwardIos } from '@mui/icons-material';
@@ -76,7 +76,7 @@ export default function SecondBox({ poet }) {
                     <Info>
                         <Year>{infoArr[0]?.year}</Year>
                         <DescWrapper
-                            desc={infoArr[0]?.desc}
+                            data={infoArr[0]?.desc}
                             TextWrapper={Text}
                         />
                     </Info>

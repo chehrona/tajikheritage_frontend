@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowForwardIos } from '@mui/icons-material';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Styled components
 import {

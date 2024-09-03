@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useGlobalData } from '../../App';
+import { useGlobalData } from '../../hooks/useGlobalData';
 import { useParams } from 'react-router-dom';
 
 import { IconButton } from '@mui/material';

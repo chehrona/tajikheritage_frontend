@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
 import alert from '../../../miscellaneous/alertMessages.json';

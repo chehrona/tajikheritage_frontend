@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
 import Slideshow from '../../common/slideshow/Slideshow';

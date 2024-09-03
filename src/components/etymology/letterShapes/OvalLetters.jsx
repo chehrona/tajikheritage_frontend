@@ -2,7 +2,7 @@ import React from 'react';
 
 // Hooks
 import { useMediaQuery } from 'react-responsive';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
 import letters from '../../../miscellaneous/staticTexts.json';

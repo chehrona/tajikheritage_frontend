@@ -5,7 +5,7 @@ When clicked, it takes the user to that section, such as work, career, etc.
 import React from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Styled components
 import {

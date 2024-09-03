@@ -21,7 +21,7 @@ export default function TextSegment({
     reverse,
     noBorder,
 }) {
-    const parentRef = useRef(null);
+    const parentRef = useRef < HTMLInputElement > null;
     const [screenSize, setScreenSize] = useState(0);
 
     useEffect(() => {
@@ -52,7 +52,7 @@ export default function TextSegment({
                 subtitle={data.subtitle}
             ></ArticleSubtitle>
             <DescWrapper
-                desc={data?.body}
+                data={data?.body}
                 TextWrapper={reverse ? SecondBox : FirstBox}
             />
         </BoxWrapper>

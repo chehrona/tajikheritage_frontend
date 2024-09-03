@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import MovieDialog from '../movieDialog/MovieDialog';
 
 import {

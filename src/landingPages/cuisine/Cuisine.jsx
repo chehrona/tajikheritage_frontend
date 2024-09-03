@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useGlobalData } from '../../App';
+import { useGlobalData } from '../../hooks/useGlobalData';
 
 import { requestPage } from '../../services/request';
 

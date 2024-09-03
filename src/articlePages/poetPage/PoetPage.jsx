@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useGlobalData } from '../../App';
+import { useGlobalData } from '../../hooks/useGlobalData';
 
 // Services
 import { requestPage, requestArticleInfo } from '../../services/request';

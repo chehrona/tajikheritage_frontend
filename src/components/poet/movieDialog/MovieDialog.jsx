@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import { Slide } from '@mui/material';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
 // Components

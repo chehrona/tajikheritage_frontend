@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Styled components
 import {

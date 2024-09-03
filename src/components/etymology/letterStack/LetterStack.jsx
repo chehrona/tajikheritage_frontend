@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
 import placeholder from '../../../miscellaneous/staticTexts.json';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../App';
+import { useGlobalData } from '../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
 
 // Services
