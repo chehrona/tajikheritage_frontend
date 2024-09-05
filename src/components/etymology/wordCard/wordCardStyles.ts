@@ -21,7 +21,7 @@ const slideOut = keyframes`
 `;
 
 export const CardWrapper = styled.div<CardWrapperProps>`
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     height: 12rem;
     width: 25rem;
     border-radius: 0.7rem;
@@ -71,7 +71,7 @@ export const WordDesc = styled(StyledSpan)`
     font-size: 1.1rem;
     width: 100%;
     height: calc(100% - 5.25rem);
-    color: #fcf6e9;
+    color: var(--primary-white-color);
 
     &:after {
         content: '';
@@ -106,7 +106,7 @@ export const LinkBox = styled(Link)<LinkBoxProps>`
     left: 0rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     text-decoration: none;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 
     @media (max-width: 480px) {
@@ -119,7 +119,7 @@ export const LinkBox = styled(Link)<LinkBoxProps>`
 `;
 
 export const Instruction = styled.div`
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     width: calc(100% - 3rem);
 
     @media (max-width: 480px) {

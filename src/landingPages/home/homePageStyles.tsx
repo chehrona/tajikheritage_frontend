@@ -9,7 +9,7 @@ const bounce = keyframes`
 
 export const PageContainer = styled.div`
     box-sizing: border-box;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     overflow: hidden;
     min-height: calc(100svh - 9.23rem);
 

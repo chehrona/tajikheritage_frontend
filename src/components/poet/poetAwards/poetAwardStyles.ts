@@ -18,7 +18,7 @@ const slideOut = keyframes`
 `;
 
 export const MainContainer = styled.div`
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     color: white;
     position: relative;
@@ -28,7 +28,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         background-image: url(${'/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
@@ -108,7 +108,7 @@ export const Face = styled.div<{ $back: boolean }>`
                   background-image: url(${'/noise.png'});
               `
             : css`
-                  background: #0f0a00;
+                  background: var(--primary-black-color);
               `}
 
     @media (max-width: 480px) {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div<{ $height: number }>`
     border-radius: 4rem;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     margin-right: 0.8rem;
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;

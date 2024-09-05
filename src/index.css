@@ -72,7 +72,7 @@ sub {
     vertical-align: baseline;
     position: relative;
     top: -0.5rem;
-    color: #92793f;
+    color: var(--primary-golden-shadow-color);
     font-size: 0.75rem;
     font-style: normal;
     font-family: 'IBM Plex Serif', serif;
@@ -80,4 +80,13 @@ sub {
 
 sub {
     top: 0.4rem;
+}
+
+:root {
+    --primary-black-color: #0f0a00;
+    --primary-white-color: #fcf6e9;
+    --primary-gold-color: #bd9d52;
+    --primary-golden-shadow-color: #70654a;
+    --regular-black-color: #000;
+    --regular-white-color: #fff;
 }

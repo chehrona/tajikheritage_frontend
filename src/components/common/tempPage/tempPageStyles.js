@@ -13,7 +13,7 @@ export const TempImg = styled.img`
 `;
 
 export const TempTitle = styled.div`
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     margin: 2.5% 0% 5% 0%;
     font-size: 1.5rem;
 `;

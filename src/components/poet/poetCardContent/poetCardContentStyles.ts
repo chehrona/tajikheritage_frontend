@@ -19,8 +19,8 @@ export const PoetCardWrapper = styled.div<{ $delay: string }>`
     opacity: 0;
     width: 23rem;
     height: 35rem;
-    color: #fcf6e9;
-    background: #0f0a00;
+    color: var(--primary-white-color);
+    background: var(--primary-black-color);
     position: relative;
     border-radius: 0.7rem;
     transition: border-radius 250ms, box-shadow 400ms;
@@ -89,7 +89,7 @@ export const PoetImage = styled.img`
     width: 13.5rem;
     margin: 0.3rem;
     box-shadow: 0rem 0rem 1rem rgba(189, 157, 82, 0.8);
-    background: #0f0a00 url('/loader.png') center no-repeat;
+    background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
 
     @media (max-width: 480px) {

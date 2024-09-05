@@ -30,7 +30,7 @@ export const SemiCircle = styled.div`
         content: '';
         height: 3rem;
         width: 3rem;
-        background: #0f0a00;
+        background: var(--primary-black-color);
         position: absolute;
         left: -1.5rem;
         box-sizing: border-box;

@@ -38,5 +38,5 @@ export const Arrow = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem #0f0a00b2;
+    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem var(--primary-black-color) b2;
 `;

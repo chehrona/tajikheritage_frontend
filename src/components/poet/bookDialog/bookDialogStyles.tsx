@@ -7,7 +7,7 @@ import { ErrorStyleProps } from './types/styleTypes';
 export const Desc = styled.div`
     width: 100%;
     height: 100%;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     line-height: 1.5rem;
     text-align: center;
 
@@ -54,7 +54,7 @@ export const InputWrapper = styled.div`
 
 export const InputField = styled.input`
     background: transparent;
-    border: 0.0625rem solid #0f0a00;
+    border: 0.0625rem solid var(--primary-black-color);
     outline: none;
     width: 100%;
     font-size: 1.1rem;
@@ -66,7 +66,7 @@ export const InputField = styled.input`
 export const StyledButton = styled(Button)`
     &.MuiButton-root {
         background: #504221d1;
-        color: #fcf6e9;
+        color: var(--primary-white-color);
         height: 100%;
         text-transform: none;
         font-size: 1.1rem;

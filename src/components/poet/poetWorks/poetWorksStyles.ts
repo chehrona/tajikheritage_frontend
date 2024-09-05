@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     color: white;
     position: relative;
     background-image: url(${'/noise.png'});
@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         background-image: url(${'/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);

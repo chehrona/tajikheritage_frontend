@@ -110,14 +110,14 @@ export const InfoContainer = styled.div`
 export const InnerBox = styled.div<InnerBoxProps>`
     width: 65%;
     height: 100%;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     position: relative;
     padding: 2rem;
 
     ${({ $width }) =>
         $width &&
         `
-        background: #0F0A00;
+        background: var(--primary-black-color);
         position: relative;
     `}
 
@@ -181,7 +181,7 @@ export const InfoTitle = styled.div`
 `;
 
 export const StyledPlayIcon = styled(PlayArrow)`
-    color: #fcf6e9;
+    color: var(--primary-white-color);
 
     &.MuiSvgIcon-root {
         width: 3rem;
@@ -286,7 +286,7 @@ export const DirBox = styled.div`
 
 export const Line = styled.div`
     width: 5rem;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     height: 0.05rem;
     margin-right: 1rem;
 
@@ -298,7 +298,7 @@ export const Line = styled.div`
 export const Direction = styled.div`
     text-transform: uppercase;
     font-size: 1rem;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     font-family: 'EB Garamond', serif;
 
     @media (max-width: 1024px) {

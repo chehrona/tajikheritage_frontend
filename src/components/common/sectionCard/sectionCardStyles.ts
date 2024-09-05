@@ -20,14 +20,14 @@ export const SectionCardWrapper = styled.div<{ $delay: string }>`
     opacity: 0;
     width: 23rem;
     height: 35rem;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     padding: 0.5rem;
     cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #0f0a00;
+    background: var(--primary-black-color);
     border-radius: 0.7rem;
     transition: border-radius 250ms, box-shadow 400ms;
     animation: ${slideOut} 1s ease-in-out forwards;

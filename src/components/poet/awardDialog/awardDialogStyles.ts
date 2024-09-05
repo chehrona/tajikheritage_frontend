@@ -74,7 +74,7 @@ export const AwardImg = styled.img`
     height: 15rem;
     width: 11rem;
     padding: 1rem;
-    background: #0f0a00;
+    background: var(--primary-black-color);
     background-image: url(${'/noise.png'});
     box-shadow: 0rem 0rem 0.4rem 0.01rem #bd9d52;
 

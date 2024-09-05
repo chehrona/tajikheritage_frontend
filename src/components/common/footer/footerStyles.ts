@@ -3,7 +3,7 @@ import { Copyright } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
 export const FooterContainer = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     width: 100%;
 
     @media (max-width: 480px) {
@@ -14,7 +14,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterInnerContainer = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;

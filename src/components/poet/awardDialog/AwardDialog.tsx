@@ -38,7 +38,7 @@ const AwardDialog: React.FC<AwardDialogProps> = ({
             open={showAwardInfo}
             handleClose={handleClose}
             backdrop={'rgba(252 246 233 / 30%)'}
-            background={'#0F0A00'}
+            background={'var(--primary-black-color)'}
         >
             <StyledContent>
                 <InfoContainer>

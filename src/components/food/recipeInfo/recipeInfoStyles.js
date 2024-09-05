@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { Pinterest } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import styled, { keyframes } from 'styled-components';
+import { Pinterest } from '@mui/icons-material';
+import { Button } from '@mui/material';
 
 const slideUp = keyframes`
     0% {
@@ -53,7 +53,7 @@ export const MainTitle = styled.div`
     font-style: italic;
     margin-bottom: 0.5rem;
     font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0F0A00;
+    text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
     animation: ${slideOut} 0.5s ease-in-out forwards;
 
     @media (max-width: 480px) {
@@ -63,7 +63,7 @@ export const MainTitle = styled.div`
 
 export const HistoryInfo = styled.div`
     opacity: 0;
-    color: #0F0A00;
+    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;

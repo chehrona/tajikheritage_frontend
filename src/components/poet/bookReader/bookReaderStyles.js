@@ -18,7 +18,7 @@ export const StyledFrame = styled.iframe`
 `;
 
 export const Header = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     height: 5rem;
     width: 100%;
     position: absolute;

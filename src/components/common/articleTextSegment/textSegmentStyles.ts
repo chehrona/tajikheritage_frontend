@@ -73,7 +73,7 @@ export const Title = styled.div`
     padding-top: 0.5rem;
     font-style: italic;
     font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0f0a00;
+    text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
     margin-bottom: 0.5rem;
 
     @media (max-width: 480px) {
@@ -84,7 +84,7 @@ export const Title = styled.div`
 
 export const FirstBox = styled.div`
     width: 100%;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
@@ -107,7 +107,7 @@ export const FirstBox = styled.div`
 
 export const SecondBox = styled.div`
     width: 100%;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;

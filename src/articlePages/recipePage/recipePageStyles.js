@@ -15,10 +15,10 @@ export const PageContainer = styled.div`
 `;
 
 export const RecipeContainer = styled.div`
-    color: #0f0a00;
+    color: var(--primary-black-color);
     padding: 3rem;
     border-radius: 4rem;
-    background-color: #fcf6e9;
+    background-color: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;

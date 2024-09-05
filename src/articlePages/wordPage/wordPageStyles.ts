@@ -7,7 +7,7 @@ export const BodyContainer = styled.div`
     padding: 2rem 0rem;
     min-height: 40rem;
     border-radius: 4rem;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;

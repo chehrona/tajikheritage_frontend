@@ -28,7 +28,7 @@ const slideUp = keyframes`
 `;
 
 export const MainContainer = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -39,7 +39,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
@@ -75,7 +75,7 @@ export const FadedImage = styled.img`
     width: 47rem;
     min-height: 50rem;
     height: auto;
-    background: #0f0a00;
+    background: var(--primary-black-color);
     transform-origin: center;
     border-radius: 5rem 4rem 0rem 5rem;
 

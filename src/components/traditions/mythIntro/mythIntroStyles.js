@@ -40,7 +40,7 @@ export const SlideContainer = styled.div`
     height: 35rem;
     z-index: 2;
     position: relative;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     margin-bottom: 2rem;
     float: ${({ reverse }) => (reverse ? 'right' : 'left')};
     ${({ reverse }) => (reverse ? 'margin-left: 3rem' : 'margin-right: 3rem')};
@@ -69,7 +69,7 @@ export const Title = styled.div`
     font-weight: 500;
     font-style: italic;
     font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0f0a00;
+    text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
@@ -79,7 +79,7 @@ export const Title = styled.div`
 
 export const FirstBox = styled.div`
     width: 100%;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
@@ -102,7 +102,7 @@ export const FirstBox = styled.div`
 
 export const SecondBox = styled.div`
     width: 100%;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;

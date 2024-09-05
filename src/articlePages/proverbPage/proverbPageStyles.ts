@@ -47,7 +47,7 @@ export const ProverbContainer = styled.div`
     border-radius: 4rem;
     position: relative;
     min-height: 40rem;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem #70654a;
     z-index: 3;
@@ -95,7 +95,7 @@ export const LogoWrapper = styled.div`
         ${({ lang }) =>
             lang !== 'tj' &&
             css`
-                filter: drop-shadow(0px 0px 0.25px #0f0a00);
+                filter: drop-shadow(0px 0px 0.25px var(--primary-black-color));
                 transform: translateZ(1rem) translateX(-50%) scaleX(1.05)
                     scaleY(1.05);
                 transition: transform 0.25s ease-in-out;

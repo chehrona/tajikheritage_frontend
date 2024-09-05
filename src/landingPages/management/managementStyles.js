@@ -27,8 +27,8 @@ export const PageName = styled.div`
     display: flex;
     align-items: center;
     font-weight: bold;
-    color: #fcf6e9;
-    background-color: #0f0a00;
+    color: var(--primary-white-color);
+    background-color: var(--primary-black-color);
 `;
 
 export const DropdownContent = styled.div`

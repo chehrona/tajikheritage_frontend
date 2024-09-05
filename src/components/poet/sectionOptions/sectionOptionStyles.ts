@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
     min-height: fit-content;
     padding-bottom: 8rem;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     position: relative;
     height: 21rem;
 
@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         background-image: url(${'/noise.png'});
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
@@ -25,7 +25,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #0f0a00;
+        background: var(--primary-black-color);
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;

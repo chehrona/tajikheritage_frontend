@@ -6,7 +6,7 @@ import { RefProps } from './types/styleTypes';
 
 export const MainContainer = styled.div`
     border-radius: 0rem 0rem 4rem 4rem;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     padding: 3rem;
     padding-top: 0rem;
@@ -48,14 +48,15 @@ export const RefContainer = styled.div<RefProps>`
     display: block;
     position: relative;
     color: #dedbdb;
-    background: #0f0a00;
+    background: var(--primary-black-color);
     transition: all 0.5s linear 0s;
     ${({ open }) =>
         open
             ? css`
                   height: 15rem;
                   padding: 0.8rem 0rem 1.75rem 0rem;
-                  box-shadow: 0rem 0rem 0.4rem 0.01rem #0f0a00;
+                  box-shadow: 0rem 0rem 0.4rem 0.01rem
+                      var(--primary-black-color);
               `
             : css`
                   height: 0rem;
@@ -98,7 +99,7 @@ export const SubTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     margin-bottom: 1rem;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
 
     @media (max-width: 1024px) {
         font-size: 2.5rem;

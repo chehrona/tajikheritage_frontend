@@ -90,7 +90,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
             border={'2rem'}
             open={showMovieInfo}
             backdrop={'rgba(15 10 0 / 30%)'}
-            background={'#0F0A00'}
+            background={'var(--primary-black-color)'}
             height={isMobile ? '100%' : '80%'}
             handleClose={handleClose}
         >

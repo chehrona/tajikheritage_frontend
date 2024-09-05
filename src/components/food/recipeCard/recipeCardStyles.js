@@ -1,6 +1,6 @@
-import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -19,11 +19,11 @@ const slideOut = keyframes`
 
 export const RecipeCardWrapper = styled.div`
     opacity: 0;
-    color: #0F0A00;
+    color: var(--primary-black-color);
     cursor: pointer;
     position: relative;
     animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 `;
 
 export const RecipeNameBox = styled.div`

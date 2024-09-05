@@ -7,7 +7,7 @@ export const MainContainer = styled.div`
     height: 17rem;
     perspective: 45rem;
     overflow: hidden;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     position: absolute;
     background-image: url(${'/noise.png'});
 `;
@@ -67,7 +67,7 @@ export const Book = styled.img<{ grey: boolean }>`
     align-items: center;
     border-radius: 0.4rem;
     object-fit: cover;
-    background: #0f0a00 url('/loader.png') center no-repeat;
+    background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
     filter: ${({ grey }) => grey && 'grayscale(0.5)'};
     opacity: ${({ grey }) => grey && 0.5};

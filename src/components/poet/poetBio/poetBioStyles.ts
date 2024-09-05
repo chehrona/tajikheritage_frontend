@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
     min-height: 20rem;
     padding-bottom: 3rem;
-    background-color: #fcf6e9;
+    background-color: var(--primary-white-color);
     font-size: 1.1rem;
 
     @media (max-width: 480px) {
@@ -20,7 +20,7 @@ export const MainContainer = styled.div`
             content: '';
             padding: 3rem;
             width: 100%;
-            background: #0f0a00;
+            background: var(--primary-black-color);
             background-image: url(${'/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
@@ -39,7 +39,7 @@ export const MainContainer = styled.div`
             content: '';
             padding: 3rem;
             width: 100%;
-            background: #0f0a00;
+            background: var(--primary-black-color);
             background-image: url(${'/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
@@ -56,7 +56,7 @@ export const BoxOne = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0rem 3rem 1rem 3rem;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     gap: 3rem;
     position: relative;
 
@@ -122,16 +122,16 @@ export const FirstBoxImg = styled.img`
 export const BoxTwo = styled.div`
     margin-top: 1rem;
     margin-bottom: 9rem;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     display: flex;
     align-items: center;
     position: relative;
     justify-content: space-between;
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0f0a00;
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
         margin-bottom: 0.5rem;
-        color: #fcf6e9;
+        color: var(--primary-white-color);
     }
 `;
 
@@ -467,7 +467,7 @@ export const ButtonWrapper = styled.div`
 export const BoxFive = styled.div`
     width: 100%;
     text-align: center;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     padding: 1.5rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
@@ -559,7 +559,7 @@ export const FinalQuote = styled.div`
     padding-left: 10%;
     font-family: 'EB Garamond', serif;
     transform: translate(-50%, -50%);
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem #0f0a00;
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 1024px) {
         line-height: 2.4rem;
@@ -567,7 +567,7 @@ export const FinalQuote = styled.div`
 `;
 
 export const Author = styled.div`
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     font-size: 1.1rem;
     font-style: normal;
     text-align: end;
@@ -583,7 +583,7 @@ export const ImgInfo = styled.div`
     font-style: italic;
     width: 100%;
     text-align: left;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     bottom: 0.5rem;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 

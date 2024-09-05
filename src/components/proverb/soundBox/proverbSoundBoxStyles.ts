@@ -58,7 +58,7 @@ export const LogoWrapper = styled.div<{ $lang: string }>`
         ${({ $lang }) =>
             $lang !== 'tj' &&
             css`
-                filter: drop-shadow(0px 0px 0.25px #0f0a00);
+                filter: drop-shadow(0px 0px 0.25px var(--primary-black-color));
                 transform: translateZ(1rem) translateX(-50%) scaleX(1.05)
                     scaleY(1.05);
                 transition: transform 0.25s ease-in-out;

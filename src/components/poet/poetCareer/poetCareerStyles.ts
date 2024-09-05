@@ -5,7 +5,7 @@ import { IconButton } from '@mui/material';
 import { StyledIconButtonProps, ImageProps } from './types/styleTypes';
 
 export const MainContainer = styled.div`
-    background: #0f0a00;
+    background: var(--primary-black-color);
     position: relative;
     background-image: url(${'/noise.png'});
     padding-bottom: 9rem;
@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
         content: '';
         padding: 3rem;
         width: 100%;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         background-image: url(${'/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
@@ -47,7 +47,7 @@ export const YearSlider = styled.div`
 export const UnitWrapper = styled.div`
     width: 100%;
     position: relative;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     font-size: 1.5rem;
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@ export const UnitWrapper = styled.div`
 
 export const YearWrapper = styled.div<{ $size: boolean }>`
     z-index: 1;
-    background: #0f0a00;
+    background: var(--primary-black-color);
     border-radius: 1.5rem;
     position: relative;
     background-image: url(${'/noise.png'});
@@ -117,7 +117,7 @@ export const InfoWrapper = styled.div`
     height: 26rem;
     min-width: 810px;
     max-width: 810px;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     border-radius: 1rem;
     display: flex;
 
@@ -179,7 +179,7 @@ export const Footer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: #fcf6e9;
+    background: var(--primary-white-color);
     border-radius: 0rem 0rem 1rem 1rem;
     position: absolute;
     bottom: 0.5rem;
@@ -205,7 +205,7 @@ export const MobileFooter = styled.div`
         align-items: center;
         width: calc(100vw - 3rem);
         height: 3rem;
-        background: #fcf6e9;
+        background: var(--primary-white-color);
         border-radius: 0rem 0rem 1rem 1rem;
         position: absolute;
         bottom: 0rem;

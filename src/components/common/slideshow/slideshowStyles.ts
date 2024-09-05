@@ -118,7 +118,7 @@ export const ImgInfo = styled.div`
     font-style: italic;
     margin: 0.25rem;
     text-align: left;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     bottom: 0rem;
     background-color: #262626a6;
     width: calc(100% - 0.5rem);

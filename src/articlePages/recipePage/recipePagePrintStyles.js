@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Add, Remove } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Add, Remove } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 export const MainContainer = styled.div`
     margin-left: 1rem;
@@ -22,7 +22,7 @@ export const Title = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
-    border-right: 0.1rem solid #0F0A00;
+    border-right: 0.1rem solid var(--primary-black-color);
     height: 5rem;
     margin-right: 0.5rem;
 `;
@@ -34,7 +34,7 @@ export const PrintHeader = styled.div`
 
 export const RecipeTitle = styled.div`
     font-size: 3rem;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
 `;
@@ -57,7 +57,7 @@ export const InfoContainer = styled.div`
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 1rem;
-    border-bottom: 0.1rem solid #0F0A00;
+    border-bottom: 0.1rem solid var(--primary-black-color);
 `;
 
 export const IconBox = styled.div`
@@ -90,7 +90,7 @@ export const StyledAddIcon = styled(Add)`
     background: #dedbdb;
     border-radius: 0.5rem;
     color: black;
-    
+
     &.MuiSvgIcon-root {
         font-size: 2rem;
     }
@@ -158,7 +158,7 @@ export const LeftSection = styled.div`
 export const RightSection = styled.div`
     width: 28rem;
     padding-left: 1rem;
-`;  
+`;
 
 export const Ingredient = styled.div`
     line-height: 2rem;

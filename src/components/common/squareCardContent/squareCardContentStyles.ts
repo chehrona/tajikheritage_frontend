@@ -19,7 +19,7 @@ export const SquareCardWrapper = styled.div<{ $delay: string }>`
     opacity: 0;
     height: 25rem;
     width: 25rem;
-    color: #0f0a00;
+    color: var(--primary-black-color);
     position: relative;
     border-radius: 0.7rem;
     animation: ${slideOut} 1s ease-in-out forwards;

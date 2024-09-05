@@ -89,7 +89,7 @@ export const WrapperBase = styled.div`
     border-radius: 5rem;
     justify-content: center;
     align-items: center;
-    background-color: #0f0a00;
+    background-color: var(--primary-black-color);
     font-size: 2.5rem;
     left: ${({ left }) => `${left * stanWidth}rem`};
     top: ${({ top }) => `${top * stanWidth}rem`};
@@ -113,7 +113,7 @@ export const WrapperBase = styled.div`
     ${emptyBackground}
 
     &:hover {
-        color: #fcf6e9;
+        color: var(--primary-white-color);
         ${hoverEffect}
     }
 

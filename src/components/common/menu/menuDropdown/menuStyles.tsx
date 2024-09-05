@@ -117,8 +117,8 @@ export const StyledLink = styled(Link)`
     color: inherit;
     padding: 0rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0rem 0rem 0.3rem 0rem #0f0a00;
-    box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+    box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);
     user-select: none;
 
     &:hover {
@@ -132,25 +132,25 @@ export const StyledLink = styled(Link)`
 
     @media (max-device-width: 480px) {
         &:hover {
-            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);
         }
 
         &:active {
-            box-shadow: 0rem 0rem 0.1rem 0.05rem #0f0a00;
+            box-shadow: 0rem 0rem 0.1rem 0.05rem var(--primary-black-color);
             transform: translate(1px, 1px);
         }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 75%;
-        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);
 
         &:hover {
-            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #0f0a00;
+            box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);
         }
 
         &:active {
-            box-shadow: 0rem 0rem 0.1rem 0.05rem #0f0a00;
+            box-shadow: 0rem 0rem 0.1rem 0.05rem var(--primary-black-color);
             transform: translate(1px, 1px);
         }
     }
