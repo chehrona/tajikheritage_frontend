@@ -12,7 +12,7 @@ import { Langs } from './appTypes';
 
 // Components
 import Header from './components/common/header/Header';
-import Menu from './components/common/menu/Menu';
+import Menu from './components/common/menu/menuDropdown/Menu';
 import Footer from './components/common/footer/Footer';
 import Routes from './components/common/routes/Routes';
 import Flags from './components/common/flags/Flags';
@@ -32,6 +32,7 @@ function App(): React.JSX.Element {
     const [isPrint, setIsPrint] = useState<boolean>(false);
     const [showAdmin, setShowAdmin] = useState<boolean>(true);
     const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
+    const menuAnchorEl = useRef<HTMLDivElement | null>(null);
 
     const value = useMemo<ContextTypes>(
         () => ({
@@ -102,11 +103,13 @@ function App(): React.JSX.Element {
                     <Header
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
+                        menuAnchorEl={menuAnchorEl}
                     />
                 )}
                 <Menu
                     setIsMenuShown={setIsMenuShown}
                     isMenuShown={isMenuShown}
+                    menuAnchorEl={menuAnchorEl}
                 />
                 <Routes />
                 <div className="fixed-container">

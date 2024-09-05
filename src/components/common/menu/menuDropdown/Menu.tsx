@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../hooks/useGlobalData';
+import { useGlobalData } from '../../../../hooks/useGlobalData';
 
 // Helper
-import staticText from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { Slide } from '@mui/material';
@@ -23,17 +23,23 @@ import {
     StyledMenu,
 } from './menuStyles';
 
-const Menu: React.FC<MenuProps> = ({ isMenuShown, setIsMenuShown }) => {
+const Menu: React.FC<MenuProps> = ({
+    isMenuShown,
+    setIsMenuShown,
+    menuAnchorEl,
+}) => {
     const { lang } = useGlobalData();
     const pageInfo = staticText.MENU_ITEMS as MenuPage;
 
     return (
         <StyledMenu
             open={isMenuShown}
+            anchorEl={menuAnchorEl.current}
             TransitionComponent={Slide}
             TransitionProps={{
                 timeout: 200,
             }}
+            marginThreshold={0}
             sx={{
                 zIndex: '10',
             }}

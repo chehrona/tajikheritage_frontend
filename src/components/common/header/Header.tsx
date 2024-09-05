@@ -1,64 +1,58 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 // Hooks
 import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
 
+// Components
+import MenuButton from '../menu/menuButton/MenuButton';
+
 // Types
-import { HeaderProps } from './types/componentTypes';
+import { MenuProps } from '../menu/menuDropdown/types/componentTypes';
 
 // Styled components
 import {
     HeaderContainer,
     HeaderInnerBox,
     LogoWrapper,
-    MenuWrapper,
     TitleWrapper,
     Title,
-    StyledIconButton,
-    StyledMenuIcon,
     Logo,
     MainTitle,
     TitleSpan,
-    StyledCloseIcon,
     StyledLink,
-    ButtonWrapper,
-    ButtonText,
     Semicolon,
 } from './headerStyles';
 
-const Header: React.FC<HeaderProps> = ({ setIsMenuShown, isMenuShown }) => {
-    const { lang, title } = useGlobalData();
+const sequence = [
+    [0, 1, 2],
+    [1, 2, 1],
+    [2, 1, 2],
+];
+
+const Header: React.FC<MenuProps> = ({
+    setIsMenuShown,
+    isMenuShown,
+    menuAnchorEl,
+}) => {
     const location = useLocation();
+    const { lang, title } = useGlobalData();
     const [titleOrder, setTitleOrder] = useState<number[]>([0, 1, 2]);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const [sequenceIndex, setSequenceIndex] = useState<number>(0);
 
-    function showMenu() {
-        setIsMenuShown((prevState: boolean) => !prevState);
-    }
-
-    function handleLogoClick() {
+    const handleLogoClick = useCallback(() => {
         setIsMenuShown(false);
-    }
+    }, [setIsMenuShown]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTitleOrder((prevOrder: number[]) => {
-                const newOrder = [...prevOrder];
-                const first = newOrder.shift();
-
-                if (first === undefined) {
-                    return prevOrder;
-                }
-
-                newOrder.push(first);
-                return newOrder;
-            });
+            setSequenceIndex((prevIndex) => (prevIndex + 1) % sequence.length);
+            setTitleOrder(sequence[sequenceIndex]);
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [location.pathname, lang]);
+    }, [sequenceIndex, location.pathname, lang]);
 
     return (
         <HeaderContainer>
@@ -72,9 +66,10 @@ const Header: React.FC<HeaderProps> = ({ setIsMenuShown, isMenuShown }) => {
                     {titleOrder.map((order, i) => {
                         const isElipsis: boolean =
                             title[lang][order][0].length > 10;
+                        const key = `title_key_${Math.random()}`;
 
                         return (
-                            <Title key={order} $index={i}>
+                            <Title key={key} $index={i}>
                                 <TitleSpan
                                     dangerouslySetInnerHTML={{
                                         __html: title[lang][order][0],
@@ -89,37 +84,11 @@ const Header: React.FC<HeaderProps> = ({ setIsMenuShown, isMenuShown }) => {
                         );
                     })}
                 </TitleWrapper>
-                <MenuWrapper>
-                    {!isMobile ? (
-                        isMenuShown ? (
-                            <ButtonWrapper onClick={showMenu}>
-                                <ButtonText>
-                                    {lang === 'us'
-                                        ? 'CLOSE'
-                                        : lang === 'ru'
-                                        ? 'ЗАКРЫТЬ'
-                                        : 'ПӮШЕД'}
-                                </ButtonText>
-                                <StyledCloseIcon />
-                            </ButtonWrapper>
-                        ) : (
-                            <ButtonWrapper onClick={showMenu}>
-                                <ButtonText>
-                                    {lang === 'us' ? 'MENU' : 'МЕНЮ'}
-                                </ButtonText>
-                                <StyledMenuIcon />
-                            </ButtonWrapper>
-                        )
-                    ) : (
-                        <StyledIconButton onClick={showMenu}>
-                            {isMenuShown ? (
-                                <StyledCloseIcon />
-                            ) : (
-                                <StyledMenuIcon />
-                            )}
-                        </StyledIconButton>
-                    )}
-                </MenuWrapper>
+                <MenuButton
+                    setIsMenuShown={setIsMenuShown}
+                    isMenuShown={isMenuShown}
+                    menuAnchorEl={menuAnchorEl}
+                />
             </HeaderInnerBox>
         </HeaderContainer>
     );

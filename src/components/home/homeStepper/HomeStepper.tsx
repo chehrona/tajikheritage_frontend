@@ -57,7 +57,6 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
         if (containerRef && containerRef.current) {
             const stepElements = Array.from(containerRef.current.children);
             stepElements.forEach((element) => {
-                console.log(typeof element, 'elenmtn');
                 observer.observe(element);
             });
 
@@ -103,7 +102,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                                         href={step?.desc[lang].link}
                                         target="_blank"
                                     >
-                                        <StyledButton lang={lang}>
+                                        <StyledButton $lang={lang}>
                                             {lang === 'ru'
                                                 ? 'УЗНАТЬ БОЛЬШЕ'
                                                 : lang === 'tj'

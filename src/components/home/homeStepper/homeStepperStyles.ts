@@ -1,11 +1,7 @@
 import styled, { css } from 'styled-components';
 
 // Types
-import {
-    LargeTitleProps,
-    OtherStepsProps,
-    StepperBoxProps,
-} from './types/styleTypes';
+import { LargeTitleProps } from './types/styleTypes';
 
 export const MainContainer = styled.div`
     width: 100%;
@@ -98,7 +94,7 @@ export const StepperContainer = styled.div`
     }
 `;
 
-export const StepperBox = styled.div<StepperBoxProps>`
+export const StepperBox = styled.div<{ $opacity: number }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -207,7 +203,7 @@ export const Desc = styled.div`
     }
 `;
 
-export const OtherSteps = styled.div<OtherStepsProps>`
+export const OtherSteps = styled.div<{ $bottom?: boolean }>`
     gap: 0.5rem;
     width: 3%;
     height: 20%;
@@ -228,13 +224,13 @@ export const OtherSteps = styled.div<OtherStepsProps>`
     }
 `;
 
-export const StyledButton = styled.div`
+export const StyledButton = styled.div<{ $lang: string }>`
     color: #bd9d52;
     height: fit-content;
     font-weight: 500;
     padding: 0rem 0rem 0.25rem 0rem;
-    width: ${({ lang }) =>
-        lang && lang === 'ru' ? '30%' : lang === 'tj' ? '35%' : '17%'};
+    width: ${({ $lang }) =>
+        $lang && $lang === 'ru' ? '30%' : $lang === 'tj' ? '35%' : '17%'};
 
     &::before {
         content: '';
@@ -246,8 +242,8 @@ export const StyledButton = styled.div`
         background-color: #ffffff;
         transform-origin: bottom right;
         transition: transform 0.3s ease-in-out;
-        width: ${({ lang }) =>
-            lang && lang === 'ru' ? '30%' : lang === 'tj' ? '35%' : '17%'};
+        width: ${({ $lang }) =>
+            $lang && $lang === 'ru' ? '30%' : $lang === 'tj' ? '35%' : '17%'};
     }
 
     &:hover::before {
