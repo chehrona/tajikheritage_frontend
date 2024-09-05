@@ -1,14 +1,14 @@
 export type OtherStepsProps = {
-    bottom?: boolean;
+    $bottom?: boolean;
 };
 
 export type LargeTitleProps = {
-    fontSize: {
+    $fontSize: {
         d: number;
         m: number;
         t: number;
     };
-    margin: {
+    $margin: {
         d: number;
         m: number;
         t: number;
@@ -16,5 +16,5 @@ export type LargeTitleProps = {
 };
 
 export type StepperBoxProps = {
-    opacity: number;
+    $opacity: number;
 };

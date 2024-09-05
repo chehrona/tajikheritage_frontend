@@ -15,7 +15,6 @@ import TempPage from '../tempPage/TempPage';
 // Middle pages
 import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
 import EtymologyPage from '../../../middlePages/wordsPage/EtymologyPage';
-import PoetsPage from '../../../middlePages/poetsPage/PoetsPage';
 
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
@@ -72,7 +71,10 @@ const Routes: React.FC = () => {
             /> */}
             <Route path="/cuisine" element={<TempPage />} />
             <Route path="/language/languages" element={<TempPage />} />
-            <Route path="/language/poets" element={<PoetsPage />} />
+            <Route
+                path="/language/poets"
+                element={<MiddlePage page={'language/all_poets'} />}
+            />
             <Route path="/language/etymology" element={<EtymologyPage />} />
             <Route path="/language/etymology/:id" element={<WordPage />} />
             <Route path="/language/poets/:id" element={<PoetPage />} />

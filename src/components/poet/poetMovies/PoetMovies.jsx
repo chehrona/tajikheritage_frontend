@@ -26,7 +26,7 @@ export default function PoetMovies({ poet }) {
             <MovieWrapper>
                 {poet[lang].map((movie, i) => {
                     return (
-                        <MovieCard key={i} delay={`${0.1 * i}s`}>
+                        <MovieCard key={i} $delay={`${0.1 * i}s`}>
                             <Image
                                 src={process.env.REACT_APP_BASE_URL + movie.img}
                             />

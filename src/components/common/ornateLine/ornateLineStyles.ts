@@ -1,16 +1,13 @@
 import styled, { css } from 'styled-components';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
-// Types
-import { ImageProps } from './types/styleTypes';
-
 export const IconContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
-export const Image = styled.div<ImageProps>`
+export const Image = styled.div<{ $right: boolean }>`
     width: 17rem;
     height: 2.5rem;
     margin-right: 0rem;
@@ -19,8 +16,8 @@ export const Image = styled.div<ImageProps>`
     background-repeat: no-repeat;
     background-image: url('/end_arrow.png');
 
-    ${({ right }) =>
-        !right &&
+    ${({ $right }) =>
+        !$right &&
         css`
             margin-right: 0.3rem;
             margin-left: 0rem;

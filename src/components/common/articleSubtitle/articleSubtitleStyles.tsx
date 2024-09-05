@@ -11,7 +11,7 @@ export const Subtitle = styled.span<SubtitleProps>`
     text-transform: uppercase;
     border-right: 2px solid #ad0f0e;
     border-bottom: 2px solid #ad0f0e;
-    ${({ reverse, length }) => !reverse && length && 'margin-left: 3rem'};
+    ${({ $reverse, $length }) => !$reverse && $length && 'margin-left: 3rem'};
 
     @media (max-width: 480px) {
         margin: 1rem 0rem 0rem 1.5rem;
@@ -20,6 +20,7 @@ export const Subtitle = styled.span<SubtitleProps>`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
-        ${({ reverse, length }) => !reverse && length && 'margin-left: 2rem'};
+        ${({ $reverse, $length }) =>
+            !$reverse && $length && 'margin-left: 2rem'};
     }
 `;

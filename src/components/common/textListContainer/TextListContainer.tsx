@@ -10,7 +10,7 @@ const TextListContainer: React.FC<TextLisContainerProps> = ({
     children,
     height,
 }) => {
-    return <MainContainer height={height}>{children}</MainContainer>;
+    return <MainContainer $height={height}>{children}</MainContainer>;
 };
 
 export default TextListContainer;

@@ -5,7 +5,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 
 // Service
-import { requestPage, requestArticleInfo } from '../../services/request';
+import { requestArticleInfo } from '../../services/request';
 
 // Types
 import { ProverbObj } from './types/componentTypes';
@@ -31,7 +31,7 @@ import {
 const ProverbPage = () => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang, title, setTitle } = useGlobalData();
+    const { lang } = useGlobalData();
     const [proverb, setProverb] = useState<ProverbObj>();
     // const [error, setError] = useState<BackendError>();
     const [loading, setLoading] = useState<boolean>(false);
@@ -62,9 +62,6 @@ const ProverbPage = () => {
         }
     };
 
-    // Set page title
-    // useHeader('etymology', items, title);
-
     useEffect(() => {
         // Get data
         fetchData();
@@ -91,11 +88,10 @@ const ProverbPage = () => {
                                     (entry: DescDetails, i) => {
                                         return (
                                             <TextSegment
+                                                i={i}
                                                 key={`${proverb?.quote[lang]}_${i}`}
                                                 reverse={i % 2 > 0}
                                                 data={entry}
-                                                title={false}
-                                                topLeftRad={0}
                                                 noBorder={true}
                                             />
                                         );

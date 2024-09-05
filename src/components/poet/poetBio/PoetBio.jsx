@@ -14,17 +14,17 @@ import SixthBox from './SixthBox';
 // Styled components
 import { MainContainer } from './poetBioStyles';
 
-export default function PoetBio({ poet }) {
+export default function PoetBio({ bioData }) {
     const { lang } = useGlobalData();
 
     return (
         <MainContainer id="Biography">
-            <FirstBox poet={poet?.bio?.one} />
-            <SecondBox poet={poet?.bio} />
-            <ThirdBox poet={poet?.bio} />
-            <ForthBox poet={poet?.bio} />
-            <FifthBox poet={poet?.bio?.five[lang]} />
-            <SixthBox poet={poet?.bio} />
+            <FirstBox poet={bioData.one} />
+            <SecondBox poet={bioData} />
+            <ThirdBox poet={bioData.three[lang]} />
+            <ForthBox poet={bioData.four[lang]} />
+            <FifthBox poet={bioData.five[lang]} />
+            <SixthBox poet={bioData} />
         </MainContainer>
     );
 }

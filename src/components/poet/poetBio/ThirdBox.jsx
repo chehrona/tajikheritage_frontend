@@ -1,5 +1,4 @@
 import React from 'react';
-import { useGlobalData } from '../../../hooks/useGlobalData';
 
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
@@ -13,8 +12,6 @@ import {
 } from './poetBioStyles';
 
 export default function ThirdBox({ poet }) {
-    const { lang } = useGlobalData();
-
     return (
         <BoxThree>
             <QuoteWrapper>
@@ -22,13 +19,8 @@ export default function ThirdBox({ poet }) {
                     <QuoteSymbol />
                 </QuoteOutline>
             </QuoteWrapper>
-            <Quote
-                dangerouslySetInnerHTML={{ __html: poet?.three[lang].quote }}
-            />
-            <DescWrapper
-                desc={poet?.three[lang].desc}
-                TextWrapper={TextWrapper}
-            />
+            <Quote dangerouslySetInnerHTML={{ __html: poet?.quote }} />
+            <DescWrapper desc={poet?.desc} TextWrapper={TextWrapper} />
         </BoxThree>
     );
 }

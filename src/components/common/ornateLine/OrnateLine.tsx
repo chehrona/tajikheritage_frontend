@@ -20,13 +20,13 @@ const OrnateLine: FC<OrnateLineProps> = ({
 }) => {
     return (
         <IconContainer>
-            <Image right={true} />
+            <Image $right={true} />
             <IconButton
                 onClick={() => setIsDropdownOpen((prevState) => !prevState)}
             >
                 {isDropdownOpen ? <StyledUpIcon /> : <StyledDownIcon />}
             </IconButton>
-            <Image right={false} />
+            <Image $right={false} />
         </IconContainer>
     );
 };

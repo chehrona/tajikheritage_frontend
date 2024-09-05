@@ -1,5 +1,4 @@
 export type SubtitleProps = {
-    dangerouslySetInnerHTML: { __html: string };
-    reverse?: boolean;
-    length?: boolean;
+    $reverse?: boolean;
+    $length?: boolean;
 };

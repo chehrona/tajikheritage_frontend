@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import Slideshow from '../../common/slideshow/Slideshow';
 
 import {
-    BoxSeven,
+    BoxSix,
     FinalQuote,
     LeftContainer,
     RightContainer,
@@ -32,11 +32,13 @@ export default function SixthBox({ poet }) {
     }, []);
 
     return (
-        <BoxSeven>
+        <BoxSix>
             <LeftContainer>
                 <Overlay>
                     <BackImg
-                        src={process.env.REACT_APP_BASE_URL + poet.backdrops[2]}
+                        $src={
+                            process.env.REACT_APP_BASE_URL + poet.backdrops[2]
+                        }
                     />
                 </Overlay>
                 <FinalQuote>
@@ -55,6 +57,6 @@ export default function SixthBox({ poet }) {
                     slides={poet?.six[lang].slides}
                 />
             </RightContainer>
-        </BoxSeven>
+        </BoxSix>
     );
 }

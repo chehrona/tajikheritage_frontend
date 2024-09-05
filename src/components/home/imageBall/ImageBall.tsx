@@ -13,11 +13,11 @@ const ImageBall: React.FC<ImageBallProps> = ({ entry, opacities, index }) => {
                 return (
                     <Border
                         key={ball.size}
-                        size={ball.size}
-                        opacity={opacities[index]}
-                        bottom={ball.bottom}
-                        right={ball.right}
-                        top={ball.top}
+                        $size={ball.size}
+                        $opacity={opacities[index]}
+                        $bottom={ball.bottom}
+                        $right={ball.right}
+                        $top={ball.top}
                     />
                 );
             })}
@@ -26,11 +26,11 @@ const ImageBall: React.FC<ImageBallProps> = ({ entry, opacities, index }) => {
                     <HomeImage
                         key={ball.size}
                         src={ball.img}
-                        size={ball.size}
-                        opacity={opacities[index]}
-                        bottom={ball.bottom}
-                        right={ball.right}
-                        top={ball.top}
+                        $size={ball.size}
+                        $opacity={opacities[index]}
+                        $bottom={ball.bottom}
+                        $right={ball.right}
+                        $top={ball.top}
                     />
                 );
             })}

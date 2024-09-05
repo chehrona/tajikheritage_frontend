@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
+// import { useHeader } from '../../hooks/useHeader';
 
 // Services
-import { requestPage, requestArticleInfo } from '../../services/request';
+import { requestArticleInfo } from '../../services/request';
 
 // Types
 import { WordObj } from './types/componentTypes';
@@ -31,7 +32,7 @@ import {
 const WordPage: React.FC = () => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang, title } = useGlobalData();
+    const { lang } = useGlobalData();
     const [word, setWord] = useState<WordObj>();
     // const [error, setError] = useState<BackendError>();
     const [loading, setLoading] = useState<boolean>(false);
@@ -63,7 +64,7 @@ const WordPage: React.FC = () => {
     };
 
     // Set page title
-    // useHeader('etymology', items, title);
+    // useHeader('etymology', word);
 
     useEffect(() => {
         // Get data

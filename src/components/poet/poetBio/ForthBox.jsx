@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
 import Slideshow from '../../common/slideshow/Slideshow';
 
 import {
-    BoxSeven,
+    BoxSix,
     FamilyDesc,
     LeftContainer,
     RightContainer,
@@ -13,7 +12,6 @@ import {
 } from './poetBioStyles';
 
 export default function ForthBox({ poet }) {
-    const { lang } = useGlobalData();
     const parentRef = useRef(null);
     const [screenSize, setScreenSize] = useState(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
@@ -30,15 +28,15 @@ export default function ForthBox({ poet }) {
     }, []);
 
     return (
-        <BoxSeven>
+        <BoxSix>
             <LeftContainer>
                 <FamilyDesc>
-                    <Year align={true} color={'#000'}>
-                        {poet?.four[lang].year}
+                    <Year $align={true} $color={'#000'}>
+                        {poet?.year}
                     </Year>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: poet?.four[lang].desc,
+                            __html: poet?.desc,
                         }}
                     ></div>
                 </FamilyDesc>
@@ -47,9 +45,9 @@ export default function ForthBox({ poet }) {
                 <Slideshow
                     width={screenSize}
                     height={height}
-                    slides={poet?.four[lang].slides}
+                    slides={poet?.slides}
                 />
             </RightContainer>
-        </BoxSeven>
+        </BoxSix>
     );
 }

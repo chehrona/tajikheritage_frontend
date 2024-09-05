@@ -61,8 +61,8 @@ export const YearWrapper = styled.div`
     height: 0rem;
     border: 0.5rem solid #bd9d52;
 
-    ${({ size }) =>
-        size &&
+    ${({ $size }) =>
+        $size &&
         `
         padding: 0rem 0.5rem;
         width: fit-content;

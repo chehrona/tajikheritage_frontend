@@ -71,9 +71,9 @@ export default function PoetCareer({ points }) {
                         return (
                             <YearWrapper
                                 key={`${point}.point`}
-                                size={i === currentIndex}
+                                $size={i === currentIndex}
                             >
-                                <Year show={i !== currentIndex}>{point}</Year>
+                                <Year $show={i !== currentIndex}>{point}</Year>
                             </YearWrapper>
                         );
                     })}

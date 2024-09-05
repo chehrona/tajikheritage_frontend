@@ -102,7 +102,7 @@ export const StepperBox = styled.div<StepperBoxProps>`
     width: 100%;
     height: 100%;
     display: flex;
-    opacity: ${({ opacity }) => opacity && opacity};
+    opacity: ${({ $opacity }) => $opacity && $opacity};
 
     @media (max-width: 1024px) {
         scroll-snap-align: start;
@@ -141,13 +141,13 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     text-transform: uppercase;
     font-family: 'EB Garamond', serif;
     text-shadow: 1rem 0rem 0rem #504221;
-    margin-top: ${({ margin }) => margin && `${margin.d}rem`};
-    ${({ fontSize }) =>
-        fontSize
+    margin-top: ${({ $margin }) => $margin && `${$margin.d}rem`};
+    ${({ $fontSize }) =>
+        $fontSize
             ? css`
                   opacity: 1;
-                  font-size: ${fontSize.d}rem;
-                  line-height: ${fontSize.d - 1}rem;
+                  font-size: ${$fontSize.d}rem;
+                  line-height: ${$fontSize.d - 1}rem;
               `
             : css`
                   opacity: 0;
@@ -157,13 +157,13 @@ export const LargeTitle = styled.div<LargeTitleProps>`
         width: 100%;
         padding-top: 0rem;
         text-shadow: 0.5rem 0rem 0rem #504221;
-        margin-top: ${({ margin }) => margin && `${margin.m}%`};
-        ${({ fontSize }) =>
-            fontSize
+        margin-top: ${({ $margin }) => $margin && `${$margin.m}%`};
+        ${({ $fontSize }) =>
+            $fontSize
                 ? css`
                       opacity: 1;
-                      font-size: ${fontSize.m}rem;
-                      line-height: ${fontSize.m - 0.5}rem;
+                      font-size: ${$fontSize.m}rem;
+                      line-height: ${$fontSize.m - 0.5}rem;
                   `
                 : css`
                       opacity: 0;
@@ -171,14 +171,14 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        margin-top: ${({ margin }) => margin && `${margin.t}%`};
+        margin-top: ${({ $margin }) => $margin && `${$margin.t}%`};
 
-        ${({ fontSize }) =>
-            fontSize
+        ${({ $fontSize }) =>
+            $fontSize
                 ? css`
                       opacity: 1;
-                      font-size: ${fontSize.t}rem;
-                      line-height: ${fontSize.t - 0.5}rem;
+                      font-size: ${$fontSize.t}rem;
+                      line-height: ${$fontSize.t - 0.5}rem;
                   `
                 : css`
                       opacity: 0;
@@ -216,8 +216,8 @@ export const OtherSteps = styled.div<OtherStepsProps>`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    ${({ bottom }) => (bottom ? 'bottom: 0rem' : 'top: 0rem')};
-    justify-content: ${({ bottom }) => (bottom ? 'end' : 'start')};
+    ${({ $bottom }) => ($bottom ? 'bottom: 0rem' : 'top: 0rem')};
+    justify-content: ${({ $bottom }) => ($bottom ? 'end' : 'start')};
 
     @media (max-width: 480px) {
         display: none;

@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
-import { useHeader } from '../../hooks/useHeader';
+// import { useHeader } from '../../hooks/useHeader';
 
 // Helper
 import staticText from '../../miscellaneous/staticTexts.json';
 
 // Services
-import { requestPage, requestMiddlePage } from '../../services/request';
+import { requestMiddlePage } from '../../services/request';
 
 // Components
 import Fade from '../../components/common/transition/Fade';
@@ -27,7 +27,7 @@ import { PageContainer } from '../middlePage/middlePageStyles';
 
 function EtymologyPage() {
     const location = useLocation();
-    const { lang, title } = useGlobalData();
+    const { lang } = useGlobalData();
     const [items, setItems] = useState([]);
     const [allItems, setAllItems] = useState([]);
     const [error, setError] = useState<any>();
@@ -58,7 +58,7 @@ function EtymologyPage() {
     };
 
     // Set page title
-    // useHeader('etymology', items, title);
+    // useHeader('etymology', allItems);
 
     useEffect(() => {
         // Get data

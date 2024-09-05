@@ -15,13 +15,17 @@ export type ErrorTypes = Error & {
     response?: ErrorResponse;
 };
 
+export type Slide = {
+    id: string;
+    info?: string;
+    img?: string;
+    overlay?: string;
+};
+
 export type DescDetails = {
     subtitle: string;
     body: BodyObj;
-    slides: {
-        info?: string;
-        img?: string;
-    };
+    slides: Slide[];
 };
 
 export type DescObj = {

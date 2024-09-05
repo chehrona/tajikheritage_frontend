@@ -1,12 +1,15 @@
-import {
-    InnerBall,
-    OuterBall,
-} from '../../../../landingPages/home/types/componentTypes';
-
-export type BorderProps = OuterBall & {
-    opacity: number;
+export type BorderProps = {
+    $opacity: number;
+    $size: number;
+    $top?: { d: string; t: string };
+    $right: { d: string; t: string };
+    $bottom?: { d: string; t: string };
 };
 
-export type HomeImageProps = Omit<InnerBall, 'img'> & {
-    opacity: number;
+export type HomeImageProps = {
+    $opacity: number;
+    $size: number;
+    $top?: { d: string; t: string };
+    $right: { d: string; t: string };
+    $bottom?: { d: string; t: string };
 };

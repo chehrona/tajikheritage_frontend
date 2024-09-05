@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
-import { useHeader } from '../../hooks/useHeader';
 
 // Types
 import { ErrorTypes, ErrorResponse } from '../../appTypes';
@@ -25,14 +24,10 @@ import PageFirstContainer from '../../components/common/pageFirstContainer/PageF
 const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang, title } = useGlobalData();
+    const { lang } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<ErrorResponse>();
     const [loading, setLoading] = useState<boolean>(false);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({
-        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
-    });
 
     const fetchData = async () => {
         try {
@@ -62,7 +57,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     // Set page title
-    useHeader(page, data, title);
+    // useHeader(page, data);
 
     useEffect(() => {
         // Get data
@@ -79,22 +74,14 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                             {data.desc[lang].map((entry, i) => {
                                 return (
                                     <TextSegment
+                                        i={i}
                                         key={`${data?.name[lang]}_${i}`}
                                         reverse={i % 2 > 0}
                                         data={entry}
-                                        title={i === 0 && data.name[lang]}
-                                        topLeftRad={
-                                            isMobile
-                                                ? 0
-                                                : i === 0
-                                                ? isTablet
-                                                    ? 2.5
-                                                    : 4
-                                                : 0
-                                        }
+                                        title={data.name[lang]}
                                         noBorder={
                                             i === data.desc[lang].length - 1 &&
-                                            1
+                                            true
                                         }
                                     />
                                 );

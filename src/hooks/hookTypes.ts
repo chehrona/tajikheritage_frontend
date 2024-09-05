@@ -19,9 +19,7 @@ export type ContextTypes = {
 // useHeader
 export type Section = {
     link: string;
-    title: {
-        [key in Langs]: string[][];
-    };
+    title: TitleProps;
 };
 
 export type Entry = {

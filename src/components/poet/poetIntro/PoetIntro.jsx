@@ -20,8 +20,8 @@ import {
 
 export default function PoetIntro({ poet, scrollToView }) {
     const { lang } = useGlobalData();
-    const yearOne = poet?.years[lang][0].split('');
-    const yearTwo = poet?.years[lang][1].split('');
+    const yearOne = poet?.years[0].split('');
+    const yearTwo = poet?.years[1].split('');
 
     return (
         <MainContainer>
@@ -35,7 +35,7 @@ export default function PoetIntro({ poet, scrollToView }) {
                                 onClick={(e) => scrollToView(e)}
                             >
                                 <TitleSpan
-                                    delay={`${0.03 * i}s`}
+                                    $delay={`${0.03 * i}s`}
                                     data={`#${poet?.sections.us[i]}`}
                                 >
                                     {piece}

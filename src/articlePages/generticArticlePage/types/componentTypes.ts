@@ -1,12 +1,12 @@
 import { Source } from '../../../components/common/sources/types/componentTypes';
-import { Langs } from '../../../appTypes';
+import { DescDetails, Langs } from '../../../appTypes';
 
 export type ArticleData = {
     name: {
         [key in Langs]: string[];
     };
     desc: {
-        [key in Langs]: string[];
+        [key in Langs]: DescDetails[];
     };
     references: {
         [key in Langs]: Source[];

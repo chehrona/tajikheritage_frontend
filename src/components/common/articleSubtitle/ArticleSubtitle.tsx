@@ -14,8 +14,8 @@ const ArticleSubtitle: React.FC<ArticleSubtitleProps> = ({
     return (
         <Subtitle
             dangerouslySetInnerHTML={{ __html: subtitle }}
-            reverse={reverse}
-            length={length}
+            $reverse={reverse}
+            $length={length}
         />
     );
 };
