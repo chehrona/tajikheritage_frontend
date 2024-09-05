@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { useGlobalData } from '../../../hooks/useGlobalData';
 
+// Components
 import AwardDialog from '../awardDialog/AwardDialog';
 
+// Types
+import { PoetAwardTypes } from './types/componentTypes';
+
+// Styled components
 import {
     MainContainer,
     AwardCard,
@@ -16,24 +20,26 @@ import {
     AwardWrapper,
 } from './poetAwardStyles';
 
-export default function PoetAwards({ poet }) {
-    const { lang } = useGlobalData();
-    const [showAwardInfo, setShowAwardInfo] = useState(false);
-    const [awardInfo, setAwardInfo] = useState(null);
+const PoetAwards: React.FC<{ awards: PoetAwardTypes[] }> = ({ awards }) => {
+    const [awardInfo, setAwardInfo] = useState<PoetAwardTypes>();
+    const [showAwardInfo, setShowAwardInfo] = useState<boolean>(false);
 
-    function handleAwardDialog(e, award) {
+    function handleAwardDialog(
+        e: React.MouseEvent<HTMLButtonElement>,
+        award: PoetAwardTypes,
+    ) {
         setShowAwardInfo(true);
         setAwardInfo(award);
     }
 
     return (
         <MainContainer id="Awards">
-            <AwardWrapper length={poet[lang]}>
-                {poet[lang].map((award, i) => {
+            <AwardWrapper>
+                {awards.map((award, i) => {
                     return (
-                        <AwardCard key={i} delay={`${0.05 * i}s`}>
+                        <AwardCard key={i} $delay={`${0.05 * i}s`}>
                             <InnerContainer>
-                                <Face>
+                                <Face $back={false}>
                                     <Image
                                         src={
                                             process.env.REACT_APP_BASE_URL +
@@ -41,11 +47,9 @@ export default function PoetAwards({ poet }) {
                                         }
                                     />
                                 </Face>
-                                <Face back={true}>
+                                <Face $back={true}>
                                     <Title>{award.title}</Title>
-                                    {award.years.map((year) => {
-                                        return <Year key={year}>{year}</Year>;
-                                    })}
+                                    <Year>{award.year}</Year>;
                                     <StyledIconButton
                                         onClick={(e) =>
                                             handleAwardDialog(e, award)
@@ -66,4 +70,6 @@ export default function PoetAwards({ poet }) {
             />
         </MainContainer>
     );
-}
+};
+
+export default PoetAwards;

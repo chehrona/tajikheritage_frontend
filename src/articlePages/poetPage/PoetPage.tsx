@@ -108,7 +108,7 @@ const PoetPage: React.FC = () => {
                             <PoetWorks works={poet?.works[lang]} />
                             <PoetMovies movies={poet?.movies[lang]} />
                             <PoetCareer points={poet?.career} />
-                            <PoetAwards poet={poet?.awards} />
+                            <PoetAwards awards={poet?.awards[lang]} />
                             <Sources data={poet?.references[lang]} />
                         </TextListContainer>
                     </PageFirstContainer>

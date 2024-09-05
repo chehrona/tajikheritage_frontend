@@ -1,13 +1,21 @@
 import React from 'react';
+
+// Hooks
 import { useMediaQuery } from 'react-responsive';
 
+// Components
 import BookshelfDesign from '../bookshelfDesign/BookshelfDesign';
+
+// Types
+import { PoetWorksTypes } from './types/componentTypes';
+
+// Styled components
 import { MainContainer } from './poetWorksStyles';
 
-export default function PoetWorks({ works }) {
+const PoetWorks: React.FC<{ works: PoetWorksTypes[] }> = ({ works }) => {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const numBooks = works.length;
-    let shelfNum;
+    let shelfNum: number = 0;
 
     if (isMobile) {
         shelfNum = Math.ceil(numBooks / 2);
@@ -15,7 +23,7 @@ export default function PoetWorks({ works }) {
         shelfNum = Math.ceil(numBooks / 4);
     }
 
-    function renderShelves(n) {
+    function renderShelves(n: number) {
         let shelves = [];
 
         if (isMobile) {
@@ -46,4 +54,6 @@ export default function PoetWorks({ works }) {
     }
 
     return <MainContainer id="Works">{renderShelves(shelfNum)}</MainContainer>;
-}
+};
+
+export default PoetWorks;

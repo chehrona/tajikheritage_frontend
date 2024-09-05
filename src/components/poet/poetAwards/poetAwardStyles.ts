@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { Info } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
@@ -56,7 +56,7 @@ export const AwardWrapper = styled.div`
     }
 `;
 
-export const AwardCard = styled.div`
+export const AwardCard = styled.div<{ $delay: string }>`
     width: 10rem;
     height: 14.1rem;
     border-radius: 1rem;
@@ -69,7 +69,7 @@ export const AwardCard = styled.div`
     box-shadow: 0rem 0rem 0.5rem 0.1rem #504221;
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
-    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
+    animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     @media (max-width: 480px) {
         width: 9rem;
@@ -91,17 +91,25 @@ export const InnerContainer = styled.div`
     }
 `;
 
-export const Face = styled.div`
+export const Face = styled.div<{ $back: boolean }>`
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: ${({ back }) => back && 'rotateY(180deg)'};
-    background: ${({ back }) => (back ? '#504221d1' : '#0F0A00')};
-    background-image: ${({ back }) => back && "url(${'/noise.png'})"};
     border-radius: 1rem;
     padding: 0.8rem;
+
+    ${({ $back }) =>
+        $back
+            ? css`
+                  transform: rotateY(180deg);
+                  background: #504221d1;
+                  background-image: url(${'/noise.png'});
+              `
+            : css`
+                  background: #0f0a00;
+              `}
 
     @media (max-width: 480px) {
         padding: 0.4rem;
