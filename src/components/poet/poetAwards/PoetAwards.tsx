@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import AwardDialog from '../awardDialog/AwardDialog';
 
 // Types
-import { PoetAwardTypes } from './types/componentTypes';
+import { PoetAwardType } from './types/componentTypes';
 
 // Styled components
 import {
@@ -20,13 +20,13 @@ import {
     AwardWrapper,
 } from './poetAwardStyles';
 
-const PoetAwards: React.FC<{ awards: PoetAwardTypes[] }> = ({ awards }) => {
-    const [awardInfo, setAwardInfo] = useState<PoetAwardTypes>();
+const PoetAwards: React.FC<{ awards: PoetAwardType[] }> = ({ awards }) => {
+    const [awardInfo, setAwardInfo] = useState<PoetAwardType>();
     const [showAwardInfo, setShowAwardInfo] = useState<boolean>(false);
 
     function handleAwardDialog(
         e: React.MouseEvent<HTMLButtonElement>,
-        award: PoetAwardTypes,
+        award: PoetAwardType,
     ) {
         setShowAwardInfo(true);
         setAwardInfo(award);

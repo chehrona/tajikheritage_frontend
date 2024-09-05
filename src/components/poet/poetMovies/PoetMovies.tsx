@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 import MovieDialog from '../movieDialog/MovieDialog';
 
 // Types
-import { MovieInfoType } from './types/componentTypes';
+import { PoetMovieType } from './types/componentTypes';
 
 // Styled components
 import {
@@ -16,12 +16,12 @@ import {
     MovieWrapper,
 } from './poetMovieStyles';
 
-const PoetMovies: React.FC<{ movies: MovieInfoType[] }> = ({ movies }) => {
+const PoetMovies: React.FC<{ movies: PoetMovieType[] }> = ({ movies }) => {
     const [showMovieInfo, setShowMovieInfo] = useState<boolean>(false);
-    const [movieInfo, setMovieInfo] = useState<MovieInfoType>();
+    const [movieInfo, setMovieInfo] = useState<PoetMovieType>();
 
     const handleMovieDialog = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement>, movie: MovieInfoType) => {
+        (e: React.MouseEvent<HTMLButtonElement>, movie: PoetMovieType) => {
             setShowMovieInfo(true);
             setMovieInfo(movie);
         },
@@ -31,7 +31,7 @@ const PoetMovies: React.FC<{ movies: MovieInfoType[] }> = ({ movies }) => {
     return (
         <MainContainer id="Films">
             <MovieWrapper>
-                {movies.map((movie: MovieInfoType, i: number) => {
+                {movies.map((movie: PoetMovieType, i: number) => {
                     return (
                         <MovieCard key={i} $delay={`${0.1 * i}s`}>
                             <Image

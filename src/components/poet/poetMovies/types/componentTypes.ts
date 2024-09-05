@@ -1,4 +1,4 @@
-export type MovieInfoType = {
+export type PoetMovieType = {
     link: string;
     year: string;
     studio: string;

@@ -4,6 +4,6 @@ export type StyledDialogProps = DialogProps & {
     $width: string;
     $backdrop: string;
     $background: string;
-    $height: string;
+    $height?: string;
     $border: string;
 };

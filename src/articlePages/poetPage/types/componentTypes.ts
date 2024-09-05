@@ -7,7 +7,8 @@ import {
 } from '../../../components/poet/poetBio/types/componentTypes';
 import { PoetCareerTypes } from '../../../components/poet/poetCareer/types/componentTypes';
 import { PoetWorksTypes } from '../../../components/poet/poetWorks/types/componentTypes';
-import { PoetAwardTypes } from '../../../components/poet/poetAwards/types/componentTypes';
+import { PoetAwardType } from '../../../components/poet/poetAwards/types/componentTypes';
+import { PoetMovieType } from '../../../components/poet/poetMovies/types/componentTypes';
 
 export type SectionType = {
     [key in Langs]: string[];
@@ -20,19 +21,6 @@ export type PoetBio = {
     three: {
         [key in Langs]: BodyObj;
     };
-};
-
-export type PoetMovie = {
-    title: string;
-    studio: string;
-    img: string;
-    duration: string;
-    genre: string;
-    year: string;
-    link: string;
-    lang: string;
-    desc: string;
-    director: string;
 };
 
 export type PoetData = {
@@ -54,10 +42,10 @@ export type PoetData = {
         [key in Langs]: PoetWorksTypes[];
     };
     movies: {
-        [key in Langs]: PoetMovie[];
+        [key in Langs]: PoetMovieType[];
     };
     awards: {
-        [key in Langs]: PoetAwardTypes[];
+        [key in Langs]: PoetAwardType[];
     };
     career: PoetCareerTypes;
     references: {

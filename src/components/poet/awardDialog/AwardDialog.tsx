@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
+// Components
 import Dialog from '../../common/dialog/Dialog';
 
+// Types
+import { AwardDialogProps } from './types/componentTypes';
+
+// Styled components
 import {
     Desc,
     InfoContainer,
@@ -12,13 +17,18 @@ import {
     Wrapper,
 } from './awardDialogStyles';
 
-export default function AwardDialog({
+const AwardDialog: React.FC<AwardDialogProps> = ({
     awardInfo,
     setShowAwardInfo,
     showAwardInfo,
-}) {
-    function handleClose() {
+}) => {
+    const handleClose = useCallback(() => {
         setShowAwardInfo(false);
+    }, [setShowAwardInfo]);
+
+    if (!awardInfo) {
+        handleClose();
+        return null;
     }
 
     return (
@@ -34,7 +44,7 @@ export default function AwardDialog({
                 <InfoContainer>
                     <InfoTitle>{awardInfo?.title}</InfoTitle>
                     <BodyContainer>
-                        <Wrapper first={true}>
+                        <Wrapper $first={true}>
                             <AwardImg
                                 src={
                                     process.env.REACT_APP_BASE_URL +
@@ -42,7 +52,7 @@ export default function AwardDialog({
                                 }
                             />
                         </Wrapper>
-                        <Wrapper>
+                        <Wrapper $first={false}>
                             <Desc
                                 dangerouslySetInnerHTML={{
                                     __html: awardInfo?.desc,
@@ -54,4 +64,6 @@ export default function AwardDialog({
             </StyledContent>
         </Dialog>
     );
-}
+};
+
+export default AwardDialog;

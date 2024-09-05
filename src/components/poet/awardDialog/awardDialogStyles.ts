@@ -56,16 +56,16 @@ export const BodyContainer = styled.div`
     }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $first: boolean }>`
     height: 100%;
-    width: ${({ first }) => (first ? '25%' : '75%')};
+    width: ${({ $first }) => ($first ? '25%' : '75%')};
 
     @media (max-width: 480px) {
         width: 100%;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: ${({ first }) => (first ? '24.5%' : '76.5%')};
+        width: ${({ $first }) => ($first ? '24.5%' : '76.5%')};
     }
 `;
 

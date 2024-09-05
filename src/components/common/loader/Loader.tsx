@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
-import { Transition } from 'react-transition-group';
+import { Transition, TransitionStatus } from 'react-transition-group';
 
+// Styled components
 import { MainContainer, LoaderImg, LoaderContainer } from './loaderStyles';
+import { transitionStylesProps } from './types/componentTypes';
 
 const duration = 350;
 
@@ -10,19 +12,20 @@ const defaultStyle = {
     opacity: 0,
 };
 
-const transitionStyles = {
+const transitionStyles: transitionStylesProps = {
     entering: { opacity: 1 },
     entered: { opacity: 0.8 },
     exiting: { opacity: 0.4 },
     exited: { opacity: 0, display: 'none' },
+    unmounted: { visibility: 'hidden' },
 };
 
-const Loader = ({ inProp }) => {
-    const nodeRef = useRef(null);
+const Loader: React.FC<{ inProp: boolean }> = ({ inProp }) => {
+    const nodeRef = useRef<HTMLDivElement>(null);
 
     return (
         <Transition nodeRef={nodeRef} in={inProp} timeout={duration}>
-            {(state) => (
+            {(state: TransitionStatus) => (
                 <div
                     ref={nodeRef}
                     style={{
