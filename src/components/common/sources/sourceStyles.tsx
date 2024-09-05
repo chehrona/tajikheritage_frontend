@@ -80,7 +80,7 @@ export const RefWrapper = styled.div<RefProps>`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #bd9d52;
+        background-color: var(--primary-gold-color);
         border-radius: 0.25rem;
     }
 
@@ -135,14 +135,14 @@ export const RefIndex = styled.div`
 `;
 
 export const SourceLink = styled.a`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     margin-left: 0.5rem;
     position: absolute;
     margin-left: 5px;
     bottom: -3.5px;
 
     &:link &:active {
-        color: #bd9d52;
+        color: var(--primary-gold-color);
     }
 `;
 

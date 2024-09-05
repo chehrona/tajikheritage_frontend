@@ -30,7 +30,7 @@ export const Border = styled.div<BorderProps>`
     transform: scale(${({ $opacity }) => $opacity && $opacity});
     width: ${({ $size }) => $size && `${$size}rem`};
     height: ${({ $size }) => $size && `${$size}rem`};
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid var(--primary-gold-color);
     will-change: transform;
     z-index: 1;
 

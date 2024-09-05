@@ -29,11 +29,11 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const Arrow = styled.div`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     background-color: #fff;
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid var(--primary-gold-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;

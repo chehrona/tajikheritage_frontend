@@ -104,7 +104,7 @@ export const StyledIconButton = styled(IconButton)`
     bottom: 1rem;
     right: -2.6rem;
     transform: translateX(-50%);
-    box-shadow: 0rem 0rem 0.6rem #000;
+    box-shadow: 0rem 0rem 0.6rem var(--regular-black-color);
 
     &.MuiIconButton-root {
         position: absolute;

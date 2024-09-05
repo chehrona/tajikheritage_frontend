@@ -32,7 +32,7 @@ export const Shadow = styled.div`
     position: absolute;
     top: 2rem;
     width: calc(100% - 6.2rem);
-    background-color: #70654a;
+    background-color: var(--primary-shadow-color);
     border-radius: 4rem 4rem 0rem 0rem;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -49,7 +49,7 @@ export const ProverbContainer = styled.div`
     min-height: 40rem;
     background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #70654a;
+    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     z-index: 3;
 
     @media (max-width: 480px) {
@@ -60,7 +60,7 @@ export const ProverbContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-radius: 2.5rem;
-        box-shadow: 0.8rem 0.5rem 0rem 0.08rem #70654a;
+        box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     }
 `;
 
@@ -176,7 +176,7 @@ export const Text = styled.text`
     text-anchor: middle;
     transform: rotateZ(180deg);
     transform-origin: center;
-    fill: #ad0f0e;
+    fill: var(--primary-red-color);
     font-weight: bold;
     letter-spacing: 2.5px;
 

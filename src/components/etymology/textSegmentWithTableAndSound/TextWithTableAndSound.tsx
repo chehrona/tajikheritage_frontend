@@ -62,7 +62,7 @@ const TextSegmentWithTableAndSound: React.FC<
                                 onClick={() =>
                                     setExpanded((prevState) => !prevState)
                                 }
-                                expanded={expanded}
+                                $expanded={expanded}
                                 src={`${process.env.REACT_APP_BASE_URL}${data.body[element]}`}
                             />
                         );

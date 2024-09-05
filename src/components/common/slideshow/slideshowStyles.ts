@@ -84,7 +84,7 @@ export const SlideContainer = styled.div`
 export const StyledButton = styled(IconButton)<StyledButtonProps>`
     width: 3.5rem;
     height: 3.5rem;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +146,7 @@ export const Circle = styled.div<{ $selected: boolean }>`
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: #bd9d52;
+    background-color: var(--primary-gold-color);
     opacity: ${({ $selected }) => ($selected ? '1' : '0.4')};
     margin-right: 0.25rem;
 

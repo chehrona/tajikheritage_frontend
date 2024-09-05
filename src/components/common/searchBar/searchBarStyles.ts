@@ -137,7 +137,7 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const InputAlert = styled.div`
-    color: #ad0f0e;
+    color: var(--primary-red-color);
     height: 1.5rem;
     margin-top: 0.5rem;
 

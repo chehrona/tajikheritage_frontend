@@ -151,7 +151,7 @@ export const PrintImage = styled.img`
 `;
 
 export const LeftSection = styled.div`
-    border-right: 0.1rem solid #000;
+    border-right: 0.1rem solid var(--regular-black-color);
     padding-right: 1rem;
 `;
 

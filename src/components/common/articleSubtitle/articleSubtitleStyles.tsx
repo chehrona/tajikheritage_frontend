@@ -9,8 +9,8 @@ export const Subtitle = styled.span<SubtitleProps>`
     width: fit-content;
     padding-right: 0.25rem;
     text-transform: uppercase;
-    border-right: 2px solid #ad0f0e;
-    border-bottom: 2px solid #ad0f0e;
+    border-right: 2px solid var(--primary-red-color);
+    border-bottom: 2px solid var(--primary-red-color);
     ${({ $reverse, $length }) => !$reverse && $length && 'margin-left: 3rem'};
 
     @media (max-width: 480px) {

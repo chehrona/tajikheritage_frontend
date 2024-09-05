@@ -62,7 +62,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
     background-image: url(${'/noise.png'});
     width: 0rem;
     height: 0rem;
-    border: 0.5rem solid #bd9d52;
+    border: 0.5rem solid var(--primary-gold-color);
 
     ${({ $size }) =>
         $size &&
@@ -70,7 +70,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
         padding: 0rem 0.5rem;
         width: fit-content;
         height: fit-content;
-        border: 0.15rem solid #bd9d52;
+        border: 0.15rem solid var(--primary-gold-color);
     `}
 `;
 
@@ -80,7 +80,7 @@ export const Year = styled.div<{ $show: boolean }>`
 `;
 
 export const Line = styled.div`
-    background: #bd9d52;
+    background: var(--primary-gold-color);
     height: 0.15rem;
     width: 100%;
     position: absolute;
@@ -156,7 +156,7 @@ export const Desc = styled.div`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #bd9d52;
+        background-color: var(--primary-gold-color);
         border-radius: 0.25rem;
     }
 
@@ -234,7 +234,7 @@ export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
     transform: ${({ $left }) => $left && 'rotate(180deg)'};
 
     svg {
-        fill: #bd9d52;
+        fill: var(--primary-gold-color);
     }
 
     &:disabled {

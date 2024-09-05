@@ -92,7 +92,7 @@ export const ImageWrapper = styled.div`
     background-size: contain;
     height: 100%;
     width: 100%;
-    filter: drop-shadow(0px 0px 2.5px #bd9d52);
+    filter: drop-shadow(0px 0px 2.5px var(--primary-gold-color));
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 90%;

@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Button } from "@mui/material";
+import styled from 'styled-components';
+import { Button } from '@mui/material';
 
 export const SubTitle = styled.div`
     padding-bottom: 0.8rem;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--regular-black-color);
 
     @media (max-width: 480px) {
         padding-bottom: 0rem;

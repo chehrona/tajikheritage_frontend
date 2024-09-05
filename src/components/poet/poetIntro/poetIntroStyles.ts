@@ -152,7 +152,7 @@ export const PoetName = styled.div`
     font-style: italic;
     animation-delay: 0.1s;
     text-shadow: 0rem 0rem 5rem black;
-    -webkit-text-stroke-color: #bd9d52;
+    -webkit-text-stroke-color: var(--primary-gold-color);
     animation: ${slideOut} 1s ease-in-out forwards;
 
     ${({ color }) =>

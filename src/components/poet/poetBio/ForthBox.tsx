@@ -42,7 +42,7 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
         <BoxSix>
             <LeftContainer>
                 <FamilyDesc>
-                    <Year $align={true} $color={'#000'}>
+                    <Year $align={true} $color={'var(--regular-black-color)'}>
                         {bioFour?.year}
                     </Year>
                     <DescWrapper data={bioFour?.desc} TextWrapper={StyledDiv} />

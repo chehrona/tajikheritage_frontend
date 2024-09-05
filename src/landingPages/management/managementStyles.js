@@ -70,7 +70,8 @@ export const EditableInput = styled.input`
     outline: none;
     margin-bottom: 0.5rem;
     font-family: 'IBM Plex Serif', serif;
-    border: ${({ file }) => (file ? 'none' : '1px solid #bd9d52')};
+    border: ${({ file }) =>
+        file ? 'none' : '1px solid var(--primary-gold-color)'};
     padding: ${({ file }) => (file ? '0rem' : '0rem 0.25rem')};
 `;
 

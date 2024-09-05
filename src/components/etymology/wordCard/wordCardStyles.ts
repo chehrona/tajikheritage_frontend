@@ -55,7 +55,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
 export const WordTitle = styled.div`
     font-weight: bold;
     font-size: 1.15rem;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     margin-bottom: 0.25rem;
 
     @media (max-width: 480px) {
@@ -138,13 +138,13 @@ export const ArrowWrapper = styled.div`
 `;
 
 export const Arrow = styled.div`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     border-radius: 50%;
     justify-content: center;
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid var(--primary-gold-color);
     box-shadow: 0rem 0rem 0.3rem 0rem #dedbdb;
 `;

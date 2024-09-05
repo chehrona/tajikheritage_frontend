@@ -72,10 +72,10 @@ sub {
     vertical-align: baseline;
     position: relative;
     top: -0.5rem;
-    color: var(--primary-golden-shadow-color);
     font-size: 0.75rem;
     font-style: normal;
     font-family: 'IBM Plex Serif', serif;
+    color: var(--primary-shadow-color);
 }
 
 sub {
@@ -85,8 +85,11 @@ sub {
 :root {
     --primary-black-color: #0f0a00;
     --primary-white-color: #fcf6e9;
+    --secondary-white-color: #dedbdb;
     --primary-gold-color: #bd9d52;
-    --primary-golden-shadow-color: #70654a;
+    --primary-red-color: #ad0f0e;
+    --primary-grey-color: #333333;
+    --primary-shadow-color: #70654a;
     --regular-black-color: #000;
     --regular-white-color: #fff;
 }

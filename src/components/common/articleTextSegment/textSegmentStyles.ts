@@ -8,7 +8,7 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
     position: relative;
     display: block;
     border-bottom: ${({ $noBorder }) =>
-        $noBorder ? 'none' : '0.0625rem solid #bd9d52'};
+        $noBorder ? 'none' : '0.0625rem solid var(--primary-gold-color)'};
     ${({ $reverse }) =>
         $reverse ? 'padding-left: 3rem' : 'padding-right: 3rem'};
 
@@ -67,7 +67,7 @@ export const SlideContainer = styled.div<SlideContainerProps>`
 `;
 
 export const Title = styled.div`
-    color: #000;
+    color: var(--regular-black-color);
     font-size: 4rem;
     font-weight: 500;
     padding-top: 0.5rem;

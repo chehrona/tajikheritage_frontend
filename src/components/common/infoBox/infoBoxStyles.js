@@ -40,7 +40,7 @@ export const StyledCloseButton = styled(IconButton)`
 `;
 
 export const StyledCloseIcon = styled(Close)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         width: 1.5rem;
@@ -72,7 +72,7 @@ export const StyledExpandButton = styled(IconButton)`
 `;
 
 export const StyledExpandIcon = styled(OpenInFull)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     transform: rotateZ(90deg);
 
     &.MuiSvgIcon-root {

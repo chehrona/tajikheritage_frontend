@@ -99,7 +99,7 @@ export const Title = styled.div<{ $index: number }>`
 export const TitleSpan = styled.span<{ $isElipsis: boolean }>`
     font-style: normal;
     font-weight: bold;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     ${({ $isElipsis }) =>
         $isElipsis &&
@@ -113,7 +113,7 @@ export const TitleSpan = styled.span<{ $isElipsis: boolean }>`
 export const Semicolon = styled.div`
     width: fit-content;
     font-style: normal;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     font-family: 'EB Garamond', serif;
 `;
 

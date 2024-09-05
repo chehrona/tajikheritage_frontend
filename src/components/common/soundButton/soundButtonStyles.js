@@ -9,13 +9,13 @@ export const StyledIconButton = styled(IconButton)`
     &.MuiIconButton-root {
         color: var(--primary-white-color);
         margin-left: 0.3rem;
-        border: 0.0625rem solid #bd9d52;
-        background-color: #70654a;
-        box-shadow: 0rem 0rem 0.3rem 0rem #bd9d52;
+        border: 0.0625rem solid var(--primary-gold-color);
+        background-color: var(--primary-shadow-color);
+        box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-gold-color);
 
         &:hover {
             transition: 0.1s all;
-            background-color: #bd9d52;
+            background-color: var(--primary-gold-color);
             box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
         }
 
@@ -28,8 +28,8 @@ export const StyledIconButton = styled(IconButton)`
         &.MuiIconButton-root {
             &:hover {
                 transition: none;
-                background-color: #70654a;
-                box-shadow: 0rem 0rem 0.3rem 0rem #bd9d52;
+                background-color: var(--primary-shadow-color);
+                box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-gold-color);
             }
 
             svg {

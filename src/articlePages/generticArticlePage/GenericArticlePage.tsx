@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
-import { useMediaQuery } from 'react-responsive';
+import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Types
 import { ErrorTypes, ErrorResponse } from '../../appTypes';
@@ -57,7 +57,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     // Set page title
-    // useHeader(page, data);
+    useSetHeader(page, 'generic', data);
 
     useEffect(() => {
         // Get data

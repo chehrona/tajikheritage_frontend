@@ -26,7 +26,9 @@ const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
     return (
         <BoxOne>
             <LeftContainer>
-                <Year $color={'#000'}>{bioOne[lang]?.year}</Year>
+                <Year $color={'var(--regular-black-color)'}>
+                    {bioOne[lang]?.year}
+                </Year>
                 <DescWrapper data={bioOne[lang]?.desc} TextWrapper={Desc} />
             </LeftContainer>
             <RightImageWrapper>

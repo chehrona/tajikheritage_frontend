@@ -50,8 +50,12 @@ const Menu: React.FC<MenuProps> = ({
             <PageNamesContainer>
                 {pageInfo[lang]?.map((entry, i) => {
                     return (
-                        <StyledLink to={entry.link} key={i}>
-                            <div onClick={() => setIsMenuShown(false)}>
+                        <StyledLink
+                            to={entry.link}
+                            key={i}
+                            onClick={() => setIsMenuShown(false)}
+                        >
+                            <div>
                                 <PageName>{entry.title}</PageName>
                                 <PageDesc>{entry.desc}</PageDesc>
                             </div>

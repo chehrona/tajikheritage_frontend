@@ -24,7 +24,7 @@ export const SemiCircle = styled.div`
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    background-color: #bd9d52;
+    background-color: var(--primary-gold-color);
 
     &::before {
         content: '';
@@ -60,7 +60,7 @@ export const IndicatorStep = styled.div`
 `;
 
 export const NumLine = styled.div`
-    background: #bd9d52;
+    background: var(--primary-gold-color);
     width: 0.05rem;
     height: 4rem;
     margin-left: 0.5%;
@@ -225,7 +225,7 @@ export const OtherSteps = styled.div<{ $bottom?: boolean }>`
 `;
 
 export const StyledButton = styled.div<{ $lang: string }>`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     height: fit-content;
     font-weight: 500;
     padding: 0rem 0rem 0.25rem 0rem;
@@ -298,7 +298,7 @@ export const ImageSemiCircle = styled.img`
     width: 35rem;
     height: 35rem;
     padding: 0.5rem;
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid var(--primary-gold-color);
     z-index: -1;
     opacity: 0.3;
 `;

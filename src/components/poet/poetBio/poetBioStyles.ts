@@ -226,7 +226,7 @@ export const NavWrapper = styled.div`
 export const Line = styled.div`
     width: 0.0625rem;
     height: 7rem;
-    background: #bd9d52;
+    background: var(--primary-gold-color);
 `;
 
 export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
@@ -273,10 +273,10 @@ export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
 `;
 
 export const Arrow = styled.div`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid #bd9d52;
+    border: 0.0625rem solid var(--primary-gold-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -377,7 +377,7 @@ export const QuoteWrapper = styled.div`
 `;
 
 export const QuoteOutline = styled.div`
-    border: 0.125rem solid #bd9d52;
+    border: 0.125rem solid var(--primary-gold-color);
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
@@ -386,7 +386,7 @@ export const QuoteOutline = styled.div`
 export const QuoteSymbol = styled.div`
     height: 100%;
     width: 100%;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     transform: rotateZ(180deg);
     background-image: url('/quote.svg');
     background-repeat: no-repeat;
@@ -431,8 +431,8 @@ export const FamilyDesc = styled.div`
     height: 30rem;
     color: #333333;
     padding: 0rem 2.8rem 3rem 3rem;
-    border-bottom: 0.0625rem solid #bd9d52;
-    border-top: 0.0625rem solid #bd9d52;
+    border-bottom: 0.0625rem solid var(--primary-gold-color);
+    border-top: 0.0625rem solid var(--primary-gold-color);
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -552,7 +552,7 @@ export const FinalQuote = styled.div`
     width: 100%;
     left: 50%;
     top: 50%;
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     font-size: 2.2rem;
     font-style: italic;
     padding-right: 10%;

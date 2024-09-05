@@ -53,7 +53,7 @@ export const StyledIconButton = styled.div`
 `;
 
 export const StyledMenuIcon = styled(MenuIcon)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         width: 2.25rem;
@@ -71,7 +71,7 @@ export const StyledMenuIcon = styled(MenuIcon)`
 `;
 
 export const StyledCloseIcon = styled(Close)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         width: 2.5rem;

@@ -35,7 +35,7 @@ export const StyledSpan = styled.span`
 
     .termSpan {
         font-weight: bold;
-        color: #bd9d52;
+        color: var(--primary-gold-color);
     }
 
     sup,

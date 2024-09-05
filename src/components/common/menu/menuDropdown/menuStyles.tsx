@@ -8,11 +8,9 @@ export const StyledMenu = styled(Menu)`
     }
 
     & .MuiPaper-root {
-        color: #bd9d52;
         height: 100svh;
         max-height: 100svh;
         padding-top: 6rem;
-        background: rgb(51 51 51);
         position: static;
         box-shadow: none;
         border-radius: 0rem;
@@ -21,6 +19,8 @@ export const StyledMenu = styled(Menu)`
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        color: var(--primary-gold-color);
+        background: var(--primary-grey-color);
     }
 
     & .MuiList-root {
@@ -71,11 +71,11 @@ export const Logo = styled.img`
 export const PageNamesContainer = styled.div`
     width: 40%;
     height: 100%;
+    z-index: 1;
     gap: 2rem;
     font-size: 2rem;
     display: flex;
     position: relative;
-    z-index: 1;
     flex-direction: column;
     justify-content: center;
 
@@ -103,9 +103,9 @@ export const PageName = styled.div`
 `;
 
 export const PageDesc = styled.div`
-    color: #dedbdb;
     font-size: 1.3rem;
     cursor: pointer;
+    color: var(--secondary-white-color);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.5rem;
@@ -117,16 +117,16 @@ export const StyledLink = styled(Link)`
     color: inherit;
     padding: 0rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
+    user-select: none;
     box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
     box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);
-    user-select: none;
 
     &:hover {
-        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem #bd9d52;
+        box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-gold-color);
     }
 
     &:active {
-        box-shadow: 0rem 0rem 0.1rem 0.05rem #bd9d52;
+        box-shadow: 0rem 0rem 0.1rem 0.05rem var(--primary-gold-color);
         transform: translate(1px, 1px);
     }
 

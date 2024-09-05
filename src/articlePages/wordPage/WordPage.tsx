@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
-// import { useHeader } from '../../hooks/useHeader';
+import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Services
 import { requestArticleInfo } from '../../services/request';
@@ -64,7 +64,7 @@ const WordPage: React.FC = () => {
     };
 
     // Set page title
-    // useHeader('etymology', word);
+    useSetHeader('etymology', 'generic', word);
 
     useEffect(() => {
         // Get data

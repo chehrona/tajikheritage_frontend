@@ -31,7 +31,7 @@ export const InfoContainer = styled.div`
 `;
 
 export const InfoTitle = styled.div`
-    color: #000000;
+    color: var(--regular-black-color);
     display: flex;
     justify-content: center;
     font-style: italic;
@@ -84,6 +84,6 @@ export const StyledButton = styled(Button)`
 export const Error = styled.div<ErrorStyleProps>`
     font-size: 1rem;
     color: ${({ error, success }) =>
-        error ? '#ad0f0e' : success && '#297309'};
+        error ? 'var(--primary-red-color)' : success && '#297309'};
     height: 1.75rem;
 `;

@@ -95,10 +95,10 @@ export const StyledTooltip = styled(
         padding: '0.5rem 1rem',
     },
     [`& .${tooltipClasses.tooltipArrow}`]: {
-        backgroundColor: '#70654a',
+        backgroundColor: 'var(--primary-shadow-color)',
     },
     [`& .${tooltipClasses.arrow}`]: {
-        color: '#70654a',
+        color: 'var(--primary-shadow-color)',
     },
     '@media (max-width: 1024px)': {
         [`& .${tooltipClasses.tooltip}`]: {

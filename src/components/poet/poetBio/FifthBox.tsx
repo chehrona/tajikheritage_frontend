@@ -14,7 +14,7 @@ const FifthBox: React.FC<{ bioFive: PoetBioSectionFiveDetails }> = ({
 }) => {
     return (
         <BoxFive>
-            <Year $color={'#bd9d52'}>{bioFive?.year}</Year>
+            <Year $color={'var(--primary-gold-color)'}>{bioFive?.year}</Year>
             <DescWrapper data={bioFive.desc} TextWrapper={StyledDiv} />
         </BoxFive>
     );

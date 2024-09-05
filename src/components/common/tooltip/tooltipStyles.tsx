@@ -14,10 +14,10 @@ export const StyledTooltip = styled(
         fontWeight: 'normal',
     },
     [`& .${tooltipClasses.tooltipArrow}`]: {
-        backgroundColor: '#70654a',
+        backgroundColor: 'var(--primary-shadow-color)',
     },
     [`& .${tooltipClasses.arrow}`]: {
-        color: '#70654a',
+        color: 'var(--primary-shadow-color)',
     },
 }));
 
@@ -57,10 +57,10 @@ export const StyledImage = styled.img`
 `;
 
 export const WordWrapper = styled.span`
-    border-bottom: 1px dotted #70654a;
+    border-bottom: 1px dotted var(--primary-shadow-color);
 
     .termSpan {
         font-weight: bold;
-        color: #bd9d52;
+        color: var(--primary-gold-color);
     }
 `;

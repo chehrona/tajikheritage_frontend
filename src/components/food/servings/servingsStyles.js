@@ -1,5 +1,5 @@
-import { Add, Remove } from "@mui/icons-material";
-import styled from "styled-components";
+import { Add, Remove } from '@mui/icons-material';
+import styled from 'styled-components';
 
 export const QuantityContainer = styled.div`
     display: flex;
@@ -64,7 +64,7 @@ export const SubTitle = styled.div`
     padding-bottom: 0.8rem;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--regular-black-color);
 
     @media (max-width: 480px) {
         padding-bottom: 0rem;

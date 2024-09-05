@@ -26,8 +26,8 @@ export const WordDesc = styled(StyledSpan)`
 export const TableImage = styled.img<TableImageProps>`
     margin: 0.5rem 0rem;
     transition: 0.3s ease-in-out;
-    ${({ expanded }) =>
-        expanded
+    ${({ $expanded }) =>
+        $expanded
             ? css`
                   height: 100svh;
                   border-radius: 1rem;
@@ -48,8 +48,7 @@ export const TableImage = styled.img<TableImageProps>`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: auto;
-        width: ${({ expanded }) => (expanded ? '100%' : '50%')};
-        ${({ reverse, length }) => !reverse && length && 'margin-left: 2rem'};
+        width: ${({ $expanded }) => ($expanded ? '100%' : '50%')};
     }
 `;
 

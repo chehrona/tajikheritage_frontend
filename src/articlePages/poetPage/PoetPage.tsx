@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../hooks/useGlobalData';
-// import { useHeader } from '../../hooks/useHeader';
+import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Types
 import { PoetData } from './types/componentTypes';
@@ -63,7 +63,7 @@ const PoetPage: React.FC = () => {
     };
 
     // Set page title
-    // useHeader('poets', poet);
+    useSetHeader('poets', 'generic', poet);
 
     useEffect(() => {
         // Get data

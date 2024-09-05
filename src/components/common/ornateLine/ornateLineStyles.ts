@@ -35,9 +35,9 @@ export const Image = styled.div<{ $right: boolean }>`
 `;
 
 export const StyledDownIcon = styled(ExpandMore)`
-    color: #70654a;
+    color: var(--primary-shadow-color);
 `;
 
 export const StyledUpIcon = styled(ExpandLess)`
-    color: #70654a;
+    color: var(--primary-shadow-color);
 `;

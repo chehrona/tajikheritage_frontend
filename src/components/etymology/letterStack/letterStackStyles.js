@@ -81,7 +81,7 @@ const emptyBackground = ({ empty }) =>
     `;
 
 export const WrapperBase = styled.div`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     font-family: 'EB Garamond', serif;
     height: ${stanHeight}rem;
     display: flex;

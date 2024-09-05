@@ -54,7 +54,7 @@ export const PronunciationWrapper = styled.div`
 `;
 
 export const Transcript = styled.div`
-    color: #70654a;
+    color: var(--primary-shadow-color);
     font-size: 1.25rem;
     padding-right: 0.5rem;
 

@@ -47,7 +47,7 @@ export const ScrollWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     margin-right: 0.5rem;
 `;
 
@@ -64,11 +64,11 @@ export const Line = styled.div`
     height: 3rem;
     bottom: 1rem;
     position: absolute;
-    background-color: #bd9d52;
+    background-color: var(--primary-gold-color);
 `;
 
 export const Arrow = styled(South)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     position: absolute;
     bottom: 0.5rem;
 `;
@@ -77,5 +77,5 @@ export const Circle = styled.div`
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1px solid #bd9d52;
+    border: 1px solid var(--primary-gold-color);
 `;

@@ -42,7 +42,7 @@ export const StyledCloseButton = styled(IconButton)`
 `;
 
 export const StyledCloseIcon = styled(Close)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         width: 3rem;

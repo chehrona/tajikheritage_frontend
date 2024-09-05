@@ -139,7 +139,7 @@ export const Text = styled.text`
     text-anchor: middle;
     transform: rotateZ(180deg);
     transform-origin: center;
-    fill: #ad0f0e;
+    fill: var(--primary-red-color);
     font-weight: bold;
     letter-spacing: 2.5px;
 

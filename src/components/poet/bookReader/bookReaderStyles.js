@@ -79,7 +79,7 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const StyledCloseIcon = styled(Close)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         height: 3.5rem;
