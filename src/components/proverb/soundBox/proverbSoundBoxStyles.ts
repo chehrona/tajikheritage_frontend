@@ -45,18 +45,18 @@ export const LogoContainer = styled.div`
     }
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled.div<{ $lang: string }>`
     position: absolute;
     top: 0rem;
     left: 50%;
     z-index: 3;
     transform: translateX(-50%);
     transition: transform 0.25s ease-in-out;
-    cursor: ${({ lang }) => lang !== 'tj' && 'pointer'};
+    cursor: ${({ $lang }) => $lang !== 'tj' && 'pointer'};
 
     &:hover {
-        ${({ lang }) =>
-            lang !== 'tj' &&
+        ${({ $lang }) =>
+            $lang !== 'tj' &&
             css`
                 filter: drop-shadow(0px 0px 0.25px #0f0a00);
                 transform: translateZ(1rem) translateX(-50%) scaleX(1.05)
@@ -74,11 +74,11 @@ export const LogoWrapper = styled.div`
     }
 `;
 
-export const LogoOuter = styled.img`
+export const LogoOuter = styled.img<{ $lang: string }>`
     height: 5rem;
     width: 5rem;
-    ${({ lang }) =>
-        lang !== 'tj' &&
+    ${({ $lang }) =>
+        $lang !== 'tj' &&
         css`
             animation: ${spin} 10s linear infinite;
         `}

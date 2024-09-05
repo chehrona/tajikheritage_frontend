@@ -9,7 +9,7 @@ import { requestArticleInfo } from '../../services/request';
 
 // Types
 import { ProverbObj } from './types/componentTypes';
-import { DescDetails, DescObj, ErrorTypes } from '../../appTypes';
+import { DescDetails, ErrorTypes } from '../../appTypes';
 
 // Components
 import Sources from '../../components/common/sources/Sources';

@@ -3,6 +3,9 @@ import React from 'react';
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
+// Types
+import { ProverbObj } from '../../../articlePages/proverbPage/types/componentTypes';
+
 // Styled components
 import {
     LogoWrapper,
@@ -13,24 +16,24 @@ import {
     Text,
 } from './proverbSoundBoxStyles';
 
-export default function ProverbSoundBox({ proverb }) {
+const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
     const { lang } = useGlobalData();
 
-    const toggleAudio = (e) => {
+    const toggleAudio = (e: React.MouseEvent<HTMLDivElement>) => {
         if (lang !== 'tj') {
-            const audioFile = e.currentTarget.children[0];
+            const audioFile = e.currentTarget.children[0] as HTMLAudioElement;
             audioFile.play();
         }
     };
 
     return (
         <LogoContainer>
-            <LogoWrapper onClick={(e) => toggleAudio(e)} lang={lang}>
+            <LogoWrapper onClick={(e) => toggleAudio(e)} $lang={lang}>
                 <audio
                     src={process.env.REACT_APP_BASE_URL + proverb?.sound}
                 ></audio>
                 <LogoOuter
-                    lang={lang}
+                    $lang={lang}
                     src={process.env.REACT_APP_BASE_URL + proverb?.logo.outer}
                 />
                 <LogoInner
@@ -60,4 +63,6 @@ export default function ProverbSoundBox({ proverb }) {
             </SvgContainer>
         </LogoContainer>
     );
-}
+};
+
+export default ProverbSoundBox;
