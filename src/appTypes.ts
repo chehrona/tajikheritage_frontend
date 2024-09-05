@@ -1,4 +1,5 @@
 import { BodyObj } from './components/common/descWrapper/types/componentTypes';
+import { SlideImage } from './components/common/slideshow/types/componentTypes';
 
 export type Langs = 'us' | 'ru' | 'tj';
 
@@ -15,17 +16,10 @@ export type ErrorTypes = Error & {
     response?: ErrorResponse;
 };
 
-export type Slide = {
-    id: string;
-    info?: string;
-    img?: string;
-    overlay?: string;
-};
-
 export type DescDetails = {
     subtitle: string;
     body: BodyObj;
-    slides: Slide[];
+    slides: SlideImage[];
 };
 
 export type DescObj = {

@@ -1,14 +1,12 @@
 import React from 'react';
-import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
 import BookshelfDesign from '../bookshelfDesign/BookshelfDesign';
 import { MainContainer } from './poetWorksStyles';
 
-export default function PoetWorks({ poet }) {
-    const { lang } = useGlobalData();
+export default function PoetWorks({ works }) {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const numBooks = poet[lang].length;
+    const numBooks = works.length;
     let shelfNum;
 
     if (isMobile) {
@@ -26,8 +24,8 @@ export default function PoetWorks({ poet }) {
                     <BookshelfDesign
                         key={i}
                         shelfNum={i * 2}
-                        poet={poet[lang]}
-                        work={poet[lang].slice(i * 2, (i + 1) * 2)}
+                        poet={works}
+                        work={works.slice(i * 2, (i + 1) * 2)}
                     />,
                 );
             }
@@ -37,8 +35,8 @@ export default function PoetWorks({ poet }) {
                     <BookshelfDesign
                         key={i}
                         shelfNum={i * 4}
-                        poet={poet[lang]}
-                        work={poet[lang].slice(i * 4, (i + 1) * 4)}
+                        poet={works}
+                        work={works.slice(i * 4, (i + 1) * 4)}
                     />,
                 );
             }

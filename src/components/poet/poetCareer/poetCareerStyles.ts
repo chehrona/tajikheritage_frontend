@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { IconButton } from '@mui/material';
 
+// Types
+import { StyledIconButtonProps, ImageProps } from './types/styleTypes';
+
 export const MainContainer = styled.div`
     background: #0f0a00;
     position: relative;
@@ -51,7 +54,7 @@ export const UnitWrapper = styled.div`
     justify-content: space-around;
 `;
 
-export const YearWrapper = styled.div`
+export const YearWrapper = styled.div<{ $size: boolean }>`
     z-index: 1;
     background: #0f0a00;
     border-radius: 1.5rem;
@@ -71,8 +74,8 @@ export const YearWrapper = styled.div`
     `}
 `;
 
-export const Year = styled.div`
-    display: ${({ show }) => show && 'none'};
+export const Year = styled.div<{ $show: boolean }>`
+    display: ${({ $show }) => $show && 'none'};
     margin: 0.4rem 1rem 0.4rem 1rem;
 `;
 
@@ -97,12 +100,12 @@ export const InfoContainer = styled.div`
     }
 `;
 
-export const InfoInnerContainer = styled.div`
+export const InfoInnerContainer = styled.div<{ $translate: number }>`
     position: absolute;
     display: flex;
     gap: 50px;
     transition: all 0.5s;
-    transform: translateX(${({ translate }) => `${translate}px`});
+    transform: translateX(${({ $translate }) => `${$translate}px`});
 
     @media (max-width: 480px) {
         position: relative;
@@ -225,10 +228,10 @@ export const Step = styled.div`
     }
 `;
 
-export const StyledIconButton = styled(IconButton)`
+export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
     height: 2rem;
     width: 2rem;
-    transform: ${({ left }) => left && 'rotate(180deg)'};
+    transform: ${({ $left }) => $left && 'rotate(180deg)'};
 
     svg {
         fill: #bd9d52;
@@ -258,20 +261,20 @@ export const ImageWrapper = styled.div`
     }
 `;
 
-export const Image = styled.div`
+export const Image = styled.div<ImageProps>`
     position: relative;
     background-repeat: no-repeat;
     background-position: center center;
     height: 26rem;
-    min-width: ${({ width }) => width && `${width}px`};
-    max-width: ${({ width }) => width && `${width}px`};
-    background: ${({ src }) => src && `url(${src})`};
+    min-width: ${({ $width }) => $width && `${$width}px`};
+    max-width: ${({ $width }) => $width && `${$width}px`};
+    background: ${({ $src }) => $src && `url(${$src})`};
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     transform: translateX(${({ translate }) => `${translate}px`});
-    background-size: ${({ src }) => src && 'contain'};
+    background-size: ${({ $src }) => $src && 'contain'};
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        background-size: ${({ src }) => src && 'cover'};
+        background-size: ${({ $src }) => $src && 'cover'};
     }
 `;

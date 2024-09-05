@@ -68,7 +68,7 @@ export const MovieWrapper = styled.div`
     }
 `;
 
-export const MovieCard = styled.div`
+export const MovieCard = styled.div<{ $delay: string }>`
     height: 21.15rem;
     width: 14.95rem;
     cursor: pointer;
@@ -77,7 +77,7 @@ export const MovieCard = styled.div`
     box-shadow: 0rem 0rem 0.6rem #504221;
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
-    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
+    animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     @media (max-width: 480px) {
         height: 17.15rem;

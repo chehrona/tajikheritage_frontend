@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Zoom } from '@mui/material';
+// Types
+import { DialogProps } from './types/componentTypes';
 
 import {
     StyledDialog,
@@ -8,11 +9,7 @@ import {
     StyledCloseIcon,
 } from './dialogStyles';
 
-const Transition = ({ children, ...props }) => (
-    <Zoom {...props}>{children}</Zoom>
-);
-
-export default function Dialog({
+const Dialog: React.FC<DialogProps> = ({
     handleClose,
     open,
     children,
@@ -21,21 +18,16 @@ export default function Dialog({
     background,
     height,
     border,
-}) {
+}) => {
     return (
         <StyledDialog
             open={open}
             fullWidth
-            TransitionComponent={Transition}
-            TransitionProps={{
-                in: open,
-                easing: { enter: 'linear', exit: 'linear' },
-            }}
-            width={width}
-            border={border}
-            height={height}
-            backdrop={backdrop}
-            background={background}
+            $width={width}
+            $border={border}
+            $height={height}
+            $backdrop={backdrop}
+            $background={background}
         >
             <StyledCloseButton onClick={handleClose}>
                 <StyledCloseIcon />
@@ -43,4 +35,6 @@ export default function Dialog({
             {children}
         </StyledDialog>
     );
-}
+};
+
+export default Dialog;

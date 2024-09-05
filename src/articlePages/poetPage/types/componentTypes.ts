@@ -1,11 +1,11 @@
 import { Langs } from '../../../appTypes';
 import { Source } from '../../../components/common/sources/types/componentTypes';
 import { BodyObj } from '../../../components/common/descWrapper/types/componentTypes';
-import { SlideImage } from '../../../components/common/slideshow/types/componentTypes';
 import {
     PoetBioSectionOne,
     PoetBioSectionTwo,
 } from '../../../components/poet/poetBio/types/componentTypes';
+import { PoetCareerTypes } from '../../../components/poet/poetCareer/types/componentTypes';
 
 export type SectionType = {
     [key in Langs]: string[];
@@ -48,19 +48,6 @@ export type PoetMovie = {
     director: string;
 };
 
-export type CareerDetails = {
-    text: string;
-    slides: SlideImage[];
-};
-
-export type CareerObj = {
-    [key in Langs]: CareerDetails[];
-};
-
-export type PoetCareer = CareerObj & {
-    years: string[];
-};
-
 export type PoetData = {
     id: string;
     name: {
@@ -85,9 +72,7 @@ export type PoetData = {
     awards: {
         [key in Langs]: PoetAward[];
     };
-    career: {
-        [key in Langs]: PoetCareer[];
-    };
+    career: PoetCareerTypes;
     references: {
         [key in Langs]: Source[];
     };

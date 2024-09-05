@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
-import { useGlobalData } from '../../../hooks/useGlobalData';
+import React, { useCallback, useState } from 'react';
+
+// Components
 import MovieDialog from '../movieDialog/MovieDialog';
 
+// Types
+import { MovieInfoType } from './types/componentTypes';
+
+// Styled components
 import {
     MainContainer,
     MovieCard,
@@ -9,22 +14,24 @@ import {
     StyledIconButton,
     StyledExpand,
     MovieWrapper,
-} from './poetMovieStyles.js';
+} from './poetMovieStyles';
 
-export default function PoetMovies({ poet }) {
-    const { lang } = useGlobalData();
-    const [showMovieInfo, setShowMovieInfo] = useState(false);
-    const [movieInfo, setMovieInfo] = useState(null);
+const PoetMovies: React.FC<{ movies: MovieInfoType[] }> = ({ movies }) => {
+    const [showMovieInfo, setShowMovieInfo] = useState<boolean>(false);
+    const [movieInfo, setMovieInfo] = useState<MovieInfoType>();
 
-    function handleMovieDialog(e, movie) {
-        setShowMovieInfo(true);
-        setMovieInfo(movie);
-    }
+    const handleMovieDialog = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>, movie: MovieInfoType) => {
+            setShowMovieInfo(true);
+            setMovieInfo(movie);
+        },
+        [],
+    );
 
     return (
         <MainContainer id="Films">
             <MovieWrapper>
-                {poet[lang].map((movie, i) => {
+                {movies.map((movie: MovieInfoType, i: number) => {
                     return (
                         <MovieCard key={i} $delay={`${0.1 * i}s`}>
                             <Image
@@ -46,4 +53,6 @@ export default function PoetMovies({ poet }) {
             />
         </MainContainer>
     );
-}
+};
+
+export default PoetMovies;

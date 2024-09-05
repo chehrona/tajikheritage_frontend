@@ -2,27 +2,30 @@ import styled from 'styled-components';
 import { Close } from '@mui/icons-material';
 import { IconButton, Dialog } from '@mui/material';
 
-export const StyledDialog = styled(Dialog)`
+// Types
+import { StyledDialogProps } from './types/styleTypes';
+
+export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     & .MuiPaper-root {
         font-size: 1.1rem;
-        border-radius: ${({ border }) => border && border};
+        border-radius: ${({ $border }) => $border && $border};
         box-shadow: 0rem 0rem 0.3rem 0rem #0f0a00;
-        width: ${({ width }) => width && width};
-        max-width: ${({ width }) => width && width};
-        height: ${({ height }) => height && height};
-        background-color: ${({ background }) => background && background};
+        width: ${({ $width }) => $width && $width};
+        max-width: ${({ $width }) => $width && $width};
+        height: ${({ $height }) => $height && $height};
+        background-color: ${({ $background }) => $background && $background};
 
         @media (max-width: 480px) {
             font-size: 1.3rem;
             margin: 0rem;
             width: calc(100vw - 3rem);
             max-width: calc(100vw - 3rem);
-            height: ${({ height }) => (height ? height : 'fit-content')};
+            height: ${({ $height }) => ($height ? $height : 'fit-content')};
         }
     }
 
     & .MuiModal-backdrop {
-        background-color: ${({ backdrop }) => backdrop && backdrop};
+        background-color: ${({ $backdrop }) => $backdrop && $backdrop};
     }
 `;
 

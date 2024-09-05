@@ -105,8 +105,8 @@ const PoetPage: React.FC = () => {
                                 />
                             )}
                             <PoetBio bioData={poet?.bio} />
-                            <PoetWorks poet={poet?.works} />
-                            <PoetMovies poet={poet?.movies} />
+                            <PoetWorks works={poet?.works[lang]} />
+                            <PoetMovies movies={poet?.movies[lang]} />
                             <PoetCareer points={poet?.career} />
                             <PoetAwards poet={poet?.awards} />
                             <Sources data={poet?.references[lang]} />

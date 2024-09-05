@@ -7,8 +7,7 @@ import { ArrowForwardIos } from '@mui/icons-material';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Types
-import { SlideshowProps } from './types/componentTypes';
-import { Slide } from '../../../appTypes';
+import { SlideshowProps, SlideImage } from './types/componentTypes';
 
 // Styled components
 import {
@@ -32,7 +31,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     const { lang } = useGlobalData();
     const [translate, setTranslate] = useState<number>(0);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [infoArr, setInfoArr] = useState<Slide[]>([]);
+    const [infoArr, setInfoArr] = useState<SlideImage[]>([]);
 
     useEffect(() => {
         setInfoArr([...slides]);

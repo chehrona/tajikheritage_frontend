@@ -2,6 +2,9 @@ import styled, { keyframes } from 'styled-components';
 import { PlayArrow, ArrowForwardIos } from '@mui/icons-material';
 import { IconButton, DialogContent } from '@mui/material';
 
+// Types
+import { InnerBoxProps } from './types/styleTypes';
+
 const bounce = keyframes`
     0%, 20%, 50%, 80%, 100% {
         transform: translateX(0);
@@ -14,7 +17,7 @@ const bounce = keyframes`
     }
 `;
 
-export const Desc = styled.div`
+export const Desc = styled.div<{ $expand: boolean }>`
     width: 100%;
     line-height: 1.5rem;
     text-align: justify;
@@ -23,8 +26,8 @@ export const Desc = styled.div`
         line-height: 1.8rem;
         position: relative;
 
-        ${({ expand }) =>
-            !expand &&
+        ${({ $expand }) =>
+            !$expand &&
             `
             &:after {
                 content: "";
@@ -104,15 +107,15 @@ export const InfoContainer = styled.div`
     }
 `;
 
-export const InnerBox = styled.div`
+export const InnerBox = styled.div<InnerBoxProps>`
     width: 65%;
     height: 100%;
     background: #fcf6e9;
     position: relative;
     padding: 2rem;
 
-    ${({ width }) =>
-        width &&
+    ${({ $width }) =>
+        $width &&
         `
         background: #0F0A00;
         position: relative;
@@ -125,8 +128,8 @@ export const InnerBox = styled.div`
         border-radius: 2rem;
         overflow-x: hidden;
         position: absolute;
-        top: ${({ expand }) => (expand ? '0rem' : '40%')};
-        display: ${({ width }) => width && 'none'};
+        top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
+        display: ${({ $width }) => $width && 'none'};
         transition: all 0.5s;
     }
 
@@ -238,13 +241,13 @@ export const ReleaseInfo = styled.div`
     }
 `;
 
-export const InfoBox = styled.div`
+export const InfoBox = styled.div<{ $year?: boolean }>`
     display: flex;
     justify-content: start;
     align-items: center;
     padding: 1rem;
     margin: 3rem 0rem;
-    width: ${({ year }) => (year ? '4rem' : '10rem')};
+    width: ${({ $year }) => ($year ? '4rem' : '10rem')};
 
     @media (max-width: 480px) {
         margin: 1rem 0rem;
