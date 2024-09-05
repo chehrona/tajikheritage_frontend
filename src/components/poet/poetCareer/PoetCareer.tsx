@@ -21,7 +21,7 @@ import {
     Step,
     Image,
     Footer,
-    DescWrapper,
+    DescContainer,
     ImageWrapper,
     InfoContainer,
     StyledIconButton,
@@ -111,7 +111,7 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
                                             )}
                                         </Image>
                                     </ImageWrapper>
-                                    <DescWrapper>
+                                    <DescContainer>
                                         <Desc
                                             dangerouslySetInnerHTML={{
                                                 __html: entry?.text,
@@ -138,7 +138,7 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
                                                 <ArrowForwardIos />
                                             </StyledIconButton>
                                         </Footer>
-                                    </DescWrapper>
+                                    </DescContainer>
                                 </InfoWrapper>
                             );
                         })}

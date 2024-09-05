@@ -11,20 +11,25 @@ import ForthBox from './ForthBox';
 import FifthBox from './FifthBox';
 import SixthBox from './SixthBox';
 
+// Types
+import { PoetBioType } from './types/componentTypes';
+
 // Styled components
 import { MainContainer } from './poetBioStyles';
 
-export default function PoetBio({ bioData }) {
+const PoetBio: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
     const { lang } = useGlobalData();
 
     return (
         <MainContainer id="Biography">
-            <FirstBox poet={bioData.one} />
-            <SecondBox poet={bioData} />
-            <ThirdBox poet={bioData.three[lang]} />
-            <ForthBox poet={bioData.four[lang]} />
-            <FifthBox poet={bioData.five[lang]} />
+            <FirstBox bioOne={bioData.one} />
+            <SecondBox bioData={bioData} />
+            <ThirdBox bioThree={bioData.three[lang]} />
+            <ForthBox bioFour={bioData.four[lang]} />
+            <FifthBox bioFive={bioData.five[lang]} />
             <SixthBox poet={bioData} />
         </MainContainer>
     );
-}
+};
+
+export default PoetBio;

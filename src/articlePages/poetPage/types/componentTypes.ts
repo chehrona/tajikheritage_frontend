@@ -1,26 +1,13 @@
 import { Langs } from '../../../appTypes';
 import { Source } from '../../../components/common/sources/types/componentTypes';
-import { BodyObj } from '../../../components/common/descWrapper/types/componentTypes';
-import {
-    PoetBioSectionOne,
-    PoetBioSectionTwo,
-} from '../../../components/poet/poetBio/types/componentTypes';
 import { PoetCareerTypes } from '../../../components/poet/poetCareer/types/componentTypes';
 import { PoetWorksTypes } from '../../../components/poet/poetWorks/types/componentTypes';
 import { PoetAwardType } from '../../../components/poet/poetAwards/types/componentTypes';
 import { PoetMovieType } from '../../../components/poet/poetMovies/types/componentTypes';
+import { PoetBioType } from '../../../components/poet/poetBio/types/componentTypes';
 
 export type SectionType = {
     [key in Langs]: string[];
-};
-
-export type PoetBio = {
-    backdrops: string[];
-    one: PoetBioSectionOne;
-    two: PoetBioSectionTwo;
-    three: {
-        [key in Langs]: BodyObj;
-    };
 };
 
 export type PoetData = {
@@ -37,7 +24,7 @@ export type PoetData = {
         main: string;
     };
     sections: SectionType;
-    bio: PoetBio;
+    bio: PoetBioType;
     works: {
         [key in Langs]: PoetWorksTypes[];
     };

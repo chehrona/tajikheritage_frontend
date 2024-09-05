@@ -4,7 +4,6 @@ import { StyledSpan } from '../../common/descWrapper/descWrapperStyles';
 
 // Types
 import { LinkBoxProps, CardWrapperProps } from './types/styleTypes';
-import { SpanProps } from '../../common/descWrapper/types/styleTypes';
 
 const slideOut = keyframes`
     0% {
@@ -68,7 +67,7 @@ export const WordTitle = styled.div`
     }
 `;
 
-export const WordDesc = styled(StyledSpan)<SpanProps>`
+export const WordDesc = styled(StyledSpan)`
     font-size: 1.1rem;
     width: 100%;
     height: calc(100% - 5.25rem);

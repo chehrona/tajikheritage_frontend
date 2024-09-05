@@ -11,10 +11,7 @@ import { ArrowForwardIos } from '@mui/icons-material';
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
 // Types
-import {
-    PoetBioSectionTwoProps,
-    PoetBioSectionTwoDetails,
-} from './types/componentTypes';
+import { PoetBioSectionTwoDetails, PoetBioType } from './types/componentTypes';
 
 // Styled components
 import {
@@ -36,15 +33,15 @@ import {
     StyledIconButton,
 } from './poetBioStyles';
 
-const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
+const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
     const { lang } = useGlobalData();
     const [infoArr, setInfoArr] = useState<PoetBioSectionTwoDetails[]>([
-        ...poet?.two[lang],
+        ...bioData?.two[lang],
     ]);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     useEffect(() => {
-        setInfoArr([...poet?.two[lang]]);
+        setInfoArr([...bioData?.two[lang]]);
     }, [lang]);
 
     const moveUp = useCallback(() => {
@@ -68,16 +65,16 @@ const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
             <InnerOverlay>
                 <Backdrop
                     $backdrop={
-                        process.env.REACT_APP_BASE_URL + poet?.backdrops[0]
+                        process.env.REACT_APP_BASE_URL + bioData?.backdrops[0]
                     }
                 />
             </InnerOverlay>
             <Slides>
                 <SlideImg
-                    key={infoArr[poet?.two[lang].length - 1].img}
+                    key={infoArr[bioData?.two[lang].length - 1].img}
                     src={
                         process.env.REACT_APP_BASE_URL +
-                        infoArr[poet?.two[lang].length - 1].img
+                        infoArr[bioData?.two[lang].length - 1].img
                     }
                 />
                 <LineWrapper>
@@ -107,7 +104,7 @@ const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
                     <StyledIconButton
                         $bottom={false}
                         onClick={moveUp}
-                        $disabled={infoArr[0] === poet?.two[lang][0]}
+                        $disabled={infoArr[0] === bioData?.two[lang][0]}
                     >
                         <Arrow>
                             <ArrowForwardIos />
@@ -123,7 +120,8 @@ const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
                         $bottom={true}
                         onClick={moveDown}
                         $disabled={
-                            infoArr[0] === poet?.two[lang][infoArr?.length - 1]
+                            infoArr[0] ===
+                            bioData?.two[lang][infoArr?.length - 1]
                         }
                     >
                         <Arrow>
@@ -140,7 +138,7 @@ const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
                         onClick={moveDown}
                         $disabled={
                             infoArr[0] ===
-                            poet?.two[lang][poet?.two[lang].length - 1]
+                            bioData?.two[lang][bioData?.two[lang].length - 1]
                         }
                     >
                         <Arrow>
@@ -150,7 +148,7 @@ const SecondBox: React.FC<PoetBioSectionTwoProps> = ({ poet }) => {
                     <StyledIconButton
                         $bottom={false}
                         onClick={moveUp}
-                        $disabled={infoArr[0] === poet?.two[lang][0]}
+                        $disabled={infoArr[0] === bioData?.two[lang][0]}
                     >
                         <Arrow>
                             <ArrowForwardIos />

@@ -422,6 +422,9 @@ export const TextWrapper = styled.div`
     }
 `;
 
+// Box four ********************************
+export const StyledDiv = styled.div``;
+
 // Box five ********************************
 export const FamilyDesc = styled.div`
     width: 100%;
@@ -574,37 +577,6 @@ export const Author = styled.div`
         font-size: 1.3rem;
     }
 `;
-
-// export const StyledButton = styled(IconButton)<StyledIconButtonProps>`
-//     width: 3.5rem;
-//     height: 3.5rem;
-//     color: #bd9d52;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     &.MuiButtonBase-root {
-//         position: absolute;
-//         top: 50%;
-//         z-index: 10;
-//         ${({ $left }) => ($left ? 'left: 0.5rem' : 'right: 0.5rem')};
-//         transform: translateY(-50%) ${({ $left }) => $left && 'rotate(-180deg)'};
-//     }
-
-//     &:disabled {
-//         display: none;
-//     }
-
-//     @media (max-width: 480px) {
-//         width: 5rem;
-//         height: 5rem;
-//     }
-
-//     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-//         width: 4.5rem;
-//         height: 4.5rem;
-//     }
-// `;
 
 export const ImgInfo = styled.div`
     z-index: 10;

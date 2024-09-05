@@ -1,7 +1,12 @@
 import React from 'react';
 
+// Components
 import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
+// Types
+import { PoetBioSectionThree } from './types/componentTypes';
+
+// Styled components
 import {
     BoxThree,
     QuoteWrapper,
@@ -11,7 +16,9 @@ import {
     TextWrapper,
 } from './poetBioStyles';
 
-export default function ThirdBox({ poet }) {
+const ThirdBox: React.FC<{ bioThree: PoetBioSectionThree }> = ({
+    bioThree,
+}) => {
     return (
         <BoxThree>
             <QuoteWrapper>
@@ -19,8 +26,10 @@ export default function ThirdBox({ poet }) {
                     <QuoteSymbol />
                 </QuoteOutline>
             </QuoteWrapper>
-            <Quote dangerouslySetInnerHTML={{ __html: poet?.quote }} />
-            <DescWrapper desc={poet?.desc} TextWrapper={TextWrapper} />
+            <Quote dangerouslySetInnerHTML={{ __html: bioThree?.quote }} />
+            <DescWrapper data={bioThree?.desc} TextWrapper={TextWrapper} />
         </BoxThree>
     );
-}
+};
+
+export default ThirdBox;

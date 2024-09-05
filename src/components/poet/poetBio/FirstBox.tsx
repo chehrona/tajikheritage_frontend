@@ -4,7 +4,10 @@ import React from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Types
-import { PoetBioSectionOneProps } from './types/componentTypes';
+import { PoetBioSectionOne } from './types/componentTypes';
+
+// Components
+import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
 // Styled components
 import {
@@ -17,19 +20,21 @@ import {
     FirstBoxImg,
 } from './poetBioStyles';
 
-const FirstBox: React.FC<PoetBioSectionOneProps> = ({ poet }) => {
+const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
     const { lang } = useGlobalData();
 
     return (
         <BoxOne>
             <LeftContainer>
-                <Year $color={'#000'}>{poet[lang]?.year}</Year>
-                <Desc dangerouslySetInnerHTML={{ __html: poet[lang]?.desc }} />
+                <Year $color={'#000'}>{bioOne[lang]?.year}</Year>
+                <DescWrapper data={bioOne[lang]?.desc} TextWrapper={Desc} />
             </LeftContainer>
             <RightImageWrapper>
-                <FirstBoxImg src={process.env.REACT_APP_BASE_URL + poet?.img} />
+                <FirstBoxImg
+                    src={process.env.REACT_APP_BASE_URL + bioOne?.img}
+                />
                 <ImgInfo
-                    dangerouslySetInnerHTML={{ __html: poet[lang]?.imgDesc }}
+                    dangerouslySetInnerHTML={{ __html: bioOne[lang]?.imgDesc }}
                 />
             </RightImageWrapper>
         </BoxOne>

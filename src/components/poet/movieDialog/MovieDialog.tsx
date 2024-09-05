@@ -73,7 +73,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
         setShowMovieInfo(false);
         setFullSize(false);
         setShowVideo(false);
-    }, []);
+    }, [setShowMovieInfo]);
 
     const handleExpand = useCallback(() => {
         setFullSize((prevState) => !prevState);

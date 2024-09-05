@@ -133,7 +133,7 @@ export const InfoWrapper = styled.div`
     }
 `;
 
-export const DescWrapper = styled.div`
+export const DescContainer = styled.div`
     height: 100%;
     border-radius: 1rem;
     position: relative;

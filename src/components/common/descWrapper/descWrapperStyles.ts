@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-// Types
-import { SpanProps } from './types/styleTypes';
-
-export const StyledSpan = styled.span<SpanProps>`
+export const StyledSpan = styled.span`
     .quoteContainer {
         margin: 1rem;
         display: flex;
