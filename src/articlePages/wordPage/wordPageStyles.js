@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { StyledSpan } from '../../components/common/descWrapper/descWrapperStyles';
 
 export const BodyContainer = styled.div`

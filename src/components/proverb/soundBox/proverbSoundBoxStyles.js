@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components/macro';
+import styled, { keyframes, css } from 'styled-components';
 
 const spin = keyframes`
     0% { 

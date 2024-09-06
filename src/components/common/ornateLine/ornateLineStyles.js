@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/macro';
+import styled, { css } from 'styled-components';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 export const IconContainer = styled.div`

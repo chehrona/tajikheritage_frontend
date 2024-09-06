@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 export const PageTitle = styled.div`
     font-size: 1.75rem;
