@@ -1,4 +1,4 @@
-export type TextLisContainerProps = {
+export type PageInnerContainerProps = {
     height: number;
     children: React.ReactNode;
 };

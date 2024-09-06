@@ -31,6 +31,7 @@ export const Shadow = styled.div`
     height: 8rem;
     position: absolute;
     top: 2rem;
+    z-index: 2;
     width: calc(100% - 6.2rem);
     background-color: var(--primary-shadow-color);
     border-radius: 4rem 4rem 0rem 0rem;
@@ -47,10 +48,11 @@ export const ProverbContainer = styled.div`
     border-radius: 4rem;
     position: relative;
     min-height: 40rem;
-    background: var(--regular-white-color);
+    background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     z-index: 3;
+    margin-top: 3rem;
 
     @media (max-width: 480px) {
         margin: 0rem;

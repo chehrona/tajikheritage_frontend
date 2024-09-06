@@ -35,6 +35,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
     const topLeftRad = isMobile ? 0 : i === 0 ? (isTablet ? 2.5 : 4) : 0;
+    const hasSlides = data.slides && data.slides.length > 0 ? true : false;
 
     useEffect(() => {
         if (parentRef && parentRef.current) {
@@ -47,7 +48,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
 
     return (
         <BoxWrapper $reverse={reverse} $noBorder={noBorder}>
-            {reverse !== null ? (
+            {hasSlides ? (
                 <SlideContainer
                     ref={parentRef}
                     $reverse={reverse}
@@ -65,7 +66,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
             <DescWrapper
                 data={data?.body}
                 TextWrapper={
-                    reverse === null ? BaseText : reverse ? RightText : LeftText
+                    !hasSlides ? BaseText : reverse ? LeftText : RightText
                 }
             />
         </BoxWrapper>

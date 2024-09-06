@@ -18,8 +18,8 @@ import Sources from '../../components/common/sources/Sources';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import TextListContainer from '../../components/common/textListContainer/TextListContainer';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
 const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
@@ -70,7 +70,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
             {!loading && data ? (
                 <Fade inProp={!loading}>
                     <PageFirstContainer>
-                        <TextListContainer height={40}>
+                        <PageInnerContainer height={40}>
                             {data.desc[lang].map((entry, i) => {
                                 return (
                                     <TextSegment
@@ -87,7 +87,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                                 );
                             })}
                             <Sources data={data.references[lang]} />
-                        </TextListContainer>
+                        </PageInnerContainer>
                     </PageFirstContainer>
                 </Fade>
             ) : // !loading &&

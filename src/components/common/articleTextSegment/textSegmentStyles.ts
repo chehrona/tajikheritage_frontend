@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // Types
 import { BoxWrapperProps, SlideContainerProps } from './types/styleTypes';
@@ -16,13 +16,11 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
                 : 'padding-right: 3rem;'
             : 'padding: 0rem 3rem;'};
 
-    ::after {
+    &::after {
         content: '';
         clear: both;
         display: table;
     }
-
-    background-color: pink;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         ${({ $reverse }) =>
@@ -36,7 +34,7 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
         display: flex;
         flex-direction: column;
 
-        ::after {
+        &::after {
             content: '';
             clear: none;
             display: none;
@@ -51,12 +49,8 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     position: relative;
     margin-bottom: 2rem;
     float: ${({ $reverse }) => ($reverse ? 'right' : 'left')};
-
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
-
-    background-color: red;
-
     ${({ $reverse }) =>
         $reverse ? 'margin-left: 3rem;' : 'margin-right: 3rem;'};
 
@@ -83,7 +77,7 @@ export const Title = styled.div`
     font-family: 'EB Garamond', serif;
     color: var(--regular-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
-    background-color: green;
+    margin-bottom: 0.5rem;
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
@@ -97,9 +91,8 @@ export const BaseText = styled.div`
     position: relative;
     line-height: 1.7rem;
     color: var(--primary-black-color);
-    background-color: purple;
 
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
         width: 0rem;
     }
 
@@ -116,10 +109,8 @@ export const BaseText = styled.div`
 
 export const RightText = styled(BaseText)`
     padding-left: 3rem;
-    background-color: red;
 `;
 
 export const LeftText = styled(BaseText)`
     padding-right: 3rem;
-    background-color: blue;
 `;

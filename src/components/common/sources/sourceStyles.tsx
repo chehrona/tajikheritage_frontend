@@ -75,11 +75,11 @@ export const RefWrapper = styled.div<RefProps>`
     padding: 0rem 2rem 1rem 2rem;
     display: ${({ open }) => (open ? 'block' : 'none')};
 
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
         width: 0.5rem;
     }
 
-    ::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
         border-radius: 0.25rem;
     }

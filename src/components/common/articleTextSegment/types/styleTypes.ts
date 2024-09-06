@@ -5,5 +5,5 @@ export type BoxWrapperProps = {
 
 export type SlideContainerProps = {
     $topLeftRad: number;
-    $reverse: boolean;
+    $reverse: boolean | null;
 };

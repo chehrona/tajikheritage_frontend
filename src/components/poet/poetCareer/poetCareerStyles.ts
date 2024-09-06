@@ -151,11 +151,11 @@ export const Desc = styled.div`
     text-align: justify;
     overflow-y: scroll;
 
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
         width: 0.5rem;
     }
 
-    ::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
         border-radius: 0.25rem;
     }

@@ -27,6 +27,7 @@ import {
     Shadow,
     TextContainer,
 } from './proverbPageStyles';
+import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 const ProverbPage = () => {
     const { id } = useParams();
@@ -73,7 +74,7 @@ const ProverbPage = () => {
             {proverb ? (
                 <Fade inProp={!loading}>
                     {/* Don't change to PageFirstContainer due to padding */}
-                    <PageContainer>
+                    <PageFirstContainer>
                         <Shadow />
                         <ProverbContainer>
                             <ProverbSoundBox proverb={proverb} />
@@ -108,7 +109,7 @@ const ProverbPage = () => {
                                 <Sources data={proverb.references[lang]} />
                             ) : null}
                         </ProverbContainer>
-                    </PageContainer>
+                    </PageFirstContainer>
                 </Fade>
             ) : // !loading &&
             // error.length > 0 && <Alert message={error} type={'error'} />

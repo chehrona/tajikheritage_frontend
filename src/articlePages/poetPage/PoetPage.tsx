@@ -27,7 +27,7 @@ import Loader from '../../components/common/loader/Loader';
 import Fade from '../../components/common/transition/Fade';
 import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
-import TextListContainer from '../../components/common/textListContainer/TextListContainer';
+import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
 const PoetPage: React.FC = () => {
     const { id } = useParams();
@@ -93,7 +93,7 @@ const PoetPage: React.FC = () => {
             {!loading && poet ? (
                 <Fade inProp={!loading}>
                     <PageFirstContainer>
-                        <TextListContainer height={40}>
+                        <PageInnerContainer height={40}>
                             <PoetIntro
                                 poet={poet}
                                 scrollToView={scrollToView}
@@ -110,7 +110,7 @@ const PoetPage: React.FC = () => {
                             <PoetCareer points={poet?.career} />
                             <PoetAwards awards={poet?.awards[lang]} />
                             <Sources data={poet?.references[lang]} />
-                        </TextListContainer>
+                        </PageInnerContainer>
                     </PageFirstContainer>
                 </Fade>
             ) : // !loading &&
