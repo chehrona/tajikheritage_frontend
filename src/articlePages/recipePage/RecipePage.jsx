@@ -50,8 +50,10 @@ export default function RecipePage() {
                     <RecipeInfo recipe={recipe} />
                     <Sources
                         data={recipe?.references}
-                        line={'#504221d1'}
-                        color={'var(--primary-white-color)'}
+                        line={'var(--primary-shadow-color)'}
+                        color={
+                            'var(--primary-var(--regular-white-color);-color)'
+                        }
                         title={'#fff'}
                         background={'var(--primary-black-color)'}
                     />

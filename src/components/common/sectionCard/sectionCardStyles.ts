@@ -35,14 +35,14 @@ export const SectionCardWrapper = styled.div<{ $delay: string }>`
 
     &:hover {
         border-radius: 1.5rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 
     @media (max-width: 480px) {
         height: 19.025rem;
         width: 12.5rem;
         transition: none;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
 
         &:hover {
             border-radius: 0.7rem;
@@ -55,7 +55,7 @@ export const SectionCardWrapper = styled.div<{ $delay: string }>`
         transition: none;
         height: 34.66rem;
         width: 25rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
 
         &:hover {
             border-radius: 1.5rem;
@@ -106,7 +106,7 @@ export const SectionImage = styled.div<{ src: string }>`
     height: 80%;
     background-position: center;
     background-repeat: no-repeat;
-    filter: drop-shadow(0px 0px 1px #dedbdb);
+    filter: drop-shadow(0px 0px 1px var(--secondary-white-color));
     background-image: ${({ src }) => src && `url(${src})`};
 `;
 

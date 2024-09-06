@@ -15,7 +15,7 @@ export const PageContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     min-height: 40rem;
-    background-color: white;
+    background: var(--regular-white-color);
     padding: 5rem 3.86rem 2.8rem 3.2rem;
 
     @media (max-width: 480px) {
@@ -47,7 +47,7 @@ export const ProverbContainer = styled.div`
     border-radius: 4rem;
     position: relative;
     min-height: 40rem;
-    background: var(--primary-white-color);
+    background: var(--regular-white-color);
     background-image: url(${'/noise.png'});
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     z-index: 3;

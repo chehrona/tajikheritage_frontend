@@ -65,7 +65,7 @@ export const InputField = styled.input`
 
 export const StyledButton = styled(Button)`
     &.MuiButton-root {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
         color: var(--primary-white-color);
         height: 100%;
         text-transform: none;
@@ -77,7 +77,7 @@ export const StyledButton = styled(Button)`
     }
 
     &.MuiButton-root:hover {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
     }
 `;
 

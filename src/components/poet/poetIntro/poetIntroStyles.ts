@@ -112,7 +112,7 @@ export const SegmentContainer = styled.div`
 
 export const SectionTitle = styled.div`
     line-height: 3rem;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     text-decoration: none;
     display: block;
     overflow: hidden;
@@ -128,14 +128,14 @@ export const TitleSpan = styled.span<{ $delay: string }>`
     transition: font-size 0.25s ease-in-out;
 
     &:hover {
-        text-shadow: 0.1rem 1rem 2rem #dedbdb;
+        text-shadow: 0.1rem 1rem 2rem var(--secondary-white-color);
         font-size: 1.6rem;
         cursor: pointer;
         transition: font-size 0.25s ease-in-out;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        text-shadow: 0.1rem 1rem 2rem #dedbdb;
+        text-shadow: 0.1rem 1rem 2rem var(--secondary-white-color);
         font-size: 1.75rem;
 
         &:hover {
@@ -146,7 +146,7 @@ export const TitleSpan = styled.span<{ $delay: string }>`
 
 export const PoetName = styled.div`
     opacity: 0;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     font-size: 8rem;
     font-weight: bold;
     font-style: italic;
@@ -175,7 +175,7 @@ export const PoetName = styled.div`
         ${({ color }) =>
             color &&
             `
-            color: #dedbdb;
+            color: var(--secondary-white-color);;
             text-align: right;
             margin-right: 2rem;
             -webkit-text-stroke-color: transparent;
@@ -206,7 +206,7 @@ export const PoetNameContainer = styled.div`
 `;
 
 export const YearsContainer = styled.div`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     font-size: 10rem;
     min-height: 24rem;
     position: absolute;

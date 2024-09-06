@@ -70,7 +70,7 @@ const hoverEffect = ({ empty }) =>
         transform: translateZ(1rem) translateX(0rem) scale(1.05);
         transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
             opacity 0.5s ease-in-out;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     `;
 
 const emptyBackground = ({ empty }) =>

@@ -84,11 +84,11 @@ export const Title = styled.div`
 
 export const FirstBox = styled.div`
     width: 100%;
-    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
     padding-left: 3rem;
+    color: var(--primary-black-color);
 
     ::-webkit-scrollbar {
         width: 0rem;
@@ -107,11 +107,11 @@ export const FirstBox = styled.div`
 
 export const SecondBox = styled.div`
     width: 100%;
-    color: var(--primary-black-color);
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
     padding-right: 3rem;
+    color: var(--primary-black-color);
 
     ::-webkit-scrollbar {
         width: 0rem;

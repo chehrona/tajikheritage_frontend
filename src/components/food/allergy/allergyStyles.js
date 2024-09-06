@@ -22,7 +22,7 @@ export const ContentBox = styled.div`
     flex-grow: 1;
     min-width: 7rem;
     border-radius: 1rem;
-    background: #504221d1;
+    background: var(--primary-shadow-color);
     padding: 0.5rem 0.8rem 0.8rem 0.8rem;
     box-shadow: 0rem 0rem 0.4rem 0.01rem #504221;
 `;
@@ -63,7 +63,7 @@ export const LabelImage = styled.img`
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
-    background: white;
+    background: var(--regular-white-color);
 
     @media (max-width: 480px) {
         width: 5rem;
@@ -78,7 +78,7 @@ export const LabelImage = styled.img`
 
 export const AllergenName = styled.div`
     font-size: 0.9rem;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
 
     @media (max-width: 480px) {
         font-size: 1.2rem;

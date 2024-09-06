@@ -83,7 +83,7 @@ const BookDialog: React.FC<BookDialogProps> = ({
             border={'1.5rem'}
             handleClose={handleClose}
             backdrop={'rgba(15 10 0 / 30%)'}
-            background={'var(--primary-white-color)'}
+            background={'var(--primary-var(--regular-white-color);-color)'}
         >
             <StyledContent>
                 <InfoContainer>

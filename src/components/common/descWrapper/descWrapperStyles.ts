@@ -43,7 +43,7 @@ export const StyledSpan = styled.span`
         vertical-align: baseline;
         position: relative;
         top: -0.5rem;
-        color: #92793f;
+        color: var(--secondary-gold-color);
         font-size: 0.75rem;
         font-style: normal;
         font-family: 'IBM Plex Serif', serif;

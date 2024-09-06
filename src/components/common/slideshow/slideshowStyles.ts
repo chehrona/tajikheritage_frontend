@@ -5,10 +5,10 @@ import { IconButton } from '@mui/material';
 import { ImageWrapperProps, StyledButtonProps } from './types/styleTypes';
 
 export const Arrow = styled.div`
-    color: #eac364;
+    color: var(--secondary-gold-color);
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid #eac364;
+    border: 0.0625rem solid var(--secondary-gold-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -16,12 +16,12 @@ export const Arrow = styled.div`
     background-color: #bd9d5266;
 
     &:hover {
-        box-shadow: 0rem 0rem 0.3rem 0rem #dedbdb;
+        box-shadow: 0rem 0rem 0.3rem 0rem var(--secondary-white-color);
     }
 
     @media (max-device-width: 1024px) {
         &:hover {
-            box-shadow: 0rem 0rem 0rem 0rem #dedbdb;
+            box-shadow: 0rem 0rem 0rem 0rem var(--secondary-white-color);
         }
     }
 `;
@@ -58,7 +58,7 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
         background-position: center center;
         background-size: cover;
         background-image: ${({ $overlay }) => $overlay && `url(${$overlay})`};
-        filter: drop-shadow(0px 0px 1px #dedbdb);
+        filter: drop-shadow(0px 0px 1px var(--secondary-white-color));
         border-top-left-radius: ${({ $topLeftRad }) =>
             $topLeftRad && `${$topLeftRad}rem`};
     }
@@ -118,7 +118,7 @@ export const ImgInfo = styled.div`
     font-style: italic;
     margin: 0.25rem;
     text-align: left;
-    color: var(--primary-white-color);
+    color: var(--regular-white-color);
     bottom: 0rem;
     background-color: #262626a6;
     width: calc(100% - 0.5rem);

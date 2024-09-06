@@ -27,17 +27,17 @@ export const SquareCardWrapper = styled.div<{ $delay: string }>`
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     &:hover {
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 
     @media (max-width: 480px) {
         height: 23rem;
         width: 23rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 `;
 

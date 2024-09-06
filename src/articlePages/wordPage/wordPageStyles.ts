@@ -10,7 +10,7 @@ export const BodyContainer = styled.div`
     background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
+    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         margin: 0rem;

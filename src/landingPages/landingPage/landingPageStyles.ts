@@ -20,7 +20,7 @@ export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 100svh;
     padding: 2rem 7rem 2rem 7rem;
-    background: white;
+    background: var(--regular-white-color);
 
     @media (max-width: 480px) {
         padding: 1.5rem 2.5rem 1.5rem 2.5rem;

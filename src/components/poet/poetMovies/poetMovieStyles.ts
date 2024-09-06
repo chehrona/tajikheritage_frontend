@@ -31,7 +31,7 @@ const slideOut = keyframes`
 
 export const MainContainer = styled.div`
     background: var(--primary-white-color);
-    color: white;
+    color: var(--regular-white-color);
     position: relative;
     padding: 3rem 0rem 3rem 0rem;
     background-image: url(${'/noise.png'});
@@ -128,7 +128,7 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const StyledExpand = styled(ChevronRight)`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     animation: ${bounce} 2s infinite;
 
     &.MuiSvgIcon-root {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     background: var(--primary-black-color);
-    color: white;
+    color: var(--regular-white-color);
     position: relative;
     background-image: url(${'/noise.png'});
     padding: 6rem 0rem 9rem 0rem;

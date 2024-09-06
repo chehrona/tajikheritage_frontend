@@ -15,7 +15,7 @@ export const PageContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     min-height: 40rem;
-    background-color: white;
+    background-color: var(--regular-white-color);
     padding: 5rem 3.7rem 2.8rem 3.2rem;
 
     @media (max-width: 480px) {

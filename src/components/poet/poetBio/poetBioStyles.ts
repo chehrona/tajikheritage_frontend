@@ -185,7 +185,7 @@ export const SlideImg = styled.img<{ $show?: boolean }>`
         ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(60%)')};
     box-shadow: ${({ $show }) =>
         $show
-            ? '0rem 0rem 0.5rem 0.1rem #dedbdb'
+            ? '0rem 0rem 0.5rem 0.1rem var(--secondary-white-color);'
             : '0rem 0rem 1rem 0.2rem #504221e6'};
 
     @media (max-width: 480px) {
@@ -283,18 +283,18 @@ export const Arrow = styled.div`
     align-items: center;
 
     &:hover {
-        box-shadow: 0rem 0rem 0.3rem 0rem #dedbdb;
+        box-shadow: 0rem 0rem 0.3rem 0rem var(--secondary-white-color);
     }
 
     @media (max-device-width: 1024px) {
         &:hover {
-            box-shadow: 0rem 0rem 0rem 0rem #dedbdb;
+            box-shadow: 0rem 0rem 0rem 0rem var(--secondary-white-color);
         }
     }
 `;
 
 export const LineWrapper = styled.div`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     display: flex;
     height: 20rem;
     width: 100%;

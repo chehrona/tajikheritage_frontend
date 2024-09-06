@@ -115,7 +115,7 @@ export const MainImage = styled.img`
 `;
 
 export const StyledPinIcon = styled(Pinterest)`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
@@ -125,7 +125,7 @@ export const StyledPinIcon = styled(Pinterest)`
         fill: red;
         font-size: 2.5rem;
         border-radius: 50%;
-        background-color: white;
+        background-color: var(--regular-white-color);
     }
 `;
 
@@ -137,7 +137,7 @@ export const StyledButton = styled(Button)`
     }
 
     &.MuiButton-root {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
         border-radius: 0.8rem;
         text-transform: none;
         padding: 0.5rem 1.5rem;
@@ -145,6 +145,6 @@ export const StyledButton = styled(Button)`
     }
 
     &.MuiButton-root:hover {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
     }
 `;

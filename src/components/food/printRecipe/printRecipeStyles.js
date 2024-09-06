@@ -47,7 +47,7 @@ export const StyledButton = styled(Button)`
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
-        color: #504221d1;
+        color: var(--primary-shadow-color);
 
         &.MuiButton-root:hover {
             box-shadow: 0rem 0rem 0.4rem 0.01rem #504221;
@@ -62,7 +62,7 @@ export const StyledButton = styled(Button)`
         }
 
         &.MuiButton-root {
-            background: #504221d1;
+            background: var(--primary-shadow-color);
             border-radius: 0.75rem;
             text-transform: none;
             height: 3.2rem;
@@ -71,7 +71,7 @@ export const StyledButton = styled(Button)`
         }
 
         &.MuiButton-root:hover {
-            background: #504221d1;
+            background: var(--primary-shadow-color);
         }
     }
 

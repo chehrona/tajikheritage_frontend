@@ -82,14 +82,14 @@ export const RecipeImage = styled.img`
 
     &:hover {
         border-radius: 1.5rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
         transition: border-radius 250ms, box-shadow 400ms;
     }
 
     @media (max-width: 480px) {
         height: 19.025rem;
         width: 12.5rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
 
         &:hover {
             border-radius: 0.7rem;

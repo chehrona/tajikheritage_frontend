@@ -20,7 +20,7 @@ const slideOut = keyframes`
 export const MainContainer = styled.div`
     background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
-    color: white;
+    color: var(--regular-white-color);
     position: relative;
     padding: 3rem 0rem 3rem 0rem;
 
@@ -104,7 +104,7 @@ export const Face = styled.div<{ $back: boolean }>`
         $back
             ? css`
                   transform: rotateY(180deg);
-                  background: #504221d1;
+                  background: var(--primary-shadow-color);
                   background-image: url(${'/noise.png'});
               `
             : css`

@@ -107,7 +107,7 @@ export const StepperBox = styled.div<{ $opacity: number }>`
 
 export const Step = styled.div`
     font-size: 1.2rem;
-    color: #dedbdbb2;
+    color: var(--secondary-white-color);b2;
     font-family: 'EB Garamond', serif;
     transition: 500ms ease-in-out;
 
@@ -183,7 +183,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 `;
 
 export const Desc = styled.div`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     font-size: 1.1rem;
     width: 40%;
     margin-left: 10%;

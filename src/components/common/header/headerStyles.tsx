@@ -2,25 +2,26 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-    background: var(--primary-black-color);
     width: 100%;
+    background: var(--primary-black-color);
+
     background-color: grey;
 `;
 
 export const HeaderInnerBox = styled.div`
-    background: var(--primary-black-color);
     height: 5rem;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    color: #ffffff;
     position: relative;
     z-index: 11;
     max-width: 1920px;
     margin: 0rem;
     justify-content: space-between;
-    padding: 0rem 1rem;
+    padding: 0rem 1rem 0rem 1rem;
     overflow: hidden;
+    background: var(--primary-black-color);
+    color: var(--regular-white-color);
 
     background-color: #957070;
 

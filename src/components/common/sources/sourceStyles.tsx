@@ -34,11 +34,11 @@ export const DropDownContainer = styled.div`
 `;
 
 export const StyledDownIcon = styled(ExpandMore)`
-    color: #504221d1;
+    color: var(--primary-shadow-color);
 `;
 
 export const StyledUpIcon = styled(ExpandLess)`
-    color: #504221d1;
+    color: var(--primary-shadow-color);
 `;
 
 export const RefContainer = styled.div<RefProps>`
@@ -47,7 +47,7 @@ export const RefContainer = styled.div<RefProps>`
     margin-top: 0.8rem;
     display: block;
     position: relative;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     background: var(--primary-black-color);
     transition: all 0.5s linear 0s;
     ${({ open }) =>

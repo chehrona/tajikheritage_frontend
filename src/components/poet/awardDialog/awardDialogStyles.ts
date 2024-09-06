@@ -4,7 +4,7 @@ import { DialogContent } from '@mui/material';
 export const Desc = styled.div`
     width: 100%;
     height: 100%;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     line-height: 1.5rem;
     overflow-wrap: break-word;
 

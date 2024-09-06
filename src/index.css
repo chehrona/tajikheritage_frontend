@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Caveat:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+/* Colors */
+:root {
+    --primary-black-color: #0f0a00;
+    --primary-white-color: #fcf6e9;
+    --secondary-white-color: #dedbdb;
+    --primary-gold-color: #bd9d52;
+    --secondary-gold-color: #eac364;
+    --primary-red-color: #ad0f0e;
+    --primary-grey-color: #333333;
+    --secondary-grey-color: #959595;
+    --primary-shadow-color: #70654a;
+    --regular-black-color: #000;
+    --regular-white-color: #fff;
+}
+
+/* Font sizes */
 html {
     font-size: 16px;
 }
@@ -17,7 +33,7 @@ html {
 }
 
 body {
-    background: #0f0a00;
+    background: var(--primary-black-color);
     margin: 0;
     height: 100%;
     width: 100%;
@@ -35,7 +51,7 @@ body * {
     height: 100svh;
     overflow-y: scroll;
     margin: 0 auto;
-    background: #0f0a00;
+    background: var(--primary-black-color);
 }
 
 .content-container::-webkit-scrollbar {
@@ -80,16 +96,4 @@ sub {
 
 sub {
     top: 0.4rem;
-}
-
-:root {
-    --primary-black-color: #0f0a00;
-    --primary-white-color: #fcf6e9;
-    --secondary-white-color: #dedbdb;
-    --primary-gold-color: #bd9d52;
-    --primary-red-color: #ad0f0e;
-    --primary-grey-color: #333333;
-    --primary-shadow-color: #70654a;
-    --regular-black-color: #000;
-    --regular-white-color: #fff;
 }

@@ -21,7 +21,7 @@ export const FooterInnerContainer = styled.div`
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    color: #959595;
+    color: var(--secondary-grey-color);
     max-height: 3.5rem;
     min-height: 3.5rem;
     position: relative;

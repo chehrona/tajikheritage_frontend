@@ -28,7 +28,7 @@ export const CuboidFace = styled.div`
     justify-content: center;
     font-family: Arial, sans-serif;
     font-size: 2rem;
-    box-shadow: 0 1px 3px 0 #dedbdb, 0 1px 2px -1px #dedbdb;
+    box-shadow: 0 1px 3px 0 var(--secondary-white-color);, 0 1px 2px -1px var(--secondary-white-color);;
     transform: translateZ(calc(17rem * -0.5)) translateY(calc(17rem * 0.5))
         rotateX(-90deg);
     height: 17rem;
@@ -50,7 +50,7 @@ export const BooksContainer = styled.div`
 `;
 
 export const BookWrapper = styled.div`
-    box-shadow: -1px -4px 0.3rem -0.3rem #dedbdb, 1px -2px 0.3rem -1px #dedbdb,
+    box-shadow: -1px -4px 0.3rem -0.3rem var(--secondary-white-color);, 1px -2px 0.3rem -1px var(--secondary-white-color);,
         0px 0.3rem 0.3rem black;
     border-radius: 0.4rem;
     height: 13rem;

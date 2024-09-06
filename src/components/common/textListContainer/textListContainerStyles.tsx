@@ -5,7 +5,7 @@ export const MainContainer = styled.div<{ $height: number }>`
     background: var(--primary-white-color);
     margin-right: 0.8rem;
     background-image: url(${'/noise.png'});
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
+    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     min-height: ${({ $height }) => $height && `${$height}rem`};
 
     @media (max-width: 480px) {

@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
-// Material UI
-import { ArrowForwardIos } from '@mui/icons-material';
-
 // Helper
 import alert from '../../../miscellaneous/alertMessages.json';
 
@@ -16,15 +13,7 @@ import Alert from '../../common/alert/Alert';
 import { WordCardProps, WordDescTypes } from './types/componentTypes';
 
 // Styled components
-import {
-    CardWrapper,
-    WordTitle,
-    WordDesc,
-    LinkBox,
-    Instruction,
-    ArrowWrapper,
-    Arrow,
-} from './wordCardStyles';
+import { CardWrapper, WordTitle, WordDesc, LinkBox } from './wordCardStyles';
 
 const WordCard: React.FC<WordCardProps> = ({ data, i }) => {
     const { lang } = useGlobalData();
@@ -57,41 +46,11 @@ const WordCard: React.FC<WordCardProps> = ({ data, i }) => {
             <CardWrapper delay={`${0.01 * i}s`} disabled={data.disabled}>
                 <WordTitle>{data.title[lang]}</WordTitle>
                 {renderWordDesc(data)}
-                {data.disabled ? (
-                    <LinkBox
-                        to={'#'}
-                        disabled={data.disabled}
-                        onClick={handleNoContent}
-                    >
-                        <Instruction>
-                            {lang === 'us'
-                                ? 'Read article'
-                                : lang === 'ru'
-                                ? 'Читать статью'
-                                : 'Мақоларо хонед'}
-                        </Instruction>
-                        <ArrowWrapper>
-                            <Arrow>
-                                <ArrowForwardIos />
-                            </Arrow>
-                        </ArrowWrapper>
-                    </LinkBox>
-                ) : (
-                    <LinkBox to={data?.id}>
-                        <Instruction>
-                            {lang === 'us'
-                                ? 'Read article'
-                                : lang === 'ru'
-                                ? 'Читать статью'
-                                : 'Мақоларо хонед'}
-                        </Instruction>
-                        <ArrowWrapper>
-                            <Arrow>
-                                <ArrowForwardIos />
-                            </Arrow>
-                        </ArrowWrapper>
-                    </LinkBox>
-                )}
+                <LinkBox
+                    to={data.disabled ? '#' : data?.id}
+                    disabled={data.disabled}
+                    onClick={handleNoContent}
+                ></LinkBox>
             </CardWrapper>
             {error && (
                 <Alert message={alert.ARTICLE_UNAVAILABLE} type={'info'} />

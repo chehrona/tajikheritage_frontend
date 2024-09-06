@@ -47,7 +47,7 @@ export const StyledIconButton = styled(IconButton)`
     height: 5.5rem;
 
     &.MuiIconButton-root {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
 
         &:hover {
             background: #504221;
@@ -210,7 +210,7 @@ export const MovieImg = styled.img`
     left: 50%;
     position: absolute;
     transform: translate(0%, -50%);
-    box-shadow: 0rem 0rem 1rem 0.2rem #504221d1;
+    box-shadow: 0rem 0rem 1rem 0.2rem var(--primary-shadow-color);
 
     @media (max-width: 1024px) {
         top: 0rem;
@@ -227,7 +227,7 @@ export const ReleaseInfo = styled.div`
     align-items: center;
     height: 4rem;
     justify-content: start;
-    color: #504221d1;
+    color: var(--primary-shadow-color);
     width: 100%;
     gap: 1rem;
 

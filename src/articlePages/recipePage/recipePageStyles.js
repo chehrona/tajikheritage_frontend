@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 40rem;
-    background-color: white;
+    background-color: var(--regular-white-color);
     padding: 2rem 3.2rem 2.8rem 3.2rem;
     @media (max-width: 480px) {
         padding: 0rem;
@@ -18,10 +18,10 @@ export const RecipeContainer = styled.div`
     color: var(--primary-black-color);
     padding: 3rem;
     border-radius: 4rem;
-    background-color: var(--primary-white-color);
+    background-color: var(--primary-var-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
+    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         padding: 0rem;

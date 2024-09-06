@@ -36,19 +36,19 @@ export const CardWrapper = styled.div<CardWrapperProps>`
         disabled ? 'brightness(0.5)' : 'brightness(1)'};
 
     &:hover {
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 
     @media (max-width: 480px) {
         width: 100%;
         height: 15rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 15rem;
         width: 23rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     }
 `;
 
@@ -71,7 +71,7 @@ export const WordDesc = styled(StyledSpan)`
     font-size: 1.1rem;
     width: 100%;
     height: calc(100% - 5.25rem);
-    color: var(--primary-white-color);
+    color: var(--regular-white-color);
 
     &:after {
         content: '';
@@ -116,35 +116,4 @@ export const LinkBox = styled(Link)<LinkBoxProps>`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
     }
-`;
-
-export const Instruction = styled.div`
-    color: var(--primary-white-color);
-    width: calc(100% - 3rem);
-
-    @media (max-width: 480px) {
-        width: calc(100% - 4rem);
-    }
-`;
-
-export const ArrowWrapper = styled.div`
-    width: 3rem;
-    height: 3rem;
-
-    @media (max-width: 1024px) {
-        width: 4rem;
-        height: 4rem;
-    }
-`;
-
-export const Arrow = styled.div`
-    color: var(--primary-gold-color);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    justify-content: center;
-    border: 0.0625rem solid var(--primary-gold-color);
-    box-shadow: 0rem 0rem 0.3rem 0rem #dedbdb;
 `;

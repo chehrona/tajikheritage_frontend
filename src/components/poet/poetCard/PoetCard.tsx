@@ -1,43 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-// Helper
-import alertMessages from '../../../miscellaneous/alertMessages.json';
+// Hooks
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Components
-import Alert from '../../common/alert/Alert';
-import PoetCardContent from '../poetCardContent/PoetCardContent';
+import CardWrapper from '../../common/cardWrapper/CardWrapper';
 
 // Types
 import { PoetCardProps } from './types/componentTypes';
 
 // Styled components
-import { StyledLink, CardContainer } from './poetCardStyles';
+import {
+    PoetCardContent,
+    PoetImgContainer,
+    PoetImage,
+    PoetNameBox,
+    PoetName,
+    PoetDates,
+    PoetInfoContainer,
+} from './poetCardStyles';
 
 const PoetCard: React.FC<PoetCardProps> = ({ poet, i }) => {
-    const [error, setError] = useState<boolean>();
-
-    const handleNoContent = () => {
-        setError(true);
-    };
+    const { lang } = useGlobalData();
 
     return (
-        <>
-            {poet?.disabled ? (
-                <CardContainer onClick={handleNoContent}>
-                    <PoetCardContent poet={poet} i={i} />
-                </CardContainer>
-            ) : (
-                <StyledLink to={'/language/poets/' + poet?.id}>
-                    <PoetCardContent poet={poet} i={i} />
-                </StyledLink>
-            )}
-            {error && (
-                <Alert
-                    message={alertMessages.ARTICLE_UNAVAILABLE}
-                    type={'info'}
+        <CardWrapper
+            i={i}
+            type={'long'}
+            disabled={poet.disabled}
+            page={'/language/poets/' + poet?.id}
+        >
+            <PoetCardContent>
+                <PoetImgContainer>
+                    <PoetImage
+                        src={process.env.REACT_APP_BASE_URL + poet?.img}
+                    />
+                    <PoetNameBox>
+                        <PoetName>{poet?.name[lang][0]}</PoetName>
+                        <PoetName>{poet?.name[lang][1]}</PoetName>
+                        <PoetDates>
+                            {poet?.years[0]}-{poet?.years[1]}
+                        </PoetDates>
+                    </PoetNameBox>
+                </PoetImgContainer>
+                <PoetInfoContainer
+                    dangerouslySetInnerHTML={{
+                        __html: poet?.desc[lang],
+                    }}
                 />
-            )}
-        </>
+            </PoetCardContent>
+        </CardWrapper>
     );
 };
 

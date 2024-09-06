@@ -45,7 +45,7 @@ export const SegmentContainer = styled.div`
 
 export const SectionTitle = styled.div`
     line-height: 3rem;
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     text-decoration: none;
     display: block;
     overflow: hidden;
@@ -55,5 +55,5 @@ export const TitleSpan = styled.span<{ data: string }>`
     padding-left: 0.3rem;
     padding-right: 1rem;
     display: block;
-    text-shadow: 0rem 0.5rem 1rem #dedbdb;
+    text-shadow: 0rem 0.5rem 1rem var(--secondary-white-color);
 `;
