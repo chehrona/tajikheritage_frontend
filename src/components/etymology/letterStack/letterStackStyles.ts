@@ -3,8 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 // Types
 import { WrapperBaseProps } from '../letterShapes/types/styleTypes';
 
-const stanWidth = 5.25;
-const stanHeight = 5.25;
+const stanSize = 5.25;
 
 const bubbleIn = keyframes`
     0% {
@@ -127,7 +126,7 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
 `;
 
 export const OvalWrapper = styled(WrapperBase)`
-    width: ${stanWidth * 2}rem;
+    width: ${stanSize * 2}rem;
     ${emptyBackground}
 
     img {
@@ -140,7 +139,7 @@ export const OvalWrapper = styled(WrapperBase)`
 `;
 
 export const VerticalWrapper = styled(WrapperBase)`
-    width: ${stanWidth * 2}rem;
+    width: ${stanSize * 2}rem;
     transform: rotateZ(90deg);
 
     span {
@@ -160,7 +159,7 @@ export const VerticalWrapper = styled(WrapperBase)`
 `;
 
 export const CircleWrapper = styled(WrapperBase)`
-    width: ${stanWidth}rem;
+    width: ${stanSize}rem;
 
     img {
         width: 80%;
@@ -176,7 +175,7 @@ export const InstructionWrapper = styled(WrapperBase)`
     font-size: 1.75rem;
     font-weight: normal;
     padding: 0.5rem;
-    width: ${stanWidth * 3}rem;
+    width: ${stanSize * 3}rem;
     pointer-events: none;
     background-image: url('/noise.png');
 `;
