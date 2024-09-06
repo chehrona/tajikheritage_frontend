@@ -9,5 +9,5 @@ export type SlideshowProps = {
     topLeftRad?: number;
     width: number;
     height?: number;
-    slides: SlideImage[];
+    slides?: SlideImage[];
 };

@@ -3,6 +3,9 @@ import React from 'react';
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
+// Components
+import CardWrapper from '../cardWrapper/CardWrapper';
+
 // Types
 import { SectionCardProps } from './types/componentTypes';
 
@@ -12,15 +15,14 @@ import {
     SectionImage,
     SectionTitle,
     ImageWrapper,
-    StyledLink,
 } from './sectionCardStyles';
 
 const SectionCard: React.FC<SectionCardProps> = ({ section, link, i }) => {
     const { lang } = useGlobalData();
 
     return (
-        <StyledLink to={link}>
-            <SectionCardWrapper $delay={`${0.01 * i}s`}>
+        <CardWrapper i={i} page={link} type={'long'}>
+            <SectionCardWrapper>
                 <ImageWrapper>
                     <SectionImage
                         src={
@@ -32,7 +34,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section, link, i }) => {
                     {section?.title[lang]}
                 </SectionTitle>
             </SectionCardWrapper>
-        </StyledLink>
+        </CardWrapper>
     );
 };
 

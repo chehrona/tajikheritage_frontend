@@ -20,6 +20,7 @@ import LetterStack from '../../components/etymology/letterStack/LetterStack';
 
 // Types
 import { ErrorTypes } from '../../appTypes';
+import { WordItemType } from './types/componentTypes';
 
 // Styled components
 import { CardsContainer, PageTitle } from './etymologyStyles';
@@ -28,8 +29,8 @@ import { PageContainer } from '../middlePage/middlePageStyles';
 function EtymologyPage() {
     const location = useLocation();
     const { lang } = useGlobalData();
-    const [items, setItems] = useState([]);
-    const [allItems, setAllItems] = useState([]);
+    const [items, setItems] = useState<WordItemType[]>([]);
+    const [allItems, setAllItems] = useState<WordItemType[]>([]);
     const [error, setError] = useState<any>();
     const [loading, setLoading] = useState<boolean>(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
@@ -81,12 +82,12 @@ function EtymologyPage() {
                             setIsDropdownOpen={setIsDropdownOpen}
                         />
                         {!isDropdownOpen && (
-                            <CardsContainer center={items.length % 3 === 0}>
+                            <CardsContainer $center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (
                                         <WordCard
                                             i={i}
-                                            // key={item._id}
+                                            key={item._id}
                                             data={item}
                                         />
                                     );

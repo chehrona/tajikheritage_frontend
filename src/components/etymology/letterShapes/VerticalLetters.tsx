@@ -7,32 +7,35 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 // Helper
 import letters from '../../../miscellaneous/staticTexts.json';
 
-// Styled components
-import { OvalWrapper } from '../letterStack/letterStackStyles';
+// Types
+import { LetterProps } from './types/componentTypes';
 
-export default function OvalLetters({ open, handleClick }) {
+// Styled components
+import { VerticalWrapper } from '../letterStack/letterStackStyles';
+
+const VerticalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const lettersToRender = isMobile
-        ? letters.ETYM_PAGE_LETTERS_OVALS.m[lang]
-        : letters.ETYM_PAGE_LETTERS_OVALS.d[lang];
+        ? letters.ETYM_PAGE_LETTERS_VERTICALS.m[lang]
+        : letters.ETYM_PAGE_LETTERS_VERTICALS.d[lang];
 
     return (
         <>
-            {lettersToRender.map((letter, index) => {
+            {lettersToRender?.map((letter, index) => {
                 const { char, delay } = letter;
                 const top = letter.position.t;
                 const left = letter.position.l;
 
                 return (
-                    <OvalWrapper
-                        top={top}
-                        left={left}
-                        open={open}
-                        delay={delay}
+                    <VerticalWrapper
+                        $top={top}
+                        $left={left}
+                        $open={open}
+                        $delay={delay}
                         key={`${[lang]}_${char}_${index}`}
-                        empty={char.startsWith('/storage')}
+                        $empty={char.startsWith('/storage')}
                         onClick={() => handleClick(char)}
                     >
                         {char.startsWith('/storage') ? (
@@ -43,9 +46,11 @@ export default function OvalLetters({ open, handleClick }) {
                         ) : (
                             <span>{char}</span>
                         )}
-                    </OvalWrapper>
+                    </VerticalWrapper>
                 );
             })}
         </>
     );
-}
+};
+
+export default VerticalLetters;

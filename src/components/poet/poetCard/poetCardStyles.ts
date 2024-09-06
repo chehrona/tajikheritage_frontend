@@ -1,52 +1,11 @@
-import styled, { keyframes } from 'styled-components';
-
-const slideOut = keyframes`
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-`;
+import styled from 'styled-components';
 
 export const PoetCardContent = styled.div`
     width: 100%;
-    height: 35rem;
+    height: 100%;
     color: var(--primary-white-color);
     background: var(--primary-black-color);
     position: relative;
-    border-radius: 0.7rem;
-
-    @media (max-width: 480px) {
-        height: 19.025rem;
-        width: 12.5rem;
-        transition: none;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-
-        &:hover {
-            border-radius: 0.7rem;
-            transition: none;
-        }
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-radius: 1.5rem;
-        transition: none;
-        height: 38rem;
-        width: 25rem;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-
-        &:hover {
-            border-radius: 1.5rem;
-            transition: none;
-        }
-    }
 `;
 
 export const PoetImgContainer = styled.div`
@@ -144,9 +103,10 @@ export const PoetDates = styled.div`
 
 export const PoetInfoContainer = styled.div`
     position: absolute;
-    left: 2rem;
-    bottom: 3rem;
-    width: 20rem;
+    padding: 0rem 2rem 2rem 2rem;
+    left: 0rem;
+    bottom: 0rem;
+    width: 100%;
     color: var(--secondary-white-color);
 
     @media (max-width: 480px) {
@@ -155,6 +115,5 @@ export const PoetInfoContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.15rem;
-        bottom: 2rem;
     }
 `;

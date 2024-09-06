@@ -1,5 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
+// Types
+import { WrapperBaseProps } from '../letterShapes/types/styleTypes';
+
 const stanWidth = 5.25;
 const stanHeight = 5.25;
 
@@ -63,8 +66,8 @@ export const LetterContainer = styled.div`
     }
 `;
 
-const hoverEffect = ({ empty }) =>
-    !empty &&
+const hoverEffect = ({ $empty }: WrapperBaseProps) =>
+    !$empty &&
     css`
         cursor: pointer;
         transform: translateZ(1rem) translateX(0rem) scale(1.05);
@@ -73,43 +76,44 @@ const hoverEffect = ({ empty }) =>
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     `;
 
-const emptyBackground = ({ empty }) =>
-    empty &&
+const emptyBackground = ({ $empty }: WrapperBaseProps) =>
+    $empty &&
     css`
         pointer-events: none;
         background-image: url('/noise.png');
     `;
 
-export const WrapperBase = styled.div`
-    color: var(--primary-gold-color);
-    font-family: 'EB Garamond', serif;
-    height: ${stanHeight}rem;
-    display: flex;
+const delayedAppearance = ({ $open, $delay }: WrapperBaseProps) =>
+    $open
+        ? css`
+              opacity: 0;
+              transition: opacity 150ms;
+              animation: ${bubbleIn} 300ms forwards;
+              animation-delay: ${() => ($delay ? `${$delay}s` : '0s')};
+          `
+        : css`
+              opacity: 1;
+              transition: opacity 150ms;
+              animation: ${bubbleOut} 300ms forwards;
+              animation-delay: ${() => ($delay ? `${$delay}s` : '0s')};
+          `;
+
+export const WrapperBase = styled.div<WrapperBaseProps>`
+    height: 5rem;
+    width: 5rem;
     position: absolute;
+    left: ${({ $left }) => `${$left * 5.25}rem`};
+    top: ${({ $top }) => `${$top * 5.25}rem`};
+    background-color: var(--primary-black-color);
     border-radius: 5rem;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-black-color);
+    color: var(--primary-gold-color);
     font-size: 2.5rem;
-    left: ${({ left }) => `${left * stanWidth}rem`};
-    top: ${({ top }) => `${top * stanWidth}rem`};
     will-change: transform;
 
-    ${({ open }) =>
-        open
-            ? css`
-                  opacity: 0;
-                  transition: opacity 150ms;
-                  animation: ${bubbleIn} 300ms ease-in-out forwards;
-                  animation-delay: ${({ delay }) => delay && `${delay}s`};
-              `
-            : css`
-                  opacity: 1;
-                  transition: opacity 150ms;
-                  animation: ${bubbleOut} 300ms ease-in-out forwards;
-                  animation-delay: ${({ delay }) => delay && `${delay}s`};
-              `};
-
+    ${delayedAppearance}
     ${emptyBackground}
 
     &:hover {

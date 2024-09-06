@@ -7,10 +7,13 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 // Helper
 import letters from '../../../miscellaneous/staticTexts.json';
 
+// Types
+import { LetterProps } from './types/componentTypes';
+
 // Styled components
 import { CircleWrapper } from '../letterStack/letterStackStyles';
 
-export default function OvalLetters({ open, handleClick }) {
+const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -27,12 +30,12 @@ export default function OvalLetters({ open, handleClick }) {
 
                 return (
                     <CircleWrapper
-                        top={top}
-                        left={left}
-                        open={open}
-                        delay={delay}
+                        $top={top}
+                        $left={left}
+                        $open={open}
+                        $delay={delay}
+                        $empty={char.startsWith('/storage')}
                         key={`${[lang]}_${char}_${index}`}
-                        empty={char.startsWith('/storage')}
                         onClick={() => handleClick(char)}
                     >
                         {char.startsWith('/storage') ? (
@@ -48,4 +51,6 @@ export default function OvalLetters({ open, handleClick }) {
             })}
         </>
     );
-}
+};
+
+export default OvalLetters;

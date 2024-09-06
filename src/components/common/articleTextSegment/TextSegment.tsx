@@ -15,8 +15,9 @@ import { TextSegmentProps } from './types/componentTypes';
 import {
     BoxWrapper,
     Title,
-    FirstBox,
-    SecondBox,
+    BaseText,
+    LeftText,
+    RightText,
     SlideContainer,
 } from './textSegmentStyles';
 
@@ -46,7 +47,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
 
     return (
         <BoxWrapper $reverse={reverse} $noBorder={noBorder}>
-            {data.slides && data?.slides.length > 0 ? (
+            {reverse !== null ? (
                 <SlideContainer
                     ref={parentRef}
                     $reverse={reverse}
@@ -59,15 +60,13 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                     />
                 </SlideContainer>
             ) : null}
-            {i === 0 && <Title>{title}</Title>}
-            <ArticleSubtitle
-                length={data.slides.length === 0}
-                reverse={reverse}
-                subtitle={data.subtitle}
-            ></ArticleSubtitle>
+            {i === 0 && title && <Title>{title}</Title>}
+            <ArticleSubtitle subtitle={data.subtitle}></ArticleSubtitle>
             <DescWrapper
                 data={data?.body}
-                TextWrapper={reverse ? SecondBox : FirstBox}
+                TextWrapper={
+                    reverse === null ? BaseText : reverse ? RightText : LeftText
+                }
             />
         </BoxWrapper>
     );

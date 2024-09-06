@@ -1,6 +1,6 @@
 export type BoxWrapperProps = {
     $noBorder?: boolean;
-    $reverse: boolean;
+    $reverse: boolean | null;
 };
 
 export type SlideContainerProps = {

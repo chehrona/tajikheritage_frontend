@@ -23,7 +23,7 @@ import {
 } from './slideshowStyles';
 
 const Slideshow: React.FC<SlideshowProps> = ({
-    slides,
+    slides = [],
     width,
     height,
     topLeftRad,

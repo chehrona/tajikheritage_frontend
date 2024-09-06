@@ -1,22 +1,28 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Types
 import { BoxWrapperProps, SlideContainerProps } from './types/styleTypes';
 
 export const BoxWrapper = styled.div<BoxWrapperProps>`
     width: 100%;
-    position: relative;
     display: block;
+    position: relative;
     border-bottom: ${({ $noBorder }) =>
         $noBorder ? 'none' : '0.0625rem solid var(--primary-gold-color)'};
     ${({ $reverse }) =>
-        $reverse ? 'padding-left: 3rem' : 'padding-right: 3rem'};
+        $reverse !== null
+            ? $reverse
+                ? 'padding-left: 3rem;'
+                : 'padding-right: 3rem;'
+            : 'padding: 0rem 3rem;'};
 
     ::after {
         content: '';
         clear: both;
         display: table;
     }
+
+    background-color: pink;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         ${({ $reverse }) =>
@@ -45,10 +51,14 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     position: relative;
     margin-bottom: 2rem;
     float: ${({ $reverse }) => ($reverse ? 'right' : 'left')};
-    ${({ $reverse }) =>
-        $reverse ? 'margin-left: 3rem' : 'margin-right: 3rem'};
+
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
+
+    background-color: red;
+
+    ${({ $reverse }) =>
+        $reverse ? 'margin-left: 3rem;' : 'margin-right: 3rem;'};
 
     @media (max-width: 480px) {
         width: 100svw;
@@ -67,14 +77,13 @@ export const SlideContainer = styled.div<SlideContainerProps>`
 `;
 
 export const Title = styled.div`
-    color: var(--regular-black-color);
     font-size: 4rem;
     font-weight: 500;
-    padding-top: 0.5rem;
     font-style: italic;
     font-family: 'EB Garamond', serif;
+    color: var(--regular-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
-    margin-bottom: 0.5rem;
+    background-color: green;
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
@@ -82,13 +91,13 @@ export const Title = styled.div`
     }
 `;
 
-export const FirstBox = styled.div`
+export const BaseText = styled.div`
     width: 100%;
     font-size: 1.1rem;
     position: relative;
     line-height: 1.7rem;
-    padding-left: 3rem;
     color: var(--primary-black-color);
+    background-color: purple;
 
     ::-webkit-scrollbar {
         width: 0rem;
@@ -105,25 +114,12 @@ export const FirstBox = styled.div`
     }
 `;
 
-export const SecondBox = styled.div`
-    width: 100%;
-    font-size: 1.1rem;
-    position: relative;
-    line-height: 1.7rem;
+export const RightText = styled(BaseText)`
+    padding-left: 3rem;
+    background-color: red;
+`;
+
+export const LeftText = styled(BaseText)`
     padding-right: 3rem;
-    color: var(--primary-black-color);
-
-    ::-webkit-scrollbar {
-        width: 0rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-        padding: 0.5rem 1.5rem 0rem 1.5rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
-        padding: 0.25rem 2rem 0rem 0rem;
-    }
+    background-color: blue;
 `;

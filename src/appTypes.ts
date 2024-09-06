@@ -19,7 +19,7 @@ export type ErrorTypes = Error & {
 export type DescDetails = {
     subtitle: string;
     body: BodyObj;
-    slides: SlideImage[];
+    slides?: SlideImage[];
 };
 
 export type DescObj = {

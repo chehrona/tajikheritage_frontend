@@ -31,7 +31,7 @@ const PoetMovies: React.FC<{ movies: PoetMovieType[] }> = ({ movies }) => {
     return (
         <MainContainer id="Films">
             <MovieWrapper>
-                {movies.map((movie: PoetMovieType, i: number) => {
+                {movies.map((movie, i) => {
                     return (
                         <MovieCard key={i} $delay={`${0.1 * i}s`}>
                             <Image

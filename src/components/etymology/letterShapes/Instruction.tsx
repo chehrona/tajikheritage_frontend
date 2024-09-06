@@ -10,7 +10,7 @@ import letters from '../../../miscellaneous/staticTexts.json';
 // Styled components
 import { InstructionWrapper } from '../letterStack/letterStackStyles';
 
-export default function Instruction({ open }) {
+const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -21,16 +21,15 @@ export default function Instruction({ open }) {
     return (
         <>
             {lettersToRender?.map((letter, index) => {
-                const { delay, char } = letter;
+                const { char } = letter;
                 const top = letter.position.t;
                 const left = letter.position.l;
 
                 return (
                     <InstructionWrapper
-                        top={top}
-                        left={left}
-                        open={open}
-                        delay={delay}
+                        $top={top}
+                        $left={left}
+                        $open={open}
                         key={`${[lang]}_${char}_${index}`}
                     >
                         <span>
@@ -45,4 +44,6 @@ export default function Instruction({ open }) {
             })}
         </>
     );
-}
+};
+
+export default Instruction;

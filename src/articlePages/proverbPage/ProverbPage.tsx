@@ -86,11 +86,17 @@ const ProverbPage = () => {
                             <TextContainer>
                                 {proverb.desc[lang].map(
                                     (entry: DescDetails, i) => {
+                                        const isSlides =
+                                            entry.slides &&
+                                            entry.slides.length > 0;
+
                                         return (
                                             <TextSegment
                                                 i={i}
                                                 key={`${proverb?.quote[lang]}_${i}`}
-                                                reverse={i % 2 > 0}
+                                                reverse={
+                                                    isSlides ? i % 2 > 0 : null
+                                                }
                                                 data={entry}
                                                 noBorder={true}
                                             />

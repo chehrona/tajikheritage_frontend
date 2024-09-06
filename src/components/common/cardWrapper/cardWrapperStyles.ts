@@ -24,7 +24,6 @@ export const StyledLink = styled(Link)<LinkProps>`
     text-decoration: none;
     border-radius: 0.7rem;
     animation: ${slideOut} 1s ease-in-out forwards;
-    background-color: var(--primary-black-color);
     transition: border-radius 250ms, box-shadow 400ms;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
     height: ${({ $height }) => $height.d && `${$height.d}rem`};
@@ -32,13 +31,16 @@ export const StyledLink = styled(Link)<LinkProps>`
     ${({ $disabled }) =>
         $disabled
             ? css`
-                  pointer-events: none;
                   filter: brightness(0.5);
                   cursor: default;
 
                   &:hover {
                       border-radius: initial;
                       box-shadow: initial;
+                  }
+
+                  > * {
+                      border-radius: 0.7rem;
                   }
               `
             : css`
@@ -49,6 +51,15 @@ export const StyledLink = styled(Link)<LinkProps>`
                   &:hover {
                       border-radius: 1.5rem;
                       box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+                  }
+
+                  > * {
+                      border-radius: 0.7rem;
+                      transition: border-radius 250ms;
+
+                      &:hover {
+                          border-radius: 1.5rem;
+                      }
                   }
               `}
 
@@ -65,12 +76,12 @@ export const StyledLink = styled(Link)<LinkProps>`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 25rem;
+        border-radius: 1.5rem;
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-        height: ${({ $height }) => $height.d && `${$height.d}rem`};
+        height: ${({ $height }) => $height.t && `${$height.t}rem`};
 
-        &:hover {
-            border-radius: initial;
-            transition: initial;
+        > * {
+            border-radius: 1.5rem;
         }
     }
 `;

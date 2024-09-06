@@ -1,67 +1,15 @@
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-const slideOut = keyframes`
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-`;
-
-export const SectionCardWrapper = styled.div<{ $delay: string }>`
-    opacity: 0;
-    width: 23rem;
-    height: 35rem;
-    color: var(--primary-white-color);
+export const SectionCardWrapper = styled.div`
+    width: 100%;
+    height: 100%;
     padding: 0.5rem;
-    cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--primary-white-color);
     background: var(--primary-black-color);
-    border-radius: 0.7rem;
-    transition: border-radius 250ms, box-shadow 400ms;
-    animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
-
-    &:hover {
-        border-radius: 1.5rem;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-    }
-
-    @media (max-width: 480px) {
-        height: 19.025rem;
-        width: 12.5rem;
-        transition: none;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-
-        &:hover {
-            border-radius: 0.7rem;
-            transition: none;
-        }
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-radius: 1.5rem;
-        transition: none;
-        height: 34.66rem;
-        width: 25rem;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-
-        &:hover {
-            border-radius: 1.5rem;
-            transition: none;
-        }
-    }
 `;
 
 export const SectionTitle = styled.div<{ $length: number }>`
@@ -108,9 +56,4 @@ export const SectionImage = styled.div<{ src: string }>`
     background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 1px var(--secondary-white-color));
     background-image: ${({ src }) => src && `url(${src})`};
-`;
-
-export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: inherit;
 `;

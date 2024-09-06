@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
 
+// Hooks
+import { useGlobalData } from '../../../hooks/useGlobalData';
+
 // Helper
 import alertMessages from '../../../miscellaneous/alertMessages.json';
 
 // Components
+import CardWrapper from '../cardWrapper/CardWrapper';
 import Alert from '../alert/Alert';
-import SquareCardContent from '../squareCardContent/SquareCardContent';
 
 // Types
 import { SquareCardProps } from './types/componentTypes';
 
 // Styled components
-import { CardWrapper, StyledLink } from './squareCardStyles';
+import { SquareImage } from './squareCardStyles';
 
 const SquareCard: React.FC<SquareCardProps> = ({ item, i }) => {
+    const { lang } = useGlobalData();
     const [error, setError] = useState<boolean>(false);
-
-    const handleNoContent = () => {
-        setError(true);
-    };
 
     return (
         <>
-            {item?.disabled ? (
-                <CardWrapper onClick={handleNoContent}>
-                    <SquareCardContent item={item} i={i} />
-                </CardWrapper>
-            ) : (
-                <StyledLink to={item?.id}>
-                    <SquareCardContent item={item} i={i} />
-                </StyledLink>
-            )}
+            <CardWrapper
+                i={i}
+                disabled={item.disabled}
+                page={item?.id}
+                type={'square'}
+                setError={setError}
+            >
+                <SquareImage
+                    src={process.env.REACT_APP_BASE_URL + item?.img[lang]}
+                />
+            </CardWrapper>
             {error && (
                 <Alert
                     message={alertMessages.ARTICLE_UNAVAILABLE}
