@@ -7,7 +7,7 @@ import { StyledDialogProps } from './types/styleTypes';
 
 export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     & .MuiPaper-root {
-        font-size: 1.1rem;
+        font-size: var(--body-text);
         border-radius: ${({ $border }) => $border && $border};
         box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
         width: ${({ $width }) => $width && $width};

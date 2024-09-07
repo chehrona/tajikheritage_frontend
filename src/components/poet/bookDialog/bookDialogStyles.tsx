@@ -57,7 +57,7 @@ export const InputField = styled.input`
     border: 0.0625rem solid var(--primary-black-color);
     outline: none;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     border-radius: 0.25rem;
     font-family: 'IBM Plex Serif', serif;
     padding: 0.5rem;
@@ -69,7 +69,7 @@ export const StyledButton = styled(Button)`
         color: var(--primary-white-color);
         height: 100%;
         text-transform: none;
-        font-size: 1.1rem;
+        font-size: var(--body-text);
         font-family: 'IBM Plex Serif', serif;
         margin-left: 1rem;
         padding: 0.375rem 0.75rem;
