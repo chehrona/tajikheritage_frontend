@@ -141,7 +141,7 @@ export const StyledButton = styled(Button)`
         border-radius: 0.8rem;
         text-transform: none;
         padding: 0.5rem 1.5rem;
-        font-family: 'IBM Plex Serif', serif;
+        font-family: var(--ordinary-font);
     }
 
     &.MuiButton-root:hover {

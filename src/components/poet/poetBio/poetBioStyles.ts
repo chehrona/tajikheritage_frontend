@@ -411,7 +411,7 @@ export const TextWrapper = styled.div`
     column-gap: 3rem;
     overflow: hidden;
     color: var(--primary-grey-color);
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
 
     @media (max-width: 480px) {
         column-count: 1;
@@ -567,7 +567,7 @@ export const Author = styled.div`
     color: var(--primary-white-color);
     font-size: var(--body-text);
     font-style: normal;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
 
     @media (max-width: 1024px) {
         font-size: 1.3rem;

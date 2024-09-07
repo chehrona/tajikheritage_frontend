@@ -89,7 +89,7 @@ export const PoetNameBox = styled.div`
 
 export const PoetDates = styled.div`
     font-size: 1.25rem;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
 
     @media (max-width: 480px) {
         margin-top: 1rem;
