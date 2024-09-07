@@ -21,7 +21,6 @@ import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
 import {
-    PageContainer,
     ProverbContainer,
     QuoteWrapper,
     Shadow,
@@ -73,7 +72,6 @@ const ProverbPage = () => {
             <Loader inProp={loading} />
             {proverb ? (
                 <Fade inProp={!loading}>
-                    {/* Don't change to PageFirstContainer due to padding */}
                     <PageFirstContainer>
                         <Shadow />
                         <ProverbContainer>

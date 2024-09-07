@@ -10,7 +10,7 @@ import { requestPage } from '../services/request';
 import { Langs } from '../appTypes';
 import { TitleProps } from './hookTypes';
 
-export const useSetHeader = (page: string, type: string, pageData: any) => {
+export const useSetHeader = (page: string, type: string, pageData?: any) => {
     const { title, setTitle } = useGlobalData();
 
     const modifiedPage =

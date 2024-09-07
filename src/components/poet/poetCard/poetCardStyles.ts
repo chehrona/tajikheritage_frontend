@@ -6,6 +6,11 @@ export const PoetCardContent = styled.div`
     color: var(--primary-white-color);
     background: var(--primary-black-color);
     position: relative;
+    padding: 2rem;
+
+    @media (max-device-width: 1024px) {
+        padding: 1.5rem;
+    }
 `;
 
 export const PoetImgContainer = styled.div`
@@ -16,21 +21,19 @@ export const PoetImgContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0rem 0rem 3rem rgba(189, 157, 82, 0.8);
 
     @media (max-width: 480px) {
-        margin-top: 1.5rem;
         height: 13.5rem;
         width: 10rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 25rem;
-        width: 17rem;
+        height: 23.5rem;
+        width: 17.5rem;
     }
 `;
 
@@ -47,7 +50,6 @@ export const PoetImage = styled.img`
         border-radius: 4.5rem;
         height: 12.5rem;
         width: 9rem;
-        margin: 0.15rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -58,18 +60,19 @@ export const PoetImage = styled.img`
 
 export const PoetNameBox = styled.div`
     position: absolute;
-    top: 15.8rem;
+    top: 17.5rem;
     line-height: 2.5rem;
-    left: -2rem;
+    left: 2rem;
 
     @media (max-width: 480px) {
-        top: 9.75rem;
-        line-height: 1.7rem;
-        left: -0.25rem;
+        top: 11rem;
+        line-height: 1.8rem;
+        left: 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         top: 17rem;
+        left: 1.5rem;
     }
 `;
 
@@ -116,5 +119,10 @@ export const PoetInfoContainer = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.15rem;
+        max-height: 8.75rem;
+        max-width: 25rem;
+        height: 8.75rem;
+        padding: 0rem 1.5rem 1.5rem 1.5rem;
+        overflow: hidden;
     }
 `;

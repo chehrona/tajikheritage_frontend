@@ -1,9 +1,7 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
 
 // Hooks
-import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../../hooks/useGlobalData';
-import { useFadeIn } from '../../../../hooks/useFadeIn';
 
 // Types
 import { MenuProps } from '../menuDropdown/types/componentTypes';
@@ -17,42 +15,50 @@ const MenuButton: React.FC<MenuProps> = ({
     menuAnchorEl,
 }) => {
     const { lang } = useGlobalData();
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const [triggerFade, setTriggerFade] = useState<boolean>(false);
-    const elementRef = useRef<HTMLDivElement>(null);
-
-    useFadeIn(triggerFade, setTriggerFade, elementRef);
+    const [triggerFadeIn, setTriggerFadeIn] = useState<boolean>(false);
+    const [triggerFadeOut, setTriggerFadeOut] = useState<boolean>(false);
+    const [displayedMenuState, setDisplayedMenuState] =
+        useState<boolean>(isMenuShown);
 
     const handleMenuOpen = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
             if (menuAnchorEl) {
                 menuAnchorEl.current = e.currentTarget;
             }
+            setTriggerFadeOut(true);
+            setIsMenuShown((prevState) => !prevState);
 
-            setTriggerFade(true);
-            setIsMenuShown((prevState: boolean) => !prevState);
+            setTimeout(() => {
+                setTriggerFadeOut(false);
+                setDisplayedMenuState((prevState) => !prevState);
+
+                setTriggerFadeIn(true);
+
+                setTimeout(() => setTriggerFadeIn(false), 150);
+            }, 150);
         },
         [setIsMenuShown, menuAnchorEl],
     );
 
-    // Button text
+    // Button text logic
     const getButtonText = () => {
-        if (lang === 'us') return isMenuShown ? 'CLOSE' : 'MENU';
-        if (lang === 'ru') return isMenuShown ? 'ЗАКРЫТЬ' : 'МЕНЮ';
-        return isMenuShown ? 'ПӮШЕД' : 'МЕНЮ';
+        if (lang === 'us') return displayedMenuState ? 'CLOSE' : 'MENU';
+        if (lang === 'ru') return displayedMenuState ? 'ЗАКРЫТЬ' : 'МЕНЮ';
+        return displayedMenuState ? 'ПӮШЕД' : 'МЕНЮ';
     };
 
     return (
         <MainContainer onClick={handleMenuOpen}>
-            {!isMobile ? (
-                <ButtonText ref={elementRef}>
-                    {isMenuShown
-                        ? getButtonText()
-                        : lang === 'us'
-                        ? 'MENU'
-                        : 'МЕНЮ'}
-                </ButtonText>
-            ) : null}
+            <ButtonText
+                $triggerFadeIn={triggerFadeIn}
+                $triggerFadeOut={triggerFadeOut}
+            >
+                {isMenuShown
+                    ? getButtonText()
+                    : lang === 'us'
+                    ? 'MENU'
+                    : 'МЕНЮ'}
+            </ButtonText>
             <StyledMenuIcon $isMenuShown={isMenuShown} />
         </MainContainer>
     );

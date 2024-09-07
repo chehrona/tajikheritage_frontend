@@ -69,8 +69,11 @@ const Routes: React.FC = () => {
                 path="/cuisine/recipes/:id/print"
                 element={<RecipePagePrint />}
             /> */}
-            <Route path="/cuisine" element={<TempPage />} />
-            <Route path="/language/languages" element={<TempPage />} />
+            <Route path="/cuisine" element={<TempPage page={'cuisine'} />} />
+            <Route
+                path="/language/languages"
+                element={<TempPage page={'/language/languages'} />}
+            />
             <Route
                 path="/language/poets"
                 element={<MiddlePage page={'language/all_poets'} />}

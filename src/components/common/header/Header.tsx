@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 // Hooks
-import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
 

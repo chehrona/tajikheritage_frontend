@@ -11,22 +11,6 @@ const spin = keyframes`
     } 
 `;
 
-export const PageContainer = styled.div`
-    position: relative;
-    box-sizing: border-box;
-    min-height: 40rem;
-    background: var(--regular-white-color);
-    padding: 5rem 3.86rem 2.8rem 3.2rem;
-
-    @media (max-width: 480px) {
-        padding: 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 5rem 1.8rem 2rem 1.2rem;
-    }
-`;
-
 export const Shadow = styled.div`
     height: 8rem;
     position: absolute;
@@ -39,7 +23,7 @@ export const Shadow = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         top: 1.5rem;
         left: 1.3rem;
-        width: calc(100% - 2.2rem);
+        width: calc(100% - 1.65rem);
         border-radius: 2.5rem 2.5rem 0rem 0rem;
     }
 `;
@@ -61,6 +45,7 @@ export const ProverbContainer = styled.div`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        margin-top: 3.5rem;
         border-radius: 2.5rem;
         box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     }

@@ -1,13 +1,18 @@
 import { useEffect, RefObject } from 'react';
-
-// Hooks
 import { useGlobalData } from './useGlobalData';
 
-export const useFadeIn = (
+type UseFadeInProps = (
     trigger: boolean,
     setTriggerFade: React.Dispatch<React.SetStateAction<boolean>>,
     elementRef: RefObject<HTMLElement>,
-    duration: string = '1s',
+    duration?: string,
+) => void;
+
+export const useFadeIn: UseFadeInProps = (
+    trigger,
+    setTriggerFade,
+    elementRef,
+    duration = '1s',
 ) => {
     const { lang } = useGlobalData();
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
@@ -44,21 +44,21 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
         setInfoArr([...bioData?.two[lang]]);
     }, [lang]);
 
-    const moveUp = useCallback(() => {
+    const moveUp = () => {
         if (infoArr.length > 1) {
             const movedItem = infoArr.pop() as PoetBioSectionTwoDetails;
             infoArr.unshift(movedItem);
             setInfoArr([...infoArr]);
         }
-    }, [infoArr]);
+    };
 
-    const moveDown = useCallback(() => {
+    const moveDown = () => {
         if (infoArr.length > 1) {
             const movedItem = infoArr.shift() as PoetBioSectionTwoDetails;
             infoArr.push(movedItem);
             setInfoArr([...infoArr]);
         }
-    }, [infoArr]);
+    };
 
     return (
         <BoxTwo>

@@ -42,7 +42,7 @@ export const StyledAlert = styled(Alert)`
 
     @media (max-width: 1024px) {
         &.MuiPaper-root {
-            font-size: 1.15rem;
+            font-size: var(--body-text);
 
             svg {
                 font-size: 2rem;

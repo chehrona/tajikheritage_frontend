@@ -27,6 +27,7 @@ import {
 const PoetCard: React.FC<PoetCardProps> = ({ poet, i }) => {
     const { lang } = useGlobalData();
     const [error, setError] = useState<boolean>(false);
+    const poetName = poet?.name[lang].split(' ');
 
     return (
         <>
@@ -42,14 +43,14 @@ const PoetCard: React.FC<PoetCardProps> = ({ poet, i }) => {
                         <PoetImage
                             src={process.env.REACT_APP_BASE_URL + poet?.img}
                         />
-                        <PoetNameBox>
-                            <PoetName>{poet?.name[lang][0]}</PoetName>
-                            <PoetName>{poet?.name[lang][1]}</PoetName>
-                            <PoetDates>
-                                {poet?.years[0]}-{poet?.years[1]}
-                            </PoetDates>
-                        </PoetNameBox>
                     </PoetImgContainer>
+                    <PoetNameBox>
+                        <PoetName>{poetName[0]}</PoetName>
+                        <PoetName>{poetName[1]}</PoetName>
+                        <PoetDates>
+                            {poet?.years[0]}-{poet?.years[1]}
+                        </PoetDates>
+                    </PoetNameBox>
                     <PoetInfoContainer
                         dangerouslySetInnerHTML={{
                             __html: poet?.desc[lang],

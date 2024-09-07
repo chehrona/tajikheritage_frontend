@@ -291,14 +291,19 @@ export const Link = styled.a`
 `;
 
 export const ImageSemiCircle = styled.img`
-    position: absolute;
-    bottom: -8rem;
-    right: -3rem;
-    border-radius: 50%;
-    width: 35rem;
-    height: 35rem;
-    padding: 0.5rem;
-    border: 0.0625rem solid var(--primary-gold-color);
-    z-index: -1;
-    opacity: 0.3;
+    display: none;
+
+    @media (max-width: 480px) {
+        display: flex;
+        position: absolute;
+        bottom: -8rem;
+        right: -3rem;
+        border-radius: 50%;
+        width: 35rem;
+        height: 35rem;
+        padding: 0.5rem;
+        border: 0.0625rem solid var(--primary-gold-color);
+        z-index: -1;
+        opacity: 0.3;
+    }
 `;

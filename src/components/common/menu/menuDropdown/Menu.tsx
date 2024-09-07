@@ -30,15 +30,14 @@ const Menu: React.FC<MenuProps> = ({
 }) => {
     const { lang } = useGlobalData();
     const pageInfo = staticText.MENU_ITEMS as MenuPage;
-    const [triggerFade, setTriggerFade] = useState<boolean>(false);
 
-    useEffect(() => {
-        setTriggerFade(true);
+    // useEffect(() => {
+    //     setTriggerFade(true);
 
-        const timer = setTimeout(() => setTriggerFade(false), 250);
+    //     const timer = setTimeout(() => setTriggerFade(false), 250);
 
-        return () => clearTimeout(timer);
-    }, [lang]);
+    //     return () => clearTimeout(timer);
+    // }, [lang]);
 
     return (
         <StyledMenu
@@ -63,7 +62,6 @@ const Menu: React.FC<MenuProps> = ({
                             to={entry.link}
                             key={i}
                             onClick={() => setIsMenuShown(false)}
-                            $trigger={triggerFade}
                         >
                             <div>
                                 <PageName>{entry.title}</PageName>

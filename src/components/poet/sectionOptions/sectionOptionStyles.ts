@@ -1,36 +1,41 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-    background-image: url(${'/noise.png'});
-    min-height: fit-content;
-    padding-bottom: 8rem;
-    background-color: var(--primary-black-color);
-    position: relative;
-    height: 21rem;
+    display: none;
 
-    &:after {
-        content: '';
-        padding: 3rem;
-        width: 100%;
-        background: var(--primary-white-color);
+    @media (max-width: 480px) {
+        display: flex;
         background-image: url(${'/noise.png'});
-        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-        clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
-        position: absolute;
-        bottom: -0.01rem;
-        box-sizing: border-box;
-    }
+        min-height: fit-content;
+        padding-bottom: 8rem;
+        background-color: var(--primary-black-color);
+        position: relative;
+        height: 21rem;
 
-    &:before {
-        content: '';
-        padding: 3rem;
-        width: 100%;
-        background: var(--primary-black-color);
-        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-        clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
-        position: absolute;
-        top: -6rem;
-        box-sizing: border-box;
+        &:after {
+            content: '';
+            padding: 3rem;
+            width: 100%;
+            background: var(--primary-white-color);
+            background-image: url(${'/noise.png'});
+            -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+            position: absolute;
+            bottom: -0.01rem;
+            box-sizing: border-box;
+        }
+
+        &:before {
+            content: '';
+            padding: 3rem;
+            width: 100%;
+            background: var(--primary-black-color);
+            -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+            position: absolute;
+            top: -6rem;
+            box-sizing: border-box;
+        }
     }
 `;
 

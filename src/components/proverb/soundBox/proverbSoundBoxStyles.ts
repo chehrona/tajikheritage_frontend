@@ -11,22 +11,6 @@ const spin = keyframes`
     } 
 `;
 
-export const PageContainer = styled.div`
-    position: relative;
-    box-sizing: border-box;
-    min-height: 40rem;
-    background-color: var(--regular-white-color);
-    padding: 5rem 3.7rem 2.8rem 3.2rem;
-
-    @media (max-width: 480px) {
-        padding: 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 5rem 1.8rem 2rem 1.2rem;
-    }
-`;
-
 export const LogoContainer = styled.div`
     top: -2.5rem;
     display: flex;
@@ -122,15 +106,13 @@ export const SvgContainer = styled.svg`
     @media (max-width: 480px) {
         height: 9.8rem;
         width: 9.8rem;
-        top: 4rem;
-        margin-left: -0.8rem;
+        top: -1.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 9rem;
         width: 9.5rem;
-        top: 3.2rem;
-        margin-left: -0.8rem;
+        top: -1.65rem;
     }
 `;
 

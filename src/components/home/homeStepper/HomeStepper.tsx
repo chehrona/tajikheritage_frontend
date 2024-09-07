@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
-import { useMediaQuery } from 'react-responsive';
 
 // Helper
 import staticText from '../../../miscellaneous/staticTexts.json';
@@ -36,7 +35,6 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
 }) => {
     const stepInfo = staticText.HOME_STEPPER as HomeStepperType;
     const { lang } = useGlobalData();
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const [visibleStepIndex, setVisibleStepIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -115,11 +113,9 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                         </StepperBox>
                     );
                 })}
-                {isMobile && (
-                    <ImageSemiCircle
-                        src={stepInfo[visibleStepIndex]?.inner[2].img}
-                    />
-                )}
+                <ImageSemiCircle
+                    src={stepInfo[visibleStepIndex]?.inner[2].img}
+                />
             </StepperContainer>
             <OtherSteps $bottom={true}>
                 <Step>

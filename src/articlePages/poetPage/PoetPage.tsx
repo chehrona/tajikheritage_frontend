@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useSetHeader } from '../../hooks/useSetHeader';
 
@@ -36,7 +35,6 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const [poet, setPoet] = useState<PoetData>();
     const [error, setError] = useState({});
     const [loading, setLoading] = useState<boolean>(false);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const fetchData = async () => {
         try {
@@ -98,12 +96,10 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
                                 poet={poet}
                                 scrollToView={scrollToView}
                             />
-                            {isMobile && (
-                                <SectionOptions
-                                    sections={poet.sections}
-                                    scrollToView={scrollToView}
-                                />
-                            )}
+                            <SectionOptions
+                                sections={poet.sections}
+                                scrollToView={scrollToView}
+                            />
                             <PoetBio bioData={poet?.bio} />
                             <PoetWorks works={poet?.works[lang]} />
                             <PoetMovies movies={poet?.movies[lang]} />

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const MainContainer = styled.div`
     display: flex;
@@ -14,7 +14,28 @@ export const MainContainer = styled.div`
     }
 `;
 
-export const ButtonText = styled.div`
+const fadeOut = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+`;
+
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
+export const ButtonText = styled.div<{
+    $triggerFadeIn: boolean;
+    $triggerFadeOut: boolean;
+}>`
     color: #ffffff;
     font-size: 1rem;
     padding-right: 0.65rem;
@@ -24,8 +45,24 @@ export const ButtonText = styled.div`
     max-width: 5.25rem;
     text-align: right;
 
+    transition: opacity 0.15s ease;
+    ${({ $triggerFadeOut }) =>
+        $triggerFadeOut &&
+        css`
+            animation: ${fadeOut} 0.2s forwards;
+        `}
+
+    ${({ $triggerFadeIn }) =>
+        $triggerFadeIn &&
+        css`
+            animation: ${fadeIn} 0.15s forwards;
+        `}
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
+    }
+    @media (max-width: 480px) {
+        display: none;
     }
 `;
 
@@ -64,5 +101,22 @@ export const StyledMenuIcon = styled.div<{ $isMenuShown: boolean }>`
         transform-origin: center;
         transform: ${({ $isMenuShown }) =>
             $isMenuShown ? 'rotate(-45deg)' : 'rotate(0deg)'};
+    }
+
+    @media (max-width: 480px) {
+        height: 0.25rem;
+
+        &::before,
+        &::after {
+            height: 0.25rem;
+        }
+
+        &::before {
+            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '-0.65rem')};
+        }
+
+        &::after {
+            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '0.7rem')};
+        }
     }
 `;
