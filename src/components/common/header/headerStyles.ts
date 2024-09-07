@@ -18,12 +18,10 @@ export const HeaderInnerBox = styled.div`
     max-width: 1920px;
     margin: 0rem;
     justify-content: space-between;
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0rem 1rem;
     overflow: hidden;
     background: var(--primary-black-color);
     color: var(--regular-white-color);
-
-    background-color: #957070;
 
     @media (max-width: 480px) {
         height: 4.5rem;
@@ -42,8 +40,6 @@ export const LogoWrapper = styled.div`
     height: 4rem;
     width: 4rem;
 
-    background-color: blue;
-
     @media (max-width: 480px) {
         height: 3.5rem;
         width: 3.5rem;
@@ -60,7 +56,6 @@ export const TitleWrapper = styled.div`
     font-size: 2rem;
     font-family: 'EB Garamond', serif;
     text-align: center;
-    background-color: greenyellow;
 
     @media (max-width: 480px) {
         font-size: 1.52rem;
@@ -77,14 +72,13 @@ export const Title = styled.div<{ $index: number }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 13rem);
+    width: calc(100% - 13.5rem);
     height: 100%;
     position: absolute;
     left: 5rem;
     top: -5rem;
     transform: ${({ $index }) => $index && `translateY(${5 * $index}rem)`};
     transition: transform 0.5s ease;
-    background-color: red;
 
     @media (max-width: 480px) {
         left: 4.15rem;

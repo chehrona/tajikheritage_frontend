@@ -51,7 +51,7 @@ export const SectionTitle = styled.div`
     overflow: hidden;
 `;
 
-export const TitleSpan = styled.span<{ data: string }>`
+export const TitleSpan = styled.span`
     padding-left: 0.3rem;
     padding-right: 1rem;
     display: block;

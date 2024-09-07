@@ -1,21 +1,15 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 
 // Hooks
 import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../../hooks/useGlobalData';
+import { useFadeIn } from '../../../../hooks/useFadeIn';
 
 // Types
 import { MenuProps } from '../menuDropdown/types/componentTypes';
 
 // Styled components
-import {
-    MainContainer,
-    ButtonWrapper,
-    ButtonText,
-    StyledIconButton,
-    StyledCloseIcon,
-    StyledMenuIcon,
-} from './menuButtonStyles';
+import { MainContainer, ButtonText, StyledMenuIcon } from './menuButtonStyles';
 
 const MenuButton: React.FC<MenuProps> = ({
     setIsMenuShown,
@@ -24,6 +18,10 @@ const MenuButton: React.FC<MenuProps> = ({
 }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const [triggerFade, setTriggerFade] = useState<boolean>(false);
+    const elementRef = useRef<HTMLDivElement>(null);
+
+    useFadeIn(triggerFade, setTriggerFade, elementRef);
 
     const handleMenuOpen = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
@@ -31,6 +29,7 @@ const MenuButton: React.FC<MenuProps> = ({
                 menuAnchorEl.current = e.currentTarget;
             }
 
+            setTriggerFade(true);
             setIsMenuShown((prevState: boolean) => !prevState);
         },
         [setIsMenuShown, menuAnchorEl],
@@ -44,26 +43,17 @@ const MenuButton: React.FC<MenuProps> = ({
     };
 
     return (
-        <MainContainer>
+        <MainContainer onClick={handleMenuOpen}>
             {!isMobile ? (
-                isMenuShown ? (
-                    <ButtonWrapper onClick={(e) => handleMenuOpen(e)}>
-                        <ButtonText>{getButtonText()}</ButtonText>
-                        <StyledCloseIcon />
-                    </ButtonWrapper>
-                ) : (
-                    <ButtonWrapper onClick={(e) => handleMenuOpen(e)}>
-                        <ButtonText>
-                            {lang === 'us' ? 'MENU' : 'МЕНЮ'}
-                        </ButtonText>
-                        <StyledMenuIcon />
-                    </ButtonWrapper>
-                )
-            ) : (
-                <StyledIconButton onClick={(e) => handleMenuOpen(e)}>
-                    {isMenuShown ? <StyledCloseIcon /> : <StyledMenuIcon />}
-                </StyledIconButton>
-            )}
+                <ButtonText ref={elementRef}>
+                    {isMenuShown
+                        ? getButtonText()
+                        : lang === 'us'
+                        ? 'MENU'
+                        : 'МЕНЮ'}
+                </ButtonText>
+            ) : null}
+            <StyledMenuIcon $isMenuShown={isMenuShown} />
         </MainContainer>
     );
 };

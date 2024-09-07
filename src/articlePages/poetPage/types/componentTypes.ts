@@ -15,7 +15,7 @@ export type PoetData = {
     name: {
         [key in Langs]: string[];
     };
-    years: number[];
+    years: string[];
     desc: {
         [key in Langs]: string[];
     };

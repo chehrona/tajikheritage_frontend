@@ -31,7 +31,7 @@ const SectionOptions: React.FC<SectionOptionsProps> = ({
                 {sections[lang].map((section: string, i) => {
                     return (
                         <SectionTitle key={i} onClick={(e) => scrollToView(e)}>
-                            <TitleSpan data={`#${sections.us[i]}`}>
+                            <TitleSpan data-id={`#${sections.us[i]}`}>
                                 {section}
                             </TitleSpan>
                         </SectionTitle>

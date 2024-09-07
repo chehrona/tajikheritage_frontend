@@ -72,7 +72,7 @@ const PoetPage: React.FC = () => {
 
     const scrollToView = useCallback((e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
-        const target = e.currentTarget.getAttribute('data');
+        const target = e.currentTarget.getAttribute('data-id');
         const parent = document.querySelector('.content-container');
 
         if (parent && target) {

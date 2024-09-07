@@ -22,7 +22,7 @@ const PoetBio: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
 
     return (
         <MainContainer id="Biography">
-            <FirstBox bioOne={bioData.one} />
+            <FirstBox bioOne={bioData.one[lang]} />
             <SecondBox bioData={bioData} />
             <ThirdBox bioThree={bioData.three[lang]} />
             <ForthBox bioFour={bioData.four[lang]} />

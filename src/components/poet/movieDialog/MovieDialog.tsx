@@ -80,7 +80,6 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
     }, []);
 
     if (!movieInfo) {
-        handleClose();
         return null;
     }
 

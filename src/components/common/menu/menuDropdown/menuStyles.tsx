@@ -112,7 +112,7 @@ export const PageDesc = styled.div`
     }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<{ $trigger: boolean }>`
     text-decoration: none;
     color: inherit;
     padding: 0rem 1rem 0.5rem 1rem;

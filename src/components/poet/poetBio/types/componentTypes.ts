@@ -3,16 +3,10 @@ import { BodyObj } from '../../../common/descWrapper/types/componentTypes';
 import { SlideImage } from '../../../common/slideshow/types/componentTypes';
 
 // Section one
-export type PoetBioSectionOneDetails = {
-    [key in Langs]: {
-        year: string;
-        desc: BodyObj;
-        imgDesc: string;
-    };
-};
-
-export type PoetBioSectionOne = PoetBioSectionOneDetails & {
-    img: string;
+export type PoetBioSectionOne = {
+    year: string;
+    slides: SlideImage[];
+    desc: BodyObj;
 };
 
 // Section two
@@ -50,7 +44,9 @@ export type PoetBioSectionFiveDetails = {
 // Poet bio ****************************
 export type PoetBioType = {
     backdrops: string[];
-    one: PoetBioSectionOne;
+    one: {
+        [key in Langs]: PoetBioSectionOne;
+    };
     two: PoetBioSectionTwo;
     three: {
         [key in Langs]: PoetBioSectionThree;

@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Hooks
-import { useGlobalData } from '../../../hooks/useGlobalData';
-
 // Types
 import { PoetBioSectionOne } from './types/componentTypes';
 
@@ -21,22 +18,21 @@ import {
 } from './poetBioStyles';
 
 const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
-    const { lang } = useGlobalData();
-
     return (
         <BoxOne>
             <LeftContainer>
                 <Year $color={'var(--regular-black-color)'}>
-                    {bioOne[lang]?.year}
+                    {bioOne?.year}
                 </Year>
-                <DescWrapper data={bioOne[lang]?.desc} TextWrapper={Desc} />
+                <DescWrapper data={bioOne?.desc} TextWrapper={Desc} />
             </LeftContainer>
             <RightImageWrapper>
                 <FirstBoxImg
-                    src={process.env.REACT_APP_BASE_URL + bioOne?.img}
+                    key={bioOne.slides[0]?.id}
+                    src={process.env.REACT_APP_BASE_URL + bioOne.slides[0]?.img}
                 />
                 <ImgInfo
-                    dangerouslySetInnerHTML={{ __html: bioOne[lang]?.imgDesc }}
+                    dangerouslySetInnerHTML={{ __html: bioOne.slides[0]?.info }}
                 />
             </RightImageWrapper>
         </BoxOne>

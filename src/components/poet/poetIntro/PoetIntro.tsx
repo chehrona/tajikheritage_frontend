@@ -3,6 +3,9 @@ import React from 'react';
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
+// Types
+import { PoetIntroProps } from './types/componentTypes';
+
 // Styled components
 import {
     MainContainer,
@@ -18,7 +21,7 @@ import {
     Overlay,
 } from './poetIntroStyles';
 
-export default function PoetIntro({ poet, scrollToView }) {
+const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
     const { lang } = useGlobalData();
     const yearOne = poet?.years[0].split('');
     const yearTwo = poet?.years[1].split('');
@@ -35,8 +38,8 @@ export default function PoetIntro({ poet, scrollToView }) {
                                 onClick={(e) => scrollToView(e)}
                             >
                                 <TitleSpan
-                                    $delay={`${0.03 * i}s`}
-                                    data={`#${poet?.sections.us[i]}`}
+                                    $delay={i}
+                                    data-id={`#${poet?.sections.us[i]}`}
                                 >
                                     {piece}
                                 </TitleSpan>
@@ -48,7 +51,7 @@ export default function PoetIntro({ poet, scrollToView }) {
                     <Year>
                         {yearOne?.map((num, i) => {
                             return (
-                                <NumSpan key={i} delay={`${0.08 * i}s`}>
+                                <NumSpan key={i} $delay={`${0.08 * i}s`}>
                                     {num}
                                 </NumSpan>
                             );
@@ -57,7 +60,7 @@ export default function PoetIntro({ poet, scrollToView }) {
                     <div>
                         {yearTwo?.map((num, i) => {
                             return (
-                                <NumSpan key={i} delay={`${0.09 * i}s`}>
+                                <NumSpan key={i} $delay={`${0.09 * i}s`}>
                                     {num}
                                 </NumSpan>
                             );
@@ -69,9 +72,11 @@ export default function PoetIntro({ poet, scrollToView }) {
                 src={process.env.REACT_APP_BASE_URL + poet?.img?.main}
             />
             <PoetNameContainer>
-                <PoetName color={1}>{poet?.name[lang][0]}</PoetName>
+                <PoetName $color={true}>{poet?.name[lang][0]}</PoetName>
                 <PoetName>{poet?.name[lang][1]}</PoetName>
             </PoetNameContainer>
         </MainContainer>
     );
-}
+};
+
+export default PoetIntro;

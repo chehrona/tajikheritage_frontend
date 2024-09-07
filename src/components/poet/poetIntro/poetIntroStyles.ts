@@ -118,13 +118,13 @@ export const SectionTitle = styled.div`
     overflow: hidden;
 `;
 
-export const TitleSpan = styled.span<{ $delay: string }>`
+export const TitleSpan = styled.span<{ $delay: number }>`
     padding-left: 0.3rem;
     display: block;
     opacity: 0;
     transform: translateY(-100%);
     animation: ${slideUp} 1s ease-in-out forwards;
-    animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
+    animation-delay: ${({ $delay }) => ($delay ? `${0.03 * $delay}s` : '0s')};
     transition: font-size 0.25s ease-in-out;
 
     &:hover {
@@ -144,7 +144,7 @@ export const TitleSpan = styled.span<{ $delay: string }>`
     }
 `;
 
-export const PoetName = styled.div`
+export const PoetName = styled.div<{ $color?: boolean }>`
     opacity: 0;
     color: var(--secondary-white-color);
     font-size: 8rem;
@@ -155,8 +155,8 @@ export const PoetName = styled.div`
     -webkit-text-stroke-color: var(--primary-gold-color);
     animation: ${slideOut} 1s ease-in-out forwards;
 
-    ${({ color }) =>
-        color &&
+    ${({ $color }) =>
+        $color &&
         `
         animation-delay: 0s;
         color: transparent;
