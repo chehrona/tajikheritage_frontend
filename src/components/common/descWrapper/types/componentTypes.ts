@@ -7,5 +7,5 @@ export type BodyObj = {
 
 export type DescWrapperProps = {
     data: BodyObj;
-    TextWrapper: React.ComponentType<{ children: ReactNode }>;
+    TextWrapper?: React.ComponentType<{ children: ReactNode }>;
 };

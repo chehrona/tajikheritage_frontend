@@ -7,7 +7,7 @@ import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 import { PoetBioSectionFiveDetails } from './types/componentTypes';
 
 // Styled components
-import { BoxFive, StyledDiv, Year } from './poetBioStyles';
+import { BoxFive, Year } from './poetBioStyles';
 
 const FifthBox: React.FC<{ bioFive: PoetBioSectionFiveDetails }> = ({
     bioFive,
@@ -15,7 +15,7 @@ const FifthBox: React.FC<{ bioFive: PoetBioSectionFiveDetails }> = ({
     return (
         <BoxFive>
             <Year $color={'var(--primary-gold-color)'}>{bioFive?.year}</Year>
-            <DescWrapper data={bioFive.desc} TextWrapper={StyledDiv} />
+            <DescWrapper data={bioFive.desc} />
         </BoxFive>
     );
 };

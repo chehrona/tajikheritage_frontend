@@ -16,7 +16,7 @@ export const MainContainer = styled.div`
         padding-bottom: 0rem;
         font-size: 1.3rem;
 
-        &:after {
+        &::after {
             content: '';
             padding: 3rem;
             width: 100%;
@@ -35,7 +35,7 @@ export const MainContainer = styled.div`
         padding-bottom: 0rem;
         position: relative;
 
-        &:after {
+        &::after {
             content: '';
             padding: 3rem;
             width: 100%;
@@ -88,7 +88,7 @@ export const Year = styled.div<YearProps>`
 `;
 
 export const Desc = styled.div`
-    color: #333333;
+    color: var(--primary-grey-color);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 0rem 1rem 0rem;
@@ -136,7 +136,7 @@ export const BoxTwo = styled.div`
 `;
 
 export const InnerOverlay = styled.div`
-    background: #333333;
+    background: var(--primary-grey-color);
     margin-top: 8rem;
     width: 100%;
     overflow: hidden;
@@ -410,7 +410,7 @@ export const TextWrapper = styled.div`
     column-count: 2;
     column-gap: 3rem;
     overflow: hidden;
-    color: #333333;
+    color: var(--primary-grey-color);
     font-family: 'IBM Plex Serif', serif;
 
     @media (max-width: 480px) {
@@ -422,14 +422,11 @@ export const TextWrapper = styled.div`
     }
 `;
 
-// Box four ********************************
-export const StyledDiv = styled.div``;
-
 // Box five ********************************
 export const FamilyDesc = styled.div`
     width: 100%;
     height: 30rem;
-    color: #333333;
+    color: var(--primary-grey-color);
     padding: 0rem 2.8rem 3rem 3rem;
     border-bottom: 0.0625rem solid var(--primary-gold-color);
     border-top: 0.0625rem solid var(--primary-gold-color);
@@ -520,7 +517,7 @@ export const RightContainer = styled.div`
 `;
 
 export const Overlay = styled.div`
-    background: #333333;
+    background: var(--primary-grey-color);
     height: 30rem;
     width: 100%;
     overflow: hidden;
@@ -546,17 +543,16 @@ export const BackImg = styled.div<{ $src: string }>`
     }
 `;
 
-export const FinalQuote = styled.div`
+export const FinalQuoteWrapper = styled.div`
     position: absolute;
-    text-align: center;
+    text-align: end;
     width: 100%;
     left: 50%;
     top: 50%;
     color: var(--primary-gold-color);
     font-size: 2.2rem;
     font-style: italic;
-    padding-right: 10%;
-    padding-left: 10%;
+    padding: 0% 10%;
     font-family: 'EB Garamond', serif;
     transform: translate(-50%, -50%);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
@@ -567,10 +563,10 @@ export const FinalQuote = styled.div`
 `;
 
 export const Author = styled.div`
+    margin-top: 0.5rem;
     color: var(--primary-white-color);
     font-size: 1.1rem;
     font-style: normal;
-    text-align: end;
     font-family: 'IBM Plex Serif', serif;
 
     @media (max-width: 1024px) {
@@ -585,7 +581,7 @@ export const ImgInfo = styled.div`
     text-align: left;
     color: var(--primary-black-color);
     bottom: 0.5rem;
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    padding: 0.25rem 0.5rem;
 
     @media (max-width: 480px) {
         font-size: 1.25rem;

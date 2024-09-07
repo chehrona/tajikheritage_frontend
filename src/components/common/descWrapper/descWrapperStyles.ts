@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const EmptyDiv = styled.div``;
+
 export const StyledSpan = styled.span`
     .quoteContainer {
         margin: 1rem;

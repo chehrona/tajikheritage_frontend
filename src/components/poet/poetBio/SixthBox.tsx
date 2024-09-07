@@ -1,31 +1,43 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+// Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useMediaQuery } from 'react-responsive';
 
+// Components
 import Slideshow from '../../common/slideshow/Slideshow';
+import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
+// Types
+import { PoetBioType } from './types/componentTypes';
+
+// Styled components
 import {
     BoxSix,
-    FinalQuote,
     LeftContainer,
     RightContainer,
     BackImg,
     Overlay,
     Author,
+    FinalQuoteWrapper,
 } from './poetBioStyles';
 
-export default function SixthBox({ poet }) {
+const SixthBox: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
     const { lang } = useGlobalData();
-    const parentRef = useRef(null);
-    const [screenSize, setScreenSize] = useState(0);
+    const parentRef = useRef<HTMLDivElement>(null);
+    const [screenSize, setScreenSize] = useState<number>(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const isTablet = useMediaQuery({
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
 
-    let height = isMobile ? '23rem' : isTablet ? '40rem' : '30rem';
+    const height = isMobile ? 23 : isTablet ? 40 : 30;
 
     useEffect(() => {
+        if (!parentRef.current) {
+            return;
+        }
+
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
 
         setScreenSize(parentWidth);
@@ -41,14 +53,14 @@ export default function SixthBox({ poet }) {
                         }
                     />
                 </Overlay>
-                <FinalQuote>
-                    {poet?.six[lang].desc}
+                <FinalQuoteWrapper>
+                    <DescWrapper data={poet?.six[lang].desc} />
                     <Author
                         dangerouslySetInnerHTML={{
                             __html: poet?.six[lang].author,
                         }}
                     />
-                </FinalQuote>
+                </FinalQuoteWrapper>
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
@@ -59,4 +71,6 @@ export default function SixthBox({ poet }) {
             </RightContainer>
         </BoxSix>
     );
-}
+};
+
+export default SixthBox;

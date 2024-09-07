@@ -7,12 +7,12 @@ import { Tooltip } from '../tooltip/Tooltip';
 import { DescWrapperProps } from './types/componentTypes';
 
 // Styled components
-import { StyledSpan } from './descWrapperStyles';
+import { StyledSpan, EmptyDiv } from './descWrapperStyles';
 import { TooltipType } from '../tooltip/types/componentTypes';
 
 export const DescWrapper: React.FC<DescWrapperProps> = ({
     data,
-    TextWrapper,
+    TextWrapper = EmptyDiv,
 }) => {
     const renderContent = () => {
         return Object.keys(data).map((key, i) => {

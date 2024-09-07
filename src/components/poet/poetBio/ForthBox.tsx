@@ -16,7 +16,6 @@ import {
     FamilyDesc,
     LeftContainer,
     RightContainer,
-    StyledDiv,
     Year,
 } from './poetBioStyles';
 
@@ -45,7 +44,7 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
                     <Year $align={true} $color={'var(--regular-black-color)'}>
                         {bioFour?.year}
                     </Year>
-                    <DescWrapper data={bioFour?.desc} TextWrapper={StyledDiv} />
+                    <DescWrapper data={bioFour?.desc} />
                 </FamilyDesc>
             </LeftContainer>
             <RightContainer ref={parentRef}>
