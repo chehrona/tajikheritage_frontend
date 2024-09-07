@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 export const HeaderContainer = styled.div`
     width: 100%;
     background: var(--primary-black-color);
-
-    background-color: grey;
 `;
 
 export const HeaderInnerBox = styled.div`
@@ -16,7 +14,7 @@ export const HeaderInnerBox = styled.div`
     position: relative;
     z-index: 11;
     max-width: 1920px;
-    margin: 0rem;
+    margin: 0 auto;
     justify-content: space-between;
     padding: 0rem 1rem;
     overflow: hidden;
