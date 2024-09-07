@@ -63,7 +63,7 @@ export const RecipeInfo = styled.div`
     align-items: center;
     font-weight: 500;
     font-style: italic;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 `;
 
 export const RecipeSubtitle = styled.div`

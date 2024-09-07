@@ -54,7 +54,7 @@ export const TitleWrapper = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     text-align: center;
 
     @media (max-width: 480px) {
@@ -109,7 +109,7 @@ export const Semicolon = styled.div`
     width: fit-content;
     font-style: normal;
     color: var(--primary-gold-color);
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 `;
 
 export const MainTitle = styled.div`

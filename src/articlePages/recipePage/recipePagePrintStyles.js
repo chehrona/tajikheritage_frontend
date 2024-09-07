@@ -34,7 +34,7 @@ export const PrintHeader = styled.div`
 
 export const RecipeTitle = styled.div`
     font-size: 3rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     font-weight: 500;
 `;
@@ -45,7 +45,7 @@ export const Logo = styled.img`
 `;
 
 export const Subtitle = styled.div`
-    font-size: 1.1rem;
+    font-size: var(--body-text);
 `;
 
 export const InfoContainer = styled.div`
@@ -100,7 +100,7 @@ export const ServeAmount = styled.input`
     width: 3rem;
     height: 2rem;
     outline: none;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     padding: 0.2rem;
     text-align: center;
     font-family: 'IBM Plex Serif', serif;
@@ -162,12 +162,12 @@ export const RightSection = styled.div`
 
 export const Ingredient = styled.div`
     line-height: 2rem;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
 `;
 
 export const BoxTitle = styled.div`
     font-size: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     font-weight: 500;
     margin-bottom: 1.2rem;

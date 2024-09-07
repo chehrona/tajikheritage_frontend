@@ -22,9 +22,9 @@ export const StyledTooltip = styled(
 }));
 
 export const StyledTypography = styled.div`
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
     padding: 0.5rem;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
 
     @media (max-width: 480px) {
         font-size: 1.3rem;

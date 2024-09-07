@@ -73,7 +73,7 @@ export const BoxOne = styled.div`
 
 export const Year = styled.div<YearProps>`
     font-size: 3.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     margin-bottom: 0.5rem;
     text-align: ${({ $align }) => $align && 'center'};
     color: ${({ $color }) => $color && $color};
@@ -396,7 +396,7 @@ export const QuoteSymbol = styled.div`
 
 export const Quote = styled.div`
     font-size: 2.2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: bold;
     text-align: center;
     padding: 1rem 0rem;
@@ -553,7 +553,7 @@ export const FinalQuoteWrapper = styled.div`
     font-size: 2.2rem;
     font-style: italic;
     padding: 0% 10%;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     transform: translate(-50%, -50%);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 

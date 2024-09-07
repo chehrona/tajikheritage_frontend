@@ -25,7 +25,7 @@ export const InfoTitle = styled.div`
     justify-content: center;
     font-style: italic;
     font-size: 2.2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
         text-align: center;

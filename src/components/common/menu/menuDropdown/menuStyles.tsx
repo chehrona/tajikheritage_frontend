@@ -99,7 +99,7 @@ export const PageName = styled.div`
     font-weight: bold;
     font-style: italic;
     cursor: pointer;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 `;
 
 export const PageDesc = styled.div`

@@ -16,7 +16,7 @@ export const MainContainer = styled.div`
 
 export const SubTitle = styled.div`
     font-size: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     font-weight: 500;
     margin-bottom: 2rem;

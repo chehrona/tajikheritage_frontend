@@ -30,10 +30,10 @@ export const ServeAmount = styled.input`
     width: 3rem;
     height: 2rem;
     outline: none;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     padding: 0.2rem;
     text-align: center;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
 
     @media (max-width: 480px) {
         width: 3.5rem;

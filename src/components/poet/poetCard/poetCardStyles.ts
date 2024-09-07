@@ -57,7 +57,7 @@ export const PoetImage = styled.img`
 
 export const PoetName = styled.div`
     font-size: 2.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     text-shadow: 0rem 0rem 0.25rem black;
 

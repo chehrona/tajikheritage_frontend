@@ -4,7 +4,7 @@ export const PageTitle = styled.div`
     font-size: 1.75rem;
     font-weight: bold;
     color: var(--primary-black-color);
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     margin-bottom: 1rem;
     text-align: center;
 

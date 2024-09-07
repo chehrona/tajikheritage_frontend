@@ -171,7 +171,7 @@ export const InfoTitle = styled.div`
     line-height: 3.5rem;
     width: 100%;
     text-transform: uppercase;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem #504221e6;
 
     @media (max-width: 480px) {
@@ -259,7 +259,7 @@ export const Director = styled.div`
     width: 100%;
     text-transform: uppercase;
     font-size: 1.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     margin: 1.5rem 0rem 0.3rem 0rem;
 
     @media (max-width: 1024px) {
@@ -299,7 +299,7 @@ export const Direction = styled.div`
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--primary-white-color);
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 
     @media (max-width: 1024px) {
         display: none;

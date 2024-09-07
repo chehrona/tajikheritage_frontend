@@ -31,7 +31,7 @@ export const Header = styled.div`
 
 export const Title = styled.div`
     font-size: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     text-align: center;
 `;
@@ -60,7 +60,7 @@ export const TitleWrapper = styled.div`
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 `;
 
 export const IconWrapper = styled.div`

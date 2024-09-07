@@ -44,7 +44,7 @@ export const InputField = styled.input`
     height: 3.4rem;
     font-size: 1.25rem;
     background-color: transparent;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
 
     &::placeholder {
         color: #a39f9b;

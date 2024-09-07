@@ -52,7 +52,7 @@ export const MainTitle = styled.div`
     font-weight: 500;
     font-style: italic;
     margin-bottom: 0.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
     animation: ${slideOut} 0.5s ease-in-out forwards;
 
@@ -64,7 +64,7 @@ export const MainTitle = styled.div`
 export const HistoryInfo = styled.div`
     opacity: 0;
     color: var(--primary-black-color);
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     position: relative;
     line-height: 1.7rem;
     animation-delay: 0.01s;

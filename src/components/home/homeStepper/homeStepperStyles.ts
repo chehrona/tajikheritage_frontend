@@ -44,7 +44,7 @@ export const SemiCircle = styled.div`
 export const IndicatorStep = styled.div`
     font-size: 1.5rem;
     color: #ffffff;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -108,7 +108,7 @@ export const StepperBox = styled.div<{ $opacity: number }>`
 export const Step = styled.div`
     font-size: 1.2rem;
     color: var(--secondary-white-color);b2;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     transition: 500ms ease-in-out;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -135,7 +135,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     width: 45rem;
     overflow-wrap: break-word;
     text-transform: uppercase;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     text-shadow: 1rem 0rem 0rem #504221;
     margin-top: ${({ $margin }) => $margin && `${$margin.d}rem`};
     ${({ $fontSize }) =>
@@ -184,7 +184,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 
 export const Desc = styled.div`
     color: var(--secondary-white-color);
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     width: 40%;
     margin-left: 10%;
     position: relative;

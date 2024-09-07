@@ -68,7 +68,7 @@ export const WordTitle = styled.div`
 `;
 
 export const WordDesc = styled(StyledSpan)`
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     width: 100%;
     height: calc(100% - 5.25rem);
     color: var(--regular-white-color);

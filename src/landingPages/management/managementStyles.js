@@ -69,7 +69,7 @@ export const EditableInput = styled.input`
     border-radius: 0.25rem;
     outline: none;
     margin-bottom: 0.5rem;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--ordinary-font);
     border: ${({ file }) =>
         file ? 'none' : '1px solid var(--primary-gold-color)'};
     padding: ${({ file }) => (file ? '0rem' : '0rem 0.25rem')};

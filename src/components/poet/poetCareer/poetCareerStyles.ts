@@ -145,7 +145,7 @@ export const DescContainer = styled.div`
 
 export const Desc = styled.div`
     padding: 1.5rem 2rem 1.5rem 2rem;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     line-height: 2rem;
     height: 26rem;
     text-align: justify;
@@ -221,7 +221,7 @@ export const Step = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
         font-size: 2rem;

@@ -48,7 +48,7 @@ export const StyledSpan = styled.span`
         color: var(--secondary-gold-color);
         font-size: 0.75rem;
         font-style: normal;
-        font-family: 'IBM Plex Serif', serif;
+        font-family: var(--ordinary-font);
     }
 
     sub {

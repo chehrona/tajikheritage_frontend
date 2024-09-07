@@ -74,7 +74,7 @@ export const Title = styled.div`
     font-size: 4rem;
     font-weight: 500;
     font-style: italic;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     color: var(--regular-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
     margin-bottom: 0.5rem;
@@ -87,7 +87,7 @@ export const Title = styled.div`
 
 export const BaseText = styled.div`
     width: 100%;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     position: relative;
     line-height: 1.7rem;
     color: var(--primary-black-color);

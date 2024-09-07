@@ -67,7 +67,7 @@ export const StyledButton = styled(Button)`
             text-transform: none;
             height: 3.2rem;
             padding: 0.5rem 1.5rem;
-            font-family: 'IBM Plex Serif', serif;
+            font-family: var(--ordinary-font);
         }
 
         &.MuiButton-root:hover {

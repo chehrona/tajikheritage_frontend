@@ -15,7 +15,7 @@ export const SectionCardWrapper = styled.div`
 export const SectionTitle = styled.div<{ $length: number }>`
     font-size: 2rem;
     font-weight: 500;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     text-align: center;
     margin-bottom: 1rem;

@@ -199,7 +199,7 @@ export const QuoteWrapper = styled.div`
     align-items: center;
     text-align: center;
     font-size: 2.5rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     font-style: italic;
     font-weight: bold;
     padding: ${({ lang }) =>

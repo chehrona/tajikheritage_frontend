@@ -31,8 +31,12 @@ html {
     --regular-black-color: #000;
     --regular-white-color: #fff;
 
+    /* Font families */
+    --ordinary-font: 'IBM Plex Serif', serif;
+    --fancy-font: 'EB Garamond', serif;
+
     /* Font-sizes */
-    --body-text: 1.3rem;
+    --body-text: 1.1rem;
 }
 
 @media screen and (max-width: 480px) {
