@@ -25,6 +25,7 @@ const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
     const { lang } = useGlobalData();
     const yearOne = poet?.years[0].split('');
     const yearTwo = poet?.years[1].split('');
+    const poetName = poet?.name[lang].split(' ');
 
     return (
         <MainContainer>
@@ -72,8 +73,8 @@ const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
                 src={process.env.REACT_APP_BASE_URL + poet?.img?.main}
             />
             <PoetNameContainer>
-                <PoetName $color={true}>{poet?.name[lang][0]}</PoetName>
-                <PoetName>{poet?.name[lang][1]}</PoetName>
+                <PoetName $color={true}>{poetName[0]}</PoetName>
+                <PoetName>{poetName[1]}</PoetName>
             </PoetNameContainer>
         </MainContainer>
     );

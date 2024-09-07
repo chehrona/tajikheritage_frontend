@@ -84,7 +84,7 @@ export const useSetHeader = (page: string, type: string, pageData: any) => {
                         } else {
                             newItem = [
                                 `${sectionTitle[typedKey].toUpperCase()}`,
-                                `${pageData.name[typedKey]}`,
+                                `${pageData?.name[typedKey]}`,
                             ];
                         }
 

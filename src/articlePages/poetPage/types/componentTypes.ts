@@ -13,7 +13,7 @@ export type SectionType = {
 export type PoetData = {
     id: string;
     name: {
-        [key in Langs]: string[];
+        [key in Langs]: string;
     };
     years: string[];
     desc: {
