@@ -41,13 +41,13 @@ html {
 
 @media screen and (max-width: 480px) {
     :root {
-        font-size: 1.3rem;
+        --body-text: 1.3rem;
     }
 }
 
 @media screen and (min-device-width: 481px) and (max-device-width: 960px) {
     :root {
-        font-size: 1.3rem;
+        --body-text: 1.3rem;
     }
 }
 

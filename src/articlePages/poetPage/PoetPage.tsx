@@ -29,7 +29,7 @@ import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
-const PoetPage: React.FC = () => {
+const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
     const { lang } = useGlobalData();
@@ -63,7 +63,7 @@ const PoetPage: React.FC = () => {
     };
 
     // Set page title
-    useSetHeader('poets', 'generic', poet);
+    useSetHeader(page, 'generic', poet);
 
     useEffect(() => {
         // Get data

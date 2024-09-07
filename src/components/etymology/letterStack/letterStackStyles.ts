@@ -111,6 +111,7 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
     color: var(--primary-gold-color);
     font-size: 2.5rem;
     will-change: transform;
+    font-family: var(--fancy-font);
 
     ${delayedAppearance}
     ${emptyBackground}

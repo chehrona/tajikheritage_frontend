@@ -77,7 +77,10 @@ const Routes: React.FC = () => {
             />
             <Route path="/language/etymology" element={<EtymologyPage />} />
             <Route path="/language/etymology/:id" element={<WordPage />} />
-            <Route path="/language/poets/:id" element={<PoetPage />} />
+            <Route
+                path="/language/poets/:id"
+                element={<PoetPage page={'language/poets/'} />}
+            />
             <Route path="/" element={<Home />} />
             {/* <Route path="/admin/login" element={<LoginPage />} /> */}
             {/* <Route path="/admin/content" element={<ManagementPage />} /> */}

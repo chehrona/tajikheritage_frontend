@@ -14,11 +14,6 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
     type,
     setError,
 }) => {
-    const height =
-        type === 'long'
-            ? { d: 35, t: 38, m: 19.025 }
-            : { d: 23, t: 25, m: 12.5 };
-
     const handleNoContent = () => {
         if (disabled && setError) {
             setError(true);
@@ -31,7 +26,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
 
     return (
         <StyledLink
-            $height={height}
+            $type={type}
             $delay={`${0.01 * i}s`}
             $disabled={disabled}
             to={disabled ? '#' : page}

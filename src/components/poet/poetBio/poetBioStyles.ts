@@ -545,7 +545,7 @@ export const BackImg = styled.div<{ $src: string }>`
 
 export const FinalQuoteWrapper = styled.div`
     position: absolute;
-    text-align: end;
+    text-align: center;
     width: 100%;
     left: 50%;
     top: 50%;
@@ -568,6 +568,7 @@ export const Author = styled.div`
     font-size: var(--body-text);
     font-style: normal;
     font-family: var(--ordinary-font);
+    text-align: end;
 
     @media (max-width: 1024px) {
         font-size: 1.3rem;

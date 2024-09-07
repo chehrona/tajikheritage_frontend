@@ -172,10 +172,10 @@ export const PoetName = styled.div<{ $color?: boolean }>`
         text-shadow: 0rem 0rem 2rem black;
         -webkit-text-stroke-width: 0.22rem;
 
-        ${({ color }) =>
-            color &&
+        ${({ $color }) =>
+            $color &&
             `
-            color: var(--secondary-white-color);;
+            color: var(--secondary-white-color);
             text-align: right;
             margin-right: 2rem;
             -webkit-text-stroke-color: transparent;

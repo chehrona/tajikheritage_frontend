@@ -25,7 +25,7 @@ export const HeaderInnerBox = styled.div`
 
     @media (max-width: 480px) {
         height: 4.5rem;
-        padding: 0rem 0.25rem;
+        padding: 0rem 0.75rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -43,8 +43,6 @@ export const LogoWrapper = styled.div`
     @media (max-width: 480px) {
         height: 3.5rem;
         width: 3.5rem;
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
     }
 `;
 
@@ -59,6 +57,7 @@ export const TitleWrapper = styled.div`
 
     @media (max-width: 480px) {
         font-size: 1.52rem;
+        padding: 0rem 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

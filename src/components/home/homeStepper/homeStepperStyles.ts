@@ -11,8 +11,8 @@ export const MainContainer = styled.div`
     height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100svh - 10.5rem);
-        height: calc(100svh - 10.5rem);
+        min-height: calc(100svh - 4.5rem);
+        height: calc(100svh - 4.5rem);
     }
 `;
 
@@ -107,7 +107,7 @@ export const StepperBox = styled.div<{ $opacity: number }>`
 
 export const Step = styled.div`
     font-size: 1.2rem;
-    color: var(--secondary-white-color);b2;
+    color: var(--secondary-white-color);
     font-family: var(--fancy-font);
     transition: 500ms ease-in-out;
 
@@ -258,8 +258,8 @@ export const StyledButton = styled.div<{ $lang: string }>`
     @media (max-width: 480px) {
         border-right: 0.1rem solid #ffffff;
         border-bottom: 0.1rem solid #ffffff;
-        width: ${({ lang }) =>
-            lang && lang === 'ru' ? '46%' : lang === 'tj' ? '54%' : '26%'};
+        width: ${({ $lang }) =>
+            $lang && $lang === 'ru' ? '46%' : $lang === 'tj' ? '54%' : '26%'};
 
         &::before {
             display: none;
@@ -273,8 +273,8 @@ export const StyledButton = styled.div<{ $lang: string }>`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-right: 0.1rem solid #ffffff;
         border-bottom: 0.1rem solid #ffffff;
-        width: ${({ lang }) =>
-            lang && lang === 'ru' ? '41%' : lang === 'tj' ? '47%' : '23.5%'};
+        width: ${({ $lang }) =>
+            $lang && $lang === 'ru' ? '41%' : $lang === 'tj' ? '47%' : '23.5%'};
 
         &::before {
             display: none;
@@ -292,8 +292,8 @@ export const Link = styled.a`
 
 export const ImageSemiCircle = styled.img`
     position: absolute;
-    bottom: -9.5rem;
-    right: -4rem;
+    bottom: -8rem;
+    right: -3rem;
     border-radius: 50%;
     width: 35rem;
     height: 35rem;

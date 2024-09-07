@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Hooks
+import { useLocation } from 'react-router-dom';
+
 // Styled components
 import {
     FooterContainer,
@@ -11,9 +14,11 @@ import {
     SocialsWrapper,
 } from './footerStyles';
 
-export default function Footer() {
+const Footer: React.FC = () => {
+    const location = useLocation();
+
     return (
-        <FooterContainer>
+        <FooterContainer $show={location.pathname !== '/'}>
             <FooterInnerContainer>
                 <SocialsWrapper />
                 <Text>
@@ -73,4 +78,6 @@ export default function Footer() {
             </FooterInnerContainer>
         </FooterContainer>
     );
-}
+};
+
+export default Footer;

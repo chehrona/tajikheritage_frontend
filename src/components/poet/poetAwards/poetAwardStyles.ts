@@ -105,7 +105,6 @@ export const Face = styled.div<{ $back: boolean }>`
             ? css`
                   transform: rotateY(180deg);
                   background: var(--primary-shadow-color);
-                  background-image: url(${'/noise.png'});
               `
             : css`
                   background: var(--primary-black-color);

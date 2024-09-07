@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { Copyright } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.div<{ $show: boolean }>`
     background: var(--primary-black-color);
     width: 100%;
 
     @media (max-width: 480px) {
-        display: flex;
         justify-content: center;
         align-items: center;
+        display: ${({ $show }) => ($show ? 'flex' : 'none')};
     }
 `;
 

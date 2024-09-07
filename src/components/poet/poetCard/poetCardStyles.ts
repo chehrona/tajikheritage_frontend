@@ -23,12 +23,13 @@ export const PoetImgContainer = styled.div`
     box-shadow: 0rem 0rem 3rem rgba(189, 157, 82, 0.8);
 
     @media (max-width: 480px) {
-        height: 12rem;
-        width: 9rem;
+        margin-top: 1.5rem;
+        height: 13.5rem;
+        width: 10rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 23rem;
+        height: 25rem;
         width: 17rem;
     }
 `;
@@ -44,14 +45,31 @@ export const PoetImage = styled.img`
 
     @media (max-width: 480px) {
         border-radius: 4.5rem;
-        height: 11rem;
-        width: 8rem;
+        height: 12.5rem;
+        width: 9rem;
         margin: 0.15rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 22rem;
         width: 16rem;
+    }
+`;
+
+export const PoetNameBox = styled.div`
+    position: absolute;
+    top: 15.8rem;
+    line-height: 2.5rem;
+    left: -2rem;
+
+    @media (max-width: 480px) {
+        top: 9.75rem;
+        line-height: 1.7rem;
+        left: -0.25rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        top: 17rem;
     }
 `;
 
@@ -67,23 +85,6 @@ export const PoetName = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 3rem;
-    }
-`;
-
-export const PoetNameBox = styled.div`
-    position: absolute;
-    top: 15.8rem;
-    line-height: 2.5rem;
-    left: -2rem;
-
-    @media (max-width: 480px) {
-        top: 9rem;
-        line-height: 1.7rem;
-        left: -0.5rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        top: 17rem;
     }
 `;
 

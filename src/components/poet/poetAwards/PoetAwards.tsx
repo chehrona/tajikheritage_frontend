@@ -49,7 +49,7 @@ const PoetAwards: React.FC<{ awards: PoetAwardType[] }> = ({ awards }) => {
                                 </Face>
                                 <Face $back={true}>
                                     <Title>{award.title}</Title>
-                                    <Year>{award.year}</Year>;
+                                    <Year>{award.year}</Year>
                                     <StyledIconButton
                                         onClick={(e) =>
                                             handleAwardDialog(e, award)

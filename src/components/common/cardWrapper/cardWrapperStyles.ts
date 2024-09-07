@@ -26,7 +26,7 @@ export const StyledLink = styled(Link)<LinkProps>`
     animation: ${slideOut} 1s ease-in-out forwards;
     transition: border-radius 250ms, box-shadow 400ms;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
-    height: ${({ $height }) => $height.d && `${$height.d}rem`};
+    height: ${({ $type }) => ($type === 'long' ? '35rem' : '23rem')};
 
     ${({ $disabled }) =>
         $disabled
@@ -62,26 +62,38 @@ export const StyledLink = styled(Link)<LinkProps>`
                       }
                   }
               `}
-
     @media (max-width: 480px) {
-        width: 12.5rem;
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-        height: ${({ $height }) => $height.m && `${$height.m}rem`};
+        height: ${({ $type }) => ($type === 'long' ? '19.025rem' : '23rem')};
+        width: ${({ $type }) => ($type === 'long' ? '12.5rem' : '23rem')};
 
         &:hover {
-            border-radius: initial;
+            border-radius: 0.7rem;
             transition: initial;
         }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 25rem;
-        border-radius: 1.5rem;
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-        height: ${({ $height }) => $height.t && `${$height.t}rem`};
+        width: 25rem;
 
-        > * {
-            border-radius: 1.5rem;
-        }
+        ${({ $type }) =>
+            $type === 'long'
+                ? css`
+                      border-radius: 1.5rem;
+                      height: 35rem;
+
+                      > * {
+                          border-radius: 1.5rem;
+                      }
+                  `
+                : css`
+                      border-radius: 0.7rem;
+                      height: 25rem;
+
+                      > * {
+                          border-radius: 0.7rem;
+                      }
+                  `}
     }
 `;
