@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Material UI
 import { ArrowForwardIos } from '@mui/icons-material';
@@ -37,19 +37,19 @@ const Slideshow: React.FC<SlideshowProps> = ({
         setInfoArr([...slides]);
     }, [lang]);
 
-    const movePrev = useCallback(() => {
+    const movePrev = () => {
         if (currentIndex > 0) {
             setCurrentIndex((prevState) => prevState - 1);
             setTranslate((prevState) => prevState + width);
         }
-    }, [infoArr]);
+    };
 
-    const moveNext = useCallback(() => {
+    const moveNext = () => {
         if (currentIndex < infoArr?.length - 1) {
             setCurrentIndex((prevState) => prevState + 1);
             setTranslate((prevState) => prevState - width);
         }
-    }, [infoArr]);
+    };
 
     return (
         <SlideContainer>

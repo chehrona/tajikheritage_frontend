@@ -147,6 +147,7 @@ export const Circle = styled.div<{ $selected: boolean }>`
     height: 0.5rem;
     border-radius: 50%;
     background-color: var(--primary-gold-color);
+    border: 1px solid var(--secondary-gold-color);
     opacity: ${({ $selected }) => ($selected ? '1' : '0.4')};
     margin-right: 0.25rem;
 

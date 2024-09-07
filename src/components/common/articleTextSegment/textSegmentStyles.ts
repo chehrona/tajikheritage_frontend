@@ -81,7 +81,7 @@ export const Title = styled.div`
 
     @media (max-width: 480px) {
         font-size: 4.5rem;
-        margin: -1rem 0rem 0rem 1.5rem;
+        margin: 0rem 0rem 0.75rem 1.5rem;
     }
 `;
 
@@ -109,8 +109,16 @@ export const BaseText = styled.div`
 
 export const RightText = styled(BaseText)`
     padding-left: 3rem;
+
+    @media (max-width: 480px) {
+        padding-left: 1.5rem;
+    }
 `;
 
 export const LeftText = styled(BaseText)`
     padding-right: 3rem;
+
+    @media (max-width: 480px) {
+        padding-right: 1.5rem;
+    }
 `;

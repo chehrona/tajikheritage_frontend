@@ -13,6 +13,7 @@ export const Subtitle = styled.span`
 
     @media (max-width: 480px) {
         font-size: 1.35rem;
+        margin-left: 1.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
