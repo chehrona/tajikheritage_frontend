@@ -41,6 +41,7 @@ const Menu: React.FC<MenuProps> = ({
 
     return (
         <StyledMenu
+            aria-modal="true"
             open={isMenuShown}
             anchorEl={menuAnchorEl.current}
             TransitionComponent={Slide}

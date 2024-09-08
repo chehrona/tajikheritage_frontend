@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+    useEffect,
+    useRef,
+    useState,
+    useCallback,
+    useMemo,
+} from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
@@ -14,6 +20,9 @@ import CircleLetters from '../letterShapes/CircleLetters';
 import Instruction from '../letterShapes/Instruction';
 import Alert from '../../common/alert/Alert';
 
+// Types
+import { LetterStackProps } from './types/componentTypes';
+
 // Styled components
 import { LetterContainer } from './letterStackStyles';
 import {
@@ -26,61 +35,80 @@ import {
     StyledClearIcon,
 } from '../../common/searchBar/searchBarStyles';
 
-export default function LetterStack({
+const LetterStack: React.FC<LetterStackProps> = ({
     setItems,
     allItems,
     isDropdownOpen,
     setIsDropdownOpen,
-}) {
+}) => {
     const { lang } = useGlobalData();
-    const [noMatch, setNoMatch] = useState(false);
-    const [error, setError] = useState(false);
-    const [value, setValue] = useState('');
-    const inputRef = useRef(null);
+    const [noMatch, setNoMatch] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    const [value, setValue] = useState<string>('');
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    const filterItems = (input) => {
-        const lowerEnteredValue = input.toLowerCase();
+    // Memoized filter function
+    const filterItems = useCallback(
+        (input: string) => {
+            const lowerEnteredValue = input.toLowerCase();
 
-        const filtered = allItems?.filter((entry) =>
-            entry?.tags?.some((tag) => {
-                const lowerTagValue = tag.toLowerCase();
+            const filtered = allItems?.filter((entry) =>
+                entry?.tags?.some((tag) => {
+                    const lowerTagValue = tag.toLowerCase();
 
-                if (lowerEnteredValue.length === 1) {
-                    return lowerTagValue[0] === lowerEnteredValue;
-                }
+                    if (lowerEnteredValue.length === 1) {
+                        return lowerTagValue[0] === lowerEnteredValue;
+                    }
 
-                return lowerTagValue.includes(lowerEnteredValue);
-            }),
-        );
+                    return lowerTagValue.includes(lowerEnteredValue);
+                }),
+            );
 
-        if (filtered.length > 0) {
-            setItems(filtered);
-            setIsDropdownOpen(false);
-        } else {
-            setItems(allItems);
-            setIsDropdownOpen(true);
-
-            if (input.length === 1 && input === input.toUpperCase()) {
-                setError(true);
+            if (filtered.length > 0) {
+                setItems(filtered);
+                setIsDropdownOpen(false);
             } else {
-                setNoMatch(true);
+                setItems(allItems);
+                setIsDropdownOpen(true);
+
+                if (input.length === 1 && input === input.toUpperCase()) {
+                    setError(true);
+                } else {
+                    setNoMatch(true);
+                }
             }
-        }
-    };
+        },
+        [allItems, setItems, setIsDropdownOpen],
+    );
 
-    const handleSearch = (e) => {
-        const enteredValue = e.currentTarget.value;
+    const handleSearch = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            const enteredValue = e.currentTarget.value;
 
-        setNoMatch(false);
-        setError(false);
-        setValue(enteredValue);
-    };
+            setNoMatch(false);
+            setError(false);
+            setValue(enteredValue);
+        },
+        [],
+    );
 
-    const handleClick = (char) => {
+    const handleClick = useCallback((char: string) => {
         setNoMatch(false);
         setError(false);
         setValue(char);
-    };
+    }, []);
+
+    // Reset value and focus input when clearing
+    const handleClear = useCallback(() => {
+        setValue('');
+        setNoMatch(false);
+        setError(false);
+        setItems(allItems);
+
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [allItems, setItems]);
 
     useEffect(() => {
         if (value.length > 0) {
@@ -89,15 +117,7 @@ export default function LetterStack({
             setItems(allItems);
             setIsDropdownOpen(true);
         }
-    }, [value]);
-
-    const handleClear = () => {
-        setValue('');
-        setNoMatch(false);
-        setError(false);
-        setItems(allItems);
-        inputRef.current.focus();
-    };
+    }, [value, filterItems, allItems, setItems, setIsDropdownOpen]);
 
     return (
         <>
@@ -140,4 +160,6 @@ export default function LetterStack({
             {error && <Alert message={alert.WORDS_NOT_FOUND} type={'error'} />}
         </>
     );
-}
+};
+
+export default LetterStack;
