@@ -15,22 +15,22 @@ import { requestMiddlePage } from '../../services/request';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
-import WordCard from '../../components/etymology/wordCard/WordCard';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 
 // Types
 import { ErrorTypes } from '../../appTypes';
-import { WordItemType } from './types/componentTypes';
+import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
 import { CardsContainer, PageTitle } from './etymologyStyles';
 import { PageContainer } from '../middlePage/middlePageStyles';
+import SquareCard from '../../components/common/squareCard/SquareCard';
 
 function EtymologyPage() {
     const location = useLocation();
     const { lang } = useGlobalData();
-    const [items, setItems] = useState<WordItemType[]>([]);
-    const [allItems, setAllItems] = useState<WordItemType[]>([]);
+    const [items, setItems] = useState<CardType[]>([]);
+    const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState<any>();
     const [loading, setLoading] = useState<boolean>(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
@@ -85,9 +85,9 @@ function EtymologyPage() {
                             <CardsContainer $center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (
-                                        <WordCard
+                                        <SquareCard
                                             i={i}
-                                            key={item._id}
+                                            key={item.id}
                                             data={item}
                                         />
                                     );

@@ -1,14 +1,17 @@
 import { Langs } from '../../../../appTypes';
 
-export type SectionCardProps = {
-    section: {
-        img: {
-            [key in Langs]: string;
-        };
-        title: {
-            [key in Langs]: string;
-        };
+export type SectionDetails = {
+    link: string;
+    cardImg: {
+        [key in Langs]: string;
     };
+    cardTitle: {
+        [key in Langs]: string;
+    };
+};
+
+export type SectionCardProps = {
+    section: SectionDetails;
     link: string;
     i: number;
 };

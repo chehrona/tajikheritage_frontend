@@ -15,7 +15,7 @@ import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 
 // Types
-import { SectionType } from './types/componentTypes';
+import { SectionDetails } from '../../components/common/sectionCard/types/componentTypes';
 
 // Styled components
 import { PageContainer, SectionBoxContainer } from './landingPageStyles';
@@ -23,7 +23,7 @@ import { PageContainer, SectionBoxContainer } from './landingPageStyles';
 const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
     const { lang } = useGlobalData();
-    const [sections, setSections] = useState<SectionType[]>([]);
+    const [sections, setSections] = useState<SectionDetails[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState('');
 
@@ -67,7 +67,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
                                 return (
                                     <SectionCard
                                         i={i}
-                                        key={section._id}
+                                        key={section.cardTitle[lang]}
                                         section={section}
                                         link={section?.link}
                                     />

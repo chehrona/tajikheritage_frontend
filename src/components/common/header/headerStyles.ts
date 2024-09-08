@@ -55,7 +55,6 @@ export const TitleWrapper = styled.div`
 
     @media (max-width: 480px) {
         font-size: 1.52rem;
-        padding: 0rem 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -76,6 +75,7 @@ export const Title = styled.div<{ $index: number }>`
     top: -5rem;
     transform: ${({ $index }) => $index && `translateY(${5 * $index}rem)`};
     transition: transform 0.5s ease;
+    padding: 0rem 0.5rem;
 
     @media (max-width: 480px) {
         left: 4.15rem;

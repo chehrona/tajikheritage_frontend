@@ -17,7 +17,7 @@ import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 
 // Types
-import { Item } from './types/componentTypes';
+import { CardType } from './types/componentTypes';
 
 // Styled components
 import { PageContainer, InnerBoxContainer } from './middlePageStyles';
@@ -25,8 +25,8 @@ import { PageContainer, InnerBoxContainer } from './middlePageStyles';
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
     const { lang } = useGlobalData();
-    const [items, setItems] = useState<Item[]>([]);
-    const [allItems, setAllItems] = useState<Item[]>([]);
+    const [items, setItems] = useState<CardType[]>([]);
+    const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -77,7 +77,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                                 ) : (
                                     <SquareCard
                                         key={item.id}
-                                        item={item}
+                                        data={item}
                                         i={i}
                                     />
                                 ),

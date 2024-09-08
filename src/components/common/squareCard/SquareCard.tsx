@@ -16,7 +16,7 @@ import { SquareCardProps } from './types/componentTypes';
 // Styled components
 import { SquareImage } from './squareCardStyles';
 
-const SquareCard: React.FC<SquareCardProps> = ({ item, i }) => {
+const SquareCard: React.FC<SquareCardProps> = ({ data, i }) => {
     const { lang } = useGlobalData();
     const [error, setError] = useState<boolean>(false);
 
@@ -24,13 +24,13 @@ const SquareCard: React.FC<SquareCardProps> = ({ item, i }) => {
         <>
             <CardWrapper
                 i={i}
-                disabled={item.disabled}
-                page={item?.id}
+                disabled={data.disabled}
+                page={data?.id}
                 type={'square'}
                 setError={setError}
             >
                 <SquareImage
-                    src={process.env.REACT_APP_BASE_URL + item?.img[lang]}
+                    src={process.env.REACT_APP_BASE_URL + data?.cardImg[lang]}
                 />
             </CardWrapper>
             {error && (

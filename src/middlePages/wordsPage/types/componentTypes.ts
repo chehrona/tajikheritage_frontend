@@ -2,7 +2,7 @@ import { Langs, DescObj } from '../../../appTypes';
 import { Source } from '../../../components/common/sources/types/componentTypes';
 
 export type WordItemType = {
-    _id: string;
+    disabled: boolean;
     id: string;
     related: string[];
     tags: string[];

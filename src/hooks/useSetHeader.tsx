@@ -67,7 +67,7 @@ export const useSetHeader = (page: string, type: string, pageData?: any) => {
 
         headerData.forEach((entry: any) => {
             entry.sections.forEach((section: any) => {
-                const { link: sectionLink, title: sectionTitle } = section;
+                const { link: sectionLink, cardTitle: sectionTitle } = section;
 
                 if (sectionLink === link) {
                     for (const key in title) {

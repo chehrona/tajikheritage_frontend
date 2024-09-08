@@ -228,7 +228,8 @@ export const StyledButton = styled.div<{ $lang: string }>`
     color: var(--primary-gold-color);
     height: fit-content;
     font-weight: 500;
-    padding: 0rem 0rem 0.25rem 0rem;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
     width: ${({ $lang }) =>
         $lang && $lang === 'ru' ? '30%' : $lang === 'tj' ? '35%' : '17%'};
 
