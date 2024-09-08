@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Caveat:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+@font-face {
+    font-family: 'Blocky';
+    src: url('/public/fonts/blocky.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Rem */
 html {
     font-size: 16px;
@@ -34,6 +41,7 @@ html {
     /* Font families */
     --ordinary-font: 'IBM Plex Serif', serif;
     --fancy-font: 'EB Garamond', serif;
+    --blocky-font: 'Blocky', sans-serif;
 
     /* Font-sizes */
     --body-text: 1.1rem;

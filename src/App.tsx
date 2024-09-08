@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useMemo, useState, useRef, useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 // Helper
 import headerText from './miscellaneous/staticTexts.json';
@@ -11,6 +14,7 @@ import { TitleProps, ContextTypes } from './hooks/hookTypes';
 import { Langs } from './appTypes';
 
 // Components
+import ErrorPage from './errorPages/ErrorPage';
 import Header from './components/common/header/Header';
 import Menu from './components/common/menu/menuDropdown/Menu';
 import Footer from './components/common/footer/Footer';
@@ -92,33 +96,37 @@ function App(): React.JSX.Element {
     };
 
     return (
-        <DataContext.Provider value={value}>
-            <div
-                className="content-container"
-                ref={parentRef}
-                onScroll={handleScroll}
-                onCopy={handleCopy}
-            >
-                {!isPrint && (
-                    <Header
+        <ErrorBoundary FallbackComponent={ErrorPage}>
+            <DataContext.Provider value={value}>
+                <div
+                    className="content-container"
+                    ref={parentRef}
+                    onScroll={handleScroll}
+                    onCopy={handleCopy}
+                >
+                    {!isPrint && (
+                        <Header
+                            setIsMenuShown={setIsMenuShown}
+                            isMenuShown={isMenuShown}
+                            menuAnchorEl={menuAnchorEl}
+                        />
+                    )}
+                    <Menu
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
                         menuAnchorEl={menuAnchorEl}
                     />
-                )}
-                <Menu
-                    setIsMenuShown={setIsMenuShown}
-                    isMenuShown={isMenuShown}
-                    menuAnchorEl={menuAnchorEl}
-                />
-                <Routes />
-                <div className="fixed-container">
-                    {!isPrint && <Flags />}
-                    {showArrow ? <ScrollUpArrow parentRef={parentRef} /> : null}
+                    <Routes />
+                    <div className="fixed-container">
+                        {!isPrint && <Flags />}
+                        {showArrow ? (
+                            <ScrollUpArrow parentRef={parentRef} />
+                        ) : null}
+                    </div>
+                    {!isPrint ? <Footer /> : null}
                 </div>
-                {!isPrint ? <Footer /> : null}
-            </div>
-        </DataContext.Provider>
+            </DataContext.Provider>
+        </ErrorBoundary>
     );
 }
 

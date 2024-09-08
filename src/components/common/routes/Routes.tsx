@@ -5,6 +5,7 @@ import { Routes as ServerRoutes, Route, useLocation } from 'react-router-dom';
 import staticTexts from '../../../miscellaneous/staticTexts.json';
 
 // Landing pages
+import PageNotFound from '../../../errorPages/pageNotFound/PageNotFound';
 import Home from '../../../landingPages/home/Home';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
 // import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
@@ -28,6 +29,7 @@ const Routes: React.FC = () => {
 
     return (
         <ServerRoutes location={location} key={location.pathname}>
+            <Route path="*" element={<PageNotFound />} />
             <Route path="/arts" element={<LandingPage page={'arts'} />} />
             <Route path="/customs" element={<LandingPage page={'customs'} />} />
             <Route

@@ -13,5 +13,10 @@
         "us": "Article is not available yet",
         "ru": "Статья еще не доступна",
         "tj": "Мақола ҳанӯз вуҷуд надорад"
+    },
+    "PAGE_NOT_FOUND": {
+        "us": "Page not found",
+        "ru": "Страница не найдена",
+        "tj": "Саҳифа ёфт нашуд"
     }
 }

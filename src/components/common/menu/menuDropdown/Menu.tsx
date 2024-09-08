@@ -41,7 +41,6 @@ const Menu: React.FC<MenuProps> = ({
 
     return (
         <StyledMenu
-            aria-modal="true"
             open={isMenuShown}
             anchorEl={menuAnchorEl.current}
             TransitionComponent={Slide}
@@ -52,6 +51,7 @@ const Menu: React.FC<MenuProps> = ({
             sx={{
                 zIndex: '10',
             }}
+            aria-hidden={!isMenuShown}
         >
             <LogoContainer>
                 <Logo src={'/tajiks.png'}></Logo>
