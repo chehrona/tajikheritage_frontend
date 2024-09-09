@@ -1,10 +1,36 @@
 import React from 'react';
 
-// Styled components
-import { Subtitle } from './articleSubtitleStyles';
+// Types
+import { ArticleSubtitleProps } from './types/componentTypes';
 
-const ArticleSubtitle: React.FC<{ subtitle: string }> = ({ subtitle }) => {
-    return <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />;
+// Styled components
+import {
+    SubtitleWrapper,
+    Subtitle,
+    LineWrapper,
+    Circle,
+    Line,
+} from './articleSubtitleStyles';
+
+const ArticleSubtitle: React.FC<ArticleSubtitleProps> = ({
+    subtitle,
+    hasSlides,
+}) => {
+    return (
+        <SubtitleWrapper>
+            {!hasSlides ? (
+                <LineWrapper $right={true}>
+                    <Line />
+                    <Circle />
+                </LineWrapper>
+            ) : null}
+            <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
+            <LineWrapper $right={false}>
+                <Circle />
+                <Line />
+            </LineWrapper>
+        </SubtitleWrapper>
+    );
 };
 
 export default ArticleSubtitle;

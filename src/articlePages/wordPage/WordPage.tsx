@@ -18,7 +18,6 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
-import TextSegmentWithTableAndSound from '../../components/etymology/textSegmentWithTableAndSound/TextWithTableAndSound';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 // Styled components
@@ -28,6 +27,7 @@ import {
     PronunciationWrapper,
     BodyContainer,
 } from './wordPageStyles';
+import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 
 const WordPage: React.FC = () => {
     const { id } = useParams();
@@ -69,7 +69,7 @@ const WordPage: React.FC = () => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
 
     return (
         <>
@@ -83,17 +83,15 @@ const WordPage: React.FC = () => {
                                 <Transcript>{word.transcript}</Transcript>
                                 <SoundButton data={word.audio} />
                             </PronunciationWrapper>
-                            <div>
-                                {word.desc[lang].map((entry, i) => {
-                                    return (
-                                        <TextSegmentWithTableAndSound
-                                            key={`${word?._id}_${i}`}
-                                            id={`${word?._id}_${i}`}
-                                            data={entry}
-                                        />
-                                    );
-                                })}
-                            </div>
+                            {word.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${word?._id}_${i}`}
+                                        data={entry}
+                                    />
+                                );
+                            })}
                             <Sources data={word.references[lang]} />
                         </BodyContainer>
                     </PageFirstContainer>

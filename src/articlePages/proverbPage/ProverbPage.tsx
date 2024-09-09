@@ -20,12 +20,7 @@ import TextSegment from '../../components/common/articleTextSegment/TextSegment'
 import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
-import {
-    ProverbContainer,
-    QuoteWrapper,
-    Shadow,
-    TextContainer,
-} from './proverbPageStyles';
+import { ProverbContainer, QuoteWrapper, Shadow } from './proverbPageStyles';
 import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
 
 const ProverbPage = () => {
@@ -77,32 +72,24 @@ const ProverbPage = () => {
                         <ProverbContainer>
                             <ProverbSoundBox proverb={proverb} />
                             <QuoteWrapper
-                                lang={lang}
+                                $lang={lang}
                                 dangerouslySetInnerHTML={{
                                     __html: proverb?.quote[lang],
                                 }}
                             />
-                            <TextContainer>
-                                {proverb.desc[lang].map(
-                                    (entry: DescDetails, i) => {
-                                        const isSlides =
-                                            entry.slides &&
-                                            entry.slides.length > 0;
+                            {proverb.desc[lang].map((entry: DescDetails, i) => {
+                                const isSlides =
+                                    entry.slides && entry.slides.length > 0;
 
-                                        return (
-                                            <TextSegment
-                                                i={i}
-                                                key={`${proverb?.quote[lang]}_${i}`}
-                                                reverse={
-                                                    isSlides ? i % 2 > 0 : null
-                                                }
-                                                data={entry}
-                                                noBorder={true}
-                                            />
-                                        );
-                                    },
-                                )}
-                            </TextContainer>
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${proverb?.quote[lang]}_${i}`}
+                                        reverse={isSlides ? i % 2 > 0 : null}
+                                        data={entry}
+                                    />
+                                );
+                            })}
                             {proverb.references ? (
                                 <Sources data={proverb.references[lang]} />
                             ) : null}

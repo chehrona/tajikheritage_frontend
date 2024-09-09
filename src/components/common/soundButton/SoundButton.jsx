@@ -13,9 +13,13 @@ export default function SoundButton({ data }) {
     };
 
     return (
-        <StyledIconButton onClick={(e) => toggleAudio(e)}>
-            <audio src={process.env.REACT_APP_BASE_URL + data}></audio>
-            <VolumeUp />
-        </StyledIconButton>
+        <>
+            {data.length > 0 ? (
+                <StyledIconButton onClick={(e) => toggleAudio(e)}>
+                    <audio src={process.env.REACT_APP_BASE_URL + data}></audio>
+                    <VolumeUp />
+                </StyledIconButton>
+            ) : null}
+        </>
     );
 }

@@ -25,8 +25,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
     i,
     data,
     title,
-    reverse,
-    noBorder,
+    reverse = null,
 }) => {
     const parentRef = useRef<HTMLDivElement>(null);
     const [screenSize, setScreenSize] = useState<number>(0);
@@ -47,7 +46,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
     }, []);
 
     return (
-        <BoxWrapper $reverse={reverse} $noBorder={noBorder}>
+        <BoxWrapper $reverse={reverse}>
             {hasSlides ? (
                 <SlideContainer
                     ref={parentRef}
@@ -62,7 +61,10 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                 </SlideContainer>
             ) : null}
             {i === 0 && title && <Title>{title}</Title>}
-            <ArticleSubtitle subtitle={data.subtitle}></ArticleSubtitle>
+            <ArticleSubtitle
+                hasSlides={hasSlides}
+                subtitle={data.subtitle}
+            ></ArticleSubtitle>
             <DescWrapper
                 data={data?.body}
                 TextWrapper={

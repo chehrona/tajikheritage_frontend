@@ -7,8 +7,6 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
     width: 100%;
     display: block;
     position: relative;
-    border-bottom: ${({ $noBorder }) =>
-        $noBorder ? 'none' : '0.0625rem solid var(--primary-gold-color)'};
     ${({ $reverse }) =>
         $reverse !== null
             ? $reverse
@@ -24,13 +22,15 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         ${({ $reverse }) =>
-            $reverse
-                ? 'padding: 0rem 0rem 1rem 2rem'
-                : 'padding: 0rem 2rem 1rem 0rem'};
+            $reverse !== null
+                ? $reverse
+                    ? 'padding: 0rem 0rem 2rem 0rem'
+                    : 'padding: 0rem 2rem 2rem 0rem'
+                : 'padding: 0rem 2rem 2rem 2rem'};
     }
 
     @media (max-width: 480px) {
-        padding: 0rem;
+        padding: 0rem 0rem 2rem 0rem;
         display: flex;
         flex-direction: column;
 
@@ -113,6 +113,10 @@ export const RightText = styled(BaseText)`
     @media (max-width: 480px) {
         padding-left: 1.5rem;
     }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding-left: 2rem;
+    }
 `;
 
 export const LeftText = styled(BaseText)`
@@ -120,5 +124,9 @@ export const LeftText = styled(BaseText)`
 
     @media (max-width: 480px) {
         padding-right: 1.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding-right: 2rem;
     }
 `;

@@ -70,7 +70,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
         padding: 0rem 0.5rem;
         width: fit-content;
         height: fit-content;
-        border: 0.15rem solid var(--primary-gold-color);
+        border: 0.0625rem solid var(--primary-gold-color);
     `}
 `;
 
@@ -81,7 +81,7 @@ export const Year = styled.div<{ $show: boolean }>`
 
 export const Line = styled.div`
     background: var(--primary-gold-color);
-    height: 0.15rem;
+    height: 0.0625rem;
     width: 100%;
     position: absolute;
     top: 50%;

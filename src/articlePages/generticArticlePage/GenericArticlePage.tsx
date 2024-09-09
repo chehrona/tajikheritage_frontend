@@ -79,10 +79,6 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                                         reverse={i % 2 > 0}
                                         data={entry}
                                         title={data.name[lang]}
-                                        noBorder={
-                                            i === data.desc[lang].length - 1 &&
-                                            true
-                                        }
                                     />
                                 );
                             })}

@@ -1,5 +1,4 @@
 export type BoxWrapperProps = {
-    $noBorder?: boolean;
     $reverse: boolean | null;
 };
 

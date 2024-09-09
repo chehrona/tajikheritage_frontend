@@ -4,6 +4,5 @@ export type TextSegmentProps = {
     i: number;
     data: DescDetails;
     title?: string[];
-    reverse: boolean | null;
-    noBorder?: boolean;
+    reverse?: boolean | null;
 };

@@ -178,7 +178,7 @@ export const Text = styled.text`
     }
 `;
 
-export const QuoteWrapper = styled.div`
+export const QuoteWrapper = styled.div<{ $lang: string }>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,14 +190,15 @@ export const QuoteWrapper = styled.div`
     padding: ${({ lang }) =>
         lang === 'tj' ? '3rem 3rem 2rem 3rem' : '4.5rem 3rem 1rem 3rem'};
 
-    @media (max-width: 1024px) {
-        padding: ${({ lang }) =>
-            lang === 'tj'
+    @media (max-width: 480px) {
+        padding: ${({ $lang }) =>
+            $lang === 'tj'
                 ? '4rem 1.5rem 2.5rem 1.5rem'
                 : '5.5rem 1.5rem 1rem 1.5rem'};
     }
-`;
 
-export const TextContainer = styled.div`
-    padding-bottom: 1rem;
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        padding: ${({ $lang }) =>
+            $lang === 'tj' ? '4rem 2rem 2.5rem 2rem' : '5.5rem 2rem 2rem 2rem'};
+    }
 `;
