@@ -44,19 +44,14 @@ html {
     --blocky-font: 'Blocky', sans-serif;
 
     /* Font-sizes */
-    --body-text: 1.1rem;
-}
+    --desktop-body-text: 1.1rem;
+    --tablet-body-text: 1.3rem;
+    --mobile-body-text: 1.3rem;
 
-@media screen and (max-width: 480px) {
-    :root {
-        --body-text: 1.3rem;
-    }
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 960px) {
-    :root {
-        --body-text: 1.3rem;
-    }
+    /* Padding */
+    --desktop-padding: 3.2rem;
+    --tablet-padding: 2rem;
+    --mobile-padding: 1.5rem;
 }
 
 body {

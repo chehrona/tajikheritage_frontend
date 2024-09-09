@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
     min-height: 20rem;
     padding-bottom: 3rem;
     background-color: var(--primary-white-color);
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
 
     @media (max-width: 480px) {
         position: relative;
@@ -565,7 +565,7 @@ export const FinalQuoteWrapper = styled.div`
 export const Author = styled.div`
     margin-top: 0.5rem;
     color: var(--primary-white-color);
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     font-style: normal;
     font-family: var(--ordinary-font);
     text-align: end;

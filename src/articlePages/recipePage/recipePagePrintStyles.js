@@ -45,7 +45,7 @@ export const Logo = styled.img`
 `;
 
 export const Subtitle = styled.div`
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
 `;
 
 export const InfoContainer = styled.div`
@@ -100,7 +100,7 @@ export const ServeAmount = styled.input`
     width: 3rem;
     height: 2rem;
     outline: none;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     padding: 0.2rem;
     text-align: center;
     font-family: var(--ordinary-font);
@@ -162,7 +162,7 @@ export const RightSection = styled.div`
 
 export const Ingredient = styled.div`
     line-height: 2rem;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
 `;
 
 export const BoxTitle = styled.div`

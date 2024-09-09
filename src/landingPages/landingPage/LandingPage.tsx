@@ -13,12 +13,13 @@ import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
+import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
 
 // Types
 import { SectionDetails } from '../../components/common/sectionCard/types/componentTypes';
 
 // Styled components
-import { PageContainer, SectionBoxContainer } from './landingPageStyles';
+import { SectionBoxContainer } from './landingPageStyles';
 
 const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
@@ -59,7 +60,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
             <Loader inProp={loading} />
             {!loading && sections.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
+                    <LandingPageFirstContainer>
                         <SectionBoxContainer
                             $center={sections.length % 3 === 0}
                         >
@@ -74,7 +75,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
                                 );
                             })}
                         </SectionBoxContainer>
-                    </PageContainer>
+                    </LandingPageFirstContainer>
                 </Fade>
             ) : // !loading &&
             // error[lang]?.length > 0 && (

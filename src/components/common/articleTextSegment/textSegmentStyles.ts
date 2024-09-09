@@ -87,7 +87,7 @@ export const Title = styled.div`
 
 export const BaseText = styled.div`
     width: 100%;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     position: relative;
     line-height: 1.7rem;
     color: var(--primary-black-color);

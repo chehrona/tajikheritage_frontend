@@ -16,6 +16,7 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
+import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
 
 // Types
 import { ErrorTypes } from '../../appTypes';
@@ -23,7 +24,6 @@ import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
 import { CardsContainer, PageTitle } from './etymologyStyles';
-import { PageContainer } from '../middlePage/middlePageStyles';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 
 function EtymologyPage() {
@@ -71,7 +71,7 @@ function EtymologyPage() {
             <Loader inProp={loading} />
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
+                    <LandingPageFirstContainer>
                         <PageTitle>
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
@@ -94,7 +94,7 @@ function EtymologyPage() {
                                 })}
                             </CardsContainer>
                         )}
-                    </PageContainer>
+                    </LandingPageFirstContainer>
                 </Fade>
             ) : (
                 !loading &&

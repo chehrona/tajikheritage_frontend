@@ -145,7 +145,7 @@ export const DescContainer = styled.div`
 
 export const Desc = styled.div`
     padding: 1.5rem 2rem 1.5rem 2rem;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     line-height: 2rem;
     height: 26rem;
     text-align: justify;

@@ -108,7 +108,7 @@ export const SubTitle = styled.div`
 `;
 
 export const Reference = styled.span`
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     line-height: 1.7rem;
 
     @media (max-width: 1024px) {
@@ -119,7 +119,7 @@ export const Reference = styled.span`
 export const RefBox = styled.div`
     display: flex;
     align-items: start;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     line-height: 1.7rem;
     position: relative;
 

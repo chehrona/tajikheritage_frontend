@@ -24,7 +24,7 @@ export const StyledTooltip = styled(
 export const StyledTypography = styled.div`
     font-family: var(--ordinary-font);
     padding: 0.5rem;
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
 
     @media (max-width: 480px) {
         font-size: 1.3rem;

@@ -23,7 +23,7 @@ export const StyledAlert = styled(Alert)`
 
     &.MuiPaper-root {
         font-family: var(--ordinary-font);
-        font-size: var(--body-text);
+        font-size: var(--desktop-body-text);
         justify-content: center;
         align-items: center;
 
@@ -42,7 +42,7 @@ export const StyledAlert = styled(Alert)`
 
     @media (max-width: 1024px) {
         &.MuiPaper-root {
-            font-size: var(--body-text);
+            font-size: var(--desktop-body-text);
 
             svg {
                 font-size: 2rem;

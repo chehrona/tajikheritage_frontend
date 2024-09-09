@@ -18,7 +18,7 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
-import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 // Styled components
 import {

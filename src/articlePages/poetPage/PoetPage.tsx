@@ -25,7 +25,7 @@ import SectionOptions from '../../components/poet/sectionOptions/SectionOptions'
 import Loader from '../../components/common/loader/Loader';
 import Fade from '../../components/common/transition/Fade';
 import Alert from '../../components/common/alert/Alert';
-import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
 const PoetPage: React.FC<{ page: string }> = ({ page }) => {

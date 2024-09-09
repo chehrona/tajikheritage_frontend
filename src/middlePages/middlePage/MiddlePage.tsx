@@ -15,12 +15,13 @@ import Fade from '../../components/common/transition/Fade';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
+import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
 
 // Types
 import { CardType } from './types/componentTypes';
 
 // Styled components
-import { PageContainer, InnerBoxContainer } from './middlePageStyles';
+import { InnerBoxContainer } from './middlePageStyles';
 
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
@@ -64,7 +65,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
             <Loader inProp={loading} />
             {!loading && items.length > 0 ? (
                 <Fade inProp={!loading}>
-                    <PageContainer>
+                    <LandingPageFirstContainer>
                         <SearchBar
                             items={items}
                             setItems={setItems}
@@ -83,7 +84,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                                 ),
                             )}
                         </InnerBoxContainer>
-                    </PageContainer>
+                    </LandingPageFirstContainer>
                 </Fade>
             ) : // !loading &&
             // error[lang]?.length > 0 && (

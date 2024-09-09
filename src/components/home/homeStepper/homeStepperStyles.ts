@@ -184,7 +184,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 
 export const Desc = styled.div`
     color: var(--secondary-white-color);
-    font-size: var(--body-text);
+    font-size: var(--desktop-body-text);
     width: 40%;
     margin-left: 10%;
     position: relative;

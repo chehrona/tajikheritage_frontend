@@ -21,7 +21,7 @@ import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
 import { ProverbContainer, QuoteWrapper, Shadow } from './proverbPageStyles';
-import PageFirstContainer from '../../components/common/pageFirstContainer/PageFirstContainer';
+import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 const ProverbPage = () => {
     const { id } = useParams();
