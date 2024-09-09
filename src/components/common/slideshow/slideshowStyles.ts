@@ -40,7 +40,7 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
     max-width: ${({ $width }) => $width && `${$width}px`};
     background: ${({ $src }) => $src && `url(${$src})`};
     height: ${({ $width, $height }) =>
-        $height ? $height : $width && `${$width * 1.2049}px`};
+        $height ? `${$height}rem` : $width && `${$width * 1.2049}px`};
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
     transform: ${({ $translate }) => `translateX(${$translate}px)`};

@@ -2,6 +2,7 @@ import React from 'react';
 
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
+import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Helper
 import alertMessages from '../../miscellaneous/alertMessages.json';
@@ -16,6 +17,8 @@ import {
 
 const PageNotFound: React.FC = () => {
     const { lang } = useGlobalData();
+
+    useSetHeader('reset');
 
     return (
         <MainContainer>

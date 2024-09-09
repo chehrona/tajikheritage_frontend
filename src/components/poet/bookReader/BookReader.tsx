@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+// Types
+import { BookReaderProps } from './types/componentTypes';
+
+// Styled components
 import {
     StyledDialog,
     StyledFrame,
@@ -15,12 +19,12 @@ import {
     StyledCloseIcon,
 } from './bookReaderStyles';
 
-export default function BookReader({
+const BookReader: React.FC<BookReaderProps> = ({
     book,
     setOpenBook,
     openBook,
     setBookIndex,
-}) {
+}) => {
     const [pdfUrl, setPdfUrl] = useState('');
 
     function closeReader() {
@@ -28,22 +32,22 @@ export default function BookReader({
         setBookIndex(null);
     }
 
-    useEffect(() => {
-        axios
-            .get(`${process.env.REACT_APP_BASE_URL + book?.source}`, {
-                responseType: 'arraybuffer',
-            })
-            .then((response) => {
-                const blob = new Blob([response.data], {
-                    type: 'application/pdf',
-                });
-                const pdfUrl = URL.createObjectURL(blob);
-                setPdfUrl(pdfUrl);
-            })
-            .catch((error) => {
-                console.error('Error fetching PDF file:', error);
-            });
-    }, [book?.source]);
+    // useEffect(() => {
+    //     axios
+    //         .get(`${process.env.REACT_APP_BASE_URL + book?.source}`, {
+    //             responseType: 'arraybuffer',
+    //         })
+    //         .then((response) => {
+    //             const blob = new Blob([response.data], {
+    //                 type: 'application/pdf',
+    //             });
+    //             const pdfUrl = URL.createObjectURL(blob);
+    //             setPdfUrl(pdfUrl);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching PDF file:', error);
+    //         });
+    // }, [book?.source]);
 
     return (
         <StyledDialog open={openBook} fullScreen>
@@ -62,7 +66,9 @@ export default function BookReader({
                     </StyledIconButton>
                 </IconWrapper>
             </Header>
-            <StyledFrame src={`${pdfUrl}#toolbar=0`} />
+            <StyledFrame src={`${book?.source}#toolbar=0`} />
         </StyledDialog>
     );
-}
+};
+
+export default BookReader;

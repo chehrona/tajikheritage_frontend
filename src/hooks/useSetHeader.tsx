@@ -6,11 +6,14 @@ import { useGlobalData } from './useGlobalData';
 // Services
 import { requestPage } from '../services/request';
 
+// Helper
+import staticTexts from '../miscellaneous/staticTexts.json';
+
 // Types
 import { Langs } from '../appTypes';
 import { TitleProps } from './hookTypes';
 
-export const useSetHeader = (page: string, type: string, pageData?: any) => {
+export const useSetHeader = (page: string, type?: string, pageData?: any) => {
     const { title, setTitle } = useGlobalData();
 
     const modifiedPage =
@@ -40,7 +43,11 @@ export const useSetHeader = (page: string, type: string, pageData?: any) => {
             }
         };
 
-        fetchHeaderData();
+        if (page === 'reset') {
+            setTitle(staticTexts.HEADER);
+        } else {
+            fetchHeaderData();
+        }
     }, [page, pageData]);
 
     const updateLandingPageTitle = (

@@ -26,14 +26,14 @@ export const CuboidFace = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
     font-size: 2rem;
-    box-shadow: 0 1px 3px 0 var(--secondary-white-color);, 0 1px 2px -1px var(--secondary-white-color);;
+    box-shadow: 0 1px 3px 0 var(--secondary-white-color),
+        0 1px 2px -1px var(--secondary-white-color),
+        0rem 0rem 2rem 0.5rem inset var(--regular-black-color);
     transform: translateZ(calc(17rem * -0.5)) translateY(calc(17rem * 0.5))
         rotateX(-90deg);
     height: 17rem;
-    background: rgb(213, 213, 213);
-    box-shadow: 0rem 0rem 2rem 0.5rem inset black;
+    background: var(--secondary-white-color);
 `;
 
 export const BooksContainer = styled.div`
@@ -50,8 +50,9 @@ export const BooksContainer = styled.div`
 `;
 
 export const BookWrapper = styled.div`
-    box-shadow: -1px -4px 0.3rem -0.3rem var(--secondary-white-color);, 1px -2px 0.3rem -1px var(--secondary-white-color);,
-        0px 0.3rem 0.3rem black;
+    box-shadow: -1px -4px 0.3rem -0.3rem var(--secondary-white-color),
+        1px -2px 0.3rem -1px var(--secondary-white-color),
+        0px 0.3rem 0.3rem var(--regular-black-color);
     border-radius: 0.4rem;
     height: 13rem;
     width: 9rem;
@@ -59,7 +60,7 @@ export const BookWrapper = styled.div`
     overflow: hidden;
 `;
 
-export const Book = styled.img<{ grey: boolean }>`
+export const Book = styled.img<{ $grey: boolean }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -69,14 +70,14 @@ export const Book = styled.img<{ grey: boolean }>`
     object-fit: cover;
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
-    filter: ${({ grey }) => grey && 'grayscale(0.5)'};
-    opacity: ${({ grey }) => grey && 0.5};
+    filter: ${({ $grey }) => $grey && 'grayscale(0.5)'};
+    opacity: ${({ $grey }) => $grey && 0.5};
 `;
 
 export const Shelf = styled.div`
     height: 1rem;
     width: 100%;
-    background: grey;
+    background: var(--secondary-grey-color);
     position: relative;
     z-index: 10;
     border-radius: 0.3rem;

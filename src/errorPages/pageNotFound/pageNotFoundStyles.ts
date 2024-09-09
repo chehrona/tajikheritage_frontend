@@ -17,7 +17,6 @@ export const MainContainer = styled.div`
 `;
 
 export const CodeWrapper = styled.div`
-    background-color: var(--regular-black-color);
     height: 15rem;
     width: 25rem;
     border-radius: 0.7rem;
@@ -25,6 +24,7 @@ export const CodeWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--regular-black-color);
     box-shadow: 0 0 0.5rem var(--primary-white-color);
 `;
 
@@ -36,5 +36,6 @@ export const Code = styled.div`
 
 export const ErrorMessage = styled.div`
     font-size: 1.5rem;
+    font-family: var(--fancy-font);
     color: var(--primary-white-color);
 `;

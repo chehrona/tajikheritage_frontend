@@ -35,7 +35,7 @@ export const StyledFlag = styled.div`
     height: 1.5rem;
     background-size: 100%;
     background-repeat: no-repeat;
-    box-shadow: 0.05rem 0.05rem 0.8rem 0.05rem var(--primary-black-color) b2;
+    box-shadow: 0rem 0rem 0.5rem var(--primary-black-color);
     background-image: ${({ lang }) =>
         lang === 'kh'
             ? `url(${khorLogo})`
