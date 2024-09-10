@@ -140,6 +140,9 @@ export const PlaceIndicator = styled.div`
     position: absolute;
     top: 0.25rem;
     z-index: 1;
+
+    @media (max-width: 480px) {
+    }
 `;
 
 export const Circle = styled.div<{ $selected: boolean }>`

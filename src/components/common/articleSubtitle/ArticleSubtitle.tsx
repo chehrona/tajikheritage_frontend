@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Hooks
+import { useMediaQuery } from 'react-responsive';
+
 // Types
 import { ArticleSubtitleProps } from './types/componentTypes';
 
@@ -16,16 +19,17 @@ const ArticleSubtitle: React.FC<ArticleSubtitleProps> = ({
     subtitle,
     hasSlides,
 }) => {
+    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
+    const showRightLine = isMobile ? true : hasSlides ? false : true;
+
     return (
         <SubtitleWrapper>
-            {!hasSlides ? (
-                <LineWrapper $right={true}>
-                    <Line />
-                    <Circle />
-                </LineWrapper>
-            ) : null}
+            <LineWrapper $right={showRightLine}>
+                <Line />
+                <Circle />
+            </LineWrapper>
             <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
-            <LineWrapper $right={false}>
+            <LineWrapper $left={true}>
                 <Circle />
                 <Line />
             </LineWrapper>

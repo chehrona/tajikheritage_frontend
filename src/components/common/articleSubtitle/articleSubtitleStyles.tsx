@@ -1,17 +1,33 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SubtitleWrapper = styled.div`
     display: flex;
     align-items: center;
+
+    @media (max-width: 480px) {
+        padding-bottom: 1rem;
+    }
 `;
 
-export const LineWrapper = styled.div<{ $right: boolean }>`
-    display: flex;
+export const LineWrapper = styled.div<{ $right?: boolean; $left?: boolean }>`
     z-index: 1;
     flex-grow: 1;
     align-items: center;
     ${({ $right }) =>
-        $right ? 'margin-right: -0.25rem' : 'margin-left: -0.25rem'};
+        $right
+            ? css`
+                  margin-right: -0.25rem;
+                  display: flex;
+              `
+            : css`
+                  margin-left: -0.25rem;
+                  display: none;
+              `}
+    ${({ $left }) => ($left ? 'display: flex' : 'display: none')};
+
+    @media (max-width: 480px) {
+        display: flex;
+    }
 `;
 
 export const Line = styled.div`
@@ -31,7 +47,6 @@ export const Subtitle = styled.span`
     font-weight: 500;
     font-size: 1.15rem;
     width: fit-content;
-    padding-right: 0.25rem;
     text-transform: uppercase;
     padding: 0.25rem 1rem;
     border-radius: 1rem;

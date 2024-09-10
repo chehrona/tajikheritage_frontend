@@ -193,8 +193,8 @@ export const QuoteWrapper = styled.div<{ $lang: string }>`
     @media (max-width: 480px) {
         padding: ${({ $lang }) =>
             $lang === 'tj'
-                ? '4rem 1.5rem 2.5rem 1.5rem'
-                : '5.5rem 1.5rem 1rem 1.5rem'};
+                ? '4rem var(--mobile-padding) 1rem var(--mobile-padding)'
+                : '6rem var(--mobile-padding) 1rem var(--mobile-padding)'};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

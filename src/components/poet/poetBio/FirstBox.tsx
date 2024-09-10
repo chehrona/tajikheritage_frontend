@@ -31,10 +31,10 @@ const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
                     key={bioOne.slides[0]?.id}
                     src={process.env.REACT_APP_BASE_URL + bioOne.slides[0]?.img}
                 />
-                <ImgInfo
-                    dangerouslySetInnerHTML={{ __html: bioOne.slides[0]?.info }}
-                />
             </RightImageWrapper>
+            <ImgInfo
+                dangerouslySetInnerHTML={{ __html: bioOne.slides[0]?.info }}
+            />
         </BoxOne>
     );
 };

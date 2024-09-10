@@ -27,7 +27,7 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
 
-    let height = isMobile ? 23 : isTablet ? 40 : 30;
+    let height = isMobile ? 25 : isTablet ? 40 : 30;
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;

@@ -30,7 +30,7 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
     }
 
     @media (max-width: 480px) {
-        padding: 0rem 0rem 2rem 0rem;
+        padding: 1rem 0rem 1rem 0rem;
         display: flex;
         flex-direction: column;
 
@@ -57,7 +57,7 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     @media (max-width: 480px) {
         width: 100svw;
         height: 120.49svw;
-        margin: 0rem 0rem 1rem 0rem;
+        margin: 0rem 0rem 2rem 0rem;
         border-top-left-radius: 0rem;
     }
 
@@ -98,7 +98,7 @@ export const BaseText = styled.div`
 
     @media (max-width: 480px) {
         font-size: 1.3rem;
-        padding: 0.5rem 1.5rem 0rem 1.5rem;
+        padding: 0rem var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -111,7 +111,7 @@ export const RightText = styled(BaseText)`
     padding-left: 3rem;
 
     @media (max-width: 480px) {
-        padding-left: 1.5rem;
+        padding-left: var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -123,7 +123,7 @@ export const LeftText = styled(BaseText)`
     padding-right: 3rem;
 
     @media (max-width: 480px) {
-        padding-right: 1.5rem;
+        padding-right: var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

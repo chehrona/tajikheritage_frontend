@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
-//Types
-import { RefProps } from './types/styleTypes';
-
 export const MainContainer = styled.div`
     border-radius: 0rem 0rem 4rem 4rem;
     background: var(--primary-white-color);
@@ -13,7 +10,7 @@ export const MainContainer = styled.div`
 
     @media (max-width: 480px) {
         border-radius: 0rem 0rem 2rem 2rem;
-        padding: 0rem 1.5rem 1rem 1.5rem;
+        padding: 2rem var(--mobile-padding) 3rem var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -41,7 +38,7 @@ export const StyledUpIcon = styled(ExpandLess)`
     color: var(--primary-shadow-color);
 `;
 
-export const RefContainer = styled.div<RefProps>`
+export const RefContainer = styled.div<{ $open: boolean }>`
     max-width: 100%;
     border-radius: 1rem;
     margin-top: 0.8rem;
@@ -50,8 +47,8 @@ export const RefContainer = styled.div<RefProps>`
     color: var(--secondary-white-color);
     background: var(--primary-black-color);
     transition: all 0.5s linear 0s;
-    ${({ open }) =>
-        open
+    ${({ $open }) =>
+        $open
             ? css`
                   height: 15rem;
                   padding: 0.8rem 0rem 1.75rem 0rem;
@@ -62,18 +59,18 @@ export const RefContainer = styled.div<RefProps>`
                   height: 0rem;
               `}
     @media (max-width: 480px) {
-        height: ${({ open }) => (open ? '30rem' : '0rem')};
+        height: ${({ $open }) => ($open ? '30rem' : '0rem')};
     }
 `;
 
-export const RefWrapper = styled.div<RefProps>`
+export const RefWrapper = styled.div<{ $open: boolean }>`
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 100%;
     margin: 0.5rem 0.25rem;
     width: calc(100% - 0.5rem);
     padding: 0rem 2rem 1rem 2rem;
-    display: ${({ open }) => (open ? 'block' : 'none')};
+    display: ${({ $open }) => ($open ? 'block' : 'none')};
 
     &::-webkit-scrollbar {
         width: 0.5rem;

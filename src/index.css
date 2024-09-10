@@ -14,7 +14,7 @@ html {
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
@@ -93,31 +93,6 @@ body * {
     justify-content: space-between;
     align-items: flex-end;
     padding: 0rem 0rem 1rem 0.35rem;
-}
-
-.emptyLine {
-    height: 2rem;
-    width: 100%;
-}
-
-.space {
-    height: 0.5rem;
-    width: 100%;
-}
-
-sup,
-sub {
-    vertical-align: baseline;
-    position: relative;
-    top: -0.5rem;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-family: 'IBM Plex Serif', serif;
-    color: var(--primary-shadow-color);
-}
-
-sub {
-    top: 0.4rem;
 }
 
 .fade-in {

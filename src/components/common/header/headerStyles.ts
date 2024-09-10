@@ -54,7 +54,7 @@ export const TitleWrapper = styled.div`
     text-align: center;
 
     @media (max-width: 480px) {
-        font-size: 1.52rem;
+        font-size: 1.4rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

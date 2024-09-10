@@ -6,9 +6,9 @@ import { VolumeUp } from '@mui/icons-material';
 // Styled components
 import { StyledIconButton } from './soundButtonStyles';
 
-export default function SoundButton({ data }) {
-    const toggleAudio = (e) => {
-        const audioFile = e.currentTarget.children[0];
+const SoundButton: React.FC<{ data: string }> = ({ data }) => {
+    const toggleAudio = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const audioFile = e.currentTarget.children[0] as HTMLAudioElement;
         audioFile.play();
     };
 
@@ -22,4 +22,6 @@ export default function SoundButton({ data }) {
             ) : null}
         </>
     );
-}
+};
+
+export default SoundButton;

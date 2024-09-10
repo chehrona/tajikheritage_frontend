@@ -64,8 +64,8 @@ export const StyledLink = styled(Link)<LinkProps>`
               `}
     @media (max-width: 480px) {
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-        height: ${({ $type }) => ($type === 'long' ? '19.025rem' : '23rem')};
-        width: ${({ $type }) => ($type === 'long' ? '12.5rem' : '23rem')};
+        height: ${({ $type }) => ($type === 'long' ? '20.5rem' : '23rem')};
+        width: ${({ $type }) => ($type === 'long' ? '13.5rem' : '23rem')};
 
         &:hover {
             border-radius: 0.7rem;

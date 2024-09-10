@@ -7,15 +7,11 @@ import SoundButton from '../soundButton/SoundButton';
 // Types
 import { DescWrapperProps } from './types/componentTypes';
 import { TooltipType } from '../tooltip/types/componentTypes';
+import { SoundType } from '../../proverb/soundBox/types/componentTypes';
 
 // Styled components
-import {
-    StyledSpan,
-    EmptyDiv,
-    SoundBox,
-    TableImage,
-} from './descWrapperStyles';
-import { SoundType } from '../../proverb/soundBox/types/componentTypes';
+import { EmptyDiv, SoundBox, TableImage } from './descWrapperStyles';
+import GlobalStyles from '../../../globalStyles';
 
 export const DescWrapper: React.FC<DescWrapperProps> = ({
     data,
@@ -30,7 +26,7 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
             switch (true) {
                 case key.startsWith('text'):
                     return (
-                        <StyledSpan
+                        <span
                             key={i + 10}
                             dangerouslySetInnerHTML={{
                                 __html: content as string,
@@ -43,7 +39,7 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
                     const typedContent = content as SoundType;
                     return (
                         <SoundBox key={key}>
-                            <StyledSpan
+                            <span
                                 dangerouslySetInnerHTML={{
                                     __html: typedContent.text,
                                 }}
@@ -70,5 +66,10 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
         });
     };
 
-    return <TextWrapper>{renderContent()}</TextWrapper>;
+    return (
+        <>
+            <GlobalStyles />
+            <TextWrapper>{renderContent()}</TextWrapper>
+        </>
+    );
 };

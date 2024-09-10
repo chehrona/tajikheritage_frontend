@@ -21,6 +21,7 @@ import Footer from './components/common/footer/Footer';
 import Routes from './components/common/routes/Routes';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
+import GlobalStyles from './globalStyles';
 
 function App(): React.JSX.Element {
     const [lang, setLang] = useState<Langs>(() => {
@@ -98,6 +99,7 @@ function App(): React.JSX.Element {
     return (
         <ErrorBoundary FallbackComponent={ErrorPage}>
             <DataContext.Provider value={value}>
+                <GlobalStyles />
                 <div
                     className="content-container"
                     ref={parentRef}

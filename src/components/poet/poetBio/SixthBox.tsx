@@ -31,7 +31,7 @@ const SixthBox: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
 
-    const height = isMobile ? 23 : isTablet ? 40 : 30;
+    const height = isMobile ? 25 : isTablet ? 40 : 30;
 
     useEffect(() => {
         if (!parentRef.current) {

@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Types
-import { SourcesProps, TitleHeaderProps } from './types/componentTypes';
+import { Source } from './types/componentTypes';
+import { TitleHeaderProps } from './types/componentTypes';
 
 // Helper
 import titleHeaderJson from '../../../miscellaneous/staticTexts.json';
@@ -30,7 +31,7 @@ import {
     SourceWrapper,
 } from './sourceStyles';
 
-const Sources: React.FC<SourcesProps> = ({ data }) => {
+const Sources: React.FC<{ data: Source[] }> = ({ data }) => {
     const { lang } = useGlobalData();
     const titleHeader: TitleHeaderProps = titleHeaderJson;
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -47,8 +48,8 @@ const Sources: React.FC<SourcesProps> = ({ data }) => {
                         setIsDropdownOpen={setIsDropdownOpen}
                         isDropdownOpen={isDropdownOpen}
                     />
-                    <RefContainer open={isDropdownOpen}>
-                        <RefWrapper open={isDropdownOpen}>
+                    <RefContainer $open={isDropdownOpen}>
+                        <RefWrapper $open={isDropdownOpen}>
                             <SubTitle>
                                 {titleHeader.SOURCES_HEADER[lang]}
                             </SubTitle>

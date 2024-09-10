@@ -61,9 +61,9 @@ export const BoxOne = styled.div`
     position: relative;
 
     @media (max-width: 480px) {
-        padding: 0rem 1.5rem 1rem 1.5rem;
+        padding: 0rem var(--mobile-padding) 2rem var(--mobile-padding);
         flex-wrap: wrap;
-        margin-bottom: 3rem;
+        gap: 1rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -74,13 +74,8 @@ export const BoxOne = styled.div`
 export const Year = styled.div<YearProps>`
     font-size: 3.5rem;
     font-family: var(--fancy-font);
-    margin-bottom: 0.5rem;
     text-align: ${({ $align }) => $align && 'center'};
     color: ${({ $color }) => $color && $color};
-
-    @media (max-width: 480px) {
-        margin-bottom: ${({ $align }) => $align && '0rem'};
-    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         margin-bottom: ${({ $align }) => $align && '0rem'};
@@ -89,6 +84,10 @@ export const Year = styled.div<YearProps>`
 
 export const Desc = styled.div`
     color: var(--primary-grey-color);
+
+    @media (max-width: 480px) {
+        padding: 1rem 0rem;
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 0rem 1rem 0rem;
@@ -104,7 +103,7 @@ export const RightImageWrapper = styled.div`
 
     @media (max-width: 480px) {
         width: 100%;
-        height: 23rem;
+        height: auto;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -130,7 +129,7 @@ export const BoxTwo = styled.div`
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
-        margin-bottom: 0.5rem;
+        margin: 1rem 0rem;
         color: var(--primary-white-color);
     }
 `;
@@ -154,6 +153,7 @@ export const Backdrop = styled.div<{ $backdrop: string }>`
     opacity: 0.2;
     filter: grayscale(1);
     background-size: cover;
+    background-position: center;
     background-image: ${({ $backdrop }) => `url(${$backdrop})`};
 
     @media (max-width: 480px) {
@@ -189,6 +189,8 @@ export const SlideImg = styled.img<{ $show?: boolean }>`
             : '0rem 0rem 1rem 0.2rem #504221e6'};
 
     @media (max-width: 480px) {
+        min-height: 18rem;
+        max-height: 18rem;
         display: ${({ $show }) => !$show && 'none'};
     }
 `;
@@ -200,6 +202,10 @@ export const NavBox = styled.div<{ $bottom: boolean }>`
     right: 0rem;
     display: flex;
     ${({ $bottom }) => ($bottom ? 'bottom: 0rem' : 'top: 8rem')};
+
+    @media (max-width: 480px) {
+        height: 6rem;
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 5rem;
@@ -315,7 +321,8 @@ export const Info = styled.div`
     pointer-events: auto;
 
     @media (max-width: 480px) {
-        padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+        padding: 0.5rem var(--mobile-padding) 0.5rem var(--mobile-padding);
+        background-color: green;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -333,6 +340,7 @@ export const Text = styled.div`
         font-size: 1.35rem;
         overflow-y: scroll;
         margin-bottom: 2rem;
+        background-color: blue;
     }
 `;
 
@@ -363,7 +371,7 @@ export const BoxThree = styled.div`
     padding: 0rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
-        padding: 2rem 1.5rem;
+        padding: 1rem var(--mobile-padding) 2rem var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -381,6 +389,11 @@ export const QuoteOutline = styled.div`
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
+
+    @media (max-width: 1024px) {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
 `;
 
 export const QuoteSymbol = styled.div`
@@ -438,7 +451,7 @@ export const FamilyDesc = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: 0rem 1.5rem 1.5rem 1.5rem;
+        padding: 0rem var(--mobile-padding) 2rem var(--mobile-padding);
         height: auto;
     }
 
@@ -468,7 +481,7 @@ export const BoxFive = styled.div`
     padding: 1.5rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
-        padding: 1.5rem 1.5rem 2.1rem 1.5rem;
+        padding: 1rem var(--mobile-padding) 2rem var(--mobile-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -507,7 +520,7 @@ export const RightContainer = styled.div`
 
     @media (max-width: 480px) {
         width: 100%;
-        height: 23rem;
+        height: 25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -587,7 +600,6 @@ export const ImgInfo = styled.div`
     @media (max-width: 480px) {
         font-size: 1.25rem;
         line-height: 1.3rem;
-        bottom: 0.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

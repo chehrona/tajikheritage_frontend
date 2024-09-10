@@ -131,12 +131,12 @@ export const TitleWrapper = styled.div`
 
 export const LargeTitle = styled.div<LargeTitleProps>`
     font-weight: bold;
-    color: #ffffffb2;
+    color: #ffffffd4;
     width: 45rem;
     overflow-wrap: break-word;
     text-transform: uppercase;
     font-family: var(--fancy-font);
-    text-shadow: 1rem 0rem 0rem #504221;
+    text-shadow: 1rem 0rem 0rem var(--primary-shadow-color);
     margin-top: ${({ $margin }) => $margin && `${$margin.d}rem`};
     ${({ $fontSize }) =>
         $fontSize
@@ -152,7 +152,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     @media (max-width: 480px) {
         width: 100%;
         padding-top: 0rem;
-        text-shadow: 0.5rem 0rem 0rem #504221;
+        text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
         margin-top: ${({ $margin }) => $margin && `${$margin.m}%`};
         ${({ $fontSize }) =>
             $fontSize
@@ -240,7 +240,7 @@ export const StyledButton = styled.div<{ $lang: string }>`
         bottom: 0;
         left: 0;
         transform: scaleX(0);
-        background-color: #ffffff;
+        background-color: var(--regular-white-color);
         transform-origin: bottom right;
         transition: transform 0.3s ease-in-out;
         width: ${({ $lang }) =>
@@ -253,27 +253,27 @@ export const StyledButton = styled.div<{ $lang: string }>`
     }
 
     &:hover {
-        border-right: 0.1rem solid #ffffff;
+        border-right: 0.1rem solid var(--regular-white-color);
     }
 
     @media (max-width: 480px) {
-        border-right: 0.1rem solid #ffffff;
-        border-bottom: 0.1rem solid #ffffff;
+        border-right: 0.1rem solid var(--regular-white-color);
+        border-bottom: 0.1rem solid var(--regular-white-color);
         width: ${({ $lang }) =>
-            $lang && $lang === 'ru' ? '46%' : $lang === 'tj' ? '54%' : '26%'};
+            $lang && $lang === 'ru' ? '51%' : $lang === 'tj' ? '60%' : '29%'};
 
         &::before {
             display: none;
         }
 
         &:hover {
-            border-right: 0.1rem solid #ffffff;
+            border-right: 0.1rem solid var(--regular-white-color);
         }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-right: 0.1rem solid #ffffff;
-        border-bottom: 0.1rem solid #ffffff;
+        border-right: 0.1rem solid var(--regular-white-color);
+        border-bottom: 0.1rem solid var(--regular-white-color);
         width: ${({ $lang }) =>
             $lang && $lang === 'ru' ? '41%' : $lang === 'tj' ? '47%' : '23.5%'};
 
@@ -282,7 +282,7 @@ export const StyledButton = styled.div<{ $lang: string }>`
         }
 
         &:hover {
-            border-right: 0.1rem solid #ffffff;
+            border-right: 0.1rem solid var(--regular-white-color);
         }
     }
 `;
@@ -298,7 +298,7 @@ export const ImageSemiCircle = styled.img`
         display: flex;
         position: absolute;
         bottom: -8rem;
-        right: -3rem;
+        right: -6rem;
         border-radius: 50%;
         width: 35rem;
         height: 35rem;

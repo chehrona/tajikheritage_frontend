@@ -21,7 +21,7 @@ import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
 import { ProverbContainer, QuoteWrapper, Shadow } from './proverbPageStyles';
-import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
+import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 const ProverbPage = () => {
     const { id } = useParams();
@@ -67,7 +67,7 @@ const ProverbPage = () => {
             <Loader inProp={loading} />
             {proverb ? (
                 <Fade inProp={!loading}>
-                    <PageFirstContainer>
+                    <ArticlePageFirstContainer>
                         <Shadow />
                         <ProverbContainer>
                             <ProverbSoundBox proverb={proverb} />
@@ -94,7 +94,7 @@ const ProverbPage = () => {
                                 <Sources data={proverb.references[lang]} />
                             ) : null}
                         </ProverbContainer>
-                    </PageFirstContainer>
+                    </ArticlePageFirstContainer>
                 </Fade>
             ) : // !loading &&
             // error.length > 0 && <Alert message={error} type={'error'} />

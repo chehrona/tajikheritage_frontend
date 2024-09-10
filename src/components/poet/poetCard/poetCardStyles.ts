@@ -65,7 +65,7 @@ export const PoetNameBox = styled.div`
     left: 2rem;
 
     @media (max-width: 480px) {
-        top: 11rem;
+        top: 12rem;
         line-height: 1.8rem;
         left: 1.5rem;
     }
