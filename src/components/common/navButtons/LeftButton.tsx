@@ -10,6 +10,7 @@ import { ButtonProps } from './types/componentTypes';
 import { StyledButton, Arrow } from './navButtonStyles';
 
 const LeftButton: React.FC<ButtonProps> = ({ disabled, movePrev }) => {
+    console.log(disabled, 'left button');
     return (
         <StyledButton onClick={movePrev} $disabled={disabled}>
             <Arrow>

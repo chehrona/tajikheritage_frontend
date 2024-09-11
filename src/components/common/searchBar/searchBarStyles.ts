@@ -9,6 +9,10 @@ export const SearchContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: 480px) {
+        height: 5.5rem;
+    }
 `;
 
 export const InputWrapper = styled.div`
@@ -139,4 +143,8 @@ export const InputAlert = styled.div`
     margin-top: 0.5rem;
     color: var(--primary-red-color);
     font-size: var(--body-text);
+
+    @media (max-width: 480px) {
+        margin-top: 0.25rem;
+    }
 `;

@@ -1,19 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { IconButton } from '@mui/material';
 
-export const StyledButton = styled(IconButton)<{ $disabled: boolean }>`
+// Types
+import { StyledButtonProps } from './types/styleTypes';
+
+export const StyledButton = styled(IconButton)<StyledButtonProps>`
     width: 3.5rem;
     height: 3.5rem;
     color: var(--primary-gold-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     ${({ $disabled }) =>
-        $disabled === null
-            ? 'opacity: 0.7'
-            : $disabled
-            ? 'display: none'
-            : 'display: flex'}
+        $disabled
+            ? css`
+                  opacity: 0;
+                  pointer-events: none;
+              `
+            : css`
+                  opacity: 1;
+                  pointer-events: all;
+              `};
 
     @media (max-width: 480px) {
         width: 4rem;

@@ -49,7 +49,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
         <BoxWrapper $reverse={reverse}>
             {hasSlides ? (
                 <SlideContainer
-                    i={i}
+                    $i={i}
                     ref={parentRef}
                     $reverse={reverse}
                     $topLeftRad={topLeftRad}

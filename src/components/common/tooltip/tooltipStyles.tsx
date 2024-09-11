@@ -19,6 +19,12 @@ export const StyledTooltip = styled(
     [`& .${tooltipClasses.arrow}`]: {
         color: 'var(--primary-shadow-color)',
     },
+
+    '@media (max-width: 1024px)': {
+        [`& .${tooltipClasses.tooltip}`]: {
+            borderRadius: '0.5rem',
+        },
+    },
 }));
 
 export const StyledTypography = styled.div`
@@ -28,7 +34,7 @@ export const StyledTypography = styled.div`
     line-height: var(--body-text-line-height);
 
     @media (max-width: 480px) {
-        padding: 0.5rem;
+        padding: 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

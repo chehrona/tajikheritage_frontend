@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
 
     @media (max-width: 480px) {
         border-radius: 0rem;
-        padding: 0rem var(--page-padding) 3rem var(--page-padding);
+        padding: 1rem var(--page-padding) 3rem var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -40,7 +40,7 @@ export const StyledUpIcon = styled(ExpandLess)`
 
 export const RefContainer = styled.div<{ $open: boolean }>`
     max-width: 100%;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     margin-top: 0.8rem;
     display: block;
     position: relative;
@@ -56,7 +56,8 @@ export const RefContainer = styled.div<{ $open: boolean }>`
               `
             : css`
                   height: 0rem;
-              `}
+              `};
+
     @media (max-width: 480px) {
         height: ${({ $open }) => ($open ? '30rem' : '0rem')};
     }
@@ -107,6 +108,7 @@ export const SubTitle = styled.div`
 
 export const Reference = styled.span`
     font-size: var(--body-text);
+    line-height: var(--body-text-line-height);
 `;
 
 export const RefBox = styled.div`
@@ -130,6 +132,15 @@ export const SourceLink = styled.a`
 
     &:link &:active {
         color: var(--primary-gold-color);
+    }
+
+    @media (max-width: 1024px) {
+        bottom: 2px;
+        margin-left: 3px;
+
+        > svg {
+            font-size: 1.3rem;
+        }
     }
 `;
 

@@ -60,7 +60,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ items, setItems, allItems }) => {
         [],
     );
 
-    const handleClear = () => {
+    const handleClear = useCallback(() => {
         setValue('');
         setNoMatch(false);
         setItems(allItems);
@@ -68,7 +68,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ items, setItems, allItems }) => {
         if (inputRef.current) {
             inputRef.current.focus();
         }
-    };
+    }, [allItems, setItems]);
 
     return (
         <SearchContainer>

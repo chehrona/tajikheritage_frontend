@@ -22,13 +22,11 @@ export const CardsContainer = styled.div<{ $center: boolean }>`
     gap: 3rem;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2.25rem;
     justify-content: ${({ $center }) =>
         $center && $center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
         justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
+        gap: var(--square-card-gap);
     }
 `;

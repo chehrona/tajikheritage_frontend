@@ -57,8 +57,8 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     @media (max-width: 480px) {
         width: 100svw;
         height: 120.49svw;
-        margin: ${({ i }) =>
-            i === 0
+        margin: ${({ $i }) =>
+            $i === 0
                 ? '0rem 0rem var(--text-segment-gap) 0rem'
                 : 'var(--text-segment-gap) 0rem'};
         background-color: blue;

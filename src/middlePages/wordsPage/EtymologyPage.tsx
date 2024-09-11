@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
-// import { useHeader } from '../../hooks/useHeader';
+import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Helper
 import staticText from '../../miscellaneous/staticTexts.json';
@@ -12,7 +12,8 @@ import staticText from '../../miscellaneous/staticTexts.json';
 import { requestMiddlePage } from '../../services/request';
 
 // Components
-import Fade from '../../components/common/pageTransition/Transition';
+import PageTransition from '../../components/common/pageTransition/Transition';
+import SquareCard from '../../components/common/squareCard/SquareCard';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
@@ -24,9 +25,8 @@ import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
 import { CardsContainer, PageTitle } from './etymologyStyles';
-import SquareCard from '../../components/common/squareCard/SquareCard';
 
-function EtymologyPage() {
+const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
     const { lang } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
@@ -38,7 +38,7 @@ function EtymologyPage() {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const data = await requestMiddlePage('language/all_words');
+            const data = await requestMiddlePage(page);
 
             setItems(data);
             setAllItems(data);
@@ -59,7 +59,7 @@ function EtymologyPage() {
     };
 
     // Set page title
-    // useHeader('etymology', allItems);
+    useSetHeader(page, 'middle', allItems);
 
     useEffect(() => {
         // Get data
@@ -70,11 +70,12 @@ function EtymologyPage() {
         <>
             <Loader inProp={loading} />
             {!loading && items.length > 0 ? (
-                <Fade inProp={!loading}>
+                <PageTransition inProp={!loading}>
                     <LandingPageFirstContainer>
                         <PageTitle>
                             {staticText.ETYM_PAGE_HEADER[lang]}
                         </PageTitle>
+                        {/* Don't change to search bar, filtering is different */}
                         <LetterStack
                             setItems={setItems}
                             allItems={allItems}
@@ -95,13 +96,13 @@ function EtymologyPage() {
                             </CardsContainer>
                         )}
                     </LandingPageFirstContainer>
-                </Fade>
+                </PageTransition>
             ) : (
                 !loading &&
                 error !== undefined && <Alert message={error} type={'error'} />
             )}
         </>
     );
-}
+};
 
 export default EtymologyPage;

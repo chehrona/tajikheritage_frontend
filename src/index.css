@@ -39,14 +39,15 @@ html {
 
     /* Padding */
     --page-padding: 3.2rem;
-    --card-gap: 2rem;
+    --long-card-gap: 2rem;
 
-    /* Standard heights */
+    /* Standard sizes */
     --header-height: 3.75rem;
     --footer-height: 3.75rem;
     --page-height: calc(
         100svh - ((var(--header-height) + var(--footer-height)))
     );
+    --circle-letter-size: 4.25rem;
 }
 
 @media (max-width: 480px) {
@@ -60,7 +61,8 @@ html {
 
         /* Padding */
         --page-padding: 1rem;
-        --card-gap: 0.5rem;
+        --long-card-gap: 0.5rem;
+        --square-card-gap: 1rem;
         --text-segment-gap: 0.75rem;
 
         /* Standard heights */

@@ -1,10 +1,4 @@
-import React, {
-    useEffect,
-    useRef,
-    useState,
-    useCallback,
-    useMemo,
-} from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
@@ -24,7 +18,7 @@ import Alert from '../../common/alert/Alert';
 import { LetterStackProps } from './types/componentTypes';
 
 // Styled components
-import { LetterContainer } from './letterStackStyles';
+import { LetterStackWrapper, LetterContainer } from './letterStackStyles';
 import {
     SearchContainer,
     InputWrapper,
@@ -140,23 +134,25 @@ const LetterStack: React.FC<LetterStackProps> = ({
                     <InputAlert>{alert.SEARCH_NOT_FOUND[lang]}</InputAlert>
                 )}
             </SearchContainer>
-            {isDropdownOpen ? (
-                <LetterContainer>
-                    <OvalLetters
-                        open={isDropdownOpen}
-                        handleClick={handleClick}
-                    />
-                    <VerticalLetters
-                        open={isDropdownOpen}
-                        handleClick={handleClick}
-                    />
-                    <CircleLetters
-                        open={isDropdownOpen}
-                        handleClick={handleClick}
-                    />
-                    <Instruction open={isDropdownOpen} />
-                </LetterContainer>
-            ) : null}
+            <LetterStackWrapper>
+                {isDropdownOpen ? (
+                    <LetterContainer>
+                        <OvalLetters
+                            open={isDropdownOpen}
+                            handleClick={handleClick}
+                        />
+                        <VerticalLetters
+                            open={isDropdownOpen}
+                            handleClick={handleClick}
+                        />
+                        <CircleLetters
+                            open={isDropdownOpen}
+                            handleClick={handleClick}
+                        />
+                        <Instruction open={isDropdownOpen} />
+                    </LetterContainer>
+                ) : null}
+            </LetterStackWrapper>
             {error && <Alert message={alert.WORDS_NOT_FOUND} type={'error'} />}
         </>
     );

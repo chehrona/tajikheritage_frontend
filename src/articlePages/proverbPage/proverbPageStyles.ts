@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import { MainContainer } from '../../components/common/pageInnerContainer/pageInnerContainerStyles';
 
 const spin = keyframes`
     0% { 
@@ -28,26 +29,13 @@ export const Shadow = styled.div`
     }
 `;
 
-export const ProverbContainer = styled.div`
-    border-radius: 4rem;
+export const ProverbInnerContainer = styled(MainContainer)`
     position: relative;
-    min-height: 40rem;
-    background: var(--primary-white-color);
-    background-image: url(${'/noise.png'});
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     z-index: 3;
     margin-top: 3rem;
 
-    @media (max-width: 480px) {
-        margin: 0rem;
-        border-radius: 0rem;
-        box-shadow: 0rem 0rem 0rem 0rem;
-    }
-
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         margin-top: 3.5rem;
-        border-radius: 2.5rem;
-        box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
     }
 `;
 

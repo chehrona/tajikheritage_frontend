@@ -3,7 +3,7 @@ export type BoxWrapperProps = {
 };
 
 export type SlideContainerProps = {
-    i?: number;
+    $i?: number;
     $topLeftRad: number;
     $reverse: boolean | null;
 };

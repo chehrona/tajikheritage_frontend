@@ -3,8 +3,6 @@ import styled, { css, keyframes } from 'styled-components';
 // Types
 import { WrapperBaseProps } from '../letterShapes/types/styleTypes';
 
-const stanSize = 5.25;
-
 const bubbleIn = keyframes`
     0% {
         opacity: 0;
@@ -47,21 +45,20 @@ const bubbleOut = keyframes`
     }
 `;
 
+export const LetterStackWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const LetterContainer = styled.div`
     position: relative;
     height: 27rem;
     width: 58rem;
-    margin-top: 2.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    transform: translateX(-50%);
 
     @media (max-width: 480px) {
-        width: 100%;
-        height: 100svh;
-        margin: 2rem 0rem 1.5rem 1rem;
+        height: calc(11 * var(--circle-letter-size));
+        width: calc(5 * var(--circle-letter-size));
     }
 `;
 
@@ -73,6 +70,11 @@ const hoverEffect = ({ $empty }: WrapperBaseProps) =>
         transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
             opacity 0.5s ease-in-out;
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+
+        @media (max-width: 480px) {
+            transform: translateZ(0rem) translateX(0rem) scale(1);
+            box-shadow: none;
+        }
     `;
 
 const emptyBackground = ({ $empty }: WrapperBaseProps) =>
@@ -98,18 +100,19 @@ const delayedAppearance = ({ $open, $delay }: WrapperBaseProps) =>
           `;
 
 export const WrapperBase = styled.div<WrapperBaseProps>`
-    height: 5rem;
-    width: 5rem;
+    height: var(--circle-letter-size);
+    width: var(--circle-letter-size);
     position: absolute;
-    left: ${({ $left }) => `${$left * 5.25}rem`};
-    top: ${({ $top }) => `${$top * 5.25}rem`};
+    left: ${({ $left }) =>
+        $left && `calc(${$left} * var(--circle-letter-size))`};
+    top: ${({ $top }) => $top && `calc(${$top} * var(--circle-letter-size))`};
     background-color: var(--primary-black-color);
-    border-radius: 5rem;
+    border-radius: var(--circle-letter-size);
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--primary-gold-color);
-    font-size: 2.5rem;
+    font-size: var(--header-big-text);
     will-change: transform;
     font-family: var(--fancy-font);
 
@@ -127,7 +130,7 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
 `;
 
 export const OvalWrapper = styled(WrapperBase)`
-    width: ${stanSize * 2}rem;
+    width: calc(var(--circle-letter-size) * 2);
     ${emptyBackground}
 
     img {
@@ -140,7 +143,7 @@ export const OvalWrapper = styled(WrapperBase)`
 `;
 
 export const VerticalWrapper = styled(WrapperBase)`
-    width: ${stanSize * 2}rem;
+    width: calc(var(--circle-letter-size) * 2);
     transform: rotateZ(90deg);
 
     span {
@@ -149,18 +152,22 @@ export const VerticalWrapper = styled(WrapperBase)`
 
     img {
         transform: rotateZ(-90deg);
-        width: 5rem;
+        width: calc(var(--circle-letter-size) - 0.5rem);
         height: auto;
     }
 
     &:hover {
         ${hoverEffect}
         transform: rotateZ(90deg) translateZ(1rem) translateX(0rem) scale(1.05);
+
+        @media (max-width: 480px) {
+            transform: rotateZ(90deg) translateZ(0rem) translateX(0rem) scale(1);
+        }
     }
 `;
 
 export const CircleWrapper = styled(WrapperBase)`
-    width: ${stanSize}rem;
+    width: var(--circle-letter-size);
 
     img {
         width: 80%;
@@ -173,10 +180,10 @@ export const CircleWrapper = styled(WrapperBase)`
 `;
 
 export const InstructionWrapper = styled(WrapperBase)`
-    font-size: 1.75rem;
+    font-size: calc(var(--header-normal-text) * 1.25);
     font-weight: normal;
     padding: 0.5rem;
-    width: ${stanSize * 3}rem;
+    width: calc(var(--circle-letter-size) * 3);
     pointer-events: none;
     background-image: url('/noise.png');
 `;

@@ -8,7 +8,7 @@ export const SectionBoxContainer = styled.div<{ $center: boolean }>`
         $center && $center ? 'space-between' : 'flex-start'};
 
     @media (max-width: 480px) {
-        gap: var(--card-gap);
+        gap: var(--long-card-gap);
         justify-content: space-between;
     }
 

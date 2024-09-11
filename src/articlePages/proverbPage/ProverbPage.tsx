@@ -20,7 +20,11 @@ import TextSegment from '../../components/common/articleTextSegment/TextSegment'
 import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 
 // Styled components
-import { ProverbContainer, QuoteWrapper, Shadow } from './proverbPageStyles';
+import {
+    ProverbInnerContainer,
+    QuoteWrapper,
+    Shadow,
+} from './proverbPageStyles';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 const ProverbPage = () => {
@@ -69,7 +73,7 @@ const ProverbPage = () => {
                 <Fade inProp={!loading}>
                     <ArticlePageFirstContainer>
                         <Shadow />
-                        <ProverbContainer>
+                        <ProverbInnerContainer $height={40}>
                             <ProverbSoundBox proverb={proverb} />
                             <QuoteWrapper
                                 $lang={lang}
@@ -93,7 +97,7 @@ const ProverbPage = () => {
                             {proverb.references ? (
                                 <Sources data={proverb.references[lang]} />
                             ) : null}
-                        </ProverbContainer>
+                        </ProverbInnerContainer>
                     </ArticlePageFirstContainer>
                 </Fade>
             ) : // !loading &&

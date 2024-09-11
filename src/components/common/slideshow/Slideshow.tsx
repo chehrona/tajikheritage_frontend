@@ -50,6 +50,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
         }
     };
 
+    console.log(currentIndex);
+
     return (
         <SlideContainer>
             {slides.length > 1 && (
@@ -97,13 +99,18 @@ const Slideshow: React.FC<SlideshowProps> = ({
                       })
                     : null}
             </ImageContainer>
-            <ButtonWrapper>
-                <LeftButton disabled={currentIndex === 0} movePrev={movePrev} />
-                <RightButton
-                    disabled={currentIndex === infoArr?.length - 1}
-                    moveNext={moveNext}
-                />
-            </ButtonWrapper>
+            {infoArr?.length > 1 ? (
+                <ButtonWrapper>
+                    <LeftButton
+                        disabled={currentIndex === 0}
+                        movePrev={movePrev}
+                    />
+                    <RightButton
+                        disabled={currentIndex === infoArr?.length - 1}
+                        moveNext={moveNext}
+                    />
+                </ButtonWrapper>
+            ) : null}
         </SlideContainer>
     );
 };

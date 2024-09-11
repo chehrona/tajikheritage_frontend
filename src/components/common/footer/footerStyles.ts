@@ -27,8 +27,6 @@ export const FooterInnerContainer = styled.div`
     color: var(--secondary-grey-color);
     max-height: var(--desktop-footer-height);
     min-height: var(--desktop-footer-height);
-    position: relative;
-    z-index: 10;
     justify-content: space-between;
 
     @media (max-width: 480px) {
