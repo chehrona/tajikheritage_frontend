@@ -59,7 +59,16 @@ export const RefContainer = styled.div<{ $open: boolean }>`
               `};
 
     @media (max-width: 480px) {
-        height: ${({ $open }) => ($open ? '30rem' : '0rem')};
+        ${({ $open }) =>
+            $open
+                ? css`
+                      height: 30rem;
+                      padding: 0.25rem 0.25rem 0.25rem 0rem;
+                  `
+                : css`
+                      height: 0rem;
+                      padding: 0rem;
+                  `};
     }
 `;
 
@@ -85,6 +94,10 @@ export const RefWrapper = styled.div<{ $open: boolean }>`
         width: 100%;
         margin: 0rem;
         padding: var(--page-padding);
+
+        &::-webkit-scrollbar {
+            width: 0.25rem;
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

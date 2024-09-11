@@ -20,7 +20,7 @@ import EtymologyPage from '../../../middlePages/wordsPage/EtymologyPage';
 // Article pages
 import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
-import GenericArticlePage from '../../../articlePages/generticArticlePage/GenericArticlePage';
+import GenericArticlePage from '../../../articlePages/genericArticlePage/GenericArticlePage';
 import RecipePage from '../../../articlePages/recipePage/RecipePage';
 import WordPage from '../../../articlePages/wordPage/WordPage';
 

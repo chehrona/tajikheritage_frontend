@@ -56,7 +56,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     // Set a title
-    useSetHeader(page, 'middle', allItems);
+    useSetHeader(page, 'middle');
 
     useEffect(() => {
         // Get data

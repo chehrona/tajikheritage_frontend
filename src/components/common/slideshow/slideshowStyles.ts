@@ -82,6 +82,7 @@ export const ImgInfo = styled.div`
     height: auto;
 
     @media (max-width: 1024px) {
+        bottom: 0rem;
         font-size: var(--info-text);
         line-height: var(--info-text) + 0.35rem;
     }
