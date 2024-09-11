@@ -1,16 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Copyright } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
 export const FooterContainer = styled.div<{ $show: boolean }>`
-    background: var(--primary-black-color);
     width: 100%;
     height: var(--footer-height);
     max-height: var(--footer-height);
     min-height: var(--footer-height);
-    opacity: ${({ $show }) => ($show ? 1 : 0)};
-    visibility: ${({ $show }) => ($show ? 'visible' : 'hidden')};
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    background: var(--primary-black-color);
+    transition: opacity 0.5s ease, visibility 0.5s ease, display 0.5s ease;
+    ${({ $show }) =>
+        $show
+            ? css`
+                  display: block;
+                  opacity: 1;
+                  visibility: visible;
+              `
+            : css`
+                  display: none;
+                  opacity: 0;
+                  visibility: hidden;
+              `}
 
     @media (max-width: 480px) {
         justify-content: center;
@@ -28,8 +38,8 @@ export const FooterInnerContainer = styled.div`
     align-items: center;
     box-sizing: border-box;
     color: var(--secondary-grey-color);
-    max-height: var(--desktop-footer-height);
-    min-height: var(--desktop-footer-height);
+    max-height: var(--footer-height);
+    min-height: var(--footer-height);
     justify-content: space-between;
 
     @media (max-width: 480px) {

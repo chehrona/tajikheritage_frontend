@@ -12,7 +12,6 @@ import staticText from '../../miscellaneous/staticTexts.json';
 import { requestMiddlePage } from '../../services/request';
 
 // Components
-import PageTransition from '../../components/common/pageTransition/Transition';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
@@ -73,30 +72,24 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     return (
         <>
             <Loader inProp={loading} />
-            {!loading && items.length > 0 ? (
-                <PageTransition inProp={!loading}>
-                    <LandingPageFirstContainer>
-                        <PageTitle>
-                            {staticText.ETYM_PAGE_HEADER[lang]}
-                        </PageTitle>
-                        {/* Don't change to search bar, filtering is different */}
-                        <LetterStack
-                            setItems={setItems}
-                            allItems={allItems}
-                            isDropdownOpen={isDropdownOpen}
-                            setIsDropdownOpen={setIsDropdownOpen}
-                        />
-                        {!isDropdownOpen && (
-                            <CardsContainer $center={items.length % 3 === 0}>
-                                {items.map((item, i) => {
-                                    return (
-                                        <SquareCard key={item.id} data={item} />
-                                    );
-                                })}
-                            </CardsContainer>
-                        )}
-                    </LandingPageFirstContainer>
-                </PageTransition>
+            {items.length > 0 ? (
+                <LandingPageFirstContainer>
+                    <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
+                    {/* Don't change to search bar, filtering is different */}
+                    <LetterStack
+                        setItems={setItems}
+                        allItems={allItems}
+                        isDropdownOpen={isDropdownOpen}
+                        setIsDropdownOpen={setIsDropdownOpen}
+                    />
+                    {!isDropdownOpen && (
+                        <CardsContainer $center={items.length % 3 === 0}>
+                            {items.map((item, i) => {
+                                return <SquareCard key={item.id} data={item} />;
+                            })}
+                        </CardsContainer>
+                    )}
+                </LandingPageFirstContainer>
             ) : (
                 !loading &&
                 error !== undefined && <Alert message={error} type={'error'} />

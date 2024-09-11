@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
+import { useLocation } from 'react-router-dom';
 
 // Helper
 import { langNames } from './langNames';
@@ -22,8 +23,12 @@ import {
 } from './flagsStyles';
 
 const Flags: React.FC = () => {
+    const location = useLocation();
     const [showLangMenu, setShowLangMenu] = useState<boolean>(false);
     const { lang, setLang } = useGlobalData();
+
+    // Don't show the header
+    const noShow = location.pathname.includes('print');
 
     const showLangOptions = useCallback(() => {
         setShowLangMenu(true);
@@ -55,7 +60,7 @@ const Flags: React.FC = () => {
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
-            <FlagWrapper>
+            <FlagWrapper $show={!noShow}>
                 <FlagDropdown $showLangMenu={showLangMenu}>
                     {lang !== 'us' && (
                         <StyledIconButton data="us" onClick={changeLang}>

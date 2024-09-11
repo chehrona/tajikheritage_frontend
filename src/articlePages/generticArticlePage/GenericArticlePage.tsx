@@ -15,7 +15,6 @@ import { requestArticleInfo } from '../../services/request';
 // Components
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
-import PageTransition from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
@@ -72,29 +71,23 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
         <>
             <Loader inProp={loading} />
             {!loading && data ? (
-                <PageTransition inProp={!loading}>
-                    <ArticlePageFirstContainer>
-                        <PageInnerContainer height={40}>
-                            {data.desc[lang].map((entry, i) => {
-                                return (
-                                    <TextSegment
-                                        i={i}
-                                        key={`${data?.name[lang]}_${i}`}
-                                        reverse={i % 2 > 0}
-                                        data={entry}
-                                        title={data.name[lang]}
-                                    />
-                                );
-                            })}
-                            <Sources data={data.references[lang]} />
-                        </PageInnerContainer>
-                    </ArticlePageFirstContainer>
-                </PageTransition>
-            ) : // !loading &&
-            // error[lang].length > 0 && (
-            //     <Alert message={error} type={'error'} />
-            // )
-            null}
+                <ArticlePageFirstContainer>
+                    <PageInnerContainer height={40}>
+                        {data.desc[lang].map((entry, i) => {
+                            return (
+                                <TextSegment
+                                    i={i}
+                                    key={`${data?.name[lang]}_${i}`}
+                                    reverse={i % 2 > 0}
+                                    data={entry}
+                                    title={data.name[lang]}
+                                />
+                            );
+                        })}
+                        <Sources data={data.references[lang]} />
+                    </PageInnerContainer>
+                </ArticlePageFirstContainer>
+            ) : null}
         </>
     );
 };

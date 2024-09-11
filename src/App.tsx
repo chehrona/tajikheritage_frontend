@@ -97,12 +97,7 @@ function App(): React.JSX.Element {
         <ErrorBoundary FallbackComponent={ErrorPage}>
             <DataContext.Provider value={value}>
                 <GlobalStyles />
-                <div
-                    className="content-container"
-                    ref={parentRef}
-                    onScroll={handleScroll}
-                    onCopy={handleCopy}
-                >
+                <div className="parent-container" onCopy={handleCopy}>
                     <Header
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
@@ -113,8 +108,15 @@ function App(): React.JSX.Element {
                         isMenuShown={isMenuShown}
                         menuAnchorEl={menuAnchorEl}
                     />
-                    <div className="routes-container">
-                        <Routes />
+                    <div className="content-container">
+                        <div
+                            className="routes-container"
+                            ref={parentRef}
+                            onScroll={handleScroll}
+                        >
+                            <Routes />
+                        </div>
+                        <Footer />
                     </div>
                     <div className="fixed-container">
                         <Flags />
@@ -122,7 +124,6 @@ function App(): React.JSX.Element {
                             <ScrollUpArrow parentRef={parentRef} />
                         ) : null}
                     </div>
-                    <Footer />
                 </div>
             </DataContext.Provider>
         </ErrorBoundary>

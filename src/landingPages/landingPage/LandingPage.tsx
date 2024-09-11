@@ -10,7 +10,6 @@ import { requestPage } from '../../services/request';
 
 // Components
 import SectionCard from '../../components/common/sectionCard/SectionCard';
-import PageTransition from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
@@ -62,29 +61,21 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     return (
         <>
             <Loader inProp={loading} />
-            {!loading && sections.length > 0 ? (
-                <PageTransition inProp={!loading}>
-                    <LandingPageFirstContainer>
-                        <SectionBoxContainer
-                            $center={sections.length % 3 === 0}
-                        >
-                            {sections?.map((section, i) => {
-                                return (
-                                    <SectionCard
-                                        key={section.cardTitle[lang]}
-                                        section={section}
-                                        link={section?.link}
-                                    />
-                                );
-                            })}
-                        </SectionBoxContainer>
-                    </LandingPageFirstContainer>
-                </PageTransition>
-            ) : // !loading &&
-            // error[lang]?.length > 0 && (
-            //     <Alert message={error} type={'error'} />
-            // )
-            null}
+            {!loading ? (
+                <LandingPageFirstContainer>
+                    <SectionBoxContainer $center={sections.length % 3 === 0}>
+                        {sections?.map((section, i) => {
+                            return (
+                                <SectionCard
+                                    key={section.cardTitle[lang]}
+                                    section={section}
+                                    link={section?.link}
+                                />
+                            );
+                        })}
+                    </SectionBoxContainer>
+                </LandingPageFirstContainer>
+            ) : null}
         </>
     );
 };

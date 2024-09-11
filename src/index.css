@@ -88,24 +88,28 @@ body * {
     box-sizing: border-box;
 }
 
-.content-container {
+.parent-container {
     display: flex;
+    overflow-y: scroll;
     flex-direction: column;
     position: relative;
     max-width: 1440px;
     min-height: 100vh;
-    overflow-y: scroll;
     margin: 0 auto;
     background: var(--primary-black-color);
 }
 
-.content-container::-webkit-scrollbar {
+.parent-container::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
 }
 
+.content-container {
+    height: calc(100vh - var(--header-height));
+}
+
 .routes-container {
-    flex: 1;
+    min-height: var(--page-height);
 }
 
 .fixed-container {

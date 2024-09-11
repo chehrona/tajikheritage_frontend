@@ -1,20 +1,31 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 // Article page *************************
 export const ArticleContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     background-color: var(--regular-white-color);
-    padding: 2rem var(--desktop-padding);
+    padding: 2rem var(--page-padding);
+    animation: ${fadeIn} 1s ease-in-out forwards;
 
     @media (max-width: 480px) {
         padding: 0rem;
-        font-size: 1.3rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: var(--tablet-padding) var(--mobile-padding);
-        font-size: 1.3rem;
+        padding: var(--page-padding);
     }
 `;
 
@@ -23,6 +34,7 @@ export const LandingContainer = styled.div`
     box-sizing: border-box;
     padding: 2rem 7rem;
     background: var(--regular-white-color);
+    animation: ${fadeIn} 1s ease-in-out forwards;
 
     @media (max-width: 480px) {
         padding: var(--page-padding);

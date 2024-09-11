@@ -5,8 +5,7 @@ export const LoaderContainer = styled.div<{ $inProp: boolean }>`
     top: var(--header-height);
     left: 0;
     width: 100%;
-    height: var(--page-height);
-    min-height: var(--page-height);
+    height: 100%;
     z-index: 10;
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 15rem 15rem;

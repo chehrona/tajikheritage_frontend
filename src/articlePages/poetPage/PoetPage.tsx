@@ -26,7 +26,6 @@ import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
-import PageTransition from '../../components/common/pageTransition/Transition';
 
 const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
@@ -92,32 +91,23 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     return (
         <>
             <Loader inProp={loading} />
-            {!loading && poet ? (
-                <PageTransition inProp={!loading}>
-                    <PageFirstContainer>
-                        <PageInnerContainer height={40}>
-                            <PoetIntro
-                                poet={poet}
-                                scrollToView={scrollToView}
-                            />
-                            <SectionOptions
-                                sections={poet.sections}
-                                scrollToView={scrollToView}
-                            />
-                            <PoetBio bioData={poet?.bio} />
-                            <PoetWorks works={poet?.works[lang]} />
-                            <PoetMovies movies={poet?.movies[lang]} />
-                            <PoetCareer points={poet?.career} />
-                            <PoetAwards awards={poet?.awards[lang]} />
-                            <Sources data={poet?.references[lang]} />
-                        </PageInnerContainer>
-                    </PageFirstContainer>
-                </PageTransition>
-            ) : // !loading &&
-            // error[lang]?.length > 0 && (
-            //     <Alert message={error} type={'error'} />
-            // )
-            null}
+            {poet ? (
+                <PageFirstContainer>
+                    <PageInnerContainer height={40}>
+                        <PoetIntro poet={poet} scrollToView={scrollToView} />
+                        <SectionOptions
+                            sections={poet.sections}
+                            scrollToView={scrollToView}
+                        />
+                        <PoetBio bioData={poet?.bio} />
+                        <PoetWorks works={poet?.works[lang]} />
+                        <PoetMovies movies={poet?.movies[lang]} />
+                        <PoetCareer points={poet?.career} />
+                        <PoetAwards awards={poet?.awards[lang]} />
+                        <Sources data={poet?.references[lang]} />
+                    </PageInnerContainer>
+                </PageFirstContainer>
+            ) : null}
         </>
     );
 };

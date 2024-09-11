@@ -1,5 +1,5 @@
+import styled, { css } from 'styled-components';
 import { IconButton, Tooltip, tooltipClasses } from '@mui/material';
-import styled from 'styled-components';
 
 // Types
 import { IconButtonProps } from './types/styleTypes';
@@ -11,10 +11,23 @@ const usLogo = `${process.env.PUBLIC_URL}/flags/united-states.png`;
 const ruLogo = `${process.env.PUBLIC_URL}/flags/russia.png`;
 const tjLogo = `${process.env.PUBLIC_URL}/flags/tajikistan.png`;
 
-export const FlagWrapper = styled.div`
+export const FlagWrapper = styled.div<{ $show: boolean }>`
     width: fit-content;
     cursor: pointer;
     pointer-events: auto;
+    transition: opacity 0.5s ease, visibility 0.5s ease, display 0.5s ease;
+    ${({ $show }) =>
+        $show
+            ? css`
+                  display: block;
+                  opacity: 1;
+                  visibility: visible;
+              `
+            : css`
+                  display: none;
+                  opacity: 0;
+                  visibility: hidden;
+              `}
 
     @media (max-width: 480px) {
         position: fixed;
