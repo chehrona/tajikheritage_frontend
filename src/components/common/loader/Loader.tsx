@@ -3,17 +3,16 @@ import React from 'react';
 // Components
 import PageTransition from '../pageTransition/Transition';
 
-// Styled components
-import { MainContainer, LoaderImg, LoaderContainer } from './loaderStyles';
+// Types
+import { LoaderProps } from './types/componentTypes';
 
-const Loader: React.FC<{ inProp: boolean }> = ({ inProp }) => {
+// Styled components
+import { LoaderContainer } from './loaderStyles';
+
+const Loader: React.FC<LoaderProps> = ({ children, inProp }) => {
     return (
-        <PageTransition inProp={inProp} type="loader">
-            <MainContainer>
-                <LoaderContainer>
-                    <LoaderImg src={'/loader.png'} />
-                </LoaderContainer>
-            </MainContainer>
+        <PageTransition inProp={inProp}>
+            <LoaderContainer>{children}</LoaderContainer>
         </PageTransition>
     );
 };

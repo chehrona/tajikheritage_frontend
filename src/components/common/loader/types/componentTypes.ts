@@ -1,12 +1,6 @@
-export type TransitionState =
-    | 'entering'
-    | 'entered'
-    | 'exiting'
-    | 'exited'
-    | 'unmounted';
+import { ReactNode } from 'react';
 
-export type transitionStylesProps = {
-    [key in TransitionState]: {
-        [key in string]: number | string;
-    };
+export type LoaderProps = {
+    inProp: boolean;
+    children: ReactNode;
 };

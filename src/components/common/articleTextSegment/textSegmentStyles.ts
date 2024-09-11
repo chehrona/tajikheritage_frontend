@@ -61,7 +61,6 @@ export const SlideContainer = styled.div<SlideContainerProps>`
             $i === 0
                 ? '0rem 0rem var(--text-segment-gap) 0rem'
                 : 'var(--text-segment-gap) 0rem'};
-        background-color: blue;
         border-top-left-radius: 0rem;
     }
 

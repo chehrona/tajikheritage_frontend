@@ -10,7 +10,7 @@ import { requestPage } from '../../services/request';
 
 // Components
 import SectionCard from '../../components/common/sectionCard/SectionCard';
-import Fade from '../../components/common/pageTransition/Transition';
+import PageTransition from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
@@ -43,7 +43,11 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
             //     }
             // }
         } finally {
-            setLoading(false);
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 400);
+
+            return () => clearTimeout(timer);
         }
     };
 
@@ -57,31 +61,31 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
-            {!loading && sections.length > 0 ? (
-                <Fade inProp={!loading}>
-                    <LandingPageFirstContainer>
-                        <SectionBoxContainer
-                            $center={sections.length % 3 === 0}
-                        >
-                            {sections?.map((section, i) => {
-                                return (
-                                    <SectionCard
-                                        i={i}
-                                        key={section.cardTitle[lang]}
-                                        section={section}
-                                        link={section?.link}
-                                    />
-                                );
-                            })}
-                        </SectionBoxContainer>
-                    </LandingPageFirstContainer>
-                </Fade>
-            ) : // !loading &&
-            // error[lang]?.length > 0 && (
-            //     <Alert message={error} type={'error'} />
-            // )
-            null}
+            <Loader inProp={loading}>
+                {!loading && sections.length > 0 ? (
+                    <PageTransition inProp={!loading}>
+                        <LandingPageFirstContainer>
+                            <SectionBoxContainer
+                                $center={sections.length % 3 === 0}
+                            >
+                                {sections?.map((section, i) => {
+                                    return (
+                                        <SectionCard
+                                            key={section.cardTitle[lang]}
+                                            section={section}
+                                            link={section?.link}
+                                        />
+                                    );
+                                })}
+                            </SectionBoxContainer>
+                        </LandingPageFirstContainer>
+                    </PageTransition>
+                ) : // !loading &&
+                // error[lang]?.length > 0 && (
+                //     <Alert message={error} type={'error'} />
+                // )
+                null}
+            </Loader>
         </>
     );
 };

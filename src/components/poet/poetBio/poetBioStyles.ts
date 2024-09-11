@@ -340,7 +340,6 @@ export const Text = styled.div`
         font-size: var(--body-text);
         overflow-y: scroll;
         margin-bottom: 2rem;
-        background-color: blue;
     }
 `;
 

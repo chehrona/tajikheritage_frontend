@@ -13,5 +13,4 @@ export type SectionDetails = {
 export type SectionCardProps = {
     section: SectionDetails;
     link: string;
-    i: number;
 };

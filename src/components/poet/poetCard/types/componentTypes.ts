@@ -17,8 +17,3 @@ export type PoetCardType = Omit<
     tags: string[];
     disabled: boolean;
 };
-
-export type PoetCardProps = {
-    poet: PoetCardType;
-    i: number;
-};

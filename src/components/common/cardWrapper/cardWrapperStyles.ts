@@ -25,7 +25,6 @@ export const StyledLink = styled(Link)<LinkProps>`
     border-radius: 0.7rem;
     animation: ${slideOut} 1s ease-in-out forwards;
     transition: border-radius 250ms, box-shadow 400ms;
-    animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
     height: ${({ $type }) => ($type === 'long' ? '35rem' : '23rem')};
     ${({ $disabled }) =>
         $disabled

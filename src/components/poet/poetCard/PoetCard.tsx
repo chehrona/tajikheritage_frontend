@@ -11,7 +11,7 @@ import CardWrapper from '../../common/cardWrapper/CardWrapper';
 import Alert from '../../common/alert/Alert';
 
 // Types
-import { PoetCardProps } from './types/componentTypes';
+import { PoetCardType } from './types/componentTypes';
 
 // Styled components
 import {
@@ -24,7 +24,7 @@ import {
     PoetInfoContainer,
 } from './poetCardStyles';
 
-const PoetCard: React.FC<PoetCardProps> = ({ poet, i }) => {
+const PoetCard: React.FC<{ poet: PoetCardType }> = ({ poet }) => {
     const { lang } = useGlobalData();
     const [error, setError] = useState<boolean>(false);
     const poetName = poet?.name[lang].split(' ');
@@ -32,7 +32,6 @@ const PoetCard: React.FC<PoetCardProps> = ({ poet, i }) => {
     return (
         <>
             <CardWrapper
-                i={i}
                 type={'long'}
                 disabled={poet.disabled}
                 page={poet?.id}

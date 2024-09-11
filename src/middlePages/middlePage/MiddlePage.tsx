@@ -11,7 +11,7 @@ import { requestMiddlePage } from '../../services/request';
 // Components
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Fade from '../../components/common/pageTransition/Transition';
+import PageTransition from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
@@ -48,7 +48,11 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
             //     }
             // }
         } finally {
-            setLoading(false);
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 400);
+
+            return () => clearTimeout(timer);
         }
     };
 
@@ -62,35 +66,32 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
-            {!loading && items.length > 0 ? (
-                <Fade inProp={!loading}>
-                    <LandingPageFirstContainer>
-                        <SearchBar
-                            items={items}
-                            setItems={setItems}
-                            allItems={allItems}
-                        />
-                        <InnerBoxContainer $center={items.length % 3 === 0}>
-                            {items.map((item, i) =>
-                                page.includes('poets') ? (
-                                    <PoetCard key={item.id} poet={item} i={i} />
-                                ) : (
-                                    <SquareCard
-                                        key={item.id}
-                                        data={item}
-                                        i={i}
-                                    />
-                                ),
-                            )}
-                        </InnerBoxContainer>
-                    </LandingPageFirstContainer>
-                </Fade>
-            ) : // !loading &&
-            // error[lang]?.length > 0 && (
-            //     <Alert message={error} type={'error'} />
-            // )
-            null}
+            <Loader inProp={loading}>
+                {!loading && items.length > 0 ? (
+                    <PageTransition inProp={!loading}>
+                        <LandingPageFirstContainer>
+                            <SearchBar
+                                items={items}
+                                setItems={setItems}
+                                allItems={allItems}
+                            />
+                            <InnerBoxContainer $center={items.length % 3 === 0}>
+                                {items.map((item, i) =>
+                                    page.includes('poets') ? (
+                                        <PoetCard key={item.id} poet={item} />
+                                    ) : (
+                                        <SquareCard key={item.id} data={item} />
+                                    ),
+                                )}
+                            </InnerBoxContainer>
+                        </LandingPageFirstContainer>
+                    </PageTransition>
+                ) : // !loading &&
+                // error[lang]?.length > 0 && (
+                //     <Alert message={error} type={'error'} />
+                // )
+                null}
+            </Loader>
         </>
     );
 };

@@ -34,6 +34,10 @@ export const ProverbInnerContainer = styled(MainContainer)`
     z-index: 3;
     margin-top: 3rem;
 
+    @media (max-width: 480px) {
+        margin-top: 0rem;
+    }
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         margin-top: 3.5rem;
     }
@@ -184,7 +188,7 @@ export const QuoteWrapper = styled.div<{ $lang: string }>`
     @media (max-width: 480px) {
         padding: ${({ $lang }) =>
             $lang === 'tj'
-                ? '4rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'
+                ? '3.5rem var(--page-padding) calc(2 * var(--text-segment-gap)) var(--page-padding)'
                 : '5rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'};
     }
 

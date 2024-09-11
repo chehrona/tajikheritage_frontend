@@ -7,7 +7,6 @@ import { CardWrapperProps } from './types/componentTypes';
 import { StyledLink } from './cardWrapperStyles';
 
 const CardWrapper: React.FC<CardWrapperProps> = ({
-    i,
     page,
     disabled = false,
     children,
@@ -27,7 +26,6 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
     return (
         <StyledLink
             $type={type}
-            $delay={`${0.01 * i}s`}
             $disabled={disabled}
             to={disabled ? '#' : page}
             onClick={handleNoContent}

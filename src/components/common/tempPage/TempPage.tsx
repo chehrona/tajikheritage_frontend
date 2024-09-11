@@ -7,8 +7,11 @@ import { useSetHeader } from '../../../hooks/useSetHeader';
 //Helper
 import info from '../../../miscellaneous/staticTexts.json';
 
+// Components
+import Loader from '../loader/Loader';
+
 // Styled components
-import { TempImg, TempPageContainer, TempTitle } from './tempPageStyles';
+import { TempPageContainer, TempTitle } from './tempPageStyles';
 
 const TempPage: React.FC<{ page: string }> = ({ page }) => {
     // Delete
@@ -16,10 +19,11 @@ const TempPage: React.FC<{ page: string }> = ({ page }) => {
     useSetHeader(page, 'landing', '');
 
     return (
-        <TempPageContainer>
-            <TempTitle>{info.TEMP_PAGE_INFO[lang]}</TempTitle>
-            <TempImg src={'/loader.png'} />
-        </TempPageContainer>
+        <Loader inProp={true}>
+            <TempPageContainer>
+                <TempTitle>{info.TEMP_PAGE_INFO[lang]}</TempTitle>
+            </TempPageContainer>
+        </Loader>
     );
 };
 

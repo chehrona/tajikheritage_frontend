@@ -1,21 +1,12 @@
 import styled from 'styled-components';
+import { LandingContainer } from '../pageWrapper/pageWrapperStyles';
 
-export const MainContainer = styled.div`
-    background-color: var(--primary-black-color);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 300vh;
-`;
+export const LoaderContainer = styled(LandingContainer)`
+    background: var(--primary-black-color) url('/loader.png') center no-repeat;
+    background-size: 15rem 15rem;
+    padding: 0rem;
 
-export const LoaderContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100svh;
-`;
-
-export const LoaderImg = styled.img`
-    width: 15rem;
-    height: 15rem;
+    @media (max-width: 480px) {
+        background-size: 10rem 10rem;
+    }
 `;
