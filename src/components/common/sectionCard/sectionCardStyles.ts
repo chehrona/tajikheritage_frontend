@@ -28,7 +28,7 @@ export const SectionTitle = styled.div<{ $length: number }>`
     // Done
     @media (max-width: 480px) {
         width: 100%;
-        font-size: var(--header-normal-text);
+        font-size: var(--header-small);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

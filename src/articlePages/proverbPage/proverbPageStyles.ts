@@ -178,8 +178,8 @@ export const QuoteWrapper = styled.div<{ $lang: string }>`
     font-style: italic;
     font-weight: bold;
     font-family: var(--fancy-font);
-    font-size: var(--header-big-text);
-    line-height: var(--header-big-text-line-height);
+    font-size: var(--header-big);
+    line-height: var(--header-big-line-height);
     padding: ${({ lang }) =>
         lang === 'tj'
             ? '3rem var(--page-padding) 2rem var(--page-padding)'

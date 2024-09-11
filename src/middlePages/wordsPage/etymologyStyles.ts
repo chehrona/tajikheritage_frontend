@@ -9,8 +9,8 @@ export const PageTitle = styled.div`
     text-align: center;
 
     @media (max-width: 480px) {
-        font-size: var(--header-medium-text);
-        line-height: var(--header-medium-text);
+        font-size: var(--header-medium);
+        line-height: var(--header-medium);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

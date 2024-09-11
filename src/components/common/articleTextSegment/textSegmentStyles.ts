@@ -83,7 +83,7 @@ export const Title = styled.div`
 
     // Done
     @media (max-width: 480px) {
-        font-size: var(--header-large-text);
+        font-size: var(--header-large);
         padding: 0rem var(--page-padding) var(--text-segment-gap)
             var(--page-padding);
     }

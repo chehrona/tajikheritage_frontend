@@ -120,7 +120,7 @@ export const PageName = styled.div`
 
     // Done
     @media screen and (max-device-width: 480px) {
-        font-size: var(--header-medium-text);
+        font-size: var(--header-medium);
     }
 `;
 

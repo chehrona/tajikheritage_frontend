@@ -109,13 +109,9 @@ export const FirstTitle = styled.div<{ $isElipsis: boolean }>`
     font-style: normal;
     font-weight: bold;
     color: var(--primary-gold-color);
-    ${({ $isElipsis }) =>
-        $isElipsis &&
-        css`
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        `}
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export const SecondTitle = styled.div`

@@ -126,7 +126,7 @@ export const Text = styled.text`
     letter-spacing: 2.5px;
 
     @media (max-width: 480px) {
-        font-size: var(--header-medium-text);
+        font-size: var(--header-medium);
         letter-spacing: 3px;
     }
 

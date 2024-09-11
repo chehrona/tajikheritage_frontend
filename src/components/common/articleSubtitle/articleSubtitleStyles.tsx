@@ -54,7 +54,7 @@ export const Subtitle = styled.span`
     display: flex;
 
     @media (max-width: 480px) {
-        font-size: var(--header-normal-text);
+        font-size: var(--header-small);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

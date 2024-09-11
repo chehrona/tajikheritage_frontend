@@ -25,7 +25,7 @@ import {
     WordTitle,
     Transcript,
     PronunciationWrapper,
-    BodyContainer,
+    MainContainer,
 } from './wordPageStyles';
 
 const WordPage: React.FC = () => {
@@ -79,7 +79,7 @@ const WordPage: React.FC = () => {
             <Loader inProp={loading} />
             {word ? (
                 <PageFirstContainer>
-                    <BodyContainer>
+                    <MainContainer>
                         <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
                         <PronunciationWrapper>
                             <Transcript>{word.transcript}</Transcript>
@@ -95,7 +95,7 @@ const WordPage: React.FC = () => {
                             );
                         })}
                         <Sources data={word.references[lang]} />
-                    </BodyContainer>
+                    </MainContainer>
                 </PageFirstContainer>
             ) : null}
         </>

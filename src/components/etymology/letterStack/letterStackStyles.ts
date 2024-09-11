@@ -57,7 +57,7 @@ export const LetterContainer = styled.div`
     width: 58rem;
 
     @media (max-width: 480px) {
-        height: calc(11 * var(--circle-letter-size));
+        height: calc(10 * var(--circle-letter-size));
         width: calc(5 * var(--circle-letter-size));
     }
 `;
@@ -112,7 +112,7 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
     justify-content: center;
     align-items: center;
     color: var(--primary-gold-color);
-    font-size: var(--header-big-text);
+    font-size: var(--header-big);
     will-change: transform;
     font-family: var(--fancy-font);
 
@@ -180,7 +180,7 @@ export const CircleWrapper = styled(WrapperBase)`
 `;
 
 export const InstructionWrapper = styled(WrapperBase)`
-    font-size: calc(var(--header-normal-text) * 1.25);
+    font-size: calc(var(--header-small) * 1.25);
     font-weight: normal;
     padding: 0.5rem;
     width: calc(var(--circle-letter-size) * 3);

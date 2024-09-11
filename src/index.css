@@ -33,9 +33,9 @@ html {
 
     /* Font-sizes */
     --body-text: 1rem;
-    --header-large-text: 2.5rem;
-    --header-big-text: 1.75rem;
-    --header-medium-text: 1.5rem;
+    --header-large: 2.5rem;
+    --header-big: 1.75rem;
+    --header-medium: 1.5rem;
 
     /* Padding */
     --page-padding: 3.2rem;
@@ -53,10 +53,11 @@ html {
 @media (max-width: 480px) {
     :root {
         /* Font-sizes */
-        --header-large-text: 3rem;
-        --header-big-text: 2.25rem;
-        --header-medium-text: 1.75rem;
-        --header-normal-text: 1.15rem;
+        --header-large: 3rem;
+        --header-big: 2.25rem;
+        --header-medium: 1.75rem;
+        --header-normal: 1.5rem;
+        --header-small: 1.15rem;
         --info-text: 0.9rem;
 
         /* Padding */
@@ -71,7 +72,7 @@ html {
 
         /* Line-heights */
         --body-text-line-height: calc(var(--body-text) * 1.45);
-        --header-big-text-line-height: calc(var(--header-big-text) * 1.05);
+        --header-big-line-height: calc(var(--header-big) * 1.05);
     }
 }
 

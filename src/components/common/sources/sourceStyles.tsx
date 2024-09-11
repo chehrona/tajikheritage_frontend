@@ -101,7 +101,7 @@ export const SubTitle = styled.div`
     color: var(--primary-white-color);
 
     @media (max-width: 1024px) {
-        font-size: var(--header-medium-text);
+        font-size: var(--header-medium);
         margin-bottom: 0.5rem;
     }
 `;

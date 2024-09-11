@@ -81,7 +81,7 @@ const GlobalStyles = createGlobalStyle`
 
         .quoteWrapper {
             margin: 1rem -1rem 0rem 0rem;
-            font-size: var(--header-normal-text);
+            font-size: var(--header-small);
         }
 
         .quoteSymbol {
