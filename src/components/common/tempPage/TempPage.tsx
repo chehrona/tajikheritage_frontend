@@ -19,11 +19,12 @@ const TempPage: React.FC<{ page: string }> = ({ page }) => {
     useSetHeader(page, 'landing', '');
 
     return (
-        <Loader inProp={true}>
+        <>
+            <Loader inProp={true} />
             <TempPageContainer>
                 <TempTitle>{info.TEMP_PAGE_INFO[lang]}</TempTitle>
             </TempPageContainer>
-        </Loader>
+        </>
     );
 };
 

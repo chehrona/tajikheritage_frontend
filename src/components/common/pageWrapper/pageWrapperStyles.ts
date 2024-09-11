@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const ArticleContainer = styled.div`
     position: relative;
     box-sizing: border-box;
-    min-height: 100svh;
     background-color: var(--regular-white-color);
     padding: 2rem var(--desktop-padding);
 
@@ -22,7 +21,6 @@ export const ArticleContainer = styled.div`
 // Landing page *************************
 export const LandingContainer = styled.div`
     box-sizing: border-box;
-    min-height: 100svh;
     padding: 2rem 7rem;
     background: var(--regular-white-color);
 

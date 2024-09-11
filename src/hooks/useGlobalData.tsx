@@ -11,8 +11,6 @@ export const DataContext = createContext<ContextTypes>({
     setTitle: () => {},
     lang: 'us',
     setLang: () => {},
-    isPrint: false,
-    setIsPrint: () => {},
     showAdmin: true,
     setShowAdmin: () => {},
 });

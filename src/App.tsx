@@ -34,7 +34,6 @@ function App(): React.JSX.Element {
     const parentRef = useRef<HTMLInputElement>(null);
     const [position, setPosition] = useState<number>(0);
     const [showArrow, setShowArrow] = useState<boolean>(false);
-    const [isPrint, setIsPrint] = useState<boolean>(false);
     const [showAdmin, setShowAdmin] = useState<boolean>(true);
     const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
     const menuAnchorEl = useRef<HTMLDivElement | null>(null);
@@ -45,12 +44,10 @@ function App(): React.JSX.Element {
             setTitle,
             lang,
             setLang,
-            isPrint,
-            setIsPrint,
             showAdmin,
             setShowAdmin,
         }),
-        [lang, isPrint, title, showAdmin],
+        [lang, title, showAdmin],
     );
 
     useEffect(() => {
@@ -106,26 +103,26 @@ function App(): React.JSX.Element {
                     onScroll={handleScroll}
                     onCopy={handleCopy}
                 >
-                    {!isPrint && (
-                        <Header
-                            setIsMenuShown={setIsMenuShown}
-                            isMenuShown={isMenuShown}
-                            menuAnchorEl={menuAnchorEl}
-                        />
-                    )}
+                    <Header
+                        setIsMenuShown={setIsMenuShown}
+                        isMenuShown={isMenuShown}
+                        menuAnchorEl={menuAnchorEl}
+                    />
                     <Menu
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
                         menuAnchorEl={menuAnchorEl}
                     />
-                    <Routes />
+                    <div className="routes-container">
+                        <Routes />
+                    </div>
                     <div className="fixed-container">
-                        {!isPrint && <Flags />}
+                        <Flags />
                         {showArrow ? (
                             <ScrollUpArrow parentRef={parentRef} />
                         ) : null}
                     </div>
-                    {!isPrint ? <Footer /> : null}
+                    <Footer />
                 </div>
             </DataContext.Provider>
         </ErrorBoundary>

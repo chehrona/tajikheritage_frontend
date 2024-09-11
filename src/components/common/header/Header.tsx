@@ -15,13 +15,13 @@ import {
     HeaderContainer,
     HeaderInnerBox,
     LogoWrapper,
+    TitleContainer,
     TitleWrapper,
-    Title,
     Logo,
-    MainTitle,
-    TitleSpan,
+    SecondTitle,
     StyledLink,
     Semicolon,
+    FirstTitle,
 } from './headerStyles';
 
 const sequence = [
@@ -40,6 +40,9 @@ const Header: React.FC<MenuProps> = ({
     const [titleOrder, setTitleOrder] = useState<number[]>([0, 1, 2]);
     const [sequenceIndex, setSequenceIndex] = useState<number>(0);
 
+    // Don't show the header
+    const noShow = location.pathname.includes('print');
+
     const handleLogoClick = useCallback(() => {
         setIsMenuShown(false);
     }, [setIsMenuShown]);
@@ -54,22 +57,22 @@ const Header: React.FC<MenuProps> = ({
     }, [sequenceIndex, location.pathname, lang]);
 
     return (
-        <HeaderContainer>
+        <HeaderContainer $show={!noShow}>
             <HeaderInnerBox>
                 <LogoWrapper>
                     <StyledLink to={'/'} onClick={handleLogoClick}>
                         <Logo src={'/tajiks.png'}></Logo>
                     </StyledLink>
                 </LogoWrapper>
-                <TitleWrapper>
+                <TitleContainer>
                     {titleOrder.map((order, i) => {
                         const isElipsis: boolean =
                             title[lang][order][0].length > 10;
                         const key = `title_key_${Math.random()}`;
 
                         return (
-                            <Title key={key} $index={i}>
-                                <TitleSpan
+                            <TitleWrapper key={key} $index={i}>
+                                <FirstTitle
                                     dangerouslySetInnerHTML={{
                                         __html: title[lang][order][0],
                                     }}
@@ -78,11 +81,13 @@ const Header: React.FC<MenuProps> = ({
                                 {title[lang][order][1].length ? (
                                     <Semicolon>{':'}</Semicolon>
                                 ) : null}
-                                <MainTitle>{title[lang][order][1]}</MainTitle>
-                            </Title>
+                                <SecondTitle>
+                                    {title[lang][order][1]}
+                                </SecondTitle>
+                            </TitleWrapper>
                         );
                     })}
-                </TitleWrapper>
+                </TitleContainer>
                 <MenuButton
                     setIsMenuShown={setIsMenuShown}
                     isMenuShown={isMenuShown}

@@ -11,10 +11,10 @@ export const PageContainer = styled.div`
     box-sizing: border-box;
     background-color: var(--primary-black-color);
     overflow: hidden;
-    min-height: calc(100svh - 9.23rem);
+    min-height: calc(100vh - 9.23rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100svh - 4.5rem);
+        min-height: calc(100vh - 4.5rem);
     }
 `;
 

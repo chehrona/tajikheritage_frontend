@@ -16,9 +16,11 @@ import {
 
 const Footer: React.FC = () => {
     const location = useLocation();
+    const noShow =
+        location.pathname === '/' || location.pathname.includes('print');
 
     return (
-        <FooterContainer $show={location.pathname !== '/'}>
+        <FooterContainer $show={!noShow}>
             <FooterInnerContainer>
                 <Text>
                     <StyledCopyrightIcon />

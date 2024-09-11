@@ -15,10 +15,10 @@ const defaultStyle = {
 };
 
 const loaderTransitionStyles: transitionStylesProps = {
-    entering: { opacity: 1 },
-    entered: { opacity: 0.8 },
-    exiting: { opacity: 0.4 },
-    exited: { opacity: 0, display: 'none' },
+    entering: { opacity: 0 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 1 },
+    exited: { opacity: 1 },
     unmounted: { visibility: 'hidden' },
 };
 

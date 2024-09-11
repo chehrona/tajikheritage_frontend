@@ -8,8 +8,8 @@ export const StyledMenu = styled(Menu)`
     }
 
     & .MuiPaper-root {
-        height: calc(100svh - var(--header-height));
-        max-height: calc(100svh - var(--header-height));
+        height: calc(100vh - var(--header-height));
+        max-height: calc(100vh - var(--header-height));
         padding-top: 6rem;
         position: static;
         box-shadow: none;

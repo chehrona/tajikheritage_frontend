@@ -70,32 +70,31 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading}>
-                {!loading && data ? (
-                    <PageTransition inProp={!loading}>
-                        <ArticlePageFirstContainer>
-                            <PageInnerContainer height={40}>
-                                {data.desc[lang].map((entry, i) => {
-                                    return (
-                                        <TextSegment
-                                            i={i}
-                                            key={`${data?.name[lang]}_${i}`}
-                                            reverse={i % 2 > 0}
-                                            data={entry}
-                                            title={data.name[lang]}
-                                        />
-                                    );
-                                })}
-                                <Sources data={data.references[lang]} />
-                            </PageInnerContainer>
-                        </ArticlePageFirstContainer>
-                    </PageTransition>
-                ) : // !loading &&
-                // error[lang].length > 0 && (
-                //     <Alert message={error} type={'error'} />
-                // )
-                null}
-            </Loader>
+            <Loader inProp={loading} />
+            {!loading && data ? (
+                <PageTransition inProp={!loading}>
+                    <ArticlePageFirstContainer>
+                        <PageInnerContainer height={40}>
+                            {data.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${data?.name[lang]}_${i}`}
+                                        reverse={i % 2 > 0}
+                                        data={entry}
+                                        title={data.name[lang]}
+                                    />
+                                );
+                            })}
+                            <Sources data={data.references[lang]} />
+                        </PageInnerContainer>
+                    </ArticlePageFirstContainer>
+                </PageTransition>
+            ) : // !loading &&
+            // error[lang].length > 0 && (
+            //     <Alert message={error} type={'error'} />
+            // )
+            null}
         </>
     );
 };

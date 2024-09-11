@@ -72,43 +72,35 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading}>
-                {!loading && items.length > 0 ? (
-                    <PageTransition inProp={!loading}>
-                        <LandingPageFirstContainer>
-                            <PageTitle>
-                                {staticText.ETYM_PAGE_HEADER[lang]}
-                            </PageTitle>
-                            {/* Don't change to search bar, filtering is different */}
-                            <LetterStack
-                                setItems={setItems}
-                                allItems={allItems}
-                                isDropdownOpen={isDropdownOpen}
-                                setIsDropdownOpen={setIsDropdownOpen}
-                            />
-                            {!isDropdownOpen && (
-                                <CardsContainer
-                                    $center={items.length % 3 === 0}
-                                >
-                                    {items.map((item, i) => {
-                                        return (
-                                            <SquareCard
-                                                key={item.id}
-                                                data={item}
-                                            />
-                                        );
-                                    })}
-                                </CardsContainer>
-                            )}
-                        </LandingPageFirstContainer>
-                    </PageTransition>
-                ) : (
-                    !loading &&
-                    error !== undefined && (
-                        <Alert message={error} type={'error'} />
-                    )
-                )}
-            </Loader>
+            <Loader inProp={loading} />
+            {!loading && items.length > 0 ? (
+                <PageTransition inProp={!loading}>
+                    <LandingPageFirstContainer>
+                        <PageTitle>
+                            {staticText.ETYM_PAGE_HEADER[lang]}
+                        </PageTitle>
+                        {/* Don't change to search bar, filtering is different */}
+                        <LetterStack
+                            setItems={setItems}
+                            allItems={allItems}
+                            isDropdownOpen={isDropdownOpen}
+                            setIsDropdownOpen={setIsDropdownOpen}
+                        />
+                        {!isDropdownOpen && (
+                            <CardsContainer $center={items.length % 3 === 0}>
+                                {items.map((item, i) => {
+                                    return (
+                                        <SquareCard key={item.id} data={item} />
+                                    );
+                                })}
+                            </CardsContainer>
+                        )}
+                    </LandingPageFirstContainer>
+                </PageTransition>
+            ) : (
+                !loading &&
+                error !== undefined && <Alert message={error} type={'error'} />
+            )}
         </>
     );
 };

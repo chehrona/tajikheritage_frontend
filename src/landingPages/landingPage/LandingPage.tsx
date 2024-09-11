@@ -61,31 +61,30 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading}>
-                {!loading && sections.length > 0 ? (
-                    <PageTransition inProp={!loading}>
-                        <LandingPageFirstContainer>
-                            <SectionBoxContainer
-                                $center={sections.length % 3 === 0}
-                            >
-                                {sections?.map((section, i) => {
-                                    return (
-                                        <SectionCard
-                                            key={section.cardTitle[lang]}
-                                            section={section}
-                                            link={section?.link}
-                                        />
-                                    );
-                                })}
-                            </SectionBoxContainer>
-                        </LandingPageFirstContainer>
-                    </PageTransition>
-                ) : // !loading &&
-                // error[lang]?.length > 0 && (
-                //     <Alert message={error} type={'error'} />
-                // )
-                null}
-            </Loader>
+            <Loader inProp={loading} />
+            {!loading && sections.length > 0 ? (
+                <PageTransition inProp={!loading}>
+                    <LandingPageFirstContainer>
+                        <SectionBoxContainer
+                            $center={sections.length % 3 === 0}
+                        >
+                            {sections?.map((section, i) => {
+                                return (
+                                    <SectionCard
+                                        key={section.cardTitle[lang]}
+                                        section={section}
+                                        link={section?.link}
+                                    />
+                                );
+                            })}
+                        </SectionBoxContainer>
+                    </LandingPageFirstContainer>
+                </PageTransition>
+            ) : // !loading &&
+            // error[lang]?.length > 0 && (
+            //     <Alert message={error} type={'error'} />
+            // )
+            null}
         </>
     );
 };

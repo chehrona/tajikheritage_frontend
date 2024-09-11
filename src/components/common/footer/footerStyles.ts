@@ -8,11 +8,14 @@ export const FooterContainer = styled.div<{ $show: boolean }>`
     height: var(--footer-height);
     max-height: var(--footer-height);
     min-height: var(--footer-height);
+    opacity: ${({ $show }) => ($show ? 1 : 0)};
+    visibility: ${({ $show }) => ($show ? 'visible' : 'hidden')};
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 
     @media (max-width: 480px) {
         justify-content: center;
         align-items: center;
-        display: ${({ $show }) => ($show ? 'flex' : 'none')};
+        display: flex;
     }
 `;
 

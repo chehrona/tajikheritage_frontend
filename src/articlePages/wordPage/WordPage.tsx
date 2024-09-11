@@ -77,35 +77,34 @@ const WordPage: React.FC = () => {
 
     return (
         <>
-            <Loader inProp={loading}>
-                {!loading && word ? (
-                    <PageTransition inProp={!loading}>
-                        <PageFirstContainer>
-                            <BodyContainer>
-                                <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
-                                <PronunciationWrapper>
-                                    <Transcript>{word.transcript}</Transcript>
-                                    <SoundButton data={word.audio} />
-                                </PronunciationWrapper>
-                                {word.desc[lang].map((entry, i) => {
-                                    return (
-                                        <TextSegment
-                                            i={i}
-                                            key={`${word?._id}_${i}`}
-                                            data={entry}
-                                        />
-                                    );
-                                })}
-                                <Sources data={word.references[lang]} />
-                            </BodyContainer>
-                        </PageFirstContainer>
-                    </PageTransition>
-                ) : // !loading &&
-                // error[lang].length > 0 && (
-                //     <Alert message={error} type={'error'} />
-                // )
-                null}
-            </Loader>
+            <Loader inProp={loading} />
+            {!loading && word ? (
+                <PageTransition inProp={!loading}>
+                    <PageFirstContainer>
+                        <BodyContainer>
+                            <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
+                            <PronunciationWrapper>
+                                <Transcript>{word.transcript}</Transcript>
+                                <SoundButton data={word.audio} />
+                            </PronunciationWrapper>
+                            {word.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${word?._id}_${i}`}
+                                        data={entry}
+                                    />
+                                );
+                            })}
+                            <Sources data={word.references[lang]} />
+                        </BodyContainer>
+                    </PageFirstContainer>
+                </PageTransition>
+            ) : // !loading &&
+            // error[lang].length > 0 && (
+            //     <Alert message={error} type={'error'} />
+            // )
+            null}
         </>
     );
 };

@@ -66,32 +66,31 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading}>
-                {!loading && items.length > 0 ? (
-                    <PageTransition inProp={!loading}>
-                        <LandingPageFirstContainer>
-                            <SearchBar
-                                items={items}
-                                setItems={setItems}
-                                allItems={allItems}
-                            />
-                            <InnerBoxContainer $center={items.length % 3 === 0}>
-                                {items.map((item, i) =>
-                                    page.includes('poets') ? (
-                                        <PoetCard key={item.id} poet={item} />
-                                    ) : (
-                                        <SquareCard key={item.id} data={item} />
-                                    ),
-                                )}
-                            </InnerBoxContainer>
-                        </LandingPageFirstContainer>
-                    </PageTransition>
-                ) : // !loading &&
-                // error[lang]?.length > 0 && (
-                //     <Alert message={error} type={'error'} />
-                // )
-                null}
-            </Loader>
+            <Loader inProp={loading} />
+            {!loading && items.length > 0 ? (
+                <PageTransition inProp={!loading}>
+                    <LandingPageFirstContainer>
+                        <SearchBar
+                            items={items}
+                            setItems={setItems}
+                            allItems={allItems}
+                        />
+                        <InnerBoxContainer $center={items.length % 3 === 0}>
+                            {items.map((item, i) =>
+                                page.includes('poets') ? (
+                                    <PoetCard key={item.id} poet={item} />
+                                ) : (
+                                    <SquareCard key={item.id} data={item} />
+                                ),
+                            )}
+                        </InnerBoxContainer>
+                    </LandingPageFirstContainer>
+                </PageTransition>
+            ) : // !loading &&
+            // error[lang]?.length > 0 && (
+            //     <Alert message={error} type={'error'} />
+            // )
+            null}
         </>
     );
 };
