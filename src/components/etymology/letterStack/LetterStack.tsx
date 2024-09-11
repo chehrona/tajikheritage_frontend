@@ -119,6 +119,7 @@ const LetterStack: React.FC<LetterStackProps> = ({
                 <InputWrapper>
                     <StyledSearchIcon />
                     <InputField
+                        id="searchbar"
                         ref={inputRef}
                         placeholder={placeholder.SEARCH_BAR_PLACEHOLDER[lang]}
                         value={value}

@@ -31,7 +31,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
         try {
             setLoading(true);
             const data = await requestPage(page);
-            setSections(data[0].sections);
+            setSections(data.sections);
         } catch (error) {
             // if (error.response) {
             //     if (

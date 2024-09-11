@@ -50,8 +50,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
         }
     };
 
-    console.log(currentIndex);
-
     return (
         <SlideContainer>
             {slides.length > 1 && (

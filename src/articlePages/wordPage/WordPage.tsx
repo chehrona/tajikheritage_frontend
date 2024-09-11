@@ -28,7 +28,7 @@ import {
     MainContainer,
 } from './wordPageStyles';
 
-const WordPage: React.FC = () => {
+const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
     const { lang } = useGlobalData();
@@ -44,7 +44,7 @@ const WordPage: React.FC = () => {
                 return;
             }
 
-            const data = await requestArticleInfo(id, 'language/word/');
+            const data = await requestArticleInfo(id, page);
             setWord(data);
         } catch (error: unknown) {
             const customError = error as ErrorTypes;
@@ -67,7 +67,7 @@ const WordPage: React.FC = () => {
     };
 
     // Set page title
-    useSetHeader('etymology', 'generic', word);
+    useSetHeader(page, 'generic', word);
 
     useEffect(() => {
         // Get data

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Types
 import { ImageWrapperProps } from './types/styleTypes';
@@ -6,6 +6,7 @@ import { ImageWrapperProps } from './types/styleTypes';
 export const ImageContainer = styled.div`
     position: absolute;
     display: flex;
+    background-color: var(--primary-black-color);
 `;
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
@@ -15,13 +16,20 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
     background-position: center center;
     min-width: ${({ $width }) => $width && `${$width}px`};
     max-width: ${({ $width }) => $width && `${$width}px`};
-    background: ${({ $src }) => $src && `url(${$src})`};
     height: ${({ $width, $height }) =>
         $height ? `${$height}rem` : $width && `${$width * 1.2049}px`};
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
     transform: ${({ $translate }) => `translateX(${$translate}px)`};
-    background-size: ${({ $src }) => $src && 'cover'};
+    ${({ $src }) =>
+        $src
+            ? css`
+                  background-image: url(${$src});
+                  background-size: cover;
+              `
+            : css`
+                  background-image: url('/loader.png');
+              `}
 
     &::after {
         content: '';

@@ -75,6 +75,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ items, setItems, allItems }) => {
             <InputWrapper>
                 <StyledSearchIcon />
                 <InputField
+                    id="searchbar"
                     ref={inputRef}
                     placeholder={staticTexts.SEARCH_BAR_PLACEHOLDER[lang]}
                     value={value}

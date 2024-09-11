@@ -84,7 +84,10 @@ const Routes: React.FC = () => {
                 path="/language/etymology"
                 element={<EtymologyPage page={'language/all_etymology'} />}
             />
-            <Route path="/language/etymology/:id" element={<WordPage />} />
+            <Route
+                path="/language/etymology/:id"
+                element={<WordPage page={'language/etymology/'} />}
+            />
             <Route
                 path="/language/poets/:id"
                 element={<PoetPage page={'language/poets/'} />}

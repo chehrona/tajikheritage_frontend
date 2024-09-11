@@ -11,7 +11,7 @@ import staticTexts from '../miscellaneous/staticTexts.json';
 
 // Types
 import { Langs } from '../appTypes';
-import { TitleProps } from './hookTypes';
+import { HeaderDataType, Section, TitleProps } from './hookTypes';
 
 export const useSetHeader = (page: string, type?: string, pageData?: any) => {
     const { title, setTitle } = useGlobalData();
@@ -39,7 +39,7 @@ export const useSetHeader = (page: string, type?: string, pageData?: any) => {
 
                 setTitle(tempHeader);
             } catch (error: unknown) {
-                console.error('Failed to set header', error);
+                setTitle(staticTexts.HEADER);
             }
         };
 
@@ -52,9 +52,9 @@ export const useSetHeader = (page: string, type?: string, pageData?: any) => {
 
     const updateLandingPageTitle = (
         tempHeader: TitleProps,
-        headerData: any,
+        headerData: HeaderDataType,
     ) => {
-        const { header } = headerData[0];
+        const { header } = headerData;
 
         for (const key in title) {
             const typedKey = key as Langs;
@@ -69,37 +69,46 @@ export const useSetHeader = (page: string, type?: string, pageData?: any) => {
         }
     };
 
-    const updatePageTitle = (tempHeader: TitleProps, headerData: any) => {
-        const { header } = headerData[0];
+    const updatePageTitle = (
+        tempHeader: TitleProps,
+        headerData: HeaderDataType,
+    ) => {
+        const { header, sections } = headerData;
 
-        headerData.forEach((entry: any) => {
-            entry.sections.forEach((section: any) => {
-                const { link: sectionLink, cardTitle: sectionTitle } = section;
+        sections?.forEach((section: Section) => {
+            const { link: sectionLink, cardTitle: sectionTitle } = section;
 
-                if (sectionLink === link) {
-                    for (const key in title) {
-                        const typedKey = key as Langs;
+            if (sectionLink === link) {
+                for (const key in title) {
+                    const typedKey = key as Langs;
 
-                        let titleArr = [...title[typedKey]];
-                        let newItem = [];
+                    let titleArr = [...title[typedKey]];
+                    let newItem = [];
 
-                        if (type === 'middle') {
-                            newItem = [
-                                `${header[typedKey].toUpperCase()}`,
-                                `${sectionTitle[typedKey]}`,
-                            ];
-                        } else {
-                            newItem = [
-                                `${sectionTitle[typedKey].toUpperCase()}`,
-                                `${pageData?.name[typedKey]}`,
-                            ];
-                        }
-
-                        titleArr[1] = newItem;
-                        tempHeader[typedKey] = titleArr;
+                    if (type === 'middle') {
+                        newItem = [
+                            `${header[typedKey].toUpperCase()}`,
+                            `${
+                                sectionTitle[typedKey] !== undefined
+                                    ? sectionTitle[typedKey]
+                                    : ''
+                            }`,
+                        ];
+                    } else {
+                        newItem = [
+                            `${sectionTitle[typedKey].toUpperCase()}`,
+                            `${
+                                pageData?.name[typedKey] !== undefined
+                                    ? pageData?.name[typedKey]
+                                    : ''
+                            }`,
+                        ];
                     }
+
+                    titleArr[1] = newItem;
+                    tempHeader[typedKey] = titleArr;
                 }
-            });
+            }
         });
     };
 };

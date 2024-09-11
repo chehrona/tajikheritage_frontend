@@ -10,7 +10,6 @@ import { ButtonProps } from './types/componentTypes';
 import { StyledButton, Arrow } from './navButtonStyles';
 
 const RightButton: React.FC<ButtonProps> = ({ disabled, moveNext }) => {
-    console.log(disabled, 'here');
     return (
         <StyledButton onClick={moveNext} $disabled={disabled}>
             <Arrow>

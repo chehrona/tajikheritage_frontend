@@ -6,6 +6,9 @@ export type WordObj = {
     title: {
         [key in Langs]: string;
     };
+    name: {
+        [key in Langs]: string;
+    };
     syntax: {
         [key in Langs]: string;
     };
