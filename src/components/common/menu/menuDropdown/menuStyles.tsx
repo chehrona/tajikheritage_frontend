@@ -8,8 +8,8 @@ export const StyledMenu = styled(Menu)`
     }
 
     & .MuiPaper-root {
-        height: 100svh;
-        max-height: 100svh;
+        height: calc(100svh - var(--header-height));
+        max-height: calc(100svh - var(--header-height));
         padding-top: 6rem;
         position: static;
         box-shadow: none;
@@ -21,6 +21,12 @@ export const StyledMenu = styled(Menu)`
         justify-content: center;
         color: var(--primary-gold-color);
         background: var(--primary-grey-color);
+        padding: 0rem;
+
+        // Done
+        @media screen and (max-device-width: 480px) {
+            margin-top: var(--header-height);
+        }
     }
 
     & .MuiList-root {
@@ -30,6 +36,11 @@ export const StyledMenu = styled(Menu)`
         justify-content: center;
         gap: 6%;
         align-items: center;
+
+        // Done
+        @media screen and (max-device-width: 480px) {
+            padding: 0rem var(--page-padding);
+        }
 
         @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
             padding: 10rem 10rem 15rem 5rem;
@@ -42,6 +53,7 @@ export const StyledMenu = styled(Menu)`
 export const LogoContainer = styled.div`
     opacity: 0.5;
 
+    // Done
     @media screen and (max-device-width: 480px) {
         display: none;
     }
@@ -73,16 +85,17 @@ export const PageNamesContainer = styled.div`
     height: 100%;
     z-index: 1;
     gap: 2rem;
-    font-size: 2rem;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
 
+    // Done
     @media (max-width: 480px) {
-        justify-content: start;
-        margin-top: 7rem;
         width: 100%;
+        gap: 1rem;
+        justify-content: start;
+        padding: var(--page-padding) 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -91,8 +104,12 @@ export const PageNamesContainer = styled.div`
     }
 `;
 
-export const MenuItem = styled.div`
+export const MenuItemWrapper = styled.div`
     width: 100%;
+
+    @media screen and (max-device-width: 480px) {
+        padding: 0.5rem 1rem;
+    }
 `;
 
 export const PageName = styled.div`
@@ -100,12 +117,22 @@ export const PageName = styled.div`
     font-style: italic;
     cursor: pointer;
     font-family: var(--fancy-font);
+
+    // Done
+    @media screen and (max-device-width: 480px) {
+        font-size: var(--header-medium-text);
+    }
 `;
 
 export const PageDesc = styled.div`
     font-size: 1.3rem;
     cursor: pointer;
     color: var(--secondary-white-color);
+
+    // Done
+    @media screen and (max-device-width: 480px) {
+        font-size: var(--body-text);
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.5rem;
@@ -115,7 +142,6 @@ export const PageDesc = styled.div`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
-    padding: 0rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
     user-select: none;
     box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
@@ -130,6 +156,7 @@ export const StyledLink = styled(Link)`
         transform: translate(1px, 1px);
     }
 
+    // Done
     @media (max-device-width: 480px) {
         &:hover {
             box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);

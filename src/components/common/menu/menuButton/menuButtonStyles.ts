@@ -1,19 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const MainContainer = styled.div`
-    display: flex;
-    align-items: center;
-    height: 4rem;
-    width: 7.5rem;
-    cursor: pointer;
-    position: relative;
-
-    @media (max-width: 480px) {
-        width: 3rem;
-        margin: 0rem;
-    }
-`;
-
 const fadeOut = keyframes`
     from {
         opacity: 1;
@@ -32,6 +18,19 @@ const fadeIn = keyframes`
     }
 `;
 
+export const MainContainer = styled.div`
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 7.5rem;
+    cursor: pointer;
+    position: relative;
+
+    @media (max-width: 480px) {
+        width: 2.15rem;
+    }
+`;
+
 export const ButtonText = styled.div<{
     $triggerFadeIn: boolean;
     $triggerFadeOut: boolean;
@@ -44,7 +43,6 @@ export const ButtonText = styled.div<{
     min-width: 5.25rem;
     max-width: 5.25rem;
     text-align: right;
-
     transition: opacity 0.15s ease;
     ${({ $triggerFadeOut }) =>
         $triggerFadeOut &&
@@ -56,11 +54,13 @@ export const ButtonText = styled.div<{
         $triggerFadeIn &&
         css`
             animation: ${fadeIn} 0.15s forwards;
-        `}
+        `};
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
     }
+
+    // Done
     @media (max-width: 480px) {
         display: none;
     }
@@ -103,20 +103,21 @@ export const StyledMenuIcon = styled.div<{ $isMenuShown: boolean }>`
             $isMenuShown ? 'rotate(-45deg)' : 'rotate(0deg)'};
     }
 
+    // Done
     @media (max-width: 480px) {
-        height: 0.25rem;
+        height: 0.2rem;
 
         &::before,
         &::after {
-            height: 0.25rem;
+            height: 0.2rem;
         }
 
         &::before {
-            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '-0.65rem')};
+            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '-0.5rem')};
         }
 
         &::after {
-            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '0.7rem')};
+            top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '0.5rem')};
         }
     }
 `;

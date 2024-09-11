@@ -21,6 +21,7 @@ import {
     PageDesc,
     StyledLink,
     StyledMenu,
+    MenuItemWrapper,
 } from './menuStyles';
 
 const Menu: React.FC<MenuProps> = ({
@@ -64,10 +65,10 @@ const Menu: React.FC<MenuProps> = ({
                             key={i}
                             onClick={() => setIsMenuShown(false)}
                         >
-                            <div>
+                            <MenuItemWrapper>
                                 <PageName>{entry.title}</PageName>
                                 <PageDesc>{entry.desc}</PageDesc>
-                            </div>
+                            </MenuItemWrapper>
                         </StyledLink>
                     );
                 })}

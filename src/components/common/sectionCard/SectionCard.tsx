@@ -25,7 +25,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section, link, i }) => {
             <SectionCardWrapper>
                 <ImageWrapper>
                     <SectionImage
-                        src={
+                        $src={
                             process.env.REACT_APP_BASE_URL +
                             section?.cardImg[lang]
                         }

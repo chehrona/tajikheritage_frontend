@@ -33,7 +33,7 @@ export const Arrow = styled.div`
     background-color: #fff;
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid var(--primary-gold-color);
+    border: 1px solid var(--primary-gold-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;

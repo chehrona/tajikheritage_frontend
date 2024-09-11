@@ -70,7 +70,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
         padding: 0rem 0.5rem;
         width: fit-content;
         height: fit-content;
-        border: 0.0625rem solid var(--primary-gold-color);
+        border: 1px solid var(--primary-gold-color);
     `}
 `;
 
@@ -145,7 +145,7 @@ export const DescContainer = styled.div`
 
 export const Desc = styled.div`
     padding: 1.5rem 2rem 1.5rem 2rem;
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
     line-height: 2rem;
     height: 26rem;
     text-align: justify;

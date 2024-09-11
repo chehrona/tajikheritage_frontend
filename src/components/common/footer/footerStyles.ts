@@ -5,6 +5,9 @@ import { IconButton } from '@mui/material';
 export const FooterContainer = styled.div<{ $show: boolean }>`
     background: var(--primary-black-color);
     width: 100%;
+    height: var(--footer-height);
+    max-height: var(--footer-height);
+    min-height: var(--footer-height);
 
     @media (max-width: 480px) {
         justify-content: center;
@@ -22,8 +25,8 @@ export const FooterInnerContainer = styled.div`
     align-items: center;
     box-sizing: border-box;
     color: var(--secondary-grey-color);
-    max-height: 3.5rem;
-    min-height: 3.5rem;
+    max-height: var(--desktop-footer-height);
+    min-height: var(--desktop-footer-height);
     position: relative;
     z-index: 10;
     justify-content: space-between;
@@ -31,9 +34,9 @@ export const FooterInnerContainer = styled.div`
     @media (max-width: 480px) {
         flex-direction: column-reverse;
         justify-content: center;
-        max-height: 5rem;
-        min-height: 5rem;
-        margin: 0.75rem 0.5rem;
+        max-height: var(--footer-height);
+        min-height: var(--footer-height);
+        padding: 0.25rem 0.5rem 0.5rem 0.5rem;
         width: fit-content;
     }
 `;
@@ -47,14 +50,10 @@ export const Text = styled.div`
     align-items: center;
     justify-content: center;
     width: calc(100% - 24rem);
+    font-size: var(--body-text);
 
     @media (max-width: 480px) {
         width: 100%;
-        font-size: 1.3rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
     }
 `;
 
@@ -65,13 +64,12 @@ export const SocialsWrapper = styled.div`
     gap: 0.25rem;
     width: 12rem;
     min-width: 12rem;
-    margin-right: 0.5rem;
     justify-content: space-around;
 
     @media (max-width: 480px) {
-        gap: 0.55rem;
-        width: 15rem;
-        margin: 0rem 0rem 0.5rem 0rem;
+        gap: 0rem;
+        width: 13rem;
+        justify-content: space-between;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -90,9 +88,10 @@ export const StyledIcon = styled.img<{ $rad: boolean }>`
         filter: brightness(150%);
     }
 
+    // Done
     @media (max-device-width: 1024px) {
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
 
         &:hover {
             filter: brightness(100%);

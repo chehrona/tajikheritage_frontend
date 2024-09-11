@@ -12,7 +12,7 @@ import staticText from '../../miscellaneous/staticTexts.json';
 import { requestMiddlePage } from '../../services/request';
 
 // Components
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';

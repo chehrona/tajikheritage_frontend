@@ -1,5 +1,3 @@
-import { IconButtonProps } from '@mui/material';
-
 export type ImageWrapperProps = {
     $width: number;
     $height?: number;
@@ -7,8 +5,4 @@ export type ImageWrapperProps = {
     $topLeftRad?: number;
     $src: string;
     $overlay?: string;
-};
-
-export type StyledButtonProps = IconButtonProps & {
-    $left: boolean;
 };

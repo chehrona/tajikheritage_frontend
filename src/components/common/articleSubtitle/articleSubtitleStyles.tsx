@@ -5,7 +5,7 @@ export const SubtitleWrapper = styled.div`
     align-items: center;
 
     @media (max-width: 480px) {
-        padding-bottom: 1rem;
+        padding: var(--text-segment-gap) 0rem;
     }
 `;
 
@@ -31,7 +31,7 @@ export const LineWrapper = styled.div<{ $right?: boolean; $left?: boolean }>`
 `;
 
 export const Line = styled.div`
-    height: 0.0625rem;
+    height: 1px;
     width: 100%;
     background-color: var(--primary-gold-color);
 `;
@@ -54,7 +54,7 @@ export const Subtitle = styled.span`
     display: flex;
 
     @media (max-width: 480px) {
-        font-size: 1.35rem;
+        font-size: var(--header-normal-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

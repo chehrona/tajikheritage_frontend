@@ -22,14 +22,13 @@ export const StyledTooltip = styled(
 }));
 
 export const StyledTypography = styled.div`
-    font-family: var(--ordinary-font);
     padding: 0.5rem;
-    font-size: var(--desktop-body-text);
+    font-family: var(--ordinary-font);
+    font-size: var(--body-text);
+    line-height: var(--body-text-line-height);
 
     @media (max-width: 480px) {
-        font-size: 1.3rem;
-        padding: 0.25rem;
-        line-height: 1.65rem;
+        padding: 0.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

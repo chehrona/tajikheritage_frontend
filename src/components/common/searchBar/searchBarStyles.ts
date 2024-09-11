@@ -4,15 +4,11 @@ import { IconButton } from '@mui/material';
 
 export const SearchContainer = styled.div`
     width: 100%;
-    height: 5.5rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 6.5rem;
-    }
 `;
 
 export const InputWrapper = styled.div`
@@ -27,6 +23,7 @@ export const InputWrapper = styled.div`
 
     @media (max-width: 480px) {
         width: 100%;
+        height: 3rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -47,14 +44,14 @@ export const InputField = styled.input`
     font-family: var(--ordinary-font);
 
     &::placeholder {
-        color: #a39f9b;
-        opacity: 1;
+        color: var(--secondary-grey-color);
     }
 
     @media (max-width: 480px) {
-        font-size: 1.45rem;
-        height: 3rem;
-        margin: 0rem 4rem;
+        font-size: var(--body-text);
+        height: 100%;
+        margin: 0rem 1.25rem;
+        padding-left: 2.15rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -75,9 +72,11 @@ export const StyledSearchIcon = styled(Search)`
     }
 
     @media (max-width: 480px) {
+        left: 1.5rem;
+
         &.MuiSvgIcon-root {
-            width: 2.25rem;
-            height: 2.25rem;
+            width: 1.75rem;
+            height: 1.75rem;
         }
     }
 
@@ -101,8 +100,8 @@ export const StyledClearIcon = styled(Close)`
 
     @media (max-width: 480px) {
         &.MuiSvgIcon-root {
-            width: 2.25rem;
-            height: 2.25rem;
+            width: 1.75rem;
+            height: 1.75rem;
         }
     }
 
@@ -126,7 +125,7 @@ export const StyledIconButton = styled(IconButton)`
     @media (max-width: 480px) {
         &.MuiIconButton-root {
             position: absolute;
-            right: 1.85rem;
+            right: 1.05rem;
         }
     }
 
@@ -137,15 +136,7 @@ export const StyledIconButton = styled(IconButton)`
 `;
 
 export const InputAlert = styled.div`
-    color: var(--primary-red-color);
-    height: 1.5rem;
     margin-top: 0.5rem;
-
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.3rem;
-    }
+    color: var(--primary-red-color);
+    font-size: var(--body-text);
 `;

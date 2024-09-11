@@ -11,7 +11,7 @@ import { requestMiddlePage } from '../../services/request';
 // Components
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';

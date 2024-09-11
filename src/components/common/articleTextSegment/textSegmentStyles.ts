@@ -30,7 +30,7 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
     }
 
     @media (max-width: 480px) {
-        padding: 1rem 0rem 1rem 0rem;
+        padding: 0rem 0rem var(--text-segment-gap) 0rem;
         display: flex;
         flex-direction: column;
 
@@ -57,7 +57,11 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     @media (max-width: 480px) {
         width: 100svw;
         height: 120.49svw;
-        margin: 0rem 0rem 2rem 0rem;
+        margin: ${({ i }) =>
+            i === 0
+                ? '0rem 0rem var(--text-segment-gap) 0rem'
+                : 'var(--text-segment-gap) 0rem'};
+        background-color: blue;
         border-top-left-radius: 0rem;
     }
 
@@ -77,19 +81,20 @@ export const Title = styled.div`
     font-family: var(--fancy-font);
     color: var(--regular-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
-    margin-bottom: 0.5rem;
 
+    // Done
     @media (max-width: 480px) {
-        font-size: 4.5rem;
-        margin: 0rem 0rem 0.75rem 1.5rem;
+        font-size: var(--header-large-text);
+        padding: 0rem var(--page-padding) var(--text-segment-gap)
+            var(--page-padding);
     }
 `;
 
 export const BaseText = styled.div`
     width: 100%;
-    font-size: var(--desktop-body-text);
     position: relative;
     line-height: 1.7rem;
+    font-size: var(--body-text);
     color: var(--primary-black-color);
 
     &::-webkit-scrollbar {
@@ -97,8 +102,8 @@ export const BaseText = styled.div`
     }
 
     @media (max-width: 480px) {
-        font-size: 1.3rem;
-        padding: 0rem var(--mobile-padding);
+        padding: 0rem var(--page-padding);
+        line-height: var(--body-text-line-height);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -108,25 +113,9 @@ export const BaseText = styled.div`
 `;
 
 export const RightText = styled(BaseText)`
-    padding-left: 3rem;
-
-    @media (max-width: 480px) {
-        padding-left: var(--mobile-padding);
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding-left: 2rem;
-    }
+    padding-left: var(--page-padding);
 `;
 
 export const LeftText = styled(BaseText)`
-    padding-right: 3rem;
-
-    @media (max-width: 480px) {
-        padding-right: var(--mobile-padding);
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding-right: 2rem;
-    }
+    padding-right: var(--page-padding);
 `;

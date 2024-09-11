@@ -183,18 +183,21 @@ export const QuoteWrapper = styled.div<{ $lang: string }>`
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2.5rem;
-    font-family: var(--fancy-font);
     font-style: italic;
     font-weight: bold;
+    font-family: var(--fancy-font);
+    font-size: var(--header-big-text);
+    line-height: var(--header-big-text-line-height);
     padding: ${({ lang }) =>
-        lang === 'tj' ? '3rem 3rem 2rem 3rem' : '4.5rem 3rem 1rem 3rem'};
+        lang === 'tj'
+            ? '3rem var(--page-padding) 2rem var(--page-padding)'
+            : '4.5rem var(--page-padding) 1rem var(--page-padding)'};
 
     @media (max-width: 480px) {
         padding: ${({ $lang }) =>
             $lang === 'tj'
-                ? '4rem var(--mobile-padding) 1rem var(--mobile-padding)'
-                : '6rem var(--mobile-padding) 1rem var(--mobile-padding)'};
+                ? '4rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'
+                : '5rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

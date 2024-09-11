@@ -10,7 +10,7 @@ import { requestPage } from '../../services/request';
 
 // Components
 import SectionCard from '../../components/common/sectionCard/SectionCard';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';

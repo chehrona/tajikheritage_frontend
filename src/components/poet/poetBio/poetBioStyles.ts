@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
     min-height: 20rem;
     padding-bottom: 3rem;
     background-color: var(--primary-white-color);
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
 
     @media (max-width: 480px) {
         position: relative;
@@ -282,7 +282,7 @@ export const Arrow = styled.div`
     color: var(--primary-gold-color);
     height: 100%;
     width: 100%;
-    border: 0.0625rem solid var(--primary-gold-color);
+    border: 1px solid var(--primary-gold-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -337,7 +337,7 @@ export const Text = styled.div`
     line-height: 1.8rem;
 
     @media (max-width: 480px) {
-        font-size: 1.35rem;
+        font-size: var(--body-text);
         overflow-y: scroll;
         margin-bottom: 2rem;
         background-color: blue;
@@ -578,13 +578,17 @@ export const FinalQuoteWrapper = styled.div`
 export const Author = styled.div`
     margin-top: 0.5rem;
     color: var(--primary-white-color);
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
     font-style: normal;
     font-family: var(--ordinary-font);
     text-align: end;
 
-    @media (max-width: 1024px) {
-        font-size: 1.3rem;
+    @media (max-width: 480px) {
+        font-size: var(--body-text);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        font-size: var(--body-text);
     }
 `;
 

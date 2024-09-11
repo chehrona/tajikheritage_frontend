@@ -14,7 +14,7 @@ import { ErrorTypes } from '../../appTypes';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';

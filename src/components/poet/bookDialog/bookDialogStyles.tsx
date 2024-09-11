@@ -54,10 +54,10 @@ export const InputWrapper = styled.div`
 
 export const InputField = styled.input`
     background: transparent;
-    border: 0.0625rem solid var(--primary-black-color);
+    border: 1px solid var(--primary-black-color);
     outline: none;
     width: 100%;
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
     border-radius: 0.25rem;
     font-family: var(--ordinary-font);
     padding: 0.5rem;
@@ -69,7 +69,7 @@ export const StyledButton = styled(Button)`
         color: var(--primary-white-color);
         height: 100%;
         text-transform: none;
-        font-size: var(--desktop-body-text);
+        font-size: var(--body-text);
         font-family: var(--ordinary-font);
         margin-left: 1rem;
         padding: 0.375rem 0.75rem;

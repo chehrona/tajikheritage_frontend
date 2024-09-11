@@ -12,18 +12,6 @@ html {
     font-size: 16px;
 }
 
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 14px;
-    }
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 960px) {
-    html {
-        font-size: 13px;
-    }
-}
-
 :root {
     /* Colors */
     --primary-black-color: #0f0a00;
@@ -44,14 +32,45 @@ html {
     --blocky-font: 'Blocky', sans-serif;
 
     /* Font-sizes */
-    --desktop-body-text: 1.1rem;
-    --tablet-body-text: 1.3rem;
-    --mobile-body-text: 1.3rem;
+    --body-text: 1rem;
+    --header-large-text: 2.5rem;
+    --header-big-text: 1.75rem;
+    --header-medium-text: 1.5rem;
 
     /* Padding */
-    --desktop-padding: 3.2rem;
-    --tablet-padding: 2rem;
-    --mobile-padding: 1.5rem;
+    --page-padding: 3.2rem;
+    --card-gap: 2rem;
+
+    /* Standard heights */
+    --header-height: 3.75rem;
+    --footer-height: 3.75rem;
+    --page-height: calc(
+        100svh - ((var(--header-height) + var(--footer-height)))
+    );
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Font-sizes */
+        --header-large-text: 3rem;
+        --header-big-text: 2.25rem;
+        --header-medium-text: 1.75rem;
+        --header-normal-text: 1.15rem;
+        --info-text: 0.9rem;
+
+        /* Padding */
+        --page-padding: 1rem;
+        --card-gap: 0.5rem;
+        --text-segment-gap: 0.75rem;
+
+        /* Standard heights */
+        --header-height: 3rem;
+        --footer-height: 5.25rem;
+
+        /* Line-heights */
+        --body-text-line-height: calc(var(--body-text) * 1.45);
+        --header-big-text-line-height: calc(var(--header-big-text) * 1.05);
+    }
 }
 
 body {

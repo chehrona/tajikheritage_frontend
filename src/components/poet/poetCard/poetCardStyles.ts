@@ -8,7 +8,12 @@ export const PoetCardContent = styled.div`
     position: relative;
     padding: 2rem;
 
-    @media (max-device-width: 1024px) {
+    // Done
+    @media (max-width: 480px) {
+        padding: 1rem 0.5rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 1.5rem;
     }
 `;
@@ -26,9 +31,11 @@ export const PoetImgContainer = styled.div`
     transform: translateX(-50%);
     box-shadow: 0rem 0rem 3rem rgba(189, 157, 82, 0.8);
 
+    // Done
     @media (max-width: 480px) {
-        height: 13.5rem;
-        width: 10rem;
+        height: 10.8rem;
+        width: 8.25rem;
+        border-radius: 4rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -46,10 +53,11 @@ export const PoetImage = styled.img`
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
 
+    // Done
     @media (max-width: 480px) {
-        border-radius: 4.5rem;
-        height: 12.5rem;
-        width: 9rem;
+        height: 10.05rem;
+        width: 7.5rem;
+        border-radius: 4.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -64,10 +72,10 @@ export const PoetNameBox = styled.div`
     line-height: 2.5rem;
     left: 2rem;
 
+    // Done
     @media (max-width: 480px) {
-        top: 12rem;
-        line-height: 1.8rem;
-        left: 1.5rem;
+        top: 9.5rem;
+        left: 1rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -82,8 +90,10 @@ export const PoetName = styled.div`
     font-style: italic;
     text-shadow: 0rem 0rem 0.25rem black;
 
+    // Done
     @media (max-width: 480px) {
-        font-size: 2.2rem;
+        font-size: var(--header-medium-text);
+        line-height: var(--header-medium-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -95,8 +105,9 @@ export const PoetDates = styled.div`
     font-size: 1.25rem;
     font-family: var(--ordinary-font);
 
+    // Done
     @media (max-width: 480px) {
-        margin-top: 1rem;
+        font-size: var(--body-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

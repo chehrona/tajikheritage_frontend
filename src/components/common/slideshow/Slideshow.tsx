@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-// Material UI
-import { ArrowForwardIos } from '@mui/icons-material';
-
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
+
+// Components
+import LeftButton from '../navButtons/LeftButton';
+import RightButton from '../navButtons/RightButton';
 
 // Types
 import { SlideshowProps, SlideImage } from './types/componentTypes';
 
 // Styled components
 import {
-    Arrow,
     ImgInfo,
     ImageContainer,
     ImageWrapper,
     ButtonWrapper,
     SlideContainer,
-    StyledButton,
     PlaceIndicator,
     Circle,
 } from './slideshowStyles';
@@ -99,24 +98,11 @@ const Slideshow: React.FC<SlideshowProps> = ({
                     : null}
             </ImageContainer>
             <ButtonWrapper>
-                <StyledButton
-                    $left={true}
-                    onClick={movePrev}
-                    disabled={currentIndex === 0}
-                >
-                    <Arrow>
-                        <ArrowForwardIos style={{ marginLeft: '1px' }} />
-                    </Arrow>
-                </StyledButton>
-                <StyledButton
-                    $left={false}
-                    onClick={moveNext}
+                <LeftButton disabled={currentIndex === 0} movePrev={movePrev} />
+                <RightButton
                     disabled={currentIndex === infoArr?.length - 1}
-                >
-                    <Arrow>
-                        <ArrowForwardIos />
-                    </Arrow>
-                </StyledButton>
+                    moveNext={moveNext}
+                />
             </ButtonWrapper>
         </SlideContainer>
     );

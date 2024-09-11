@@ -27,8 +27,8 @@ export const LandingContainer = styled.div`
     background: var(--regular-white-color);
 
     @media (max-width: 480px) {
-        padding: var(--mobile-padding);
-        min-height: calc(100svh - 10.5rem);
+        padding: var(--page-padding);
+        min-height: var(--page-height);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

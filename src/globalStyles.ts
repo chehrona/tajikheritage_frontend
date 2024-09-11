@@ -71,17 +71,21 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @media screen and (max-width: 480px) {
+        .quoteContainer {
+            margin: 0.75rem 0rem 1rem 0.5rem;
+        }
+
         .quoteInnerBox {
             display: block;
         }
 
         .quoteWrapper {
-            margin: 1.3rem -1rem 0rem 0rem;
-            font-size: 1.45rem;
+            margin: 1rem -1rem 0rem 0rem;
+            font-size: var(--header-normal-text);
         }
 
         .quoteSymbol {
-            left: -1rem;
+            left: -0.75rem;
         }
     }
 

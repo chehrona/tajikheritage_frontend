@@ -10,6 +10,11 @@ export const SectionCardWrapper = styled.div`
     align-items: center;
     color: var(--primary-white-color);
     background: var(--primary-black-color);
+
+    // Done
+    @media (max-width: 480px) {
+        padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+    }
 `;
 
 export const SectionTitle = styled.div<{ $length: number }>`
@@ -18,13 +23,12 @@ export const SectionTitle = styled.div<{ $length: number }>`
     font-family: var(--fancy-font);
     font-style: italic;
     text-align: center;
-    margin-bottom: 1rem;
     line-height: ${({ $length }) => $length > 20 && '2.05rem'};
 
+    // Done
     @media (max-width: 480px) {
-        font-size: 1.3rem;
-        margin-bottom: 0.25rem;
-        line-height: ${({ $length }) => $length > 20 && '1.3rem'};
+        width: 100%;
+        font-size: var(--header-normal-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -48,12 +52,12 @@ export const ImageWrapper = styled.div`
     }
 `;
 
-export const SectionImage = styled.div<{ src: string }>`
+export const SectionImage = styled.div<{ $src: string }>`
     background-size: contain;
     width: 80%;
     height: 80%;
     background-position: center;
     background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 1px var(--secondary-white-color));
-    background-image: ${({ src }) => src && `url(${src})`};
+    background-image: ${({ $src }) => $src && `url(${$src})`};
 `;

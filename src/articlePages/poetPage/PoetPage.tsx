@@ -23,7 +23,7 @@ import SectionOptions from '../../components/poet/sectionOptions/SectionOptions'
 
 // Components
 import Loader from '../../components/common/loader/Loader';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';

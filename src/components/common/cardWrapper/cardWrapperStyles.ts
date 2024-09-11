@@ -27,7 +27,6 @@ export const StyledLink = styled(Link)<LinkProps>`
     transition: border-radius 250ms, box-shadow 400ms;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
     height: ${({ $type }) => ($type === 'long' ? '35rem' : '23rem')};
-
     ${({ $disabled }) =>
         $disabled
             ? css`
@@ -62,21 +61,29 @@ export const StyledLink = styled(Link)<LinkProps>`
                       }
                   }
               `}
+    // Done
     @media (max-width: 480px) {
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
-        height: ${({ $type }) => ($type === 'long' ? '20.5rem' : '23rem')};
-        width: ${({ $type }) => ($type === 'long' ? '13.5rem' : '23rem')};
+        height: ${({ $type }) => ($type === 'long' ? '16rem' : '16rem')};
+        width: ${({ $type }) => ($type === 'long' ? '10.3rem' : '16rem')};
 
         &:hover {
             border-radius: 0.7rem;
             transition: initial;
+
+            > * {
+                border-radius: 0.7rem;
+
+                &:hover {
+                    border-radius: 0.7rem;
+                }
+            }
         }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
         width: 25rem;
-
         ${({ $type }) =>
             $type === 'long'
                 ? css`

@@ -15,7 +15,7 @@ import { requestArticleInfo } from '../../services/request';
 // Components
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';

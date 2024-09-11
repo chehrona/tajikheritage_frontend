@@ -9,7 +9,7 @@ export const StyledIconButton = styled(IconButton)`
     &.MuiIconButton-root {
         color: var(--primary-white-color);
         margin-left: 0.3rem;
-        border: 0.0625rem solid var(--primary-gold-color);
+        border: 1px solid var(--primary-gold-color);
         background-color: var(--primary-shadow-color);
         box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-gold-color);
 

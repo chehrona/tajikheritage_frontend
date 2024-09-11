@@ -11,8 +11,9 @@ export const MainContainer = styled.div`
     height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100svh - 4.5rem);
-        height: calc(100svh - 4.5rem);
+        background-color: red;
+        min-height: calc(100svh - var(--header-height));
+        height: calc(100svh - var(--header-height));
     }
 `;
 
@@ -82,7 +83,7 @@ export const StepperContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: 1rem 2rem;
+        padding: var(--page-padding);
         scroll-snap-type: mandatory;
         scroll-snap-type: y mandatory;
     }
@@ -150,6 +151,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
               `};
 
     @media (max-width: 480px) {
+        background-color: green;
         width: 100%;
         padding-top: 0rem;
         text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
@@ -184,7 +186,7 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 
 export const Desc = styled.div`
     color: var(--secondary-white-color);
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
     width: 40%;
     margin-left: 10%;
     position: relative;
@@ -303,7 +305,7 @@ export const ImageSemiCircle = styled.img`
         width: 35rem;
         height: 35rem;
         padding: 0.5rem;
-        border: 0.0625rem solid var(--primary-gold-color);
+        border: 1px solid var(--primary-gold-color);
         z-index: -1;
         opacity: 0.3;
     }

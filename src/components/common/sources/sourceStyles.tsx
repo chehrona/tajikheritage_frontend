@@ -9,8 +9,8 @@ export const MainContainer = styled.div`
     padding-top: 0rem;
 
     @media (max-width: 480px) {
-        border-radius: 0rem 0rem 2rem 2rem;
-        padding: 2rem var(--mobile-padding) 3rem var(--mobile-padding);
+        border-radius: 0rem;
+        padding: 0rem var(--page-padding) 3rem var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -51,7 +51,6 @@ export const RefContainer = styled.div<{ $open: boolean }>`
         $open
             ? css`
                   height: 15rem;
-                  padding: 0.8rem 0rem 1.75rem 0rem;
                   box-shadow: 0rem 0rem 0.4rem 0.01rem
                       var(--primary-black-color);
               `
@@ -82,7 +81,9 @@ export const RefWrapper = styled.div<{ $open: boolean }>`
     }
 
     @media (max-width: 480px) {
-        padding: 0.2rem 1.5rem;
+        width: 100%;
+        margin: 0rem;
+        padding: var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -99,30 +100,20 @@ export const SubTitle = styled.div`
     color: var(--primary-white-color);
 
     @media (max-width: 1024px) {
-        font-size: 2.5rem;
+        font-size: var(--header-medium-text);
         margin-bottom: 0.5rem;
     }
 `;
 
 export const Reference = styled.span`
-    font-size: var(--desktop-body-text);
-    line-height: 1.7rem;
-
-    @media (max-width: 1024px) {
-        font-size: 1.3rem;
-    }
+    font-size: var(--body-text);
 `;
 
 export const RefBox = styled.div`
     display: flex;
     align-items: start;
-    font-size: var(--desktop-body-text);
-    line-height: 1.7rem;
     position: relative;
-
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-    }
+    font-size: var(--body-text);
 `;
 
 export const RefIndex = styled.div`
@@ -133,7 +124,6 @@ export const RefIndex = styled.div`
 
 export const SourceLink = styled.a`
     color: var(--primary-gold-color);
-    margin-left: 0.5rem;
     position: absolute;
     margin-left: 5px;
     bottom: -3.5px;
@@ -145,4 +135,8 @@ export const SourceLink = styled.a`
 
 export const SourceWrapper = styled.div`
     display: inline-block;
+
+    @media (max-width: 480px) {
+        padding: 0.25rem 0rem;
+    }
 `;

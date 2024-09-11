@@ -13,7 +13,7 @@ import { DescDetails, ErrorTypes } from '../../appTypes';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
-import Fade from '../../components/common/transition/Fade';
+import Fade from '../../components/common/pageTransition/Transition';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';

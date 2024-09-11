@@ -64,7 +64,7 @@ export const MainTitle = styled.div`
 export const HistoryInfo = styled.div`
     opacity: 0;
     color: var(--primary-black-color);
-    font-size: var(--desktop-body-text);
+    font-size: var(--body-text);
     position: relative;
     line-height: 1.7rem;
     animation-delay: 0.01s;

@@ -45,9 +45,10 @@ export const StyledFlag = styled.div`
             ? `url(${ruLogo})`
             : `url(${tjLogo})`};
 
+    // Done
     @media (max-width: 480px) {
-        height: 2rem;
-        width: 2rem;
+        height: 1.75rem;
+        width: 1.75rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -68,9 +69,10 @@ export const StyledIconButton = styled(IconButton)<IconButtonProps>`
         margin-bottom: 0.2rem;
     }
 
+    // Done
     @media (max-width: 480px) {
         &.MuiIconButton-root {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
     }
 

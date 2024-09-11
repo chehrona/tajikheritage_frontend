@@ -21,7 +21,7 @@ export const LogoContainer = styled.div`
     z-index: 2;
 
     @media (max-width: 480px) {
-        top: -3.5rem;
+        top: -2.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -68,8 +68,8 @@ export const LogoOuter = styled.img<{ $lang: string }>`
         `}
 
     @media (max-width: 480px) {
-        height: 7rem;
-        width: 7rem;
+        height: 5rem;
+        width: 5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -86,8 +86,8 @@ export const LogoInner = styled.img`
     transform: translateX(-50%);
 
     @media (max-width: 480px) {
-        height: 7rem;
-        width: 7rem;
+        height: 5rem;
+        width: 5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -104,9 +104,9 @@ export const SvgContainer = styled.svg`
     top: -0.75rem;
 
     @media (max-width: 480px) {
-        height: 9.8rem;
-        width: 9.8rem;
-        top: -1.25rem;
+        height: 7rem;
+        width: 7rem;
+        top: -0.75rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -126,7 +126,7 @@ export const Text = styled.text`
     letter-spacing: 2.5px;
 
     @media (max-width: 480px) {
-        font-size: 2rem;
+        font-size: var(--header-medium-text);
         letter-spacing: 3px;
     }
 

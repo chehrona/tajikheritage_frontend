@@ -20,7 +20,6 @@ const Footer: React.FC = () => {
     return (
         <FooterContainer $show={location.pathname !== '/'}>
             <FooterInnerContainer>
-                <SocialsWrapper />
                 <Text>
                     <StyledCopyrightIcon />
                     The Tajik Heritage 2023

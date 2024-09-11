@@ -9,7 +9,8 @@ export const PageTitle = styled.div`
     text-align: center;
 
     @media (max-width: 480px) {
-        font-size: 2rem;
+        font-size: var(--header-medium-text);
+        line-height: var(--header-medium-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -28,6 +29,6 @@ export const CardsContainer = styled.div<{ $center: boolean }>`
     @media (max-width: 480px) {
         justify-content: center;
         gap: 2rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 `;
