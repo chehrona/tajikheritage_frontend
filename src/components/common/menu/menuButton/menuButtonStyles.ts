@@ -28,6 +28,7 @@ export const MainContainer = styled.div`
 
     @media (max-width: 480px) {
         width: 2.15rem;
+        margin-right: 0.25rem;
     }
 `;
 

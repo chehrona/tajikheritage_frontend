@@ -19,6 +19,7 @@ export const ArticleContainer = styled.div`
     background-color: var(--regular-white-color);
     padding: 2rem var(--page-padding);
     animation: ${fadeIn} 1s ease-in-out forwards;
+    overflow-x: hidden;
 
     @media (max-width: 480px) {
         padding: 0rem;
@@ -35,6 +36,7 @@ export const LandingContainer = styled.div`
     padding: 2rem 7rem;
     background: var(--regular-white-color);
     animation: ${fadeIn} 1s ease-in-out forwards;
+    overflow-x: hidden;
 
     @media (max-width: 480px) {
         padding: var(--page-padding);

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Close } from '@mui/icons-material';
-import { IconButton, Dialog } from '@mui/material';
+import { Dialog } from '@mui/material';
 
 // Types
 import { StyledDialogProps } from './types/styleTypes';
@@ -16,10 +15,10 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
         background-color: ${({ $background }) => $background && $background};
 
         @media (max-width: 480px) {
-            font-size: 1.3rem;
+            font-size: var(--body-text);
             margin: 0rem;
-            width: calc(100vw - 3rem);
-            max-width: calc(100vw - 3rem);
+            width: calc(100vw - (2 * var(--page-padding)));
+            max-width: calc(100vw - (2 * var(--page-padding)));
             height: ${({ $height }) => ($height ? $height : 'fit-content')};
         }
     }
@@ -29,30 +28,9 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     }
 `;
 
-export const StyledCloseButton = styled(IconButton)`
-    width: 3.5rem;
-    height: 3.5rem;
-    top: 0rem;
-    right: 0rem;
-    z-index: 10;
-
-    &.MuiIconButton-root {
-        position: absolute;
-    }
-`;
-
-export const StyledCloseIcon = styled(Close)`
-    color: var(--primary-gold-color);
-
-    &.MuiSvgIcon-root {
-        width: 3rem;
-        height: 2rem;
-    }
-
-    @media (max-width: 1024px) {
-        &.MuiSvgIcon-root {
-            width: 3rem;
-            height: 2.5rem;
-        }
-    }
+export const DialogHeaderWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: calc(var(--text-segment-gap) / 2);
 `;

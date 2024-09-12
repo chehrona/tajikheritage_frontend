@@ -1,73 +1,85 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-
-// Types
-import { BookReaderProps } from './types/componentTypes';
-
-// Styled components
 import {
-    StyledDialog,
+    MainContainer,
     StyledFrame,
-    Header,
     Title,
-    LogoWrapper,
-    StyledLink,
-    TitleWrapper,
-    Logo,
     IconWrapper,
-    StyledIconButton,
-    StyledCloseIcon,
 } from './bookReaderStyles';
+import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
+import {
+    HeaderContainer,
+    HeaderInnerBox,
+} from '../../common/header/headerStyles';
+import HeaderLogo from '../../common/headerLogo/HeaderLogo';
+import { Zoom } from '@mui/material';
+import CloseButton from '../../common/closeButton/CloseButton';
 
-const BookReader: React.FC<BookReaderProps> = ({
-    book,
-    setOpenBook,
-    openBook,
-    setBookIndex,
-}) => {
-    const [pdfUrl, setPdfUrl] = useState('');
+const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
+    const [pdfUrl, setPdfUrl] = useState<string>('');
+    const baseUrl =
+        process.env.REACT_APP_BASE_URL || 'http://api.thetajikheritage.com';
 
-    function closeReader() {
-        setOpenBook(false);
-        setBookIndex(null);
-    }
+    const handleCloseReader = () => {
+        setBookIndex(-1);
+    };
 
-    // useEffect(() => {
-    //     axios
-    //         .get(`${process.env.REACT_APP_BASE_URL + book?.source}`, {
-    //             responseType: 'arraybuffer',
-    //         })
-    //         .then((response) => {
-    //             const blob = new Blob([response.data], {
-    //                 type: 'application/pdf',
-    //             });
-    //             const pdfUrl = URL.createObjectURL(blob);
-    //             setPdfUrl(pdfUrl);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error fetching PDF file:', error);
-    //         });
-    // }, [book?.source]);
+    useEffect(() => {
+        if (book?.source) {
+            const fetchPdf = async () => {
+                try {
+                    const response = await axios.get(
+                        `${baseUrl + book?.source}`,
+                        {
+                            responseType: 'arraybuffer',
+                        },
+                    );
+                    const blob = new Blob([response.data], {
+                        type: 'application/pdf',
+                    });
+                    const pdfBlobUrl = URL.createObjectURL(blob);
+                    setPdfUrl(pdfBlobUrl);
+                } catch (error) {
+                    console.error('Error fetching PDF file:', error);
+                }
+            };
+
+            fetchPdf();
+
+            // Cleanup function to revoke the URL when the component unmounts or when a new PDF URL is created
+            return () => {
+                if (pdfUrl) {
+                    URL.revokeObjectURL(pdfUrl);
+                }
+            };
+        }
+    }, [book?.source]);
+
+    const handleLogoClick = useCallback(() => {
+        setBookIndex(-1);
+        setPdfUrl('');
+    }, [setBookIndex]);
 
     return (
-        <StyledDialog open={openBook} fullScreen>
-            <Header>
-                <LogoWrapper>
-                    <StyledLink to={'/'}>
-                        <Logo src={'/tajiks.png'}></Logo>
-                    </StyledLink>
-                </LogoWrapper>
-                <TitleWrapper>
-                    <Title>{book?.title}</Title>
-                </TitleWrapper>
-                <IconWrapper>
-                    <StyledIconButton onClick={closeReader}>
-                        <StyledCloseIcon />
-                    </StyledIconButton>
-                </IconWrapper>
-            </Header>
-            <StyledFrame src={`${book?.source}#toolbar=0`} />
-        </StyledDialog>
+        <MainContainer
+            open={(book.source?.length ?? 0) > 0}
+            fullScreen
+            TransitionComponent={Zoom}
+            TransitionProps={{
+                timeout: 200,
+            }}
+        >
+            <HeaderContainer $show={true}>
+                <HeaderInnerBox>
+                    <HeaderLogo handleLogoClick={handleLogoClick} />
+                    <Title $index={0}>{book?.title}</Title>
+                    <IconWrapper>
+                        <CloseButton handleClose={handleCloseReader} />
+                    </IconWrapper>
+                </HeaderInnerBox>
+            </HeaderContainer>
+            {pdfUrl ? <StyledFrame src={`${pdfUrl}#toolbar=0`} /> : null}
+        </MainContainer>
     );
 };
 

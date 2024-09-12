@@ -14,15 +14,13 @@ import { MenuProps } from '../menu/menuDropdown/types/componentTypes';
 import {
     HeaderContainer,
     HeaderInnerBox,
-    LogoWrapper,
     TitleContainer,
     TitleWrapper,
-    Logo,
     SecondTitle,
-    StyledLink,
     Semicolon,
     FirstTitle,
 } from './headerStyles';
+import HeaderLogo from '../headerLogo/HeaderLogo';
 
 const sequence = [
     [0, 1, 2],
@@ -59,11 +57,7 @@ const Header: React.FC<MenuProps> = ({
     return (
         <HeaderContainer $show={!noShow}>
             <HeaderInnerBox>
-                <LogoWrapper>
-                    <StyledLink to={'/'} onClick={handleLogoClick}>
-                        <Logo src={'/tajiks.png'}></Logo>
-                    </StyledLink>
-                </LogoWrapper>
+                <HeaderLogo handleLogoClick={handleLogoClick} />
                 <TitleContainer>
                     {titleOrder.map((order, i) => {
                         const isElipsis: boolean =

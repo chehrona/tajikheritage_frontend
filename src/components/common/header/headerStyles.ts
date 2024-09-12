@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.div<{ $show: boolean }>`
     width: 100%;
@@ -27,33 +26,12 @@ export const HeaderInnerBox = styled.div`
 
     // Done
     @media (max-width: 480px) {
-        padding: 0.15rem 0.75rem;
+        padding: 0.25rem 0.5rem 0.25rem 0.75rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 1.15rem;
     }
-`;
-
-// Logo
-export const LogoWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(var(--header-height) - 0.3rem);
-    width: calc(var(--header-height) - 0.3rem);
-`;
-
-export const Logo = styled.img`
-    height: 100%;
-    width: 100%;
-`;
-
-export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
 `;
 
 // Title
@@ -68,7 +46,7 @@ export const TitleContainer = styled.div`
 
     // Done
     @media (max-width: 480px) {
-        font-size: 1.15rem;
+        font-size: var(--header-small);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

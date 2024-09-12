@@ -1,88 +1,40 @@
 import styled from 'styled-components';
-import { Dialog, IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { Close } from '@mui/icons-material';
+import { Dialog } from '@mui/material';
 
-export const StyledDialog = styled(Dialog)`
+// Components
+import { TitleWrapper } from '../../common/header/headerStyles';
+
+export const MainContainer = styled(Dialog)`
     height: 100%;
-    width: 100% !important;
+    width: 100%;
+
+    & .MuiPaper-root {
+        background-color: var(--primary-black-color);
+    }
 `;
 
 export const StyledFrame = styled.iframe`
-    margin-top: 5rem;
     width: 100vw;
     height: 100vh;
     border: none;
-    background: #202020 url('/loader.png') center no-repeat;
+    background: var(--primary-grey-color) url('/loader.png') center no-repeat;
     background-size: 20% auto;
 `;
 
-export const Header = styled.div`
-    background: var(--primary-black-color);
-    height: 5rem;
-    width: 100%;
-    position: absolute;
-    top: 0rem;
-    z-index: 10;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-`;
-
-export const Title = styled.div`
-    font-size: 2rem;
+export const Title = styled(TitleWrapper)`
+    font-size: var(--header-normal);
     font-family: var(--fancy-font);
-    font-style: italic;
-    text-align: center;
-`;
-
-export const LogoWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-    width: 4rem;
-    margin-left: 1rem;
-`;
-
-export const Logo = styled.img`
-    height: 100%;
-    width: 100%;
-`;
-
-export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: inherit;
-`;
-
-export const TitleWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    font-family: var(--fancy-font);
+    max-height: var(--header-height);
+    font-weight: normal;
 `;
 
 export const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-left: 1rem;
-    height: 4rem;
-    width: 6rem;
-`;
+    height: 100%;
 
-export const StyledIconButton = styled(IconButton)`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-`;
-
-export const StyledCloseIcon = styled(Close)`
-    color: var(--primary-gold-color);
-
-    &.MuiSvgIcon-root {
-        height: 3.5rem;
-        width: 2.5rem;
+    @media (max-width: 480px) {
+        margin-right: -0.35rem;
     }
 `;

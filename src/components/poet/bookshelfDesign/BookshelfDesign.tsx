@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+
+// Components
 import BookReader from '../bookReader/BookReader';
 import BookDialog from '../bookDialog/BookDialog';
 
+// Types
+import { BookshelfDesignProps } from './types/componentTypes';
+
+// Styled components
 import {
     Book,
     BooksContainer,
@@ -13,22 +19,22 @@ import {
     StyledTooltip,
 } from './bookshelfDesignStyles';
 
-export default function BookshelfDesign({ shelfNum, work, poet }) {
-    const [openBook, setOpenBook] = useState(false);
-    const [bookDialog, setBookDialog] = useState(false);
-    const [bookIndex, setBookIndex] = useState(null);
+const BookshelfDesign: React.FC<BookshelfDesignProps> = ({
+    shelfNum,
+    work,
+    poet,
+}) => {
+    const [bookIndex, setBookIndex] = useState<number>(-1);
 
-    function handleBookAction(e) {
-        const index = e.target.getAttribute('data');
-        setBookIndex(index);
+    function handleBookAction(e: React.MouseEvent<HTMLDivElement>) {
+        const indexStr = e.currentTarget.getAttribute('data-id');
 
-        if (poet[index]?.msg) {
-            setBookDialog(true);
-            setOpenBook(false);
-        } else if (poet[index]?.source) {
-            setOpenBook(true);
-            setBookDialog(false);
+        if (indexStr === null || isNaN(parseInt(indexStr))) {
+            return;
         }
+
+        const index = parseInt(indexStr);
+        setBookIndex(index);
     }
 
     return (
@@ -47,15 +53,16 @@ export default function BookshelfDesign({ shelfNum, work, poet }) {
                             arrow={true}
                             key={i}
                         >
-                            <BookWrapper>
+                            <BookWrapper
+                                data-id={shelfNum + i}
+                                onClick={(e) => handleBookAction(e)}
+                            >
                                 <Book
-                                    $grey={book?.msg}
-                                    data={shelfNum + i}
+                                    $grey={!book.source}
                                     src={
                                         process.env.REACT_APP_BASE_URL +
                                         book?.cover
                                     }
-                                    onClick={(e) => handleBookAction(e)}
                                 />
                             </BookWrapper>
                         </StyledTooltip>
@@ -63,18 +70,20 @@ export default function BookshelfDesign({ shelfNum, work, poet }) {
                 })}
             </BooksContainer>
             <Shelf />
-            <BookDialog
-                book={poet[bookIndex]}
-                setBookDialog={setBookDialog}
-                bookDialog={bookDialog}
-                setBookIndex={setBookIndex}
-            />
-            <BookReader
-                book={poet[bookIndex]}
-                setOpenBook={setOpenBook}
-                openBook={openBook}
-                setBookIndex={setBookIndex}
-            />
+            {bookIndex >= 0 && (
+                <>
+                    <BookDialog
+                        book={poet[bookIndex]}
+                        setBookIndex={setBookIndex}
+                    />
+                    <BookReader
+                        book={poet[bookIndex]}
+                        setBookIndex={setBookIndex}
+                    />
+                </>
+            )}
         </section>
     );
-}
+};
+
+export default BookshelfDesign;

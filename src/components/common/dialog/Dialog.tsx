@@ -1,13 +1,16 @@
 import React from 'react';
 
+// Material UI
+import { Zoom } from '@mui/material';
+
+// Components
+import CloseButton from '../closeButton/CloseButton';
+
 // Types
 import { DialogProps } from './types/componentTypes';
 
-import {
-    StyledDialog,
-    StyledCloseButton,
-    StyledCloseIcon,
-} from './dialogStyles';
+// Styled components
+import { StyledDialog, DialogHeaderWrapper } from './dialogStyles';
 
 const Dialog: React.FC<DialogProps> = ({
     handleClose,
@@ -28,10 +31,14 @@ const Dialog: React.FC<DialogProps> = ({
             $height={height}
             $backdrop={backdrop}
             $background={background}
+            TransitionComponent={Zoom}
+            TransitionProps={{
+                timeout: 200,
+            }}
         >
-            <StyledCloseButton onClick={handleClose}>
-                <StyledCloseIcon />
-            </StyledCloseButton>
+            <DialogHeaderWrapper>
+                <CloseButton handleClose={handleClose} />
+            </DialogHeaderWrapper>
             {children}
         </StyledDialog>
     );

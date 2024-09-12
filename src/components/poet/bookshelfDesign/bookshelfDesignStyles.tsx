@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import { Tooltip, tooltipClasses } from '@mui/material';
 import { StyledTooltipProps } from '../../common/tooltip/types/styleTypes';
 
+const bookshelfHeight = '15rem';
+
 export const MainContainer = styled.div`
     width: 100%;
-    height: 17rem;
-    perspective: 45rem;
+    height: ${bookshelfHeight};
+    perspective: 40rem;
     overflow: hidden;
     background-color: var(--primary-black-color);
     position: absolute;
@@ -15,13 +17,13 @@ export const MainContainer = styled.div`
 export const Cuboid = styled.div`
     position: relative;
     width: 100%;
-    height: 17rem;
+    height: ${bookshelfHeight};
     transform-style: preserve-3d;
 `;
 
 export const CuboidFace = styled.div`
     width: 100%;
-    height: 17rem;
+    height: ${bookshelfHeight};
     opacity: 0.6;
     display: flex;
     align-items: center;
@@ -30,9 +32,9 @@ export const CuboidFace = styled.div`
     box-shadow: 0 1px 3px 0 var(--secondary-white-color),
         0 1px 2px -1px var(--secondary-white-color),
         0rem 0rem 2rem 0.5rem inset var(--regular-black-color);
-    transform: translateZ(calc(17rem * -0.5)) translateY(calc(17rem * 0.5))
-        rotateX(-90deg);
-    height: 17rem;
+    transform: translateZ(calc(${bookshelfHeight} * -0.5))
+        translateY(calc(${bookshelfHeight} * 0.5)) rotateX(-90deg);
+    height: ${bookshelfHeight};
     background: var(--secondary-white-color);
 `;
 
@@ -42,11 +44,15 @@ export const BooksContainer = styled.div`
     align-items: flex-end;
     gap: 4rem;
     position: relative;
-    height: 17rem;
+    height: ${bookshelfHeight};
     padding-bottom: 1rem;
     box-sizing: border-box;
     cursor: pointer;
     position: relative;
+
+    @media (max-width: 480px) {
+        gap: calc(2 * var(--square-card-gap));
+    }
 `;
 
 export const BookWrapper = styled.div`
@@ -58,9 +64,17 @@ export const BookWrapper = styled.div`
     width: 9rem;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 480px) {
+        height: 11.5rem;
+        width: 7.95rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    }
 `;
 
-export const Book = styled.img<{ $grey: boolean }>`
+export const Book = styled.img<{ $grey?: boolean }>`
     width: 100%;
     height: 100%;
     display: flex;

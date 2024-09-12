@@ -1,7 +1,4 @@
-import React, { useState, useRef, ReactElement, useCallback } from 'react';
-
-// Material UI
-import { Zoom } from '@mui/material';
+import React, { useState, useRef, useCallback } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
@@ -9,10 +6,10 @@ import { useMediaQuery } from 'react-responsive';
 
 // Components
 import Dialog from '../../common/dialog/Dialog';
+import { ZoomTransition } from '../../common/transitions/Transitions';
 
 // Types
 import { MovieDialogProps } from './types/componentTypes';
-import { TransitionProps } from '@mui/material/transitions';
 
 // Styled components
 import {
@@ -37,26 +34,6 @@ import {
     SlideDown,
     StyledArrowButton,
 } from './movieDialogStyles';
-
-// Zoom in of the dialog
-const Transition = React.forwardRef<
-    unknown,
-    TransitionProps & {
-        children: ReactElement;
-    }
->((props, ref) => {
-    const { children, ...otherProps } = props;
-
-    return (
-        <Zoom
-            easing={{ enter: 'linear', exit: 'linear' }}
-            ref={ref}
-            {...otherProps}
-        >
-            {children}
-        </Zoom>
-    );
-});
 
 const MovieDialog: React.FC<MovieDialogProps> = ({
     movieInfo,
@@ -94,7 +71,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
             handleClose={handleClose}
         >
             <StyledContent>
-                <Transition in={showVideo}>
+                <ZoomTransition in={showVideo}>
                     {showVideo ? (
                         <InfoContainer>
                             <StyledFrame
@@ -165,7 +142,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
                             </DirBox>
                         </InfoContainer>
                     )}
-                </Transition>
+                </ZoomTransition>
             </StyledContent>
         </Dialog>
     );

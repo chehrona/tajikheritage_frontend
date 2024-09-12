@@ -3,6 +3,9 @@ import React, { useCallback, useState } from 'react';
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
+// Helper
+import staticTexts from '../../../miscellaneous/staticTexts.json';
+
 // Services
 import { addEmail } from '../../../services/request';
 
@@ -10,7 +13,7 @@ import { addEmail } from '../../../services/request';
 import Dialog from '../../common/dialog/Dialog';
 
 // Types
-import { BookDialogProps } from './types/componentTypes';
+import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
 
 // Styled components
 import {
@@ -25,12 +28,7 @@ import {
     Error,
 } from './bookDialogStyles';
 
-const BookDialog: React.FC<BookDialogProps> = ({
-    book,
-    setBookDialog,
-    bookDialog,
-    setBookIndex,
-}) => {
+const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
     const { lang } = useGlobalData();
     const [email, setEmail] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
@@ -47,12 +45,12 @@ const BookDialog: React.FC<BookDialogProps> = ({
     );
 
     const handleClose = useCallback(() => {
-        setBookDialog(false);
-        setBookIndex(null);
+        console.log('i am being clicked');
+        setBookIndex(-1);
         setEmail('');
         setError(false);
         setSuccess(false);
-    }, [setBookIndex, setBookDialog]);
+    }, [setBookIndex, setEmail, setError, setSuccess]);
 
     const handleSubmit = async () => {
         const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -77,60 +75,42 @@ const BookDialog: React.FC<BookDialogProps> = ({
 
     return (
         <Dialog
-            open={bookDialog}
+            open={(book.msg?.length ?? 0) > 0}
             width={'500px'}
             height={'auto'}
             border={'1.5rem'}
             handleClose={handleClose}
             backdrop={'rgba(15 10 0 / 30%)'}
-            background={'var(--primary-var(--regular-white-color);-color)'}
+            background={'var(--primary-white-color)'}
         >
             <StyledContent>
                 <InfoContainer>
                     <InfoTitle>
-                        {lang === 'us'
-                            ? 'Apologies!'
-                            : lang === 'ru'
-                            ? 'Извините!'
-                            : 'Бубахшед!'}
+                        {staticTexts.NO_BOOK_DIALOG.title[lang]}
                     </InfoTitle>
                     <BodyContainer>
                         <Desc>{book?.msg}</Desc>
                         {book?.email && (
                             <InputWrapper>
                                 <InputField
+                                    id="email-for-books"
                                     placeholder={
-                                        lang === 'us'
-                                            ? 'Enter your email'
-                                            : lang === 'ru'
-                                            ? 'Адрес электронной почты'
-                                            : 'Суроғаи почтаи электронӣ'
+                                        staticTexts.NO_BOOK_DIALOG.input[lang]
                                     }
                                     value={email}
                                     onChange={(e) => handleChange(e)}
                                 />
                                 <StyledButton onClick={handleSubmit}>
-                                    {lang === 'us'
-                                        ? 'Submit'
-                                        : lang === 'ru'
-                                        ? 'Ввод'
-                                        : 'Фирист'}
+                                    {staticTexts.NO_BOOK_DIALOG.button[lang]}
                                 </StyledButton>
                             </InputWrapper>
                         )}
-                        <Error error={error} success={success}>
+                        <Error $error={error} $success={success}>
                             {error
-                                ? lang === 'us'
-                                    ? 'Invalid email'
-                                    : lang === 'ru'
-                                    ? 'Неверный адрес'
-                                    : 'Почтаи электронӣ нодуруст'
-                                : success &&
-                                  (lang === 'us'
-                                      ? 'We got your email address. Thank you.'
-                                      : lang === 'ru'
-                                      ? 'Мы получили ваш адрес электронной почты. Спасибо.'
-                                      : 'Почтаи электрониатонро гирифтем. Раҳмат.')}
+                                ? staticTexts.NO_BOOK_DIALOG.error[lang]
+                                : success
+                                ? staticTexts.NO_BOOK_DIALOG.success[lang]
+                                : null}
                         </Error>
                     </BodyContainer>
                 </InfoContainer>

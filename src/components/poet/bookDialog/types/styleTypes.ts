@@ -1,4 +1,4 @@
 export type ErrorStyleProps = {
-    success: boolean;
-    error: boolean;
+    $success: boolean;
+    $error: boolean;
 };

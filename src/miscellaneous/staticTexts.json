@@ -489,6 +489,33 @@
         "tj": "Адабиёт",
         "us": "References"
     },
+    "NO_BOOK_DIALOG": {
+        "title": {
+            "us": "Apologies!",
+            "ru": "Извините!",
+            "tj": "Бубахшед!"
+        },
+        "input": {
+            "us": "Enter your email",
+            "ru": "Адрес электронной почты",
+            "tj": "Суроғаи почтаи электронӣ"
+        },
+        "button": {
+            "us": "Submit",
+            "ru": "Ввод",
+            "tj": "Фирист"
+        },
+        "error": {
+            "us": "Invalid email",
+            "ru": "Неверный адрес",
+            "tj": "Почтаи электронӣ нодуруст"
+        },
+        "success": {
+            "us": "We got your email address. Thank you.",
+            "ru": "Мы получили ваш адрес электронной почты. Спасибо.",
+            "tj": "Почтаи электрониатонро гирифтем. Раҳмат."
+        }
+    },
     "TEMP_PAGE_INFO": {
         "us": "Exciting updates are on the way!",
         "ru": "Обновления уже в пути!",
