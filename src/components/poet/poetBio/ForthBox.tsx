@@ -13,6 +13,7 @@ import { PoetBioSectionFour } from './types/componentTypes';
 // Styled components
 import {
     BoxSix,
+    SectionText,
     FamilyDesc,
     LeftContainer,
     RightContainer,
@@ -44,7 +45,10 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
                     <Year $align={true} $color={'var(--regular-black-color)'}>
                         {bioFour?.year}
                     </Year>
-                    <DescWrapper data={bioFour?.desc} />
+                    <DescWrapper
+                        data={bioFour?.desc}
+                        TextWrapper={SectionText}
+                    />
                 </FamilyDesc>
             </LeftContainer>
             <RightContainer ref={parentRef}>

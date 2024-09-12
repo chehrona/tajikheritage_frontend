@@ -71,13 +71,17 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
         fetchData();
     }, [location.pathname, lang]);
 
-    const scrollToView = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const scrollToView = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.preventDefault();
         const target = e.currentTarget.getAttribute('data-id');
-        const parent = document.querySelector('.content-container');
+        const parent = document.querySelector('.routes-container');
+
+        console.log(target, 'target', parent, 'parent');
 
         if (parent && target) {
-            const targetElement = document.querySelector(target) as HTMLElement;
+            const targetElement = document.querySelector(
+                target,
+            ) as HTMLDivElement;
 
             if (targetElement) {
                 parent.scrollTo({
@@ -86,7 +90,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
                 });
             }
         }
-    }, []);
+    };
 
     return (
         <>

@@ -50,6 +50,23 @@ export const MainContainer = styled.div`
     @media (max-width: 480px) {
         border-radius: 0rem;
         flex-direction: column-reverse;
+
+        &:after {
+            content: '';
+            padding: 2rem;
+            width: 100%;
+            background: var(--primary-white-color);
+            -webkit-clip-path: polygon(
+                -10px 0px,
+                100% 100%,
+                100% 100%,
+                0% 100%
+            );
+            clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
+            position: absolute;
+            bottom: 1rem;
+            box-sizing: border-box;
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -165,8 +182,8 @@ export const PoetName = styled.div<{ $color?: boolean }>`
     `}
 
     @media (max-width: 480px) {
-        font-size: 5rem;
-        line-height: 5.2rem;
+        font-size: calc(1.35 * var(--header-large));
+        line-height: calc(1.4 * var(--header-large));
         text-align: left;
         color: transparent;
         text-shadow: 0rem 0rem 2rem black;
@@ -177,7 +194,7 @@ export const PoetName = styled.div<{ $color?: boolean }>`
             `
             color: var(--secondary-white-color);
             text-align: right;
-            margin-right: 2rem;
+            margin-right: 0rem;
             -webkit-text-stroke-color: transparent;
         `}
     }
@@ -195,7 +212,8 @@ export const PoetNameContainer = styled.div`
     z-index: 2;
 
     @media (max-width: 480px) {
-        left: 2rem;
+        left: var(--page-padding);
+        bottom: calc(5.5 * (var(--page-padding)));
         display: block;
     }
 
@@ -217,11 +235,11 @@ export const YearsContainer = styled.div`
     z-index: 10;
 
     @media (max-width: 480px) {
-        font-size: 4.2rem;
-        min-height: 12rem;
+        font-size: var(--header-large);
+        min-height: 8rem;
         position: absolute;
-        top: 2rem;
-        right: 0.5rem;
+        top: var(--page-padding);
+        right: var(--page-padding);
         text-align: right;
     }
 
@@ -235,7 +253,7 @@ export const Year = styled.div`
     margin-left: 9rem;
 
     @media (max-width: 480px) {
-        margin: 0rem 2.5rem 0rem 0rem;
+        margin: 0rem var(--page-padding) 0rem 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

@@ -73,22 +73,6 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     }
 `;
 
-export const Title = styled.div`
-    font-size: 4rem;
-    font-weight: 500;
-    font-style: italic;
-    font-family: var(--fancy-font);
-    color: var(--regular-black-color);
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
-
-    // Done
-    @media (max-width: 480px) {
-        font-size: var(--header-large);
-        padding: 0rem var(--page-padding) var(--text-segment-gap)
-            var(--page-padding);
-    }
-`;
-
 export const BaseText = styled.div`
     width: 100%;
     position: relative;

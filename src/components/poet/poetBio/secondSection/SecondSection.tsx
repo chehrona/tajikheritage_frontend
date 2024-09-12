@@ -1,44 +1,41 @@
 import React, { useState, useEffect } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../hooks/useGlobalData';
-import { useMediaQuery } from 'react-responsive';
-
-// Material UI
-import { ArrowForwardIos } from '@mui/icons-material';
+import { useGlobalData } from '../../../../hooks/useGlobalData';
 
 // Components
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import { DescWrapper } from '../../../common/descWrapper/DescWrapper';
+import LeftButton from '../../../common/navButtons/LeftButton';
+import RightButton from '../../../common/navButtons/RightButton';
 
 // Types
-import { PoetBioSectionTwoDetails, PoetBioType } from './types/componentTypes';
+import { PoetBioSectionTwoDetails } from './types/componentTypes';
+import { PoetBioType } from '../types/componentTypes';
 
 // Styled components
+import { Year } from '../poetBioStyles';
 import {
-    Year,
-    BoxTwo,
+    MainContainer,
+    InnerOverlay,
+    Backdrop,
     Slides,
     SlideImg,
-    Backdrop,
-    NavBox,
-    Line,
-    Arrow,
-    InnerOverlay,
     LineWrapper,
-    Text,
     Info,
+    BoxTwoText,
+    NavBox,
+    NavButtonWrapper,
     NavWrapper,
     FillerOne,
     FillerTwo,
-    StyledIconButton,
-} from './poetBioStyles';
+    Line,
+} from './secondSectionStyles';
 
-const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
+const SecondSection: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
     const { lang } = useGlobalData();
     const [infoArr, setInfoArr] = useState<PoetBioSectionTwoDetails[]>([
         ...bioData?.two[lang],
     ]);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     useEffect(() => {
         setInfoArr([...bioData?.two[lang]]);
@@ -61,7 +58,7 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
     };
 
     return (
-        <BoxTwo>
+        <MainContainer>
             <InnerOverlay>
                 <Backdrop
                     $backdrop={
@@ -84,10 +81,12 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                         $show={true}
                     />
                     <Info>
-                        <Year>{infoArr[0]?.year}</Year>
+                        <Year $color={'var(--primary-white-color)'}>
+                            {infoArr[0]?.year}
+                        </Year>
                         <DescWrapper
                             data={infoArr[0]?.desc}
-                            TextWrapper={Text}
+                            TextWrapper={BoxTwoText}
                         />
                     </Info>
                 </LineWrapper>
@@ -101,7 +100,7 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                 <FillerTwo />
                 <NavWrapper>
                     <Line />
-                    <StyledIconButton
+                    {/* <StyledIconButton
                         $bottom={false}
                         onClick={moveUp}
                         $disabled={infoArr[0] === bioData?.two[lang][0]}
@@ -109,14 +108,14 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                         <Arrow>
                             <ArrowForwardIos />
                         </Arrow>
-                    </StyledIconButton>
+                    </StyledIconButton> */}
                 </NavWrapper>
             </NavBox>
             <NavBox $bottom={true}>
                 <FillerOne />
                 <FillerTwo />
                 <NavWrapper>
-                    <StyledIconButton
+                    {/* <StyledIconButton
                         $bottom={true}
                         onClick={moveDown}
                         $disabled={
@@ -127,37 +126,25 @@ const SecondBox: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                         <Arrow>
                             <ArrowForwardIos style={{ marginLeft: '1px' }} />
                         </Arrow>
-                    </StyledIconButton>
+                    </StyledIconButton> */}
                     <Line />
                 </NavWrapper>
             </NavBox>
-            {isMobile && (
-                <div>
-                    <StyledIconButton
-                        $bottom={true}
-                        onClick={moveDown}
-                        $disabled={
-                            infoArr[0] ===
-                            bioData?.two[lang][bioData?.two[lang].length - 1]
-                        }
-                    >
-                        <Arrow>
-                            <ArrowForwardIos style={{ marginLeft: '1px' }} />
-                        </Arrow>
-                    </StyledIconButton>
-                    <StyledIconButton
-                        $bottom={false}
-                        onClick={moveUp}
-                        $disabled={infoArr[0] === bioData?.two[lang][0]}
-                    >
-                        <Arrow>
-                            <ArrowForwardIos />
-                        </Arrow>
-                    </StyledIconButton>
-                </div>
-            )}
-        </BoxTwo>
+            <NavButtonWrapper>
+                <LeftButton
+                    disabled={infoArr[0] === bioData?.two[lang][0]}
+                    movePrev={moveUp}
+                />
+                <RightButton
+                    disabled={
+                        infoArr[0] ===
+                        bioData?.two[lang][bioData?.two[lang].length - 1]
+                    }
+                    moveNext={moveDown}
+                />
+            </NavButtonWrapper>
+        </MainContainer>
     );
 };
 
-export default SecondBox;
+export default SecondSection;

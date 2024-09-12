@@ -1,26 +1,8 @@
 import { Langs } from '../../../../appTypes';
 import { BodyObj } from '../../../common/descWrapper/types/componentTypes';
 import { SlideImage } from '../../../common/slideshow/types/componentTypes';
-
-// Section one
-export type PoetBioSectionOne = {
-    year: string;
-    slides: SlideImage[];
-    desc: BodyObj;
-};
-
-// Section two
-export type PoetBioSectionTwoDetails = {
-    year: string;
-    img: string;
-    desc: {
-        [key: string]: string;
-    };
-};
-
-export type PoetBioSectionTwo = {
-    [key: string]: PoetBioSectionTwoDetails[];
-};
+import { PoetBioSectionOne } from '../firstSection/types/componentTypes';
+import { PoetBioSectionTwo } from '../secondSection/types/componentTypes';
 
 // Section three
 export type PoetBioSectionThree = {

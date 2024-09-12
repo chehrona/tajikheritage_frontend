@@ -3,7 +3,7 @@ import { DescDetails, Langs } from '../../../appTypes';
 
 export type ArticleData = {
     name: {
-        [key in Langs]: string[];
+        [key in Langs]: string;
     };
     desc: {
         [key in Langs]: DescDetails[];

@@ -84,7 +84,7 @@ export const ImgInfo = styled.div`
     @media (max-width: 1024px) {
         bottom: 0rem;
         font-size: var(--info-text);
-        line-height: var(--info-text) + 0.35rem;
+        line-height: var(--info-text-line-height);
     }
 `;
 
@@ -104,8 +104,16 @@ export const Circle = styled.div<{ $selected: boolean }>`
     height: 0.5rem;
     border-radius: 50%;
     background-color: var(--primary-gold-color);
-    border: 1px solid var(--secondary-gold-color);
-    opacity: ${({ $selected }) => ($selected ? '1' : '0.5')};
+    ${({ $selected }) =>
+        $selected
+            ? css`
+                  border: 1px solid var(--secondary-gold-color);
+                  opacity: 1;
+              `
+            : css`
+                  border: 1px solid var(--primary-gold-color);
+                  opacity: 0.5;
+              `};
     margin-right: 0.25rem;
 
     &:last-child {

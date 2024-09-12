@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { IconButton } from '@mui/material';
+import { TitleWrapper } from '../../common/articleTitle/articleTitleStyles';
 
 // Types
-import { YearProps, StyledIconButtonProps } from './types/styleTypes';
+import { YearProps } from './types/styleTypes';
 
 export const MainContainer = styled.div`
     background-image: url(${'/noise.png'});
@@ -14,11 +14,11 @@ export const MainContainer = styled.div`
     @media (max-width: 480px) {
         position: relative;
         padding-bottom: 0rem;
-        font-size: 1.3rem;
+        font-size: var(--body-text);
 
         &::after {
             content: '';
-            padding: 3rem;
+            padding: 2rem;
             width: 100%;
             background: var(--primary-black-color);
             background-image: url(${'/noise.png'});
@@ -50,316 +50,27 @@ export const MainContainer = styled.div`
     }
 `;
 
-// Box one ****************************
-export const BoxOne = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem 3rem 1rem 3rem;
-    color: var(--primary-black-color);
-    gap: 3rem;
-    position: relative;
-
-    @media (max-width: 480px) {
-        padding: 0rem var(--mobile-padding) 2rem var(--mobile-padding);
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 0rem 2rem 1rem 2rem;
-    }
-`;
-
-export const Year = styled.div<YearProps>`
-    font-size: 3.5rem;
-    font-family: var(--fancy-font);
+export const Year = styled(TitleWrapper)<YearProps>`
     text-align: ${({ $align }) => $align && 'center'};
     color: ${({ $color }) => $color && $color};
+    font-style: normal;
+    font-weight: normal;
+    text-shadow: none;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         margin-bottom: ${({ $align }) => $align && '0rem'};
     }
 `;
 
-export const Desc = styled.div`
+export const SectionText = styled.div`
     color: var(--primary-grey-color);
 
     @media (max-width: 480px) {
-        padding: 1rem 0rem;
+        padding: var(--text-segment-gap) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 0rem 1rem 0rem;
-    }
-`;
-
-export const RightImageWrapper = styled.div`
-    width: 50%;
-    height: 30rem;
-    transition: all 0.5s;
-    position: relative;
-    overflow: hidden;
-
-    @media (max-width: 480px) {
-        width: 100%;
-        height: auto;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 100%;
-        height: 38rem;
-    }
-`;
-
-export const FirstBoxImg = styled.img`
-    width: 100%;
-    height: auto;
-`;
-
-// Box two ****************************
-export const BoxTwo = styled.div`
-    margin-top: 1rem;
-    margin-bottom: 9rem;
-    color: var(--primary-white-color);
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: space-between;
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
-
-    @media (max-width: 480px) {
-        margin: 1rem 0rem;
-        color: var(--primary-white-color);
-    }
-`;
-
-export const InnerOverlay = styled.div`
-    background: var(--primary-grey-color);
-    margin-top: 8rem;
-    width: 100%;
-    overflow: hidden;
-    filter: grayscale(1);
-    height: 40rem;
-
-    @media (max-width: 480px) {
-        height: 45rem;
-    }
-`;
-
-export const Backdrop = styled.div<{ $backdrop: string }>`
-    height: 100%;
-    width: 100%;
-    opacity: 0.2;
-    filter: grayscale(1);
-    background-size: cover;
-    background-position: center;
-    background-image: ${({ $backdrop }) => `url(${$backdrop})`};
-
-    @media (max-width: 480px) {
-        opacity: 0.15;
-    }
-`;
-
-export const Slides = styled.div`
-    left: 10%;
-    top: 0rem;
-    z-index: 1;
-    position: absolute;
-    pointer-events: none;
-
-    @media (max-width: 480px) {
-        left: auto;
-        height: 100%;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        left: 2rem;
-    }
-`;
-
-export const SlideImg = styled.img<{ $show?: boolean }>`
-    width: 18rem;
-    display: block;
-    filter: grayscale(1)
-        ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(60%)')};
-    box-shadow: ${({ $show }) =>
-        $show
-            ? '0rem 0rem 0.5rem 0.1rem var(--secondary-white-color);'
-            : '0rem 0rem 1rem 0.2rem #504221e6'};
-
-    @media (max-width: 480px) {
-        min-height: 18rem;
-        max-height: 18rem;
-        display: ${({ $show }) => !$show && 'none'};
-    }
-`;
-
-export const NavBox = styled.div<{ $bottom: boolean }>`
-    width: 100%;
-    height: 10rem;
-    position: absolute;
-    right: 0rem;
-    display: flex;
-    ${({ $bottom }) => ($bottom ? 'bottom: 0rem' : 'top: 8rem')};
-
-    @media (max-width: 480px) {
-        height: 6rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 5rem;
-        ${({ $bottom }) => ($bottom ? 'bottom: 3rem' : 'top: 8rem')};
-    }
-`;
-
-export const NavWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-
-    @media (max-width: 480px) {
-        display: none;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 8rem;
-    }
-`;
-
-export const Line = styled.div`
-    width: 0.0625rem;
-    height: 7rem;
-    background: var(--primary-gold-color);
-`;
-
-export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
-    width: 3.5rem;
-    height: 3.5rem;
-
-    &.MuiIconButton-root {
-        transform: ${({ $bottom }) =>
-            $bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
-        margin-bottom: ${({ $bottom }) => $bottom && '-0.5rem'};
-        margin-top: ${({ $bottom }) => !$bottom && '-0.5rem'};
-        pointer-events: ${({ $disabled }) => ($disabled ? 'none' : 'all')};
-    }
-
-    @media (max-width: 480px) {
-        width: 5.5rem;
-        height: 5.5rem;
-
-        &.MuiIconButton-root {
-            position: absolute;
-            bottom: 0.5rem;
-            margin: 0rem;
-            transform: ${({ $bottom }) =>
-                $bottom ? 'rotate(0deg)' : 'rotate(-180deg)'};
-            ${({ $bottom }) => ($bottom ? 'right: 0.8rem' : 'left: 0.8rem')};
-        }
-
-        &:disabled {
-            display: none;
-        }
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        width: 4.5rem;
-        height: 4.5rem;
-
-        &.MuiIconButton-root {
-            transform: ${({ $bottom }) =>
-                $bottom ? 'rotate(90deg)' : 'rotate(-90deg)'};
-            margin-bottom: ${({ $bottom }) => $bottom && '-0.6rem'};
-            margin-top: ${({ $bottom }) => !$bottom && '-0.6rem'};
-        }
-    }
-`;
-
-export const Arrow = styled.div`
-    color: var(--primary-gold-color);
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--primary-gold-color);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-        box-shadow: 0rem 0rem 0.3rem 0rem var(--secondary-white-color);
-    }
-
-    @media (max-device-width: 1024px) {
-        &:hover {
-            box-shadow: 0rem 0rem 0rem 0rem var(--secondary-white-color);
-        }
-    }
-`;
-
-export const LineWrapper = styled.div`
-    color: var(--secondary-white-color);
-    display: flex;
-    height: 20rem;
-    width: 100%;
-    transition: ease 1000ms;
-    align-items: center;
-
-    @media (max-width: 480px) {
-        flex-direction: column;
-    }
-`;
-
-export const Info = styled.div`
-    padding: 0rem 10%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-    pointer-events: auto;
-
-    @media (max-width: 480px) {
-        padding: 0.5rem var(--mobile-padding) 0.5rem var(--mobile-padding);
-        background-color: green;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: 0rem 2rem;
-    }
-`;
-
-export const Text = styled.div`
-    text-align: justify;
-    word-wrap: break-word;
-    word-break: break-word;
-    line-height: 1.8rem;
-
-    @media (max-width: 480px) {
-        font-size: var(--body-text);
-        overflow-y: scroll;
-        margin-bottom: 2rem;
-    }
-`;
-
-export const FillerOne = styled.div`
-    min-width: 10%;
-
-    @media (max-width: 480px) {
-        display: none;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        min-width: 2rem;
-    }
-`;
-
-export const FillerTwo = styled.div`
-    min-width: 18rem;
-
-    @media (max-width: 480px) {
-        display: none;
     }
 `;
 
@@ -370,7 +81,7 @@ export const BoxThree = styled.div`
     padding: 0rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
-        padding: 1rem var(--mobile-padding) 2rem var(--mobile-padding);
+        padding: var(--text-segment-gap) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -390,8 +101,8 @@ export const QuoteOutline = styled.div`
     height: 5rem;
 
     @media (max-width: 1024px) {
-        width: 5.5rem;
-        height: 5.5rem;
+        width: 5rem;
+        height: 5rem;
     }
 `;
 
@@ -413,7 +124,13 @@ export const Quote = styled.div`
     text-align: center;
     padding: 1rem 0rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
+        padding: var(--text-segment-gap) 0rem;
+        font-size: var(--header-medium);
+        line-height: var(--header-medium-line-height);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         line-height: 2.4rem;
     }
 `;
@@ -480,7 +197,8 @@ export const BoxFive = styled.div`
     padding: 1.5rem 3rem 3rem 3rem;
 
     @media (max-width: 480px) {
-        padding: 1rem var(--mobile-padding) 2rem var(--mobile-padding);
+        padding: 0rem var(--page-padding) var(--text-segment-gap)
+            var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -496,6 +214,7 @@ export const BoxSix = styled.div`
 
     @media (max-width: 1024px) {
         flex-direction: column-reverse;
+        padding: var(--text-segment-gap) 0rem;
     }
 `;
 
@@ -569,7 +288,12 @@ export const FinalQuoteWrapper = styled.div`
     transform: translate(-50%, -50%);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
+        font-size: var(--header-big);
+        line-height: var(--header-big-line-height);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         line-height: 2.4rem;
     }
 `;
@@ -583,30 +307,11 @@ export const Author = styled.div`
     text-align: end;
 
     @media (max-width: 480px) {
+        margin-top: var(--text-segment-gap);
         font-size: var(--body-text);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: var(--body-text);
-    }
-`;
-
-export const ImgInfo = styled.div`
-    z-index: 10;
-    font-style: italic;
-    width: 100%;
-    text-align: left;
-    color: var(--primary-black-color);
-    bottom: 0.5rem;
-    padding: 0.25rem 0.5rem;
-
-    @media (max-width: 480px) {
-        font-size: 1.25rem;
-        line-height: 1.3rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.25rem;
-        line-height: 1.3rem;
     }
 `;

@@ -72,7 +72,10 @@ html {
 
         /* Line-heights */
         --body-text-line-height: calc(var(--body-text) * 1.45);
+        --info-text-line-height: calc(var(--info-text-line-height) * 1.15);
+        --header-large-line-height: calc(var(--header-large) * 1.3);
         --header-big-line-height: calc(var(--header-big) * 1.05);
+        --header-medium-line-height: calc(var(--header-medium) * 1.05);
     }
 }
 
@@ -110,6 +113,7 @@ body * {
 }
 
 .routes-container {
+    overflow-y: auto;
     min-height: var(--page-height);
 }
 

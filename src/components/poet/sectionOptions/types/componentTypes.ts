@@ -2,5 +2,5 @@ import { SectionType } from '../../../../articlePages/poetPage/types/componentTy
 
 export type SectionOptionsProps = {
     sections: SectionType;
-    scrollToView: (e: React.MouseEvent<HTMLElement>) => void;
+    scrollToView: (e: React.MouseEvent<HTMLSpanElement>) => void;
 };

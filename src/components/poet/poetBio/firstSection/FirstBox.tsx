@@ -4,27 +4,25 @@ import React from 'react';
 import { PoetBioSectionOne } from './types/componentTypes';
 
 // Components
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import { DescWrapper } from '../../../common/descWrapper/DescWrapper';
 
 // Styled components
 import {
-    BoxOne,
-    LeftContainer,
+    MainContainer,
     RightImageWrapper,
     ImgInfo,
-    Year,
-    Desc,
     FirstBoxImg,
-} from './poetBioStyles';
+} from './firstSectionStyles';
+import { LeftContainer, Year, SectionText } from '../poetBioStyles';
 
-const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
+const FirstSection: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
     return (
-        <BoxOne>
+        <MainContainer>
             <LeftContainer>
                 <Year $color={'var(--regular-black-color)'}>
                     {bioOne?.year}
                 </Year>
-                <DescWrapper data={bioOne?.desc} TextWrapper={Desc} />
+                <DescWrapper data={bioOne?.desc} TextWrapper={SectionText} />
             </LeftContainer>
             <RightImageWrapper>
                 <FirstBoxImg
@@ -35,8 +33,8 @@ const FirstBox: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
             <ImgInfo
                 dangerouslySetInnerHTML={{ __html: bioOne.slides[0]?.info }}
             />
-        </BoxOne>
+        </MainContainer>
     );
 };
 
-export default FirstBox;
+export default FirstSection;

@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import Slideshow from '../slideshow/Slideshow';
 import { DescWrapper } from '../descWrapper/DescWrapper';
 import ArticleSubtitle from '../articleSubtitle/ArticleSubtitle';
+import ArticleTitle from '../articleTitle/ArticleTitle';
 
 // Types
 import { TextSegmentProps } from './types/componentTypes';
@@ -14,7 +15,6 @@ import { TextSegmentProps } from './types/componentTypes';
 // Styled components
 import {
     BoxWrapper,
-    Title,
     BaseText,
     LeftText,
     RightText,
@@ -61,7 +61,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                     />
                 </SlideContainer>
             ) : null}
-            {i === 0 && title && <Title>{title}</Title>}
+            {i === 0 && title && <ArticleTitle title={title} />}
             <ArticleSubtitle
                 hasSlides={hasSlides}
                 subtitle={data.subtitle}

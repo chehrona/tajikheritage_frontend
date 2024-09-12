@@ -4,8 +4,8 @@ import React from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Components
-import FirstBox from './FirstBox';
-import SecondBox from './SecondBox';
+import FirstSection from './firstSection/FirstBox';
+import SecondSection from './secondSection/SecondSection';
 import ThirdBox from './ThirdBox';
 import ForthBox from './ForthBox';
 import FifthBox from './FifthBox';
@@ -22,8 +22,8 @@ const PoetBio: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
 
     return (
         <MainContainer id="Biography">
-            <FirstBox bioOne={bioData.one[lang]} />
-            <SecondBox bioData={bioData} />
+            <FirstSection bioOne={bioData.one[lang]} />
+            <SecondSection bioData={bioData} />
             <ThirdBox bioThree={bioData.three[lang]} />
             <ForthBox bioFour={bioData.four[lang]} />
             <FifthBox bioFive={bioData.five[lang]} />

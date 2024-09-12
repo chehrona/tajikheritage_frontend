@@ -3,6 +3,6 @@ import { DescDetails } from '../../../../appTypes';
 export type TextSegmentProps = {
     i: number;
     data: DescDetails;
-    title?: string[];
+    title?: string;
     reverse?: boolean | null;
 };
