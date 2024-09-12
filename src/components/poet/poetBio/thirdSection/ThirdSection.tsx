@@ -1,35 +1,35 @@
 import React from 'react';
 
 // Components
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import { DescWrapper } from '../../../common/descWrapper/DescWrapper';
 
 // Types
 import { PoetBioSectionThree } from './types/componentTypes';
 
 // Styled components
 import {
-    BoxThree,
+    MainContainer,
     QuoteWrapper,
     QuoteOutline,
     QuoteSymbol,
     Quote,
-    TextWrapper,
-} from './poetBioStyles';
+    BoxThreeText,
+} from './thirdSectionStyles';
 
-const ThirdBox: React.FC<{ bioThree: PoetBioSectionThree }> = ({
+const ThirdSection: React.FC<{ bioThree: PoetBioSectionThree }> = ({
     bioThree,
 }) => {
     return (
-        <BoxThree>
+        <MainContainer>
             <QuoteWrapper>
                 <QuoteOutline>
                     <QuoteSymbol />
                 </QuoteOutline>
             </QuoteWrapper>
             <Quote dangerouslySetInnerHTML={{ __html: bioThree?.quote }} />
-            <DescWrapper data={bioThree?.desc} TextWrapper={TextWrapper} />
-        </BoxThree>
+            <DescWrapper data={bioThree?.desc} TextWrapper={BoxThreeText} />
+        </MainContainer>
     );
 };
 
-export default ThirdBox;
+export default ThirdSection;

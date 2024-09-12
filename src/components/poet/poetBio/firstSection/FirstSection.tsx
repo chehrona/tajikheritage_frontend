@@ -13,15 +13,15 @@ import {
     ImgInfo,
     FirstBoxImg,
 } from './firstSectionStyles';
-import { LeftContainer, Year, SectionText } from '../poetBioStyles';
+import { LeftContainer, Title, SectionText } from '../poetBioStyles';
 
 const FirstSection: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
     return (
         <MainContainer>
             <LeftContainer>
-                <Year $color={'var(--regular-black-color)'}>
+                <Title $color={'var(--regular-black-color)'}>
                     {bioOne?.year}
-                </Year>
+                </Title>
                 <DescWrapper data={bioOne?.desc} TextWrapper={SectionText} />
             </LeftContainer>
             <RightImageWrapper>

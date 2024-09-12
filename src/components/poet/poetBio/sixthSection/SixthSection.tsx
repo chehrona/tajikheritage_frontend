@@ -1,37 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../../hooks/useGlobalData';
-import { useMediaQuery } from 'react-responsive';
+import { useGlobalData } from '../../../../hooks/useGlobalData';
 
 // Components
-import Slideshow from '../../common/slideshow/Slideshow';
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import Slideshow from '../../../common/slideshow/Slideshow';
+import { DescWrapper } from '../../../common/descWrapper/DescWrapper';
 
 // Types
-import { PoetBioType } from './types/componentTypes';
+import { PoetBioType } from '../types/componentTypes';
 
 // Styled components
+import { BoxSix, LeftContainer, RightContainer } from '../poetBioStyles';
 import {
-    BoxSix,
-    LeftContainer,
-    RightContainer,
     BackImg,
     Overlay,
     Author,
     FinalQuoteWrapper,
-} from './poetBioStyles';
+} from './sixthSectionStyles';
 
-const SixthBox: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
+const SixthSection: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
     const { lang } = useGlobalData();
     const parentRef = useRef<HTMLDivElement>(null);
     const [screenSize, setScreenSize] = useState<number>(0);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({
-        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
-    });
-
-    const height = isMobile ? 25 : isTablet ? 40 : 30;
 
     useEffect(() => {
         if (!parentRef.current) {
@@ -64,7 +55,7 @@ const SixthBox: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
-                    height={height}
+                    height={'var(--slideshow-height)'}
                     width={screenSize}
                     slides={poet?.six[lang].slides}
                 />
@@ -73,4 +64,4 @@ const SixthBox: React.FC<{ poet: PoetBioType }> = ({ poet }) => {
     );
 };
 
-export default SixthBox;
+export default SixthSection;

@@ -17,7 +17,7 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
     min-width: ${({ $width }) => $width && `${$width}px`};
     max-width: ${({ $width }) => $width && `${$width}px`};
     height: ${({ $width, $height }) =>
-        $height ? `${$height}rem` : $width && `${$width * 1.2049}px`};
+        $height ? `${$height}` : $width && `${$width * 1.2049}px`};
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
     transform: ${({ $translate }) => `translateX(${$translate}px)`};

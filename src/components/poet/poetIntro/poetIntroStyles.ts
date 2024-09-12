@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -163,7 +163,7 @@ export const TitleSpan = styled.span<{ $delay: number }>`
 
 export const PoetName = styled.div<{ $color?: boolean }>`
     opacity: 0;
-    color: var(--secondary-white-color);
+    /* color: var(--secondary-white-color); */
     font-size: 8rem;
     font-weight: bold;
     font-style: italic;
@@ -172,31 +172,33 @@ export const PoetName = styled.div<{ $color?: boolean }>`
     -webkit-text-stroke-color: var(--primary-gold-color);
     animation: ${slideOut} 1s ease-in-out forwards;
 
-    ${({ $color }) =>
+    /* ${({ $color }) =>
         $color &&
         `
         animation-delay: 0s;
         color: transparent;
         margin-right: 2rem;
         -webkit-text-stroke-width: 0.22rem;
-    `}
+    `} */
 
     @media (max-width: 480px) {
         font-size: calc(1.35 * var(--header-large));
         line-height: calc(1.4 * var(--header-large));
         text-align: left;
-        color: transparent;
         text-shadow: 0rem 0rem 2rem black;
         -webkit-text-stroke-width: 0.22rem;
 
         ${({ $color }) =>
-            $color &&
-            `
-            color: var(--secondary-white-color);
-            text-align: right;
-            margin-right: 0rem;
-            -webkit-text-stroke-color: transparent;
-        `}
+            $color
+                ? css`
+                      margin: 0rem;
+                      color: transparent;
+                      -webkit-text-stroke-color: var(--primary-gold-color);
+                  `
+                : css`
+                      color: var(--secondary-white-color);
+                      -webkit-text-stroke-color: transparent;
+                  `}
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

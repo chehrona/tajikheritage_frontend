@@ -3,25 +3,9 @@ import { BodyObj } from '../../../common/descWrapper/types/componentTypes';
 import { SlideImage } from '../../../common/slideshow/types/componentTypes';
 import { PoetBioSectionOne } from '../firstSection/types/componentTypes';
 import { PoetBioSectionTwo } from '../secondSection/types/componentTypes';
-
-// Section three
-export type PoetBioSectionThree = {
-    quote: string;
-    desc: BodyObj;
-};
-
-// Section four
-export type PoetBioSectionFour = {
-    year: string;
-    slides: SlideImage[];
-    desc: BodyObj;
-};
-
-// Section five
-export type PoetBioSectionFiveDetails = {
-    year: string;
-    desc: BodyObj;
-};
+import { PoetBioSectionThree } from '../thirdSection/types/componentTypes';
+import { PoetBioSectionFour } from '../forthSection/types/componentTypes';
+import { PoetBioSectionFive } from '../fifthSection/types/componentTypes';
 
 // Poet bio ****************************
 export type PoetBioType = {
@@ -37,7 +21,7 @@ export type PoetBioType = {
         [key in Langs]: PoetBioSectionFour;
     };
     five: {
-        [key in Langs]: PoetBioSectionFiveDetails;
+        [key in Langs]: PoetBioSectionFive;
     };
     six: {
         [key in Langs]: { desc: BodyObj; author: string; slides: SlideImage[] };

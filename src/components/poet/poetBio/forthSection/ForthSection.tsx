@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-// Hooks
-import { useMediaQuery } from 'react-responsive';
-
 // Components
-import Slideshow from '../../common/slideshow/Slideshow';
-import { DescWrapper } from '../../common/descWrapper/DescWrapper';
+import Slideshow from '../../../common/slideshow/Slideshow';
+import { DescWrapper } from '../../../common/descWrapper/DescWrapper';
 
 // Types
 import { PoetBioSectionFour } from './types/componentTypes';
@@ -14,21 +11,17 @@ import { PoetBioSectionFour } from './types/componentTypes';
 import {
     BoxSix,
     SectionText,
-    FamilyDesc,
     LeftContainer,
     RightContainer,
-    Year,
-} from './poetBioStyles';
+    Title,
+} from '../poetBioStyles';
+import { LeftTextWrapper } from './forthSectionStyles';
 
-const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
+const ForthSection: React.FC<{ bioFour: PoetBioSectionFour }> = ({
+    bioFour,
+}) => {
     const parentRef = useRef<HTMLDivElement>(null);
     const [screenSize, setScreenSize] = useState<number>(0);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({
-        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
-    });
-
-    let height = isMobile ? 25 : isTablet ? 40 : 30;
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -41,20 +34,20 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
     return (
         <BoxSix>
             <LeftContainer>
-                <FamilyDesc>
-                    <Year $align={true} $color={'var(--regular-black-color)'}>
+                <LeftTextWrapper>
+                    <Title $align={true} $color={'var(--regular-black-color)'}>
                         {bioFour?.year}
-                    </Year>
+                    </Title>
                     <DescWrapper
                         data={bioFour?.desc}
                         TextWrapper={SectionText}
                     />
-                </FamilyDesc>
+                </LeftTextWrapper>
             </LeftContainer>
             <RightContainer ref={parentRef}>
                 <Slideshow
                     width={screenSize}
-                    height={height}
+                    height={'var(--slideshow-height)'}
                     slides={bioFour?.slides}
                 />
             </RightContainer>
@@ -62,4 +55,4 @@ const ForthBox: React.FC<{ bioFour: PoetBioSectionFour }> = ({ bioFour }) => {
     );
 };
 
-export default ForthBox;
+export default ForthSection;

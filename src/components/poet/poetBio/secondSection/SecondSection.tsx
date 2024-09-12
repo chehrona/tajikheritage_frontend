@@ -13,7 +13,7 @@ import { PoetBioSectionTwoDetails } from './types/componentTypes';
 import { PoetBioType } from '../types/componentTypes';
 
 // Styled components
-import { Year } from '../poetBioStyles';
+import { Title } from '../poetBioStyles';
 import {
     MainContainer,
     InnerOverlay,
@@ -81,9 +81,9 @@ const SecondSection: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                         $show={true}
                     />
                     <Info>
-                        <Year $color={'var(--primary-white-color)'}>
+                        <Title $color={'var(--primary-white-color)'}>
                             {infoArr[0]?.year}
-                        </Year>
+                        </Title>
                         <DescWrapper
                             data={infoArr[0]?.desc}
                             TextWrapper={BoxTwoText}

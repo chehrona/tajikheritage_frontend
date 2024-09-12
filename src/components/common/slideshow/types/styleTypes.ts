@@ -1,6 +1,6 @@
 export type ImageWrapperProps = {
     $width: number;
-    $height?: number;
+    $height?: string;
     $translate: number;
     $topLeftRad?: number;
     $src: string;

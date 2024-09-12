@@ -4,12 +4,12 @@ import React from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Components
-import FirstSection from './firstSection/FirstBox';
+import FirstSection from './firstSection/FirstSection';
 import SecondSection from './secondSection/SecondSection';
-import ThirdBox from './ThirdBox';
-import ForthBox from './ForthBox';
-import FifthBox from './FifthBox';
-import SixthBox from './SixthBox';
+import ThirdSection from './thirdSection/ThirdSection';
+import ForthSection from './forthSection/ForthSection';
+import FifthSection from './fifthSection/FifthSection';
+import SixthSection from './sixthSection/SixthSection';
 
 // Types
 import { PoetBioType } from './types/componentTypes';
@@ -24,10 +24,10 @@ const PoetBio: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
         <MainContainer id="Biography">
             <FirstSection bioOne={bioData.one[lang]} />
             <SecondSection bioData={bioData} />
-            <ThirdBox bioThree={bioData.three[lang]} />
-            <ForthBox bioFour={bioData.four[lang]} />
-            <FifthBox bioFive={bioData.five[lang]} />
-            <SixthBox poet={bioData} />
+            <ThirdSection bioThree={bioData.three[lang]} />
+            <ForthSection bioFour={bioData.four[lang]} />
+            <FifthSection bioFive={bioData.five[lang]} />
+            <SixthSection poet={bioData} />
         </MainContainer>
     );
 };

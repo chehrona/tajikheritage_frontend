@@ -8,6 +8,6 @@ export type SlideImage = {
 export type SlideshowProps = {
     topLeftRad?: number;
     width: number;
-    height?: number;
+    height?: string;
     slides?: SlideImage[];
 };
