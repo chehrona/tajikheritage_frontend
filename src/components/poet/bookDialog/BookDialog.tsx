@@ -83,7 +83,6 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
             open={(book.msg?.length ?? 0) > 0}
             width={'500px'}
             height={'auto'}
-            border={'1.5rem'}
             handleClose={handleClose}
             backdrop={'rgba(15 10 0 / 30%)'}
             background={'var(--primary-white-color)'}

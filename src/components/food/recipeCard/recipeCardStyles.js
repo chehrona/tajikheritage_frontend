@@ -77,11 +77,11 @@ export const RecipeSubtitle = styled.div`
 export const RecipeImage = styled.img`
     height: 35rem;
     width: 23rem;
-    border-radius: 0.7rem;
+    border-radius: var(--small-radius);
     transition: border-radius 250ms, box-shadow 400ms;
 
     &:hover {
-        border-radius: 1.5rem;
+        border-radius: var(--big-radius);
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
         transition: border-radius 250ms, box-shadow 400ms;
     }
@@ -92,7 +92,7 @@ export const RecipeImage = styled.img`
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
 
         &:hover {
-            border-radius: 0.7rem;
+            border-radius: var(--small-radius);
         }
     }
 `;

@@ -142,7 +142,7 @@ export const PageDesc = styled.div`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
-    border-radius: 0.5rem;
+    border-radius: var(--small-radius);
     user-select: none;
     box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
     box-shadow: 0.3rem 0.3rem 0.3rem 0.05rem var(--primary-black-color);

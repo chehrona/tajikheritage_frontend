@@ -42,12 +42,13 @@ export const ViewerContainer = styled.div`
     overflow-x: hidden;
 
     &::-webkit-scrollbar {
-        width: 0.5rem;
+        width: var(--input-radius);
+        background-color: var(--primary-black-color);
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
-        border-radius: 0.25rem;
+        border-radius: var(--input-radius);
     }
 `;
 

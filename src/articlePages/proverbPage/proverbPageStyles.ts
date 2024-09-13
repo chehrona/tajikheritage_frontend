@@ -19,13 +19,12 @@ export const Shadow = styled.div`
     z-index: 2;
     width: calc(100% - 6.2rem);
     background-color: var(--primary-shadow-color);
-    border-radius: 4rem 4rem 0rem 0rem;
+    border-radius: var(--page-radius) var(--page-radius) 0rem 0rem;
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         top: 1.5rem;
         left: 1.3rem;
         width: calc(100% - 1.65rem);
-        border-radius: 2.5rem 2.5rem 0rem 0rem;
     }
 `;
 

@@ -20,14 +20,12 @@ const Dialog: React.FC<DialogProps> = ({
     backdrop,
     background,
     height,
-    border,
 }) => {
     return (
         <StyledDialog
             open={open}
             fullWidth
             $width={width}
-            $border={border}
             $height={height}
             $backdrop={backdrop}
             $background={background}

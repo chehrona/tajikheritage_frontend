@@ -25,12 +25,12 @@ export const TableImage = styled.img<{ $expanded: boolean }>`
         $expanded
             ? css`
                   height: 100vh;
-                  border-radius: 1rem;
+                  border-radius: var(--big-radius);
                   cursor: zoom-in;
               `
             : css`
                   height: 40vh;
-                  border-radius: 0.75rem;
+                  border-radius: var(--small-radius);
                   cursor: zoom-out;
               `};
 

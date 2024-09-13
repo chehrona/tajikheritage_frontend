@@ -89,7 +89,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const MainImage = styled.img`
-    border-radius: 1rem;
+    border-radius: var(--big-radius);
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -138,7 +138,7 @@ export const StyledButton = styled(Button)`
 
     &.MuiButton-root {
         background: var(--primary-shadow-color);
-        border-radius: 0.8rem;
+        border-radius: var(--small-radius);
         text-transform: none;
         padding: 0.5rem 1.5rem;
         font-family: var(--ordinary-font);

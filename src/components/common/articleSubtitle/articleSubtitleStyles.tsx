@@ -49,7 +49,7 @@ export const Subtitle = styled.span`
     width: fit-content;
     text-transform: uppercase;
     padding: 0.25rem 1rem;
-    border-radius: 1rem;
+    border-radius: var(--big-radius);
     box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-shadow-color);
     display: flex;
 

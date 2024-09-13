@@ -59,7 +59,7 @@ export const AwardWrapper = styled.div`
 export const AwardCard = styled.div<{ $delay: string }>`
     width: 10rem;
     height: 14.1rem;
-    border-radius: 1rem;
+    border-radius: var(--small-radius);
     margin-bottom: 2.57%;
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ export const Face = styled.div<{ $back: boolean }>`
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 1rem;
+    border-radius: var(--small-radius);
     padding: 0.8rem;
 
     ${({ $back }) =>

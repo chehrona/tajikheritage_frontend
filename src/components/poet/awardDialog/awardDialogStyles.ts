@@ -70,7 +70,7 @@ export const Wrapper = styled.div<{ $first: boolean }>`
 `;
 
 export const AwardImg = styled.img`
-    border-radius: 1rem;
+    border-radius: var(--small-radius);
     height: 15rem;
     width: 11rem;
     padding: 1rem;

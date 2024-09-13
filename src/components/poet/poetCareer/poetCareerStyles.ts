@@ -57,12 +57,13 @@ export const UnitWrapper = styled.div`
 export const YearWrapper = styled.div<{ $size: boolean }>`
     z-index: 1;
     background: var(--primary-black-color);
-    border-radius: 1.5rem;
+    border-radius: var(--big-radius);
     position: relative;
     background-image: url(${'/noise.png'});
     width: 0rem;
     height: 0rem;
     border: 0.5rem solid var(--primary-gold-color);
+    background-color: red;
 
     ${({ $size }) =>
         $size &&
@@ -118,7 +119,7 @@ export const InfoWrapper = styled.div`
     min-width: 810px;
     max-width: 810px;
     background: var(--primary-white-color);
-    border-radius: 1rem;
+    border-radius: var(--big-radius);
     display: flex;
 
     @media (max-width: 480px) {
@@ -135,7 +136,7 @@ export const InfoWrapper = styled.div`
 
 export const DescContainer = styled.div`
     height: 100%;
-    border-radius: 1rem;
+    border-radius: var(--big-radius);
     position: relative;
 
     @media (max-width: 480px) {
@@ -150,6 +151,7 @@ export const Desc = styled.div`
     height: 26rem;
     text-align: justify;
     overflow-y: scroll;
+    background-color: red;
 
     &::-webkit-scrollbar {
         width: 0.5rem;
@@ -157,12 +159,13 @@ export const Desc = styled.div`
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
-        border-radius: 0.25rem;
+        border-radius: var(--input-radius);
     }
 
     @media (max-width: 480px) {
-        padding: 1.5rem;
-        font-size: 1.3rem;
+        padding: var(--page-padding);
+        font-size: var(--body-text);
+        line-height: var(--body-text-line-height);
         height: 32.6rem;
     }
 
@@ -180,7 +183,7 @@ export const Footer = styled.div`
     align-items: center;
     width: 100%;
     background: var(--primary-white-color);
-    border-radius: 0rem 0rem 1rem 1rem;
+    border-radius: 0rem 0rem var(--big-radius) var(--big-radius);
     position: absolute;
     bottom: 0.5rem;
     right: 0rem;
@@ -206,7 +209,7 @@ export const MobileFooter = styled.div`
         width: calc(100vw - 3rem);
         height: 3rem;
         background: var(--primary-white-color);
-        border-radius: 0rem 0rem 1rem 1rem;
+        border-radius: 0rem 0rem var(--big-radius) var(--big-radius);
         position: absolute;
         bottom: 0rem;
         right: 0rem;

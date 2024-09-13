@@ -125,7 +125,7 @@ export const InnerBox = styled.div<InnerBoxProps>`
         width: 100%;
         z-index: 2;
         padding: 1.5rem;
-        border-radius: 2rem;
+        border-radius: var(--big-radius);
         overflow-x: hidden;
         position: absolute;
         top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
@@ -138,7 +138,6 @@ export const InnerBox = styled.div<InnerBoxProps>`
         top: 55%;
         width: 100%;
         z-index: 2;
-        border-radius: 2rem;
         position: absolute;
     }
 `;
@@ -218,7 +217,7 @@ export const MovieImg = styled.img`
         transform: none;
         width: 100%;
         height: auto;
-        border-radius: 2rem 0rem 0rem 2rem;
+        border-radius: var(--big-radius) 0rem 0rem var(--big-radius);
     }
 `;
 
@@ -309,7 +308,7 @@ export const Direction = styled.div`
 export const StyledFrame = styled.iframe`
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: var(--big-radius);
 `;
 
 export const SlideUp = styled(ArrowForwardIos)`

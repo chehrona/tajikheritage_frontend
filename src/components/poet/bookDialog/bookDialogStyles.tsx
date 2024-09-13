@@ -77,7 +77,7 @@ export const InputField = styled.input`
     outline: none;
     width: 100%;
     font-size: var(--body-text);
-    border-radius: 0.25rem;
+    border-radius: var(--input-radius);
     font-family: var(--ordinary-font);
     padding: 0.5rem;
 `;

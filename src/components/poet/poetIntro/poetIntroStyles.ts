@@ -32,7 +32,7 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    border-radius: 4rem 4rem 0rem 0rem;
+    border-radius: var(--page-radius) var(--page-radius) 0rem 0rem;
     overflow: hidden;
 
     &:after {
@@ -48,7 +48,6 @@ export const MainContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        border-radius: 0rem;
         flex-direction: column-reverse;
 
         &:after {
@@ -81,11 +80,7 @@ export const Overlay = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(${'/noise.png'});
-    border-radius: 4rem 4rem 0rem 0rem;
-
-    @media (max-width: 480px) {
-        border-radius: 0rem;
-    }
+    border-radius: var(--page-radius) var(--page-radius) 0rem 0rem;
 `;
 
 export const FadedImage = styled.img`
@@ -94,12 +89,11 @@ export const FadedImage = styled.img`
     height: auto;
     background: var(--primary-black-color);
     transform-origin: center;
-    border-radius: 5rem 4rem 0rem 5rem;
+    border-radius: 5rem var(--page-radius) 0rem 5rem;
 
     @media (max-width: 480px) {
         width: 100%;
         min-height: 25rem;
-        border-radius: 2.5rem 2rem 0rem 2.5rem;
         margin-left: -12%;
     }
 

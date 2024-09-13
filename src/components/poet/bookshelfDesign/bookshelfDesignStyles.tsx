@@ -9,9 +9,7 @@ export const MainContainer = styled.div`
     height: ${bookshelfHeight};
     perspective: 40rem;
     overflow: hidden;
-    background-color: var(--primary-black-color);
     position: absolute;
-    background-image: url(${'/noise.png'});
 `;
 
 export const Cuboid = styled.div`
@@ -59,7 +57,7 @@ export const BookWrapper = styled.div`
     box-shadow: -1px -4px 0.3rem -0.3rem var(--secondary-white-color),
         1px -2px 0.3rem -1px var(--secondary-white-color),
         0px 0.3rem 0.3rem var(--regular-black-color);
-    border-radius: 0.4rem;
+    border-radius: calc(var(--small-radius) / 1.5);
     height: 13rem;
     width: 9rem;
     position: relative;
@@ -80,7 +78,7 @@ export const Book = styled.img<{ $grey?: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.4rem;
+    border-radius: calc(var(--small-radius) / 1.5);
     object-fit: cover;
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
@@ -94,7 +92,7 @@ export const Shelf = styled.div`
     background: var(--secondary-grey-color);
     position: relative;
     z-index: 10;
-    border-radius: 0.3rem;
+    border-radius: var(--small-radius);
     box-shadow: 0rem 0rem 0.5rem 0.1rem inset black;
 `;
 

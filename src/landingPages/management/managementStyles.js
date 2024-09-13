@@ -23,7 +23,7 @@ export const PageName = styled.div`
     width: 100%;
     height: 2rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: var(--small-radius);
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -36,7 +36,7 @@ export const DropdownContent = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 0.25rem;
-    border-radius: 0.5rem;
+    border-radius: var(--small-radius);
     background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
@@ -66,7 +66,7 @@ export const EditableInput = styled.input`
     width: 20rem;
     height: 2rem;
     font-size: 1rem;
-    border-radius: 0.25rem;
+    border-radius: var(--input-radius);
     outline: none;
     margin-bottom: 0.5rem;
     font-family: var(--ordinary-font);

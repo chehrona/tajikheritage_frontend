@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     padding: 2rem 0rem;
     min-height: 40rem;
-    border-radius: 4rem;
+    border-radius: var(--page-radius);
     background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
@@ -12,12 +12,7 @@ export const MainContainer = styled.div`
     @media (max-width: 480px) {
         margin: 0rem;
         padding: 0rem;
-        border-radius: 0rem;
         box-shadow: 0rem 0rem 0rem 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-radius: 2.5rem;
     }
 `;
 

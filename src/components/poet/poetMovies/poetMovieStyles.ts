@@ -48,6 +48,28 @@ export const MainContainer = styled.div`
         top: -5.99rem;
         box-sizing: border-box;
     }
+
+    @media (max-width: 480px) {
+        padding: var(--page-padding) 0rem;
+
+        &:before {
+            content: '';
+            padding: 2rem;
+            width: 100%;
+            background: var(--primary-white-color);
+            background-image: url(${'/noise.png'});
+            -webkit-clip-path: polygon(
+                -10px 0px,
+                100% 100%,
+                100% 100%,
+                0% 100%
+            );
+            clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
+            position: absolute;
+            top: -3.99rem;
+            box-sizing: border-box;
+        }
+    }
 `;
 
 export const MovieWrapper = styled.div`
@@ -58,8 +80,10 @@ export const MovieWrapper = styled.div`
     gap: 1rem;
 
     @media (max-width: 480px) {
-        gap: 2rem;
-        padding: 0rem 3rem 0rem 1.5rem;
+        gap: calc(2 * var(--square-card-gap));
+        margin: 0rem var(--page-padding);
+        padding: 0rem;
+        justify-content: start;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -73,29 +97,27 @@ export const MovieCard = styled.div<{ $delay: string }>`
     width: 14.95rem;
     cursor: pointer;
     position: relative;
-    border-radius: 0.5rem;
-    box-shadow: 0rem 0rem 0.6rem #504221;
+    border-radius: var(--small-radius);
+    box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     @media (max-width: 480px) {
-        height: 17.15rem;
-        width: 11.95rem;
-        border-radius: 0.8rem;
+        height: 12.75rem;
+        width: 8.88rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 23rem;
         width: 16.25rem;
-        border-radius: 0.8rem;
     }
 `;
 
 export const Image = styled.img`
     max-width: 100%;
     height: 100%;
-    border-radius: 0.5rem;
+    border-radius: var(--small-radius);
 `;
 
 export const StyledIconButton = styled(IconButton)`

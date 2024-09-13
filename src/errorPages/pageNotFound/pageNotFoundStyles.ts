@@ -19,7 +19,7 @@ export const MainContainer = styled.div`
 export const CodeWrapper = styled.div`
     height: 15rem;
     width: 25rem;
-    border-radius: 0.7rem;
+    border-radius: var(--small-radius);
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -17,7 +17,7 @@ export const PageContainer = styled.div`
 export const RecipeContainer = styled.div`
     color: var(--primary-black-color);
     padding: 3rem;
-    border-radius: 4rem;
+    border-radius: var(--page-radius);
     background-color: var(--primary-var-color);
     background-image: url(${'/noise.png'});
     margin-right: 0.86rem;
@@ -25,7 +25,6 @@ export const RecipeContainer = styled.div`
 
     @media (max-width: 480px) {
         padding: 0rem;
-        border-radius: 0rem;
         display: flex;
         flex-direction: column;
         box-shadow: 0rem 0rem 0rem 0rem;
@@ -34,7 +33,6 @@ export const RecipeContainer = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 2rem 2rem 1rem 2rem;
         display: flex;
-        border-radius: 2.5rem;
         flex-direction: column;
     }
 `;

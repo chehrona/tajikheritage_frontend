@@ -8,5 +8,4 @@ export type DialogProps = {
     backdrop: string;
     background: string;
     height?: string;
-    border: string;
 };

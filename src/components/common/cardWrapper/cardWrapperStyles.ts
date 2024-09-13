@@ -22,7 +22,7 @@ const slideOut = keyframes`
 export const StyledLink = styled(Link)<LinkProps>`
     width: 23rem;
     text-decoration: none;
-    border-radius: 0.7rem;
+    border-radius: var(--small-radius);
     animation: ${slideOut} 1s ease-in-out forwards;
     transition: border-radius 250ms, box-shadow 400ms;
     height: ${({ $type }) => ($type === 'long' ? '35rem' : '23rem')};
@@ -38,7 +38,7 @@ export const StyledLink = styled(Link)<LinkProps>`
                   }
 
                   > * {
-                      border-radius: 0.7rem;
+                      border-radius: var(--small-radius);
                   }
               `
             : css`
@@ -47,16 +47,16 @@ export const StyledLink = styled(Link)<LinkProps>`
                   cursor: pointer;
 
                   &:hover {
-                      border-radius: 1.5rem;
+                      border-radius: var(--big-radius);
                       box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
                   }
 
                   > * {
-                      border-radius: 0.7rem;
+                      border-radius: var(--small-radius);
                       transition: border-radius 250ms;
 
                       &:hover {
-                          border-radius: 1.5rem;
+                          border-radius: var(--big-radius);
                       }
                   }
               `}
@@ -67,14 +67,14 @@ export const StyledLink = styled(Link)<LinkProps>`
         width: ${({ $type }) => ($type === 'long' ? '10.3rem' : '16rem')};
 
         &:hover {
-            border-radius: 0.7rem;
+            border-radius: var(--small-radius);
             transition: initial;
 
             > * {
-                border-radius: 0.7rem;
+                border-radius: var(--small-radius);
 
                 &:hover {
-                    border-radius: 0.7rem;
+                    border-radius: var(--small-radius);
                 }
             }
         }
@@ -86,19 +86,19 @@ export const StyledLink = styled(Link)<LinkProps>`
         ${({ $type }) =>
             $type === 'long'
                 ? css`
-                      border-radius: 1.5rem;
+                      border-radius: var(--big-radius);
                       height: 35rem;
 
                       > * {
-                          border-radius: 1.5rem;
+                          border-radius: var(--big-radius);
                       }
                   `
                 : css`
-                      border-radius: 0.7rem;
+                      border-radius: var(--small-radius);
                       height: 25rem;
 
                       > * {
-                          border-radius: 0.7rem;
+                          border-radius: var(--small-radius);
                       }
                   `}
     }

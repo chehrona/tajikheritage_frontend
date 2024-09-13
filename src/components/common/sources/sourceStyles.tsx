@@ -2,19 +2,17 @@ import styled, { css } from 'styled-components';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 export const MainContainer = styled.div`
-    border-radius: 0rem 0rem 4rem 4rem;
+    border-radius: 0rem 0rem var(--page-radius) var(--page-radius);
     background: var(--primary-white-color);
     background-image: url(${'/noise.png'});
     padding: 3rem;
     padding-top: 0rem;
 
     @media (max-width: 480px) {
-        border-radius: 0rem;
         padding: 1rem var(--page-padding) 3rem var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        border-radius: 0rem 0rem 2.5rem 2.5rem;
         padding: 0rem 2rem 2rem 2rem;
     }
 `;
@@ -40,7 +38,7 @@ export const StyledUpIcon = styled(ExpandLess)`
 
 export const RefContainer = styled.div<{ $open: boolean }>`
     max-width: 100%;
-    border-radius: 0.7rem;
+    border-radius: var(--small-radius);
     margin-top: 0.8rem;
     display: block;
     position: relative;
@@ -76,28 +74,24 @@ export const RefWrapper = styled.div<{ $open: boolean }>`
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 100%;
-    margin: 0.5rem 0.25rem;
-    width: calc(100% - 0.5rem);
+    margin: 0.5rem var(--input-radius);
+    width: calc(100% - var(--input-radius));
     padding: 0rem 2rem 1rem 2rem;
     display: ${({ $open }) => ($open ? 'block' : 'none')};
 
     &::-webkit-scrollbar {
-        width: 0.5rem;
+        width: var(--input-radius);
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
-        border-radius: 0.25rem;
+        border-radius: var(--input-radius);
     }
 
     @media (max-width: 480px) {
         width: 100%;
         margin: 0rem;
         padding: var(--page-padding);
-
-        &::-webkit-scrollbar {
-            width: 0.25rem;
-        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -161,6 +155,7 @@ export const SourceWrapper = styled.div`
     display: inline-block;
 
     @media (max-width: 480px) {
-        padding: 0.25rem 0rem;
+        padding: 0rem var(--input-radius) var(--input-radius)
+            var(--input-radius);
     }
 `;

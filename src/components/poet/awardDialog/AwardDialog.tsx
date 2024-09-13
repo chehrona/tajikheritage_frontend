@@ -34,7 +34,6 @@ const AwardDialog: React.FC<AwardDialogProps> = ({
     return (
         <Dialog
             width={'850px'}
-            border={'2rem'}
             open={showAwardInfo}
             handleClose={handleClose}
             backdrop={'rgba(252 246 233 / 30%)'}

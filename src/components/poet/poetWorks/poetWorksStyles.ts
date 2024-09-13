@@ -20,7 +20,16 @@ export const MainContainer = styled.div`
         box-sizing: border-box;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 480px) {
+        padding: 0rem 0rem 6rem 0rem;
+        margin-top: -1rem;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding-top: 1rem;
         margin-top: -1rem;
 

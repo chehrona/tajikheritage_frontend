@@ -63,7 +63,6 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
     return (
         <Dialog
             width={'1350px'}
-            border={'2rem'}
             open={showMovieInfo}
             backdrop={'rgba(15 10 0 / 30%)'}
             background={'var(--primary-black-color)'}

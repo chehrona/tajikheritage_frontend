@@ -21,7 +21,7 @@ export const AllergyContainer = styled.div`
 export const ContentBox = styled.div`
     flex-grow: 1;
     min-width: 7rem;
-    border-radius: 1rem;
+    border-radius: var(--small-radius);
     background: var(--primary-shadow-color);
     padding: 0.5rem 0.8rem 0.8rem 0.8rem;
     box-shadow: 0rem 0rem 0.4rem 0.01rem #504221;
