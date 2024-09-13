@@ -13,7 +13,7 @@ import {
     BooksContainer,
     Cuboid,
     CuboidFace,
-    MainContainer,
+    SectionWrapper,
     Shelf,
     BookWrapper,
     StyledTooltip,
@@ -38,12 +38,12 @@ const BookshelfDesign: React.FC<BookshelfDesignProps> = ({
     }
 
     return (
-        <section>
-            <MainContainer>
+        <div>
+            <SectionWrapper>
                 <Cuboid>
                     <CuboidFace />
                 </Cuboid>
-            </MainContainer>
+            </SectionWrapper>
             <BooksContainer>
                 {work?.map((book, i) => {
                     return (
@@ -82,7 +82,7 @@ const BookshelfDesign: React.FC<BookshelfDesignProps> = ({
                     />
                 </>
             )}
-        </section>
+        </div>
     );
 };
 

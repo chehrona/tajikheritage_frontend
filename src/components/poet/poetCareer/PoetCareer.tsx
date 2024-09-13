@@ -28,8 +28,8 @@ import {
     InfoInnerContainer,
     MobileFooter,
     MainContainer,
-    YearSlider,
-    UnitWrapper,
+    SlideUnit,
+    YearSliderWrapper,
     YearWrapper,
     InfoWrapper,
 } from './poetCareerStyles';
@@ -42,7 +42,7 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
     const [translate, setTranslate] = useState<number>(0);
     const [currentSize, setCurrentSize] = useState<number>(0);
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    let gap = isMobile ? 30 : 50;
+    let gap = isMobile ? 32 : 50;
 
     useEffect(() => {
         const parentWidth = parentRef?.current?.getBoundingClientRect().width;
@@ -76,8 +76,8 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
 
     return (
         <MainContainer id="Career">
-            <YearSlider>
-                <UnitWrapper>
+            <SlideUnit>
+                <YearSliderWrapper>
                     <Line />
                     {points?.years?.map((year, i) => {
                         return (
@@ -89,7 +89,7 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
                             </YearWrapper>
                         );
                     })}
-                </UnitWrapper>
+                </YearSliderWrapper>
                 <InfoContainer ref={parentRef}>
                     <InfoInnerContainer $translate={translate}>
                         {points[lang].map((entry, i) => {
@@ -165,7 +165,7 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
                         </StyledIconButton>
                     </MobileFooter>
                 </InfoContainer>
-            </YearSlider>
+            </SlideUnit>
         </MainContainer>
     );
 };

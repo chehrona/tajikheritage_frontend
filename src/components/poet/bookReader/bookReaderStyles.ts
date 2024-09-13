@@ -38,17 +38,23 @@ export const IconWrapper = styled.div`
 // Pdf viewer
 export const ViewerContainer = styled.div`
     max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 
     &::-webkit-scrollbar {
         width: var(--input-radius);
-        background-color: var(--primary-black-color);
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--primary-gold-color);
         border-radius: var(--input-radius);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+        margin: 0rem;
+        padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
+            var(--text-segment-gap) 0rem;
     }
 `;
 

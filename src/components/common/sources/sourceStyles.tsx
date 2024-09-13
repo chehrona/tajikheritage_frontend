@@ -9,7 +9,8 @@ export const MainContainer = styled.div`
     padding-top: 0rem;
 
     @media (max-width: 480px) {
-        padding: 1rem var(--page-padding) 3rem var(--page-padding);
+        padding: var(--text-segment-gap) var(--page-padding)
+            calc(4 * var(--text-segment-gap)) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -61,7 +62,8 @@ export const RefContainer = styled.div<{ $open: boolean }>`
             $open
                 ? css`
                       height: 30rem;
-                      padding: 0.25rem 0.25rem 0.25rem 0rem;
+                      padding: var(--input-radius) calc(var(--input-radius) / 2)
+                          var(--input-radius) 0rem;
                   `
                 : css`
                       height: 0rem;
@@ -74,7 +76,6 @@ export const RefWrapper = styled.div<{ $open: boolean }>`
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 100%;
-    margin: 0.5rem var(--input-radius);
     width: calc(100% - var(--input-radius));
     padding: 0rem 2rem 1rem 2rem;
     display: ${({ $open }) => ($open ? 'block' : 'none')};
@@ -90,8 +91,8 @@ export const RefWrapper = styled.div<{ $open: boolean }>`
 
     @media (max-width: 480px) {
         width: 100%;
-        margin: 0rem;
-        padding: var(--page-padding);
+        padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
+            var(--text-segment-gap) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -109,7 +110,7 @@ export const SubTitle = styled.div`
 
     @media (max-width: 1024px) {
         font-size: var(--header-medium);
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--text-segment-gap);
     }
 `;
 

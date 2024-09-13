@@ -186,14 +186,24 @@ export const BoxTwoText = styled.div`
     line-height: var(--body-text-line-height);
     font-size: var(--body-text);
 
+    &::-webkit-scrollbar {
+        width: var(--input-radius);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-gold-color);
+        border-radius: var(--input-radius);
+    }
+
     @media (max-width: 480px) {
         max-height: calc(
             100vh - ${1.65 * squareSizeMobile}rem - var(--header-big) -
                 var(--text-segment-gap)
         );
         overflow-y: auto;
-        margin-bottom: var(--text-segment-gap);
-        padding: var(--text-segment-gap) var(--page-padding);
+        margin-right: calc(var(--input-radius) / 2);
+        padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
+            var(--text-segment-gap) var(--page-padding);
     }
 `;
 

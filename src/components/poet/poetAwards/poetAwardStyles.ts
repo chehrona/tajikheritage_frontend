@@ -36,6 +36,15 @@ export const MainContainer = styled.div`
         top: -5.98rem;
         box-sizing: border-box;
     }
+
+    @media (max-width: 480px) {
+        padding: var(--page-padding) 0rem;
+
+        &:before {
+            padding: 2rem;
+            top: -3.98rem;
+        }
+    }
 `;
 
 export const AwardWrapper = styled.div`
@@ -46,7 +55,8 @@ export const AwardWrapper = styled.div`
     gap: 0.5rem;
 
     @media (max-width: 480px) {
-        padding: 0rem 1.5rem;
+        gap: var(--square-card-gap);
+        padding: 0rem var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -57,24 +67,22 @@ export const AwardWrapper = styled.div`
 `;
 
 export const AwardCard = styled.div<{ $delay: string }>`
+    opacity: 0;
     width: 10rem;
     height: 14.1rem;
-    border-radius: var(--small-radius);
-    margin-bottom: 2.57%;
     display: flex;
     justify-content: center;
     align-items: start;
     background-color: transparent;
     perspective: 62.5rem;
-    box-shadow: 0rem 0rem 0.5rem 0.1rem #504221;
-    opacity: 0;
+    border-radius: var(--small-radius);
+    box-shadow: 0rem 0rem 0.5rem 0.1rem var(--primary-shadow-color);
     animation: ${slideOut} 2s ease-in-out forwards;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     @media (max-width: 480px) {
-        width: 9rem;
-        height: 12.69rem;
-        margin-bottom: 4.2%;
+        width: var(--small-card-width);
+        height: var(--small-card-height);
     }
 `;
 
@@ -111,13 +119,16 @@ export const Face = styled.div<{ $back: boolean }>`
               `}
 
     @media (max-width: 480px) {
-        padding: 0.4rem;
+        padding: var(--input-radius);
     }
 `;
 
 export const Title = styled.div`
     text-align: center;
-    font-size: 1.2rem;
+
+    @media (max-width: 480px) {
+        font-size: var(--header-small);
+    }
 `;
 
 export const Image = styled.img`
@@ -129,7 +140,8 @@ export const Year = styled.div`
     font-size: 3rem;
 
     @media (max-width: 480px) {
-        font-size: 2rem;
+        font-family: var(--fancy-font);
+        font-size: var(--header-large);
     }
 `;
 

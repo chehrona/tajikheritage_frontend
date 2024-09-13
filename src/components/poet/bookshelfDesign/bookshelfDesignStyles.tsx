@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import { Tooltip, tooltipClasses } from '@mui/material';
 import { StyledTooltipProps } from '../../common/tooltip/types/styleTypes';
 
-const bookshelfHeight = '15rem';
-
-export const MainContainer = styled.div`
+export const SectionWrapper = styled.div`
     width: 100%;
-    height: ${bookshelfHeight};
+    height: var(--small-card-height);
     perspective: 40rem;
     overflow: hidden;
     position: absolute;
@@ -15,13 +13,12 @@ export const MainContainer = styled.div`
 export const Cuboid = styled.div`
     position: relative;
     width: 100%;
-    height: ${bookshelfHeight};
+    height: var(--small-card-height);
     transform-style: preserve-3d;
 `;
 
 export const CuboidFace = styled.div`
     width: 100%;
-    height: ${bookshelfHeight};
     opacity: 0.6;
     display: flex;
     align-items: center;
@@ -30,10 +27,10 @@ export const CuboidFace = styled.div`
     box-shadow: 0 1px 3px 0 var(--secondary-white-color),
         0 1px 2px -1px var(--secondary-white-color),
         0rem 0rem 2rem 0.5rem inset var(--regular-black-color);
-    transform: translateZ(calc(${bookshelfHeight} * -0.5))
-        translateY(calc(${bookshelfHeight} * 0.5)) rotateX(-90deg);
-    height: ${bookshelfHeight};
+    transform: translateZ(calc(var(--small-card-height) * -0.5))
+        translateY(calc(var(--small-card-height) * 0.5)) rotateX(-90deg);
     background: var(--secondary-white-color);
+    height: var(--small-card-height);
 `;
 
 export const BooksContainer = styled.div`
@@ -42,7 +39,7 @@ export const BooksContainer = styled.div`
     align-items: flex-end;
     gap: 4rem;
     position: relative;
-    height: ${bookshelfHeight};
+    height: var(--small-card-height);
     padding-bottom: 1rem;
     box-sizing: border-box;
     cursor: pointer;
@@ -50,6 +47,8 @@ export const BooksContainer = styled.div`
 
     @media (max-width: 480px) {
         gap: calc(2 * var(--square-card-gap));
+        padding-bottom: var(--text-segment-gap);
+        margin-top: var(--text-segment-gap);
     }
 `;
 
@@ -64,8 +63,8 @@ export const BookWrapper = styled.div`
     overflow: hidden;
 
     @media (max-width: 480px) {
-        height: 11.5rem;
-        width: 7.95rem;
+        height: calc(var(--small-card-height) / 1.15);
+        width: calc(var(--small-card-width) / 1.15);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

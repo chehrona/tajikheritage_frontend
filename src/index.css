@@ -72,10 +72,12 @@ html {
         --square-card-gap: 1rem;
         --text-segment-gap: 0.75rem;
 
-        /* Standard heights */
+        /* Standard sizes */
         --header-height: 3rem;
         --footer-height: 5.25rem;
         --slideshow-height: 20rem;
+        --small-card-width: 9rem;
+        --small-card-height: calc(var(--small-card-width) * 1.42);
 
         /* Line-heights */
         --body-text-line-height: calc(var(--body-text) * 1.45);

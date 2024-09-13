@@ -53,21 +53,8 @@ export const MainContainer = styled.div`
         padding: var(--page-padding) 0rem;
 
         &:before {
-            content: '';
             padding: 2rem;
-            width: 100%;
-            background: var(--primary-white-color);
-            background-image: url(${'/noise.png'});
-            -webkit-clip-path: polygon(
-                -10px 0px,
-                100% 100%,
-                100% 100%,
-                0% 100%
-            );
-            clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
-            position: absolute;
-            top: -3.99rem;
-            box-sizing: border-box;
+            top: -3.98rem;
         }
     }
 `;
@@ -104,8 +91,8 @@ export const MovieCard = styled.div<{ $delay: string }>`
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 
     @media (max-width: 480px) {
-        height: 12.75rem;
-        width: 8.88rem;
+        width: var(--small-card-width);
+        height: var(--small-card-height);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -115,7 +102,7 @@ export const MovieCard = styled.div<{ $delay: string }>`
 `;
 
 export const Image = styled.img`
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     border-radius: var(--small-radius);
 `;

@@ -21,8 +21,8 @@ export const MainContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: 0rem 0rem 6rem 0rem;
-        margin-top: -1rem;
+        padding: 0rem 0rem calc(4.2rem + var(--text-segment-gap)) 0rem;
+        margin-top: calc((-2.3) * var(--text-segment-gap));
 
         &:before {
             display: none;

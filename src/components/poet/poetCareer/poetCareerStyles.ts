@@ -25,50 +25,55 @@ export const MainContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        padding: calc(2rem + (2.75 * var(--text-segment-gap))) 0rem;
+
+        &:before {
+            padding: 2rem;
+            top: 0rem;
+        }
     }
 `;
 
-export const YearSlider = styled.div`
+export const SlideUnit = styled.div`
     padding: 2rem 3rem 2rem 3rem;
     height: 38rem;
 
     @media (max-width: 480px) {
-        height: 41rem;
-        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        padding: var(--text-segment-gap) var(--page-padding);
+        height: 80svh;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 34rem;
-        padding: 0.5rem 2rem 0.5rem 2rem;
+        padding: var(--text-segment-gap) 2rem var(--text-segment-gap) 2rem;
     }
 `;
 
-export const UnitWrapper = styled.div`
+export const YearSliderWrapper = styled.div`
     width: 100%;
-    position: relative;
-    color: var(--primary-white-color);
-    font-size: 1.5rem;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: space-around;
+    color: var(--primary-white-color);
 `;
 
 export const YearWrapper = styled.div<{ $size: boolean }>`
     z-index: 1;
-    background: var(--primary-black-color);
-    border-radius: var(--big-radius);
     position: relative;
-    background-image: url(${'/noise.png'});
     width: 0rem;
     height: 0rem;
-    border: 0.5rem solid var(--primary-gold-color);
-    background-color: red;
+    border-radius: var(--big-radius);
+    background-image: url(${'/noise.png'});
+    background: var(--primary-black-color);
+    border: var(--input-radius) solid var(--primary-gold-color);
 
     ${({ $size }) =>
         $size &&
         `
-        padding: 0rem 0.5rem;
+        padding: 0.25rem 0.5rem;
         width: fit-content;
         height: fit-content;
         border: 1px solid var(--primary-gold-color);
@@ -78,11 +83,16 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
 export const Year = styled.div<{ $show: boolean }>`
     display: ${({ $show }) => $show && 'none'};
     margin: 0.4rem 1rem 0.4rem 1rem;
+
+    @media (max-width: 480px) {
+        margin: 0rem;
+        font-size: var(--body-text);
+    }
 `;
 
 export const Line = styled.div`
     background: var(--primary-gold-color);
-    height: 0.0625rem;
+    height: 2px;
     width: 100%;
     position: absolute;
     top: 50%;
@@ -97,7 +107,9 @@ export const InfoContainer = styled.div`
     height: 27rem;
 
     @media (max-width: 480px) {
-        height: 35.5rem;
+        flex-direction: column;
+        margin-top: var(--text-segment-gap);
+        height: calc(100% - var(--header-height));
     }
 `;
 
@@ -110,7 +122,7 @@ export const InfoInnerContainer = styled.div<{ $translate: number }>`
 
     @media (max-width: 480px) {
         position: relative;
-        gap: 30px;
+        gap: calc(2 * var(--page-padding));
     }
 `;
 
@@ -123,7 +135,8 @@ export const InfoWrapper = styled.div`
     display: flex;
 
     @media (max-width: 480px) {
-        height: 34rem;
+        border-radius: var(--big-radius) var(--big-radius) 0rem 0rem;
+        height: calc(80svh - 2.5 * var(--header-height));
         min-width: calc(100vw - 3rem);
         max-width: calc(100vw - 3rem);
     }
@@ -151,22 +164,16 @@ export const Desc = styled.div`
     height: 26rem;
     text-align: justify;
     overflow-y: scroll;
-    background-color: red;
 
-    &::-webkit-scrollbar {
-        width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--primary-gold-color);
-        border-radius: var(--input-radius);
-    }
+    padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
+        var(--text-segment-gap) var(--page-padding);
 
     @media (max-width: 480px) {
-        padding: var(--page-padding);
-        font-size: var(--body-text);
+        padding: var(--text-segment-gap) var(--page-padding);
         line-height: var(--body-text-line-height);
-        height: 32.6rem;
+        min-height: 100%;
+        height: 100%;
+        max-height: 100%;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -204,16 +211,17 @@ export const MobileFooter = styled.div`
 
     @media (max-width: 480px) {
         display: flex;
+        height: var(--header-height);
         justify-content: center;
         align-items: center;
-        width: calc(100vw - 3rem);
-        height: 3rem;
         background: var(--primary-white-color);
         border-radius: 0rem 0rem var(--big-radius) var(--big-radius);
         position: absolute;
         bottom: 0rem;
         right: 0rem;
         z-index: 1000;
+        width: calc(100% - var(--page-padding));
+        margin: 0rem calc(var(--page-padding) / 2);
     }
 `;
 
@@ -227,7 +235,8 @@ export const Step = styled.div`
     font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
-        font-size: 2rem;
+        width: fit-content;
+        font-size: var(--header-normal);
     }
 `;
 

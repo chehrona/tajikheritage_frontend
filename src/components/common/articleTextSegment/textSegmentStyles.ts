@@ -80,10 +80,6 @@ export const BaseText = styled.div`
     font-size: var(--body-text);
     color: var(--primary-black-color);
 
-    &::-webkit-scrollbar {
-        width: 0rem;
-    }
-
     @media (max-width: 480px) {
         padding: 0rem var(--page-padding);
         line-height: var(--body-text-line-height);
