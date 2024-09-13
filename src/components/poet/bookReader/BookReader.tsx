@@ -1,58 +1,60 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
-import {
-    MainContainer,
-    StyledFrame,
-    Title,
-    IconWrapper,
-} from './bookReaderStyles';
+
+// Material UI
+import { Zoom } from '@mui/material';
+
+// Services
+import { requestPdf } from '../../../services/request';
+
+// Components
+import HeaderLogo from '../../common/headerLogo/HeaderLogo';
+import CloseButton from '../../common/closeButton/CloseButton';
+import PDFViewer from './PdfViewer';
+import Loader from '../../common/loader/Loader';
+
+// Types
 import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
+
+// Styled components
+import { MainContainer, Title, IconWrapper } from './bookReaderStyles';
 import {
     HeaderContainer,
     HeaderInnerBox,
 } from '../../common/header/headerStyles';
-import HeaderLogo from '../../common/headerLogo/HeaderLogo';
-import { Zoom } from '@mui/material';
-import CloseButton from '../../common/closeButton/CloseButton';
 
 const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
     const [pdfUrl, setPdfUrl] = useState<string>('');
-    const baseUrl =
-        process.env.REACT_APP_BASE_URL || 'http://api.thetajikheritage.com';
+    const [loading, setLoading] = useState<boolean>(false);
 
     const handleCloseReader = () => {
         setBookIndex(-1);
     };
 
-    useEffect(() => {
-        if (book?.source) {
-            const fetchPdf = async () => {
-                try {
-                    const response = await axios.get(
-                        `${baseUrl + book?.source}`,
-                        {
-                            responseType: 'arraybuffer',
-                        },
-                    );
-                    const blob = new Blob([response.data], {
-                        type: 'application/pdf',
-                    });
-                    const pdfBlobUrl = URL.createObjectURL(blob);
-                    setPdfUrl(pdfBlobUrl);
-                } catch (error) {
-                    console.error('Error fetching PDF file:', error);
-                }
-            };
+    const fetchPdf = async () => {
+        try {
+            setLoading(true);
 
-            fetchPdf();
+            if (!book.source) {
+                return;
+            }
 
-            // Cleanup function to revoke the URL when the component unmounts or when a new PDF URL is created
-            return () => {
-                if (pdfUrl) {
-                    URL.revokeObjectURL(pdfUrl);
-                }
-            };
+            const response = await requestPdf(book.source);
+
+            setPdfUrl(response);
+        } catch (error) {
+            console.error('Error fetching PDF file:', error);
+        } finally {
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 500);
+
+            return () => clearTimeout(timer);
         }
+    };
+
+    useEffect(() => {
+        // Get data
+        fetchPdf();
     }, [book?.source]);
 
     const handleLogoClick = useCallback(() => {
@@ -69,16 +71,17 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                 timeout: 200,
             }}
         >
+            <Loader inProp={loading} />
             <HeaderContainer $show={true}>
                 <HeaderInnerBox>
-                    <HeaderLogo handleLogoClick={handleLogoClick} />
+                    <HeaderLogo handleLogoClick={handleLogoClick} navTo={'#'} />
                     <Title $index={0}>{book?.title}</Title>
                     <IconWrapper>
                         <CloseButton handleClose={handleCloseReader} />
                     </IconWrapper>
                 </HeaderInnerBox>
             </HeaderContainer>
-            {pdfUrl ? <StyledFrame src={`${pdfUrl}#toolbar=0`} /> : null}
+            <PDFViewer pdfUrl={pdfUrl} />
         </MainContainer>
     );
 };

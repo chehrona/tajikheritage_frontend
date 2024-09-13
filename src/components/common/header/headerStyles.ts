@@ -60,7 +60,7 @@ export const TitleWrapper = styled.div<{ $index: number }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 13.5rem);
+    /* width: calc(100% - 13.5rem); */
     height: 100%;
     position: absolute;
     left: 5rem;
@@ -82,7 +82,7 @@ export const TitleWrapper = styled.div<{ $index: number }>`
     }
 `;
 
-export const FirstTitle = styled.div<{ $isElipsis: boolean }>`
+export const FirstTitle = styled.div`
     flex-shrink: 1;
     font-style: normal;
     font-weight: bold;

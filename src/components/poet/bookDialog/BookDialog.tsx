@@ -45,7 +45,6 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
     );
 
     const handleClose = useCallback(() => {
-        console.log('i am being clicked');
         setBookIndex(-1);
         setEmail('');
         setError(false);
@@ -70,6 +69,12 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                 });
         } else {
             setError(true);
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleSubmit();
         }
     };
 
@@ -99,6 +104,7 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                                     }
                                     value={email}
                                     onChange={(e) => handleChange(e)}
+                                    onKeyDown={(e) => handleKeyDown(e)}
                                 />
                                 <StyledButton onClick={handleSubmit}>
                                     {staticTexts.NO_BOOK_DIALOG.button[lang]}

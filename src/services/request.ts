@@ -54,6 +54,21 @@ export const requestArticleInfo = async (id: string, page: string) => {
     }
 };
 
+export const requestPdf = async (source: string) => {
+    try {
+        const response = await axios.get(`${apiUrl + source}`, {
+            responseType: 'arraybuffer',
+        });
+        const blob = new Blob([response.data], {
+            type: 'application/pdf',
+        });
+        const pdfBlobUrl = URL.createObjectURL(blob);
+        return pdfBlobUrl;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export const addVisit = async (page: string) => {
     try {
         const userId = storeVisit(page);

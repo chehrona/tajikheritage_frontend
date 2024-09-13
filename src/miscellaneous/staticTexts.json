@@ -508,7 +508,7 @@
         "error": {
             "us": "Invalid email",
             "ru": "Неверный адрес",
-            "tj": "Почтаи электронӣ нодуруст"
+            "tj": "Почтаи электронии нодуруст"
         },
         "success": {
             "us": "We got your email address. Thank you.",

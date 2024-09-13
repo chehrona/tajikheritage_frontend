@@ -60,8 +60,6 @@ const Header: React.FC<MenuProps> = ({
                 <HeaderLogo handleLogoClick={handleLogoClick} />
                 <TitleContainer>
                     {titleOrder.map((order, i) => {
-                        const isElipsis: boolean =
-                            title[lang][order][0].length > 10;
                         const key = `title_key_${Math.random()}`;
 
                         return (
@@ -70,7 +68,6 @@ const Header: React.FC<MenuProps> = ({
                                     dangerouslySetInnerHTML={{
                                         __html: title[lang][order][0],
                                     }}
-                                    $isElipsis={isElipsis}
                                 />
                                 {title[lang][order][1].length ? (
                                     <Semicolon>{':'}</Semicolon>

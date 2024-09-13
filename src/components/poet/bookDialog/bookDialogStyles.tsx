@@ -12,7 +12,8 @@ export const StyledContent = styled(DialogContent)`
 
     @media (max-width: 480px) {
         &.MuiDialogContent-root {
-            padding: 0rem calc(var(--text-segment-gap) / 1.5) 0rem
+            padding: 0rem calc(var(--text-segment-gap) / 1.5)
+                calc(var(--text-segment-gap) * 2)
                 calc(var(--text-segment-gap) / 1.5);
             margin-top: calc(var(--text-segment-gap) * (-2.5));
         }

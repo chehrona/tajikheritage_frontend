@@ -1,14 +1,18 @@
 import React from 'react';
 
+// Types
+import { HeaderLogoProps } from './types/componentTypes';
+
 // Styled component
 import { LogoWrapper, StyledLink, Logo } from './headerLogoStyles';
 
-const HeaderLogo: React.FC<{ handleLogoClick: () => void }> = ({
+const HeaderLogo: React.FC<HeaderLogoProps> = ({
     handleLogoClick,
+    navTo = '/',
 }) => {
     return (
         <LogoWrapper>
-            <StyledLink to={'/'} onClick={handleLogoClick}>
+            <StyledLink to={navTo} onClick={handleLogoClick}>
                 <Logo src={'/tajiks.png'}></Logo>
             </StyledLink>
         </LogoWrapper>
