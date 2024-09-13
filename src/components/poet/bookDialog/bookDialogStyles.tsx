@@ -31,6 +31,11 @@ export const DialogTitle = styled.div<{ $textColor: string }>`
     }
 `;
 
+export const BodyContainer = styled.div`
+    padding: 0rem var(--page-padding) calc(2.5 * var(--text-segment-gap))
+        var(--page-padding);
+`;
+
 export const Desc = styled.div`
     width: 100%;
     height: 100%;

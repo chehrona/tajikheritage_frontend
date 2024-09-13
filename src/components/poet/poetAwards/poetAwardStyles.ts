@@ -119,7 +119,14 @@ export const Face = styled.div<{ $back: boolean }>`
               `}
 
     @media (max-width: 480px) {
-        padding: var(--input-radius);
+        ${({ $back }) =>
+            $back
+                ? css`
+                      padding: var(--input-radius);
+                  `
+                : css`
+                      padding: var(--text-segment-gap);
+                  `}
     }
 `;
 
@@ -142,6 +149,8 @@ export const Year = styled.div`
     @media (max-width: 480px) {
         font-family: var(--fancy-font);
         font-size: var(--header-large);
+        line-height: var(--header-big-line-height);
+        padding-top: var(--input-radius);
     }
 `;
 
@@ -156,13 +165,17 @@ export const StyledIconButton = styled(IconButton)`
         position: absolute;
     }
 
+    @media (max-width: 480px) {
+        bottom: 0.25rem;
+    }
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         bottom: 0.3rem;
     }
 `;
 
 export const StyledInfoIcon = styled(Info)`
-    color: #ffffff;
+    color: var(--regular-white-color);
 
     &.MuiSvgIcon-root {
         height: 2.3rem;
@@ -171,8 +184,8 @@ export const StyledInfoIcon = styled(Info)`
 
     @media (max-width: 480px) {
         &.MuiSvgIcon-root {
-            height: 3rem;
-            width: 3rem;
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
 

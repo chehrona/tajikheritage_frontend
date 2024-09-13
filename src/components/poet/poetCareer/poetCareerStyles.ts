@@ -41,8 +41,8 @@ export const SlideUnit = styled.div`
     height: 38rem;
 
     @media (max-width: 480px) {
-        padding: var(--text-segment-gap) var(--page-padding);
         height: 80svh;
+        padding: var(--text-segment-gap) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -175,11 +175,15 @@ export const Desc = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: var(--text-segment-gap) var(--page-padding);
+        padding: var(--text-segment-gap)
+            calc(var(--page-padding) - var(--input-radius))
+            var(--text-segment-gap) var(--page-padding);
         line-height: var(--body-text-line-height);
         min-height: 100%;
         height: 100%;
         max-height: 100%;
+        margin: calc(var(--input-radius) / 2) calc(var(--input-radius) / 2)
+            calc(var(--input-radius) / 2) 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
