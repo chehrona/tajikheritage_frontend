@@ -60,7 +60,7 @@ export const Author = styled.div`
     color: var(--primary-white-color);
     font-size: var(--body-text);
     font-style: normal;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
     text-align: end;
 
     @media (max-width: 480px) {

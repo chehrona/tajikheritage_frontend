@@ -22,7 +22,7 @@ export const StyledAlert = styled(Alert)`
     animation: ${slideOut} 0.25s ease-in-out forwards;
 
     &.MuiPaper-root {
-        font-family: var(--ordinary-font);
+        font-family: var(--regular-font);
         font-size: var(--body-text);
         justify-content: center;
         align-items: center;

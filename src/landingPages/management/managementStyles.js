@@ -69,7 +69,7 @@ export const EditableInput = styled.input`
     border-radius: var(--input-radius);
     outline: none;
     margin-bottom: 0.5rem;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
     border: ${({ file }) =>
         file ? 'none' : '1px solid var(--primary-gold-color)'};
     padding: ${({ file }) => (file ? '0rem' : '0rem 0.25rem')};

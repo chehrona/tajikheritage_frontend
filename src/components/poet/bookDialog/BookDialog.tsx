@@ -84,8 +84,7 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
             width={'500px'}
             height={'auto'}
             handleClose={handleClose}
-            backdrop={'rgba(15 10 0 / 30%)'}
-            background={'var(--primary-white-color)'}
+            background={'light'}
         >
             <StyledContent>
                 <InfoContainer>

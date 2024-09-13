@@ -33,7 +33,7 @@ export const ServeAmount = styled.input`
     font-size: var(--body-text);
     padding: 0.2rem;
     text-align: center;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
 
     @media (max-width: 480px) {
         width: 3.5rem;

@@ -45,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
         top: -0.5rem;
         font-size: 0.75rem;
         font-style: normal;
-        font-family: var(--ordinary-font);
+        font-family: var(--regular-font);
     }
 
     sup.lightSup {

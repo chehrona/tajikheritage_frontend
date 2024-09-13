@@ -6,7 +6,6 @@ import { useMediaQuery } from 'react-responsive';
 
 // Components
 import Dialog from '../../common/dialog/Dialog';
-import { ZoomTransition } from '../../common/transitions/Transitions';
 
 // Types
 import { MovieDialogProps } from './types/componentTypes';
@@ -15,20 +14,22 @@ import { MovieDialogProps } from './types/componentTypes';
 import {
     Desc,
     StyledIconButton,
-    InfoContainer,
+    MainContainer,
     StyledContent,
-    InfoTitle,
-    Director,
+    MovieTitle,
+    DirectorInfoWrapper,
+    DirectorName,
     MovieImg,
-    InnerBox,
-    StudioName,
-    ReleaseInfo,
+    OverlayContainer,
+    StudioNameWrapper,
+    StudioImage,
+    ReleaseInfoWrapper,
     InfoWrapper,
-    InfoBox,
+    ReleaseInfo,
     StyledPlayIcon,
     Line,
-    Direction,
-    DirBox,
+    DirectionText,
+    PlayInstructionWrapper,
     StyledFrame,
     SlideUp,
     SlideDown,
@@ -64,84 +65,93 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
         <Dialog
             width={'1350px'}
             open={showMovieInfo}
-            backdrop={'rgba(15 10 0 / 30%)'}
-            background={'var(--primary-black-color)'}
+            background={'light'}
             height={isMobile ? '100%' : '80%'}
             handleClose={handleClose}
         >
             <StyledContent>
-                <ZoomTransition in={showVideo}>
+                <MainContainer>
                     {showVideo ? (
-                        <InfoContainer>
-                            <StyledFrame
-                                src={`https://www.youtube-nocookie.com/embed/${movieInfo?.link}?autoplay=1&rel=0&modestbranding=1`}
-                                allow="autoplay; encrypted-media"
-                                allowFullScreen
-                                ref={iframeRef}
-                            />
-                        </InfoContainer>
+                        <StyledFrame
+                            src={`https://www.youtube-nocookie.com/embed/${movieInfo?.link}?autoplay=1&rel=0&modestbranding=1`}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen
+                            ref={iframeRef}
+                        />
                     ) : (
-                        <InfoContainer>
-                            <InnerBox $expand={fullSize} $width={false}>
+                        <>
+                            <OverlayContainer $expand={fullSize} $width={false}>
                                 <StyledArrowButton onClick={handleExpand}>
                                     {fullSize ? <SlideDown /> : <SlideUp />}
                                 </StyledArrowButton>
-                                <StudioName
-                                    src={
-                                        process.env.REACT_APP_BASE_URL +
-                                        movieInfo?.studio
-                                    }
-                                ></StudioName>
+                                <StudioNameWrapper>
+                                    <StudioImage
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            movieInfo?.studio
+                                        }
+                                    />
+                                </StudioNameWrapper>
                                 <InfoWrapper>
-                                    <InfoTitle>{movieInfo?.title}</InfoTitle>
-                                    <ReleaseInfo>
-                                        <InfoBox $year={true}>
-                                            {movieInfo?.year}
-                                        </InfoBox>
-                                        <InfoBox>{movieInfo?.lang}</InfoBox>
-                                        <InfoBox>{movieInfo?.genre}</InfoBox>
-                                        <InfoBox>{movieInfo?.duration}</InfoBox>
-                                    </ReleaseInfo>
+                                    <MovieTitle>{movieInfo?.title}</MovieTitle>
+                                    <ReleaseInfoWrapper>
+                                        {Object.keys(movieInfo.releaseInfo).map(
+                                            (key) => {
+                                                return (
+                                                    <ReleaseInfo>
+                                                        {
+                                                            movieInfo
+                                                                ?.releaseInfo[
+                                                                key
+                                                            ]
+                                                        }
+                                                    </ReleaseInfo>
+                                                );
+                                            },
+                                        )}
+                                    </ReleaseInfoWrapper>
                                     <Desc
                                         $expand={fullSize}
                                         dangerouslySetInnerHTML={{
                                             __html: movieInfo?.desc,
                                         }}
                                     />
-                                    <Director>
+                                    <DirectorInfoWrapper>
                                         {lang === 'us'
                                             ? 'Director'
                                             : lang === 'tj'
                                             ? 'Офаранда'
                                             : 'Режиссёр'}
-                                    </Director>
-                                    <div>{movieInfo?.director}</div>
+                                        <DirectorName>
+                                            {movieInfo?.director}
+                                        </DirectorName>
+                                    </DirectorInfoWrapper>
                                 </InfoWrapper>
-                            </InnerBox>
+                            </OverlayContainer>
                             <MovieImg
                                 src={
                                     process.env.REACT_APP_BASE_URL +
                                     movieInfo?.img
                                 }
                             />
-                            <DirBox>
+                            <PlayInstructionWrapper>
                                 <StyledIconButton
                                     onClick={() => setShowVideo(true)}
                                 >
                                     <StyledPlayIcon />
                                 </StyledIconButton>
                                 <Line />
-                                <Direction>
+                                <DirectionText>
                                     {lang === 'ru'
                                         ? 'Смотреть'
                                         : lang === 'tj'
                                         ? 'Тамошо'
                                         : 'Watch now'}
-                                </Direction>
-                            </DirBox>
-                        </InfoContainer>
+                                </DirectionText>
+                            </PlayInstructionWrapper>
+                        </>
                     )}
-                </ZoomTransition>
+                </MainContainer>
             </StyledContent>
         </Dialog>
     );

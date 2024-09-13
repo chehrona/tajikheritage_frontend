@@ -17,7 +17,6 @@ const Dialog: React.FC<DialogProps> = ({
     open,
     children,
     width,
-    backdrop,
     background,
     height,
 }) => {
@@ -27,7 +26,6 @@ const Dialog: React.FC<DialogProps> = ({
             fullWidth
             $width={width}
             $height={height}
-            $backdrop={backdrop}
             $background={background}
             TransitionComponent={Zoom}
             TransitionProps={{

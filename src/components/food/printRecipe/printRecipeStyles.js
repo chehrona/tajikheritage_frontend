@@ -67,7 +67,7 @@ export const StyledButton = styled(Button)`
             text-transform: none;
             height: 3.2rem;
             padding: 0.5rem 1.5rem;
-            font-family: var(--ordinary-font);
+            font-family: var(--regular-font);
         }
 
         &.MuiButton-root:hover {

@@ -141,7 +141,7 @@ export const StyledButton = styled(Button)`
         border-radius: var(--small-radius);
         text-transform: none;
         padding: 0.5rem 1.5rem;
-        font-family: var(--ordinary-font);
+        font-family: var(--regular-font);
     }
 
     &.MuiButton-root:hover {

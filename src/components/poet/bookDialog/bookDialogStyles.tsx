@@ -78,7 +78,7 @@ export const InputField = styled.input`
     width: 100%;
     font-size: var(--body-text);
     border-radius: var(--input-radius);
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
     padding: 0.5rem;
 `;
 
@@ -89,7 +89,7 @@ export const StyledButton = styled(Button)`
         height: 100%;
         text-transform: none;
         font-size: var(--body-text);
-        font-family: var(--ordinary-font);
+        font-family: var(--regular-font);
         margin-left: 1rem;
         padding: 0.375rem 0.75rem;
         box-shadow: 0rem 0rem 0.25rem 0.01rem var(--primary-shadow-color);

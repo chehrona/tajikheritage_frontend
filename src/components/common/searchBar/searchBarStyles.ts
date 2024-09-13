@@ -45,7 +45,7 @@ export const InputField = styled.input`
     height: 3.4rem;
     font-size: 1.25rem;
     background-color: transparent;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
 
     &::placeholder {
         color: var(--secondary-grey-color);

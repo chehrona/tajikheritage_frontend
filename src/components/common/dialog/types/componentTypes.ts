@@ -5,7 +5,6 @@ export type DialogProps = {
     open: boolean;
     children: ReactNode;
     width: string;
-    backdrop: string;
     background: string;
     height?: string;
 };

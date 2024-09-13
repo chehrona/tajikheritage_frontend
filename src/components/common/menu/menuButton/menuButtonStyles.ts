@@ -40,7 +40,7 @@ export const ButtonText = styled.div<{
     font-size: 1rem;
     padding-right: 0.65rem;
     font-weight: normal;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
     min-width: 5.25rem;
     max-width: 5.25rem;
     text-align: right;

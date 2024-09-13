@@ -12,7 +12,10 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
         width: ${({ $width }) => $width && $width};
         max-width: ${({ $width }) => $width && $width};
         height: ${({ $height }) => $height && $height};
-        background-color: ${({ $background }) => $background && $background};
+        background-color: ${({ $background }) =>
+            $background === 'dark'
+                ? 'var(--primary-black-color)'
+                : 'var(--primary-white-color)'};
 
         @media (max-width: 480px) {
             font-size: var(--body-text);
@@ -24,13 +27,14 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     }
 
     & .MuiModal-backdrop {
-        background-color: ${({ $backdrop }) => $backdrop && $backdrop};
+        background-color: ${({ $background }) =>
+            $background === 'dark'
+                ? 'rgba(252 246 233 / 30%)'
+                : 'rgba(15 10 0 / 30%)'};
     }
 `;
 
 export const DialogHeaderWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: calc(var(--text-segment-gap) / 2);
+    position: absolute;
+    right: 0rem;
 `;

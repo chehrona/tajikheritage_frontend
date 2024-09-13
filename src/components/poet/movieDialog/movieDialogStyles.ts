@@ -17,13 +17,118 @@ const bounce = keyframes`
     }
 `;
 
+export const StyledContent = styled(DialogContent)`
+    position: relative;
+    height: 20rem;
+    font-size: var(--body-text);
+    line-height: var(--body-text-height);
+
+    &.MuiDialogContent-root {
+        padding: 0rem;
+        overflow: hidden;
+    }
+`;
+
+export const MainContainer = styled.div`
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 480px) {
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
+`;
+
+export const OverlayContainer = styled.div<InnerBoxProps>`
+    width: 65%;
+    height: 100%;
+    background: var(--primary-white-color);
+    position: relative;
+    padding: 2rem;
+
+    ${({ $width }) =>
+        $width &&
+        `
+        background: var(--primary-black-color);
+        position: relative;
+    `}
+
+    @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        z-index: 2;
+        padding: var(--page-padding);
+        border-radius: var(--big-radius);
+        overflow-x: hidden;
+        position: absolute;
+        display: ${({ $width }) => $width && 'none'};
+        overflow-y: ${({ $expand }) => ($expand ? 'scroll' : 'hidden')};
+        top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
+        transition: all 0.5s;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 50%;
+        top: 55%;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+    }
+`;
+
+export const StudioNameWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    height: 3rem;
+`;
+
+export const StudioImage = styled.img`
+    height: 100%;
+`;
+
+export const MovieTitle = styled.div`
+    overflow-wrap: break-word;
+    font-style: bold;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: var(--fancy-font);
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-shadow-color);
+
+    @media (max-width: 480px) {
+        font-size: var(--header-big);
+        line-height: var(--header-big-line-height);
+    }
+`;
+
+export const ReleaseInfoWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: var(--primary-shadow-color);
+    width: 100%;
+    gap: 1rem;
+
+    @media (max-width: 480px) {
+        gap: 0rem;
+        justify-content: space-between;
+        padding: var(--text-segment-gap) 0rem;
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        height: 3rem;
+    }
+`;
+
 export const Desc = styled.div<{ $expand: boolean }>`
     width: 100%;
-    line-height: 1.5rem;
     text-align: justify;
 
     @media (max-width: 480px) {
-        line-height: 1.8rem;
+        line-height: var(--body-text-line-height);
         position: relative;
 
         ${({ $expand }) =>
@@ -50,13 +155,13 @@ export const StyledIconButton = styled(IconButton)`
         background: var(--primary-shadow-color);
 
         &:hover {
-            background: #504221;
+            background: var(--primary-shadow-color);
         }
     }
 
     @media (max-width: 480px) {
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -77,78 +182,9 @@ export const StyledArrowButton = styled(IconButton)`
             height: 2.5rem;
             position: absolute;
             top: -1rem;
-            left: calc(50% - 1.5rem);
+            left: calc(50% - var(--page-padding));
             transform: rotate(-90deg) translateX(-50%);
         }
-    }
-`;
-
-export const StyledContent = styled(DialogContent)`
-    position: relative;
-    height: 20rem;
-
-    &.MuiDialogContent-root {
-        padding: 0rem;
-        overflow: hidden;
-    }
-
-    @media (max-width: 1024px) {
-        font-size: 1.3rem;
-    }
-`;
-
-export const InfoContainer = styled.div`
-    height: 100%;
-    width: 100%;
-
-    @media (max-width: 480px) {
-        flex-direction: column-reverse;
-        overflow: hidden;
-    }
-`;
-
-export const InnerBox = styled.div<InnerBoxProps>`
-    width: 65%;
-    height: 100%;
-    background: var(--primary-white-color);
-    position: relative;
-    padding: 2rem;
-
-    ${({ $width }) =>
-        $width &&
-        `
-        background: var(--primary-black-color);
-        position: relative;
-    `}
-
-    @media (max-width: 480px) {
-        width: 100%;
-        z-index: 2;
-        padding: 1.5rem;
-        border-radius: var(--big-radius);
-        overflow-x: hidden;
-        position: absolute;
-        top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
-        display: ${({ $width }) => $width && 'none'};
-        transition: all 0.5s;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 50%;
-        top: 55%;
-        width: 100%;
-        z-index: 2;
-        position: absolute;
-    }
-`;
-
-export const StudioName = styled.img`
-    height: 3rem;
-
-    @media (max-width: 1024px) {
-        position: absolute;
-        left: 1.5rem;
-        top: 0.5rem;
     }
 `;
 
@@ -158,24 +194,8 @@ export const InfoWrapper = styled.div`
     margin-top: 1rem;
 
     @media (max-width: 1024px) {
-        margin-top: 2rem;
+        margin: 0rem 0rem var(--text-segment-gap) 0rem;
         padding-right: 0%;
-    }
-`;
-
-export const InfoTitle = styled.div`
-    overflow-wrap: break-word;
-    font-style: bold;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    width: 100%;
-    text-transform: uppercase;
-    font-family: var(--fancy-font);
-    text-shadow: 0.0625rem 0.0625rem 0.1875rem #504221e6;
-
-    @media (max-width: 480px) {
-        font-size: 3rem;
-        line-height: 3.3rem;
     }
 `;
 
@@ -189,8 +209,8 @@ export const StyledPlayIcon = styled(PlayArrow)`
 
     @media (max-width: 480px) {
         &.MuiSvgIcon-root {
-            width: 5rem;
-            height: 5rem;
+            width: 4rem;
+            height: 4rem;
         }
     }
 
@@ -217,56 +237,47 @@ export const MovieImg = styled.img`
         transform: none;
         width: 100%;
         height: auto;
-        border-radius: var(--big-radius) 0rem 0rem var(--big-radius);
+        border-radius: var(--big-radius);
     }
 `;
 
 export const ReleaseInfo = styled.div`
     display: flex;
-    align-items: center;
-    height: 4rem;
-    justify-content: start;
-    color: var(--primary-shadow-color);
-    width: 100%;
-    gap: 1rem;
-
-    @media (max-width: 480px) {
-        height: 3rem;
-        gap: 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 3rem;
-    }
-`;
-
-export const InfoBox = styled.div<{ $year?: boolean }>`
-    display: flex;
     justify-content: start;
     align-items: center;
     padding: 1rem;
     margin: 3rem 0rem;
-    width: ${({ $year }) => ($year ? '4rem' : '10rem')};
 
     @media (max-width: 480px) {
-        margin: 1rem 0rem;
+        padding: 0rem;
+        margin: 0rem;
         width: fit-content;
+        flex-shrink: 0;
     }
 `;
 
-export const Director = styled.div`
+export const DirectorInfoWrapper = styled.div`
     width: 100%;
     text-transform: uppercase;
     font-size: 1.5rem;
     font-family: var(--fancy-font);
-    margin: 1.5rem 0rem 0.3rem 0rem;
 
     @media (max-width: 1024px) {
-        font-size: 2rem;
+        padding: calc(2 * var(--text-segment-gap)) 0rem var(--text-segment-gap)
+            0rem;
+        font-size: var(--header-medium);
+        line-height: var(--header-medium-line-height);
     }
 `;
 
-export const DirBox = styled.div`
+export const DirectorName = styled.div`
+    text-transform: none;
+    font-size: var(--body-text);
+    line-height: var(--header-normal-line-height);
+    font-family: var(--regular-font);
+`;
+
+export const PlayInstructionWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: start;
@@ -294,7 +305,7 @@ export const Line = styled.div`
     }
 `;
 
-export const Direction = styled.div`
+export const DirectionText = styled.div`
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--primary-white-color);
@@ -308,6 +319,8 @@ export const Direction = styled.div`
 export const StyledFrame = styled.iframe`
     width: 100%;
     height: 100%;
+    outline: none;
+    border: none;
     border-radius: var(--big-radius);
 `;
 

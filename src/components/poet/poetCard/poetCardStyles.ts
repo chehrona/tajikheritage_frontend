@@ -103,7 +103,7 @@ export const PoetName = styled.div`
 
 export const PoetDates = styled.div`
     font-size: 1.25rem;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
 
     // Done
     @media (max-width: 480px) {

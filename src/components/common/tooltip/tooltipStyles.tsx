@@ -29,7 +29,7 @@ export const StyledTooltip = styled(
 
 export const StyledTypography = styled.div`
     padding: 0.5rem;
-    font-family: var(--ordinary-font);
+    font-family: var(--regular-font);
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
 
