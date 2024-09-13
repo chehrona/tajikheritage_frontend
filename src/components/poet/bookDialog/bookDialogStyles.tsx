@@ -1,32 +1,21 @@
 import styled from 'styled-components';
-import { DialogContent, Button } from '@mui/material';
+import { Button } from '@mui/material';
 
 // Types
 import { ErrorStyleProps } from './types/styleTypes';
 
-export const StyledContent = styled(DialogContent)`
-    position: relative;
-
-    &.MuiDialogContent-root {
-    }
-
-    @media (max-width: 480px) {
-        &.MuiDialogContent-root {
-            padding: 0rem calc(var(--text-segment-gap) / 1.5)
-                calc(var(--text-segment-gap) * 2)
-                calc(var(--text-segment-gap) / 1.5);
-            margin-top: calc(var(--text-segment-gap) * (-2.5));
-        }
-    }
-`;
-
-export const InfoContainer = styled.div`
+export const DialogBodyContainer = styled.div`
     height: 100%;
     width: 100%;
+    font-size: var(--body-text);
+    line-height: var(--body-text-line-height);
 `;
 
-export const InfoTitle = styled.div`
-    color: var(--regular-black-color);
+export const DialogTitle = styled.div<{ $textColor: string }>`
+    color: ${({ $textColor }) =>
+        $textColor === 'light'
+            ? 'var(--regular-white-color)'
+            : 'var(--regular-black-color)'};
     display: flex;
     justify-content: center;
     font-style: italic;
@@ -34,15 +23,11 @@ export const InfoTitle = styled.div`
     font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
+        text-align: center;
         font-size: var(--header-big);
-    }
-`;
-
-export const BodyContainer = styled.div`
-    margin: 1rem 0.5rem 0.5rem 0.5rem;
-
-    @media (max-width: 480px) {
-        margin: calc(var(--text-segment-gap) / 2) 0rem;
+        line-height: var(--header-big-line-height);
+        padding: var(--text-segment-gap) var(--page-padding);
+        margin-right: var(--page-padding);
     }
 `;
 

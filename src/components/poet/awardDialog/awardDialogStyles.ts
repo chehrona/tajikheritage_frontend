@@ -1,24 +1,27 @@
 import styled from 'styled-components';
-import { DialogContent } from '@mui/material';
 
-export const StyledContent = styled(DialogContent)`
-    &.MuiDialogContent-root {
-        position: relative;
-        padding: 0rem;
+export const BodyContainer = styled.div`
+    display: flex;
 
-        @media (max-width: 1024px) {
-            overflow: hidden;
+    @media (max-width: 480px) {
+        display: block;
+        max-height: 65vh;
+        overflow-y: scroll;
+        min-height: var(--small-card-height);
+        padding: var(--text-segment-gap)
+            calc(var(--page-padding) - var(--input-radius))
+            var(--text-segment-gap) var(--page-padding);
+        margin: 0rem calc(var(--input-radius) / 2) var(--text-segment-gap) 0rem;
+
+        &::-webkit-scrollbar {
+            width: var(--input-radius);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--primary-gold-color);
+            border-radius: var(--input-radius);
         }
     }
-`;
-
-export const InfoContainer = styled.div`
-    height: 100%;
-    width: 100%;
-    font-size: var(--body-text);
-    line-height: var(--body-text-line-height);
-    padding: var(--text-segment-gap) var(--page-padding)
-        calc(2 * var(--text-segment-gap)) var(--page-padding);
 `;
 
 export const Desc = styled.div`
@@ -30,32 +33,7 @@ export const Desc = styled.div`
 
     @media (max-width: 480px) {
         display: inline;
-    }
-`;
-
-export const InfoTitle = styled.div`
-    color: var(--regular-white-color);
-    display: flex;
-    justify-content: center;
-    font-style: italic;
-    font-size: var(--header-big);
-    line-height: var(--header-big-line-height);
-    font-family: var(--fancy-font);
-
-    @media (max-width: 480px) {
-        text-align: center;
-        padding: 0rem calc(var(--page-padding) + 0.5rem) var(--text-segment-gap)
-            var(--page-padding);
-    }
-`;
-
-export const BodyContainer = styled.div`
-    display: flex;
-
-    @media (max-width: 480px) {
-        display: block;
-        padding: var(--text-segment-gap) 0rem 0rem 0rem;
-        min-height: 15.5rem;
+        height: 20rem;
     }
 `;
 

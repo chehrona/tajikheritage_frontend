@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 
 // Components
 import Dialog from '../../common/dialog/Dialog';
+import DialogContentWrapper from '../../common/dialogContentWrapper/DialogContentWrapper';
 
 // Types
 import { MovieDialogProps } from './types/componentTypes';
@@ -15,7 +16,6 @@ import {
     Desc,
     StyledIconButton,
     MainContainer,
-    StyledContent,
     MovieTitle,
     DirectorInfoWrapper,
     DirectorName,
@@ -69,7 +69,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
             height={isMobile ? '100%' : '80%'}
             handleClose={handleClose}
         >
-            <StyledContent>
+            <DialogContentWrapper>
                 <MainContainer>
                     {showVideo ? (
                         <StyledFrame
@@ -152,7 +152,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
                         </>
                     )}
                 </MainContainer>
-            </StyledContent>
+            </DialogContentWrapper>
         </Dialog>
     );
 };

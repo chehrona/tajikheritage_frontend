@@ -11,6 +11,7 @@ import { addEmail } from '../../../services/request';
 
 // Components
 import Dialog from '../../common/dialog/Dialog';
+import DialogContentWrapper from '../../common/dialogContentWrapper/DialogContentWrapper';
 
 // Types
 import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
@@ -18,10 +19,8 @@ import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
 // Styled components
 import {
     Desc,
-    InfoContainer,
-    StyledContent,
-    InfoTitle,
-    BodyContainer,
+    DialogBodyContainer,
+    DialogTitle,
     InputWrapper,
     InputField,
     StyledButton,
@@ -86,39 +85,37 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
             handleClose={handleClose}
             background={'light'}
         >
-            <StyledContent>
-                <InfoContainer>
-                    <InfoTitle>
+            <DialogContentWrapper>
+                <DialogBodyContainer>
+                    <DialogTitle $textColor={'dark'}>
                         {staticTexts.NO_BOOK_DIALOG.title[lang]}
-                    </InfoTitle>
-                    <BodyContainer>
-                        <Desc>{book?.msg}</Desc>
-                        {book?.email && (
-                            <InputWrapper>
-                                <InputField
-                                    id="email-for-books"
-                                    placeholder={
-                                        staticTexts.NO_BOOK_DIALOG.input[lang]
-                                    }
-                                    value={email}
-                                    onChange={(e) => handleChange(e)}
-                                    onKeyDown={(e) => handleKeyDown(e)}
-                                />
-                                <StyledButton onClick={handleSubmit}>
-                                    {staticTexts.NO_BOOK_DIALOG.button[lang]}
-                                </StyledButton>
-                            </InputWrapper>
-                        )}
-                        <Error $error={error} $success={success}>
-                            {error
-                                ? staticTexts.NO_BOOK_DIALOG.error[lang]
-                                : success
-                                ? staticTexts.NO_BOOK_DIALOG.success[lang]
-                                : null}
-                        </Error>
-                    </BodyContainer>
-                </InfoContainer>
-            </StyledContent>
+                    </DialogTitle>
+                    <Desc>{book?.msg}</Desc>
+                    {book?.email && (
+                        <InputWrapper>
+                            <InputField
+                                id="email-for-books"
+                                placeholder={
+                                    staticTexts.NO_BOOK_DIALOG.input[lang]
+                                }
+                                value={email}
+                                onChange={(e) => handleChange(e)}
+                                onKeyDown={(e) => handleKeyDown(e)}
+                            />
+                            <StyledButton onClick={handleSubmit}>
+                                {staticTexts.NO_BOOK_DIALOG.button[lang]}
+                            </StyledButton>
+                        </InputWrapper>
+                    )}
+                    <Error $error={error} $success={success}>
+                        {error
+                            ? staticTexts.NO_BOOK_DIALOG.error[lang]
+                            : success
+                            ? staticTexts.NO_BOOK_DIALOG.success[lang]
+                            : null}
+                    </Error>
+                </DialogBodyContainer>
+            </DialogContentWrapper>
         </Dialog>
     );
 };

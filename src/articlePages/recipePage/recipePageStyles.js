@@ -75,7 +75,6 @@ export const IngredientContainer = styled.div`
 
 export const SubContainer = styled.div`
     margin-top: 3rem;
-    background-color: yellow;
 
     @media (max-width: 1024px) {
         margin-top: 0rem;

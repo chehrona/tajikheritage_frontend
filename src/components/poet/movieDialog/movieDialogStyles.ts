@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { PlayArrow, ArrowForwardIos } from '@mui/icons-material';
-import { IconButton, DialogContent } from '@mui/material';
+import { IconButton } from '@mui/material';
 
 // Types
 import { InnerBoxProps } from './types/styleTypes';
@@ -14,18 +14,6 @@ const bounce = keyframes`
     }
     60% {
         transform: translateX(0.7rem);
-    }
-`;
-
-export const StyledContent = styled(DialogContent)`
-    position: relative;
-    height: 20rem;
-    font-size: var(--body-text);
-    line-height: var(--body-text-height);
-
-    &.MuiDialogContent-root {
-        padding: 0rem;
-        overflow: hidden;
     }
 `;
 

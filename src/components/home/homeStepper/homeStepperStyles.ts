@@ -11,7 +11,6 @@ export const MainContainer = styled.div`
     height: calc(100vh - 8.5rem);
 
     @media (max-width: 480px) {
-        background-color: red;
         min-height: calc(100vh - var(--header-height));
         height: calc(100vh - var(--header-height));
     }
@@ -151,7 +150,6 @@ export const LargeTitle = styled.div<LargeTitleProps>`
               `};
 
     @media (max-width: 480px) {
-        background-color: green;
         width: 100%;
         padding-top: 0rem;
         text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);

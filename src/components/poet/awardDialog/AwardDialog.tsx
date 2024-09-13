@@ -5,17 +5,14 @@ import Dialog from '../../common/dialog/Dialog';
 
 // Types
 import { AwardDialogProps } from './types/componentTypes';
+import DialogContentWrapper from '../../common/dialogContentWrapper/DialogContentWrapper';
 
 // Styled components
+import { Desc, BodyContainer, AwardImg, Wrapper } from './awardDialogStyles';
 import {
-    Desc,
-    InfoContainer,
-    StyledContent,
-    InfoTitle,
-    BodyContainer,
-    AwardImg,
-    Wrapper,
-} from './awardDialogStyles';
+    DialogBodyContainer,
+    DialogTitle,
+} from '../bookDialog/bookDialogStyles';
 
 const AwardDialog: React.FC<AwardDialogProps> = ({
     awardInfo,
@@ -38,9 +35,11 @@ const AwardDialog: React.FC<AwardDialogProps> = ({
             handleClose={handleClose}
             background={'dark'}
         >
-            <StyledContent>
-                <InfoContainer>
-                    <InfoTitle>{awardInfo?.title}</InfoTitle>
+            <DialogContentWrapper>
+                <DialogBodyContainer>
+                    <DialogTitle $textColor={'light'}>
+                        {awardInfo?.title}
+                    </DialogTitle>
                     <BodyContainer>
                         <Wrapper $first={true}>
                             <AwardImg
@@ -58,8 +57,8 @@ const AwardDialog: React.FC<AwardDialogProps> = ({
                             />
                         </Wrapper>
                     </BodyContainer>
-                </InfoContainer>
-            </StyledContent>
+                </DialogBodyContainer>
+            </DialogContentWrapper>
         </Dialog>
     );
 };

@@ -165,8 +165,14 @@ export const Desc = styled.div`
     text-align: justify;
     overflow-y: scroll;
 
-    padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
-        var(--text-segment-gap) var(--page-padding);
+    &::-webkit-scrollbar {
+        width: var(--input-radius);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-gold-color);
+        border-radius: var(--input-radius);
+    }
 
     @media (max-width: 480px) {
         padding: var(--text-segment-gap) var(--page-padding);
