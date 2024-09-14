@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useLocation, useParams } from 'react-router-dom';
@@ -19,7 +19,6 @@ import PoetCareer from '../../components/poet/poetCareer/PoetCareer';
 import PoetAwards from '../../components/poet/poetAwards/PoetAwards';
 import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
 import Sources from '../../components/common/sources/Sources';
-import SectionOptions from '../../components/poet/sectionOptions/SectionOptions';
 
 // Components
 import Loader from '../../components/common/loader/Loader';
@@ -73,10 +72,9 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
 
     const scrollToView = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.preventDefault();
-        const target = e.currentTarget.getAttribute('data-id');
-        const parent = document.querySelector('.routes-container');
 
-        console.log(target, 'target', parent, 'parent');
+        const target = e.currentTarget.getAttribute('data-id');
+        const parent = document.querySelector('.parent-container');
 
         if (parent && target) {
             const targetElement = document.querySelector(
