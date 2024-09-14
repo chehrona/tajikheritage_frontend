@@ -14,7 +14,6 @@ import { ErrorTypes } from '../../appTypes';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
@@ -31,14 +30,13 @@ import {
 const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [word, setWord] = useState<WordObj>();
     // const [error, setError] = useState<BackendError>();
-    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
 
             if (!id) {
                 return;
@@ -59,8 +57,8 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
             }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -76,7 +74,6 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
             {word ? (
                 <PageFirstContainer>
                     <MainContainer>

@@ -15,7 +15,6 @@ import { requestArticleInfo } from '../../services/request';
 // Components
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
@@ -23,14 +22,13 @@ import PageInnerContainer from '../../components/common/pageInnerContainer/PageI
 const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<ErrorResponse>();
-    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
 
             if (!id) {
                 return;
@@ -52,8 +50,8 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
             }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -69,8 +67,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
-            {!loading && data ? (
+            {data ? (
                 <ArticlePageFirstContainer>
                     <PageInnerContainer height={40}>
                         {data.desc[lang].map((entry, i) => {

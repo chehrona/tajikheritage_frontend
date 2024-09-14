@@ -11,7 +11,6 @@ import { requestMiddlePage } from '../../services/request';
 // Components
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
@@ -24,15 +23,14 @@ import { InnerBoxContainer } from './middlePageStyles';
 
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
             const data = await requestMiddlePage(page);
 
             setItems(data);
@@ -48,8 +46,8 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
             // }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -65,7 +63,6 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
             {items.length > 0 ? (
                 <LandingPageFirstContainer>
                     <SearchBar

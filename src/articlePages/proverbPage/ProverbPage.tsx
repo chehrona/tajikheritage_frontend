@@ -13,7 +13,6 @@ import { DescDetails, ErrorTypes } from '../../appTypes';
 
 // Components
 import Sources from '../../components/common/sources/Sources';
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
@@ -29,14 +28,13 @@ import ArticlePageFirstContainer from '../../components/common/pageWrapper/Artic
 const ProverbPage = () => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [proverb, setProverb] = useState<ProverbObj>();
     // const [error, setError] = useState<BackendError>();
-    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
 
             if (!id) {
                 return;
@@ -57,8 +55,8 @@ const ProverbPage = () => {
             }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -71,7 +69,6 @@ const ProverbPage = () => {
 
     return (
         <>
-            <Loader inProp={loading} />
             {proverb ? (
                 <ArticlePageFirstContainer>
                     <Shadow />

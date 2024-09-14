@@ -29,14 +29,13 @@ import PageInnerContainer from '../../components/common/pageInnerContainer/PageI
 const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [poet, setPoet] = useState<PoetData>();
     const [error, setError] = useState({});
-    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
 
             if (!id) {
                 return;
@@ -55,8 +54,8 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
             // }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -92,7 +91,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
+            \{' '}
             {poet ? (
                 <PageFirstContainer>
                     <PageInnerContainer height={40}>

@@ -22,6 +22,7 @@ import Routes from './components/common/routes/Routes';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 import GlobalStyles from './globalStyles';
+import Loader from './components/common/loader/Loader';
 
 function App(): React.JSX.Element {
     const [lang, setLang] = useState<Langs>(() => {
@@ -35,6 +36,7 @@ function App(): React.JSX.Element {
     const [position, setPosition] = useState<number>(0);
     const [showArrow, setShowArrow] = useState<boolean>(false);
     const [showAdmin, setShowAdmin] = useState<boolean>(true);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
     const menuAnchorEl = useRef<HTMLDivElement | null>(null);
 
@@ -44,10 +46,12 @@ function App(): React.JSX.Element {
             setTitle,
             lang,
             setLang,
+            isLoading,
+            setIsLoading,
             showAdmin,
             setShowAdmin,
         }),
-        [lang, title, showAdmin],
+        [lang, title, showAdmin, isLoading],
     );
 
     useEffect(() => {
@@ -109,6 +113,7 @@ function App(): React.JSX.Element {
                         menuAnchorEl={menuAnchorEl}
                     />
                     <div className="content-container">
+                        <Loader inProp={isLoading} />
                         <div
                             className="routes-container"
                             ref={parentRef}

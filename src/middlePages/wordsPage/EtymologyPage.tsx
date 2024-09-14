@@ -13,7 +13,6 @@ import { requestMiddlePage } from '../../services/request';
 
 // Components
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
@@ -27,16 +26,15 @@ import { CardsContainer, PageTitle } from './etymologyStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState<any>();
-    const [loading, setLoading] = useState<boolean>(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
             const data = await requestMiddlePage(page);
 
             setItems(data);
@@ -54,8 +52,8 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
             }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -71,7 +69,6 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
             {items.length > 0 ? (
                 <LandingPageFirstContainer>
                     <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
@@ -91,7 +88,6 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
                     )}
                 </LandingPageFirstContainer>
             ) : (
-                !loading &&
                 error !== undefined && <Alert message={error} type={'error'} />
             )}
         </>

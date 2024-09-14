@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
+// Hooks
+import { useGlobalData } from '../../../hooks/useGlobalData';
+
 // Material UI
 import { Zoom } from '@mui/material';
 
@@ -10,7 +13,6 @@ import { requestPdf } from '../../../services/request';
 import HeaderLogo from '../../common/headerLogo/HeaderLogo';
 import CloseButton from '../../common/closeButton/CloseButton';
 import PDFViewer from './PdfViewer';
-import Loader from '../../common/loader/Loader';
 
 // Types
 import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
@@ -23,8 +25,8 @@ import {
 } from '../../common/header/headerStyles';
 
 const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
+    const { setIsLoading } = useGlobalData();
     const [pdfUrl, setPdfUrl] = useState<string>('');
-    const [loading, setLoading] = useState<boolean>(false);
 
     const handleCloseReader = () => {
         setBookIndex(-1);
@@ -32,7 +34,7 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
 
     const fetchPdf = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
 
             if (!book.source) {
                 return;
@@ -45,7 +47,7 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
             console.error('Error fetching PDF file:', error);
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
+                setIsLoading(false);
             }, 500);
 
             return () => clearTimeout(timer);
@@ -71,7 +73,6 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                 timeout: 200,
             }}
         >
-            <Loader inProp={loading} />
             <HeaderContainer $show={true}>
                 <HeaderInnerBox>
                     <HeaderLogo handleLogoClick={handleLogoClick} navTo={'#'} />

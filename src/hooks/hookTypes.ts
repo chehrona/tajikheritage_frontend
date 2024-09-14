@@ -12,6 +12,8 @@ export type ContextTypes = {
     setLang: React.Dispatch<React.SetStateAction<Langs>>;
     showAdmin: boolean;
     setShowAdmin: React.Dispatch<React.SetStateAction<boolean>>;
+    isLoading: boolean;
+    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 // useSetHeader

@@ -22,14 +22,13 @@ import { SectionBoxContainer } from './landingPageStyles';
 
 const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
-    const { lang } = useGlobalData();
+    const { lang, setIsLoading } = useGlobalData();
     const [sections, setSections] = useState<SectionDetails[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState('');
 
     const fetchData = async () => {
         try {
-            setLoading(true);
+            setIsLoading(true);
             const data = await requestPage(page);
             setSections(data.sections);
         } catch (error) {
@@ -43,8 +42,8 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
             // }
         } finally {
             const timer = setTimeout(() => {
-                setLoading(false);
-            }, 400);
+                setIsLoading(false);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
@@ -60,8 +59,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            <Loader inProp={loading} />
-            {!loading ? (
+            {sections.length > 0 ? (
                 <LandingPageFirstContainer>
                     <SectionBoxContainer $center={sections.length % 3 === 0}>
                         {sections?.map((section, i) => {
