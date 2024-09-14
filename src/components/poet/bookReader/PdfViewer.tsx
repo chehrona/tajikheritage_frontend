@@ -5,6 +5,9 @@ import { Document, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
+// Hooks
+import { useGlobalData } from '../../../hooks/useGlobalData';
+
 // Components
 import Loader from '../../common/loader/Loader';
 import PageNotFound from '../../../errorPages/pageNotFound/PageNotFound';
@@ -18,6 +21,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const PDFViewer: React.FC<{ pdfUrl: string }> = ({ pdfUrl }) => {
+    const { isLoading } = useGlobalData();
     const [numPages, setNumPages] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [screenWidth, setScreenWidth] = useState<number>(350);
@@ -46,7 +50,7 @@ const PDFViewer: React.FC<{ pdfUrl: string }> = ({ pdfUrl }) => {
             <Document
                 file={pdfUrl}
                 onLoadSuccess={onDocumentLoadSuccess}
-                loading={<Loader inProp={true} />}
+                loading={<Loader inProp={isLoading} />}
                 error={<PageNotFound />}
                 noData={<PageNotFound />}
             >

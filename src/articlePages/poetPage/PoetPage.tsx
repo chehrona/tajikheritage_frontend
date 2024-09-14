@@ -91,7 +91,6 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            \{' '}
             {poet ? (
                 <PageFirstContainer>
                     <PageInnerContainer height={40}>
