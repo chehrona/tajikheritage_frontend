@@ -16,15 +16,14 @@ import {
 
 const AwardDialog: React.FC<AwardDialogProps> = ({
     awardInfo,
-    setShowAwardInfo,
     showAwardInfo,
+    setShowAwardInfo,
 }) => {
     const handleClose = useCallback(() => {
         setShowAwardInfo(false);
     }, [setShowAwardInfo]);
 
     if (!awardInfo) {
-        handleClose();
         return null;
     }
 

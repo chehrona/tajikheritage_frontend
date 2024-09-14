@@ -99,10 +99,6 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
                 <PageFirstContainer>
                     <PageInnerContainer height={40}>
                         <PoetIntro poet={poet} scrollToView={scrollToView} />
-                        <SectionOptions
-                            sections={poet.sections}
-                            scrollToView={scrollToView}
-                        />
                         <PoetBio bioData={poet?.bio} />
                         <PoetWorks works={poet?.works[lang]} />
                         <PoetMovies movies={poet?.movies[lang]} />

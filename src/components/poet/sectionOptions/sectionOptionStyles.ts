@@ -5,24 +5,10 @@ export const MainContainer = styled.div`
 
     @media (max-width: 480px) {
         display: flex;
-        background-image: url(${'/noise.png'});
         min-height: fit-content;
         background-color: var(--primary-black-color);
         position: relative;
-        height: 18rem;
-
-        &:after {
-            content: '';
-            padding: 2rem;
-            width: 100%;
-            background: var(--primary-white-color);
-            background-image: url(${'/noise.png'});
-            -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
-            position: absolute;
-            bottom: -0.01rem;
-            box-sizing: border-box;
-        }
+        height: 17rem;
 
         &:before {
             content: '';
@@ -44,7 +30,7 @@ export const SegmentContainer = styled.div`
     width: 100%;
     z-index: 10;
     position: absolute;
-    top: -2rem;
+    top: -2.25rem;
 `;
 
 export const SectionTitle = styled.div`

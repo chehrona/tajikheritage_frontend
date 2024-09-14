@@ -63,7 +63,7 @@ export const MainContainer = styled.div`
             );
             clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
             position: absolute;
-            bottom: 1rem;
+            bottom: 0rem;
             box-sizing: border-box;
         }
     }
@@ -209,7 +209,7 @@ export const PoetNameContainer = styled.div`
 
     @media (max-width: 480px) {
         left: var(--page-padding);
-        bottom: calc(5.5 * (var(--page-padding)));
+        top: 11.25rem;
         display: block;
     }
 

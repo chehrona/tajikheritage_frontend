@@ -38,8 +38,8 @@ import {
 
 const MovieDialog: React.FC<MovieDialogProps> = ({
     movieInfo,
-    setShowMovieInfo,
     showMovieInfo,
+    setShowMovieInfo,
 }) => {
     const [showVideo, setShowVideo] = useState<boolean>(false);
     const isMobile = useMediaQuery({ query: `(max-width: 1024px)` });

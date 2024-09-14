@@ -20,6 +20,7 @@ import {
     NumSpan,
     Overlay,
 } from './poetIntroStyles';
+import SectionOptions from '../sectionOptions/SectionOptions';
 
 const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
     const { lang } = useGlobalData();
@@ -31,23 +32,10 @@ const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
         <MainContainer>
             <Overlay />
             <div>
-                <SegmentContainer>
-                    {poet?.sections[lang].map((piece, i) => {
-                        return (
-                            <SectionTitle
-                                key={i}
-                                onClick={(e) => scrollToView(e)}
-                            >
-                                <TitleSpan
-                                    $delay={i}
-                                    data-id={`#${poet?.sections.us[i]}`}
-                                >
-                                    {piece}
-                                </TitleSpan>
-                            </SectionTitle>
-                        );
-                    })}
-                </SegmentContainer>
+                <SectionOptions
+                    sections={poet.sections}
+                    scrollToView={scrollToView}
+                />
                 <YearsContainer>
                     <Year>
                         {yearOne?.map((num, i) => {

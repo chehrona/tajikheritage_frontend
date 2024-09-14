@@ -2,10 +2,11 @@ import styled, { css } from 'styled-components';
 
 export const LoaderContainer = styled.div<{ $inProp: boolean }>`
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    height: 100vh;
     z-index: 10;
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 15rem 15rem;
