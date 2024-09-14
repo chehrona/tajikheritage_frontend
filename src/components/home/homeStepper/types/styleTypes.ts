@@ -1,9 +1,5 @@
 export type LargeTitleProps = {
-    $fontSize: {
-        d: number;
-        m: number;
-        t: number;
-    };
+    $fontSize: number;
     $margin: {
         d: number;
         m: number;

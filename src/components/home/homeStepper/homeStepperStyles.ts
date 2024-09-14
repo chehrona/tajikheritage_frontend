@@ -11,8 +11,7 @@ export const MainContainer = styled.div`
     height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100svh - var(--header-height));
-        height: calc(100svh - var(--header-height));
+        height: 100svh;
     }
 `;
 
@@ -43,7 +42,7 @@ export const SemiCircle = styled.div`
 
 export const IndicatorStep = styled.div`
     font-size: 1.5rem;
-    color: #ffffff;
+    color: var(--regular-white-color);
     font-family: var(--fancy-font);
     position: absolute;
     top: 50%;
@@ -102,6 +101,7 @@ export const StepperBox = styled.div<{ $opacity: number }>`
 
     @media (max-width: 1024px) {
         scroll-snap-align: start;
+        opacity: ${({ $opacity }) => $opacity && $opacity + 0.5};
     }
 `;
 
@@ -117,15 +117,16 @@ export const Step = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 7rem;
 
     @media (max-width: 480px) {
-        height: 30%;
-        min-height: 20%;
+        max-height: 90svh;
+        margin: 0rem;
+        gap: var(--text-segment-gap);
+        padding: var(--text-segment-gap) 0rem;
     }
 `;
 
@@ -137,13 +138,14 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     text-transform: uppercase;
     font-family: var(--fancy-font);
     text-shadow: 1rem 0rem 0rem var(--primary-shadow-color);
-    margin-top: ${({ $margin }) => $margin && `${$margin.d}rem`};
     ${({ $fontSize }) =>
         $fontSize
             ? css`
                   opacity: 1;
-                  font-size: ${$fontSize.d}rem;
-                  line-height: ${$fontSize.d - 1}rem;
+                  font-size: calc(${$fontSize} * var(--stepper-text));
+                  line-height: calc(
+                      ${$fontSize} * var(--stepper-text) - 0.25rem
+                  );
               `
             : css`
                   opacity: 0;
@@ -151,34 +153,12 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 
     @media (max-width: 480px) {
         width: 100%;
-        padding-top: 0rem;
+
         text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
-        margin-top: ${({ $margin }) => $margin && `${$margin.m}%`};
-        ${({ $fontSize }) =>
-            $fontSize
-                ? css`
-                      opacity: 1;
-                      font-size: ${$fontSize.m}rem;
-                      line-height: ${$fontSize.m - 0.5}rem;
-                  `
-                : css`
-                      opacity: 0;
-                  `};
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         margin-top: ${({ $margin }) => $margin && `${$margin.t}%`};
-
-        ${({ $fontSize }) =>
-            $fontSize
-                ? css`
-                      opacity: 1;
-                      font-size: ${$fontSize.t}rem;
-                      line-height: ${$fontSize.t - 0.5}rem;
-                  `
-                : css`
-                      opacity: 0;
-                  `};
     }
 `;
 
@@ -191,9 +171,10 @@ export const Desc = styled.div`
     margin-top: 2rem;
 
     @media (max-width: 480px) {
-        font-size: 1.3rem;
-        width: calc(100% - 2.2rem);
-        margin-left: 2.2rem;
+        margin: 0rem;
+        width: 100%;
+        font-size: var(--body-text);
+        padding-left: calc(var(--page-padding) * 2);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -224,14 +205,13 @@ export const OtherSteps = styled.div<{ $bottom?: boolean }>`
     }
 `;
 
-export const StyledButton = styled.div<{ $lang: string }>`
-    color: var(--primary-gold-color);
+export const StyledButton = styled.div<{ $length: number }>`
     height: fit-content;
     font-weight: 500;
     padding-bottom: 0.25rem;
-    margin-top: 0.5rem;
-    width: ${({ $lang }) =>
-        $lang && $lang === 'ru' ? '30%' : $lang === 'tj' ? '35%' : '17%'};
+    margin-top: var(--text-segment-gap);
+    color: var(--primary-gold-color);
+    width: ${({ $length }) => `calc(${$length} * 0.75rem)`};
 
     &::before {
         content: '';
@@ -243,8 +223,6 @@ export const StyledButton = styled.div<{ $lang: string }>`
         background-color: var(--regular-white-color);
         transform-origin: bottom right;
         transition: transform 0.3s ease-in-out;
-        width: ${({ $lang }) =>
-            $lang && $lang === 'ru' ? '30%' : $lang === 'tj' ? '35%' : '17%'};
     }
 
     &:hover::before {
@@ -259,8 +237,6 @@ export const StyledButton = styled.div<{ $lang: string }>`
     @media (max-width: 480px) {
         border-right: 0.1rem solid var(--regular-white-color);
         border-bottom: 0.1rem solid var(--regular-white-color);
-        width: ${({ $lang }) =>
-            $lang && $lang === 'ru' ? '51%' : $lang === 'tj' ? '60%' : '29%'};
 
         &::before {
             display: none;
@@ -274,8 +250,6 @@ export const StyledButton = styled.div<{ $lang: string }>`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         border-right: 0.1rem solid var(--regular-white-color);
         border-bottom: 0.1rem solid var(--regular-white-color);
-        width: ${({ $lang }) =>
-            $lang && $lang === 'ru' ? '41%' : $lang === 'tj' ? '47%' : '23.5%'};
 
         &::before {
             display: none;
@@ -297,14 +271,14 @@ export const ImageSemiCircle = styled.img`
     @media (max-width: 480px) {
         display: flex;
         position: absolute;
-        bottom: -8rem;
-        right: -6rem;
+        bottom: -3.25rem;
+        right: -2rem;
         border-radius: 50%;
-        width: 35rem;
-        height: 35rem;
+        width: 100svw;
+        height: auto;
         padding: 0.5rem;
-        border: 1px solid var(--primary-gold-color);
         z-index: -1;
         opacity: 0.3;
+        border: 1px solid var(--primary-gold-color);
     }
 `;

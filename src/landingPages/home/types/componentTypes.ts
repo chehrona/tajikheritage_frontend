@@ -6,11 +6,7 @@ export type TitleType = {
 
 type LanguageDetails = {
     text: string;
-    font: {
-        d: number;
-        m: number;
-        t: number;
-    };
+    font: number;
     margin: {
         d: number;
         m: number;

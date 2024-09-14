@@ -36,6 +36,7 @@ html {
     --header-large: 2.5rem;
     --header-big: 1.75rem;
     --header-medium: 1.5rem;
+    --stepper-text: 1rem;
 
     /* Padding */
     --page-padding: 3.2rem;
@@ -65,6 +66,7 @@ html {
         --header-normal: 1.5rem;
         --header-small: 1.15rem;
         --info-text: 0.9rem;
+        --stepper-text: 1rem;
 
         /* Padding */
         --page-padding: 1rem;

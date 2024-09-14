@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
-import staticText from '../../../miscellaneous/staticTexts.json';
+import staticTexts from '../../../miscellaneous/staticTexts.json';
 
 // Types
 import { HomeStepperProps } from './types/componentTypes';
@@ -33,7 +33,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
     divRefs,
     opacities,
 }) => {
-    const stepInfo = staticText.HOME_STEPPER as HomeStepperType;
+    const stepInfo = staticTexts.HOME_STEPPER as HomeStepperType;
     const { lang } = useGlobalData();
     const [visibleStepIndex, setVisibleStepIndex] = useState<number>(0);
 
@@ -100,12 +100,13 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                                         href={step?.desc[lang].link}
                                         target="_blank"
                                     >
-                                        <StyledButton $lang={lang}>
-                                            {lang === 'ru'
-                                                ? 'УЗНАТЬ БОЛЬШЕ'
-                                                : lang === 'tj'
-                                                ? 'БИСЁРТАР ОМӮЗЕД'
-                                                : 'EXPLORE'}
+                                        <StyledButton
+                                            $length={
+                                                staticTexts.HOME_EXPLORE[lang]
+                                                    .length
+                                            }
+                                        >
+                                            {staticTexts.HOME_EXPLORE[lang]}
                                         </StyledButton>
                                     </Link>
                                 </Desc>
