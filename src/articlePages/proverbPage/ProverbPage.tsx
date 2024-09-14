@@ -67,7 +67,7 @@ const ProverbPage = () => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
 
     return (
         <>

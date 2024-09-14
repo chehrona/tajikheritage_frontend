@@ -67,7 +67,7 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
 
     return (
         <>

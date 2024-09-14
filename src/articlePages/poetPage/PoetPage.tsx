@@ -68,7 +68,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname, lang]);
+    }, [location.pathname]);
 
     const scrollToView = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.preventDefault();
