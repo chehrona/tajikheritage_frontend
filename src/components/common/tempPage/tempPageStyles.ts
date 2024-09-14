@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TempPageContainer = styled.div`
-    min-height: 100vh;
+    min-height: 100svh;
     width: 100%;
     display: flex;
     flex-direction: column;

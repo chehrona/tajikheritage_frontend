@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    height: calc(100svh - var(--header-height));
     background-image: url(${process.env.PUBLIC_URL}/error-grid.png);
     background-size: calc(100vw / 8);
     background-repeat: repeat;

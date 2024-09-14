@@ -45,9 +45,16 @@ const Flags: React.FC = () => {
                 iconTitle &&
                 (iconTitle === 'us' || iconTitle === 'ru' || iconTitle === 'tj')
             ) {
-                setLang(iconTitle);
+                setShowLangMenu(false);
+
+                const timer = setTimeout(() => {
+                    setIsLoading(false);
+
+                    setLang(iconTitle);
+                }, 400);
+
+                return () => clearTimeout(timer);
             }
-            setShowLangMenu(false);
         },
         [setLang],
     );
@@ -58,12 +65,6 @@ const Flags: React.FC = () => {
 
     useEffect(() => {
         localStorage.setItem('lang', lang);
-
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 550);
-
-        return () => clearTimeout(timer);
     }, [lang]);
 
     return (

@@ -40,7 +40,7 @@ export const InnerOverlay = styled.div`
     height: 40rem;
 
     @media (max-width: 480px) {
-        height: calc(100vh - ${squareSizeMobile}rem);
+        height: calc(100svh - ${squareSizeMobile}rem);
         margin-top: ${`${squareSizeMobile / 2}rem`};
     }
 `;
@@ -197,7 +197,7 @@ export const BoxTwoText = styled.div`
 
     @media (max-width: 480px) {
         max-height: calc(
-            100vh - ${1.65 * squareSizeMobile}rem - var(--header-big) -
+            100svh - ${1.65 * squareSizeMobile}rem - var(--header-big) -
                 var(--text-segment-gap)
         );
         overflow-y: auto;

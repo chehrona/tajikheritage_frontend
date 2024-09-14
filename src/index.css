@@ -45,7 +45,7 @@ html {
     --header-height: 3.75rem;
     --footer-height: 3.75rem;
     --page-height: calc(
-        100vh - ((var(--header-height) + var(--footer-height)))
+        100svh - ((var(--header-height) + var(--footer-height)))
     );
     --circle-letter-size: 4.25rem;
     --slideshow-height: 30rem;
@@ -121,7 +121,7 @@ body * {
     flex-direction: column;
     position: relative;
     max-width: 1440px;
-    min-height: 100vh;
+    min-height: 100svh;
     margin: 0 auto;
     background: var(--primary-black-color);
 }
@@ -132,7 +132,7 @@ body * {
 }
 
 .content-container {
-    height: calc(100vh - var(--header-height));
+    height: calc(100svh - var(--header-height));
 }
 
 .routes-container {

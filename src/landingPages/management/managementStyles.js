@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
 `;
 
 export const LeftPanel = styled.div`
     width: 25%;
-    height: 100vh;
+    height: 100svh;
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;

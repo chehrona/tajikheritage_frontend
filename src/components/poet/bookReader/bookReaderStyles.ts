@@ -37,7 +37,7 @@ export const IconWrapper = styled.div`
 
 // Pdf viewer
 export const ViewerContainer = styled.div`
-    max-height: 100vh;
+    max-height: 100svh;
     overflow-y: scroll;
     overflow-x: hidden;
 `;

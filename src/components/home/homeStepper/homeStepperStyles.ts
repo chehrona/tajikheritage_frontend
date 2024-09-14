@@ -8,11 +8,11 @@ export const MainContainer = styled.div`
     overflow: hidden;
     position: relative;
     z-index: 1;
-    height: calc(100vh - 8.5rem);
+    height: calc(100svh - 8.5rem);
 
     @media (max-width: 480px) {
-        min-height: calc(100vh - var(--header-height));
-        height: calc(100vh - var(--header-height));
+        min-height: calc(100svh - var(--header-height));
+        height: calc(100svh - var(--header-height));
     }
 `;
 

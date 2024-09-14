@@ -48,7 +48,7 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
         } finally {
             const timer = setTimeout(() => {
                 setIsLoading(false);
-            }, 500);
+            }, 550);
 
             return () => clearTimeout(timer);
         }
