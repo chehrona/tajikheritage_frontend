@@ -61,7 +61,7 @@ const Flags: React.FC = () => {
 
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 400);
+        }, 550);
 
         return () => clearTimeout(timer);
     }, [lang]);
