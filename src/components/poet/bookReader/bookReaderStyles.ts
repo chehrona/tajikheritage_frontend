@@ -37,13 +37,20 @@ export const IconWrapper = styled.div`
 
 // Pdf viewer
 export const ViewerContainer = styled.div`
+    padding-top: var(--header-height);
     max-height: 100svh;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+        display: none;
+        width: 0rem;
+    }
 `;
 
 export const StyledPage = styled(Page)`
     margin-bottom: var(--text-segment-gap);
+    width: 100%;
 
     &:last-child {
         margin-bottom: 0rem;

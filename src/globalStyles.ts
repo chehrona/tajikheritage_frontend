@@ -42,8 +42,8 @@ const GlobalStyles = createGlobalStyle`
     sub {
         vertical-align: baseline;
         position: relative;
-        top: -0.5rem;
-        font-size: 0.75rem;
+        top: -0.35rem;
+        font-size: calc(var(--body-text) * 0.75);
         font-style: normal;
         font-family: var(--regular-font);
     }
@@ -61,12 +61,12 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .emptyLine {
-        height: 2rem;
+        height: var(--text-segment-gap);
         width: 100%;
     }
 
     .space {
-        height: 0.5rem;
+        height: calc(var(--text-segment-gap) / 2);
         width: 100%;
     }
 
