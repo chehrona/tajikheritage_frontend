@@ -157,7 +157,7 @@ export const DescContainer = styled.div`
     }
 `;
 
-export const Desc = styled.div`
+export const CareerDesc = styled.div`
     padding: 1.5rem 2rem 1.5rem 2rem;
     font-size: var(--body-text);
     line-height: 2rem;

@@ -1,4 +1,4 @@
-import { Langs } from '../../../../appTypes';
+import { DescDetails, Langs } from '../../../../appTypes';
 import { SlideImage } from '../../../common/slideshow/types/componentTypes';
 
 export type CareerDetails = {
@@ -12,4 +12,7 @@ export type CareerObj = {
 
 export type PoetCareerTypes = CareerObj & {
     years: string[];
+    desc: {
+        [key in Langs]: DescDetails[];
+    };
 };

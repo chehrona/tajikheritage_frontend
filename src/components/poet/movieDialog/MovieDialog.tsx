@@ -98,7 +98,13 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
                                         {Object.keys(movieInfo.releaseInfo).map(
                                             (key) => {
                                                 return (
-                                                    <ReleaseInfo>
+                                                    <ReleaseInfo
+                                                        key={
+                                                            movieInfo
+                                                                .releaseInfo
+                                                                .title
+                                                        }
+                                                    >
                                                         {
                                                             movieInfo
                                                                 ?.releaseInfo[

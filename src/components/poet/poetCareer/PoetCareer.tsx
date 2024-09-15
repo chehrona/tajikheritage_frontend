@@ -9,6 +9,7 @@ import { ArrowForwardIos } from '@mui/icons-material';
 
 // Components
 import InfoBox from '../../common/infoBox/InfoBox';
+import { DescWrapper } from '../../common/descWrapper/DescWrapper';
 
 // Types
 import { PoetCareerTypes } from './types/componentTypes';
@@ -17,7 +18,7 @@ import { PoetCareerTypes } from './types/componentTypes';
 import {
     Year,
     Line,
-    Desc,
+    CareerDesc,
     Step,
     Image,
     Footer,
@@ -92,30 +93,34 @@ const PoetCareer: React.FC<{ points: PoetCareerTypes }> = ({ points }) => {
                 </YearSliderWrapper>
                 <InfoContainer ref={parentRef}>
                     <InfoInnerContainer $translate={translate}>
-                        {points[lang].map((entry, i) => {
-                            const imgSrc = entry.slides[0]?.img
-                                ? `${process.env.REACT_APP_BASE_URL}${entry.slides[0]?.img}`
-                                : `${process.env.PUBLIC_URL}/loader.png`;
-
+                        {points.desc[lang].map((entry, i) => {
                             return (
                                 <InfoWrapper key={'a' + i} ref={childRef}>
-                                    <ImageWrapper>
-                                        <Image
-                                            $src={imgSrc}
-                                            $width={currentSize * 0.36}
-                                        >
-                                            {entry.slides[0]?.info && (
-                                                <InfoBox
-                                                    text={entry.slides[0]?.info}
-                                                />
-                                            )}
-                                        </Image>
-                                    </ImageWrapper>
+                                    {entry.slides ? (
+                                        <ImageWrapper>
+                                            <Image
+                                                $src={
+                                                    process.env
+                                                        .REACT_APP_BASE_URL +
+                                                    entry.slides[0]?.img
+                                                }
+                                                $width={currentSize * 0.36}
+                                            >
+                                                {entry.slides[0]?.info && (
+                                                    <InfoBox
+                                                        text={
+                                                            entry.slides[0]
+                                                                ?.info
+                                                        }
+                                                    />
+                                                )}
+                                            </Image>
+                                        </ImageWrapper>
+                                    ) : null}
                                     <DescContainer>
-                                        <Desc
-                                            dangerouslySetInnerHTML={{
-                                                __html: entry?.text,
-                                            }}
+                                        <DescWrapper
+                                            data={entry.body}
+                                            TextWrapper={CareerDesc}
                                         />
                                         <Footer>
                                             <StyledIconButton
