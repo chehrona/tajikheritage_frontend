@@ -23,6 +23,7 @@ import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 import GlobalStyles from './globalStyles';
 import Loader from './components/common/loader/Loader';
+import { useLocation } from 'react-router-dom';
 
 function App(): React.JSX.Element {
     const [lang, setLang] = useState<Langs>(() => {
@@ -31,6 +32,12 @@ function App(): React.JSX.Element {
             ? storedLang
             : 'us';
     });
+    const location = useLocation();
+    // Don't show the header and/or footer
+    const noFooter =
+        location.pathname.includes('print') || location.pathname === '/';
+    const noHeader = location.pathname.includes('print');
+
     const [title, setTitle] = useState<TitleProps>(headerText.HEADER);
     const parentRef = useRef<HTMLInputElement>(null);
     const [position, setPosition] = useState<number>(0);
@@ -102,26 +109,30 @@ function App(): React.JSX.Element {
             <DataContext.Provider value={value}>
                 <GlobalStyles />
                 <div className="parent-container" onCopy={handleCopy}>
-                    <Header
-                        setIsMenuShown={setIsMenuShown}
-                        isMenuShown={isMenuShown}
-                        menuAnchorEl={menuAnchorEl}
-                    />
+                    {!noHeader ? (
+                        <Header
+                            setIsMenuShown={setIsMenuShown}
+                            isMenuShown={isMenuShown}
+                            menuAnchorEl={menuAnchorEl}
+                        />
+                    ) : null}
                     <Menu
                         setIsMenuShown={setIsMenuShown}
                         isMenuShown={isMenuShown}
                         menuAnchorEl={menuAnchorEl}
                     />
-                    <div className="content-container">
+                    <div
+                        ref={parentRef}
+                        onScroll={handleScroll}
+                        className={
+                            noFooter
+                                ? 'content-container'
+                                : 'content-container has_footer'
+                        }
+                    >
                         <Loader inProp={isLoading} />
-                        {/* <div
-                            className="routes-container"
-                            ref={parentRef}
-                            onScroll={handleScroll}
-                        > */}
                         <Routes />
-                        {/* </div> */}
-                        <Footer />
+                        {!noFooter ? <Footer /> : null}
                     </div>
                     <div className="fixed-container">
                         <Flags />

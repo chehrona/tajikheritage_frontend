@@ -1,23 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Copyright } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
-export const FooterContainer = styled.div<{ $show: boolean }>`
+export const FooterContainer = styled.div`
     width: 100%;
     height: var(--footer-height);
     min-height: var(--footer-height);
     background: var(--primary-black-color);
-    transition: opacity 0.5s ease, display 0.5s ease;
-    ${({ $show }) =>
-        $show
-            ? css`
-                  display: block;
-                  opacity: 1;
-              `
-            : css`
-                  display: none;
-                  opacity: 0;
-              `}
 
     @media (max-width: 480px) {
         justify-content: center;

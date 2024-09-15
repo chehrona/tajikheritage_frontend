@@ -73,7 +73,7 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                 timeout: 200,
             }}
         >
-            <HeaderContainer $show={true}>
+            <HeaderContainer>
                 <HeaderInnerBox>
                     <HeaderLogo handleLogoClick={handleLogoClick} navTo={'#'} />
                     <Title $index={0}>{book?.title}</Title>

@@ -119,7 +119,7 @@ body * {
 
 .parent-container {
     display: flex;
-    overflow-y: scroll;
+    overflow-y: hidden;
     flex-direction: column;
     position: relative;
     max-width: 1440px;
@@ -128,18 +128,21 @@ body * {
     background: var(--primary-black-color);
 }
 
-.parent-container::-webkit-scrollbar {
-    display: none;
-    scrollbar-width: none;
+.content-container {
+    overflow-y: hidden;
+    margin-top: var(--header-height);
+    height: 100svh;
 }
 
-.content-container {
+.has_footer {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     height: calc(100svh - var(--header-height));
 }
 
-.routes-container {
-    overflow-y: auto;
-    min-height: var(--page-height);
+.content-container::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
 }
 
 .fixed-container {

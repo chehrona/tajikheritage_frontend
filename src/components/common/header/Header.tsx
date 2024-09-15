@@ -38,9 +38,6 @@ const Header: React.FC<MenuProps> = ({
     const [titleOrder, setTitleOrder] = useState<number[]>([0, 1, 2]);
     const [sequenceIndex, setSequenceIndex] = useState<number>(0);
 
-    // Don't show the header
-    const noShow = location.pathname.includes('print');
-
     const handleLogoClick = useCallback(() => {
         setIsMenuShown(false);
     }, [setIsMenuShown]);
@@ -55,7 +52,7 @@ const Header: React.FC<MenuProps> = ({
     }, [sequenceIndex, location.pathname, lang]);
 
     return (
-        <HeaderContainer $show={!noShow}>
+        <HeaderContainer>
             <HeaderInnerBox>
                 <HeaderLogo handleLogoClick={handleLogoClick} />
                 <TitleContainer>

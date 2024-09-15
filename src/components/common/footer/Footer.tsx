@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Hooks
-import { useLocation } from 'react-router-dom';
-
 // Styled components
 import {
     FooterContainer,
@@ -15,12 +12,8 @@ import {
 } from './footerStyles';
 
 const Footer: React.FC = () => {
-    const location = useLocation();
-    const noShow =
-        location.pathname === '/' || location.pathname.includes('print');
-
     return (
-        <FooterContainer $show={!noShow}>
+        <FooterContainer>
             <FooterInnerContainer>
                 <Text>
                     <StyledCopyrightIcon />

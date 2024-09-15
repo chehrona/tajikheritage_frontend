@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div<{ $show: boolean }>`
+export const HeaderContainer = styled.div`
     width: 100%;
     background: var(--primary-black-color);
     height: var(--header-height);
-    opacity: ${({ $show }) => ($show ? 1 : 0)};
-    visibility: ${({ $show }) => ($show ? 'visible' : 'hidden')};
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 `;
 
 export const HeaderInnerBox = styled.div`
