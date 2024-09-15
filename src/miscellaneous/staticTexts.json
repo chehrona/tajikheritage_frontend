@@ -137,7 +137,7 @@
             },
             "desc": {
                 "us": {
-                    "text": "The languages spoken by the Tajik peoples, whether belonging to the Western or Eastern Iranian language continua, lie at the core of their identity and have been paramount for their survival.<div class='space'></div>They encode Tajik people's unique worldviews, their ancestral wisdom, their stories, and their songs. These languages stand as a testament of resilience, serving as a bridge connecting the past and the present — defining who Tajiks are.<div class='space'></div><div class='space'></div>",
+                    "text": "The languages spoken by the Tajik peoples, whether belonging to the Western or Eastern Iranic language continua, lie at the core of their identity and have been paramount for their survival.<div class='space'></div>They encode Tajik people's unique worldviews, their ancestral wisdom, their stories, and their songs. These languages stand as a testament of resilience, serving as a bridge connecting the past and the present — defining who Tajiks are.<div class='space'></div><div class='space'></div>",
                     "link": "/#/language?us"
                 },
                 "ru": {
@@ -208,7 +208,7 @@
             },
             "desc": {
                 "us": {
-                    "text": "The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. As descendants of Sogdians, Bactrians and other Iranian tribes, they were pivotal in establishing the early farming traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of civilizations, which sculpted the unique identity of the Tajik people.<div class='space'></div><div class='space'></div>",
+                    "text": "The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. As descendants of Sogdians, Bactrians and other Iranic tribes, they were pivotal in establishing the early farming traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of civilizations, which sculpted the unique identity of the Tajik people.<div class='space'></div><div class='space'></div>",
                     "link": "/#/history?us"
                 },
                 "ru": {
@@ -279,7 +279,7 @@
             },
             "desc": {
                 "us": {
-                    "text": "Handicrafts serve as a tangible representation of the intellectual and aesthetic essence of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.<div class='space'></div>There are nearly 200 unique arts and crafts still practiced within the Tajik communities, many as old as the Eastern Iranian civilization itself.<div class='space'></div><div class='space'></div>",
+                    "text": "Handicrafts serve as a tangible representation of the intellectual and aesthetic essence of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.<div class='space'></div>There are nearly 200 unique arts and crafts still practiced within the Tajik communities, many as old as the Eastern Iranic civilization itself.<div class='space'></div><div class='space'></div>",
                     "link": "/#/arts?us"
                 },
                 "ru": {
@@ -474,9 +474,9 @@
     ],
     "HEADER": {
         "us": [
-            ["THE TAJIKS", "Iranians of the East"],
-            ["THE TAJIKS", "Iranians of the East"],
-            ["THE TAJIKS", "Iranians of the East"]
+            ["THE TAJIKS", "Iranics of the East"],
+            ["THE TAJIKS", "Iranics of the East"],
+            ["THE TAJIKS", "Iranics of the East"]
         ],
         "ru": [
             ["ТАДЖИКИ", "Иранцы Востока"],
