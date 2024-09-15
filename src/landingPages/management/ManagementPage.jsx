@@ -144,6 +144,8 @@ function ManagementPage() {
                 {section && (
                     <div>
                         <EditSection
+                            name="section"
+                            id="section"
                             title={section.title}
                             handleChange={handleChange}
                         />

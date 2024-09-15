@@ -96,6 +96,7 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                         {book?.email && (
                             <InputWrapper>
                                 <InputField
+                                    name="email-for-books"
                                     id="email-for-books"
                                     placeholder={
                                         staticTexts.NO_BOOK_DIALOG.input[lang]

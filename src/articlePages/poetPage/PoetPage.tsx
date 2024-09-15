@@ -73,7 +73,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
         e.preventDefault();
 
         const target = e.currentTarget.getAttribute('data-id');
-        const parent = document.querySelector('.parent-container');
+        const parent = document.querySelector('.content-container');
 
         if (parent && target) {
             const targetElement = document.querySelector(

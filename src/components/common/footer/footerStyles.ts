@@ -5,27 +5,23 @@ import { IconButton } from '@mui/material';
 export const FooterContainer = styled.div<{ $show: boolean }>`
     width: 100%;
     height: var(--footer-height);
-    max-height: var(--footer-height);
     min-height: var(--footer-height);
     background: var(--primary-black-color);
-    transition: opacity 0.5s ease, visibility 0.5s ease, display 0.5s ease;
+    transition: opacity 0.5s ease, display 0.5s ease;
     ${({ $show }) =>
         $show
             ? css`
                   display: block;
                   opacity: 1;
-                  visibility: visible;
               `
             : css`
                   display: none;
                   opacity: 0;
-                  visibility: hidden;
               `}
 
     @media (max-width: 480px) {
         justify-content: center;
         align-items: center;
-        display: flex;
     }
 `;
 

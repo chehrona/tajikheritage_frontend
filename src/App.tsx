@@ -114,13 +114,13 @@ function App(): React.JSX.Element {
                     />
                     <div className="content-container">
                         <Loader inProp={isLoading} />
-                        <div
+                        {/* <div
                             className="routes-container"
                             ref={parentRef}
                             onScroll={handleScroll}
-                        >
-                            <Routes />
-                        </div>
+                        > */}
+                        <Routes />
+                        {/* </div> */}
                         <Footer />
                     </div>
                     <div className="fixed-container">
