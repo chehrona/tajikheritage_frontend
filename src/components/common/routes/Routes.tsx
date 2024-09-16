@@ -8,9 +8,6 @@ import staticTexts from '../../../miscellaneous/staticTexts.json';
 import PageNotFound from '../../../errorPages/pageNotFound/PageNotFound';
 import Home from '../../../landingPages/home/Home';
 import LandingPage from '../../../landingPages/landingPage/LandingPage';
-// import RecipePagePrint from '../../../articlePages/recipePage/RecipePagePrint';
-// import LoginPage from '../../../admin/login/LoginPage';
-// import ManagementPage from '../../../landingPages/management/ManagementPage';
 import TempPage from '../tempPage/TempPage';
 
 // Middle pages
@@ -93,8 +90,6 @@ const Routes: React.FC = () => {
                 element={<PoetPage page={'language/poets/'} />}
             />
             <Route path="/" element={<Home />} />
-            {/* <Route path="/admin/login" element={<LoginPage />} /> */}
-            {/* <Route path="/admin/content" element={<ManagementPage />} /> */}
         </ServerRoutes>
     );
 };

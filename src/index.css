@@ -52,6 +52,7 @@ html {
     --slideshow-height: 30rem;
 
     /* Border radius */
+    --input-radius: 0.35rem;
     --small-radius: 0.7rem;
     --big-radius: 1.5rem;
     --page-radius: 4rem;
