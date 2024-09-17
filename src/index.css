@@ -33,6 +33,7 @@ html {
 
     /* Font-sizes */
     --body-text: 1rem;
+    --header-small: 2rem;
     --header-large: 2.5rem;
     --header-big: 1.75rem;
     --header-medium: 1.5rem;
@@ -43,7 +44,7 @@ html {
     --long-card-gap: 2rem;
 
     /* Standard sizes */
-    --header-height: 3.75rem;
+    --header-height: 5rem;
     --footer-height: 3.75rem;
     --page-height: calc(
         100svh - ((var(--header-height) + var(--footer-height)))
