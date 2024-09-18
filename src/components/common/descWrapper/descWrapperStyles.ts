@@ -5,21 +5,16 @@ export const EmptyDiv = styled.div``;
 export const SoundBox = styled.div`
     display: flex;
     align-items: center;
-    padding: 0rem 0rem 0.75rem 0rem;
+    height: 2.5rem;
+    margin-bottom: var(--text-segment-gap);
 
-    @media (max-width: 480px) {
-        height: 2.5rem;
-        padding: 0rem;
-        margin-bottom: 0.5rem;
-
-        &:last-child {
-            margin-bottom: 0rem;
-        }
+    &:last-child {
+        margin-bottom: 0rem;
     }
 `;
 
 export const TableImage = styled.img<{ $expanded: boolean }>`
-    margin: 0.5rem 0rem;
+    margin: var(--text-segment-gap) 0rem 0rem 0rem;
     transition: 0.3s ease-in-out;
     ${({ $expanded }) =>
         $expanded
@@ -29,7 +24,7 @@ export const TableImage = styled.img<{ $expanded: boolean }>`
                   cursor: zoom-in;
               `
             : css`
-                  height: 40vh;
+                  height: 45vh;
                   border-radius: var(--small-radius);
                   cursor: zoom-out;
               `};
@@ -37,7 +32,6 @@ export const TableImage = styled.img<{ $expanded: boolean }>`
     @media (max-width: 480px) {
         width: 100%;
         height: auto;
-        margin: 1rem 0rem 0rem 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

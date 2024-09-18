@@ -33,14 +33,14 @@ export const ArticleContainer = styled.div`
 // Landing page *************************
 export const LandingContainer = styled.div`
     box-sizing: border-box;
-    padding: 2rem 7rem;
+    padding: 2rem var(--page-padding);
     background: var(--regular-white-color);
     animation: ${fadeIn} 1s ease-in-out forwards;
     overflow-x: hidden;
+    min-height: var(--page-height);
 
     @media (max-width: 480px) {
         padding: var(--page-padding);
-        min-height: var(--page-height);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

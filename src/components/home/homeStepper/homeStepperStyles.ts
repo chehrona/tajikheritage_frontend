@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
     overflow: hidden;
     position: relative;
     z-index: 1;
-    height: calc(100svh - 8.5rem);
+    height: calc(100svh - var(--header-height));
 
     @media (max-width: 480px) {
         height: 100svh;

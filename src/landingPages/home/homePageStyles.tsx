@@ -11,7 +11,7 @@ export const PageContainer = styled.div`
     box-sizing: border-box;
     background-color: var(--primary-black-color);
     overflow: hidden;
-    min-height: calc(100svh - 9.23rem);
+    min-height: calc(100svh - var(--header-height));
 
     @media (max-width: 480px) {
         min-height: calc(100svh - var(--header-height));

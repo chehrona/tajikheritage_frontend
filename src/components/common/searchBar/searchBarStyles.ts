@@ -9,6 +9,7 @@ export const SearchContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    height: 7rem;
 
     @media (max-width: 480px) {
         height: 5.5rem;
@@ -18,7 +19,7 @@ export const SearchContainer = styled.div`
 export const InputWrapper = styled.div`
     height: 3.5rem;
     width: 30rem;
-    background: url('/search.png') center no-repeat;
+    background: url('/customAssets/search.png') center no-repeat;
     background-size: contain;
     display: flex;
     justify-content: center;
@@ -66,7 +67,7 @@ export const InputField = styled.input`
 `;
 
 export const StyledSearchIcon = styled(Search)`
-    color: #a39f9b;
+    color: var(--secondary-grey-color);
     position: absolute;
     left: 1.75rem;
 
@@ -95,7 +96,7 @@ export const StyledSearchIcon = styled(Search)`
 `;
 
 export const StyledClearIcon = styled(Close)`
-    color: #a39f9b;
+    color: var(--secondary-grey-color);
 
     &.MuiSvgIcon-root {
         width: 1.8rem;

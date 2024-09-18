@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Hooks
+import { useMediaQuery } from 'react-responsive';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useSetHeader } from '../../hooks/useSetHeader';
@@ -25,6 +26,10 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { lang, setIsLoading } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<ErrorResponse>();
+    const isTablet = useMediaQuery({
+        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
+    });
+    const topLeftRad = isTablet ? 2.5 : 4;
 
     const fetchData = async () => {
         try {
@@ -78,6 +83,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                                     reverse={i % 2 > 0}
                                     data={entry}
                                     title={data.name[lang]}
+                                    topLeftRad={topLeftRad}
                                 />
                             );
                         })}

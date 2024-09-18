@@ -53,8 +53,8 @@ export const LetterStackWrapper = styled.div`
 
 export const LetterContainer = styled.div`
     position: relative;
-    height: 27rem;
-    width: 58rem;
+    height: calc(6 * var(--circle-letter-size));
+    width: calc(11 * var(--circle-letter-size));
 
     @media (max-width: 480px) {
         height: calc(10 * var(--circle-letter-size));
@@ -81,7 +81,7 @@ const emptyBackground = ({ $empty }: WrapperBaseProps) =>
     $empty &&
     css`
         pointer-events: none;
-        background-image: url('/noise.png');
+        background-image: url('/customAssets/noise.png');
     `;
 
 const delayedAppearance = ({ $open, $delay }: WrapperBaseProps) =>
@@ -112,7 +112,7 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
     justify-content: center;
     align-items: center;
     color: var(--primary-gold-color);
-    font-size: var(--header-big);
+    font-size: var(--header-large);
     will-change: transform;
     font-family: var(--fancy-font);
 
@@ -126,6 +126,10 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
 
     span {
         will-change: color;
+    }
+
+    @media (max-width: 480px) {
+        font-size: var(--header-big);
     }
 `;
 
@@ -185,5 +189,5 @@ export const InstructionWrapper = styled(WrapperBase)`
     padding: 0.5rem;
     width: calc(var(--circle-letter-size) * 3);
     pointer-events: none;
-    background-image: url('/noise.png');
+    background-image: url('/customAssets/noise.png');
 `;

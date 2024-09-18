@@ -15,18 +15,16 @@ export const FlagWrapper = styled.div<{ $show: boolean }>`
     width: fit-content;
     cursor: pointer;
     pointer-events: auto;
-    transition: opacity 0.5s ease, visibility 0.5s ease, display 0.5s ease;
+    transition: opacity 0.5s ease, display 0.5s ease;
     ${({ $show }) =>
         $show
             ? css`
                   display: block;
                   opacity: 1;
-                  visibility: visible;
               `
             : css`
                   display: none;
                   opacity: 0;
-                  visibility: hidden;
               `}
 
     @media (max-width: 480px) {
@@ -43,9 +41,9 @@ export const FlagWrapper = styled.div<{ $show: boolean }>`
 `;
 
 export const StyledFlag = styled.div`
-    width: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border-radius: 50%;
-    height: 1.5rem;
     background-size: 100%;
     background-repeat: no-repeat;
     box-shadow: 0rem 0rem 0.5rem var(--primary-black-color);
@@ -57,12 +55,6 @@ export const StyledFlag = styled.div`
             : lang === 'ru'
             ? `url(${ruLogo})`
             : `url(${tjLogo})`};
-
-    // Done
-    @media (max-width: 480px) {
-        height: 1.75rem;
-        width: 1.75rem;
-    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 2.25rem;
@@ -79,14 +71,7 @@ export const StyledIconButton = styled(IconButton)<IconButtonProps>`
     &.MuiIconButton-root {
         height: 2.5rem;
         width: 2.5rem;
-        margin-bottom: 0.2rem;
-    }
-
-    // Done
-    @media (max-width: 480px) {
-        &.MuiIconButton-root {
-            margin-bottom: 0.25rem;
-        }
+        margin-bottom: 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

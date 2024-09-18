@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
     background: var(--primary-black-color);
     color: var(--regular-white-color);
     position: relative;
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     padding: 6rem 0rem 9rem 0rem;
 
     &:before {
@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${'/noise.png'});
+        background-image: url(${'/customAssets/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         position: absolute;

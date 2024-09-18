@@ -117,7 +117,7 @@ export const SvgContainer = styled.svg`
 `;
 
 export const Text = styled.text`
-    font-size: 1.5rem;
+    font-size: var(--header-medium);
     text-anchor: middle;
     transform: rotateZ(180deg);
     transform-origin: center;

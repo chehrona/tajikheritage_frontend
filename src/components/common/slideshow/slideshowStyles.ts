@@ -6,7 +6,6 @@ import { ImageWrapperProps } from './types/styleTypes';
 export const ImageContainer = styled.div`
     position: absolute;
     display: flex;
-    background-color: var(--primary-black-color);
 `;
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
@@ -75,17 +74,13 @@ export const ImgInfo = styled.div`
     margin: 0.25rem;
     text-align: left;
     color: var(--regular-white-color);
-    bottom: 0.25rem;
     background-color: #262626a6;
     width: calc(100% - 0.5rem);
     padding: 0.25rem 0.5rem;
     height: auto;
-
-    @media (max-width: 1024px) {
-        bottom: 0rem;
-        font-size: var(--info-text);
-        line-height: var(--info-text-line-height);
-    }
+    bottom: 0rem;
+    font-size: var(--info-text);
+    line-height: var(--info-text-line-height);
 `;
 
 export const PlaceIndicator = styled.div`
@@ -100,8 +95,8 @@ export const PlaceIndicator = styled.div`
 `;
 
 export const Circle = styled.div<{ $selected: boolean }>`
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.65rem;
+    height: 0.65rem;
     border-radius: 50%;
     background-color: var(--primary-gold-color);
     ${({ $selected }) =>
@@ -118,5 +113,10 @@ export const Circle = styled.div<{ $selected: boolean }>`
 
     &:last-child {
         margin-right: 0rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 0.5rem;
+        height: 0.5rem;
     }
 `;

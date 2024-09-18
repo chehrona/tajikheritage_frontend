@@ -21,7 +21,6 @@ import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
 import Sources from '../../components/common/sources/Sources';
 
 // Components
-import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';

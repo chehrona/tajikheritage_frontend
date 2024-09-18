@@ -11,21 +11,18 @@ export const SectionCardWrapper = styled.div`
     color: var(--primary-white-color);
     background: var(--primary-black-color);
 
-    // Done
     @media (max-width: 480px) {
         padding: 0.25rem 0.25rem 0.5rem 0.25rem;
     }
 `;
 
 export const SectionTitle = styled.div<{ $length: number }>`
-    font-size: 2rem;
     font-weight: 500;
-    font-family: var(--fancy-font);
     font-style: italic;
     text-align: center;
-    line-height: ${({ $length }) => $length > 20 && '2.05rem'};
+    font-family: var(--fancy-font);
+    font-size: var(--header-big);
 
-    // Done
     @media (max-width: 480px) {
         width: 100%;
         font-size: var(--header-small);
@@ -40,7 +37,7 @@ export const ImageWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/border.png') center no-repeat;
+    background: url('/customAssets/border.png') center no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;

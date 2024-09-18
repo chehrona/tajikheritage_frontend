@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
     .quoteWrapper {
         margin: 1rem 0rem 0rem 3rem;
         font-style: italic;
-        font-size: 1.2rem;
+        font-size: var(--header-small);
     }
 
     .termSpan {

@@ -10,7 +10,8 @@ import { ArticleSubtitleProps } from './types/componentTypes';
 import {
     SubtitleWrapper,
     Subtitle,
-    LineWrapper,
+    LeftWrapper,
+    RightWrapper,
     Circle,
     Line,
 } from './articleSubtitleStyles';
@@ -20,19 +21,19 @@ const ArticleSubtitle: React.FC<ArticleSubtitleProps> = ({
     hasSlides,
 }) => {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const showRightLine = isMobile ? true : hasSlides ? false : true;
+    const showLeftLine = isMobile ? true : hasSlides ? false : true;
 
     return (
         <SubtitleWrapper>
-            <LineWrapper $right={showRightLine}>
+            <LeftWrapper $show={showLeftLine}>
                 <Line />
                 <Circle />
-            </LineWrapper>
+            </LeftWrapper>
             <Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
-            <LineWrapper $left={true}>
+            <RightWrapper>
                 <Circle />
                 <Line />
-            </LineWrapper>
+            </RightWrapper>
         </SubtitleWrapper>
     );
 };

@@ -5,4 +5,5 @@ export type TextSegmentProps = {
     data: DescDetails;
     title?: string;
     reverse?: boolean | null;
+    topLeftRad: number;
 };

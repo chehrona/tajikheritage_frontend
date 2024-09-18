@@ -20,12 +20,13 @@ const slideOut = keyframes`
 `;
 
 export const StyledLink = styled(Link)<LinkProps>`
-    width: 23rem;
     text-decoration: none;
     border-radius: var(--small-radius);
     animation: ${slideOut} 1s ease-in-out forwards;
     transition: border-radius 250ms, box-shadow 400ms;
-    height: ${({ $type }) => ($type === 'long' ? '35rem' : '23rem')};
+    height: ${({ $type }) => ($type === 'long' ? '35rem' : '25rem')};
+    width: ${({ $type }) => ($type === 'long' ? '23rem' : '25rem')};
+
     ${({ $disabled }) =>
         $disabled
             ? css`

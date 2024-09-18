@@ -19,7 +19,7 @@ const slideOut = keyframes`
 
 export const MainContainer = styled.div`
     background: var(--primary-white-color);
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     color: var(--regular-white-color);
     position: relative;
     padding: 3rem 0rem 3rem 0rem;
@@ -29,7 +29,7 @@ export const MainContainer = styled.div`
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${'/noise.png'});
+        background-image: url(${'/customAssets/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;

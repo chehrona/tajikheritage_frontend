@@ -5,8 +5,8 @@ import { IconButton } from '@mui/material';
 import { StyledButtonProps } from './types/styleTypes';
 
 export const StyledButton = styled(IconButton)<StyledButtonProps>`
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
     color: var(--primary-gold-color);
     ${({ $disabled }) =>
         $disabled
@@ -18,11 +18,6 @@ export const StyledButton = styled(IconButton)<StyledButtonProps>`
                   opacity: 1;
                   pointer-events: all;
               `};
-
-    @media (max-width: 480px) {
-        width: 4rem;
-        height: 4rem;
-    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         width: 4.5rem;

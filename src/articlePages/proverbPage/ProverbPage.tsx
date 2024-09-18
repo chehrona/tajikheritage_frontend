@@ -16,6 +16,7 @@ import Sources from '../../components/common/sources/Sources';
 import Alert from '../../components/common/alert/Alert';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
+import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 // Styled components
 import {
@@ -23,7 +24,6 @@ import {
     QuoteWrapper,
     Shadow,
 } from './proverbPageStyles';
-import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 
 const ProverbPage = () => {
     const { id } = useParams();
@@ -90,6 +90,7 @@ const ProverbPage = () => {
                                     key={`${proverb?.quote[lang]}_${i}`}
                                     reverse={isSlides ? i % 2 > 0 : null}
                                     data={entry}
+                                    topLeftRad={0}
                                 />
                             );
                         })}

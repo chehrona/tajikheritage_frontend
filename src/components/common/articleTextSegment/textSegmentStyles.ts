@@ -10,9 +10,9 @@ export const BoxWrapper = styled.div<BoxWrapperProps>`
     ${({ $reverse }) =>
         $reverse !== null
             ? $reverse
-                ? 'padding-left: 3rem;'
-                : 'padding-right: 3rem;'
-            : 'padding: 0rem 3rem;'};
+                ? 'padding: 0rem 0rem var(--text-segment-gap) var(--page-padding);'
+                : 'padding: 0rem var(--page-padding) var(--text-segment-gap) 0rem;'
+            : 'padding: 0rem var(--page-padding) var(--text-segment-gap) var(--page-padding);'};
 
     &::after {
         content: '';
@@ -47,21 +47,27 @@ export const SlideContainer = styled.div<SlideContainerProps>`
     height: 35rem;
     z-index: 2;
     position: relative;
-    margin-bottom: 2rem;
     float: ${({ $reverse }) => ($reverse ? 'right' : 'left')};
     border-top-left-radius: ${({ $topLeftRad }) =>
         $topLeftRad && `${$topLeftRad}rem`};
-    ${({ $reverse }) =>
-        $reverse ? 'margin-left: 3rem;' : 'margin-right: 3rem;'};
+    margin: ${({ $i, $reverse }) =>
+        $i === 0
+            ? $reverse
+                ? '0rem 0rem 2rem 3rem'
+                : '0rem 3rem 2rem 0rem'
+            : $reverse
+            ? 'var(--text-segment-gap) 0rem 2rem 3rem'
+            : 'var(--text-segment-gap) 3rem 2rem 0rem'};
 
     @media (max-width: 480px) {
+        margin: 0rem;
         width: 100svw;
         height: 120.49svw;
+        border-top-left-radius: 0rem;
         margin: ${({ $i }) =>
             $i === 0
                 ? '0rem 0rem var(--text-segment-gap) 0rem'
                 : 'var(--text-segment-gap) 0rem'};
-        border-top-left-radius: 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -79,6 +85,7 @@ export const BaseText = styled.div`
     line-height: 1.7rem;
     font-size: var(--body-text);
     color: var(--primary-black-color);
+    line-height: var(--body-text-line-height);
 
     @media (max-width: 480px) {
         padding: 0rem var(--page-padding);

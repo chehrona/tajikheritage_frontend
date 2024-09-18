@@ -10,7 +10,6 @@ export const StyledMenu = styled(Menu)`
     & .MuiPaper-root {
         height: calc(100svh - var(--header-height));
         max-height: calc(100svh - var(--header-height));
-        padding-top: 6rem;
         position: static;
         box-shadow: none;
         border-radius: 0rem;
@@ -18,15 +17,11 @@ export const StyledMenu = styled(Menu)`
         max-width: 1440px;
         margin: 0 auto;
         display: flex;
+        padding: 0rem;
         justify-content: center;
         color: var(--primary-gold-color);
         background: var(--primary-grey-color);
-        padding: 0rem;
-
-        // Done
-        @media screen and (max-device-width: 480px) {
-            margin-top: var(--header-height);
-        }
+        margin-top: var(--header-height);
     }
 
     & .MuiList-root {
@@ -84,16 +79,16 @@ export const PageNamesContainer = styled.div`
     width: 40%;
     height: 100%;
     z-index: 1;
-    gap: 2rem;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
+    gap: calc(2 * var(--text-segment-gap));
 
     // Done
     @media (max-width: 480px) {
+        gap: var(--text-segment-gap);
         width: 100%;
-        gap: 1rem;
         justify-content: start;
         padding: var(--page-padding) 0rem;
     }
@@ -106,16 +101,14 @@ export const PageNamesContainer = styled.div`
 
 export const MenuItemWrapper = styled.div`
     width: 100%;
-
-    @media screen and (max-device-width: 480px) {
-        padding: 0.5rem 1rem;
-    }
+    padding: 0.5rem 1rem;
 `;
 
 export const PageName = styled.div`
     font-weight: bold;
     font-style: italic;
     cursor: pointer;
+    font-size: var(--header-big);
     font-family: var(--fancy-font);
 
     // Done
@@ -125,7 +118,7 @@ export const PageName = styled.div`
 `;
 
 export const PageDesc = styled.div`
-    font-size: 1.3rem;
+    font-size: var(--header-small);
     cursor: pointer;
     color: var(--secondary-white-color);
 

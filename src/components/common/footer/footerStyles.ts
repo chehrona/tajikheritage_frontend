@@ -45,11 +45,12 @@ export const Text = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 24rem);
+    margin-left: 12rem;
+    width: 100%;
     font-size: var(--body-text);
 
     @media (max-width: 480px) {
-        width: 100%;
+        margin: 0rem;
     }
 `;
 

@@ -3,31 +3,24 @@ import styled, { css } from 'styled-components';
 export const SubtitleWrapper = styled.div`
     display: flex;
     align-items: center;
-
-    @media (max-width: 480px) {
-        padding: var(--text-segment-gap) 0rem;
-    }
+    position: relative;
+    padding: var(--text-segment-gap) 0rem;
 `;
 
-export const LineWrapper = styled.div<{ $right?: boolean; $left?: boolean }>`
+const LineWrapper = styled.div`
     z-index: 1;
     flex-grow: 1;
     align-items: center;
-    ${({ $right }) =>
-        $right
-            ? css`
-                  margin-right: -0.25rem;
-                  display: flex;
-              `
-            : css`
-                  margin-left: -0.25rem;
-                  display: none;
-              `}
-    ${({ $left }) => ($left ? 'display: flex' : 'display: none')};
+    display: flex;
+`;
 
-    @media (max-width: 480px) {
-        display: flex;
-    }
+export const RightWrapper = styled(LineWrapper)`
+    margin-left: -0.25rem;
+`;
+
+export const LeftWrapper = styled(LineWrapper)<{ $show?: boolean }>`
+    margin-right: -0.25rem;
+    display: ${({ $show }) => ($show ? 'flex' : 'none')};
 `;
 
 export const Line = styled.div`
@@ -44,18 +37,14 @@ export const Circle = styled.div`
 `;
 
 export const Subtitle = styled.span`
+    display: flex;
     font-weight: 500;
-    font-size: 1.15rem;
     width: fit-content;
-    text-transform: uppercase;
     padding: 0.25rem 1rem;
+    text-transform: uppercase;
+    font-size: var(--header-small);
     border-radius: var(--big-radius);
     box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-shadow-color);
-    display: flex;
-
-    @media (max-width: 480px) {
-        font-size: var(--header-small);
-    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;

@@ -79,7 +79,7 @@ export const Overlay = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     border-radius: var(--page-radius) var(--page-radius) 0rem 0rem;
 `;
 

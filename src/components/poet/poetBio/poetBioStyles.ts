@@ -5,7 +5,7 @@ import { TitleWrapper } from '../../common/articleTitle/articleTitleStyles';
 import { YearProps } from './types/styleTypes';
 
 export const MainContainer = styled.div`
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     min-height: 20rem;
     padding-bottom: 3rem;
     background-color: var(--primary-white-color);
@@ -22,7 +22,7 @@ export const MainContainer = styled.div`
             padding: 2rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${'/noise.png'});
+            background-image: url(${'/customAssets/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;
@@ -41,7 +41,7 @@ export const MainContainer = styled.div`
             padding: 3rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${'/noise.png'});
+            background-image: url(${'/customAssets/noise.png'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;

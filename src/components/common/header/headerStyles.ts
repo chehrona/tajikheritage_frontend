@@ -17,12 +17,12 @@ export const HeaderInnerBox = styled.div`
     z-index: 11;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0rem 1rem;
     overflow: hidden;
     height: 100%;
     justify-content: space-between;
     color: var(--regular-white-color);
     background: var(--primary-black-color);
+    padding: 0.5rem 0.75rem;
 
     // Done
     @media (max-width: 480px) {
@@ -40,7 +40,7 @@ export const TitleContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: var(--header-big);
     font-family: var(--fancy-font);
     text-align: center;
 
@@ -60,7 +60,6 @@ export const TitleWrapper = styled.div<{ $index: number }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: calc(100% - 13.5rem); */
     height: 100%;
     position: absolute;
     left: 5rem;

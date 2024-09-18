@@ -7,7 +7,7 @@ import { StyledIconButtonProps, ImageProps } from './types/styleTypes';
 export const MainContainer = styled.div`
     background: var(--primary-black-color);
     position: relative;
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     padding-bottom: 9rem;
     padding-top: 9rem;
 
@@ -16,7 +16,7 @@ export const MainContainer = styled.div`
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${'/noise.png'});
+        background-image: url(${'/customAssets/noise.png'});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         position: absolute;
@@ -66,7 +66,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
     width: 0rem;
     height: 0rem;
     border-radius: var(--big-radius);
-    background-image: url(${'/noise.png'});
+    background-image: url(${'/customAssets/noise.png'});
     background: var(--primary-black-color);
     border: var(--input-radius) solid var(--primary-gold-color);
 

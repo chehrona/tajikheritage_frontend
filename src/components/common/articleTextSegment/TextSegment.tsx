@@ -26,14 +26,10 @@ const TextSegment: React.FC<TextSegmentProps> = ({
     data,
     title,
     reverse = null,
+    topLeftRad,
 }) => {
     const parentRef = useRef<HTMLDivElement>(null);
     const [screenSize, setScreenSize] = useState<number>(0);
-    const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
-    const isTablet = useMediaQuery({
-        query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
-    });
-    const topLeftRad = isMobile ? 0 : i === 0 ? (isTablet ? 2.5 : 4) : 0;
     const hasSlides = data.slides && data.slides.length > 0 ? true : false;
 
     useEffect(() => {
@@ -52,12 +48,12 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                     $i={i}
                     ref={parentRef}
                     $reverse={reverse}
-                    $topLeftRad={topLeftRad}
+                    $topLeftRad={i === 0 ? topLeftRad : 0}
                 >
                     <Slideshow
                         width={screenSize}
                         slides={data?.slides}
-                        topLeftRad={topLeftRad}
+                        topLeftRad={i === 0 ? topLeftRad : 0}
                     />
                 </SlideContainer>
             ) : null}

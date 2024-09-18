@@ -8,7 +8,8 @@ export const LoaderContainer = styled.div<{ $inProp: boolean }>`
     height: 100%;
     height: 100svh;
     z-index: 10;
-    background: var(--primary-black-color) url('/loader.png') center no-repeat;
+    background: var(--primary-black-color) url('/customAssets/loader.png')
+        center no-repeat;
     background-size: 15rem 15rem;
     transition: opacity 0.5s ease, visibility 0.5s ease, display 0.5s ease;
     ${({ $inProp }) =>

@@ -10,20 +10,15 @@ export const StyledTooltip = styled(
     ),
 )(() => ({
     [`& .${tooltipClasses.tooltip}`]: {
-        fontSize: 'inherit',
+        fontSize: 'var(--body-text)',
         fontWeight: 'normal',
+        borderRadius: '0.5rem',
     },
     [`& .${tooltipClasses.tooltipArrow}`]: {
         backgroundColor: 'var(--primary-shadow-color)',
     },
     [`& .${tooltipClasses.arrow}`]: {
         color: 'var(--primary-shadow-color)',
-    },
-
-    '@media (max-width: 1024px)': {
-        [`& .${tooltipClasses.tooltip}`]: {
-            borderRadius: '0.5rem',
-        },
     },
 }));
 
