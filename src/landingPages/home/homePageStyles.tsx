@@ -38,6 +38,7 @@ export const ScrollWrapper = styled.div`
     align-items: center;
     justify-content: center;
     right: 1rem;
+    bottom: 6.5rem;
 
     @media (max-width: 480px) {
         bottom: 8rem;

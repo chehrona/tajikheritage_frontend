@@ -6,7 +6,12 @@ export const MainContainer = styled.div`
     background: var(--primary-white-color);
     background-image: url(${'/customAssets/noise.png'});
     padding: var(--text-segment-gap) var(--page-padding)
-        calc(4 * var(--text-segment-gap)) var(--page-padding);
+        calc(6 * var(--text-segment-gap)) var(--page-padding);
+
+    @media (max-width: 480px) {
+        padding: var(--text-segment-gap) var(--page-padding)
+            calc(4 * var(--text-segment-gap)) var(--page-padding);
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 2rem 2rem 2rem;

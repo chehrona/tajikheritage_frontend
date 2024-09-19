@@ -63,7 +63,7 @@ export const SlideContainer = styled.div<SlideContainerProps>`
         margin: 0rem;
         width: 100svw;
         height: 120.49svw;
-        border-top-left-radius: 0rem;
+        border-radius: 0rem;
         margin: ${({ $i }) =>
             $i === 0
                 ? '0rem 0rem var(--text-segment-gap) 0rem'
@@ -82,14 +82,12 @@ export const SlideContainer = styled.div<SlideContainerProps>`
 export const BaseText = styled.div`
     width: 100%;
     position: relative;
-    line-height: 1.7rem;
-    font-size: var(--body-text);
     color: var(--primary-black-color);
+    font-size: var(--body-text);
     line-height: var(--body-text-line-height);
 
     @media (max-width: 480px) {
         padding: 0rem var(--page-padding);
-        line-height: var(--body-text-line-height);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

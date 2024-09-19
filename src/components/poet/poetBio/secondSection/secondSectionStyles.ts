@@ -16,7 +16,7 @@ const slideOut = keyframes`
 `;
 
 export const MainContainer = styled.div`
-    margin-top: 1rem;
+    margin: var(--text-segment-gap) 0rem;
     margin-bottom: 9rem;
     color: var(--primary-white-color);
     display: flex;

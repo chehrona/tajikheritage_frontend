@@ -4,10 +4,12 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 3rem 1rem 3rem;
+    padding: 0rem var(--page-padding) calc(2 * var(--text-segment-gap))
+        var(--page-padding);
     color: var(--primary-black-color);
-    gap: 3rem;
+    gap: var(--page-padding);
     position: relative;
+    width: 100%;
 
     @media (max-width: 480px) {
         flex-wrap: wrap;
@@ -26,6 +28,9 @@ export const RightImageWrapper = styled.div`
     transition: all 0.5s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media (max-width: 480px) {
         width: 100%;
@@ -45,12 +50,10 @@ export const FirstBoxImg = styled.img`
 `;
 
 export const ImgInfo = styled.div`
-    z-index: 10;
-    font-style: italic;
     width: 100%;
     text-align: left;
+    font-style: italic;
     color: var(--primary-black-color);
-    bottom: 0.5rem;
     padding: 0.25rem 0.5rem;
 
     @media (max-width: 480px) {

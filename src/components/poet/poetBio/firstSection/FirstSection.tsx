@@ -25,14 +25,21 @@ const FirstSection: React.FC<{ bioOne: PoetBioSectionOne }> = ({ bioOne }) => {
                 <DescWrapper data={bioOne?.desc} TextWrapper={SectionText} />
             </LeftContainer>
             <RightImageWrapper>
-                <FirstBoxImg
-                    key={bioOne.slides[0]?.id}
-                    src={process.env.REACT_APP_BASE_URL + bioOne.slides[0]?.img}
-                />
+                <div>
+                    <FirstBoxImg
+                        key={bioOne.slides[0]?.id}
+                        src={
+                            process.env.REACT_APP_BASE_URL +
+                            bioOne.slides[0]?.img
+                        }
+                    />
+                    <ImgInfo
+                        dangerouslySetInnerHTML={{
+                            __html: bioOne.slides[0]?.info,
+                        }}
+                    />
+                </div>
             </RightImageWrapper>
-            <ImgInfo
-                dangerouslySetInnerHTML={{ __html: bioOne.slides[0]?.info }}
-            />
         </MainContainer>
     );
 };

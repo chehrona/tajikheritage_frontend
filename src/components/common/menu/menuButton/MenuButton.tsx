@@ -53,11 +53,7 @@ const MenuButton: React.FC<MenuProps> = ({
                 $triggerFadeIn={triggerFadeIn}
                 $triggerFadeOut={triggerFadeOut}
             >
-                {isMenuShown
-                    ? getButtonText()
-                    : lang === 'us'
-                    ? 'MENU'
-                    : 'МЕНЮ'}
+                {getButtonText()}
             </ButtonText>
             <StyledMenuIcon $isMenuShown={isMenuShown} />
         </MainContainer>

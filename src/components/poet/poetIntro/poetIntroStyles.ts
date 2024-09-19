@@ -157,23 +157,26 @@ export const TitleSpan = styled.span<{ $delay: number }>`
 
 export const PoetName = styled.div<{ $color?: boolean }>`
     opacity: 0;
-    /* color: var(--secondary-white-color); */
     font-size: 8rem;
     font-weight: bold;
     font-style: italic;
     animation-delay: 0.1s;
     text-shadow: 0rem 0rem 5rem black;
-    -webkit-text-stroke-color: var(--primary-gold-color);
     animation: ${slideOut} 1s ease-in-out forwards;
 
-    /* ${({ $color }) =>
-        $color &&
-        `
-        animation-delay: 0s;
-        color: transparent;
-        margin-right: 2rem;
-        -webkit-text-stroke-width: 0.22rem;
-    `} */
+    ${({ $color }) =>
+        $color
+            ? css`
+                  animation-delay: 0s;
+                  margin-right: 2rem;
+                  color: transparent;
+                  -webkit-text-stroke-width: 0.22rem;
+                  -webkit-text-stroke-color: var(--primary-gold-color);
+              `
+            : css`
+                  color: var(--secondary-white-color);
+                  -webkit-text-stroke-color: transparent;
+              `}
 
     @media (max-width: 480px) {
         font-size: calc(1.35 * var(--header-large));
@@ -185,12 +188,10 @@ export const PoetName = styled.div<{ $color?: boolean }>`
         ${({ $color }) =>
             $color
                 ? css`
+                      -webkit-text-stroke-width: 0.2rem;
                       margin: 0rem;
-                      color: transparent;
-                      -webkit-text-stroke-color: var(--primary-gold-color);
                   `
                 : css`
-                      color: var(--secondary-white-color);
                       -webkit-text-stroke-color: transparent;
                   `}
     }
@@ -202,13 +203,12 @@ export const PoetName = styled.div<{ $color?: boolean }>`
 
 export const PoetNameContainer = styled.div`
     position: absolute;
-    left: 5rem;
+    left: var(--page-padding);
     bottom: 6rem;
     display: flex;
     z-index: 2;
 
     @media (max-width: 480px) {
-        left: var(--page-padding);
         top: 11.25rem;
         display: block;
     }

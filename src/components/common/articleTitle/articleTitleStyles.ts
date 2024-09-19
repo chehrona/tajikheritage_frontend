@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TitleWrapper = styled.div`
-    font-size: 4rem;
+    font-size: var(--header-huge);
     font-weight: 500;
     font-style: italic;
     font-family: var(--fancy-font);

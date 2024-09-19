@@ -22,11 +22,11 @@ export const HeaderInnerBox = styled.div`
     justify-content: space-between;
     color: var(--regular-white-color);
     background: var(--primary-black-color);
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem calc(1.5 * var(--header-padding)) 0.5rem
+        var(--header-padding);
 
-    // Done
     @media (max-width: 480px) {
-        padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+        padding: 0.25rem var(--header-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -62,8 +62,14 @@ export const TitleWrapper = styled.div<{ $index: number }>`
     justify-content: center;
     height: 100%;
     position: absolute;
-    left: 5rem;
+    left: var(--header-height);
     top: -5rem;
+    width: calc(
+        100% - var(--header-height) - 8.25rem - 1.7 * var(--header-padding)
+    );
+    max-width: calc(
+        100% - var(--header-height) - 8.25rem - 1.7 * var(--header-padding)
+    );
     transform: ${({ $index }) => $index && `translateY(${5 * $index}rem)`};
     transition: transform 0.5s ease;
     padding: 0rem 0.5rem;
@@ -71,11 +77,14 @@ export const TitleWrapper = styled.div<{ $index: number }>`
     // Done
     @media (max-width: 480px) {
         top: -(var(--header-height));
-        width: 100%;
         padding: 0rem 0.25rem;
-        width: calc(100% - var(--header-height) - 3.75rem);
-        max-width: calc(100% - var(--header-height) - 3.75rem);
-        left: calc(var(--header-height) + 0.6rem);
+        left: calc(var(--header-height) + 0.35rem);
+        width: calc(
+            100% - var(--header-height) - 1.65 * var(--header-padding) - 2.15rem
+        );
+        max-width: calc(
+            100% - var(--header-height) - 1.65 * var(--header-padding) - 2.15rem
+        );
         transform: ${({ $index }) =>
             $index && `translateY(${4.5 * $index}rem)`};
     }

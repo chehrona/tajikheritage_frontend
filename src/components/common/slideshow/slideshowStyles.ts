@@ -46,6 +46,14 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
         border-top-left-radius: ${({ $topLeftRad }) =>
             $topLeftRad && `${$topLeftRad}rem`};
     }
+
+    @media (max-width: 480px) {
+        border-radius: 0rem;
+
+        &::after {
+            border-radius: 0rem;
+        }
+    }
 `;
 
 export const ButtonWrapper = styled.div`

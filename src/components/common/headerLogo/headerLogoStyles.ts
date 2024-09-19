@@ -5,8 +5,13 @@ export const LogoWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--header-height) - 0.5rem);
-    height: calc(var(--header-height) - 0.5rem);
+    width: calc(var(--header-height) - 1rem);
+    height: calc(var(--header-height) - 1rem);
+
+    @media (max-width: 480px) {
+        width: calc(var(--header-height) - 0.5rem);
+        height: calc(var(--header-height) - 0.5rem);
+    }
 `;
 
 export const Logo = styled.img`

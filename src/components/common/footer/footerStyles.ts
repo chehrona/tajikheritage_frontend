@@ -26,6 +26,7 @@ export const FooterInnerContainer = styled.div`
     max-height: var(--footer-height);
     min-height: var(--footer-height);
     justify-content: space-between;
+    padding: 0rem var(--header-padding);
 
     @media (max-width: 480px) {
         flex-direction: column-reverse;

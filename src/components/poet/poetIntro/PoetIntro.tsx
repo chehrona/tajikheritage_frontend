@@ -61,8 +61,8 @@ const PoetIntro: React.FC<PoetIntroProps> = ({ poet, scrollToView }) => {
                 src={process.env.REACT_APP_BASE_URL + poet?.img?.main}
             />
             <PoetNameContainer>
-                <PoetName $color={false}>{poetName[0]}</PoetName>
-                <PoetName $color={true}>{poetName[1]}</PoetName>
+                <PoetName $color={true}>{poetName[0]}</PoetName>
+                <PoetName $color={false}>{poetName[1]}</PoetName>
             </PoetNameContainer>
         </MainContainer>
     );

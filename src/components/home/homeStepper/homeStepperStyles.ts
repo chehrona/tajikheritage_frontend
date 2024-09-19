@@ -119,10 +119,11 @@ export const Step = styled.div`
 export const TitleWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 7rem;
+    justify-content: center;
+    height: 100svh;
 
     @media (max-width: 480px) {
+        justify-content: flex-start;
         max-height: 90svh;
         margin: 0rem;
         gap: var(--text-segment-gap);
@@ -153,7 +154,6 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 
     @media (max-width: 480px) {
         width: 100%;
-
         text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
     }
 
@@ -163,17 +163,17 @@ export const LargeTitle = styled.div<LargeTitleProps>`
 `;
 
 export const Desc = styled.div`
-    color: var(--secondary-white-color);
-    font-size: var(--body-text);
     width: 40%;
     margin-left: 10%;
     position: relative;
     margin-top: 2rem;
+    font-size: var(--body-text);
+    color: var(--secondary-white-color);
+    line-height: var(--body-text-line-height);
 
     @media (max-width: 480px) {
         margin: 0rem;
         width: 100%;
-        font-size: var(--body-text);
         padding-left: calc(var(--page-padding) * 2);
     }
 
@@ -211,7 +211,7 @@ export const StyledButton = styled.div<{ $length: number }>`
     padding-bottom: 0.25rem;
     margin-top: var(--text-segment-gap);
     color: var(--primary-gold-color);
-    width: ${({ $length }) => `calc(${$length} * 0.75rem)`};
+    width: ${({ $length }) => `calc(${$length} * 0.85rem)`};
 
     &::before {
         content: '';
@@ -223,6 +223,7 @@ export const StyledButton = styled.div<{ $length: number }>`
         background-color: var(--regular-white-color);
         transform-origin: bottom right;
         transition: transform 0.3s ease-in-out;
+        width: ${({ $length }) => `calc(${$length} * 0.85rem)`};
     }
 
     &:hover::before {

@@ -22,13 +22,12 @@ export const MainContainer = styled.div`
     display: flex;
     align-items: center;
     height: 100%;
-    width: 7.5rem;
+    width: 8.25rem;
     cursor: pointer;
     position: relative;
 
     @media (max-width: 480px) {
         width: 2.15rem;
-        margin-right: 0.25rem;
     }
 `;
 
@@ -36,14 +35,15 @@ export const ButtonText = styled.div<{
     $triggerFadeIn: boolean;
     $triggerFadeOut: boolean;
 }>`
-    color: #ffffff;
-    font-size: 1rem;
+    color: var(--regular-white-color);
+    font-size: var(--body-text);
     padding-right: 0.65rem;
     font-weight: normal;
     font-family: var(--regular-font);
-    min-width: 5.25rem;
-    max-width: 5.25rem;
-    text-align: right;
+    min-width: 5.5rem;
+    max-width: 5.5rem;
+    margin-right: 2.5rem;
+    text-align: end;
     transition: opacity 0.15s ease;
     ${({ $triggerFadeOut }) =>
         $triggerFadeOut &&
