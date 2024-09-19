@@ -7,7 +7,7 @@ import { YearProps } from './types/styleTypes';
 export const MainContainer = styled.div`
     background-image: url(${'/customAssets/noise.png'});
     min-height: 20rem;
-    padding-bottom: 3rem;
+    padding-bottom: calc(2 * var(--text-segment-gap));
     background-color: var(--primary-white-color);
     font-size: var(--body-text);
     color: var(--primary-black-color);
@@ -78,10 +78,10 @@ export const BoxSix = styled.div`
     width: 100%;
     display: flex;
     min-height: 20rem;
+    padding: var(--text-segment-gap) 0rem;
 
     @media (max-width: 1024px) {
         flex-direction: column-reverse;
-        padding: var(--text-segment-gap) 0rem;
     }
 `;
 

@@ -23,11 +23,8 @@ import {
     LineWrapper,
     Info,
     BoxTwoText,
-    NavBox,
     NavButtonWrapper,
-    NavWrapper,
-    FillerOne,
-    FillerTwo,
+    ButtonWrapper,
     Line,
 } from './secondSectionStyles';
 
@@ -95,53 +92,15 @@ const SecondSection: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                     src={process.env.REACT_APP_BASE_URL + infoArr[1].img}
                 />
             </Slides>
-            <NavBox $bottom={false}>
-                <FillerOne />
-                <FillerTwo />
-                <NavWrapper>
-                    <Line />
-                    {/* <StyledIconButton
-                        $bottom={false}
-                        onClick={moveUp}
-                        $disabled={infoArr[0] === bioData?.two[lang][0]}
-                    >
-                        <Arrow>
-                            <ArrowForwardIos />
-                        </Arrow>
-                    </StyledIconButton> */}
-                </NavWrapper>
-            </NavBox>
-            <NavBox $bottom={true}>
-                <FillerOne />
-                <FillerTwo />
-                <NavWrapper>
-                    {/* <StyledIconButton
-                        $bottom={true}
-                        onClick={moveDown}
-                        $disabled={
-                            infoArr[0] ===
-                            bioData?.two[lang][infoArr?.length - 1]
-                        }
-                    >
-                        <Arrow>
-                            <ArrowForwardIos style={{ marginLeft: '1px' }} />
-                        </Arrow>
-                    </StyledIconButton> */}
-                    <Line />
-                </NavWrapper>
-            </NavBox>
             <NavButtonWrapper>
-                <LeftButton
-                    disabled={infoArr[0] === bioData?.two[lang][0]}
-                    movePrev={moveUp}
-                />
-                <RightButton
-                    disabled={
-                        infoArr[0] ===
-                        bioData?.two[lang][bioData?.two[lang].length - 1]
-                    }
-                    moveNext={moveDown}
-                />
+                <ButtonWrapper $top={true}>
+                    <LeftButton disabled={false} movePrev={moveUp} />
+                    <Line />
+                </ButtonWrapper>
+                <ButtonWrapper $top={false}>
+                    <RightButton disabled={false} moveNext={moveDown} />
+                    <Line />
+                </ButtonWrapper>
             </NavButtonWrapper>
         </MainContainer>
     );

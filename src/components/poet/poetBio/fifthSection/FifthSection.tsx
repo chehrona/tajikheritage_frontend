@@ -8,7 +8,7 @@ import { PoetBioSectionFive } from './types/componentTypes';
 
 // Styled components
 import { Title } from '../poetBioStyles';
-import { MainContainer } from './fifthSectionStyles';
+import { FifthBox, MainContainer } from './fifthSectionStyles';
 
 const FifthSection: React.FC<{ bioFive: PoetBioSectionFive }> = ({
     bioFive,
@@ -16,7 +16,7 @@ const FifthSection: React.FC<{ bioFive: PoetBioSectionFive }> = ({
     return (
         <MainContainer>
             <Title $color={'var(--primary-gold-color)'}>{bioFive?.year}</Title>
-            <DescWrapper data={bioFive.desc} />
+            <DescWrapper data={bioFive.desc} TextWrapper={FifthBox} />
         </MainContainer>
     );
 };

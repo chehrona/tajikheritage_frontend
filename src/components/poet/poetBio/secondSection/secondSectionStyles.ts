@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 // Standards
 const squareSizeMobile = 13;
+const squareSizeDesktop = 18;
 
 const slideOut = keyframes`
     0% {
@@ -16,32 +17,32 @@ const slideOut = keyframes`
 `;
 
 export const MainContainer = styled.div`
-    margin: var(--text-segment-gap) 0rem;
-    margin-bottom: 9rem;
-    color: var(--primary-white-color);
     display: flex;
     align-items: center;
     position: relative;
     justify-content: space-between;
+    margin: var(--text-segment-gap) 0rem;
+    color: var(--primary-white-color);
+    height: calc(38rem + ${squareSizeDesktop}rem);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
-        margin: var(--text-segment-gap) 0rem;
-        color: var(--primary-white-color);
+        flex-direction: column;
+        height: 35.5rem;
     }
 `;
 
 export const InnerOverlay = styled.div`
     background: var(--primary-grey-color);
-    margin-top: 8rem;
+    margin: ${`${squareSizeDesktop / 2}rem`} 0rem;
     width: 100%;
     overflow: hidden;
     filter: grayscale(1);
-    height: 40rem;
+    height: 38rem;
 
     @media (max-width: 480px) {
-        height: calc(100svh - ${squareSizeMobile}rem);
-        margin-top: ${`${squareSizeMobile / 2}rem`};
+        height: 100%;
+        margin: ${`${squareSizeMobile / 2}rem`} 0rem 0rem 0rem;
     }
 `;
 
@@ -77,7 +78,7 @@ export const Slides = styled.div`
 `;
 
 export const SlideImg = styled.img<{ $show?: boolean }>`
-    width: 18rem;
+    width: ${squareSizeDesktop}rem;
     display: block;
     filter: grayscale(1)
         ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(60%)')};
@@ -95,66 +96,74 @@ export const SlideImg = styled.img<{ $show?: boolean }>`
     }
 `;
 
-export const NavBox = styled.div<{ $bottom: boolean }>`
-    width: 100%;
-    height: 10rem;
-    position: absolute;
-    right: 0rem;
-    display: flex;
-    ${({ $bottom }) => ($bottom ? 'bottom: 0rem' : 'top: 8rem')};
-
-    @media (max-width: 480px) {
-        height: 0rem;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 5rem;
-        ${({ $bottom }) => ($bottom ? 'bottom: 3rem' : 'top: 8rem')};
-    }
-`;
-
-export const NavWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+export const Line = styled.div`
+    height: 0.0625rem;
+    width: 6rem;
+    background: var(--primary-gold-color);
+    margin: -0.5rem;
 
     @media (max-width: 480px) {
         display: none;
     }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        height: 8rem;
-    }
-`;
-
-export const Line = styled.div`
-    width: 0.0625rem;
-    height: 7rem;
-    background: var(--primary-gold-color);
 `;
 
 export const NavButtonWrapper = styled.div`
-    display: none;
+    position: absolute;
+    top: ${squareSizeDesktop / 2}rem;
+    width: calc(100% - ${squareSizeDesktop}rem - 10%);
+    left: calc(${squareSizeDesktop}rem + 10%);
+    height: 38rem;
+    padding: 3rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     @media (max-width: 480px) {
         position: absolute;
-        top: ${`${squareSizeMobile / 1.75}rem`};
+        top: 31.5rem;
         left: 0rem;
         width: 100%;
+        height: 4rem;
+        padding: 0rem;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
     }
 `;
 
+export const ButtonWrapper = styled.div<{ $top: boolean }>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 4rem;
+    position: relative;
+    transform: ${({ $top }) => ($top ? 'rotateZ(-90deg)' : 'rotateZ(90deg)')};
+
+    > button {
+        transform: ${({ $top }) =>
+            $top ? 'rotateZ(180deg)' : 'rotateZ(0deg)'};
+    }
+
+    @media (max-width: 480px) {
+        width: 4rem;
+        transform: ${({ $top }) => ($top ? 'rotateZ(0deg)' : 'rotateZ(0deg)')};
+
+        > button {
+            transform: ${({ $top }) =>
+                $top ? 'rotateZ(0deg)' : 'rotateZ(0deg)'};
+        }
+    }
+`;
+
 export const LineWrapper = styled.div`
-    color: var(--secondary-white-color);
     display: flex;
     height: 20rem;
     width: 100%;
     transition: ease 1000ms;
     align-items: center;
+    color: var(--secondary-white-color);
 
     @media (max-width: 480px) {
         flex-direction: column;
@@ -163,14 +172,15 @@ export const LineWrapper = styled.div`
 `;
 
 export const Info = styled.div`
-    padding: 0rem 10%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
     pointer-events: auto;
+    height: 19rem;
+    padding: 0rem calc(1.5 * var(--page-padding));
 
     @media (max-width: 480px) {
+        height: 18.5rem;
         padding: 0.5rem var(--mobile-padding);
     }
 
@@ -204,25 +214,5 @@ export const BoxTwoText = styled.div`
         margin-right: calc(var(--input-radius) / 2);
         padding: 0rem calc(var(--page-padding) - (var(--input-radius) / 2))
             var(--text-segment-gap) var(--page-padding);
-    }
-`;
-
-export const FillerOne = styled.div`
-    min-width: 10%;
-
-    @media (max-width: 480px) {
-        display: none;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        min-width: 2rem;
-    }
-`;
-
-export const FillerTwo = styled.div`
-    min-width: 18rem;
-
-    @media (max-width: 480px) {
-        display: none;
     }
 `;
