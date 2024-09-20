@@ -5,7 +5,6 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Types
 import { Source } from './types/componentTypes';
-import { TitleHeaderProps } from './types/componentTypes';
 
 // Helper
 import staticText from '../../../miscellaneous/staticTexts.json';
