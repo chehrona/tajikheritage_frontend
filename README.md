@@ -1,6 +1,8 @@
 # thetajikheritage.com - Version 2
 
 🚀 [Live Site](https://thetajikheritage.com)
+
+
 ![Tajik Heritage Banner](./public/banner.png)
 
 **thetajikheritage.com** is an online platform dedicated to promoting Tajik culture, traditions, and heritage. This second version of the site includes enhanced features and an updated technology stack to improve user experience and performance.
