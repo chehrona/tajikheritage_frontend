@@ -25,7 +25,6 @@ import {
 } from '../../common/header/headerStyles';
 
 const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
-    const { setIsLoading } = useGlobalData();
     const [pdfUrl, setPdfUrl] = useState<string>('');
 
     const handleCloseReader = () => {
@@ -34,8 +33,6 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
 
     const fetchPdf = async () => {
         try {
-            setIsLoading(true);
-
             if (!book.source) {
                 return;
             }
@@ -45,12 +42,6 @@ const BookReader: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
             setPdfUrl(response);
         } catch (error) {
             console.error('Error fetching PDF file:', error);
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 

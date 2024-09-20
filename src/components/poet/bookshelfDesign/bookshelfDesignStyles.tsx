@@ -87,7 +87,7 @@ export const Shelf = styled.div`
     width: 100%;
     background: var(--secondary-grey-color);
     position: relative;
-    z-index: 10;
+    z-index: 1;
     border-radius: var(--small-radius);
     box-shadow: 0rem 0rem 0.5rem 0.1rem inset black;
 `;

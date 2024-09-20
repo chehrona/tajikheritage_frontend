@@ -81,10 +81,10 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
     return (
         <Dialog
             open={(book.msg?.length ?? 0) > 0}
+            background={'light'}
             width={'500px'}
             height={'auto'}
             handleClose={handleClose}
-            background={'light'}
         >
             <DialogContentWrapper>
                 <DialogBodyContainer>
