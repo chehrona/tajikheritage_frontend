@@ -81,11 +81,11 @@ export const SlideImg = styled.img<{ $show?: boolean }>`
     width: ${squareSizeDesktop}rem;
     display: block;
     filter: grayscale(1)
-        ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(60%)')};
+        ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(50%)')};
     box-shadow: ${({ $show }) =>
         $show
-            ? '0rem 0rem 0.5rem 0.1rem var(--secondary-white-color);'
-            : '0rem 0rem 1rem 0.2rem var(--primary-shadow-color)'};
+            ? 'var(--primary-box-shadow) var(--secondary-white-color);'
+            : 'var(--primary-box-shadow) var(--primary-shadow-color)'};
 
     @media (max-width: 480px) {
         width: ${squareSizeMobile}rem;

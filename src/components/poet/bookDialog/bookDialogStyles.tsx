@@ -81,7 +81,7 @@ export const StyledButton = styled(Button)`
         font-size: var(--body-text);
         font-family: var(--regular-font);
         padding: 0.375rem 1rem;
-        box-shadow: 0rem 0rem 0.25rem 0.01rem var(--primary-shadow-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
     }
 
     &.MuiButton-root:hover {

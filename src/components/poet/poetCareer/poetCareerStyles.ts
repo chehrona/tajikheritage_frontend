@@ -37,7 +37,7 @@ export const MainContainer = styled.div`
 
 export const SlideUnit = styled.div`
     padding: calc(2 * var(--text-segment-gap)) var(--page-padding);
-    height: 75svh;
+    height: 70svh;
 
     @media (max-width: 480px) {
         height: 80svh;
@@ -65,7 +65,6 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
     width: 0rem;
     height: 0rem;
     border-radius: var(--big-radius);
-    background-image: url(${'/customAssets/noise.png'});
     background: var(--primary-black-color);
     border: 0.45rem solid var(--primary-gold-color);
 
@@ -76,6 +75,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
         width: fit-content;
         height: fit-content;
         border: 1px solid var(--primary-gold-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
     `}
 
     @media (max-width: 480px) {
@@ -116,8 +116,8 @@ export const InfoContainer = styled.div`
     display: flex;
     overflow: hidden;
     position: relative;
-    height: 27rem;
-    margin-top: calc(2 * var(--text-segment-gap));
+    height: 29rem;
+    padding-top: calc(2 * var(--text-segment-gap));
 
     @media (max-width: 480px) {
         flex-direction: column;
@@ -146,7 +146,7 @@ export const InfoWrapper = styled.div`
     background: var(--primary-black-color);
     border-radius: var(--big-radius);
     display: flex;
-    box-shadow: 0rem 0rem 0.8rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         border-radius: var(--big-radius) var(--big-radius) 0rem 0rem;
@@ -293,6 +293,15 @@ export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
 export const ImageWrapper = styled.div`
     transition: 100ms ease-in-out;
 
+    > * > * {
+        border-bottom-left-radius: calc(var(--big-radius) - 0.25rem);
+    }
+
+    > * {
+        border-top-left-radius: var(--big-radius);
+        border-bottom-left-radius: var(--big-radius);
+    }
+
     @media (max-width: 480px) {
         display: none;
     }
@@ -306,8 +315,6 @@ export const Image = styled.div<ImageProps>`
     min-width: ${({ $width }) => $width && `${$width}px`};
     max-width: ${({ $width }) => $width && `${$width}px`};
     background: ${({ $src }) => $src && `url(${$src})`};
-    border-top-left-radius: var(--big-radius);
-    border-bottom-left-radius: var(--big-radius);
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ $src }) => $src && 'contain'};
 

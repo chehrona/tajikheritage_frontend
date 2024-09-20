@@ -25,6 +25,7 @@ html {
     --primary-shadow-color: #70654a;
     --regular-black-color: #000;
     --regular-white-color: #fff;
+    --primary-box-shadow: 0rem 0rem 0.6rem;
 
     /* Font families */
     --regular-font: 'IBM Plex Serif', serif;

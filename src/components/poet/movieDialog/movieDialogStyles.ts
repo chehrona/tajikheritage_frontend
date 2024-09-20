@@ -57,7 +57,7 @@ export const OverlayContainer = styled.div<InnerBoxProps>`
         overflow-y: ${({ $expand }) => ($expand ? 'scroll' : 'hidden')};
         top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
         transition: all 0.5s;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 
         &::-webkit-scrollbar {
             display: none;
@@ -153,7 +153,7 @@ export const StyledIconButton = styled(IconButton)`
 
     &.MuiIconButton-root {
         background: #70654ad9;
-        box-shadow: 0rem 0rem 0.65rem 0.1rem var(--primary-black-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-black-color);
 
         &:hover {
             background: var(--primary-shadow-color);
@@ -165,7 +165,7 @@ export const StyledIconButton = styled(IconButton)`
         height: 5.5rem;
 
         &.MuiIconButton-root {
-            box-shadow: 0rem 0rem 0.75rem 0.15rem var(--primary-black-color);
+            box-shadow: var(--primary-box-shadow) var(--primary-black-color);
         }
     }
 
@@ -234,7 +234,7 @@ export const MovieImg = styled.img`
     left: 50%;
     position: absolute;
     transform: translate(0%, -50%);
-    box-shadow: 0rem 0rem 1rem 0.2rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 
     @media (max-width: 1024px) {
         top: 0rem;

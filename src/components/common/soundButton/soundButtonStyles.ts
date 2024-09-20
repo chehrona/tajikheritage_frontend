@@ -11,12 +11,12 @@ export const StyledIconButton = styled(IconButton)`
         margin-left: 0.3rem;
         border: 1px solid var(--primary-gold-color);
         background-color: var(--primary-shadow-color);
-        box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-gold-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
+        transition: 0.45s box-shadow, 0.45s background-color;
 
         &:hover {
-            transition: 0.1s all;
             background-color: var(--primary-gold-color);
-            box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
+            box-shadow: var(--primary-box-shadow) var(--primary-black-color);
         }
 
         svg {
@@ -29,7 +29,7 @@ export const StyledIconButton = styled(IconButton)`
             &:hover {
                 transition: none;
                 background-color: var(--primary-shadow-color);
-                box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-gold-color);
+                box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
             }
 
             svg {

@@ -49,7 +49,8 @@ export const StyledLink = styled(Link)<LinkProps>`
 
                   &:hover {
                       border-radius: var(--big-radius);
-                      box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+                      box-shadow: var(--primary-box-shadow)
+                          var(--primary-shadow-color);
                   }
 
                   > * {
@@ -63,7 +64,7 @@ export const StyledLink = styled(Link)<LinkProps>`
               `}
     // Done
     @media (max-width: 480px) {
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
         height: ${({ $type }) => ($type === 'long' ? '16rem' : '16rem')};
         width: ${({ $type }) => ($type === 'long' ? '10.3rem' : '16rem')};
 
@@ -82,7 +83,7 @@ export const StyledLink = styled(Link)<LinkProps>`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
         width: 25rem;
         ${({ $type }) =>
             $type === 'long'

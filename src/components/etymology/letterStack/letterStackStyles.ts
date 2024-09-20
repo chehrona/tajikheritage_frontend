@@ -69,7 +69,7 @@ const hoverEffect = ({ $empty }: WrapperBaseProps) =>
         transform: translateZ(1rem) translateX(0rem) scale(1.05);
         transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
             opacity 0.5s ease-in-out;
-        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 
         @media (max-width: 480px) {
             transform: translateZ(0rem) translateX(0rem) scale(1);

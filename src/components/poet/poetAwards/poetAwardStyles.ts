@@ -69,7 +69,7 @@ export const AwardCard = styled.div<{ $delay: string }>`
     background-color: transparent;
     perspective: 62.5rem;
     border-radius: var(--small-radius);
-    box-shadow: 0rem 0rem 0.5rem 0.1rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
     animation: ${slideOut} 2s ease-in-out forwards;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
 

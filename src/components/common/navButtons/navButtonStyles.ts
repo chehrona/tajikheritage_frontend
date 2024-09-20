@@ -35,9 +35,10 @@ export const Arrow = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #bd9d5266;
+    transition: 0.3s box-shadow;
 
     &:hover {
-        box-shadow: 0rem 0rem 0.3rem 0rem var(--secondary-white-color);
+        box-shadow: var(--primary-box-shadow) var(--secondary-white-color);
     }
 
     @media (max-device-width: 1024px) {

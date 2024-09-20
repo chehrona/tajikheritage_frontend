@@ -84,7 +84,7 @@ export const MovieCard = styled.div<{ $delay: string }>`
     cursor: pointer;
     position: relative;
     border-radius: var(--small-radius);
-    box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
     opacity: 0;
     animation: ${slideOut} 2s ease-in-out forwards;
     animation-delay: ${({ $delay }) => ($delay ? $delay : '0s')};
@@ -110,7 +110,7 @@ export const StyledIconButton = styled(IconButton)`
     bottom: 1rem;
     right: -4rem;
     transform: translateX(-50%);
-    box-shadow: 0rem 0rem 0.6rem var(--regular-black-color);
+    box-shadow: var(--primary-box-shadow) var(--regular-black-color);
 
     &.MuiIconButton-root {
         width: 4rem;

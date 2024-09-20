@@ -59,7 +59,7 @@ export const AwardImg = styled.img`
     background: var(--primary-black-color);
     padding: var(--text-segment-gap);
     background-image: url(${'/customAssets/noise.png'});
-    box-shadow: 0rem 0rem 0.4rem 0.01rem var(--primary-gold-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
 
     @media (max-width: 480px) {
         display: inline;

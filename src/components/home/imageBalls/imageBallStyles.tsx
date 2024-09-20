@@ -97,7 +97,7 @@ const CircleImageBase = styled.img`
     border-radius: 50%;
     will-change: transform;
     z-index: 0;
-    box-shadow: 0rem 0rem 0.5rem 0.25rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 `;
 
 export const BigCircleImage = styled(CircleImageBase)<HomeImageProps>`

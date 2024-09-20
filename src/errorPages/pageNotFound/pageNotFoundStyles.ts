@@ -25,7 +25,7 @@ export const CodeWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var(--regular-black-color);
-    box-shadow: 0 0 0.5rem var(--primary-white-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-white-color);
 
     @media (max-width: 480px) {
         height: 10rem;

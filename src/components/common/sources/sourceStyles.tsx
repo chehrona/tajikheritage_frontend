@@ -43,7 +43,7 @@ export const RefContainer = styled.div<{ $open: boolean }>`
         $open
             ? css`
                   height: 20rem;
-                  box-shadow: 0rem 0rem 0.4rem 0.01rem
+                  box-shadow: var(--primary-box-shadow)
                       var(--primary-black-color);
                   padding: var(--input-radius) calc(var(--input-radius) / 2)
                       var(--input-radius) 0rem;

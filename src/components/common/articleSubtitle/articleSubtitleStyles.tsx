@@ -44,7 +44,7 @@ export const Subtitle = styled.span`
     text-transform: uppercase;
     font-size: var(--header-small);
     border-radius: var(--big-radius);
-    box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-shadow-color);
+    box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;

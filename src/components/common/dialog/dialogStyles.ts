@@ -8,7 +8,6 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     & .MuiPaper-root {
         font-size: var(--body-text);
         border-radius: var(--big-radius);
-        box-shadow: 0rem 0rem 0.3rem 0rem var(--primary-black-color);
         width: ${({ $width }) => $width && $width};
         max-width: ${({ $width }) => $width && $width};
         height: ${({ $height }) => $height && $height};
@@ -16,6 +15,10 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
             $background === 'dark'
                 ? 'var(--primary-black-color)'
                 : 'var(--primary-white-color)'};
+        box-shadow: ${({ $background }) =>
+            $background === 'dark'
+                ? 'var(--primary-box-shadow) var(--primary-black-color)'
+                : 'var(--primary-box-shadow) var(--primary-shadow-color)'};
 
         @media (max-width: 480px) {
             font-size: var(--body-text);

@@ -29,7 +29,7 @@ export const PoetImgContainer = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0rem 0rem 3rem rgba(189, 157, 82, 0.8);
+    box-shadow: 0rem 0rem 3rem var(--primary-shadow-color);
 
     // Done
     @media (max-width: 480px) {
@@ -49,7 +49,7 @@ export const PoetImage = styled.img`
     height: 18.5rem;
     width: 13.5rem;
     margin: 0.3rem;
-    box-shadow: 0rem 0rem 1rem rgba(189, 157, 82, 0.8);
+    box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
     background: var(--primary-black-color) url('/loader.png') center no-repeat;
     background-size: 50% auto;
 
