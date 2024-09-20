@@ -4,7 +4,7 @@
 
 ![Tajik Heritage Banner](./public/banner.png)
 
-**thetajikheritage.com** is a dedicated platform showcasing the rich culture, traditions, and heritage of Tajikistan. The second version of the website introduces new features and a modernized technology stack to enhance user experience and accommodate expanding content.
+**thetajikheritage.com** is a dedicated platform showcasing the rich culture, traditions, and heritage of Tajikistan.
 
 ## 🔸 Version 1
 
@@ -13,19 +13,19 @@ The initial version of the website aimed to establish the core functionality, wi
 ### Technology Stack (Version 1)
 
 - **Frontend:** React with styled-components and Material UI
-- **Backend:** Node.js with Express.js & MongoDB ➡️ [Repo Link](https://github.com/chehrona/tajikheritage_backend)
+- **Backend:** Node.js with Express.js & MongoDB  ➡️  [Repo Link](https://github.com/chehrona/tajikheritage_backend)
 - **Deployment:** Hosted on a personal server using Docker and GitHub Pages.
 
 ## 🔸 Version 2
 
-Version 2 introduces significant updates, including a transition to TypeScript for improved type safety and the use of CSS variables for more consistent styling. The user interface has been revamped to better handle the increasing amount of content.
+Version 2 introduces a transition to TypeScript for improved type safety and the use of CSS variables for more consistent styling. The user interface has been revamped to better handle the increasing amount of content.
 
 ### New Features
 
 - **Responsive Design Enhancements:** Implemented media queries to improve the mobile browsing experience.
-- **Loading State Management:** Added visual indicators while data is being fetched to enhance user feedback.
-- **Integrated PDF Reader:** Users can now view PDF documents directly on the site, enhancing content accessibility.
-- **Error Handling with Error Boundaries and Toasts:** Improved error management and notifications for a smoother user experience.
+- **Loading State Management:** Added visual indicators while data is being fetched.
+- **Integrated PDF Reader:** Users can now view PDF documents directly on the site.
+- **Error Handling with Error Boundaries and Toasts:** Improved error management and notifications.
 
 ### Technology Stack (Version 2)
 
