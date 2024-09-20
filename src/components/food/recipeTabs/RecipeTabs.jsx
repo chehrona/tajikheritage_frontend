@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 import { MainContainer, InviteContainer } from './recipeTabStyles';
 
 export default function RecipeTabs({ id }) {

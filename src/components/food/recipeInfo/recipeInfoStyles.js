@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { Pinterest } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import styled, { keyframes } from 'styled-components';
+import { Pinterest } from '@mui/icons-material';
+import { Button } from '@mui/material';
 
 const slideUp = keyframes`
     0% {
@@ -47,13 +47,13 @@ export const InfoContainer = styled.div`
 
 export const MainTitle = styled.div`
     opacity: 0;
-    color: #000;
+    color: var(--regular-black-color);
     font-size: 4rem;
     font-weight: 500;
     font-style: italic;
     margin-bottom: 0.5rem;
-    font-family: 'EB Garamond', serif;
-    text-shadow: 0.0625rem 0.0625rem 0.0875rem #0F0A00;
+    font-family: var(--fancy-font);
+    text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
     animation: ${slideOut} 0.5s ease-in-out forwards;
 
     @media (max-width: 480px) {
@@ -63,8 +63,8 @@ export const MainTitle = styled.div`
 
 export const HistoryInfo = styled.div`
     opacity: 0;
-    color: #0F0A00;
-    font-size: 1.1rem;
+    color: var(--primary-black-color);
+    font-size: var(--body-text);
     position: relative;
     line-height: 1.7rem;
     animation-delay: 0.01s;
@@ -89,7 +89,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const MainImage = styled.img`
-    border-radius: 1rem;
+    border-radius: var(--big-radius);
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -115,7 +115,7 @@ export const MainImage = styled.img`
 `;
 
 export const StyledPinIcon = styled(Pinterest)`
-    color: #dedbdb;
+    color: var(--secondary-white-color);
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
@@ -125,7 +125,7 @@ export const StyledPinIcon = styled(Pinterest)`
         fill: red;
         font-size: 2.5rem;
         border-radius: 50%;
-        background-color: white;
+        background-color: var(--regular-white-color);
     }
 `;
 
@@ -137,14 +137,14 @@ export const StyledButton = styled(Button)`
     }
 
     &.MuiButton-root {
-        background: #504221d1;
-        border-radius: 0.8rem;
+        background: var(--primary-shadow-color);
+        border-radius: var(--small-radius);
         text-transform: none;
         padding: 0.5rem 1.5rem;
-        font-family: 'IBM Plex Serif', serif;
+        font-family: var(--regular-font);
     }
 
     &.MuiButton-root:hover {
-        background: #504221d1;
+        background: var(--primary-shadow-color);
     }
 `;

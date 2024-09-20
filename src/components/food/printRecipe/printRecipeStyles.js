@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Button } from "@mui/material";
+import styled from 'styled-components';
+import { Button } from '@mui/material';
 
 export const SubTitle = styled.div`
     padding-bottom: 0.8rem;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--regular-black-color);
 
     @media (max-width: 480px) {
         padding-bottom: 0rem;
@@ -47,7 +47,7 @@ export const StyledButton = styled(Button)`
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
-        color: #504221d1;
+        color: var(--primary-shadow-color);
 
         &.MuiButton-root:hover {
             box-shadow: 0rem 0rem 0.4rem 0.01rem #504221;
@@ -62,16 +62,16 @@ export const StyledButton = styled(Button)`
         }
 
         &.MuiButton-root {
-            background: #504221d1;
+            background: var(--primary-shadow-color);
             border-radius: 0.75rem;
             text-transform: none;
             height: 3.2rem;
             padding: 0.5rem 1.5rem;
-            font-family: 'IBM Plex Serif', serif;
+            font-family: var(--regular-font);
         }
 
         &.MuiButton-root:hover {
-            background: #504221d1;
+            background: var(--primary-shadow-color);
         }
     }
 

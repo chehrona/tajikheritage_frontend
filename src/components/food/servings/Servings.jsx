@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useGlobalData } from '../../../App';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 import { IconButton } from '@mui/material';
 

@@ -1,6 +1,6 @@
-import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 const slideOut = keyframes`
     0% {
@@ -19,11 +19,11 @@ const slideOut = keyframes`
 
 export const RecipeCardWrapper = styled.div`
     opacity: 0;
-    color: #0F0A00;
+    color: var(--primary-black-color);
     cursor: pointer;
     position: relative;
     animation: ${slideOut} 1s ease-in-out forwards;
-    animation-delay: ${({ delay }) => delay ? delay : '0s'};
+    animation-delay: ${({ delay }) => (delay ? delay : '0s')};
 `;
 
 export const RecipeNameBox = styled.div`
@@ -63,11 +63,11 @@ export const RecipeInfo = styled.div`
     align-items: center;
     font-weight: 500;
     font-style: italic;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
 `;
 
 export const RecipeSubtitle = styled.div`
-    font-size: 1.1rem;
+    font-size: var(--body-text);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
@@ -77,22 +77,22 @@ export const RecipeSubtitle = styled.div`
 export const RecipeImage = styled.img`
     height: 35rem;
     width: 23rem;
-    border-radius: 0.7rem;
+    border-radius: var(--small-radius);
     transition: border-radius 250ms, box-shadow 400ms;
 
     &:hover {
-        border-radius: 1.5rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        border-radius: var(--big-radius);
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
         transition: border-radius 250ms, box-shadow 400ms;
     }
 
     @media (max-width: 480px) {
         height: 19.025rem;
         width: 12.5rem;
-        box-shadow: 0rem 0rem 0.6rem #504221d1;
+        box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
 
         &:hover {
-            border-radius: 0.7rem;
+            border-radius: var(--small-radius);
         }
     }
 `;

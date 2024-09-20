@@ -1,23 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Caveat:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+@font-face {
+    font-family: 'Blocky';
+    src: url('/public/fonts/blocky.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Rem */
 html {
     font-size: 16px;
 }
 
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 12px;
+:root {
+    /* Colors */
+    --primary-black-color: #0f0a00;
+    --primary-white-color: #fcf6e9;
+    --secondary-white-color: #dedbdb;
+    --primary-gold-color: #bd9d52;
+    --secondary-gold-color: #eac364;
+    --primary-red-color: #ad0f0e;
+    --primary-grey-color: #333333;
+    --secondary-grey-color: #959595;
+    --primary-shadow-color: #70654a;
+    --regular-black-color: #000;
+    --regular-white-color: #fff;
+
+    /* Font families */
+    --regular-font: 'IBM Plex Serif', serif;
+    --fancy-font: 'EB Garamond', serif;
+    --blocky-font: 'Blocky', sans-serif;
+
+    /* Font-sizes */
+    --header-huge: 4rem;
+    --header-large: 2.5rem;
+    --header-big: 2rem;
+    --header-medium: 1.75rem;
+    --header-normal: 1.5rem;
+    --header-small: 1.25rem;
+    --body-text: 1.15rem;
+    --stepper-text: 1.75rem;
+    --info-text: 1rem;
+
+    /* Padding */
+    --page-padding: 3.2rem;
+    --long-card-gap: 2rem;
+    --square-card-gap: 2rem;
+    --text-segment-gap: 0.75rem;
+    --header-padding: 0.85rem;
+
+    /* Standard sizes */
+    --header-height: 5rem;
+    --footer-height: 3.5rem;
+    --page-height: calc(
+        100svh - ((var(--header-height) + var(--footer-height)))
+    );
+    --circle-letter-size: 5.25rem;
+    --slideshow-height: 30rem;
+    --small-card-width: 9rem;
+    --small-card-height: calc(var(--small-card-width) * 1.75);
+
+    /* Border radius */
+    --input-radius: 0.25rem;
+    --small-radius: 0.7rem;
+    --big-radius: 1.5rem;
+    --page-radius: 4rem;
+
+    /* Line-heights */
+    --body-text-line-height: calc(var(--body-text) * 1.55);
+    --info-text-line-height: calc(var(--info-text-line-height) * 1.15);
+    --header-large-line-height: calc(var(--header-large) * 1.3);
+    --header-big-line-height: calc(var(--header-big) * 1.05);
+    --header-medium-line-height: calc(var(--header-medium) * 1.05);
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Font-sizes */
+        --header-large: 3rem;
+        --header-big: 2.25rem;
+        --header-medium: 1.75rem;
+        --header-normal: 1.5rem;
+        --header-small: 1.15rem;
+        --info-text: 0.9rem;
+        --stepper-text: 1rem;
+        --body-text: 1rem;
+
+        /* Padding */
+        --page-padding: 1rem;
+        --long-card-gap: 0.5rem;
+        --square-card-gap: 1rem;
+        --text-segment-gap: 0.75rem;
+        --header-padding: 0.75rem;
+
+        /* Standard sizes */
+        --header-height: 3rem;
+        --footer-height: 5.25rem;
+        --slideshow-height: 20rem;
+        --small-card-width: 9rem;
+        --circle-letter-size: 4.25rem;
+        --small-card-height: calc(var(--small-card-width) * 1.42);
+
+        /* Line-heights */
+        --body-text-line-height: calc(var(--body-text) * 1.45);
+        --info-text-line-height: calc(var(--info-text-line-height) * 1.15);
+        --header-large-line-height: calc(var(--header-large) * 1.3);
+        --header-big-line-height: calc(var(--header-big) * 1.05);
+        --header-medium-line-height: calc(var(--header-medium) * 1.05);
+
+        /* Border radius */
+        --big-radius: 1.25rem;
+        --page-radius: 0rem;
+        --input-radius: 0.35rem;
     }
 }
 
-@media screen and (min-device-width: 481px) and (max-device-width: 960px) {
-    html {
-        font-size: 13px;
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    :root {
+        --slideshow-height: 40rem;
+
+        /* Border radius */
+        --page-radius: 2.5rem;
     }
 }
 
 body {
-    background: #0f0a00;
+    background: var(--primary-black-color);
     margin: 0;
     height: 100%;
     width: 100%;
@@ -29,13 +137,27 @@ body * {
     box-sizing: border-box;
 }
 
-.content-container {
+.parent-container {
+    display: flex;
+    overflow-y: hidden;
+    flex-direction: column;
     position: relative;
     max-width: 1440px;
-    height: 100svh;
-    overflow-y: scroll;
+    min-height: 100svh;
     margin: 0 auto;
-    background: #0f0a00;
+    background: var(--primary-black-color);
+}
+
+.content-container {
+    overflow-y: hidden;
+    height: 100svh;
+    margin-top: var(--header-height);
+}
+
+.has_footer {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: calc(100svh - var(--header-height));
 }
 
 .content-container::-webkit-scrollbar {
@@ -57,27 +179,28 @@ body * {
     padding: 0rem 0rem 1rem 0.35rem;
 }
 
-.emptyLine {
-    height: 2rem;
-    width: 100%;
+.fade-in {
+    animation: fadeIn 0.15s forwards;
 }
 
-.space {
-    height: 0.5rem;
-    width: 100%;
+.fade-out {
+    animation: fadeOut 0.15s forwards;
 }
 
-sup,
-sub {
-    vertical-align: baseline;
-    position: relative;
-    top: -0.5rem;
-    color: #92793f;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-family: 'IBM Plex Serif', serif;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-sub {
-    top: 0.4rem;
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

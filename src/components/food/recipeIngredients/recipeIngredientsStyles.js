@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     max-width: 35%;
@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
         padding: 0.5rem 1rem 1rem 1rem;
         margin: 0rem 1.5rem 1rem 1.5rem;
     }
-    
+
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         max-width: 100%;
     }
@@ -26,7 +26,7 @@ export const SubTitle = styled.div`
     font-style: italic;
     font-weight: 500;
     margin-bottom: 2rem;
-    font-family: 'EB Garamond', serif;
+    font-family: var(--fancy-font);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem #ffffffb0;
 
     @media (max-width: 480px) {
@@ -38,7 +38,7 @@ export const SubTitle = styled.div`
 export const Ingredient = styled.div`
     font-size: 1.2rem;
     margin-top: 0.5rem;
-    color: #0F0A00;
+    color: var(--primary-black-color);
     min-height: 2rem;
     display: flex;
 

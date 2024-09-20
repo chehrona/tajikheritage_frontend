@@ -1,5 +1,5 @@
-import { Add, Remove } from "@mui/icons-material";
-import styled from "styled-components";
+import { Add, Remove } from '@mui/icons-material';
+import styled from 'styled-components';
 
 export const QuantityContainer = styled.div`
     display: flex;
@@ -11,7 +11,7 @@ export const QuantityContainer = styled.div`
 
 export const StyledAddIcon = styled(Add)`
     color: #fff;
-    background: #504221d1;
+    background: var(--primary-shadow-color);
     border-radius: 0.5rem;
     box-shadow: 0rem 0rem 0.25rem 0.01rem #504221;
 
@@ -30,10 +30,10 @@ export const ServeAmount = styled.input`
     width: 3rem;
     height: 2rem;
     outline: none;
-    font-size: 1.1rem;
+    font-size: var(--body-text);
     padding: 0.2rem;
     text-align: center;
-    font-family: 'IBM Plex Serif', serif;
+    font-family: var(--regular-font);
 
     @media (max-width: 480px) {
         width: 3.5rem;
@@ -44,7 +44,7 @@ export const ServeAmount = styled.input`
 `;
 
 export const StyledMinusIcon = styled(Remove)`
-    background: #504221d1;
+    background: var(--primary-shadow-color);
     border-radius: 0.5rem;
     color: #fff;
     box-shadow: 0rem 0rem 0.25rem 0.01rem #504221;
@@ -64,7 +64,7 @@ export const SubTitle = styled.div`
     padding-bottom: 0.8rem;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--regular-black-color);
 
     @media (max-width: 480px) {
         padding-bottom: 0rem;

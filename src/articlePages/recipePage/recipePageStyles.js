@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageContainer = styled.div`
     box-sizing: border-box;
     min-height: 40rem;
-    background-color: white;
+    background-color: var(--regular-white-color);
     padding: 2rem 3.2rem 2.8rem 3.2rem;
     @media (max-width: 480px) {
         padding: 0rem;
@@ -15,17 +15,16 @@ export const PageContainer = styled.div`
 `;
 
 export const RecipeContainer = styled.div`
-    color: #0f0a00;
+    color: var(--primary-black-color);
     padding: 3rem;
-    border-radius: 4rem;
-    background-color: #fcf6e9;
-    background-image: url(${'/noise.png'});
+    border-radius: var(--page-radius);
+    background-color: var(--primary-var-color);
+    background-image: url(${'/customAssets/noise.png'});
     margin-right: 0.86rem;
-    box-shadow: 0.8rem 0.5rem 0rem 0.08rem #504221d1;
+    box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         padding: 0rem;
-        border-radius: 0rem;
         display: flex;
         flex-direction: column;
         box-shadow: 0rem 0rem 0rem 0rem;
@@ -34,7 +33,6 @@ export const RecipeContainer = styled.div`
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 2rem 2rem 1rem 2rem;
         display: flex;
-        border-radius: 2.5rem;
         flex-direction: column;
     }
 `;
@@ -77,7 +75,6 @@ export const IngredientContainer = styled.div`
 
 export const SubContainer = styled.div`
     margin-top: 3rem;
-    background-color: yellow;
 
     @media (max-width: 1024px) {
         margin-top: 0rem;

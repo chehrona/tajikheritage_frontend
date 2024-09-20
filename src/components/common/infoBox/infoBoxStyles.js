@@ -9,7 +9,7 @@ export const InfoWrapper = styled.div`
     font-style: italic;
     margin: 0.25rem;
     text-align: left;
-    color: #fcf6e9;
+    color: var(--primary-white-color);
     bottom: 0rem;
     background-color: #262626a6;
     width: calc(100% - 0.5rem);
@@ -40,7 +40,7 @@ export const StyledCloseButton = styled(IconButton)`
 `;
 
 export const StyledCloseIcon = styled(Close)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
 
     &.MuiSvgIcon-root {
         width: 1.5rem;
@@ -72,7 +72,7 @@ export const StyledExpandButton = styled(IconButton)`
 `;
 
 export const StyledExpandIcon = styled(OpenInFull)`
-    color: #bd9d52;
+    color: var(--primary-gold-color);
     transform: rotateZ(90deg);
 
     &.MuiSvgIcon-root {
