@@ -22,7 +22,7 @@ export const PoetImgContainer = styled.div`
     height: 20rem;
     width: 15rem;
     border-radius: 9rem;
-    border: 0.15rem solid var(--primary-gold-color);
+    border: 2px solid var(--primary-gold-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,6 @@ export const PoetImage = styled.img`
 export const PoetNameBox = styled.div`
     position: absolute;
     top: 17.5rem;
-    line-height: 2.5rem;
     left: 2rem;
 
     // Done
@@ -85,9 +84,10 @@ export const PoetNameBox = styled.div`
 `;
 
 export const PoetName = styled.div`
-    font-size: 2.5rem;
-    font-family: var(--fancy-font);
+    font-size: var(--header-large);
+    line-height: var(--header-large);
     font-style: italic;
+    font-family: var(--fancy-font);
     text-shadow: 0rem 0rem 0.25rem black;
 
     // Done
@@ -102,8 +102,9 @@ export const PoetName = styled.div`
 `;
 
 export const PoetDates = styled.div`
-    font-size: 1.25rem;
+    font-size: var(--header-small);
     font-family: var(--regular-font);
+    padding-top: calc(var(--text-segment-gap) / 2);
 
     // Done
     @media (max-width: 480px) {
@@ -123,6 +124,7 @@ export const PoetInfoContainer = styled.div`
     bottom: 0rem;
     width: 100%;
     color: var(--secondary-white-color);
+    font-size: var(--body-text);
 
     @media (max-width: 480px) {
         display: none;
