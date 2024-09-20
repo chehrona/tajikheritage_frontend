@@ -1,13 +1,13 @@
 # thetajikheritage.com - Version 2
 
+**thetajikheritage.com** is a dedicated platform showcasing the rich culture, traditions, and heritage of Tajikistan.
+
 🚀 [Live Site](https://thetajikheritage.com)
 
 ![Tajik Heritage Banner](./public/banner.png)
 
-**thetajikheritage.com** is a dedicated platform showcasing the rich culture, traditions, and heritage of Tajikistan.
-
 ## ❇️ Version 1
-____________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------
 
 The initial version of the website aimed to establish the core functionality, with a focus on getting the application up and running. Data was primarily hard-coded due to the limited content on most pages.
 
