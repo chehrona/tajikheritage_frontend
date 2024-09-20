@@ -5,7 +5,8 @@ export const MainContainer = styled.div`
     color: var(--regular-white-color);
     position: relative;
     background-image: url(${'/customAssets/noise.png'});
-    padding: 6rem 0rem 9rem 0rem;
+    padding: calc(3rem + 2 * var(--text-segment-gap)) 0rem
+        calc(3rem + 6 * var(--text-segment-gap)) 0rem;
 
     &:before {
         content: '';

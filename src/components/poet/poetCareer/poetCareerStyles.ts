@@ -8,8 +8,7 @@ export const MainContainer = styled.div`
     background: var(--primary-black-color);
     position: relative;
     background-image: url(${'/customAssets/noise.png'});
-    padding-bottom: 9rem;
-    padding-top: 9rem;
+    padding: calc(3rem + (3.75 * var(--text-segment-gap))) 0rem;
 
     &:before {
         content: '';
@@ -37,8 +36,8 @@ export const MainContainer = styled.div`
 `;
 
 export const SlideUnit = styled.div`
-    padding: 2rem 3rem 2rem 3rem;
-    height: 38rem;
+    padding: calc(2 * var(--text-segment-gap)) var(--page-padding);
+    height: 75svh;
 
     @media (max-width: 480px) {
         height: 80svh;
@@ -68,7 +67,7 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
     border-radius: var(--big-radius);
     background-image: url(${'/customAssets/noise.png'});
     background: var(--primary-black-color);
-    border: var(--input-radius) solid var(--primary-gold-color);
+    border: 0.45rem solid var(--primary-gold-color);
 
     ${({ $size }) =>
         $size &&
@@ -78,11 +77,25 @@ export const YearWrapper = styled.div<{ $size: boolean }>`
         height: fit-content;
         border: 1px solid var(--primary-gold-color);
     `}
+
+    @media (max-width: 480px) {
+        border: var(--input-radius) solid var(--primary-gold-color);
+
+        ${({ $size }) =>
+            $size &&
+            `
+        padding: 0.25rem 0.5rem;
+        width: fit-content;
+        height: fit-content;
+        border: 1px solid var(--primary-gold-color);
+    `}
+    }
 `;
 
 export const Year = styled.div<{ $show: boolean }>`
     display: ${({ $show }) => $show && 'none'};
-    margin: 0.4rem 1rem 0.4rem 1rem;
+    margin: 0.25rem 0.75rem;
+    font-size: var(--header-normal);
 
     @media (max-width: 480px) {
         margin: 0rem;
@@ -100,11 +113,11 @@ export const Line = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-    margin-top: 2rem;
     display: flex;
     overflow: hidden;
     position: relative;
     height: 27rem;
+    margin-top: calc(2 * var(--text-segment-gap));
 
     @media (max-width: 480px) {
         flex-direction: column;
@@ -130,9 +143,10 @@ export const InfoWrapper = styled.div`
     height: 26rem;
     min-width: 810px;
     max-width: 810px;
-    background: var(--primary-white-color);
+    background: var(--primary-black-color);
     border-radius: var(--big-radius);
     display: flex;
+    box-shadow: 0rem 0rem 0.8rem var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         border-radius: var(--big-radius) var(--big-radius) 0rem 0rem;
@@ -149,21 +163,27 @@ export const InfoWrapper = styled.div`
 
 export const DescContainer = styled.div`
     height: 100%;
-    border-radius: var(--big-radius);
     position: relative;
+    border-radius: 0rem var(--big-radius) var(--big-radius) 0rem;
+    background: var(--primary-white-color);
+    padding-top: var(--text-segment-gap);
 
     @media (max-width: 480px) {
+        border-radius: var(--big-radius) var(--big-radius) 0rem 0rem;
         width: 100%;
     }
 `;
 
 export const CareerDesc = styled.div`
-    padding: 1.5rem 2rem 1.5rem 2rem;
     font-size: var(--body-text);
-    line-height: 2rem;
-    height: 26rem;
+    line-height: var(--body-text-line-height);
+    height: 22rem;
     text-align: justify;
     overflow-y: scroll;
+    padding: 0rem calc(var(--page-padding) - 1rem - var(--input-radius))
+        var(--text-segment-gap) calc(var(--page-padding) - 1rem);
+    margin: calc(var(--input-radius) / 2) calc(var(--input-radius) / 2)
+        calc(var(--input-radius) / 2) 0rem;
 
     &::-webkit-scrollbar {
         width: var(--input-radius);
@@ -175,15 +195,11 @@ export const CareerDesc = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: var(--text-segment-gap)
-            calc(var(--page-padding) - var(--input-radius))
+        padding: 0rem calc(var(--page-padding) - var(--input-radius))
             var(--text-segment-gap) var(--page-padding);
-        line-height: var(--body-text-line-height);
         min-height: 100%;
         height: 100%;
         max-height: 100%;
-        margin: calc(var(--input-radius) / 2) calc(var(--input-radius) / 2)
-            calc(var(--input-radius) / 2) 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -202,9 +218,10 @@ export const Footer = styled.div`
     background: var(--primary-white-color);
     border-radius: 0rem 0rem var(--big-radius) var(--big-radius);
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0rem;
     right: 0rem;
     z-index: 10;
+    height: 3rem;
 
     @media (max-width: 480px) {
         display: none;
@@ -236,27 +253,25 @@ export const MobileFooter = styled.div`
 `;
 
 export const Step = styled.div`
-    width: 5rem;
-    height: 2rem;
+    min-width: 5rem;
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: var(--header-medium);
     font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
-        width: fit-content;
         font-size: var(--header-normal);
     }
 `;
 
 export const StyledIconButton = styled(IconButton)<StyledIconButtonProps>`
-    height: 2rem;
-    width: 2rem;
     transform: ${({ $left }) => $left && 'rotate(180deg)'};
 
     svg {
         fill: var(--primary-gold-color);
+        font-size: var(--header-big);
     }
 
     &:disabled {
@@ -291,8 +306,8 @@ export const Image = styled.div<ImageProps>`
     min-width: ${({ $width }) => $width && `${$width}px`};
     max-width: ${({ $width }) => $width && `${$width}px`};
     background: ${({ $src }) => $src && `url(${$src})`};
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-top-left-radius: var(--big-radius);
+    border-bottom-left-radius: var(--big-radius);
     transform: translateX(${({ translate }) => `${translate}px`});
     background-size: ${({ $src }) => $src && 'contain'};
 

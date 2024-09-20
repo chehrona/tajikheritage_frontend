@@ -91,7 +91,7 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                     <DialogTitle $textColor={'dark'}>
                         {staticTexts.NO_BOOK_DIALOG.title[lang]}
                     </DialogTitle>
-                    <BodyContainer style={{ paddingTop: 0 }}>
+                    <BodyContainer>
                         <Desc>{book?.msg}</Desc>
                         {book?.email && (
                             <InputWrapper>

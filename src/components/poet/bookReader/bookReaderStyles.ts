@@ -27,7 +27,7 @@ export const Title = styled(TitleWrapper)`
 export const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 100%;
 
     @media (max-width: 480px) {
@@ -41,11 +41,6 @@ export const ViewerContainer = styled.div`
     max-height: 100svh;
     overflow-y: scroll;
     overflow-x: hidden;
-
-    ::-webkit-scrollbar {
-        display: none;
-        width: 0rem;
-    }
 `;
 
 export const StyledPage = styled(Page)`

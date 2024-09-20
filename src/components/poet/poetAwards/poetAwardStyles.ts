@@ -22,7 +22,7 @@ export const MainContainer = styled.div`
     background-image: url(${'/customAssets/noise.png'});
     color: var(--regular-white-color);
     position: relative;
-    padding: 3rem 0rem 3rem 0rem;
+    padding: calc(var(--page-padding) / 2) 0rem;
 
     &:before {
         content: '';
@@ -38,26 +38,19 @@ export const MainContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: var(--page-padding) 0rem;
-
         &:before {
             padding: 2rem;
-            top: -3.98rem;
+            top: -4rem;
         }
     }
 `;
 
 export const AwardWrapper = styled.div`
-    padding: 0rem 3rem 0rem 3rem;
+    padding: 0rem var(--page-padding);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 0.5rem;
-
-    @media (max-width: 480px) {
-        gap: var(--square-card-gap);
-        padding: 0rem var(--page-padding);
-    }
+    gap: var(--square-card-gap);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         padding: 0rem 2rem;
@@ -106,36 +99,24 @@ export const Face = styled.div<{ $back: boolean }>`
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: var(--small-radius);
-    padding: 0.8rem;
+    padding: var(--text-segment-gap);
 
     ${({ $back }) =>
         $back
             ? css`
                   transform: rotateY(180deg);
                   background: var(--primary-shadow-color);
+                  padding: calc(1.25 * var(--input-radius));
               `
             : css`
                   background: var(--primary-black-color);
+                  padding: var(--text-segment-gap);
               `}
-
-    @media (max-width: 480px) {
-        ${({ $back }) =>
-            $back
-                ? css`
-                      padding: var(--input-radius);
-                  `
-                : css`
-                      padding: var(--text-segment-gap);
-                  `}
-    }
 `;
 
 export const Title = styled.div`
     text-align: center;
-
-    @media (max-width: 480px) {
-        font-size: var(--header-small);
-    }
+    font-size: var(--header-small);
 `;
 
 export const Image = styled.img`
@@ -144,29 +125,33 @@ export const Image = styled.img`
 `;
 
 export const Year = styled.div`
-    font-size: 3rem;
+    font-size: var(--header-large);
+    padding-top: var(--input-radius);
+    font-family: var(--fancy-font);
 
     @media (max-width: 480px) {
-        font-family: var(--fancy-font);
-        font-size: var(--header-large);
         line-height: var(--header-big-line-height);
-        padding-top: var(--input-radius);
     }
 `;
 
 export const StyledIconButton = styled(IconButton)`
-    width: 3rem;
-    height: 3rem;
     bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
 
     &.MuiIconButton-root {
         position: absolute;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     @media (max-width: 480px) {
         bottom: 0.25rem;
+
+        &.MuiIconButton-root {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -178,8 +163,8 @@ export const StyledInfoIcon = styled(Info)`
     color: var(--regular-white-color);
 
     &.MuiSvgIcon-root {
-        height: 2.3rem;
-        width: 2.3rem;
+        height: 3rem;
+        width: 3rem;
     }
 
     @media (max-width: 480px) {

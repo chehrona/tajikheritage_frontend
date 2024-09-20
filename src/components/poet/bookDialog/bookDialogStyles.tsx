@@ -8,7 +8,10 @@ export const DialogBodyContainer = styled.div`
     height: 100%;
     width: 100%;
     font-size: var(--body-text);
-    line-height: var(--body-text-line-height);
+
+    @media (max-width: 480px) {
+        line-height: var(--body-text-line-height);
+    }
 `;
 
 export const DialogTitle = styled.div<{ $textColor: string }>`
@@ -19,46 +22,43 @@ export const DialogTitle = styled.div<{ $textColor: string }>`
     display: flex;
     justify-content: center;
     font-style: italic;
-    font-size: 2rem;
+    font-size: var(--header-large);
+    line-height: var(--header-large-line-height);
     font-family: var(--fancy-font);
+    padding: var(--text-segment-gap) var(--page-padding);
+    margin-right: var(--page-padding);
 
     @media (max-width: 480px) {
+        margin-right: calc(2 * var(--page-padding));
         text-align: center;
         font-size: var(--header-big);
         line-height: var(--header-big-line-height);
-        padding: var(--text-segment-gap) var(--page-padding);
-        margin-right: var(--page-padding);
     }
 `;
 
 export const BodyContainer = styled.div`
-    padding: 0rem var(--page-padding) calc(2.5 * var(--text-segment-gap))
-        var(--page-padding);
+    padding: 0rem calc(var(--page-padding) / 2)
+        calc(2.5 * var(--text-segment-gap)) calc(var(--page-padding) / 2);
+
+    @media (max-width: 480px) {
+        padding: 0rem var(--page-padding) calc(2.5 * var(--text-segment-gap))
+            var(--page-padding);
+    }
 `;
 
 export const Desc = styled.div`
     width: 100%;
     height: 100%;
     color: var(--primary-black-color);
-    line-height: 1.5rem;
     text-align: center;
-
-    @media (max-width: 480px) {
-        font-size: var(--body-text);
-        line-height: var(--body-text-line-height);
-    }
 `;
 
 export const InputWrapper = styled.div`
     display: flex;
-    margin: 1rem 0rem 0.25rem 0rem;
+    margin: var(--text-segment-gap) 0rem 0rem 0rem;
     align-items: center;
     justify-content: center;
-
-    @media (max-width: 480px) {
-        margin: var(--text-segment-gap) 0rem 0rem 0rem;
-        gap: var(--text-segment-gap);
-    }
+    gap: var(--text-segment-gap);
 `;
 
 export const InputField = styled.input`
@@ -80,8 +80,7 @@ export const StyledButton = styled(Button)`
         text-transform: none;
         font-size: var(--body-text);
         font-family: var(--regular-font);
-        margin-left: 1rem;
-        padding: 0.375rem 0.75rem;
+        padding: 0.375rem 1rem;
         box-shadow: 0rem 0rem 0.25rem 0.01rem var(--primary-shadow-color);
     }
 
@@ -98,7 +97,8 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Error = styled.div<ErrorStyleProps>`
-    font-size: 1rem;
+    font-size: var(--info-text);
+    line-height: var(--body-text-line-height);
     color: ${({ $error, $success }) =>
         $error ? 'var(--primary-red-color)' : $success && '#297309'};
     height: 1.75rem;

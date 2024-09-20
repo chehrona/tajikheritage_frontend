@@ -20,6 +20,7 @@ const bounce = keyframes`
 export const MainContainer = styled.div`
     height: 100%;
     width: 100%;
+    background-color: var(--primary-black-color);
 
     @media (max-width: 480px) {
         flex-direction: column-reverse;
@@ -32,7 +33,7 @@ export const OverlayContainer = styled.div<InnerBoxProps>`
     height: 100%;
     background: var(--primary-white-color);
     position: relative;
-    padding: 2rem;
+    padding: calc(var(--page-padding) / 2);
 
     ${({ $width }) =>
         $width &&
@@ -51,10 +52,16 @@ export const OverlayContainer = styled.div<InnerBoxProps>`
         overflow-x: hidden;
         position: absolute;
         display: ${({ $width }) => $width && 'none'};
+        overflow: hidden;
+        scrollbar-width: none;
         overflow-y: ${({ $expand }) => ($expand ? 'scroll' : 'hidden')};
         top: ${({ $expand }) => ($expand ? '0rem' : '40%')};
         transition: all 0.5s;
         box-shadow: 0rem 0rem 0.6rem var(--primary-shadow-color);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -69,7 +76,11 @@ export const OverlayContainer = styled.div<InnerBoxProps>`
 export const StudioNameWrapper = styled.div`
     display: flex;
     width: 100%;
-    height: 3rem;
+    height: 4.5rem;
+
+    @media (max-width: 480px) {
+        height: 3rem;
+    }
 `;
 
 export const StudioImage = styled.img`
@@ -77,11 +88,11 @@ export const StudioImage = styled.img`
 `;
 
 export const MovieTitle = styled.div`
+    width: 100%;
     overflow-wrap: break-word;
     font-style: bold;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    width: 100%;
+    font-size: calc(var(--header-huge) / 1.15);
+    line-height: calc(var(--header-huge) / 1.15);
     text-transform: uppercase;
     font-family: var(--fancy-font);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-shadow-color);
@@ -96,9 +107,10 @@ export const ReleaseInfoWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: start;
-    color: var(--primary-shadow-color);
     width: 100%;
-    gap: 1rem;
+    gap: var(--text-segment-gap);
+    margin: var(--text-segment-gap) 0rem;
+    color: var(--primary-shadow-color);
 
     @media (max-width: 480px) {
         gap: 0rem;
@@ -140,7 +152,8 @@ export const StyledIconButton = styled(IconButton)`
     height: 5.5rem;
 
     &.MuiIconButton-root {
-        background: var(--primary-shadow-color);
+        background: #70654ad9;
+        box-shadow: 0rem 0rem 0.65rem 0.1rem var(--primary-black-color);
 
         &:hover {
             background: var(--primary-shadow-color);
@@ -150,6 +163,10 @@ export const StyledIconButton = styled(IconButton)`
     @media (max-width: 480px) {
         width: 5.5rem;
         height: 5.5rem;
+
+        &.MuiIconButton-root {
+            box-shadow: 0rem 0rem 0.75rem 0.15rem var(--primary-black-color);
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -179,7 +196,7 @@ export const StyledArrowButton = styled(IconButton)`
 export const InfoWrapper = styled.div`
     width: 100%;
     padding-right: 27%;
-    margin-top: 1rem;
+    margin-top: var(--text-segment-gap);
 
     @media (max-width: 1024px) {
         margin: 0rem 0rem var(--text-segment-gap) 0rem;
@@ -233,12 +250,10 @@ export const ReleaseInfo = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 1rem;
-    margin: 3rem 0rem;
+    padding: var(--text-segment-gap);
 
     @media (max-width: 480px) {
         padding: 0rem;
-        margin: 0rem;
         width: fit-content;
         flex-shrink: 0;
     }
@@ -247,13 +262,13 @@ export const ReleaseInfo = styled.div`
 export const DirectorInfoWrapper = styled.div`
     width: 100%;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: var(--header-medium);
     font-family: var(--fancy-font);
+    padding: calc(2 * var(--text-segment-gap)) 0rem;
 
     @media (max-width: 1024px) {
         padding: calc(2 * var(--text-segment-gap)) 0rem var(--text-segment-gap)
             0rem;
-        font-size: var(--header-medium);
         line-height: var(--header-medium-line-height);
     }
 `;
@@ -270,9 +285,10 @@ export const PlayInstructionWrapper = styled.div`
     align-items: center;
     justify-content: start;
     position: absolute;
-    left: 75%;
+    right: 5rem;
     top: 15%;
-    width: 25%;
+    width: 17.5rem;
+    margin-right: var(--text-segment-gap);
 
     @media (max-width: 1024px) {
         left: 50%;
@@ -284,9 +300,10 @@ export const PlayInstructionWrapper = styled.div`
 
 export const Line = styled.div`
     width: 5rem;
-    background: var(--primary-white-color);
-    height: 0.05rem;
-    margin-right: 1rem;
+    background: var(--primary-gold-color);
+    height: 1px;
+    z-index: 10;
+    margin-right: var(--text-segment-gap);
 
     @media (max-width: 1024px) {
         display: none;

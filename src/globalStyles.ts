@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .quoteWrapper {
-        margin: 1rem 0rem 0rem 3rem;
+        margin: 1rem 0rem 0rem var(--page-padding);
         font-style: italic;
         font-size: var(--header-small);
     }
@@ -42,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
     sub {
         vertical-align: baseline;
         position: relative;
-        top: -0.35rem;
+        top: -0.5rem;
         font-size: calc(var(--body-text) * 0.75);
         font-style: normal;
         font-family: var(--regular-font);
@@ -54,10 +54,6 @@ const GlobalStyles = createGlobalStyle`
 
     sup.darkSup {
         color: var(--primary-gold-color);
-    }
-
-    sub {
-        top: 0.4rem;
     }
 
     .emptyLine {
@@ -95,7 +91,7 @@ const GlobalStyles = createGlobalStyle`
         }
 
         .quoteWrapper {
-            margin: 1.3rem 0rem 1rem 1.5rem;
+            margin: 1.3rem 0rem 1rem var(--page-padding);
             font-size: 1.45rem;
         }
 

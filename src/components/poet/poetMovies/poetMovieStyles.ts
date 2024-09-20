@@ -33,7 +33,7 @@ export const MainContainer = styled.div`
     background: var(--primary-white-color);
     color: var(--regular-white-color);
     position: relative;
-    padding: 3rem 0rem 3rem 0rem;
+    padding: calc(var(--page-padding) / 1.5) 0rem;
     background-image: url(${'/customAssets/noise.png'});
 
     &:before {
@@ -45,7 +45,7 @@ export const MainContainer = styled.div`
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
-        top: -5.99rem;
+        top: -5.98rem;
         box-sizing: border-box;
     }
 
@@ -60,14 +60,13 @@ export const MainContainer = styled.div`
 `;
 
 export const MovieWrapper = styled.div`
-    padding: 0rem 3rem 0rem 3rem;
+    padding: 0rem var(--page-padding);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1rem;
+    gap: calc(2 * var(--square-card-gap));
 
     @media (max-width: 480px) {
-        gap: calc(2 * var(--square-card-gap));
         margin: 0rem var(--page-padding);
         padding: 0rem;
         justify-content: start;
@@ -108,14 +107,15 @@ export const Image = styled.img`
 `;
 
 export const StyledIconButton = styled(IconButton)`
-    width: 3rem;
-    height: 3rem;
     bottom: 1rem;
-    right: -2.6rem;
+    right: -4rem;
     transform: translateX(-50%);
     box-shadow: 0rem 0rem 0.6rem var(--regular-black-color);
+    background-color: red;
 
     &.MuiIconButton-root {
+        width: 4rem;
+        height: 4rem;
         position: absolute;
         background: var(--primary-black-color);
 
@@ -126,6 +126,13 @@ export const StyledIconButton = styled(IconButton)`
 
     @media (max-width: 480px) {
         right: -3rem;
+
+        &.MuiIconButton-root {
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            background: var(--primary-black-color);
+        }
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -141,7 +148,14 @@ export const StyledExpand = styled(ChevronRight)`
     animation: ${bounce} 2s infinite;
 
     &.MuiSvgIcon-root {
-        height: 2rem;
-        width: 2rem;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    @media (max-width: 480px) {
+        &.MuiSvgIcon-root {
+            height: 2rem;
+            width: 2rem;
+        }
     }
 `;

@@ -23,7 +23,6 @@ export const CuboidFace = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     box-shadow: 0 1px 3px 0 var(--secondary-white-color),
         0 1px 2px -1px var(--secondary-white-color),
         0rem 0rem 2rem 0.5rem inset var(--regular-black-color);
@@ -37,17 +36,15 @@ export const BooksContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 4rem;
+    gap: calc(2 * var(--square-card-gap));
     position: relative;
     height: var(--small-card-height);
-    padding-bottom: 1rem;
+    padding-bottom: var(--text-segment-gap);
     box-sizing: border-box;
     cursor: pointer;
     position: relative;
 
     @media (max-width: 480px) {
-        gap: calc(2 * var(--square-card-gap));
-        padding-bottom: var(--text-segment-gap);
         margin-top: var(--text-segment-gap);
     }
 `;
@@ -57,8 +54,8 @@ export const BookWrapper = styled.div`
         1px -2px 0.3rem -1px var(--secondary-white-color),
         0px 0.3rem 0.3rem var(--regular-black-color);
     border-radius: calc(var(--small-radius) / 1.5);
-    height: 13rem;
-    width: 9rem;
+    height: calc(var(--small-card-height) / 1.25);
+    width: calc(var(--small-card-width) / 1.025);
     position: relative;
     overflow: hidden;
 
