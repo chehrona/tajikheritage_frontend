@@ -45,13 +45,13 @@ const Flags: React.FC = () => {
                 iconTitle &&
                 (iconTitle === 'us' || iconTitle === 'ru' || iconTitle === 'tj')
             ) {
-                setShowLangMenu(false);
-
                 const timer = setTimeout(() => {
                     setIsLoading(false);
 
                     setLang(iconTitle);
                 }, 400);
+
+                setShowLangMenu(false);
 
                 return () => clearTimeout(timer);
             }
