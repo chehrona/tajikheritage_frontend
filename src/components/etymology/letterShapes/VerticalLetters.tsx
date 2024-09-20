@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
-import letters from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Types
 import { LetterProps } from './types/componentTypes';
@@ -18,8 +18,8 @@ const VerticalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const lettersToRender = isMobile
-        ? letters.ETYM_PAGE_LETTERS_VERTICALS.m[lang]
-        : letters.ETYM_PAGE_LETTERS_VERTICALS.d[lang];
+        ? staticText.ETYM_PAGE_LETTERS_VERTICALS.m[lang]
+        : staticText.ETYM_PAGE_LETTERS_VERTICALS.d[lang];
 
     return (
         <>

@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
-import letters from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Styled components
 import { InstructionWrapper } from '../letterStack/letterStackStyles';
@@ -15,8 +15,8 @@ const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
     const lettersToRender = isMobile
-        ? letters.ETYM_PAGE_LETTERS_INSTRUCTION.m[lang]
-        : letters.ETYM_PAGE_LETTERS_INSTRUCTION.d[lang];
+        ? staticText.ETYM_PAGE_LETTERS_INSTRUCTION.m[lang]
+        : staticText.ETYM_PAGE_LETTERS_INSTRUCTION.d[lang];
 
     return (
         <>

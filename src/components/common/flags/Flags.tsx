@@ -5,7 +5,7 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
 
 // Helper
-import { langNames } from './langNames';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { ClickAwayListener } from '@mui/material';
@@ -67,6 +67,16 @@ const Flags: React.FC = () => {
         localStorage.setItem('lang', lang);
     }, [lang]);
 
+    useEffect(() => {
+        if (showLangMenu) {
+            const handleMenu = setTimeout(() => {
+                setShowLangMenu(false);
+            }, 5000);
+
+            return () => clearTimeout(handleMenu);
+        }
+    }, [showLangMenu]);
+
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <FlagWrapper $show={!noShow}>
@@ -74,7 +84,7 @@ const Flags: React.FC = () => {
                     {lang !== 'us' && (
                         <StyledIconButton data="us" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['us']}
+                                title={staticText.LANGS['us']}
                                 placement="right"
                                 arrow
                             >
@@ -87,7 +97,7 @@ const Flags: React.FC = () => {
                     {lang !== 'tj' && (
                         <StyledIconButton data="tj" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['tj']}
+                                title={staticText.LANGS['tj']}
                                 placement="right"
                                 arrow
                             >
@@ -100,7 +110,7 @@ const Flags: React.FC = () => {
                     {lang !== 'ru' && (
                         <StyledIconButton data="ru" onClick={changeLang}>
                             <StyledTooltip
-                                title={langNames['ru']}
+                                title={staticText.LANGS['ru']}
                                 placement="right"
                                 arrow
                             >
@@ -113,7 +123,7 @@ const Flags: React.FC = () => {
                 </FlagDropdown>
                 <StyledIconButton onMouseEnter={showLangOptions}>
                     <StyledTooltip
-                        title={langNames[lang]}
+                        title={staticText.LANGS[lang]}
                         placement="right"
                         arrow
                     >

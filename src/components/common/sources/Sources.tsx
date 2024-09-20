@@ -8,7 +8,7 @@ import { Source } from './types/componentTypes';
 import { TitleHeaderProps } from './types/componentTypes';
 
 // Helper
-import titleHeaderJson from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/staticTexts.json';
 
 // Material UI
 import { ClickAwayListener } from '@mui/material';
@@ -33,7 +33,6 @@ import {
 
 const Sources: React.FC<{ data: Source[] }> = ({ data }) => {
     const { lang } = useGlobalData();
-    const titleHeader: TitleHeaderProps = titleHeaderJson;
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
     function handleClickAway() {
@@ -51,7 +50,7 @@ const Sources: React.FC<{ data: Source[] }> = ({ data }) => {
                     <RefContainer $open={isDropdownOpen}>
                         <RefWrapper $open={isDropdownOpen}>
                             <SubTitle>
-                                {titleHeader.SOURCES_HEADER[lang]}
+                                {staticText.SOURCES_HEADER[lang]}
                             </SubTitle>
                             {data.map((source, i) => {
                                 return (
