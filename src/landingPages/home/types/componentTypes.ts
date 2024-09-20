@@ -20,18 +20,20 @@ type Description = {
 };
 
 export type OuterBall = {
-    size: number;
-    top?: { d: string; t: string };
-    right: { d: string; t: string };
-    bottom?: { d: string; t: string };
+    [key in string]: {
+        top?: { d: string; t: string };
+        right: { d: string; t: string };
+        bottom?: { d: string; t: string };
+    };
 };
 
 export type InnerBall = {
-    size: number;
-    top?: { d: string; t: string };
-    right: { d: string; t: string };
-    bottom?: { d: string; t: string };
-    img: string;
+    [key in string]: {
+        top?: { d: string; t: string };
+        right: { d: string; t: string };
+        bottom?: { d: string; t: string };
+        img: string;
+    };
 };
 
 type StepDetails = {
@@ -42,8 +44,8 @@ type StepDetails = {
     desc: {
         [key in Langs]: Description;
     };
-    outer: OuterBall[];
-    inner: InnerBall[];
+    outer: OuterBall;
+    inner: InnerBall;
 };
 
 export type HomeStepperType = StepDetails[];

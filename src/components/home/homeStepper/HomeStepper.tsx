@@ -84,10 +84,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                         >
                             <IndicatorStep>{step?.num}</IndicatorStep>
                             <TitleWrapper>
-                                <LargeTitle
-                                    $fontSize={step.title[lang].font}
-                                    $margin={step.title[lang]?.margin}
-                                >
+                                <LargeTitle $fontSize={step.title[lang].font}>
                                     {step?.title[lang].text}
                                 </LargeTitle>
                                 <Desc>
@@ -115,7 +112,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                     );
                 })}
                 <ImageSemiCircle
-                    src={stepInfo[visibleStepIndex]?.inner[2].img}
+                    src={stepInfo[visibleStepIndex]?.inner.big.img}
                 />
             </StepperContainer>
             <OtherSteps $bottom={true}>

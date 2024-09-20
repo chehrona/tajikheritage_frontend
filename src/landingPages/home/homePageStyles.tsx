@@ -80,3 +80,10 @@ export const Circle = styled.div`
     border-radius: 50%;
     border: 1px solid var(--primary-gold-color);
 `;
+
+export const ImageBallWrapper = styled.div`
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0rem;
+`;

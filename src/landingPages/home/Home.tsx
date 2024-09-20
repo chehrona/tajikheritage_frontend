@@ -11,7 +11,9 @@ import { addVisit } from '../../services/request';
 
 // Components
 import HomeStepper from '../../components/home/homeStepper/HomeStepper';
-import ImageBall from '../../components/home/imageBall/ImageBall';
+import BigCircle from '../../components/home/imageBalls/BigCircle';
+import MediumCircle from '../../components/home/imageBalls/MediumCircle';
+import SmallCircle from '../../components/home/imageBalls/SmallCircle';
 
 // Types
 import { TitleType, HomeStepperType } from './types/componentTypes';
@@ -26,6 +28,7 @@ import {
     Line,
     Arrow,
     Circle,
+    ImageBallWrapper,
 } from './homePageStyles';
 
 const Home: React.FC = () => {
@@ -122,12 +125,23 @@ const Home: React.FC = () => {
                 />
                 {stepInfo?.map((entry, i) => {
                     return (
-                        <ImageBall
-                            key={i}
-                            entry={entry}
-                            index={i}
-                            opacities={opacities}
-                        />
+                        <ImageBallWrapper key={`${title[lang]}_${i}`}>
+                            <BigCircle
+                                opacities={opacities}
+                                index={i}
+                                entry={entry}
+                            />
+                            <MediumCircle
+                                opacities={opacities}
+                                index={i}
+                                entry={entry}
+                            />
+                            <SmallCircle
+                                opacities={opacities}
+                                index={i}
+                                entry={entry}
+                            />
+                        </ImageBallWrapper>
                     );
                 })}
             </InnerContainer>

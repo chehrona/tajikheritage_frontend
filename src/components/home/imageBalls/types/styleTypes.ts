@@ -1,14 +1,14 @@
-export type BorderProps = {
+import { HTMLAttributes } from 'react';
+
+export type BorderProps = HTMLAttributes<HTMLDivElement> & {
     $opacity: number;
-    $size: number;
     $top?: { d: string; t: string };
-    $right: { d: string; t: string };
     $bottom?: { d: string; t: string };
+    $right: { d: string; t: string };
 };
 
 export type HomeImageProps = {
     $opacity: number;
-    $size: number;
     $top?: { d: string; t: string };
     $right: { d: string; t: string };
     $bottom?: { d: string; t: string };

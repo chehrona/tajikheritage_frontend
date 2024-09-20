@@ -6,8 +6,8 @@ import {
 export type ImageBallProps = {
     index: number;
     entry: {
-        outer: OuterBall[];
-        inner: InnerBall[];
+        outer: OuterBall;
+        inner: InnerBall;
     };
     opacities: number[];
 };

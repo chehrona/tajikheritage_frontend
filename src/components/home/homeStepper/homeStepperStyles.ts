@@ -1,8 +1,5 @@
 import styled, { css } from 'styled-components';
 
-// Types
-import { LargeTitleProps } from './types/styleTypes';
-
 export const MainContainer = styled.div`
     width: 100%;
     overflow: hidden;
@@ -131,7 +128,7 @@ export const TitleWrapper = styled.div`
     }
 `;
 
-export const LargeTitle = styled.div<LargeTitleProps>`
+export const LargeTitle = styled.div<{ $fontSize: number }>`
     font-weight: bold;
     color: #ffffffd4;
     width: 45rem;
@@ -155,10 +152,6 @@ export const LargeTitle = styled.div<LargeTitleProps>`
     @media (max-width: 480px) {
         width: 100%;
         text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        margin-top: ${({ $margin }) => $margin && `${$margin.t}%`};
     }
 `;
 
