@@ -69,7 +69,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
                     ? infoArr?.map((entry) => {
                           const imgSrc = entry?.img
                               ? `${process.env.REACT_APP_BASE_URL}${entry.img}`
-                              : `${process.env.PUBLIC_URL}/loader.png`;
+                              : `${process.env.PUBLIC_URL}/customAssets/loader.png`;
 
                           const overlaySrc = entry?.overlay
                               ? `${process.env.REACT_APP_BASE_URL}${entry.overlay}`

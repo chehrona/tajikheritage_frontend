@@ -27,7 +27,7 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
                   background-size: cover;
               `
             : css`
-                  background-image: url('/loader.png');
+                  background-image: url('/customAssets/loader.png');
               `}
 
     &::after {

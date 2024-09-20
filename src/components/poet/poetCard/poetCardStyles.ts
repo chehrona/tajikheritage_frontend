@@ -50,7 +50,8 @@ export const PoetImage = styled.img`
     width: 13.5rem;
     margin: 0.3rem;
     box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
-    background: var(--primary-black-color) url('/loader.png') center no-repeat;
+    background: var(--primary-black-color) url('/customAssets/loader.png')
+        center no-repeat;
     background-size: 50% auto;
 
     // Done

@@ -76,7 +76,8 @@ export const Book = styled.img<{ $grey?: boolean }>`
     align-items: center;
     border-radius: calc(var(--small-radius) / 1.5);
     object-fit: cover;
-    background: var(--primary-black-color) url('/loader.png') center no-repeat;
+    background: var(--primary-black-color) url('/customAssets/loader.png')
+        center no-repeat;
     background-size: 50% auto;
     filter: ${({ $grey }) => $grey && 'grayscale(0.5)'};
     opacity: ${({ $grey }) => $grey && 0.5};

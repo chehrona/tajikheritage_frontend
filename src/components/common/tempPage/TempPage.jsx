@@ -16,7 +16,7 @@ function TempPage() {
     return (
         <TempPageContainer>
             <TempTitle>{staticText.TEMP_PAGE_INFO[lang]}</TempTitle>
-            <TempImg src={'/loader.png'} />
+            <TempImg src={'/customAssets/loader.png'} />
         </TempPageContainer>
     );
 }
