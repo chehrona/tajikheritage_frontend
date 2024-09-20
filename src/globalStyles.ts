@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .quoteSymbol {
-        background-image: url('/quotation.png');
+        background-image: url('/customAssets/quotation.png');
         background-size: 100%;
         background-repeat: no-repeat;
         height: 7rem;
