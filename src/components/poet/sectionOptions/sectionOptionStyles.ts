@@ -27,19 +27,19 @@ export const MainContainer = styled.div`
 export const SegmentContainer = styled.div`
     font-size: var(--header-normal);
     padding: 0rem var(--page-padding);
-    width: 100%;
+    width: 50%;
     z-index: 10;
     position: absolute;
     top: 5rem;
 
     @media (max-width: 480px) {
         top: -2.25rem;
+        width: 100%;
     }
 `;
 
 export const SectionTitle = styled.div`
     color: var(--secondary-white-color);
-    line-height: 3rem;
 
     @media (max-width: 480px) {
         line-height: var(--header-large);
@@ -65,6 +65,7 @@ export const TitleSpan = styled.span`
 
         &:hover {
             text-shadow: 0rem 0.35rem 1.5rem var(--secondary-white-color);
+            font-size: var(--header-normal);
         }
     }
 `;

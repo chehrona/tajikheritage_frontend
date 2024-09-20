@@ -183,13 +183,12 @@ export const PoetName = styled.div<{ $color?: boolean }>`
         line-height: calc(1.4 * var(--header-large));
         text-align: left;
         text-shadow: 0rem 0rem 2rem black;
-        -webkit-text-stroke-width: 0.22rem;
 
         ${({ $color }) =>
             $color
                 ? css`
-                      -webkit-text-stroke-width: 0.2rem;
                       margin: 0rem;
+                      -webkit-text-stroke-width: 0.15rem;
                   `
                 : css`
                       -webkit-text-stroke-color: transparent;
