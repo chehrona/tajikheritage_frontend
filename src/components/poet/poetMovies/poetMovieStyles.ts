@@ -111,7 +111,6 @@ export const StyledIconButton = styled(IconButton)`
     right: -4rem;
     transform: translateX(-50%);
     box-shadow: 0rem 0rem 0.6rem var(--regular-black-color);
-    background-color: red;
 
     &.MuiIconButton-root {
         width: 4rem;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-    background-color: red;
     height: 20rem;
 
     @media (max-width: 480px) {
@@ -35,7 +34,6 @@ export const SegmentContainer = styled.div`
 
     @media (max-width: 480px) {
         top: -2.25rem;
-        background-color: green;
     }
 `;
 

@@ -7,6 +7,7 @@ export const InnerBoxContainer = styled.div<{ $center: boolean }>`
     flex-wrap: wrap;
     justify-content: ${({ $center }) =>
         $center && $center ? 'space-between' : 'flex-start'};
+    min-height: var(--page-height);
 
     @media (max-width: 480px) {
         padding: 0rem;
