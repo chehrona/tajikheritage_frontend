@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../../hooks/useGlobalData';
@@ -17,8 +17,6 @@ const MenuButton: React.FC<MenuProps> = ({
     const { lang } = useGlobalData();
     const [triggerFadeIn, setTriggerFadeIn] = useState<boolean>(false);
     const [triggerFadeOut, setTriggerFadeOut] = useState<boolean>(false);
-    const [displayedMenuState, setDisplayedMenuState] =
-        useState<boolean>(isMenuShown);
 
     const handleMenuOpen = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
@@ -30,8 +28,6 @@ const MenuButton: React.FC<MenuProps> = ({
 
             setTimeout(() => {
                 setTriggerFadeOut(false);
-                setDisplayedMenuState((prevState) => !prevState);
-
                 setTriggerFadeIn(true);
 
                 setTimeout(() => setTriggerFadeIn(false), 150);
@@ -42,9 +38,9 @@ const MenuButton: React.FC<MenuProps> = ({
 
     // Button text logic
     const getButtonText = () => {
-        if (lang === 'us') return displayedMenuState ? 'CLOSE' : 'MENU';
-        if (lang === 'ru') return displayedMenuState ? 'ЗАКРЫТЬ' : 'МЕНЮ';
-        return displayedMenuState ? 'ПӮШЕД' : 'МЕНЮ';
+        if (lang === 'us') return isMenuShown ? 'CLOSE' : 'MENU';
+        if (lang === 'ru') return isMenuShown ? 'ЗАКРЫТЬ' : 'МЕНЮ';
+        return isMenuShown ? 'ПӮШЕД' : 'МЕНЮ';
     };
 
     return (
