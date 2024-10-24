@@ -79,6 +79,11 @@ export const Slides = styled.div`
 
 export const SlideImg = styled.img<{ $show?: boolean }>`
     width: ${squareSizeDesktop}rem;
+    min-width: ${squareSizeDesktop}rem;
+    min-height: ${squareSizeDesktop}rem;
+    background: var(--primary-black-color) url('/customAssets/loader.png')
+        center no-repeat;
+    background-size: 50% auto;
     display: block;
     filter: grayscale(1)
         ${({ $show }) => ($show ? 'brightness(100%)' : 'brightness(50%)')};

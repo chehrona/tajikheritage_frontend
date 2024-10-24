@@ -28,13 +28,17 @@ export const SegmentContainer = styled.div`
     font-size: var(--header-normal);
     padding: 0rem var(--page-padding);
     width: 50%;
+    gap: 1rem;
     z-index: 10;
     position: absolute;
     top: 5rem;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: 480px) {
-        top: -2.25rem;
+        top: -2.45rem;
         width: 100%;
+        gap: 0rem;
     }
 `;
 
@@ -53,11 +57,10 @@ export const SectionTitle = styled.div`
 export const TitleSpan = styled.span`
     display: block;
     cursor: pointer;
-    transition: font-size 0.25s ease-in-out;
+    transition: text-shadow 0.25s ease-in-out;
 
     &:hover {
-        text-shadow: 0.1rem 1rem 2rem var(--secondary-white-color);
-        font-size: calc(1.15 * var(--header-normal));
+        text-shadow: 0rem 0rem 1.5rem var(--secondary-white-color);
     }
 
     @media (max-width: 480px) {
@@ -65,7 +68,6 @@ export const TitleSpan = styled.span`
 
         &:hover {
             text-shadow: 0rem 0.35rem 1.5rem var(--secondary-white-color);
-            font-size: var(--header-normal);
         }
     }
 `;

@@ -9,9 +9,6 @@ import { PoetIntroProps } from './types/componentTypes';
 // Styled components
 import {
     MainContainer,
-    SectionTitle,
-    TitleSpan,
-    SegmentContainer,
     FadedImage,
     PoetNameContainer,
     PoetName,

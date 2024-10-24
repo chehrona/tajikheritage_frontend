@@ -55,6 +55,10 @@ const Routes: React.FC = () => {
                 element={<MiddlePage page={'customs/all_traditions'} />}
             />
             <Route
+                path="/customs/calendars"
+                element={<MiddlePage page={'customs/all_calendars'} />}
+            />
+            <Route
                 path="/language/proverbs"
                 element={<MiddlePage page={'language/all_proverbs'} />}
             />

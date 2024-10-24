@@ -13,15 +13,3 @@ export const PageTitle = styled.div`
         font-size: 2.25rem;
     }
 `;
-
-export const CardsContainer = styled.div<{ $center: boolean }>`
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--square-card-gap);
-    justify-content: ${({ $center }) =>
-        $center && $center ? 'space-between' : 'flex-start'};
-
-    @media (max-width: 480px) {
-        justify-content: center;
-    }
-`;

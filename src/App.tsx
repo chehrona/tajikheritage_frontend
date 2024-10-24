@@ -73,13 +73,13 @@ function App(): React.JSX.Element {
     }, []);
 
     const handleCopy = async () => {
-        try {
-            const textToCopy =
-                'The text is copyright protected by thetajikheritage.com.';
-            await navigator.clipboard.writeText(textToCopy);
-        } catch (error) {
-            console.error('Unable to copy text to clipboard:', error);
-        }
+        // try {
+        //     const textToCopy =
+        //         'The text is copyright protected by thetajikheritage.com.';
+        //     await navigator.clipboard.writeText(textToCopy);
+        // } catch (error) {
+        //     console.error('Unable to copy text to clipboard:', error);
+        // }
     };
 
     const handleScroll = () => {

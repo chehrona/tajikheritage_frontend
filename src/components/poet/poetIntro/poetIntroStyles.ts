@@ -104,57 +104,6 @@ export const FadedImage = styled.img`
     }
 `;
 
-export const SegmentContainer = styled.div`
-    margin: 5rem;
-    font-size: 1.5rem;
-    width: 100%;
-    z-index: 2;
-    position: relative;
-
-    @media (max-width: 480px) {
-        display: none;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        margin: 2.5rem 3rem 3rem 3rem;
-        min-width: 12rem;
-    }
-`;
-
-export const SectionTitle = styled.div`
-    line-height: 3rem;
-    color: var(--secondary-white-color);
-    text-decoration: none;
-    display: block;
-    overflow: hidden;
-`;
-
-export const TitleSpan = styled.span<{ $delay: number }>`
-    padding-left: 0.3rem;
-    display: block;
-    opacity: 0;
-    transform: translateY(-100%);
-    animation: ${slideUp} 1s ease-in-out forwards;
-    animation-delay: ${({ $delay }) => ($delay ? `${0.03 * $delay}s` : '0s')};
-    transition: font-size 0.25s ease-in-out;
-
-    &:hover {
-        text-shadow: 0.1rem 1rem 2rem var(--secondary-white-color);
-        font-size: 1.6rem;
-        cursor: pointer;
-        transition: font-size 0.25s ease-in-out;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        text-shadow: 0.1rem 1rem 2rem var(--secondary-white-color);
-        font-size: 1.75rem;
-
-        &:hover {
-            font-size: 1.75rem;
-        }
-    }
-`;
-
 export const PoetName = styled.div<{ $color?: boolean }>`
     opacity: 0;
     font-size: 8rem;

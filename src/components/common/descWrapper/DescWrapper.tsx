@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+// Hooks
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Components
 import { Tooltip } from '../tooltip/Tooltip';
@@ -17,7 +20,12 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
     data,
     TextWrapper = EmptyDiv,
 }) => {
+    const { lang } = useGlobalData();
     const [expanded, setExpanded] = useState<boolean>(false);
+
+    useEffect(() => {
+        setExpanded(false);
+    }, [lang]);
 
     const renderContent = () => {
         return Object.keys(data).map((key, i) => {

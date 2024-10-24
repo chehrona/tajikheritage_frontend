@@ -34,14 +34,14 @@ const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
                         $left={left}
                         $open={open}
                         $delay={delay}
-                        $empty={char.startsWith('/storage')}
+                        $empty={char.startsWith('/filler')}
                         key={`${[lang]}_${char}_${index}`}
                         onClick={() => handleClick(char)}
                     >
-                        {char.startsWith('/storage') ? (
+                        {char.startsWith('/filler') ? (
                             <img
-                                alt="filler"
-                                src={process.env.REACT_APP_BASE_URL + char}
+                                alt="flower"
+                                src={process.env.PUBLIC_URL + char.substring(7)}
                             />
                         ) : (
                             <span>{char}</span>

@@ -104,6 +104,8 @@ export const Image = styled.img`
     width: 100%;
     height: 100%;
     border-radius: var(--small-radius);
+    background: url('/customAssets/loader.png') center no-repeat;
+    background-size: 50% auto;
 `;
 
 export const StyledIconButton = styled(IconButton)`

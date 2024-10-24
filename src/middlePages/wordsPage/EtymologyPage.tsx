@@ -22,7 +22,8 @@ import { ErrorTypes } from '../../appTypes';
 import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
-import { CardsContainer, PageTitle } from './etymologyStyles';
+import { PageTitle } from './etymologyStyles';
+import { SectionBoxContainer } from '../../landingPages/landingPage/landingPageStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const location = useLocation();
@@ -80,11 +81,11 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
                         setIsDropdownOpen={setIsDropdownOpen}
                     />
                     {!isDropdownOpen && (
-                        <CardsContainer $center={items.length % 3 === 0}>
+                        <SectionBoxContainer $center={items.length % 3 === 0}>
                             {items.map((item, i) => {
                                 return <SquareCard key={item.id} data={item} />;
                             })}
-                        </CardsContainer>
+                        </SectionBoxContainer>
                     )}
                 </LandingPageFirstContainer>
             ) : (
