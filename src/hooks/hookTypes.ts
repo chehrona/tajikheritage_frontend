@@ -10,8 +10,6 @@ export type ContextTypes = {
     setTitle: React.Dispatch<React.SetStateAction<TitleProps>>;
     lang: Langs;
     setLang: React.Dispatch<React.SetStateAction<Langs>>;
-    showAdmin: boolean;
-    setShowAdmin: React.Dispatch<React.SetStateAction<boolean>>;
     isLoading: boolean;
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };

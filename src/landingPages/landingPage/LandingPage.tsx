@@ -9,6 +9,7 @@ import { useSetHeader } from '../../hooks/useSetHeader';
 import { requestPage } from '../../services/request';
 
 // Components
+import AppLayout from '../../AppLayout';
 import SectionCard from '../../components/common/sectionCard/SectionCard';
 import Loader from '../../components/common/loader/Loader';
 import Alert from '../../components/common/alert/Alert';
@@ -21,7 +22,7 @@ import { SectionDetails } from '../../components/common/sectionCard/types/compon
 import { SectionBoxContainer } from './landingPageStyles';
 
 const LandingPage: React.FC<{ page: string }> = ({ page }) => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { lang, setIsLoading } = useGlobalData();
     const [sections, setSections] = useState<SectionDetails[]>([]);
     const [error, setError] = useState('');
@@ -55,25 +56,31 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
+
+    console.log(sections, 'sections');
 
     return (
         <>
-            {sections.length > 0 ? (
-                <LandingPageFirstContainer>
-                    <SectionBoxContainer $center={sections.length % 3 === 0}>
-                        {sections?.map((section, i) => {
-                            return (
-                                <SectionCard
-                                    key={section.cardTitle[lang]}
-                                    section={section}
-                                    link={section?.link}
-                                />
-                            );
-                        })}
-                    </SectionBoxContainer>
-                </LandingPageFirstContainer>
-            ) : null}
+            <AppLayout>
+                {sections.length > 0 ? (
+                    <LandingPageFirstContainer>
+                        <SectionBoxContainer
+                            $center={sections.length % 3 === 0}
+                        >
+                            {sections?.map((section, i) => {
+                                return (
+                                    <SectionCard
+                                        key={section.cardTitle[lang]}
+                                        section={section}
+                                        link={section?.link}
+                                    />
+                                );
+                            })}
+                        </SectionBoxContainer>
+                    </LandingPageFirstContainer>
+                ) : null}
+            </AppLayout>
         </>
     );
 };

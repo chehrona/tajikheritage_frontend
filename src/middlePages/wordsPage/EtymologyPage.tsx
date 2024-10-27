@@ -12,13 +12,14 @@ import staticText from '../../miscellaneous/staticTexts.json';
 import { requestMiddlePage } from '../../services/request';
 
 // Components
+import AppLayout from '../../AppLayout';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
 
 // Types
-import { ErrorTypes } from '../../appTypes';
+import { ErrorResponse } from '../../appTypes';
 import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
@@ -41,15 +42,12 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
             setItems(data);
             setAllItems(data);
         } catch (error: unknown) {
-            const customError = error as ErrorTypes;
+            const customError = error as ErrorResponse;
 
-            if (customError.response) {
-                if (
-                    customError.response.status === 404 ||
-                    customError.response.status === 500
-                ) {
-                    setError(customError.response.data.message);
-                }
+            if (customError.status === 404) {
+                setError(404);
+            } else if (customError.status === 500) {
+                setError(500);
             }
         } finally {
             const timer = setTimeout(() => {
@@ -69,7 +67,7 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     }, [location.pathname]);
 
     return (
-        <>
+        <AppLayout>
             {items.length > 0 ? (
                 <LandingPageFirstContainer>
                     <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
@@ -91,7 +89,7 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
             ) : (
                 error !== undefined && <Alert message={error} type={'error'} />
             )}
-        </>
+        </AppLayout>
     );
 };
 

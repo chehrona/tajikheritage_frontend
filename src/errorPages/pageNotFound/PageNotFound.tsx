@@ -7,6 +7,9 @@ import { useSetHeader } from '../../hooks/useSetHeader';
 // Helper
 import alertMessages from '../../miscellaneous/alertMessages.json';
 
+// Components
+import AppLayout from '../../AppLayout';
+
 // Styled components
 import {
     MainContainer,
@@ -21,14 +24,16 @@ const PageNotFound: React.FC = () => {
     useSetHeader('reset');
 
     return (
-        <MainContainer>
-            <CodeWrapper>
-                <Code>404</Code>
-                <ErrorMessage>
-                    {alertMessages.PAGE_NOT_FOUND[lang]}
-                </ErrorMessage>
-            </CodeWrapper>
-        </MainContainer>
+        <AppLayout>
+            <MainContainer>
+                <CodeWrapper>
+                    <Code>404</Code>
+                    <ErrorMessage>
+                        {alertMessages.PAGE_NOT_FOUND[lang]}
+                    </ErrorMessage>
+                </CodeWrapper>
+            </MainContainer>
+        </AppLayout>
     );
 };
 

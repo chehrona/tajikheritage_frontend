@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Services
 import { requestMiddlePage } from '../../services/request';
 
 // Components
+import AppLayout from '../../AppLayout';
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import Alert from '../../components/common/alert/Alert';
@@ -22,7 +23,7 @@ import { CardType } from './types/componentTypes';
 import { InnerBoxContainer } from './middlePageStyles';
 
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
@@ -59,28 +60,31 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
 
     return (
         <>
-            {items.length > 0 ? (
-                <LandingPageFirstContainer>
-                    <SearchBar
-                        items={items}
-                        setItems={setItems}
-                        allItems={allItems}
-                    />
-                    <InnerBoxContainer $center={items.length % 3 === 0}>
-                        {items.map((item, i) =>
-                            page.includes('poets') ? (
-                                <PoetCard key={item.id} poet={item} />
-                            ) : (
-                                <SquareCard key={item.id} data={item} />
-                            ),
-                        )}
-                    </InnerBoxContainer>
-                </LandingPageFirstContainer>
-            ) : null}
+            <AppLayout>
+                {items.length > 0 ? (
+                    <LandingPageFirstContainer>
+                        <SearchBar
+                            items={items}
+                            setItems={setItems}
+                            allItems={allItems}
+                        />
+                        <InnerBoxContainer $center={items.length % 3 === 0}>
+                            {items.map((item, i) =>
+                                page.includes('poets') ? (
+                                    <PoetCard key={item.id} poet={item} />
+                                ) : (
+                                    <SquareCard key={item.id} data={item} />
+                                ),
+                            )}
+                        </InnerBoxContainer>
+                        <Outlet />
+                    </LandingPageFirstContainer>
+                ) : null}
+            </AppLayout>
         </>
     );
 };

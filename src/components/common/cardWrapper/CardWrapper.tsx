@@ -14,6 +14,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
     setError,
 }) => {
     const handleNoContent = () => {
+        console.log('I am clicked');
         if (disabled && setError) {
             setError(true);
 
@@ -22,6 +23,8 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
             }, 3000);
         }
     };
+
+    console.log(page, 'page');
 
     return (
         <StyledLink

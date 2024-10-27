@@ -24,10 +24,11 @@ import Sources from '../../components/common/sources/Sources';
 import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
+import AppLayout from '../../AppLayout';
 
 const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { lang, setIsLoading } = useGlobalData();
     const [poet, setPoet] = useState<PoetData>();
     const [error, setError] = useState({});
@@ -66,7 +67,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
 
     const scrollToView = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.preventDefault();
@@ -89,7 +90,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     return (
-        <>
+        <AppLayout>
             {poet ? (
                 <PageFirstContainer>
                     <PageInnerContainer height={40}>
@@ -103,7 +104,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
                     </PageInnerContainer>
                 </PageFirstContainer>
             ) : null}
-        </>
+        </AppLayout>
     );
 };
 

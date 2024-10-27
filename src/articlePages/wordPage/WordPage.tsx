@@ -11,9 +11,10 @@ import { requestArticleInfo } from '../../services/request';
 
 // Types
 import { WordObj } from './types/componentTypes';
-import { ErrorTypes } from '../../appTypes';
+import { ErrorResponse } from '../../appTypes';
 
 // Components
+import AppLayout from '../../AppLayout';
 import Sources from '../../components/common/sources/Sources';
 import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
@@ -23,13 +24,14 @@ import ArticlePageFirstContainer from '../../components/common/pageWrapper/Artic
 
 // Styled components
 import { WordTitle, Transcript, PronunciationWrapper } from './wordPageStyles';
+import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 
 const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const location = useLocation();
     const { lang, setIsLoading } = useGlobalData();
     const [word, setWord] = useState<WordObj>();
-    // const [error, setError] = useState<BackendError>();
+    const [error, setError] = useState<number | null>(null);
     const isTablet = useMediaQuery({
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
@@ -46,15 +48,11 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
             const data = await requestArticleInfo(id, page);
             setWord(data);
         } catch (error: unknown) {
-            const customError = error as ErrorTypes;
+            const customError = error as ErrorResponse;
 
-            if (customError.response) {
-                if (
-                    customError.response.status === 404 ||
-                    customError.response.status === 500
-                ) {
-                    // setError(customError.response.data.message);
-                }
+            if (customError.status === 404) {
+                setError(404);
+            } else if (customError.status === 500) {
             }
         } finally {
             const timer = setTimeout(() => {
@@ -75,28 +73,31 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            {word ? (
-                <ArticlePageFirstContainer>
-                    <PageInnerContainer height={40}>
-                        <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
-                        <PronunciationWrapper>
-                            <Transcript>{word.transcript}</Transcript>
-                            <SoundButton data={word.audio} />
-                        </PronunciationWrapper>
-                        {word.desc[lang].map((entry, i) => {
-                            return (
-                                <TextSegment
-                                    i={i}
-                                    key={`${word?._id}_${i}`}
-                                    data={entry}
-                                    topLeftRad={topLeftRad}
-                                />
-                            );
-                        })}
-                        <Sources data={word.references[lang]} />
-                    </PageInnerContainer>
-                </ArticlePageFirstContainer>
-            ) : null}
+            {error ? <PageNotFound /> : null}
+            <AppLayout>
+                {word ? (
+                    <ArticlePageFirstContainer>
+                        <PageInnerContainer height={40}>
+                            <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
+                            <PronunciationWrapper>
+                                <Transcript>{word.transcript}</Transcript>
+                                <SoundButton data={word.audio} />
+                            </PronunciationWrapper>
+                            {word.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${word?._id}_${i}`}
+                                        data={entry}
+                                        topLeftRad={topLeftRad}
+                                    />
+                                );
+                            })}
+                            <Sources data={word.references[lang]} />
+                        </PageInnerContainer>
+                    </ArticlePageFirstContainer>
+                ) : null}
+            </AppLayout>
         </>
     );
 };
