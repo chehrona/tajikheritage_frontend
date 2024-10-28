@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useMemo, useState, useEffect } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Routing
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { mainRoutes } from './components/common/routes/mainRoutes';
-
 import { ErrorBoundary } from 'react-error-boundary';
 
 // Helper
@@ -22,6 +22,7 @@ import { Langs } from './appTypes';
 import ErrorPage from './errorPages/ErrorPage';
 import GlobalStyles from './globalStyles';
 import Loader from './components/common/loader/Loader';
+import CustomToastContainer from './components/common/customToastContainer/CustomToastContainer';
 
 function App(): React.JSX.Element {
     const router = createBrowserRouter(mainRoutes, {
@@ -69,6 +70,7 @@ function App(): React.JSX.Element {
                     router={router}
                     fallbackElement={<Loader inProp={true} />}
                 />
+                <CustomToastContainer />
             </DataContext.Provider>
         </ErrorBoundary>
     );

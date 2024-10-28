@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
-import { Outlet, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSetHeader } from '../../hooks/useSetHeader';
+import { useToasts } from '../../hooks/useToasts';
 
 // Services
 import { requestMiddlePage } from '../../services/request';
@@ -12,22 +13,24 @@ import { requestMiddlePage } from '../../services/request';
 import AppLayout from '../../AppLayout';
 import PoetCard from '../../components/poet/poetCard/PoetCard';
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Alert from '../../components/common/alert/Alert';
 import SearchBar from '../../components/common/searchBar/SearchBar';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
+import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 
 // Types
 import { CardType } from './types/componentTypes';
+import { ErrorResponse } from '../../appTypes';
 
 // Styled components
 import { InnerBoxContainer } from './middlePageStyles';
 
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
+    const { showToast } = useToasts();
     const { setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
-    const [error, setError] = useState('');
+    const [error, setError] = useState<number | null>(null);
 
     const fetchData = async () => {
         try {
@@ -36,15 +39,14 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
             setItems(data);
             setAllItems(data);
-        } catch (error) {
-            // if (error.response) {
-            //     if (
-            //         error.response.status === 404 ||
-            //         error.response.status === 500
-            //     ) {
-            //         setError(error.response.data.message);
-            //     }
-            // }
+        } catch (error: unknown) {
+            const customError = error as ErrorResponse;
+
+            if (customError.status === 404) {
+                setError(404);
+            } else if (customError.status === 500) {
+                showToast('E_500', 'error', page);
+            }
         } finally {
             const timer = setTimeout(() => {
                 setIsLoading(false);
@@ -64,6 +66,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
+            {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 {items.length > 0 ? (
                     <LandingPageFirstContainer>
@@ -81,7 +84,6 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                                 ),
                             )}
                         </InnerBoxContainer>
-                        <Outlet />
                     </LandingPageFirstContainer>
                 ) : null}
             </AppLayout>

@@ -19,7 +19,6 @@ import {
 
 const SectionCard: React.FC<SectionCardProps> = ({ section, link }) => {
     const { lang } = useGlobalData();
-    console.log(link, 'link');
 
     return (
         <CardWrapper page={link} type={'long'}>

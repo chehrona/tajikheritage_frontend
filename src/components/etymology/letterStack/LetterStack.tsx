@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
@@ -12,7 +13,6 @@ import VerticalLetters from '../letterShapes/VerticalLetters';
 import OvalLetters from '../letterShapes/OvalLetters';
 import CircleLetters from '../letterShapes/CircleLetters';
 import Instruction from '../letterShapes/Instruction';
-import Alert from '../../common/alert/Alert';
 
 // Types
 import { LetterStackProps } from './types/componentTypes';
@@ -66,7 +66,7 @@ const LetterStack: React.FC<LetterStackProps> = ({
                 setIsDropdownOpen(true);
 
                 if (input.length === 1 && input === input.toUpperCase()) {
-                    setError(true);
+                    toast.error(alert.WORDS_NOT_FOUND[lang]);
                 } else {
                     setNoMatch(true);
                 }
@@ -154,7 +154,6 @@ const LetterStack: React.FC<LetterStackProps> = ({
                     </LetterContainer>
                 ) : null}
             </LetterStackWrapper>
-            {error && <Alert message={alert.WORDS_NOT_FOUND} type={'error'} />}
         </>
     );
 };

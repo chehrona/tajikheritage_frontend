@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Hooks
 import { useParams, useLocation, ErrorResponse } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
+import { useToasts } from '../../hooks/useToasts';
 
 // Service
 import { requestArticleInfo } from '../../services/request';
@@ -17,7 +18,6 @@ import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 // Components
 import Sources from '../../components/common/sources/Sources';
 import AppLayout from '../../AppLayout';
-import Alert from '../../components/common/alert/Alert';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import ProverbSoundBox from '../../components/proverb/soundBox/ProverbSoundBox';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
@@ -31,7 +31,8 @@ import {
 
 const ProverbPage = () => {
     const { id } = useParams();
-    const location = useLocation();
+    const { showToast } = useToasts();
+    const { pathname } = useLocation();
     const { lang, setIsLoading } = useGlobalData();
     const [proverb, setProverb] = useState<ProverbObj>();
     const [error, setError] = useState<number | null>(null);
@@ -52,6 +53,7 @@ const ProverbPage = () => {
             if (customError.status === 404) {
                 setError(404);
             } else if (customError.status === 500) {
+                showToast('E_500', 'error', 'language/proverb');
             }
         } finally {
             const timer = setTimeout(() => {
@@ -65,11 +67,11 @@ const ProverbPage = () => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
 
     return (
         <>
-            {error === 400 ? <PageNotFound /> : null}
+            {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 {proverb ? (
                     <ArticlePageFirstContainer>

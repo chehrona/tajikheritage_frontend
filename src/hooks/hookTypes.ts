@@ -35,3 +35,6 @@ export type HeaderDataType = {
 export type Entry = {
     sections: Section[];
 };
+
+// useToasts
+export type ToastTypes = 'success' | 'error' | 'info';

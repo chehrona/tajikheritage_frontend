@@ -15,16 +15,19 @@ html {
 :root {
     /* Colors */
     --primary-black-color: #0f0a00;
+    --primary-blue-color: #1c226c;
     --primary-white-color: #fcf6e9;
-    --secondary-white-color: #dedbdb;
     --primary-gold-color: #bd9d52;
-    --secondary-gold-color: #eac364;
-    --primary-red-color: #ad0f0e;
+    --primary-red-color: #8e0c0b;
     --primary-grey-color: #333333;
     --secondary-grey-color: #959595;
     --primary-shadow-color: #70654a;
     --regular-black-color: #000;
     --regular-white-color: #fff;
+    --secondary-gold-color: #eac364;
+    --secondary-blue-color: #3aced1;
+    --secondary-white-color: #dedbdb;
+
     --primary-box-shadow: 0rem 0rem 0.6rem;
 
     /* Font families */
@@ -73,6 +76,11 @@ html {
     --header-large-line-height: calc(var(--header-large) * 1.3);
     --header-big-line-height: calc(var(--header-big) * 1.05);
     --header-medium-line-height: calc(var(--header-medium) * 1.05);
+
+    /* Toasts */
+    --toastify-color-info: var(--secondary-grey-color) !important;
+    --toastify-color-success: var(--secondary-blue-color) !important;
+    --toastify-color-error: var(--primary-white-color) !important;
 }
 
 @media (max-width: 480px) {

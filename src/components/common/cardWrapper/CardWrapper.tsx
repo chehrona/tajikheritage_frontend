@@ -5,26 +5,21 @@ import { CardWrapperProps } from './types/componentTypes';
 
 // Styled components
 import { StyledLink } from './cardWrapperStyles';
+import { useToasts } from '../../../hooks/useToasts';
 
 const CardWrapper: React.FC<CardWrapperProps> = ({
     page,
     disabled = false,
     children,
     type,
-    setError,
 }) => {
-    const handleNoContent = () => {
-        console.log('I am clicked');
-        if (disabled && setError) {
-            setError(true);
+    const { showToast } = useToasts();
 
-            setTimeout(() => {
-                setError(false);
-            }, 3000);
+    const handleNoContent = () => {
+        if (disabled) {
+            showToast('ARTICLE_UNAVAILABLE', 'info', page);
         }
     };
-
-    console.log(page, 'page');
 
     return (
         <StyledLink

@@ -14,9 +14,9 @@ import { requestMiddlePage } from '../../services/request';
 // Components
 import AppLayout from '../../AppLayout';
 import SquareCard from '../../components/common/squareCard/SquareCard';
-import Alert from '../../components/common/alert/Alert';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
+import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 
 // Types
 import { ErrorResponse } from '../../appTypes';
@@ -27,11 +27,11 @@ import { PageTitle } from './etymologyStyles';
 import { SectionBoxContainer } from '../../landingPages/landingPage/landingPageStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { lang, setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
-    const [error, setError] = useState<any>();
+    const [error, setError] = useState<number | null>(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
 
     const fetchData = async () => {
@@ -64,32 +64,39 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
 
     return (
-        <AppLayout>
-            {items.length > 0 ? (
-                <LandingPageFirstContainer>
-                    <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
-                    {/* Don't change to search bar, filtering is different */}
-                    <LetterStack
-                        setItems={setItems}
-                        allItems={allItems}
-                        isDropdownOpen={isDropdownOpen}
-                        setIsDropdownOpen={setIsDropdownOpen}
-                    />
-                    {!isDropdownOpen && (
-                        <SectionBoxContainer $center={items.length % 3 === 0}>
-                            {items.map((item, i) => {
-                                return <SquareCard key={item.id} data={item} />;
-                            })}
-                        </SectionBoxContainer>
-                    )}
-                </LandingPageFirstContainer>
-            ) : (
-                error !== undefined && <Alert message={error} type={'error'} />
-            )}
-        </AppLayout>
+        <>
+            {error === 404 ? <PageNotFound /> : null}
+            <AppLayout>
+                {items.length > 0 ? (
+                    <LandingPageFirstContainer>
+                        <PageTitle>
+                            {staticText.ETYM_PAGE_HEADER[lang]}
+                        </PageTitle>
+                        {/* Don't change to search bar, filtering is different */}
+                        <LetterStack
+                            setItems={setItems}
+                            allItems={allItems}
+                            isDropdownOpen={isDropdownOpen}
+                            setIsDropdownOpen={setIsDropdownOpen}
+                        />
+                        {!isDropdownOpen && (
+                            <SectionBoxContainer
+                                $center={items.length % 3 === 0}
+                            >
+                                {items.map((item, i) => {
+                                    return (
+                                        <SquareCard key={item.id} data={item} />
+                                    );
+                                })}
+                            </SectionBoxContainer>
+                        )}
+                    </LandingPageFirstContainer>
+                ) : null}
+            </AppLayout>
+        </>
     );
 };
 

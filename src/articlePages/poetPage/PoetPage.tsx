@@ -4,9 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useSetHeader } from '../../hooks/useSetHeader';
+import { useToasts } from '../../hooks/useToasts';
 
 // Types
 import { PoetData } from './types/componentTypes';
+import { ErrorResponse } from '../../appTypes';
 
 // Services
 import { requestArticleInfo } from '../../services/request';
@@ -21,17 +23,18 @@ import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
 import Sources from '../../components/common/sources/Sources';
 
 // Components
-import Alert from '../../components/common/alert/Alert';
 import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 import AppLayout from '../../AppLayout';
+import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 
 const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
+    const { showToast } = useToasts();
     const { pathname } = useLocation();
     const { lang, setIsLoading } = useGlobalData();
+    const [error, setError] = useState<number | null>(null);
     const [poet, setPoet] = useState<PoetData>();
-    const [error, setError] = useState({});
 
     const fetchData = async () => {
         try {
@@ -44,14 +47,13 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
             const data = await requestArticleInfo(id, 'language/poet');
             setPoet(data);
         } catch (error: unknown) {
-            // if (error.response) {
-            //     if (
-            //         error.response.status === 404 ||
-            //         error.response.status === 500
-            //     ) {
-            //         setError(error.response.data.message);
-            //     }
-            // }
+            const customError = error as ErrorResponse;
+
+            if (customError.status === 404) {
+                setError(404);
+            } else if (customError.status === 500) {
+                showToast('E_500', 'error', 'language/poet');
+            }
         } finally {
             const timer = setTimeout(() => {
                 setIsLoading(false);
@@ -90,21 +92,27 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     return (
-        <AppLayout>
-            {poet ? (
-                <PageFirstContainer>
-                    <PageInnerContainer height={40}>
-                        <PoetIntro poet={poet} scrollToView={scrollToView} />
-                        <PoetBio bioData={poet?.bio} />
-                        <PoetWorks works={poet?.works[lang]} />
-                        <PoetMovies movies={poet?.movies[lang]} />
-                        <PoetCareer points={poet?.career} />
-                        <PoetAwards awards={poet?.awards[lang]} />
-                        <Sources data={poet?.references[lang]} />
-                    </PageInnerContainer>
-                </PageFirstContainer>
-            ) : null}
-        </AppLayout>
+        <>
+            {error === 404 ? <PageNotFound /> : null}
+            <AppLayout>
+                {poet ? (
+                    <PageFirstContainer>
+                        <PageInnerContainer height={40}>
+                            <PoetIntro
+                                poet={poet}
+                                scrollToView={scrollToView}
+                            />
+                            <PoetBio bioData={poet?.bio} />
+                            <PoetWorks works={poet?.works[lang]} />
+                            <PoetMovies movies={poet?.movies[lang]} />
+                            <PoetCareer points={poet?.career} />
+                            <PoetAwards awards={poet?.awards[lang]} />
+                            <Sources data={poet?.references[lang]} />
+                        </PageInnerContainer>
+                    </PageFirstContainer>
+                ) : null}
+            </AppLayout>
+        </>
     );
 };
 

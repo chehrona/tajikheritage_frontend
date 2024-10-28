@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useSetHeader } from '../../hooks/useSetHeader';
+import { useToasts } from '../../hooks/useToasts';
 
 // Types
 import { ErrorResponse } from '../../appTypes';
@@ -20,13 +21,13 @@ import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 import AppLayout from '../../AppLayout';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import Sources from '../../components/common/sources/Sources';
-import Alert from '../../components/common/alert/Alert';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
 const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const { pathname } = useLocation();
+    const { showToast } = useToasts();
     const { lang, setIsLoading } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<number | null>(null);
@@ -47,11 +48,11 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
             setData(data);
         } catch (error: unknown) {
             const customError = error as ErrorResponse;
-            console.log(customError.message, 'error *** ');
 
             if (customError.status === 404) {
-                setError(400);
+                setError(404);
             } else if (customError.status === 500) {
+                showToast('E_500', 'error', page);
             }
         } finally {
             const timer = setTimeout(() => {
@@ -72,7 +73,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            {error === 400 ? <PageNotFound /> : null}
+            {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 {data ? (
                     <ArticlePageFirstContainer>
