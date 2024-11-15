@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Styles
 import { StyledContainer } from './customToastContainerStyles';
 
@@ -9,6 +7,8 @@ const CustomToastContainer = () => {
             position="top-right"
             hideProgressBar
             closeButton={false}
+            autoClose={2000}
+            limit={5}
         />
     );
 };

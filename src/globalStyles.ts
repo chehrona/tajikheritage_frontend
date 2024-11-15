@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
         position: relative;
+        min-height: 6rem;
     }
 
     .quoteInnerBox {

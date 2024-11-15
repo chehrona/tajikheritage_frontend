@@ -5,14 +5,9 @@ export const StyledContainer = styled(ToastContainer)`
     &&&.Toastify__toast-container {
         padding: 0rem;
         right: 0.5rem;
+        left: auto;
         top: 0.5rem;
         width: fit-content;
-
-        @media (max-width: 480px) {
-            right: 0.5rem;
-            top: 0.5rem;
-            width: fit-content;
-        }
 
         .Toastify__toast {
             padding: 0.25rem;
@@ -20,6 +15,7 @@ export const StyledContainer = styled(ToastContainer)`
             box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
             color: var(--secondary-gold-color);
             width: fit-content;
+            border-radius: var(--input-radius);
         }
 
         .Toastify__toast-icon {

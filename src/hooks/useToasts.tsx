@@ -21,25 +21,21 @@ export const useToasts = () => {
 
     const showToast = (key: AlertMessageKey, type: ToastTypes, id: string) => {
         const message = alertMessages[key][lang];
-        const toastId = id;
 
-        toastsRef.current[toastId] = { key };
+        toastsRef.current[id] = { key };
 
         switch (type) {
             case 'info':
                 return toast.info(message, {
-                    toastId: toastId,
-                    autoClose: 2000,
+                    toastId: id,
                 });
             case 'success':
                 return toast.success(message, {
-                    toastId: toastId,
-                    autoClose: 2000,
+                    toastId: id,
                 });
             case 'error':
                 return toast.error(message, {
-                    toastId: toastId,
-                    autoClose: 2000,
+                    toastId: id,
                 });
         }
     };

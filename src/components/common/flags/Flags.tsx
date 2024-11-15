@@ -25,7 +25,7 @@ import {
 const Flags: React.FC = () => {
     const location = useLocation();
     const [showLangMenu, setShowLangMenu] = useState<boolean>(false);
-    const { lang, setLang, setIsLoading } = useGlobalData();
+    const { lang, setLang } = useGlobalData();
 
     // Don't show the header
     const noShow = location.pathname.includes('print');
@@ -36,8 +36,6 @@ const Flags: React.FC = () => {
 
     const changeLang = useCallback(
         (e: React.MouseEvent<HTMLButtonElement>) => {
-            setIsLoading(true);
-
             const iconTitle = e.currentTarget.getAttribute(
                 'data',
             ) as Langs | null;
@@ -45,15 +43,8 @@ const Flags: React.FC = () => {
                 iconTitle &&
                 (iconTitle === 'us' || iconTitle === 'ru' || iconTitle === 'tj')
             ) {
-                const timer = setTimeout(() => {
-                    setIsLoading(false);
-
-                    setLang(iconTitle);
-                }, 400);
-
+                setLang(iconTitle);
                 setShowLangMenu(false);
-
-                return () => clearTimeout(timer);
             }
         },
         [setLang],
@@ -66,16 +57,6 @@ const Flags: React.FC = () => {
     useEffect(() => {
         localStorage.setItem('lang', lang);
     }, [lang]);
-
-    useEffect(() => {
-        if (showLangMenu) {
-            const handleMenu = setTimeout(() => {
-                setShowLangMenu(false);
-            }, 5000);
-
-            return () => clearTimeout(handleMenu);
-        }
-    }, [showLangMenu]);
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>

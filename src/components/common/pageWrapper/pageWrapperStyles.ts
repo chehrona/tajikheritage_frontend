@@ -42,8 +42,4 @@ export const LandingContainer = styled.div`
     @media (max-width: 480px) {
         padding: var(--page-padding);
     }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: var(--tablet-padding) 4.2rem;
-    }
 `;

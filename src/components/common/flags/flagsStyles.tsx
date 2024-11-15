@@ -30,7 +30,7 @@ export const FlagWrapper = styled.div<{ $show: boolean }>`
     @media (max-width: 480px) {
         position: fixed;
         bottom: 0.25rem;
-        left: 0.5rem;
+        left: 0.25rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

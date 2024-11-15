@@ -24,7 +24,7 @@ import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
 import { PageTitle } from './etymologyStyles';
-import { SectionBoxContainer } from '../../landingPages/landingPage/landingPageStyles';
+import { InnerBoxContainer } from '../middlePage/middlePageStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
@@ -83,15 +83,13 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
                             setIsDropdownOpen={setIsDropdownOpen}
                         />
                         {!isDropdownOpen && (
-                            <SectionBoxContainer
-                                $center={items.length % 3 === 0}
-                            >
+                            <InnerBoxContainer $center={items.length % 3 === 0}>
                                 {items.map((item, i) => {
                                     return (
                                         <SquareCard key={item.id} data={item} />
                                     );
                                 })}
-                            </SectionBoxContainer>
+                            </InnerBoxContainer>
                         )}
                     </LandingPageFirstContainer>
                 ) : null}

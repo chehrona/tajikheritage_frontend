@@ -13,20 +13,15 @@ import { TooltipType } from '../tooltip/types/componentTypes';
 import { SoundType } from '../../proverb/soundBox/types/componentTypes';
 
 // Styled components
-import { EmptyDiv, SoundBox, TableImage } from './descWrapperStyles';
+import { EmptyDiv, SoundBox } from './descWrapperStyles';
 import GlobalStyles from '../../../globalStyles';
+import Table from '../table/Table';
+import { TableType } from '../table/types/componentTypes';
 
 export const DescWrapper: React.FC<DescWrapperProps> = ({
     data,
     TextWrapper = EmptyDiv,
 }) => {
-    const { lang } = useGlobalData();
-    const [expanded, setExpanded] = useState<boolean>(false);
-
-    useEffect(() => {
-        setExpanded(false);
-    }, [lang]);
-
     const renderContent = () => {
         return Object.keys(data).map((key, i) => {
             const content = data[key];
@@ -56,18 +51,7 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
                         </SoundBox>
                     );
                 case key.startsWith('table'):
-                    return (
-                        <TableImage
-                            key={key}
-                            onClick={() =>
-                                setExpanded((prevState) => !prevState)
-                            }
-                            $expanded={expanded}
-                            src={`${process.env.REACT_APP_BASE_URL}${
-                                content as string
-                            }`}
-                        />
-                    );
+                    return <Table key={key} content={content as TableType} />;
                 default:
                     return null;
             }
