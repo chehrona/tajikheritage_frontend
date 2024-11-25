@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const LogoWrapper = styled.div`
     display: flex;
@@ -19,7 +19,7 @@ export const Logo = styled.img`
     width: 100%;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: inherit;
     display: flex;

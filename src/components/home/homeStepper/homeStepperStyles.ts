@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const MainContainer = styled.div`
     width: 100%;
@@ -256,7 +256,7 @@ export const StyledButton = styled.div<{ $length: number }>`
     }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
     text-decoration: none;
 `;
 

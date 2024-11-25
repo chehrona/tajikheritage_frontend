@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu } from '@mui/material';
 
 export const StyledMenu = styled(Menu)`
@@ -132,7 +132,7 @@ export const PageDesc = styled.div`
     }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: inherit;
     border-radius: var(--small-radius);
