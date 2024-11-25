@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const MainContainer = styled.div`
     width: 100%;
@@ -255,7 +256,7 @@ export const StyledButton = styled.div<{ $length: number }>`
     }
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
     text-decoration: none;
 `;
 

@@ -24,7 +24,7 @@ import {
     OtherSteps,
     StepperContainer,
     StyledButton,
-    Link,
+    StyledLink,
     ImageSemiCircle,
 } from './homeStepperStyles';
 
@@ -93,10 +93,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                                             __html: step?.desc[lang].text,
                                         }}
                                     />
-                                    <Link
-                                        href={step?.desc[lang].link}
-                                        target="_blank"
-                                    >
+                                    <StyledLink to={step?.desc[lang].link}>
                                         <StyledButton
                                             $length={
                                                 staticTexts.HOME_EXPLORE[lang]
@@ -105,7 +102,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                                         >
                                             {staticTexts.HOME_EXPLORE[lang]}
                                         </StyledButton>
-                                    </Link>
+                                    </StyledLink>
                                 </Desc>
                             </TitleWrapper>
                         </StepperBox>
