@@ -4,8 +4,6 @@ import React, { useMemo, useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Routing
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { mainRoutes } from './components/common/routes/mainRoutes';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // Helper
@@ -21,14 +19,10 @@ import { Langs } from './appTypes';
 // Components
 import ErrorPage from './errorPages/ErrorPage';
 import GlobalStyles from './globalStyles';
-import Loader from './components/common/loader/Loader';
 import CustomToastContainer from './components/common/customToastContainer/CustomToastContainer';
+import Routes from './components/common/routes/Routes';
 
 function App(): React.JSX.Element {
-    const router = createBrowserRouter(mainRoutes, {
-        basename: '/',
-    });
-
     const [lang, setLang] = useState<Langs>(() => {
         const storedLang = localStorage.getItem('lang');
         return storedLang === 'us' || storedLang === 'ru' || storedLang === 'tj'
@@ -66,10 +60,7 @@ function App(): React.JSX.Element {
         <ErrorBoundary FallbackComponent={ErrorPage}>
             <DataContext.Provider value={value}>
                 <GlobalStyles />
-                <RouterProvider
-                    router={router}
-                    fallbackElement={<Loader inProp={true} />}
-                />
+                <Routes />
                 <CustomToastContainer />
             </DataContext.Provider>
         </ErrorBoundary>
