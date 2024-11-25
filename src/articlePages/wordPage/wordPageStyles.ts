@@ -9,6 +9,7 @@ export const WordTitle = styled.div`
     @media (max-width: 480px) {
         padding: var(--text-segment-gap) var(--page-padding) 0rem
             var(--page-padding);
+        font-size: var(--header-normal);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -31,6 +32,10 @@ export const Transcript = styled.div`
     color: var(--primary-shadow-color);
     font-size: var(--header-normal);
     padding-right: 0.5rem;
+
+    @media (max-width: 480px) {
+        font-size: var(--header-small);
+    }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.5rem;

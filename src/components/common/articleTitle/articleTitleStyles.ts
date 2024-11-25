@@ -8,7 +8,6 @@ export const TitleWrapper = styled.div`
     color: var(--regular-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.0875rem var(--primary-black-color);
 
-    // Done
     @media (max-width: 480px) {
         font-size: var(--header-large);
         line-height: var(--header-large-line-height);

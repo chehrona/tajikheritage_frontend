@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // Types
 import { LinkProps } from './types/styleTypes';
@@ -19,7 +19,7 @@ const slideOut = keyframes`
     }
 `;
 
-export const StyledLink = styled(Link)<LinkProps>`
+export const StyledLink = styled(NavLink)<LinkProps>`
     text-decoration: none;
     border-radius: var(--small-radius);
     animation: ${slideOut} 1s ease-in-out forwards;

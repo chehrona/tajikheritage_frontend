@@ -5,15 +5,9 @@ export type Langs = 'us' | 'ru' | 'tj';
 
 export type ErrorResponse = {
     status: number;
-    data: {
-        message: {
-            [key in Langs]: string;
-        };
+    message: {
+        [key in Langs]: string;
     };
-};
-
-export type ErrorTypes = Error & {
-    response?: ErrorResponse;
 };
 
 export type DescDetails = {

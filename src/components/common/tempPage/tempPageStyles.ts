@@ -14,6 +14,10 @@ export const TempImg = styled.img`
 
 export const TempTitle = styled.div`
     color: var(--primary-white-color);
-    margin: 2.5% 0% 5% 0%;
-    font-size: 1.5rem;
+    margin: 0% 0% 5% 0%;
+    font-size: var(--header-medium);
+    position: absolute;
+    top: 10%;
+    z-index: 10;
+    font-family: var(--fancy-font);
 `;

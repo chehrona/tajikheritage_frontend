@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 // Components
 import MenuButton from '../menu/menuButton/MenuButton';
+import HeaderLogo from '../headerLogo/HeaderLogo';
 
 // Types
 import { MenuProps } from '../menu/menuDropdown/types/componentTypes';
@@ -20,7 +21,6 @@ import {
     Semicolon,
     FirstTitle,
 } from './headerStyles';
-import HeaderLogo from '../headerLogo/HeaderLogo';
 
 const sequence = [
     [0, 1, 2],
@@ -33,7 +33,7 @@ const Header: React.FC<MenuProps> = ({
     isMenuShown,
     menuAnchorEl,
 }) => {
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { lang, title } = useGlobalData();
     const [titleOrder, setTitleOrder] = useState<number[]>([0, 1, 2]);
     const [sequenceIndex, setSequenceIndex] = useState<number>(0);
@@ -49,7 +49,7 @@ const Header: React.FC<MenuProps> = ({
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [sequenceIndex, location.pathname, lang]);
+    }, [sequenceIndex, pathname, lang]);
 
     return (
         <HeaderContainer>

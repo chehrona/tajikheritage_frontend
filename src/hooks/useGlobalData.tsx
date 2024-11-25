@@ -13,8 +13,6 @@ export const DataContext = createContext<ContextTypes>({
     setLang: () => {},
     isLoading: false,
     setIsLoading: () => {},
-    showAdmin: true,
-    setShowAdmin: () => {},
 });
 
 export function useGlobalData() {

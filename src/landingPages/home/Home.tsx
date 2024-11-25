@@ -30,6 +30,7 @@ import {
     Circle,
     ImageBallWrapper,
 } from './homePageStyles';
+import AppLayout from '../../AppLayout';
 
 const Home: React.FC = () => {
     const title = staticText.HOME_SCROLL as TitleType;
@@ -106,46 +107,48 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        <PageContainer>
-            {scrollIndicator && (
-                <ScrollWrapper>
-                    <Title>{title[lang]}</Title>
-                    <IconWrapper>
-                        <Line />
-                        <Arrow />
-                        <Circle />
-                    </IconWrapper>
-                </ScrollWrapper>
-            )}
-            <InnerContainer>
-                <HomeStepper
-                    containerRef={containerRef}
-                    divRefs={divRefs}
-                    opacities={opacities}
-                />
-                {stepInfo?.map((entry, i) => {
-                    return (
-                        <ImageBallWrapper key={`${title[lang]}_${i}`}>
-                            <BigCircle
-                                opacities={opacities}
-                                index={i}
-                                entry={entry}
-                            />
-                            <MediumCircle
-                                opacities={opacities}
-                                index={i}
-                                entry={entry}
-                            />
-                            <SmallCircle
-                                opacities={opacities}
-                                index={i}
-                                entry={entry}
-                            />
-                        </ImageBallWrapper>
-                    );
-                })}
-            </InnerContainer>
-        </PageContainer>
+        <AppLayout>
+            <PageContainer>
+                {scrollIndicator && (
+                    <ScrollWrapper>
+                        <Title>{title[lang]}</Title>
+                        <IconWrapper>
+                            <Line />
+                            <Arrow />
+                            <Circle />
+                        </IconWrapper>
+                    </ScrollWrapper>
+                )}
+                <InnerContainer>
+                    <HomeStepper
+                        containerRef={containerRef}
+                        divRefs={divRefs}
+                        opacities={opacities}
+                    />
+                    {stepInfo?.map((entry, i) => {
+                        return (
+                            <ImageBallWrapper key={`${title[lang]}_${i}`}>
+                                <BigCircle
+                                    opacities={opacities}
+                                    index={i}
+                                    entry={entry}
+                                />
+                                <MediumCircle
+                                    opacities={opacities}
+                                    index={i}
+                                    entry={entry}
+                                />
+                                <SmallCircle
+                                    opacities={opacities}
+                                    index={i}
+                                    entry={entry}
+                                />
+                            </ImageBallWrapper>
+                        );
+                    })}
+                </InnerContainer>
+            </PageContainer>
+        </AppLayout>
     );
 };
 

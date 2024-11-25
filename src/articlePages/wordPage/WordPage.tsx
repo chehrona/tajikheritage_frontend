@@ -5,17 +5,19 @@ import { useMediaQuery } from 'react-responsive';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGlobalData } from '../../hooks/useGlobalData';
 import { useSetHeader } from '../../hooks/useSetHeader';
+import { useToasts } from '../../hooks/useToasts';
 
 // Services
 import { requestArticleInfo } from '../../services/request';
 
 // Types
 import { WordObj } from './types/componentTypes';
-import { ErrorTypes } from '../../appTypes';
+import { ErrorResponse } from '../../appTypes';
 
 // Components
+import AppLayout from '../../AppLayout';
+import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 import Sources from '../../components/common/sources/Sources';
-import Alert from '../../components/common/alert/Alert';
 import SoundButton from '../../components/common/soundButton/SoundButton';
 import TextSegment from '../../components/common/articleTextSegment/TextSegment';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
@@ -26,10 +28,11 @@ import { WordTitle, Transcript, PronunciationWrapper } from './wordPageStyles';
 
 const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
-    const location = useLocation();
+    const { pathname } = useLocation();
+    const { showToast } = useToasts();
     const { lang, setIsLoading } = useGlobalData();
     const [word, setWord] = useState<WordObj>();
-    // const [error, setError] = useState<BackendError>();
+    const [error, setError] = useState<number | null>(null);
     const isTablet = useMediaQuery({
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
@@ -46,15 +49,12 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
             const data = await requestArticleInfo(id, page);
             setWord(data);
         } catch (error: unknown) {
-            const customError = error as ErrorTypes;
+            const customError = error as ErrorResponse;
 
-            if (customError.response) {
-                if (
-                    customError.response.status === 404 ||
-                    customError.response.status === 500
-                ) {
-                    // setError(customError.response.data.message);
-                }
+            if (customError.status === 404) {
+                setError(404);
+            } else if (customError.status === 500) {
+                showToast('E_500', 'error', page);
             }
         } finally {
             const timer = setTimeout(() => {
@@ -71,32 +71,35 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
     useEffect(() => {
         // Get data
         fetchData();
-    }, [location.pathname]);
+    }, [pathname]);
 
     return (
         <>
-            {word ? (
-                <ArticlePageFirstContainer>
-                    <PageInnerContainer height={40}>
-                        <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
-                        <PronunciationWrapper>
-                            <Transcript>{word.transcript}</Transcript>
-                            <SoundButton data={word.audio} />
-                        </PronunciationWrapper>
-                        {word.desc[lang].map((entry, i) => {
-                            return (
-                                <TextSegment
-                                    i={i}
-                                    key={`${word?._id}_${i}`}
-                                    data={entry}
-                                    topLeftRad={topLeftRad}
-                                />
-                            );
-                        })}
-                        <Sources data={word.references[lang]} />
-                    </PageInnerContainer>
-                </ArticlePageFirstContainer>
-            ) : null}
+            {error === 404 ? <PageNotFound /> : null}
+            <AppLayout>
+                {word ? (
+                    <ArticlePageFirstContainer>
+                        <PageInnerContainer height={40}>
+                            <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
+                            <PronunciationWrapper>
+                                <Transcript>{word.transcript}</Transcript>
+                                <SoundButton data={word.audio} />
+                            </PronunciationWrapper>
+                            {word.desc[lang].map((entry, i) => {
+                                return (
+                                    <TextSegment
+                                        i={i}
+                                        key={`${word?._id}_${i}`}
+                                        data={entry}
+                                        topLeftRad={topLeftRad}
+                                    />
+                                );
+                            })}
+                            <Sources data={word.references[lang]} />
+                        </PageInnerContainer>
+                    </ArticlePageFirstContainer>
+                ) : null}
+            </AppLayout>
         </>
     );
 };

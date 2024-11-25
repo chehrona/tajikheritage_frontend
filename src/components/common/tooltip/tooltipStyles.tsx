@@ -47,11 +47,9 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img`
-    height: 15rem;
+    height: auto;
     width: 10rem;
     margin: 0 auto;
-    background: url('/customAssets/loader.png') center no-repeat;
-    background-size: 50% auto;
 
     @media (max-width: 1024px) {
         padding-bottom: 0.5rem;
