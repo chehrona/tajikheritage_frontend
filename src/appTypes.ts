@@ -1,7 +1,7 @@
 import { BodyObj } from './components/common/descWrapper/types/componentTypes';
 import { SlideImage } from './components/common/slideshow/types/componentTypes';
 
-export type Langs = 'us' | 'ru' | 'tj';
+export type Langs = 'us' | 'ru' | 'tj' | 'fa';
 
 export type ErrorResponse = {
     status: number;

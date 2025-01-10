@@ -77,7 +77,34 @@
             },
             {
                 "title": "Ғизоҳо",
-                "desc": "Хӯрокпазӣ & хусусияти миллӣ",
+                "desc": "Ошпазӣ & хусусияти миллӣ",
+                "link": "/cuisine"
+            }
+        ],
+        "fa": [
+            {
+                "title": "زبان و ادبیات",
+                "desc": "صداهای گذشته و حاضر",
+                "link": "/language"
+            },
+            {
+                "title": "تاریخ",
+                "desc": "قدیمه، عصرهای میانه و معاصر",
+                "link": "/history"
+            },
+            {
+                "title": "صنعت و هنر",
+                "desc": "فرهنگ مادی",
+                "link": "/arts"
+            },
+            {
+                "title": "رسم و آئین",
+                "desc": "میراث غیرمادی",
+                "link": "/customs"
+            },
+            {
+                "title": "غذاها",
+                "desc": "آشپزی و خصوصیت ملی",
                 "link": "/cuisine"
             }
         ]
@@ -85,12 +112,14 @@
     "HOME_SCROLL": {
         "ru": "ПРОКРУТИТЕ",
         "tj": "БА ПОЁН КАШЕД",
-        "us": "SCROLL"
+        "us": "SCROLL",
+        "fa": "به پایان کشید"
     },
     "HOME_EXPLORE": {
         "us": "EXPLORE",
         "ru": "УЗНАТЬ БОЛЬШЕ",
-        "tj": "БИСЁРТАР ОМӮЗЕД"
+        "tj": "БИСЁРТАР ОМӮЗЕД",
+        "fa": "بسیارتر آموزید"
     },
     "HOME_STEPPER": [
         {
@@ -110,20 +139,20 @@
                     "text": "Забон & адабиёт",
                     "font": 4.3,
                     "margin": { "d": -1, "m": -13, "t": 27 }
+                },
+                "fa": {
+                    "text": "زبان و ادبیات",
+                    "font": 4.3,
+                    "margin": { "d": -1, "m": -13, "t": 27 }
                 }
             },
             "desc": {
-                "us": {
-                    "text": "The languages spoken by the Tajik peoples, whether belonging to the Western or Eastern Iranic language continua, lie at the core of their identity and have been paramount for their survival.<div class='space'></div>They encode Tajik people's unique worldviews, their ancestral wisdom, their stories, and their songs. These languages stand as a testament of resilience, serving as a bridge connecting the past and the present — defining who Tajiks are.<div class='space'></div><div class='space'></div>",
-                    "link": "/language"
-                },
-                "ru": {
-                    "text": "Языки, на которых говорят таджикские народы, независимо от того, принадлежат ли они к западному или восточно-иранскому языковому континууму, лежат в основе их идентичности и имеют первостепенное значение для их выживания. В них закодированы уникальное мировоззрение, исконная мудрость, рассказы и песни таджикского народа. Эти языки являются свидетельством устойчивости и служат мостом, соединяющим прошлое и настоящее таджиков.<div class='space'></div><div class='space'></div>",
-                    "link": "/language"
-                },
-                "tj": {
-                    "text": "Забонҳои мардуми тоҷик, ки чи ба гурӯҳи забонҳои эронии ғарбӣ ва чи шарқӣ дахл доранд, сарчашмаи ҳастӣ ва қавитарин исботи фарҳанги куҳани тоҷикон ҳастанд. Онҳо ҷаҳонбинии махсус, ҳикмати аҷдодӣ, достонҳо ва таронаҳои тоҷиконро дар бар мегиранд. Ин забонҳо сабаби зинда мондани тоҷикон буда, гузашташонро бо имрӯзашон мепайванданд.<div class='space'></div><div class='space'></div>",
-                    "link": "/language"
+                "link": "/language",
+                "text": {
+                    "us": "The languages spoken by the Tajik peoples, whether belonging to the Western or Eastern Iranic language continua, lie at the core of their identity and have been paramount for their survival.<div class='space'></div>They encode Tajik people's unique worldviews, their ancestral wisdom, their stories, and their songs. These languages stand as a testament of resilience, serving as a bridge connecting the past and the present — defining who Tajiks are.<div class='space'></div><div class='space'></div>",
+                    "ru": "Языки, на которых говорят таджикские народы, независимо от того, принадлежат ли они к западному или восточно-иранскому языковому континууму, лежат в основе их идентичности и имеют первостепенное значение для их выживания. В них закодированы уникальное мировоззрение, исконная мудрость, рассказы и песни таджикского народа. Эти языки являются свидетельством устойчивости и служат мостом, соединяющим прошлое и настоящее таджиков.<div class='space'></div><div class='space'></div>",
+                    "tj": "Забонҳои мардуми тоҷик, ки чи ба гурӯҳи забонҳои эронии ғарбӣ ва чи шарқӣ дахл доранд, сарчашмаи ҳастӣ ва қавитарин исботи фарҳанги куҳани тоҷикон ҳастанд. Онҳо ҷаҳонбинии махсус, ҳикмати аҷдодӣ, достонҳо ва таронаҳои тоҷиконро дар бар мегиранд. Ин забонҳо сабаби зинда мондани тоҷикон буда, гузашташонро бо имрӯзашон мепайванданд.<div class='space'></div><div class='space'></div>",
+                    "fa": "زبان‌های مردمی تاجیک، که چه به گروه زبان‌های ایرانی غربی و چه شرقی دخل دارند، سرچشمهٔ هستی و قوی‌ترین اثبات فرهنگ کهن تاجیکان هستند. آن‌ها جهان‌بینی مخصوص، حکمت اجدادی، داستان‌ها و ترانه‌های تاجیکان را در بر می‌گیرند. این زبان‌ها سبب زنده ماندن تاجیکان بوده، گذشته‌شان را با امروزشان می‌پیوندند.<div class='space'></div><div class='space'></div>"
                 }
             },
             "outer": {
@@ -175,20 +204,20 @@
                     "text": "Таърих",
                     "font": 5,
                     "margin": { "d": 3.5, "m": -16, "t": 20 }
+                },
+                "fa": {
+                    "text": "تاریخ",
+                    "font": 5,
+                    "margin": { "d": 3.5, "m": -16, "t": 20 }
                 }
             },
             "desc": {
-                "us": {
-                    "text": "The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. As descendants of Sogdians, Bactrians and other Iranic tribes, they were pivotal in establishing the early farming traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of civilizations, which sculpted the unique identity of the Tajik people.<div class='space'></div><div class='space'></div>",
-                    "link": "/history?us"
-                },
-                "ru": {
-                    "text": "Таджики – коренной народ Центральной Азии, история которого насчитывает более двух тысячелетий. Будучи потомками согдийцев, бактрийцев и других иранских племен, они сыграли большую роль в установлении ранних традиций земледелия и торговли в регионе. На протяжении веков Центральная Азия превратилась в перекресток цивилизаций, который сформировал уникальную идентичность таджикского народа.<div class='space'></div><div class='space'></div>",
-                    "link": "/history"
-                },
-                "tj": {
-                    "text": "Тоҷикон мардуми муқимии Осиёи Миёна буда, дорандаи таърихи беш аз ду ҳазорсола ҳастанд. Онҳо ҳамчун насли суғдиён, бохтариён ва дигар қабилаҳои эронӣ ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа ҳиссаи бузурге гузоштаанд. Дар давоми садсолаҳо, Осиёи Марказӣ ба чорроҳаи тамаддунҳо табдил ёфта, ба худшиносии мардуми тоҷик таъсири бузурге расонидааст.<div class='space'></div><div class='space'></div>",
-                    "link": "/history"
+                "link": "/history",
+                "text": {
+                    "us": "The Tajiks are indigenous people of Central Asia with a history spanning over two millennia. As descendants of Sogdians, Bactrians and other Iranic tribes, they were pivotal in establishing the early farming traditions and trade practices in the region. Throughout centuries, Central Asia evolved into a crossroads of civilizations, which sculpted the unique identity of the Tajik people.<div class='space'></div><div class='space'></div>",
+                    "ru": "Таджики – коренной народ Центральной Азии, история которого насчитывает более двух тысячелетий. Будучи потомками согдийцев, бактрийцев и других иранских племен, они сыграли большую роль в установлении ранних традиций земледелия и торговли в регионе. На протяжении веков Центральная Азия превратилась в перекресток цивилизаций, который сформировал уникальную идентичность таджикского народа.<div class='space'></div><div class='space'></div>",
+                    "tj": "Тоҷикон мардуми муқимии Осиёи Миёна буда, дорандаи таърихи беш аз ду ҳазорсола ҳастанд. Онҳо ҳамчун насли суғдиён, бохтариён ва дигар қабилаҳои эронинажод ба ташаккули анъанаҳои нахустини кишоварзӣ ва тиҷорат дар минтақа саҳми бузурге гузоштаанд. Дар давоми садсолаҳо, Осиёи Марказӣ ба чорроҳаи тамаддунҳо табдил ёфта, ба худшиносии мардуми тоҷик таъсири бузурге расондааст.<div class='space'></div><div class='space'></div>",
+                    "fa": "تاجیکان مردمی مقیمی آسیای میانه بوده، دارندۀ تاریخی بیش از دو هزارساله هستند. آن‌ها همچون نسل سغدیان، باختریان و دیگر قبیله‌های ایران‌نژاد به تشکیل عنعنه‌های نخستین کشاورزی و تجارت در منطقه سهم بزرگی گذاشته‌اند. در دَوامی صدساله‌ها، آسیای مرکزی به چهارراه تمدن‌ها تبدیل یافته، به خودشناسی مردمی تاجیک تأثیر بزرگی رسانده است.<div class='space'></div><div class='space'></div>"
                 }
             },
             "outer": {
@@ -240,20 +269,20 @@
                     "text": "Санъат & ҳунар",
                     "font": 4,
                     "margin": { "d": -1, "m": -15, "t": 29 }
+                },
+                "fa": {
+                    "text": "صنعت و هنر",
+                    "font": 4,
+                    "margin": { "d": -1, "m": -15, "t": 29 }
                 }
             },
             "desc": {
-                "us": {
-                    "text": "Handicrafts serve as a tangible representation of the intellectual and aesthetic essence of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.<div class='space'></div>There are nearly 200 unique arts and crafts still practiced within the Tajik communities, many as old as the Eastern Iranic civilization itself.<div class='space'></div><div class='space'></div>",
-                    "link": "/arts?us"
-                },
-                "ru": {
-                    "text": "Народные промыслы являются воплощением и интеллектуального, и эстетического наследия таджиков. Они неразрывно связаны с их образом жизни, культурой и мифологией.<div class='space'></div>Среди таджиков до сих пор сохранилось около 200 уникальных видов искусства и ремесел, многие из которых возникли наравне с формированием восточноиранской цивилизации.<div class='space'></div><div class='space'></div>",
-                    "link": "/arts"
-                },
-                "tj": {
-                    "text": "Ҳунарҳои мардумӣ намунаи моддии фикрӣ ва зебоишиносии тоҷикон буда, бо тарзи зиндагӣ, фарҳанг ва асотири тоҷикон пайвастаанд.<div class='space'></div>Дар байни тоҷикони олам, то ҳол, тахминан 200 намуди ҳунарҳои хос ва беҳамто вуҷуд доранд, ки қадимии бисёрашон баробари қадимии тамаддуни эрониёни шарқӣ ҳастанд.<div class='space'></div><div class='space'></div>",
-                    "link": "/arts"
+                "link": "/arts",
+                "text": {
+                    "us": "Handicrafts serve as a tangible representation of the intellectual and aesthetic essence of the Tajiks, intricately intertwined with their lifestyle, culture, and mythology.<div class='space'></div>There are nearly 200 unique arts and crafts still practiced within the Tajik communities, many as old as the Eastern Iranic civilization itself.<div class='space'></div><div class='space'></div>",
+                    "ru": "Народные промыслы являются воплощением и интеллектуального, и эстетического наследия таджиков. Они неразрывно связаны с их образом жизни, культурой и мифологией.<div class='space'></div>Среди таджиков до сих пор сохранилось около 200 уникальных видов искусства и ремесел, многие из которых возникли наравне с формированием восточноиранской цивилизации.<div class='space'></div><div class='space'></div>",
+                    "tj": "Ҳунарҳои мардумӣ намунаи моддии фикрӣ ва зебоишиносии тоҷикон буда, бо тарзи зиндагӣ, фарҳанг ва асотири тоҷикон пайвастаанд.<div class='space'></div>Дар байни тоҷикони олам, то ҳол, тахминан 200 намуди ҳунарҳои хос ва беҳамто вуҷуд доранд, ки қадимии бисёрашон баробари қадимии тамаддуни эрониёни шарқӣ ҳастанд.<div class='space'></div><div class='space'></div>",
+                    "fa": ""
                 }
             },
             "outer": {
@@ -305,20 +334,20 @@
                     "text": "Расму оин",
                     "font": 6,
                     "margin": { "d": -1, "m": -15, "t": 14 }
+                },
+                "fa": {
+                    "text": "رسم و آئین",
+                    "font": 6,
+                    "margin": { "d": -1, "m": -15, "t": 14 }
                 }
             },
             "desc": {
-                "us": {
-                    "text": "Tajik customs and traditions reflect a mix of Persian, Islamic, Zoroastrian, and Central Asian heritage. Celebrations like Navrüz, Mehrgon and weddings are filled with spirituality and are accompanied by colorful rituals, traditional clothing, and folk songs and dances.<div class='space'></div>The culture values hospitality and finds artistic richness in classical poetry, folklore, and ornate handicrafts.<div class='space'></div><div class='space'></div>",
-                    "link": "/customs?us"
-                },
-                "ru": {
-                    "text": "Таджикские обычаи и традиции отражают смесь персидского, исламского, зороастрийского и центральноазиатского наследия. Такие праздники, как Навруз, Мехрган и свадьбы пропитаны духовностью и сопровождаются народными песнями, танцами и обрядами.<div class='space'></div>Культура отличается гостеприимством и большое значение придается классической поэзии, фольклору и ремеслам.<div class='space'></div><div class='space'></div>",
-                    "link": "/customs"
-                },
-                "tj": {
-                    "text": "Дар урфу одат ва анъанаҳои тоҷикон омезиши маданияти форсӣ, исломӣ, зардуштӣ ва Осиёи Марказӣ зоҳир мешаванд. Ҷашнвораҳо, аз қабили Наврӯзу Меҳргон ва тӯйҳо саршори расму оинҳои рангоранг, либосҳои маҳаллӣ ва суруду рақсҳои мардумӣ ҳастанд.<div class='space'></div>Тоҷикон мардуми меҳмоннавоз буда, дар ин фарҳанг ашъори классикӣ, фолклор ва ҳунарҳои дастӣ ҷои махсусро ишғол мекунанд.<div class='space'></div><div class='space'></div>",
-                    "link": "/customs"
+                "link": "/customs",
+                "text": {
+                    "us": "Tajik customs and traditions reflect a mix of Persian, Islamic, Zoroastrian, and Central Asian heritage. Celebrations like Navrüz, Mehrgon and weddings are filled with spirituality and are accompanied by colorful rituals, traditional clothing, and folk songs and dances.<div class='space'></div>The culture values hospitality and finds artistic richness in classical poetry, folklore, and ornate handicrafts.<div class='space'></div><div class='space'></div>",
+                    "ru": "Таджикские обычаи и традиции отражают смесь персидского, исламского, зороастрийского и центральноазиатского наследия. Такие праздники, как Навруз, Мехрган и свадьбы пропитаны духовностью и сопровождаются народными песнями, танцами и обрядами.<div class='space'></div>Культура отличается гостеприимством и большое значение придается классической поэзии, фольклору и ремеслам.<div class='space'></div><div class='space'></div>",
+                    "tj": "Дар урфу одат ва анъанаҳои тоҷикон омезиши маданияти форсӣ, исломӣ, зардуштӣ ва Осиёи Марказӣ зоҳир мешаванд. Ҷашнвораҳо, аз қабили Наврӯзу Меҳргон ва тӯйҳо саршори расму оинҳои рангоранг, либосҳои маҳаллӣ ва суруду рақсҳои мардумӣ ҳастанд.<div class='space'></div>Тоҷикон мардуми меҳмоннавоз буда, дар ин фарҳанг ашъори классикӣ, фолклор ва ҳунарҳои дастӣ ҷои махсусро ишғол мекунанд.<div class='space'></div><div class='space'></div>",
+                    "fa": ""
                 }
             },
             "outer": {
@@ -370,20 +399,20 @@
                     "text": "Хӯрокҳо",
                     "font": 4.2,
                     "margin": { "d": 4, "m": -15, "t": 31 }
+                },
+                "fa": {
+                    "text": "خوراک‌ها",
+                    "font": 4.2,
+                    "margin": { "d": 4, "m": -15, "t": 31 }
                 }
             },
             "desc": {
-                "us": {
-                    "text": "Tajik cuisine, an intricate fusion of Middle Eastern, Central, East, and South Asian influences with recent additions from Eastern Europe, boasts a unique flavor profile. The culinary artistry, shaped over centuries along with the diverse geography of Tajik-inhabited lands, has given rise to a special highland cuisine centered around grains and dairy, distinguishing it from the meat and vegetable-centric fare prevalent in the culinary practices of lowland Tajiks.<div class='space'></div><div class='space'></div>",
-                    "link": "/cuisine?us"
-                },
-                "ru": {
-                    "text": "Таджикская кухня, представляющая собой сложное сочетание влияний Ближнего Востока, Центральной, Восточной и Южной Азии с недавними добавками из Восточной Европы, может похвастаться уникальным вкусовым профилем. Кулинарное мастерство, формировавшееся на протяжении веков вместе с разнообразной географией населенных таджиками земель, породило особую высокогорную кухню, основанную на зерновых и молочных продуктах, что отличает ее от мясных и овощных блюд, преобладающих в кулинарии равнинных таджиков.<div class='space'></div><div class='space'></div>",
-                    "link": "/cuisine"
-                },
-                "tj": {
-                    "text": "Таомҳои тоҷикӣ дар натиҷаи таъсироти ғизоҳои Шарқи Наздик, Осиёи Миёна, Шарқӣ ва Ҷанубӣ ва дар садсолаи охир бо иловаҳои хӯрокҳои Аврупои Шарқӣ ба вуҷуд омада, дорои маззаҳои гуногун мебошанд. Санъати ошпазӣ дар тӯли асрҳо ва вобаста ба ҷуғрофиёи ҳархелаи заминҳои тоҷикнишин ташаккул ёфта, ҳар як минтақа хосияти худро дорад. Хӯрокҳои баландкӯҳиён асосан аз ғалладона ва маҳсулоти ширӣ иборат буда, аз ғизоҳои гӯштӣ ва сабзавотии тоҷикони водинишин фарқ мекунанд.<div class='space'></div><div class='space'></div>",
-                    "link": "/cuisine"
+                "link": "/cuisine",
+                "text": {
+                    "us": "Tajik cuisine, an intricate fusion of Middle Eastern, Central, East, and South Asian influences with recent additions from Eastern Europe, boasts a unique flavor profile. The culinary artistry, shaped over centuries along with the diverse geography of Tajik-inhabited lands, has given rise to a special highland cuisine centered around grains and dairy, distinguishing it from the meat and vegetable-centric fare prevalent in the culinary practices of lowland Tajiks.<div class='space'></div><div class='space'></div>",
+                    "ru": "Таджикская кухня, представляющая собой сложное сочетание влияний Ближнего Востока, Центральной, Восточной и Южной Азии с недавними добавками из Восточной Европы, может похвастаться уникальным вкусовым профилем. Кулинарное мастерство, формировавшееся на протяжении веков вместе с разнообразной географией населенных таджиками земель, породило особую высокогорную кухню, основанную на зерновых и молочных продуктах, что отличает ее от мясных и овощных блюд, преобладающих в кулинарии равнинных таджиков.<div class='space'></div><div class='space'></div>",
+                    "tj": "Таомҳои тоҷикӣ дар натиҷаи таъсироти ғизоҳои Шарқи Наздик, Осиёи Миёна, Шарқӣ ва Ҷанубӣ ва дар садсолаи охир бо иловаҳои хӯрокҳои Аврупои Шарқӣ ба вуҷуд омада, дорои маззаҳои гуногун мебошанд. Санъати ошпазӣ дар тӯли асрҳо ва вобаста ба ҷуғрофиёи ҳархелаи заминҳои тоҷикнишин ташаккул ёфта, ҳар як минтақа хосияти худро дорад. Хӯрокҳои баландкӯҳиён асосан аз ғалладона ва маҳсулоти ширӣ иборат буда, аз ғизоҳои гӯштӣ ва сабзавотии тоҷикони водинишин фарқ мекунанд.<div class='space'></div><div class='space'></div>",
+                    "fa": ""
                 }
             },
             "outer": {
@@ -434,53 +463,66 @@
             ["ТОҶИКОН", "Эрониёни Шарқ"],
             ["ТОҶИКОН", "Эрониёни Шарқ"],
             ["ТОҶИКОН", "Эрониёни Шарқ"]
+        ],
+        "fa": [
+            ["تاجیکان", "ایرانیان شرق"],
+            ["تاجیکان", "ایرانیان شرق"],
+            ["تاجیکان", "ایرانیان شرق"]
         ]
     },
     "SOURCES_HEADER": {
         "ru": "Литература",
         "tj": "Адабиёт",
-        "us": "References"
+        "us": "References",
+        "fa": "ادبیات"
     },
     "NO_BOOK_DIALOG": {
         "title": {
             "us": "Apologies!",
             "ru": "Извините!",
-            "tj": "Бубахшед!"
+            "tj": "Бубахшед!",
+            "fa": "!ببخشید"
         },
         "input": {
             "us": "Enter your email",
             "ru": "Адрес электронной почты",
-            "tj": "Суроғаи почтаи электронӣ"
+            "tj": "Суроғаи почтаи электронӣ",
+            "fa": ""
         },
         "button": {
             "us": "Submit",
             "ru": "Ввод",
-            "tj": "Фирист"
+            "tj": "Фирист",
+            "fa": ""
         },
         "error": {
             "us": "Invalid email",
             "ru": "Неверный адрес",
-            "tj": "Почтаи электронии нодуруст"
+            "tj": "Почтаи электронии нодуруст",
+            "fa": ""
         },
         "success": {
             "us": "We got your email address. Thank you.",
             "ru": "Мы получили ваш адрес электронной почты. Спасибо.",
-            "tj": "Почтаи электрониатонро гирифтем. Раҳмат."
+            "tj": "Почтаи электрониатонро гирифтем. Раҳмат.",
+            "fa": ""
         }
     },
     "TEMP_PAGE_INFO": {
         "us": "Exciting updates are on the way!",
         "ru": "Обновления уже в пути!",
-        "tj": "Навигариҳо дар роҳ ҳастанд!"
+        "tj": "Навигариҳо дар роҳ ҳастанд!",
+        "fa": "!نوگاریها در راه هستند"
     },
     "LANGS": {
         "us": "English",
         "ru": "Русский",
         "tj": "Тоҷикӣ",
-        "kh": "فارسی دری"
+        "fa": "فارسی تاجیکی"
     },
     "ETYM_PAGE_HEADER": {
         "tj": "Кадом калимаро омӯхтан мехоҳед?",
+        "fa": "کدام کلمه‌ را آموختن می‌خواهید؟",
         "ru": "Какое слово вы хотели бы изучить?",
         "us": "Which Word Would You Like to Explore?"
     },
@@ -606,6 +648,43 @@
                     "position": { "t": 3, "l": 8 },
                     "delay": 0.65
                 }
+            ],
+            "fa": [
+                {
+                    "char": "ت",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.29
+                },
+                {
+                    "char": "ج",
+                    "position": { "t": 0, "l": 7 },
+                    "delay": 0.17
+                },
+                {
+                    "char": "د",
+                    "position": { "t": 1, "l": 2 },
+                    "delay": 0.53
+                },
+                {
+                    "char": "ز",
+                    "position": { "t": 1, "l": 9 },
+                    "delay": 0.57
+                },
+                {
+                    "char": "ژ",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.24
+                },
+                {
+                    "char": "ص",
+                    "position": { "t": 2, "l": 6 },
+                    "delay": 0.24
+                },
+                {
+                    "char": "/filler/flowers/img-2.png",
+                    "position": { "t": 3, "l": 8 },
+                    "delay": 0.87
+                }
             ]
         },
         "m": {
@@ -693,6 +772,33 @@
                     "char": "Y",
                     "position": { "t": 7, "l": 2 },
                     "delay": 0.91
+                }
+            ],
+            "fa": [
+                {
+                    "char": "Е",
+                    "position": { "t": 2, "l": 1 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "/filler/flowers/img-2.png",
+                    "position": { "t": 4, "l": 1 },
+                    "delay": 0.23
+                },
+                {
+                    "char": "Р",
+                    "position": { "t": 5, "l": 3 },
+                    "delay": 0.52
+                },
+                {
+                    "char": "/filler/flowers/img-6.png",
+                    "position": { "t": 6, "l": 0 },
+                    "delay": 0.83
+                },
+                {
+                    "char": "Х",
+                    "position": { "t": 7, "l": 2 },
+                    "delay": 0.59
                 }
             ]
         }
@@ -1079,6 +1185,123 @@
                     "char": "Z",
                     "position": { "t": 3, "l": 10 },
                     "delay": 0.82
+                }
+            ],
+            "fa": [
+                {
+                    "char": "ب",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.68
+                },
+                {
+                    "char": "/filler/flowers/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.55
+                },
+                {
+                    "char": "پ",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.33
+                },
+                {
+                    "char": "ث",
+                    "position": { "t": 0, "l": 6 },
+                    "delay": 0.94
+                },
+                {
+                    "char": "چ",
+                    "position": { "t": 0, "l": 9 },
+                    "delay": 0.81
+                },
+                {
+                    "char": "ح",
+                    "position": { "t": 0, "l": 10 },
+                    "delay": 0.71
+                },
+                {
+                    "char": "خ",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.43
+                },
+                {
+                    "char": "ذ",
+                    "position": { "t": 1, "l": 7 },
+                    "delay": 0.32
+                },
+                {
+                    "char": "ر",
+                    "position": { "t": 1, "l": 8 },
+                    "delay": 0.96
+                },
+                {
+                    "char": "/filler/flowers/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.79
+                },
+                {
+                    "char": "س",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.49
+                },
+                {
+                    "char": "ش",
+                    "position": { "t": 2, "l": 5 },
+                    "delay": 0.65
+                },
+                {
+                    "char": "ض",
+                    "position": { "t": 2, "l": 8 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "ط",
+                    "position": { "t": 2, "l": 9 },
+                    "delay": 0.88
+                },
+                {
+                    "char": "ظ",
+                    "position": { "t": 2, "l": 10 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "ع",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.51
+                },
+                {
+                    "char": "غ",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.39
+                },
+                {
+                    "char": "ف",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.62
+                },
+                {
+                    "char": "ق",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.77
+                },
+                {
+                    "char": "ک",
+                    "position": { "t": 3, "l": 5 },
+                    "delay": 0.46
+                },
+                {
+                    "char": "گ",
+                    "position": { "t": 3, "l": 6 },
+                    "delay": 0.93
+                },
+                {
+                    "char": "ل",
+                    "position": { "t": 3, "l": 7 },
+                    "delay": 0.13
+                },
+                {
+                    "char": "م",
+                    "position": { "t": 3, "l": 10 },
+                    "delay": 0.38
                 }
             ]
         },
@@ -1498,6 +1721,148 @@
                     "position": { "t": 7, "l": 4 },
                     "delay": 0.38
                 }
+            ],
+            "fa": [
+                {
+                    "char": "ب",
+                    "position": { "t": 0, "l": 1 },
+                    "delay": 0.97
+                },
+                {
+                    "char": "/filler/flowers/img-1.png",
+                    "position": { "t": 0, "l": 2 },
+                    "delay": 0.31
+                },
+                {
+                    "char": "پ",
+                    "position": { "t": 0, "l": 3 },
+                    "delay": 0.25
+                },
+                {
+                    "char": "ت",
+                    "position": { "t": 0, "l": 4 },
+                    "delay": 0.41
+                },
+                {
+                    "char": "Д",
+                    "position": { "t": 1, "l": 1 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "/filler/flowers/img-3.png",
+                    "position": { "t": 2, "l": 0 },
+                    "delay": 0.12
+                },
+                {
+                    "char": "Ё",
+                    "position": { "t": 2, "l": 3 },
+                    "delay": 0.78
+                },
+                {
+                    "char": "Ж",
+                    "position": { "t": 3, "l": 0 },
+                    "delay": 0.86
+                },
+                {
+                    "char": "З",
+                    "position": { "t": 3, "l": 1 },
+                    "delay": 0.46
+                },
+                {
+                    "char": "И",
+                    "position": { "t": 3, "l": 2 },
+                    "delay": 0.35
+                },
+                {
+                    "char": "Й",
+                    "position": { "t": 3, "l": 3 },
+                    "delay": 0.62
+                },
+                {
+                    "char": "К",
+                    "position": { "t": 4, "l": 0 },
+                    "delay": 0.98
+                },
+                {
+                    "char": "Л",
+                    "position": { "t": 4, "l": 3 },
+                    "delay": 0.47
+                },
+                {
+                    "char": "М",
+                    "position": { "t": 4, "l": 4 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "Н",
+                    "position": { "t": 5, "l": 0 },
+                    "delay": 0.92
+                },
+                {
+                    "char": "О",
+                    "position": { "t": 5, "l": 1 },
+                    "delay": 0.11
+                },
+                {
+                    "char": "П",
+                    "position": { "t": 5, "l": 2 },
+                    "delay": 0.58
+                },
+                {
+                    "char": "С",
+                    "position": { "t": 6, "l": 2 },
+                    "delay": 0.17
+                },
+                {
+                    "char": "/filler/flowers/img-5.png",
+                    "position": { "t": 6, "l": 3 },
+                    "delay": 0.64
+                },
+                {
+                    "char": "Т",
+                    "position": { "t": 6, "l": 4 },
+                    "delay": 0.31
+                },
+                {
+                    "char": "У",
+                    "position": { "t": 7, "l": 0 },
+                    "delay": 0.42
+                },
+                {
+                    "char": "Ф",
+                    "position": { "t": 7, "l": 1 },
+                    "delay": 0.79
+                },
+                {
+                    "char": "Ч",
+                    "position": { "t": 7, "l": 4 },
+                    "delay": 0.72
+                },
+                {
+                    "char": "Ш",
+                    "position": { "t": 8, "l": 0 },
+                    "delay": 0.84
+                },
+                {
+                    "char": "/filler/flowers/img-7.png",
+                    "position": { "t": 8, "l": 1 },
+                    "delay": 0.14
+                },
+                {
+                    "char": "Э",
+                    "position": { "t": 8, "l": 2 },
+                    "delay": 0.95
+                },
+                {
+                    "char": "Ю",
+                    "position": { "t": 8, "l": 3 },
+                    "delay": 0.23
+                },
+                {
+                    "char": "Я",
+                    "position": { "t": 8, "l": 4 },
+                    "delay": 0.63
+                }
             ]
         }
     },
@@ -1523,6 +1888,18 @@
             "ru": [
                 {
                     "char": "А",
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.45
+                },
+                {
+                    "char": "/filler/flowers/img-4.png",
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.27
+                }
+            ],
+            "fa": [
+                {
+                    "char": "آ",
                     "position": { "t": 0.5, "l": -0.5 },
                     "delay": 0.45
                 },
@@ -1558,6 +1935,18 @@
                     "delay": 0.78
                 }
             ],
+            "fa": [
+                {
+                    "char": "آ",
+                    "position": { "t": 0.5, "l": -0.5 },
+                    "delay": 0.16
+                },
+                {
+                    "char": "/filler/flowers/img-4.png",
+                    "position": { "t": 2.5, "l": 3.5 },
+                    "delay": 0.53
+                }
+            ],
             "ru": [
                 {
                     "char": "А",
@@ -1587,11 +1976,13 @@
     "ETYM_PAGE_LETTERS_INSTRUCTION": {
         "d": {
             "tj": [{ "char": "i", "position": { "t": 1, "l": 4 } }],
+            "fa": [{ "char": "i", "position": { "t": 1, "l": 4 } }],
             "ru": [{ "char": "i", "position": { "t": 1, "l": 4 } }],
             "us": [{ "char": "i", "position": { "t": 1, "l": 4 } }]
         },
         "m": {
             "tj": [{ "char": "i", "position": { "t": 1, "l": 2 } }],
+            "fa": [{ "char": "i", "position": { "t": 1, "l": 2 } }],
             "ru": [{ "char": "i", "position": { "t": 1, "l": 2 } }],
             "us": [{ "char": "i", "position": { "t": 1, "l": 2 } }]
         }
@@ -1599,6 +1990,149 @@
     "SEARCH_BAR_PLACEHOLDER": {
         "us": "Search ...",
         "ru": "Поиск ...",
-        "tj": "Ҷустуҷӯ ..."
+        "tj": "Ҷустуҷӯ ...",
+        "fa": "... جستجو"
+    },
+    "COOKIES": {
+        "name": {
+            "us": "Cookies Policy",
+            "ru": "Политика использования файлов cookie",
+            "tj": "Сиёсати истифодаи cookie",
+            "fa": "سیاست استفادهٔ cookie"
+        },
+        "desc": {
+            "us": [
+                {
+                    "subtitle": "What Are Cookies?",
+                    "body": {
+                        "text1": "Cookies are small text files that are stored on your device when you visit a website. They are used to remember your preferences, improve your browsing experience, and provide analytics."
+                    }
+                },
+                {
+                    "subtitle": "How We Use Cookies?",
+                    "body": {
+                        "text1": "We use Google Maps to identify the user's country. This helps us determine the appropriate language to display our website, ensuring a localized and seamless experience for our users."
+                    }
+                },
+                {
+                    "subtitle": "Your Choices",
+                    "body": {
+                        "text1": "By accepting cookies, you agree to share your approximate location to enhance your experience. You can also manage your preferences in browser settings."
+                    }
+                }
+            ],
+            "ru": [
+                {
+                    "subtitle": "Что такое файлы cookie?",
+                    "body": {
+                        "text1": "Файлы cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении веб-сайта. Они используются для запоминания ваших предпочтений, улучшения вашего просмотра и предоставления аналитики."
+                    }
+                }
+            ],
+            "tj": [
+                {
+                    "subtitle": "Кукиҳо чистанд?",
+                    "body": {
+                        "text1": "Кукиҳо файлҳои матнии хурде мебошанд, ки ҳангоми даромадани шумо ба вебсайтҳо дар телефон, компютер ва ё планшетатон нигоҳ дошта мешаванд. Онҳо барои беҳтар кардани таҷрибаи истифодаи вебсайтамон ба шумо ва мо ёрӣ медиҳанд."
+                    }
+                },
+                {
+                    "subtitle": "Мо кукиҳоро чӣ гуна истифода мебарем?",
+                    "body": {
+                        "text1": "Мо аз хизматрасонии Google Maps истифода мекунем, ки он барои муайян кардани танҳо ДАВЛАТИ истифодабаранда ва аз рӯи он, ба кадом забон нишон додани вебсайтамон кӯмак мекунад."
+                    }
+                },
+                {
+                    "subtitle": "Қарордоди истифодабаранда",
+                    "body": {
+                        "text1": "Бо қабули кукиҳо, шумо розӣ мешавед, ки ҷойи тахминии худро ба мо фиристед. Шумо ин розигиатонро ҳар вақт дар браузер метавонед иваз кунед."
+                    }
+                }
+            ],
+            "fa": [
+                {
+                    "subtitle": "Кукиҳо чистанд?",
+                    "body": {
+                        "text1": "Кукиҳо файлҳои матнии хурде мебошанд, ки ҳангоми даромадани шумо ба вебсайтҳо дар телефон, компютер ва ё планшетатон нигоҳ дошта мешаванд. Онҳо барои беҳтар кардани таҷрибаи истифодаи вебсайтамон ба шумо ва мо ёрӣ медиҳанд."
+                    }
+                },
+                {
+                    "subtitle": "Мо кукиҳоро чӣ гуна истифода мебарем?",
+                    "body": {
+                        "text1": "Мо аз хизматрасонии Google Maps истифода мекунем, ки он барои муайян кардани танҳо ДАВЛАТИ истифодабаранда ва аз рӯи он, ба кадом забон нишон додани вебсайтамон кӯмак мекунад."
+                    }
+                },
+                {
+                    "subtitle": "Қарордоди истифодабаранда",
+                    "body": {
+                        "text1": "Бо қабули кукиҳо, шумо розӣ мешавед, ки ҷойи тахминии худро ба мо фиристед. Шумо ин розигиатонро ҳар вақт дар браузер метавонед иваз кунед."
+                    }
+                }
+            ]
+        }
+    },
+    "ACCEPT_COOKIES": {
+        "text": {
+            "us": "We use cookies to personalize content and analyze site traffic.",
+            "ru": "Адрес электронной почты",
+            "tj": "Суроғаи почтаи электронӣ",
+            "fa": ""
+        },
+        "link": {
+            "us": "Learn more",
+            "ru": "Узнать больше",
+            "tj": "Бисёртар омӯзед",
+            "fa": ""
+        },
+        "button": {
+            "us": ["Decline", "Accept"],
+            "ru": ["Отклонить", "Принять"],
+            "tj": ["Рад", "Қабул"],
+            "fa": ""
+        }
+    },
+    "FOOTER_TITLES": {
+        "links": {
+            "us": {
+                "title": "Links",
+                "list": ["Contact", "Support"]
+            },
+            "ru": {
+                "title": "Ссылки",
+                "list": ["Контакты", "Поддержать"]
+            },
+            "tj": {
+                "title": "Пайвандҳо",
+                "list": ["Тамос", "Дастгирӣ"]
+            },
+            "fa": {
+                "title": "Пайвандҳо",
+                "list": ["Тамос", "Дастгирӣ"]
+            }
+        },
+        "resources": {
+            "us": {
+                "title": "Resources",
+                "list": ["Library"]
+            },
+            "ru": {
+                "title": "Ресурсы",
+                "list": ["Библиотека"]
+            },
+            "tj": {
+                "title": "Ресурсҳо",
+                "list": ["Китобхона"]
+            },
+            "fa": {
+                "title": "Ресурсы",
+                "list": ["کتاب‌خانه"]
+            }
+        },
+        "copyright": {
+            "us": "All rights reserved",
+            "ru": "Все права защищены",
+            "tj": "Ҳама ҳуқуқҳо ҳифз шудаанд",
+            "fa": "همه حقوق‌ها حفظ شده‌اند"
+        }
     }
 }

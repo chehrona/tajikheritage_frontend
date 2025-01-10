@@ -37,7 +37,9 @@ const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
                                 ? 'Click on a letter'
                                 : lang === 'ru'
                                 ? 'Нажмите на букву'
-                                : 'Ҳарферо зер кунед'}
+                                : lang === 'tj'
+                                ? 'Ҳарферо зер кунед'
+                                : 'حرفی را زیر کنید'}
                         </span>
                     </InstructionWrapper>
                 );

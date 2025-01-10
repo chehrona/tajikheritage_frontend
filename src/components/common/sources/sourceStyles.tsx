@@ -130,7 +130,7 @@ export const SourceLink = styled.a`
     color: var(--primary-gold-color);
     position: absolute;
     margin-left: 5px;
-    bottom: -2px;
+    bottom: 0px;
 
     &:link &:active {
         color: var(--primary-gold-color);

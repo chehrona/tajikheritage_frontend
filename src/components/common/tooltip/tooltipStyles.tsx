@@ -26,7 +26,6 @@ export const StyledTypography = styled.div`
     padding: 0.5rem;
     font-family: var(--regular-font);
     font-size: var(--body-text);
-    /* line-height: var(--body-text-line-height); */
 
     @media (max-width: 480px) {
         padding: 0.25rem;

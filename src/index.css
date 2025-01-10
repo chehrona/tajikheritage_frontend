@@ -7,6 +7,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Carmen';
+    src: url('/public/fonts/carmen.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Rem */
 html {
     font-size: 16px;
@@ -34,6 +41,7 @@ html {
     --regular-font: 'IBM Plex Serif', serif;
     --fancy-font: 'EB Garamond', serif;
     --blocky-font: 'Blocky', sans-serif;
+    --carmen-font: 'Carmen', sans-serif;
 
     /* Font-sizes */
     --header-huge: 4rem;
@@ -55,7 +63,7 @@ html {
 
     /* Standard sizes */
     --header-height: 5rem;
-    --footer-height: 3.5rem;
+    --footer-height: 8rem;
     --page-height: calc(
         100svh - ((var(--header-height) + var(--footer-height)))
     );

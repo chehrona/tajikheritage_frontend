@@ -41,7 +41,10 @@ const Flags: React.FC = () => {
             ) as Langs | null;
             if (
                 iconTitle &&
-                (iconTitle === 'us' || iconTitle === 'ru' || iconTitle === 'tj')
+                (iconTitle === 'us' ||
+                    iconTitle === 'ru' ||
+                    iconTitle === 'tj' ||
+                    iconTitle === 'fa')
             ) {
                 setLang(iconTitle);
                 setShowLangMenu(false);
@@ -79,6 +82,19 @@ const Flags: React.FC = () => {
                         <StyledIconButton data="tj" onClick={changeLang}>
                             <StyledTooltip
                                 title={staticText.LANGS['tj']}
+                                placement="right"
+                                arrow
+                            >
+                                <span>
+                                    <StyledFlag lang={'tj'}></StyledFlag>
+                                </span>
+                            </StyledTooltip>
+                        </StyledIconButton>
+                    )}
+                    {lang !== 'fa' && (
+                        <StyledIconButton data="fa" onClick={changeLang}>
+                            <StyledTooltip
+                                title={staticText.LANGS['fa']}
                                 placement="right"
                                 arrow
                             >

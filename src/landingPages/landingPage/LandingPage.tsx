@@ -63,8 +63,8 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {sections.length > 0 ? (
-                    <LandingPageFirstContainer>
+                <LandingPageFirstContainer>
+                    {sections.length > 0 ? (
                         <SectionBoxContainer
                             $center={sections.length % 3 === 0}
                         >
@@ -78,8 +78,8 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
                                 );
                             })}
                         </SectionBoxContainer>
-                    </LandingPageFirstContainer>
-                ) : null}
+                    ) : null}
+                </LandingPageFirstContainer>
             </AppLayout>
         </>
     );

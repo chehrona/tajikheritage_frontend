@@ -68,24 +68,26 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {items.length > 0 ? (
-                    <LandingPageFirstContainer>
-                        <SearchBar
-                            items={items}
-                            setItems={setItems}
-                            allItems={allItems}
-                        />
-                        <InnerBoxContainer $center={items.length % 3 === 0}>
-                            {items.map((item, i) =>
-                                page.includes('poets') ? (
-                                    <PoetCard key={item.id} poet={item} />
-                                ) : (
-                                    <SquareCard key={item.id} data={item} />
-                                ),
-                            )}
-                        </InnerBoxContainer>
-                    </LandingPageFirstContainer>
-                ) : null}
+                <LandingPageFirstContainer>
+                    {items.length > 0 ? (
+                        <>
+                            <SearchBar
+                                items={items}
+                                setItems={setItems}
+                                allItems={allItems}
+                            />
+                            <InnerBoxContainer $center={items.length % 3 === 0}>
+                                {items.map((item, i) =>
+                                    page.includes('poets') ? (
+                                        <PoetCard key={item.id} poet={item} />
+                                    ) : (
+                                        <SquareCard key={item.id} data={item} />
+                                    ),
+                                )}
+                            </InnerBoxContainer>
+                        </>
+                    ) : null}
+                </LandingPageFirstContainer>
             </AppLayout>
         </>
     );

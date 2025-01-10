@@ -75,8 +75,8 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {data ? (
-                    <ArticlePageFirstContainer>
+                <ArticlePageFirstContainer>
+                    {data ? (
                         <PageInnerContainer height={40}>
                             {data.desc[lang].map((entry, i) => {
                                 return (
@@ -92,8 +92,8 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                             })}
                             <Sources data={data.references[lang]} />
                         </PageInnerContainer>
-                    </ArticlePageFirstContainer>
-                ) : null}
+                    ) : null}
+                </ArticlePageFirstContainer>
             </AppLayout>
         </>
     );

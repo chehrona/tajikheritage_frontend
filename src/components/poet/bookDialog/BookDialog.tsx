@@ -12,6 +12,7 @@ import { addEmail } from '../../../services/request';
 // Components
 import Dialog from '../../common/dialog/Dialog';
 import DialogContentWrapper from '../../common/dialogContentWrapper/DialogContentWrapper';
+import CustomButton from '../../common/button/CustomButton';
 
 // Types
 import { BookPopupProps } from '../bookshelfDesign/types/componentTypes';
@@ -23,7 +24,6 @@ import {
     DialogTitle,
     InputWrapper,
     InputField,
-    StyledButton,
     Error,
     BodyContainer,
 } from './bookDialogStyles';
@@ -105,9 +105,13 @@ const BookDialog: React.FC<BookPopupProps> = ({ book, setBookIndex }) => {
                                     onChange={(e) => handleChange(e)}
                                     onKeyDown={(e) => handleKeyDown(e)}
                                 />
-                                <StyledButton onClick={handleSubmit}>
-                                    {staticTexts.NO_BOOK_DIALOG.button[lang]}
-                                </StyledButton>
+                                <CustomButton
+                                    width="fit-content"
+                                    text={
+                                        staticTexts.NO_BOOK_DIALOG.button[lang]
+                                    }
+                                    handleClick={handleSubmit}
+                                />
                             </InputWrapper>
                         )}
                         <Error $error={error} $success={success}>

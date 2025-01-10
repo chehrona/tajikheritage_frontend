@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '@mui/material';
 
 // Types
 import { ErrorStyleProps } from './types/styleTypes';
@@ -70,30 +69,6 @@ export const InputField = styled.input`
     border-radius: var(--input-radius);
     font-family: var(--regular-font);
     padding: 0.5rem;
-`;
-
-export const StyledButton = styled(Button)`
-    &.MuiButton-root {
-        background: var(--primary-shadow-color);
-        color: var(--primary-white-color);
-        height: 100%;
-        text-transform: none;
-        font-size: var(--body-text);
-        font-family: var(--regular-font);
-        padding: 0.375rem 1rem;
-        box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
-    }
-
-    &.MuiButton-root:hover {
-        background: var(--primary-shadow-color);
-    }
-
-    @media (max-width: 480px) {
-        &.MuiButton-root {
-            padding: 0.375rem 0.95rem;
-            margin: 0rem;
-        }
-    }
 `;
 
 export const Error = styled.div<ErrorStyleProps>`

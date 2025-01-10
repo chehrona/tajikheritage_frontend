@@ -90,10 +90,10 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                                 <Desc>
                                     <div
                                         dangerouslySetInnerHTML={{
-                                            __html: step?.desc[lang].text,
+                                            __html: step?.desc.text[lang],
                                         }}
                                     />
-                                    <StyledLink to={step?.desc[lang].link}>
+                                    <StyledLink to={step?.desc.link}>
                                         <StyledButton
                                             $length={
                                                 staticTexts.HOME_EXPLORE[lang]

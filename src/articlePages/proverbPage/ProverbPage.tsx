@@ -73,37 +73,44 @@ const ProverbPage = () => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {proverb ? (
-                    <ArticlePageFirstContainer>
-                        <Shadow />
-                        <ProverbInnerContainer $height={40}>
-                            <ProverbSoundBox proverb={proverb} />
-                            <QuoteWrapper
-                                $lang={lang}
-                                dangerouslySetInnerHTML={{
-                                    __html: proverb?.quote[lang],
-                                }}
-                            />
-                            {proverb.desc[lang].map((entry: DescDetails, i) => {
-                                const isSlides =
-                                    entry.slides && entry.slides.length > 0;
+                <ArticlePageFirstContainer>
+                    <Shadow />
+                    <ProverbInnerContainer $height={40}>
+                        {proverb ? (
+                            <>
+                                <ProverbSoundBox proverb={proverb} />
+                                <QuoteWrapper
+                                    $lang={lang}
+                                    dangerouslySetInnerHTML={{
+                                        __html: proverb?.quote[lang],
+                                    }}
+                                />
+                                {proverb.desc[lang].map(
+                                    (entry: DescDetails, i) => {
+                                        const isSlides =
+                                            entry.slides &&
+                                            entry.slides.length > 0;
 
-                                return (
-                                    <TextSegment
-                                        i={i}
-                                        key={`${proverb?.quote[lang]}_${i}`}
-                                        reverse={isSlides ? i % 2 > 0 : null}
-                                        data={entry}
-                                        topLeftRad={0}
-                                    />
-                                );
-                            })}
-                            {proverb.references ? (
-                                <Sources data={proverb.references[lang]} />
-                            ) : null}
-                        </ProverbInnerContainer>
-                    </ArticlePageFirstContainer>
-                ) : null}
+                                        return (
+                                            <TextSegment
+                                                i={i}
+                                                key={`${proverb?.quote[lang]}_${i}`}
+                                                reverse={
+                                                    isSlides ? i % 2 > 0 : null
+                                                }
+                                                data={entry}
+                                                topLeftRad={0}
+                                            />
+                                        );
+                                    },
+                                )}
+                                {proverb.references ? (
+                                    <Sources data={proverb.references[lang]} />
+                                ) : null}
+                            </>
+                        ) : null}
+                    </ProverbInnerContainer>
+                </ArticlePageFirstContainer>
             </AppLayout>
         </>
     );

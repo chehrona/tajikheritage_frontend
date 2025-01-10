@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     .quoteContainer {
-        margin: 1rem;
+        margin: var(--text-segment-gap);
         display: flex;
         justify-content: center;
         position: relative;
@@ -12,11 +12,14 @@ const GlobalStyles = createGlobalStyle`
     .quoteInnerBox {
         position: relative;
         display: flex;
-        padding: 0rem 1rem;
+        padding: 0rem var(--text-segment-gap);
         width: fit-content;
+        font-style: italic;
+        font-size: var(--header-small);
     }
 
-    .quoteSymbol {
+    .quoteInnerBox::before {
+        content: '';
         background-image: url('/customAssets/quotation.png');
         background-size: 100%;
         background-repeat: no-repeat;
@@ -30,7 +33,22 @@ const GlobalStyles = createGlobalStyle`
 
     .quoteWrapper {
         margin: 1rem 0rem 0rem var(--page-padding);
-        font-style: italic;
+    }
+
+    .storyWrapper {
+        width: 100%;
+        position: relative;
+        padding: var(--text-segment-gap);
+    }
+
+    .storyWrapper::first-letter {
+        font-family: var(--carmen-font);
+        font-size: calc(1.25 * var(--header-large));
+        color: var(--primary-gold-color);
+    }
+
+    .convoWrapper {
+        font-style: normal;
         font-size: var(--header-small);
     }
 
@@ -65,6 +83,14 @@ const GlobalStyles = createGlobalStyle`
     .space {
         height: calc(var(--text-segment-gap) / 2);
         width: 100%;
+    }
+
+    .imbeddedLink {
+        color: var(--primary-shadow-color);
+
+        :link, :visited, :active {
+            color: var(--primary-shadow-color);
+        }
     }
 
     @media screen and (max-width: 480px) {

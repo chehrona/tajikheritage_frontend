@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react';
-
-// Hooks
-import { useGlobalData } from '../../../hooks/useGlobalData';
+import React from 'react';
 
 // Components
 import { Tooltip } from '../tooltip/Tooltip';
+import Table from '../table/Table';
 import SoundButton from '../soundButton/SoundButton';
 
 // Types
 import { DescWrapperProps } from './types/componentTypes';
 import { TooltipType } from '../tooltip/types/componentTypes';
 import { SoundType } from '../../proverb/soundBox/types/componentTypes';
+import { TableType } from '../table/types/componentTypes';
 
 // Styled components
 import { EmptyDiv, SoundBox } from './descWrapperStyles';
 import GlobalStyles from '../../../globalStyles';
-import Table from '../table/Table';
-import { TableType } from '../table/types/componentTypes';
 
 export const DescWrapper: React.FC<DescWrapperProps> = ({
     data,
@@ -46,7 +43,7 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
                                 dangerouslySetInnerHTML={{
                                     __html: typedContent.text,
                                 }}
-                            />{' '}
+                            />
                             <SoundButton data={typedContent.source} />
                         </SoundBox>
                     );

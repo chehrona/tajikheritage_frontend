@@ -69,10 +69,14 @@ export const requestPdf = async (source: string) => {
     }
 };
 
-export const addVisit = async (page: string) => {
+export const addVisit = async (page: string, country: string) => {
     try {
         const userId = storeVisit(page);
-        const response = await axios.post(`${apiUrl}/visit`, { userId, page });
+        const response = await axios.post(`${apiUrl}/visit`, {
+            userId,
+            page,
+            country,
+        });
 
         return response;
     } catch (error) {

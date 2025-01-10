@@ -70,29 +70,29 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {items.length > 0 ? (
-                    <LandingPageFirstContainer>
-                        <PageTitle>
-                            {staticText.ETYM_PAGE_HEADER[lang]}
-                        </PageTitle>
-                        {/* Don't change to search bar, filtering is different */}
-                        <LetterStack
-                            setItems={setItems}
-                            allItems={allItems}
-                            isDropdownOpen={isDropdownOpen}
-                            setIsDropdownOpen={setIsDropdownOpen}
-                        />
-                        {!isDropdownOpen && (
-                            <InnerBoxContainer $center={items.length % 3 === 0}>
-                                {items.map((item, i) => {
-                                    return (
+                <LandingPageFirstContainer>
+                    <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
+                    {items.length > 0 ? (
+                        <>
+                            {/* Don't change to search bar, filtering is different */}
+                            <LetterStack
+                                setItems={setItems}
+                                allItems={allItems}
+                                isDropdownOpen={isDropdownOpen}
+                                setIsDropdownOpen={setIsDropdownOpen}
+                            />
+                            {!isDropdownOpen && (
+                                <InnerBoxContainer
+                                    $center={items.length % 3 === 0}
+                                >
+                                    {items.map((item) => (
                                         <SquareCard key={item.id} data={item} />
-                                    );
-                                })}
-                            </InnerBoxContainer>
-                        )}
-                    </LandingPageFirstContainer>
-                ) : null}
+                                    ))}
+                                </InnerBoxContainer>
+                            )}
+                        </>
+                    ) : null}
+                </LandingPageFirstContainer>
             </AppLayout>
         </>
     );

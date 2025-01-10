@@ -12,12 +12,12 @@ import { ImgInfo } from '../slideshow/slideshowStyles';
 
 const Table: React.FC<TableProps> = ({ content }) => {
     const { lang } = useGlobalData();
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(() => {
         setExpanded(false);
     }, [lang]);
 
-    const [expanded, setExpanded] = useState(false);
     return (
         <MainContainer
             $expanded={expanded}

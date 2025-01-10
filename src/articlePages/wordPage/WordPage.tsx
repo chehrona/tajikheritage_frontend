@@ -77,28 +77,30 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {word ? (
-                    <ArticlePageFirstContainer>
-                        <PageInnerContainer height={40}>
-                            <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
-                            <PronunciationWrapper>
-                                <Transcript>{word.transcript}</Transcript>
-                                <SoundButton data={word.audio} />
-                            </PronunciationWrapper>
-                            {word.desc[lang].map((entry, i) => {
-                                return (
-                                    <TextSegment
-                                        i={i}
-                                        key={`${word?._id}_${i}`}
-                                        data={entry}
-                                        topLeftRad={topLeftRad}
-                                    />
-                                );
-                            })}
-                            <Sources data={word.references[lang]} />
-                        </PageInnerContainer>
-                    </ArticlePageFirstContainer>
-                ) : null}
+                <ArticlePageFirstContainer>
+                    <PageInnerContainer height={40}>
+                        {word ? (
+                            <>
+                                <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
+                                <PronunciationWrapper>
+                                    <Transcript>{word.transcript}</Transcript>
+                                    <SoundButton data={word.audio} />
+                                </PronunciationWrapper>
+                                {word.desc[lang].map((entry, i) => {
+                                    return (
+                                        <TextSegment
+                                            i={i}
+                                            key={`${word?._id}_${i}`}
+                                            data={entry}
+                                            topLeftRad={topLeftRad}
+                                        />
+                                    );
+                                })}
+                                <Sources data={word.references[lang]} />
+                            </>
+                        ) : null}
+                    </PageInnerContainer>
+                </ArticlePageFirstContainer>
             </AppLayout>
         </>
     );

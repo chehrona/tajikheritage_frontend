@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     width: 100%;
     height: calc(100svh - var(--header-height));
-    background-image: url('/customAssets/error-grid.png');
-    background-size: calc(100vw / 8);
+    background-image: url('/customAssets/error-grid-1.png');
+    background-size: calc(100vw / 4);
     background-repeat: repeat;
     background-position: center;
     display: flex;

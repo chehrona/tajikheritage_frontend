@@ -17,7 +17,7 @@ export const ArticleContainer = styled.div`
     position: relative;
     box-sizing: border-box;
     background-color: var(--regular-white-color);
-    padding: 2rem var(--page-padding);
+    padding: 2rem var(--page-padding) 4rem var(--page-padding);
     animation: ${fadeIn} 1s ease-in-out forwards;
     overflow-x: hidden;
 
@@ -33,11 +33,11 @@ export const ArticleContainer = styled.div`
 // Landing page *************************
 export const LandingContainer = styled.div`
     box-sizing: border-box;
-    padding: 2rem var(--page-padding);
+    padding: 2rem var(--page-padding) 4rem var(--page-padding);
     background: var(--regular-white-color);
     animation: ${fadeIn} 1s ease-in-out forwards;
     overflow-x: hidden;
-    min-height: var(--page-height);
+    min-height: 100svh;
 
     @media (max-width: 480px) {
         padding: var(--page-padding);

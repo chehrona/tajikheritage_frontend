@@ -6,9 +6,6 @@ import { useGlobalData } from '../../hooks/useGlobalData';
 // Helpers
 import staticText from '../../miscellaneous/staticTexts.json';
 
-// Services
-import { addVisit } from '../../services/request';
-
 // Components
 import HomeStepper from '../../components/home/homeStepper/HomeStepper';
 import BigCircle from '../../components/home/imageBalls/BigCircle';
@@ -47,17 +44,8 @@ const Home: React.FC = () => {
     const [scrollIndicator, setScrollIndicator] = useState<boolean>(true);
     const [opacities, setOpacities] = useState<number[]>([1, 0, 0, 0, 0]);
 
-    const recordVisit = async () => {
-        try {
-            await addVisit('home');
-        } catch (error) {
-            console.error('Error recording visit:', error);
-        }
-    };
-
     useEffect(() => {
         setTitle(staticText.HEADER);
-        recordVisit();
 
         const handleScroll = () => {
             const containerElement = containerRef.current;

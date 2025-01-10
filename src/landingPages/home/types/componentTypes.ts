@@ -14,11 +14,6 @@ type LanguageDetails = {
     };
 };
 
-type Description = {
-    text: string;
-    link: string;
-};
-
 export type OuterBall = {
     [key in string]: {
         top?: { d: string; t: string };
@@ -42,7 +37,10 @@ type StepDetails = {
         [key in Langs]: LanguageDetails;
     };
     desc: {
-        [key in Langs]: Description;
+        link: string;
+        text: {
+            [key in Langs]: string;
+        };
     };
     outer: OuterBall;
     inner: InnerBall;

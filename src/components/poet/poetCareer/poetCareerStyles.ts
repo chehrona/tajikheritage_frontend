@@ -37,7 +37,7 @@ export const MainContainer = styled.div`
 
 export const SlideUnit = styled.div`
     padding: calc(2 * var(--text-segment-gap)) var(--page-padding);
-    height: 70svh;
+    height: 75svh;
 
     @media (max-width: 480px) {
         height: 80svh;
