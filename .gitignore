@@ -4,4 +4,3 @@ build
 .env.production
 .env.development
 .DS_Store
-.env
