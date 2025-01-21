@@ -79,9 +79,11 @@ export const SocialsContainer = styled.div`
 export const LinksWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 14rem;
     font-size: var(--body-text);
     height: 100%;
+    gap: 1rem;
 `;
 
 export const StyledLink = styled(Link)`

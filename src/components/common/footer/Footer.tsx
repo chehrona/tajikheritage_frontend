@@ -21,6 +21,7 @@ import {
     StyledLink,
     LinksWrapper,
 } from './footerStyles';
+import DonateButton from '../donateButton/DonateButton';
 
 const Footer: React.FC = () => {
     const { lang } = useGlobalData();
@@ -41,13 +42,7 @@ const Footer: React.FC = () => {
                             >
                                 {staticText.FOOTER_TITLES.links[lang].list[0]}
                             </StyledLink>
-                            <StyledLink
-                                to="https://www.paypal.com/donate/?hosted_button_id=ZF3B5GD7HKV8J"
-                                rel="noreferrer"
-                                target={'_blank'}
-                            >
-                                {staticText.FOOTER_TITLES.links[lang].list[1]}
-                            </StyledLink>
+                            <DonateButton />
                         </LinksWrapper>
                     </SocialsContainer>
                     <SocialsContainer>

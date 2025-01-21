@@ -13,6 +13,7 @@ import Footer from './components/common/footer/Footer';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 import Loader from './components/common/loader/Loader';
+import DonateButton from './components/common/donateButton/DonateButton';
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { pathname } = useLocation();
