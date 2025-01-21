@@ -14,8 +14,6 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         padding: 0rem var(--text-segment-gap);
         width: fit-content;
-        font-style: italic;
-        font-size: var(--header-small);
     }
 
     .quoteInnerBox::before {
@@ -36,7 +34,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .storyWrapper {
-        width: 100%;
+        margin: var(--text-segment-gap);
+        justify-content: center;
         position: relative;
         padding: var(--text-segment-gap);
     }
@@ -48,8 +47,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .convoWrapper {
-        font-style: normal;
-        font-size: var(--header-small);
+        width: 100%;
+        margin: var(--text-segment-gap);
+        justify-content: center;
+        position: relative;
+        padding: var(--text-segment-gap);
     }
 
     .termSpan {

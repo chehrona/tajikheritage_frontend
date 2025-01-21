@@ -23,7 +23,7 @@ import PoetMovies from '../../components/poet/poetMovies/PoetMovies';
 import Sources from '../../components/common/sources/Sources';
 
 // Components
-import PageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
+import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 import AppLayout from '../../AppLayout';
 import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
@@ -95,22 +95,24 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
         <>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
-                {poet ? (
-                    <PageFirstContainer>
-                        <PageInnerContainer height={40}>
-                            <PoetIntro
-                                poet={poet}
-                                scrollToView={scrollToView}
-                            />
-                            <PoetBio bioData={poet?.bio} />
-                            <PoetWorks works={poet?.works[lang]} />
-                            <PoetMovies movies={poet?.movies[lang]} />
-                            <PoetCareer points={poet?.career} />
-                            <PoetAwards awards={poet?.awards[lang]} />
-                            <Sources data={poet?.references[lang]} />
-                        </PageInnerContainer>
-                    </PageFirstContainer>
-                ) : null}
+                <ArticlePageFirstContainer>
+                    <PageInnerContainer height={40}>
+                        {poet ? (
+                            <>
+                                <PoetIntro
+                                    poet={poet}
+                                    scrollToView={scrollToView}
+                                />
+                                <PoetBio bioData={poet?.bio} />
+                                <PoetWorks works={poet?.works[lang]} />
+                                <PoetMovies movies={poet?.movies[lang]} />
+                                <PoetCareer points={poet?.career} />
+                                <PoetAwards awards={poet?.awards[lang]} />
+                                <Sources data={poet?.references[lang]} />
+                            </>
+                        ) : null}
+                    </PageInnerContainer>
+                </ArticlePageFirstContainer>
             </AppLayout>
         </>
     );

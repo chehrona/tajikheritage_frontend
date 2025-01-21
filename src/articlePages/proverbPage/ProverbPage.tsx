@@ -71,7 +71,7 @@ const ProverbPage = () => {
 
     return (
         <>
-            {error === 404 ? <PageNotFound /> : null}
+            {error === 404 || proverb?.disabled ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <Shadow />
@@ -80,7 +80,6 @@ const ProverbPage = () => {
                             <>
                                 <ProverbSoundBox proverb={proverb} />
                                 <QuoteWrapper
-                                    $lang={lang}
                                     dangerouslySetInnerHTML={{
                                         __html: proverb?.quote[lang],
                                     }}

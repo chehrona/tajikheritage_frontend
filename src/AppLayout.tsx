@@ -13,7 +13,6 @@ import Footer from './components/common/footer/Footer';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
 import Loader from './components/common/loader/Loader';
-import CookiesBanner from './components/common/cookiesBanner/CookiesBanner';
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { pathname } = useLocation();
@@ -90,7 +89,6 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
                 <Flags />
                 {showArrow ? <ScrollUpArrow parentRef={parentRef} /> : null}
             </div>
-            <CookiesBanner />
         </div>
     );
 };

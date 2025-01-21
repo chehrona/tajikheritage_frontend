@@ -31,7 +31,7 @@ export const ProverbInnerContainer = styled(MainContainer)`
     }
 `;
 
-export const QuoteWrapper = styled.div<{ $lang: string }>`
+export const QuoteWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,21 +41,16 @@ export const QuoteWrapper = styled.div<{ $lang: string }>`
     font-family: var(--fancy-font);
     font-size: var(--header-large);
     line-height: var(--header-big-line-height);
-    padding: ${({ $lang }) =>
-        $lang === 'tj'
-            ? '3rem var(--page-padding) calc(2 * var(--text-segment-gap)) var(--page-padding)'
-            : '4.5rem var(--page-padding) calc(2 * var(--text-segment-gap)) var(--page-padding)'};
+    padding: 4.5rem var(--page-padding) calc(2 * var(--text-segment-gap))
+        var(--page-padding);
 
     @media (max-width: 480px) {
         font-size: var(--header-big);
-        padding: ${({ $lang }) =>
-            $lang === 'tj'
-                ? '3.25rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'
-                : '4.5rem var(--page-padding) var(--text-segment-gap) var(--page-padding)'};
+        padding: 4.5rem var(--page-padding) var(--text-segment-gap)
+            var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        padding: ${({ $lang }) =>
-            $lang === 'tj' ? '4rem 2rem 2.5rem 2rem' : '5.5rem 2rem 2rem 2rem'};
+        padding: 5.5rem 2rem 2rem 2rem;
     }
 `;

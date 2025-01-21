@@ -13,6 +13,7 @@ export type WordObj = {
         [key in Langs]: string;
     };
     transcript: string;
+    disabled: boolean;
     audio: string;
     desc: { [key in Langs]: DescDetails[] };
     references: {

@@ -7,14 +7,14 @@ import { ValidEmailType } from '../components/poet/bookDialog/types/componentTyp
 // API URL
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
-export const requestPage = async (url: string) => {
-    if (!url) url = '';
+export const requestPage = async (page: string) => {
+    if (!page) page = '';
 
     try {
-        const userId = storeVisit(url);
+        const userId = storeVisit(page);
 
-        const response = await axios.get(`${apiUrl}/${url}`, {
-            params: { url, userId },
+        const response = await axios.get(`${apiUrl}/${page}`, {
+            params: { page, userId },
         });
 
         return response.data;
@@ -28,7 +28,7 @@ export const requestMiddlePage = async (page: string) => {
         const userId = storeVisit(page);
 
         const response = await axios.get(`${apiUrl}/${page}`, {
-            params: { userId },
+            params: { userId, page },
         });
 
         return response.data;
@@ -39,11 +39,12 @@ export const requestMiddlePage = async (page: string) => {
 
 export const requestArticleInfo = async (id: string, page: string) => {
     try {
-        const userId = storeVisit(`${page}/${id}`);
+        const userId = storeVisit(`${page}${id}`);
 
         const response = await axios.get(`${apiUrl}/${page}`, {
             params: {
                 id: id,
+                page: `${page}/${id}`,
                 userId: userId,
             },
         });
@@ -64,21 +65,6 @@ export const requestPdf = async (source: string) => {
         });
         const pdfBlobUrl = URL.createObjectURL(blob);
         return pdfBlobUrl;
-    } catch (error) {
-        throw error;
-    }
-};
-
-export const addVisit = async (page: string, country: string) => {
-    try {
-        const userId = storeVisit(page);
-        const response = await axios.post(`${apiUrl}/visit`, {
-            userId,
-            page,
-            country,
-        });
-
-        return response;
     } catch (error) {
         throw error;
     }

@@ -75,7 +75,7 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
 
     return (
         <>
-            {error === 404 ? <PageNotFound /> : null}
+            {error === 404 || word?.disabled ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <PageInnerContainer height={40}>

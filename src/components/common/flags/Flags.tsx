@@ -91,7 +91,7 @@ const Flags: React.FC = () => {
                             </StyledTooltip>
                         </StyledIconButton>
                     )}
-                    {lang !== 'fa' && (
+                    {/* {lang !== 'fa' && (
                         <StyledIconButton data="fa" onClick={changeLang}>
                             <StyledTooltip
                                 title={staticText.LANGS['fa']}
@@ -103,7 +103,7 @@ const Flags: React.FC = () => {
                                 </span>
                             </StyledTooltip>
                         </StyledIconButton>
-                    )}
+                    )} */}
                     {lang !== 'ru' && (
                         <StyledIconButton data="ru" onClick={changeLang}>
                             <StyledTooltip

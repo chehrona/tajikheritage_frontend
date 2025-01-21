@@ -16,7 +16,6 @@ import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
 import GenericArticlePage from '../../../articlePages/genericArticlePage/GenericArticlePage';
 import WordPage from '../../../articlePages/wordPage/WordPage';
-import CookiesPage from '../../../articlePages/cookies/CookiesPage';
 
 const Routes: React.FC = () => {
     const location = useLocation();
@@ -25,9 +24,6 @@ const Routes: React.FC = () => {
         <ServerRoutes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<PageNotFound />} />
-            <Route path="/cookies-policy" element={<CookiesPage />} />
-            <Route path="/about" element={<CookiesPage />} />
-
             {/* Languages */}
             <Route
                 path="/language"

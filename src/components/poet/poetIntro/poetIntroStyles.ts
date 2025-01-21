@@ -106,7 +106,7 @@ export const FadedImage = styled.img`
 
 export const PoetName = styled.div<{ $color?: boolean }>`
     opacity: 0;
-    font-size: 8rem;
+    font-size: 7.25rem;
     font-weight: bold;
     font-style: italic;
     animation-delay: 0.1s;

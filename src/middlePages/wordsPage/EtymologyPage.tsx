@@ -28,13 +28,15 @@ import { InnerBoxContainer } from '../middlePage/middlePageStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
-    const { lang, setIsLoading } = useGlobalData();
+    const { lang, isLoading, setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState<number | null>(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
 
     const fetchData = async () => {
+        if (isLoading) return;
+
         try {
             setIsLoading(true);
             const data = await requestMiddlePage(page);

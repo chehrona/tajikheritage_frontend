@@ -20,10 +20,8 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
     const { lang } = useGlobalData();
 
     const toggleAudio = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (lang !== 'tj') {
-            const audioFile = e.currentTarget.children[0] as HTMLAudioElement;
-            audioFile.play();
-        }
+        const audioFile = e.currentTarget.children[0] as HTMLAudioElement;
+        audioFile.play();
     };
 
     return (
@@ -38,7 +36,7 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                 />
                 <LogoInner
                     src={process.env.REACT_APP_BASE_URL + proverb?.logo.inner}
-                />{' '}
+                />
             </LogoWrapper>
             <SvgContainer viewBox="0 0 200 200">
                 <path
@@ -57,7 +55,7 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                             ? '• CLICK TO HEAR •'
                             : lang === 'ru'
                             ? '• ПОСЛУШАТЬ •'
-                            : ''}
+                            : '• ГӮШ КУНЕД •'}
                     </textPath>
                 </Text>
             </SvgContainer>

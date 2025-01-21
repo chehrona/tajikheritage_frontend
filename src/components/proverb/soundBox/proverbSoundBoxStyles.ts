@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const spin = keyframes`
     0% { 
@@ -36,17 +36,12 @@ export const LogoWrapper = styled.div<{ $lang: string }>`
     z-index: 3;
     transform: translateX(-50%);
     transition: transform 0.25s ease-in-out;
-    cursor: ${({ $lang }) => $lang !== 'tj' && 'pointer'};
+    cursor: pointer;
 
     &:hover {
-        ${({ $lang }) =>
-            $lang !== 'tj' &&
-            css`
-                filter: drop-shadow(0px 0px 0.25px var(--primary-black-color));
-                transform: translateZ(1rem) translateX(-50%) scaleX(1.05)
-                    scaleY(1.05);
-                transition: transform 0.25s ease-in-out;
-            `}
+        filter: drop-shadow(0px 0px 0.25px var(--primary-black-color));
+        transform: translateZ(1rem) translateX(-50%) scaleX(1.05) scaleY(1.05);
+        transition: transform 0.25s ease-in-out;
     }
 
     @media (max-device-width: 1024px) {
@@ -61,11 +56,7 @@ export const LogoWrapper = styled.div<{ $lang: string }>`
 export const LogoOuter = styled.img<{ $lang: string }>`
     height: 5rem;
     width: 5rem;
-    ${({ $lang }) =>
-        $lang !== 'tj' &&
-        css`
-            animation: ${spin} 10s linear infinite;
-        `}
+    animation: ${spin} 10s linear infinite;
 
     @media (max-width: 480px) {
         height: 5rem;

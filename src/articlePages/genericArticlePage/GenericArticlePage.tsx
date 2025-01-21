@@ -28,7 +28,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { lang, setIsLoading } = useGlobalData();
+    const { lang, isLoading, setIsLoading } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<number | null>(null);
     const isTablet = useMediaQuery({
@@ -37,6 +37,8 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const topLeftRad = isTablet ? 2.5 : 4;
 
     const fetchData = async () => {
+        if (isLoading) return;
+
         try {
             setIsLoading(true);
 

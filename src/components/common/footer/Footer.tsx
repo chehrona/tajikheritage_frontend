@@ -57,12 +57,13 @@ const Footer: React.FC = () => {
                         <LinksWrapper>
                             <StyledLink
                                 to={
-                                    process.env.NODE_ENV === 'development'
-                                        ? 'http://localhost:3002'
-                                        : 'https://library.thetajikheritage.com'
+                                    '#'
+                                    // process.env.NODE_ENV === 'development'
+                                    //     ? 'http://localhost:3002'
+                                    //     : 'https://library.thetajikheritage.com'
                                 }
-                                rel="noreferrer"
-                                target={'_blank'}
+                                // rel="noreferrer"
+                                // target={'_blank'}
                             >
                                 {
                                     staticText.FOOTER_TITLES.resources[lang]
