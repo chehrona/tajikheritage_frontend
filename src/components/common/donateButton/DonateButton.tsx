@@ -12,7 +12,6 @@ import { StyledButton } from '../button/customButtonStyles';
 const DonateButton: React.FC = () => {
     const { lang } = useGlobalData();
 
-    console.log(process.env.REACT_APP_PAYPAL_VALUE, 'value');
     return (
         <form
             action="https://www.paypal.com/donate"
