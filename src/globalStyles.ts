@@ -2,17 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     .quoteContainer {
-        margin: var(--text-segment-gap);
         display: flex;
         justify-content: center;
         position: relative;
         min-height: 6rem;
+        padding: var(--text-segment-gap);
     }
 
     .quoteInnerBox {
         position: relative;
         display: flex;
         width: fit-content;
+        padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
     }
 
     .quoteInnerBox::before {
@@ -22,23 +23,23 @@ const GlobalStyles = createGlobalStyle`
         background-repeat: no-repeat;
         height: 7rem;
         width: 7rem;
-        opacity: 0.4;
+        opacity: 0.3;
         position: absolute;
-        left: 1rem;
+        left: 0rem;
         top: 0rem;
         z-index: 1;
     }
 
     .quoteWrapper {
-        margin: calc(2 * var(--text-segment-gap)) var(--page-padding) var(--text-segment-gap) calc(2 * var(--text-segment-gap));
         position: relative;
         z-index: 2;
+        padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
     }
 
     .storyWrapper {
-        margin: calc(2 * var(--text-segment-gap));
         justify-content: center;
         position: relative;
+        padding: var(--text-segment-gap);
     }
 
     .storyWrapper::first-letter {
@@ -49,9 +50,9 @@ const GlobalStyles = createGlobalStyle`
 
     .convoWrapper {
         width: 100%;
-        margin: calc(2 * var(--text-segment-gap));
         justify-content: center;
         position: relative;
+        padding: var(--text-segment-gap);
     }
 
     .termSpan {
@@ -96,10 +97,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @media screen and (max-width: 480px) {
-        .quoteContainer {
-            margin: var(--text-segment-gap) 0rem;
-        }
-
         .quoteInnerBox {
             display: block;
             padding: 0rem;
@@ -115,11 +112,10 @@ const GlobalStyles = createGlobalStyle`
         }
 
         .quoteWrapper {
-            margin-top: calc(2 * var(--text-segment-gap));
+            padding: var(--page-padding) 0rem 0rem var(--page-padding);
         }
 
         .storyWrapper {
-            margin-top: calc(2 * var(--text-segment-gap));
             justify-content: center;
             position: relative;
         }
@@ -131,7 +127,6 @@ const GlobalStyles = createGlobalStyle`
         }
 
         .convoWrapper {
-            margin: var(--text-segment-gap);
             justify-content: center;
             position: relative;
         }
