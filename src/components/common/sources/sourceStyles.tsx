@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
 
     @media (max-width: 480px) {
         padding: var(--text-segment-gap) var(--page-padding)
-            calc(4 * var(--text-segment-gap)) var(--page-padding);
+            calc(4 * var(--page-padding)) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

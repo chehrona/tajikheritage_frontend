@@ -32,12 +32,8 @@ export const FooterInnerContainer = styled.div`
     background-position: center;
 
     @media (max-width: 480px) {
-        flex-direction: column-reverse;
-        justify-content: center;
-        max-height: var(--footer-height);
-        min-height: var(--footer-height);
-        padding: 0.25rem 0.5rem 0.5rem 0.5rem;
-        width: fit-content;
+        background-image: url('/customAssets/error-grid-1.png');
+        background-size: calc(100vw / 1.5);
     }
 `;
 
@@ -50,6 +46,13 @@ export const InfoContainer = styled.div`
     align-items: flex-start;
     position: relative;
     z-index: 2;
+
+    @media (max-width: 480px) {
+        padding: var(--page-padding);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const StyledCopyrightIcon = styled(Copyright)`
@@ -66,6 +69,7 @@ export const Text = styled.div`
     font-size: var(--info-text);
 
     @media (max-width: 480px) {
+        font-size: 0.75rem;
         margin: 0rem;
     }
 `;
@@ -74,6 +78,15 @@ export const SocialsContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 14rem;
+
+    @media (max-width: 480px) {
+        margin-bottom: 2rem;
+        align-items: center;
+
+        &:last-child {
+            margin-bottom: 0rem;
+        }
+    }
 `;
 
 export const LinksWrapper = styled.div`
@@ -81,9 +94,14 @@ export const LinksWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 14rem;
-    font-size: var(--body-text);
     height: 100%;
     gap: 1rem;
+    font-size: var(--body-text);
+
+    @media (max-width: 480px) {
+        font-size: var(--header-small);
+        align-items: center;
+    }
 `;
 
 export const StyledLink = styled(Link)`
@@ -100,6 +118,10 @@ export const Title = styled.div`
     color: var(--primary-gold-color);
     font-family: var(--fancy-font);
     margin-bottom: 1rem;
+
+    @media (max-width: 480px) {
+        margin-bottom: 0.25rem;
+    }
 `;
 
 export const SocialsWrapper = styled.div`

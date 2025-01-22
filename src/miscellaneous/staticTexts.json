@@ -2128,6 +2128,12 @@
                 "list": ["کتاب‌خانه"]
             }
         },
+        "socials": {
+            "us": "Follow Us",
+            "ru": "Подписывайтесь",
+            "tj": "Пайгирӣ",
+            "fa": ""
+        },
         "copyright": {
             "us": "All rights reserved",
             "ru": "Все права защищены",

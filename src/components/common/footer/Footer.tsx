@@ -6,6 +6,9 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 // Helper
 import staticText from '../../../miscellaneous/staticTexts.json';
 
+// Components
+import DonateButton from '../donateButton/DonateButton';
+
 // Styled components
 import {
     FooterContainer,
@@ -21,7 +24,6 @@ import {
     StyledLink,
     LinksWrapper,
 } from './footerStyles';
-import DonateButton from '../donateButton/DonateButton';
 
 const Footer: React.FC = () => {
     const { lang } = useGlobalData();
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
                         </LinksWrapper>
                     </SocialsContainer>
                     <SocialsContainer>
-                        <Title>Follow us</Title>
+                        <Title>{staticText.FOOTER_TITLES.socials[lang]}</Title>
                         <SocialsWrapper>
                             <StyledLink
                                 to="https://www.instagram.com/tajik_heritage/"

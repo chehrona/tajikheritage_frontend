@@ -12,7 +12,6 @@ const GlobalStyles = createGlobalStyle`
     .quoteInnerBox {
         position: relative;
         display: flex;
-        padding: 0rem var(--text-segment-gap);
         width: fit-content;
     }
 
@@ -23,21 +22,23 @@ const GlobalStyles = createGlobalStyle`
         background-repeat: no-repeat;
         height: 7rem;
         width: 7rem;
-        filter: opacity(0.35);
+        opacity: 0.4;
         position: absolute;
         left: 1rem;
         top: 0rem;
+        z-index: 1;
     }
 
     .quoteWrapper {
-        margin: 1rem 0rem 0rem var(--page-padding);
+        margin: calc(2 * var(--text-segment-gap)) var(--page-padding) var(--text-segment-gap) calc(2 * var(--text-segment-gap));
+        position: relative;
+        z-index: 2;
     }
 
     .storyWrapper {
-        margin: var(--text-segment-gap);
+        margin: calc(2 * var(--text-segment-gap));
         justify-content: center;
         position: relative;
-        padding: var(--text-segment-gap);
     }
 
     .storyWrapper::first-letter {
@@ -48,10 +49,9 @@ const GlobalStyles = createGlobalStyle`
 
     .convoWrapper {
         width: 100%;
-        margin: var(--text-segment-gap);
+        margin: calc(2 * var(--text-segment-gap));
         justify-content: center;
         position: relative;
-        padding: var(--text-segment-gap);
     }
 
     .termSpan {
@@ -97,20 +97,43 @@ const GlobalStyles = createGlobalStyle`
 
     @media screen and (max-width: 480px) {
         .quoteContainer {
-            margin: 0.75rem 0rem 1rem 0.5rem;
+            margin: var(--text-segment-gap) 0rem;
         }
 
         .quoteInnerBox {
             display: block;
+            padding: 0rem;
+            width: 100%;
+        }
+
+        .quoteInnerBox::before {
+            height: 6rem;
+            width: 6rem;
+            position: absolute;
+            left: 0rem;
+            top: 0rem;
         }
 
         .quoteWrapper {
-            margin: 1rem -1rem 0rem 0rem;
-            font-size: var(--header-small);
+            margin-top: calc(2 * var(--text-segment-gap));
         }
 
-        .quoteSymbol {
-            left: -0.75rem;
+        .storyWrapper {
+            margin-top: calc(2 * var(--text-segment-gap));
+            justify-content: center;
+            position: relative;
+        }
+
+        .storyWrapper::first-letter {
+            font-family: var(--carmen-font);
+            font-size: calc(1.25 * var(--header-big));
+            color: var(--primary-gold-color);
+        }
+
+        .convoWrapper {
+            margin: var(--text-segment-gap);
+            justify-content: center;
+            position: relative;
         }
     }
 
@@ -122,11 +145,6 @@ const GlobalStyles = createGlobalStyle`
         .quoteWrapper {
             margin: 1.3rem 0rem 1rem var(--page-padding);
             font-size: 1.45rem;
-        }
-
-        .quoteSymbol {
-            height: 6rem;
-            width: 6rem;
         }
     }
 `;

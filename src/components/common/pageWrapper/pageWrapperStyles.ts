@@ -40,6 +40,7 @@ export const LandingContainer = styled.div`
     min-height: 100svh;
 
     @media (max-width: 480px) {
-        padding: var(--page-padding);
+        padding: var(--page-padding) var(--page-padding)
+            calc(4 * var(--page-padding)) var(--page-padding);
     }
 `;
