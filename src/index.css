@@ -185,7 +185,6 @@ body * {
 .fixed-container {
     max-width: 1440px;
     position: fixed;
-    height: 10rem;
     width: 100%;
     z-index: 1000;
     bottom: 0rem;
@@ -194,6 +193,7 @@ body * {
     justify-content: space-between;
     align-items: flex-end;
     padding: 0rem 0rem 1rem 0.35rem;
+    background-color: red;
 }
 
 .fade-in {

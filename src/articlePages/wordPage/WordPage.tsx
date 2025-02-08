@@ -25,6 +25,7 @@ import ArticlePageFirstContainer from '../../components/common/pageWrapper/Artic
 
 // Styled components
 import { WordTitle, Transcript, PronunciationWrapper } from './wordPageStyles';
+import Timeline from '../../components/etymology/timeline/Timeline';
 
 const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
@@ -76,7 +77,8 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
     return (
         <>
             {error === 404 || word?.disabled ? <PageNotFound /> : null}
-            <AppLayout>
+            <Timeline />
+            {/* <AppLayout>
                 <ArticlePageFirstContainer>
                     <PageInnerContainer height={40}>
                         {word ? (
@@ -100,8 +102,8 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
                             </>
                         ) : null}
                     </PageInnerContainer>
-                </ArticlePageFirstContainer>
-            </AppLayout>
+                </ArticlePageFirstContainer> */}
+            {/* </AppLayout> */}
         </>
     );
 };

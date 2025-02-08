@@ -1993,6 +1993,12 @@
         "tj": "Ҷустуҷӯ ...",
         "fa": "... جستجو"
     },
+    "WORD_PAGE_TIMELINE_HEADER": {
+        "tj": "Хронологияи забонҳои эронӣ",
+        "fa": "کدام کلمه‌ را آموختن می‌خواهید؟",
+        "ru": "Хронология иранских языков",
+        "us": "Timeline of Iranic Languages"
+    },
     "COOKIES": {
         "name": {
             "us": "Cookies Policy",

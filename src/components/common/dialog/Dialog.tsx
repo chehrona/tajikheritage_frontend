@@ -17,8 +17,9 @@ const Dialog: React.FC<DialogProps> = ({
     open,
     children,
     width,
-    background,
-    height,
+    background = '',
+    height = 'auto',
+    hideBackdrop = false,
 }) => {
     return (
         <StyledDialog
@@ -31,6 +32,7 @@ const Dialog: React.FC<DialogProps> = ({
             TransitionProps={{
                 timeout: 200,
             }}
+            hideBackdrop={hideBackdrop}
         >
             <DialogHeaderWrapper>
                 <CloseButton handleClose={handleClose} />

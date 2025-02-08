@@ -5,6 +5,8 @@ import { Dialog } from '@mui/material';
 import { StyledDialogProps } from './types/styleTypes';
 
 export const StyledDialog = styled(Dialog)<StyledDialogProps>`
+    ${({ hideBackdrop }) => (hideBackdrop ? 'pointer-events: none;' : '')}
+
     & .MuiPaper-root {
         font-size: var(--body-text);
         border-radius: var(--big-radius);

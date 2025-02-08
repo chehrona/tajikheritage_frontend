@@ -5,6 +5,8 @@ export type DialogProps = {
     open: boolean;
     children: ReactNode;
     width: string;
-    background: string;
+    background?: string;
     height?: string;
+    hideBackdrop?: boolean;
+    disableEnforceFocus?: boolean;
 };
