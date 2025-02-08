@@ -16,12 +16,13 @@ export const Table = styled.table`
 
 export const TBody = styled.tbody``;
 
-export const TableRow = styled.tr<{ $mid: boolean; $background: string }>`
+export const TableRow = styled.tr<{ $mid: boolean }>`
     position: relative;
     height: ${ROW_HEIGHT}px;
     border-bottom: ${({ $mid }) =>
-        $mid ? '1px dashed black' : '1px solid black'};
-    background: ${({ $background }) => $background && $background};
+        $mid
+            ? '3px dashed var(--primary-gold-color)'
+            : '3px solid var(--primary-gold-color)'};
 `;
 
 export const VerticalTextCell = styled.td`
@@ -33,7 +34,6 @@ export const VerticalTextCell = styled.td`
     white-space: nowrap;
     width: 2rem;
     height: ${ROW_HEIGHT}px;
-    border-right: 1px solid black;
 `;
 
 export const YearCell = styled.td`

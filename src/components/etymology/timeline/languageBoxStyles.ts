@@ -12,6 +12,7 @@ export const MainContainer = styled.div<{
 }>`
     position: absolute;
     left: ${({ $x }) => `${$x}px`};
+    opacity: 0.5;
     top: ${({ $y }) => `${$y}px`}; /* Fixed missing top positioning */
     transform: translateY(-50%);
     width: ${BOX_WIDTH}px;

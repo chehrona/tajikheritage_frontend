@@ -40,7 +40,6 @@ const Timeline: React.FC = () => {
                                     <TableRow
                                         key={yearIndex}
                                         $mid={year.length !== 0}
-                                        $background={entry.background}
                                     >
                                         {yearIndex === 0 && (
                                             <VerticalTextCell
