@@ -8,6 +8,7 @@ export const StyledDialog = styled(Dialog)<StyledDialogProps>`
     ${({ hideBackdrop }) => (hideBackdrop ? 'pointer-events: none;' : '')}
 
     & .MuiPaper-root {
+        /* overflow: hidden; */
         font-size: var(--body-text);
         border-radius: var(--big-radius);
         width: ${({ $width }) => $width && $width};

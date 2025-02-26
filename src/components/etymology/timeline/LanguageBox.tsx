@@ -1,16 +1,28 @@
 import React from 'react';
-import { MainContainer, BoxText, TextContainer } from './languageBoxStyles';
+import {
+    MainContainer,
+    TopNode,
+    LeftNode,
+    RightNode,
+    BottomNode,
+    TextContainer,
+} from './languageBoxStyles';
 
 const LanguageBox: React.FC<{
-    text: string;
+    name: string;
     index: number;
     x: number;
     y: number;
-}> = ({ text, index, x, y }) => {
+    nodes: { top: boolean; bottom: boolean; left: boolean; right: boolean };
+}> = ({ name, index, x, y, nodes }) => {
     return (
-        <MainContainer key={index} $x={x} $y={y} $empty={text.length === 0}>
-            <TextContainer $empty={text.length === 0}>
-                <BoxText>{text}</BoxText>
+        <MainContainer key={index} $x={x} $y={y} $empty={name.length === 0}>
+            {nodes.top ? <TopNode /> : null}
+            {nodes.right ? <RightNode /> : null}
+            {nodes.left ? <LeftNode /> : null}
+            {nodes.bottom ? <BottomNode /> : null}
+            <TextContainer $empty={name.length === 0}>
+                <div>{name}</div>
             </TextContainer>
         </MainContainer>
     );

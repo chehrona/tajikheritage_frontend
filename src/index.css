@@ -193,7 +193,6 @@ body * {
     justify-content: space-between;
     align-items: flex-end;
     padding: 0rem 0rem 1rem 0.35rem;
-    background-color: red;
 }
 
 .fade-in {

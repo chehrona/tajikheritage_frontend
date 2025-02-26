@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Hooks
-import { useMediaQuery } from 'react-responsive';
-
 // Components
 import Slideshow from '../slideshow/Slideshow';
 import { DescWrapper } from '../descWrapper/DescWrapper';
@@ -42,7 +39,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
     }, []);
 
     return (
-        <BoxWrapper $reverse={reverse}>
+        <BoxWrapper>
             {hasSlides ? (
                 <SlideContainer
                     $i={i}
@@ -61,7 +58,8 @@ const TextSegment: React.FC<TextSegmentProps> = ({
             <ArticleSubtitle
                 hasSlides={hasSlides}
                 subtitle={data.subtitle}
-            ></ArticleSubtitle>
+                reverse={reverse}
+            />
             <DescWrapper
                 data={data?.body}
                 TextWrapper={

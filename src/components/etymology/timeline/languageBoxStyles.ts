@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ROW_HEIGHT } from './timelineStyles';
-
-export const BOX_WIDTH = 208;
-export const GAP_WIDTH = 10;
-export const BOX_HEIGHT = ROW_HEIGHT / 2.5;
+import { BOX_WIDTH, BOX_HEIGHT } from './data';
 
 export const MainContainer = styled.div<{
     $x: number;
@@ -12,14 +8,15 @@ export const MainContainer = styled.div<{
 }>`
     position: absolute;
     left: ${({ $x }) => `${$x}px`};
-    opacity: 0.5;
-    top: ${({ $y }) => `${$y}px`}; /* Fixed missing top positioning */
+    /* opacity: 0.5; */
+    top: ${({ $y }) => `${$y}px`};
     transform: translateY(-50%);
     width: ${BOX_WIDTH}px;
     height: ${BOX_HEIGHT}px;
     min-width: ${BOX_WIDTH}px;
     padding: 0.25rem;
-    display: flex; /* Removed invalid single quotes */
+    display: flex;
+    opacity: 0.5;
     justify-content: center;
     align-items: center;
 
@@ -27,7 +24,6 @@ export const MainContainer = styled.div<{
         $empty
             ? css`
                   background: transparent;
-                  opacity: 0.5;
               `
             : css`
                   background: var(--primary-white-color);
@@ -60,4 +56,35 @@ export const TextContainer = styled.div<{
               `};
 `;
 
-export const BoxText = styled.div``;
+const Node = styled.div`
+    position: absolute;
+    background-color: var(--primary-red-color);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    z-index: 10;
+`;
+
+export const RightNode = styled(Node)`
+    top: 50%;
+    transform: translateY(-50%);
+    right: -0.3rem;
+`;
+
+export const LeftNode = styled(Node)`
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.3rem;
+`;
+
+export const TopNode = styled(Node)`
+    left: 50%;
+    transform: translateX(-50%);
+    top: -0.3rem;
+`;
+
+export const BottomNode = styled(Node)`
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.3rem;
+`;

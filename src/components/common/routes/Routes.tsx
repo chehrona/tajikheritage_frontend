@@ -16,6 +16,7 @@ import PoetPage from '../../../articlePages/poetPage/PoetPage';
 import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
 import GenericArticlePage from '../../../articlePages/genericArticlePage/GenericArticlePage';
 import WordPage from '../../../articlePages/wordPage/WordPage';
+import MulcharPage from '../../../articlePages/mulcharPage/MulcharPage';
 
 const Routes: React.FC = () => {
     const location = useLocation();
@@ -61,10 +62,6 @@ const Routes: React.FC = () => {
                 element={<MiddlePage page={'customs/all_traditions'} />}
             />
             <Route
-                path="/customs/calendars"
-                element={<MiddlePage page={'customs/all_calendars'} />}
-            />
-            <Route
                 path="/customs/traditions/:id"
                 element={<GenericArticlePage page={'customs/traditions/'} />}
             />
@@ -78,6 +75,14 @@ const Routes: React.FC = () => {
             <Route
                 path="/history/mythology/:id"
                 element={<GenericArticlePage page={'history/mythology/'} />}
+            />
+            <Route
+                path="/history/calendars"
+                element={<MiddlePage page={'history/all_calendars'} />}
+            />
+            <Route
+                path="/history/calendars/:id"
+                element={<MulcharPage page={'history/calendars/'} />}
             />
 
             {/* Arts */}

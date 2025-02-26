@@ -1,17 +1,23 @@
 import styled from 'styled-components';
-
-export const ROW_HEIGHT = 100;
+import { BOX_HEIGHT, BOX_WIDTH, ROW_HEIGHT } from './data';
 
 export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: ${BOX_HEIGHT * 45}px;
+    min-width: ${BOX_WIDTH * 33}px;
+    min-height: ${BOX_HEIGHT * 45}px;
+    position: relative;
+    overflow: scroll;
 `;
 
 export const Table = styled.table`
     border-collapse: collapse;
-    width: 100%;
-    position: relative;
+    width: ${BOX_WIDTH * 33}px;
+    height: ${BOX_HEIGHT * 45}px;
+    min-width: ${BOX_WIDTH * 33}px;
+    min-height: ${BOX_HEIGHT * 45}px;
 `;
 
 export const TBody = styled.tbody``;
@@ -74,6 +80,6 @@ export const SvgContainer = styled.svg`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: ${ROW_HEIGHT * 16}px;
     pointer-events: none;
 `;

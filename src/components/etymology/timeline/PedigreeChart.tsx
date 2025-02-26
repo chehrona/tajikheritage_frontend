@@ -1,10 +1,9 @@
 import React from 'react';
 import LanguageBox from './LanguageBox';
-import { BOX_HEIGHT, BOX_WIDTH } from './languageBoxStyles';
-import { data, languages } from './data';
+import { languages } from './data';
 import { SvgContainer } from './timelineStyles';
 
-const PedigreeChart = () => {
+const PedigreeChart: React.FC = () => {
     return (
         <div
             style={{
@@ -27,19 +26,16 @@ const PedigreeChart = () => {
                     />
                 ))}
             </SvgContainer>
-            <div className="period_div">
-                <div className="times">
-                    {languages.map((box, boxIndex) => (
-                        <LanguageBox
-                            key={`box-${boxIndex}`}
-                            text={box.name}
-                            index={boxIndex}
-                            x={box.x}
-                            y={box.y}
-                        />
-                    ))}
-                </div>
-            </div>
+            {languages.map((box, boxIndex) => (
+                <LanguageBox
+                    key={`box-${boxIndex}`}
+                    name={box.name}
+                    index={boxIndex}
+                    x={box.x}
+                    y={box.y}
+                    nodes={box.nodes}
+                />
+            ))}
         </div>
     );
 };
