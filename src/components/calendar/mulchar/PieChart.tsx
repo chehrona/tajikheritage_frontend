@@ -1,5 +1,9 @@
 import React from 'react';
+
+// Types
 import { SignObj } from '../../../articlePages/mulcharPage/types/componentTypes';
+
+// Styles
 import { SvgContainer, SliceGroup, size } from './pieChartStyles';
 
 const cx = size / 2;
@@ -55,8 +59,7 @@ const buildArcPath = (
 const PieChart: React.FC<{
     signs: SignObj[];
     centerImgSrc: string;
-    cloudImgSrc: string;
-}> = ({ signs, centerImgSrc, cloudImgSrc }) => {
+}> = ({ signs, centerImgSrc }) => {
     const sliceAngle = 30;
     const gapAngle = 0.5;
 
@@ -72,7 +75,9 @@ const PieChart: React.FC<{
                 y={cy - innerRadius}
                 width={innerRadius * 2}
                 height={innerRadius * 2}
-                style={{ borderRadius: '50%' }}
+                style={{
+                    borderRadius: '50%',
+                }}
             />
             <defs>
                 {signs.map((sign, i) => {

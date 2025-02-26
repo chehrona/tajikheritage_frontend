@@ -111,20 +111,10 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                                             }}
                                         >
                                             <ImageContainer>
-                                                {/* <CenterImage
-                                                    src={
-                                                        process.env
-                                                            .REACT_APP_BASE_URL +
-                                                        entry.full.center
-                                                    }
-                                                /> */}
                                                 <PieChart
                                                     signs={entry.signs}
                                                     centerImgSrc={
                                                         entry.full.center
-                                                    }
-                                                    cloudImgSrc={
-                                                        entry.full.cloud
                                                     }
                                                 />
                                             </ImageContainer>

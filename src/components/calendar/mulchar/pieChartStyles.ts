@@ -28,13 +28,18 @@ export const SliceGroup = styled.g<{
     cy: number;
 }>`
     cursor: pointer;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
     transform-origin: ${({ cx, cy }) => `${cx}px ${cy}px`};
 
     &:hover {
         transform: scale(1.05) translateX(${({ x }) => x}px)
             translateY(${({ y }) => y}px);
         z-index: 100;
+        filter: drop-shadow(0rem 0.25rem 0.5rem var(--primary-shadow-color));
+
+        image {
+            filter: brightness(120%);
+        }
     }
 `;
 
