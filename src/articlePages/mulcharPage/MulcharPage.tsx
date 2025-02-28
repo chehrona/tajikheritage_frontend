@@ -24,10 +24,11 @@ import Sources from '../../components/common/sources/Sources';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
-import PieChart from '../../components/calendar/mulchar/PieChart';
+import PieChart from '../../components/calendar/mulchar/pieChart/PieChart';
 
 // Styles
 import { ImageContainer } from './mulcharPageStyles';
+import SignDialog from '../../components/calendar/mulchar/signDialog/SignDialog';
 
 const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
@@ -36,6 +37,8 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
     const { lang, isLoading, setIsLoading } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<number | null>(null);
+    const [showSignInfo, setShowSignInfo] = useState(false);
+    const [index, setIndex] = useState<number>(0);
     const isTablet = useMediaQuery({
         query: `(min-device-width: 481px) and (max-device-width: 1024px)`,
     });
@@ -83,8 +86,8 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                 <ArticlePageFirstContainer>
                     {data ? (
                         <PageInnerContainer height={40}>
-                            {data.desc[lang].map((entry, i) =>
-                                entry.body ? (
+                            {data.desc[lang].map((entry, i) => (
+                                <div key={i}>
                                     <TextSegment
                                         i={i}
                                         key={`${data?.name[lang]}_${i}`}
@@ -93,36 +96,26 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                                         title={data.name[lang]}
                                         topLeftRad={topLeftRad}
                                     />
-                                ) : (
-                                    <>
-                                        <ArticleSubtitle
-                                            subtitle={entry.subtitle}
-                                            hasSlides={false}
-                                            reverse={null}
-                                        />
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                position: 'relative',
-                                                width: '100%',
-                                                height: '100%',
-                                            }}
-                                        >
-                                            <ImageContainer>
-                                                <PieChart
-                                                    signs={entry.signs}
-                                                    centerImgSrc={
-                                                        entry.full.center
-                                                    }
-                                                />
-                                            </ImageContainer>
-                                        </div>
-                                    </>
-                                ),
-                            )}
-
+                                    {entry.signs ? (
+                                        <ImageContainer>
+                                            <PieChart
+                                                signs={entry.signs}
+                                                setIndex={setIndex}
+                                                setShowSignInfo={
+                                                    setShowSignInfo
+                                                }
+                                            />
+                                            <SignDialog
+                                                signInfo={entry.signs[index]}
+                                                setShowSignInfo={
+                                                    setShowSignInfo
+                                                }
+                                                showSignInfo={showSignInfo}
+                                            />
+                                        </ImageContainer>
+                                    ) : null}
+                                </div>
+                            ))}
                             <Sources data={data.references[lang]} />
                         </PageInnerContainer>
                     ) : null}

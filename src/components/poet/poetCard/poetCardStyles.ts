@@ -8,7 +8,6 @@ export const PoetCardContent = styled.div`
     position: relative;
     padding: 2rem;
 
-    // Done
     @media (max-width: 480px) {
         padding: 1rem 0.5rem;
     }
@@ -31,7 +30,6 @@ export const PoetImgContainer = styled.div`
     transform: translateX(-50%);
     box-shadow: 0rem 0rem 3rem var(--primary-shadow-color);
 
-    // Done
     @media (max-width: 480px) {
         height: 10.8rem;
         width: 8.25rem;
@@ -54,7 +52,6 @@ export const PoetImage = styled.img`
         center no-repeat;
     background-size: 50% auto;
 
-    // Done
     @media (max-width: 480px) {
         height: 10.05rem;
         width: 7.5rem;
@@ -72,7 +69,6 @@ export const PoetNameBox = styled.div`
     top: 17.5rem;
     left: 2rem;
 
-    // Done
     @media (max-width: 480px) {
         top: 9.5rem;
         left: 1rem;
@@ -91,7 +87,6 @@ export const PoetName = styled.div`
     font-family: var(--fancy-font);
     text-shadow: 0rem 0rem 0.25rem black;
 
-    // Done
     @media (max-width: 480px) {
         font-size: var(--header-medium);
         line-height: var(--header-medium);
@@ -107,7 +102,6 @@ export const PoetDates = styled.div`
     font-family: var(--regular-font);
     padding-top: calc(var(--text-segment-gap) / 2);
 
-    // Done
     @media (max-width: 480px) {
         font-size: var(--body-text);
     }

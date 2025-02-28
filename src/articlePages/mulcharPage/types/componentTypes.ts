@@ -2,6 +2,7 @@ import { Source } from '../../../components/common/sources/types/componentTypes'
 import { Langs } from '../../../appTypes';
 import { BodyObj } from '../../../components/common/descWrapper/types/componentTypes';
 import { SlideImage } from '../../../components/common/slideshow/types/componentTypes';
+import { DescDetails as DescObj } from '../../../appTypes';
 
 export type SignObj = {
     id: string;
@@ -9,8 +10,9 @@ export type SignObj = {
         src: string;
         angle: number;
     };
-    text: {
-        [key in Langs]: string;
+    info: {
+        title: string;
+        desc: DescObj[];
     };
 };
 
