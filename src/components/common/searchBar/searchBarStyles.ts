@@ -44,7 +44,7 @@ export const InputField = styled.input`
     margin-left: 1.5rem;
     padding-left: 0.45rem;
     height: 3.4rem;
-    font-size: 1.25rem;
+    font-size: var(--header-small);
     background-color: transparent;
     font-family: var(--regular-font);
 

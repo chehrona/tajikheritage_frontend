@@ -1,4 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
+
+// Slice images
+import staticData from '../../../../miscellaneous/staticTexts.json';
 
 // Hooks
 import { useGlobalData } from '../../../../hooks/useGlobalData';
@@ -50,21 +53,24 @@ const SignDialog: React.FC<SignDialogProps> = ({
             handleClose={handleClose}
         >
             <DialogContentWrapper>
-                <MainContainer>
-                    <LeftContainer>
-                        <ImageWrapper>
-                            <SignTitle>{signInfo?.info.title}</SignTitle>
-                            <SignImage
-                                src={
-                                    process.env.REACT_APP_BASE_URL +
-                                    signInfo?.img.src
-                                }
-                            />
-                        </ImageWrapper>
-                    </LeftContainer>
-                    <RightContainer>
-                        {signInfo?.info.desc.map((entry) => {
-                            return (
+                {signInfo?.info.desc.map((entry, i) => {
+                    return (
+                        <MainContainer key={`sign_dialog_${i}`}>
+                            <LeftContainer>
+                                <ImageWrapper>
+                                    <SignTitle>
+                                        {signInfo?.info.title}
+                                    </SignTitle>
+                                    <SignImage
+                                        src={
+                                            process.env.REACT_APP_BASE_URL +
+                                            staticData.MULJAR_CHART_IMGS[i].img
+                                                .src
+                                        }
+                                    />
+                                </ImageWrapper>
+                            </LeftContainer>
+                            <RightContainer>
                                 <DescContainer>
                                     <Subtitle>{entry.subtitle}</Subtitle>
                                     <DescWrapper
@@ -72,10 +78,10 @@ const SignDialog: React.FC<SignDialogProps> = ({
                                         TextWrapper={TextWrapper}
                                     />
                                 </DescContainer>
-                            );
-                        })}
-                    </RightContainer>
-                </MainContainer>
+                            </RightContainer>
+                        </MainContainer>
+                    );
+                })}
             </DialogContentWrapper>
         </Dialog>
     );

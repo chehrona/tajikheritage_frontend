@@ -23,12 +23,12 @@ import TextSegment from '../../components/common/articleTextSegment/TextSegment'
 import Sources from '../../components/common/sources/Sources';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
-import ArticleSubtitle from '../../components/common/articleSubtitle/ArticleSubtitle';
 import PieChart from '../../components/calendar/mulchar/pieChart/PieChart';
+import SignDialog from '../../components/calendar/mulchar/signDialog/SignDialog';
+import ZodiacCalculator from '../../components/calendar/mulchar/zodiacCalculator/ZodiacCalculator';
 
 // Styles
-import { ImageContainer } from './mulcharPageStyles';
-import SignDialog from '../../components/calendar/mulchar/signDialog/SignDialog';
+import { ExtrasContainer, ChartContainer } from './mulcharPageStyles';
 
 const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
@@ -87,7 +87,7 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                     {data ? (
                         <PageInnerContainer height={40}>
                             {data.desc[lang].map((entry, i) => (
-                                <div key={i}>
+                                <React.Fragment key={i}>
                                     <TextSegment
                                         i={i}
                                         key={`${data?.name[lang]}_${i}`}
@@ -97,14 +97,16 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                                         topLeftRad={topLeftRad}
                                     />
                                     {entry.signs ? (
-                                        <ImageContainer>
-                                            <PieChart
-                                                signs={entry.signs}
-                                                setIndex={setIndex}
-                                                setShowSignInfo={
-                                                    setShowSignInfo
-                                                }
-                                            />
+                                        <ExtrasContainer>
+                                            <ChartContainer>
+                                                <PieChart
+                                                    signs={entry.signs}
+                                                    setIndex={setIndex}
+                                                    setShowSignInfo={
+                                                        setShowSignInfo
+                                                    }
+                                                />
+                                            </ChartContainer>
                                             <SignDialog
                                                 signInfo={entry.signs[index]}
                                                 setShowSignInfo={
@@ -112,9 +114,14 @@ const MulcharPage: React.FC<{ page: string }> = ({ page }) => {
                                                 }
                                                 showSignInfo={showSignInfo}
                                             />
-                                        </ImageContainer>
+                                        </ExtrasContainer>
                                     ) : null}
-                                </div>
+                                    {entry.predict ? (
+                                        <ZodiacCalculator
+                                            signs={data.desc[lang][1].signs}
+                                        />
+                                    ) : null}
+                                </React.Fragment>
                             ))}
                             <Sources data={data.references[lang]} />
                         </PageInnerContainer>

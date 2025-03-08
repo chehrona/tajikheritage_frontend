@@ -1,8 +1,19 @@
 import React from 'react';
 
-// Styles
-import { SvgContainer, SliceGroup, size, CenterImage } from './pieChartStyles';
+// Slice images
+import staticData from '../../../../miscellaneous/staticTexts.json';
+
+// Types
 import { PieChartProps } from './types/componentTypes';
+
+// Styles
+import {
+    SvgContainer,
+    SliceGroup,
+    size,
+    CenterImage,
+    SignTitle,
+} from './pieChartStyles';
 
 const cx = size / 2;
 const cy = size / 2;
@@ -68,16 +79,15 @@ const PieChart: React.FC<PieChartProps> = ({
         setShowSignInfo(true);
     };
 
-    console.log(signs, 'signs');
-
     return (
         <SvgContainer viewBox={`0 0 ${size} ${size}`}>
             <CenterImage
-                href={`${process.env.PUBLIC_URL}/customAssets/center.png`}
+                href={`${process.env.PUBLIC_URL}/customAssets/lunar.png`}
                 x={cx - innerRadius}
                 y={cy - innerRadius}
                 width={innerRadius * 2}
                 height={innerRadius * 2}
+                transform={`rotate(90, ${cx}, ${cy})`}
             />
             <defs>
                 {signs.map((sign, i) => {
@@ -101,7 +111,7 @@ const PieChart: React.FC<PieChartProps> = ({
                 })}
             </defs>
 
-            {signs.map((sign, i) => {
+            {staticData.MULJAR_CHART_IMGS.map((image, i) => {
                 const borderStartAngle = i * sliceAngle;
                 const borderEndAngle = (i + 1) * sliceAngle;
                 const fillStartAngle = borderStartAngle + gapAngle / 2;
@@ -122,7 +132,17 @@ const PieChart: React.FC<PieChartProps> = ({
                 const x = centerX - imageSize / 2;
                 const y = centerY - imageSize / 1.5;
 
-                const clipPathId = `clip-${i}`;
+                const textRadius = outerRadius - 20;
+                const startX =
+                    cx + textRadius * Math.cos(toRadians(borderStartAngle));
+                const startY =
+                    cy + textRadius * Math.sin(toRadians(borderStartAngle));
+                const endX =
+                    cx + textRadius * Math.cos(toRadians(borderEndAngle));
+                const endY =
+                    cy + textRadius * Math.sin(toRadians(borderEndAngle));
+
+                const pathId = `textPath-${i}`;
 
                 return (
                     <SliceGroup
@@ -152,14 +172,39 @@ const PieChart: React.FC<PieChartProps> = ({
                             fill="var(--primary-black-color)"
                         />
                         <image
-                            href={process.env.REACT_APP_BASE_URL + sign.img.src}
-                            clipPath={`url(#${clipPathId})`}
+                            href={
+                                process.env.REACT_APP_BASE_URL + image.img.src
+                            }
                             x={x}
                             y={y}
                             width={imageSize}
                             height={imageSize}
-                            transform={`rotate(${sign.img.angle}, ${centerX}, ${centerY})`}
+                            transform={`rotate(${image.img.angle}, ${centerX}, ${centerY})`}
                         />
+                        <defs>
+                            <path
+                                id={pathId}
+                                d={`
+                        M ${startX} ${startY} 
+                        A ${textRadius} ${textRadius} 0 0 1 ${endX} ${endY}
+                    `}
+                                fill="none"
+                            />
+                        </defs>
+                        <SignTitle
+                            fill="var(--primary-gold-color)"
+                            fontSize="12"
+                            fontWeight="bold"
+                            textAnchor="middle"
+                        >
+                            <textPath
+                                href={`#${pathId}`}
+                                startOffset="50%"
+                                dominantBaseline="middle"
+                            >
+                                {signs[i].info.title}
+                            </textPath>
+                        </SignTitle>
                     </SliceGroup>
                 );
             })}

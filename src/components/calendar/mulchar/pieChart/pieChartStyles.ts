@@ -46,3 +46,8 @@ export const SliceGroup = styled.g<{
 export const CenterImage = styled.image`
     border-radius: 50%;
 `;
+
+export const SignTitle = styled.text`
+    fill: var(--primary-white-color);
+    font-size: var(--header-small);
+`;

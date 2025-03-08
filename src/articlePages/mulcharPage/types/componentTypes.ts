@@ -23,6 +23,7 @@ type DescDetails = {
         center: string;
         cloud: string;
     };
+    predict?: boolean;
     signs: SignObj[];
     slides?: SlideImage[];
 };
