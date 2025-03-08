@@ -71,7 +71,7 @@ const PieChart: React.FC<PieChartProps> = ({
     setShowSignInfo,
 }) => {
     const sliceAngle = 30;
-    const gapAngle = 0.5;
+    const gapAngle = 0.25;
 
     const handleClick = (i: number) => {
         setIndex(i);
