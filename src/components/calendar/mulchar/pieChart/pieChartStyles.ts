@@ -49,5 +49,6 @@ export const CenterImage = styled.image`
 
 export const SignTitle = styled.text`
     fill: var(--primary-white-color);
-    font-size: var(--header-small);
+    font-size: var(--body-text);
+    font-weight: bold;
 `;

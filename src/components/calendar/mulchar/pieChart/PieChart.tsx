@@ -132,7 +132,7 @@ const PieChart: React.FC<PieChartProps> = ({
                 const x = centerX - imageSize / 2;
                 const y = centerY - imageSize / 1.5;
 
-                const textRadius = outerRadius - 20;
+                const textRadius = outerRadius - 17;
                 const startX =
                     cx + textRadius * Math.cos(toRadians(borderStartAngle));
                 const startY =
@@ -166,8 +166,17 @@ const PieChart: React.FC<PieChartProps> = ({
                             d={buildArcPath(
                                 fillStartAngle,
                                 fillEndAngle,
-                                outerRadius,
+                                outerRadius - 31,
                                 innerRadius,
+                            )}
+                            fill="var(--primary-black-color)"
+                        />
+                        <path
+                            d={buildArcPath(
+                                fillStartAngle,
+                                fillEndAngle,
+                                outerRadius,
+                                outerRadius - 30,
                             )}
                             fill="var(--primary-black-color)"
                         />
@@ -193,8 +202,6 @@ const PieChart: React.FC<PieChartProps> = ({
                         </defs>
                         <SignTitle
                             fill="var(--primary-gold-color)"
-                            fontSize="12"
-                            fontWeight="bold"
                             textAnchor="middle"
                         >
                             <textPath
