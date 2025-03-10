@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Helper
-import staticText from '../../miscellaneous/staticTexts.json';
+import staticText from '../../miscellaneous/language/etymologyPage.json';
 
 // Services
 import { requestMiddlePage } from '../../services/request';

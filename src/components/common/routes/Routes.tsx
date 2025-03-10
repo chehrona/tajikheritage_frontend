@@ -12,11 +12,12 @@ import MiddlePage from '../../../middlePages/middlePage/MiddlePage';
 import EtymologyPage from '../../../middlePages/wordsPage/EtymologyPage';
 
 // Article pages
-import PoetPage from '../../../articlePages/poetPage/PoetPage';
-import ProverbPage from '../../../articlePages/proverbPage/ProverbPage';
+import PoetPage from '../../../articlePages/language/poetPage/PoetPage';
+import ProverbPage from '../../../articlePages/language/proverbPage/ProverbPage';
 import GenericArticlePage from '../../../articlePages/genericArticlePage/GenericArticlePage';
-import WordPage from '../../../articlePages/wordPage/WordPage';
-import MulcharPage from '../../../articlePages/mulcharPage/MulcharPage';
+import WordPage from '../../../articlePages/language/wordPage/WordPage';
+import MuljarPage from '../../../articlePages/calendar/muljarPage/MuljarPage';
+import ZodiacPage from '../../../articlePages/calendar/zodiacPage/ZodiacPage';
 
 const Routes: React.FC = () => {
     const location = useLocation();
@@ -81,8 +82,12 @@ const Routes: React.FC = () => {
                 element={<MiddlePage page={'history/all_calendars'} />}
             />
             <Route
-                path="/history/calendars/:id"
-                element={<MulcharPage page={'history/calendars/'} />}
+                path="/history/calendars/mūljar"
+                element={<MuljarPage page={'history/calendars/'} />}
+            />
+            <Route
+                path="/history/calendars/burji duvāzdahgāna"
+                element={<ZodiacPage page={'history/calendars/'} />}
             />
 
             {/* Arts */}
