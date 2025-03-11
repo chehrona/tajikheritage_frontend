@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Slice images
 import staticData from '../../../../miscellaneous/history/calendarPage.json';
@@ -10,77 +10,87 @@ import { PieChartProps } from './types/componentTypes';
 import {
     SvgContainer,
     SliceGroup,
-    size,
     CenterImage,
     SignTitle,
-} from './pieChartStyles';
-
-const cx = size / 2;
-const cy = size / 2;
-const outerRadius = size / 2;
-const innerRadius = outerRadius * 0.35;
-
-const toRadians = (deg: number) => (deg * Math.PI) / 180;
-
-const describeArc = (
-    startAngle: number,
-    endAngle: number,
-    radius = outerRadius,
-) => {
-    const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-
-    const x1 = cx + radius * Math.cos(toRadians(startAngle));
-    const y1 = cy + radius * Math.sin(toRadians(startAngle));
-
-    const x2 = cx + radius * Math.cos(toRadians(endAngle));
-    const y2 = cy + radius * Math.sin(toRadians(endAngle));
-
-    return { x1, y1, x2, y2, largeArcFlag };
-};
-
-const buildArcPath = (
-    startAngle: number,
-    endAngle: number,
-    outerR: number,
-    innerR: number,
-) => {
-    const { x1, y1, x2, y2, largeArcFlag } = describeArc(
-        startAngle,
-        endAngle,
-        outerR,
-    );
-    const {
-        x1: x4,
-        y1: y4,
-        x2: x3,
-        y2: y3,
-    } = describeArc(startAngle, endAngle, innerR);
-
-    return [
-        `M ${x1} ${y1}`,
-        `A ${outerR} ${outerR} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
-        `L ${x3} ${y3}`,
-        `A ${innerR} ${innerR} 0 ${largeArcFlag} 0 ${x4} ${y4}`,
-        'Z',
-    ].join(' ');
-};
+} from '../../muljar/pieChart/pieChartStyles';
 
 const PieChart: React.FC<PieChartProps> = ({
     signs,
     setIndex,
     setShowSignInfo,
 }) => {
+    const [size, setSize] = useState(window.innerHeight / 1.15);
+
+    useEffect(() => {
+        const updateSize = () => setSize(window.innerHeight / 1.15);
+        window.addEventListener('resize', updateSize);
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+
+    const cx = size / 2;
+    const cy = size / 2;
+    const outerRadius = size / 2;
+    const innerRadius = outerRadius * 0.35;
+    const titleOuterRadius = outerRadius * 0.9;
+    const titleInnerRadius = titleOuterRadius - 1;
+    const iconOuterRadius = outerRadius * 0.48;
+    const iconInnerRadius = iconOuterRadius - 1;
+
+    const toRadians = (deg: number) => (deg * Math.PI) / 180;
+
+    const describeArc = (
+        startAngle: number,
+        endAngle: number,
+        radius = outerRadius,
+    ) => {
+        const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
+
+        const x1 = cx + radius * Math.cos(toRadians(startAngle));
+        const y1 = cy + radius * Math.sin(toRadians(startAngle));
+
+        const x2 = cx + radius * Math.cos(toRadians(endAngle));
+        const y2 = cy + radius * Math.sin(toRadians(endAngle));
+
+        return { x1, y1, x2, y2, largeArcFlag };
+    };
+
+    const buildArcPath = (
+        startAngle: number,
+        endAngle: number,
+        outerR: number,
+        innerR: number,
+    ) => {
+        const { x1, y1, x2, y2, largeArcFlag } = describeArc(
+            startAngle,
+            endAngle,
+            outerR,
+        );
+        const {
+            x1: x4,
+            y1: y4,
+            x2: x3,
+            y2: y3,
+        } = describeArc(startAngle, endAngle, innerR);
+
+        return [
+            `M ${x1} ${y1}`,
+            `A ${outerR} ${outerR} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
+            `L ${x3} ${y3}`,
+            `A ${innerR} ${innerR} 0 ${largeArcFlag} 0 ${x4} ${y4}`,
+            'Z',
+        ].join(' ');
+    };
+
     const sliceAngle = 30;
     const gapAngle = 0.25;
 
     const handleClick = (i: number) => {
         setIndex(i);
-
         setShowSignInfo(true);
     };
 
     return (
-        <SvgContainer viewBox={`0 0 ${size} ${size}`}>
+        <SvgContainer viewBox={`0 0 ${size} ${size}`} $size={size}>
             <CenterImage
                 href={`${process.env.PUBLIC_URL}/customAssets/calendar/zodiac.png`}
                 x={cx - innerRadius}
@@ -178,25 +188,7 @@ const PieChart: React.FC<PieChartProps> = ({
                             d={buildArcPath(
                                 fillStartAngle,
                                 fillEndAngle,
-                                outerRadius - 31,
-                                outerRadius - 152,
-                            )}
-                            fill="var(--primary-blue-color)"
-                        />
-                        <path
-                            d={buildArcPath(
-                                fillStartAngle,
-                                fillEndAngle,
-                                outerRadius,
-                                outerRadius - 30,
-                            )}
-                            fill="var(--primary-blue-color)"
-                        />
-                        <path
-                            d={buildArcPath(
-                                fillStartAngle,
-                                fillEndAngle,
-                                outerRadius - 150,
+                                iconInnerRadius,
                                 innerRadius,
                             )}
                             fill="var(--primary-blue-color)"
@@ -205,10 +197,28 @@ const PieChart: React.FC<PieChartProps> = ({
                             d={buildArcPath(
                                 fillStartAngle,
                                 fillEndAngle,
-                                outerRadius - 151,
-                                outerRadius - 150,
+                                titleInnerRadius,
+                                iconOuterRadius,
                             )}
-                            fill="var(--primary-gold-color)"
+                            fill="var(--primary-blue-color)"
+                        />
+                        <path
+                            d={buildArcPath(
+                                fillStartAngle,
+                                fillEndAngle,
+                                titleInnerRadius,
+                                iconOuterRadius,
+                            )}
+                            fill="var(--primary-blue-color)"
+                        />
+                        <path
+                            d={buildArcPath(
+                                fillStartAngle,
+                                fillEndAngle,
+                                outerRadius,
+                                titleOuterRadius,
+                            )}
+                            fill="var(--primary-blue-color)"
                         />
                         <image
                             href={

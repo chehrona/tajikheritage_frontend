@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const size = window.innerHeight / 1.15;
-
 export const ImageContainer = styled.div`
     justify-content: center;
     position: relative;
@@ -12,9 +10,9 @@ export const ImageContainer = styled.div`
     padding: var(--text-segment-gap) var(--page-padding);
 `;
 
-export const SvgContainer = styled.svg`
-    width: ${size}px;
-    height: ${size}px;
+export const SvgContainer = styled.svg<{ $size: number }>`
+    width: ${({ $size }) => $size && `${$size}px`};
+    height: ${({ $size }) => $size && `${$size}px`};
     position: relative;
     z-index: 10;
     overflow: visible;

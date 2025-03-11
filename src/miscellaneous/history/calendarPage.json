@@ -147,7 +147,7 @@
             "img": {
                 "src": "/storage/history/calendars/zodiac/slides/scorpio.png",
                 "icon": "/storage/history/calendars/zodiac/icons/scorpio.png",
-                "angle": -45
+                "angle": -40
             }
         },
         {
@@ -155,7 +155,7 @@
             "img": {
                 "src": "/storage/history/calendars/zodiac/slides/sagittarius.png",
                 "icon": "/storage/history/calendars/zodiac/icons/sagittarius.png",
-                "angle": 350
+                "angle": 15
             }
         },
         {
@@ -163,7 +163,7 @@
             "img": {
                 "src": "/storage/history/calendars/zodiac/slides/capricorn.png",
                 "icon": "/storage/history/calendars/zodiac/icons/capricorn.png",
-                "angle": 20
+                "angle": 25
             }
         },
         {
