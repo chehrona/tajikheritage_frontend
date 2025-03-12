@@ -32,14 +32,12 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const { showToast } = useToasts();
     const { pathname } = useLocation();
-    const { lang, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [error, setError] = useState<number | null>(null);
     const [poet, setPoet] = useState<PoetData>();
 
     const fetchData = async () => {
         try {
-            setIsLoading(true);
-
             if (!id) {
                 return;
             }
@@ -54,12 +52,6 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', 'language/poet');
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 

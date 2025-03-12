@@ -1,86 +1,86 @@
 {
-    "MULJAR_CHART_IMGS": [
+    "MULCHAR_CHART_IMGS": [
         {
             "id": "mouse",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/mouse.png",
+                "src": "/storage/history/calendars/mūlchar/slides/mouse.png",
                 "angle": 100
             }
         },
         {
             "id": "ox",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/ox.png",
+                "src": "/storage/history/calendars/mūlchar/slides/ox.png",
                 "angle": 150
             }
         },
         {
             "id": "tiger",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/tiger.png",
+                "src": "/storage/history/calendars/mūlchar/slides/tiger.png",
                 "angle": 165
             }
         },
         {
             "id": "rabbit",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/rabbit.png",
+                "src": "/storage/history/calendars/mūlchar/slides/rabbit.png",
                 "angle": 190
             }
         },
         {
             "id": "whale",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/whale.png",
+                "src": "/storage/history/calendars/mūlchar/slides/whale.png",
                 "angle": 230
             }
         },
         {
             "id": "snake",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/snake.png",
+                "src": "/storage/history/calendars/mūlchar/slides/snake.png",
                 "angle": -105
             }
         },
         {
             "id": "horse",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/horse.png",
+                "src": "/storage/history/calendars/mūlchar/slides/horse.png",
                 "angle": -60
             }
         },
         {
             "id": "sheep",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/sheep.png",
+                "src": "/storage/history/calendars/mūlchar/slides/sheep.png",
                 "angle": -45
             }
         },
         {
             "id": "monkey",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/monkey.png",
+                "src": "/storage/history/calendars/mūlchar/slides/monkey.png",
                 "angle": 350
             }
         },
         {
             "id": "rooster",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/rooster.png",
+                "src": "/storage/history/calendars/mūlchar/slides/rooster.png",
                 "angle": 20
             }
         },
         {
             "id": "dog",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/dog.png",
+                "src": "/storage/history/calendars/mūlchar/slides/dog.png",
                 "angle": 40
             }
         },
         {
             "id": "pig",
             "img": {
-                "src": "/storage/history/calendars/mūljar/slides/pig.png",
+                "src": "/storage/history/calendars/mūlchar/slides/pig.png",
                 "angle": 75
             }
         }

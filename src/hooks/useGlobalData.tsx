@@ -12,8 +12,6 @@ export const DataContext = createContext<ContextTypes>({
     setTitle: () => {},
     lang: 'us',
     setLang: () => {},
-    isLoading: false,
-    setIsLoading: () => {},
 });
 
 export function useGlobalData() {

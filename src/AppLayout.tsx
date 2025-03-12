@@ -4,7 +4,6 @@ import React, { useState, useRef, ReactNode } from 'react';
 
 // Routing
 import { useLocation } from 'react-router-dom';
-import { useGlobalData } from './hooks/useGlobalData';
 
 // Components
 import Header from './components/common/header/Header';
@@ -12,11 +11,9 @@ import Menu from './components/common/menu/menuDropdown/Menu';
 import Footer from './components/common/footer/Footer';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
-import Loader from './components/common/loader/Loader';
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { pathname } = useLocation();
-    const { isLoading } = useGlobalData();
     const parentRef = useRef<HTMLInputElement>(null);
     const [position, setPosition] = useState<number>(0);
     const [showArrow, setShowArrow] = useState<boolean>(false);
@@ -81,7 +78,6 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
                         : 'content-container has_footer'
                 }
             >
-                <Loader inProp={isLoading} />
                 {children}
                 {!noFooter ? <Footer /> : null}
             </div>

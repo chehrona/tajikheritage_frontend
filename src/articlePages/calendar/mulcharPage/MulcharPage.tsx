@@ -23,17 +23,17 @@ import TextSegment from '../../../components/common/articleTextSegment/TextSegme
 import Sources from '../../../components/common/sources/Sources';
 import ArticlePageFirstContainer from '../../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../../components/common/pageInnerContainer/PageInnerContainer';
-import PieChart from '../../../components/calendar/muljar/pieChart/PieChart';
-import SignDialog from '../../../components/calendar/muljar/signDialog/SignDialog';
-import MuljarCalculator from '../../../components/calendar/muljar/muljarCalculator/MuljarCalculator';
+import PieChart from '../../../components/calendar/mulchar/pieChart/PieChart';
+import SignDialog from '../../../components/calendar/mulchar/signDialog/SignDialog';
+import MulcharCalculator from '../../../components/calendar/mulchar/mulcharCalculator/MulcharCalculator';
 
 // Styles
-import { ExtrasContainer, ChartContainer } from './muljarPageStyles';
+import { ExtrasContainer, ChartContainer } from './mulcharPageStyles';
 
 const MuljarPage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { lang, isLoading, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<number | null>(null);
     const [showSignInfo, setShowSignInfo] = useState(false);
@@ -44,12 +44,8 @@ const MuljarPage: React.FC<{ page: string }> = ({ page }) => {
     const topLeftRad = isTablet ? 2.5 : 4;
 
     const fetchData = async () => {
-        if (isLoading) return;
-
         try {
-            setIsLoading(true);
-
-            const data = await requestArticleInfo('mūljar', page);
+            const data = await requestArticleInfo('mūlchar', page);
             setData(data);
         } catch (error: unknown) {
             const customError = error as ErrorResponse;
@@ -59,12 +55,6 @@ const MuljarPage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', page);
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 
@@ -107,14 +97,14 @@ const MuljarPage: React.FC<{ page: string }> = ({ page }) => {
                                                 setShowSignInfo={
                                                     setShowSignInfo
                                                 }
-                                                calendar={'MULJAR_CHART_IMGS'}
+                                                calendar={'MULCHAR_CHART_IMGS'}
                                                 showSignInfo={showSignInfo}
                                                 index={index}
                                             />
                                         </ExtrasContainer>
                                     ) : null}
                                     {entry.predict ? (
-                                        <MuljarCalculator
+                                        <MulcharCalculator
                                             signs={data.desc[lang][1].signs}
                                         />
                                     ) : null}

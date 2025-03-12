@@ -1,4 +1,4 @@
-import { SignObj } from '../../../../../articlePages/calendar/muljarPage/types/componentTypes';
+import { SignObj } from '../../../../../articlePages/calendar/mulcharPage/types/componentTypes';
 
 export type PieChartProps = {
     signs: SignObj[];

@@ -14,12 +14,12 @@ import {
     NoSignWrapper,
     CardFace,
     CardTitle,
-} from './muljarCalculatorStyles';
+} from './mulcharCalculatorStyles';
 
 // Types
-import { SignObj } from '../../../../articlePages/calendar/muljarPage/types/componentTypes';
+import { SignObj } from '../../../../articlePages/calendar/mulcharPage/types/componentTypes';
 
-const MuljarCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
+const MulcharCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
     const [year, setYear] = useState<string>('');
     const [index, setIndex] = useState<number | null>(null);
 
@@ -62,7 +62,7 @@ const MuljarCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
                             <>
                                 <CardTitle>{signs[index].info.title}</CardTitle>
                                 <SignImage
-                                    src={`${process.env.REACT_APP_BASE_URL}${staticData.MULJAR_CHART_IMGS[index]?.img?.src}`}
+                                    src={`${process.env.REACT_APP_BASE_URL}${staticData.MULCHAR_CHART_IMGS[index]?.img?.src}`}
                                     alt={signs[index]?.id}
                                 />
                             </>
@@ -77,4 +77,4 @@ const MuljarCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
     );
 };
 
-export default MuljarCalculator;
+export default MulcharCalculator;

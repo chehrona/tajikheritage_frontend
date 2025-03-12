@@ -33,14 +33,12 @@ const ProverbPage = () => {
     const { id } = useParams();
     const { showToast } = useToasts();
     const { pathname } = useLocation();
-    const { lang, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [proverb, setProverb] = useState<ProverbObj>();
     const [error, setError] = useState<number | null>(null);
 
     const fetchData = async () => {
         try {
-            setIsLoading(true);
-
             if (!id) {
                 return;
             }
@@ -55,12 +53,6 @@ const ProverbPage = () => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', 'language/proverb');
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 

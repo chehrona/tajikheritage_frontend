@@ -119,7 +119,7 @@ const PieChart: React.FC<PieChartProps> = ({
                 })}
             </defs>
 
-            {staticData.MULJAR_CHART_IMGS.map((image, i) => {
+            {staticData.MULCHAR_CHART_IMGS.map((image, i) => {
                 const borderStartAngle = i * sliceAngle;
                 const borderEndAngle = (i + 1) * sliceAngle;
                 const fillStartAngle = borderStartAngle + gapAngle / 2;

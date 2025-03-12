@@ -24,7 +24,7 @@ import Sources from '../../../components/common/sources/Sources';
 import ArticlePageFirstContainer from '../../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../../components/common/pageInnerContainer/PageInnerContainer';
 import PieChart from '../../../components/calendar/zodiac/pieChart/PieChart';
-import SignDialog from '../../../components/calendar/muljar/signDialog/SignDialog';
+import SignDialog from '../../../components/calendar/mulchar/signDialog/SignDialog';
 import ZodiacCalculator from '../../../components/calendar/zodiac/zodiacCalculator/ZodiacCalculator';
 
 // Styles
@@ -33,7 +33,7 @@ import { ExtrasContainer, ChartContainer } from './zodiacPageStyles';
 const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { lang, isLoading, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [data, setData] = useState<ArticleData>();
     const [error, setError] = useState<number | null>(null);
     const [showSignInfo, setShowSignInfo] = useState(false);
@@ -44,11 +44,7 @@ const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
     const topLeftRad = isTablet ? 2.5 : 4;
 
     const fetchData = async () => {
-        if (isLoading) return;
-
         try {
-            setIsLoading(true);
-
             const data = await requestArticleInfo('burj-i duvāzdahgāna', page);
             setData(data);
         } catch (error: unknown) {
@@ -59,12 +55,6 @@ const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', page);
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 

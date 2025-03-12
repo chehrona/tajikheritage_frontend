@@ -34,7 +34,6 @@ function App(): React.JSX.Element {
     });
 
     const [title, setTitle] = useState<TitleProps>(headerText.HEADER);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const value = useMemo<ContextTypes>(
         () => ({
@@ -42,10 +41,8 @@ function App(): React.JSX.Element {
             setTitle,
             lang,
             setLang,
-            isLoading,
-            setIsLoading,
         }),
-        [lang, title, isLoading],
+        [lang, title],
     );
 
     useEffect(() => {

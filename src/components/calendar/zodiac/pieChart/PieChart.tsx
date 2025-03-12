@@ -12,7 +12,7 @@ import {
     SliceGroup,
     CenterImage,
     SignTitle,
-} from '../../muljar/pieChart/pieChartStyles';
+} from '../../mulchar/pieChart/pieChartStyles';
 
 const PieChart: React.FC<PieChartProps> = ({
     signs,

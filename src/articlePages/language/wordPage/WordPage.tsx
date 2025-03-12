@@ -31,7 +31,7 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { lang, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [word, setWord] = useState<WordObj>();
     const [error, setError] = useState<number | null>(null);
     const isTablet = useMediaQuery({
@@ -41,8 +41,6 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
 
     const fetchData = async () => {
         try {
-            setIsLoading(true);
-
             if (!id) {
                 return;
             }
@@ -57,12 +55,6 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', page);
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 
