@@ -62,7 +62,7 @@ export const StyledLink = styled(NavLink)<LinkProps>`
                       }
                   }
               `}
-    // Done
+
     @media (max-width: 480px) {
         box-shadow: var(--primary-box-shadow) var(--primary-shadow-color);
         height: ${({ $type }) => ($type === 'long' ? '16rem' : '16rem')};

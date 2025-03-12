@@ -10,8 +10,6 @@ export type ContextTypes = {
     setTitle: React.Dispatch<React.SetStateAction<TitleProps>>;
     lang: Langs;
     setLang: React.Dispatch<React.SetStateAction<Langs>>;
-    isLoading: boolean;
-    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 // useSetHeader

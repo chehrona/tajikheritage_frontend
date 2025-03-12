@@ -22,7 +22,7 @@ html {
 :root {
     /* Colors */
     --primary-black-color: #0f0a00;
-    --primary-blue-color: #1c226c;
+    --primary-blue-color: #010152;
     --primary-white-color: #fcf6e9;
     --primary-gold-color: #bd9d52;
     --primary-red-color: #8e0c0b;
@@ -185,7 +185,6 @@ body * {
 .fixed-container {
     max-width: 1440px;
     position: fixed;
-    height: 10rem;
     width: 100%;
     z-index: 1000;
     bottom: 0rem;

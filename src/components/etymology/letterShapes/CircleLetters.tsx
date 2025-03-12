@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Helper
-import staticText from '../../../miscellaneous/staticTexts.json';
+import staticText from '../../../miscellaneous/language/etymologyPage.json';
 
 // Types
 import { LetterProps } from './types/componentTypes';

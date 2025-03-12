@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components';
 
-export const SubtitleWrapper = styled.div`
+export const SubtitleWrapper = styled.div<{ $reverse?: boolean | null }>`
     display: flex;
     align-items: center;
     position: relative;
-    padding: var(--text-segment-gap) 0rem;
+    padding: var(--text-segment-gap) var(--page-padding);
+    padding: ${({ $reverse }) =>
+        $reverse === null
+            ? 'var(--text-segment-gap) var(--page-padding)'
+            : $reverse
+            ? 'var(--text-segment-gap) 0rem var(--text-segment-gap) var(--page-padding)'
+            : 'var(--text-segment-gap) var(--page-padding) var(--text-segment-gap) 0rem'};
 `;
 
 const LineWrapper = styled.div`
@@ -18,7 +24,9 @@ export const RightWrapper = styled(LineWrapper)`
     margin-left: -0.25rem;
 `;
 
-export const LeftWrapper = styled(LineWrapper)<{ $show?: boolean }>`
+export const LeftWrapper = styled(LineWrapper)<{
+    $show?: boolean;
+}>`
     margin-right: -0.25rem;
     display: ${({ $show }) => ($show ? 'flex' : 'none')};
 `;

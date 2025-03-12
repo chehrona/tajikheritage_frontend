@@ -1,5 +1,5 @@
 import { Langs } from '../../../../appTypes';
-import { PoetData } from '../../../../articlePages/poetPage/types/componentTypes';
+import { PoetData } from '../../../../articlePages/language/poetPage/types/componentTypes';
 
 export type PoetCardType = Omit<
     PoetData,

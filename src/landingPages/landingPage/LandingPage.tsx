@@ -25,15 +25,12 @@ import { SectionBoxContainer } from './landingPageStyles';
 const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { lang, isLoading, setIsLoading } = useGlobalData();
+    const { lang } = useGlobalData();
     const [sections, setSections] = useState<SectionDetails[]>([]);
     const [error, setError] = useState<number | null>(null);
 
     const fetchData = async () => {
-        if (isLoading) return;
-
         try {
-            setIsLoading(true);
             const data = await requestPage(page);
             setSections(data.sections);
         } catch (error) {
@@ -44,12 +41,6 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', page);
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 

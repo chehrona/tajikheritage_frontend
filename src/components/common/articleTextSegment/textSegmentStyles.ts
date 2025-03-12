@@ -1,32 +1,17 @@
 import styled from 'styled-components';
 
 // Types
-import { BoxWrapperProps, SlideContainerProps } from './types/styleTypes';
+import { SlideContainerProps } from './types/styleTypes';
 
-export const BoxWrapper = styled.div<BoxWrapperProps>`
+export const BoxWrapper = styled.div`
     width: 100%;
     display: block;
     position: relative;
-    ${({ $reverse }) =>
-        $reverse !== null
-            ? $reverse
-                ? 'padding: 0rem 0rem var(--text-segment-gap) var(--page-padding);'
-                : 'padding: 0rem var(--page-padding) var(--text-segment-gap) 0rem;'
-            : 'padding: 0rem var(--page-padding) var(--text-segment-gap) var(--page-padding);'};
 
     &::after {
         content: '';
         clear: both;
         display: table;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        ${({ $reverse }) =>
-            $reverse !== null
-                ? $reverse
-                    ? 'padding: 0rem 0rem 2rem 0rem'
-                    : 'padding: 0rem 2rem 2rem 0rem'
-                : 'padding: 0rem 2rem 2rem 2rem'};
     }
 
     @media (max-width: 480px) {
@@ -85,10 +70,7 @@ export const BaseText = styled.div`
     color: var(--primary-black-color);
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
-
-    @media (max-width: 480px) {
-        padding: 0rem var(--page-padding);
-    }
+    padding: 0rem var(--page-padding);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
@@ -97,9 +79,9 @@ export const BaseText = styled.div`
 `;
 
 export const RightText = styled(BaseText)`
-    padding-left: var(--page-padding);
+    padding: 0rem var(--page-padding) 0rem var(--page-padding);
 `;
 
 export const LeftText = styled(BaseText)`
-    padding-right: var(--page-padding);
+    padding: 0rem var(--page-padding) 0rem var(--page-padding);
 `;

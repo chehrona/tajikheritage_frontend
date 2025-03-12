@@ -15,12 +15,12 @@ export const MainContainer = styled.div<{ $expanded: boolean }>`
         $expanded
             ? css`
                   height: 100svh;
-                  cursor: zoom-in;
                   width: 99.4vh;
+                  cursor: zoom-out;
               `
             : css`
                   height: 45vh;
-                  cursor: zoom-out;
+                  cursor: zoom-in;
                   width: 44.7vh;
               `};
 
