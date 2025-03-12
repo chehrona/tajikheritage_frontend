@@ -25,7 +25,10 @@ import Routes from './components/common/routes/Routes';
 function App(): React.JSX.Element {
     const [lang, setLang] = useState<Langs>(() => {
         const storedLang = localStorage.getItem('lang');
-        return storedLang === 'us' || storedLang === 'ru' || storedLang === 'tj'
+        return storedLang === 'us' ||
+            storedLang === 'ru' ||
+            storedLang === 'tj' ||
+            storedLang === 'fa'
             ? storedLang
             : 'us';
     });

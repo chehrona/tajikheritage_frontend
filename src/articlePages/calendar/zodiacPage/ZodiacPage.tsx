@@ -49,7 +49,7 @@ const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
         try {
             setIsLoading(true);
 
-            const data = await requestArticleInfo('burji duvāzdahgāna', page);
+            const data = await requestArticleInfo('burj-i duvāzdahgāna', page);
             setData(data);
         } catch (error: unknown) {
             const customError = error as ErrorResponse;

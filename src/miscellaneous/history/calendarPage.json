@@ -91,7 +91,7 @@
             "img": {
                 "src": "/storage/history/calendars/zodiac/slides/aries.png",
                 "icon": "/storage/history/calendars/zodiac/icons/aries.png",
-                "angle": 95
+                "angle": 185
             }
         },
         {
@@ -179,7 +179,7 @@
             "img": {
                 "src": "/storage/history/calendars/zodiac/slides/pisces.png",
                 "icon": "/storage/history/calendars/zodiac/icons/pisces.png",
-                "angle": 75
+                "angle": 30
             }
         }
     ]
