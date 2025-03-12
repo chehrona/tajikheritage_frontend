@@ -40,6 +40,7 @@ const MenuButton: React.FC<MenuProps> = ({
     const getButtonText = () => {
         if (lang === 'us') return isMenuShown ? 'CLOSE' : 'MENU';
         if (lang === 'ru') return isMenuShown ? 'ЗАКРЫТЬ' : 'МЕНЮ';
+        if (lang === 'fa') return isMenuShown ? 'پوشید' : 'منو';
         return isMenuShown ? 'ПӮШЕД' : 'МЕНЮ';
     };
 

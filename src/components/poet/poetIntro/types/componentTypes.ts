@@ -1,4 +1,4 @@
-import { PoetData } from '../../../../articlePages/poetPage/types/componentTypes';
+import { PoetData } from '../../../../articlePages/language/poetPage/types/componentTypes';
 
 export type PoetIntroProps = {
     poet: PoetData;

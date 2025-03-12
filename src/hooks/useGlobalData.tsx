@@ -4,6 +4,7 @@ import React, { createContext, useContext } from 'react';
 import staticText from '../miscellaneous/staticTexts.json';
 
 // Types
+import { Langs } from '../appTypes';
 import { ContextTypes } from './hookTypes';
 
 export const DataContext = createContext<ContextTypes>({
@@ -11,8 +12,6 @@ export const DataContext = createContext<ContextTypes>({
     setTitle: () => {},
     lang: 'us',
     setLang: () => {},
-    isLoading: false,
-    setIsLoading: () => {},
 });
 
 export function useGlobalData() {

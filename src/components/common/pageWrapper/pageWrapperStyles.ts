@@ -20,6 +20,7 @@ export const ArticleContainer = styled.div`
     padding: 2rem var(--page-padding) 4rem var(--page-padding);
     animation: ${fadeIn} 1s ease-in-out forwards;
     overflow-x: hidden;
+    min-height: 100svh;
 
     @media (max-width: 480px) {
         padding: 0rem;

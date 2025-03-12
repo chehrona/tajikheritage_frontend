@@ -1,4 +1,4 @@
-import { SectionType } from '../../../../articlePages/poetPage/types/componentTypes';
+import { SectionType } from '../../../../articlePages/language/poetPage/types/componentTypes';
 
 export type SectionOptionsProps = {
     sections: SectionType;

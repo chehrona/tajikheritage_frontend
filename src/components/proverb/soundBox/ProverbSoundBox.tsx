@@ -4,7 +4,7 @@ import React from 'react';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 // Types
-import { ProverbObj } from '../../../articlePages/proverbPage/types/componentTypes';
+import { ProverbObj } from '../../../articlePages/language/proverbPage/types/componentTypes';
 
 // Styled components
 import {
@@ -55,6 +55,8 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                             ? '• CLICK TO HEAR •'
                             : lang === 'ru'
                             ? '• ПОСЛУШАТЬ •'
+                            : lang === 'fa'
+                            ? '• گوش کنید •'
                             : '• ГӮШ КУНЕД •'}
                     </textPath>
                 </Text>

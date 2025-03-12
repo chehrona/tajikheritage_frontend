@@ -19,12 +19,14 @@ import {
 const ArticleSubtitle: React.FC<ArticleSubtitleProps> = ({
     subtitle,
     hasSlides,
+    reverse = null,
 }) => {
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
     const showLeftLine = isMobile ? true : hasSlides ? false : true;
+    const isReverse = hasSlides ? reverse : null;
 
     return (
-        <SubtitleWrapper>
+        <SubtitleWrapper $reverse={isReverse}>
             <LeftWrapper $show={showLeftLine}>
                 <Line />
                 <Circle />

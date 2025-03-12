@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 // Hooks
-import { useGlobalData } from '../../hooks/useGlobalData';
 import { useLocation } from 'react-router-dom';
 import { useSetHeader } from '../../hooks/useSetHeader';
 import { useToasts } from '../../hooks/useToasts';
@@ -27,14 +26,12 @@ import { InnerBoxContainer } from './middlePageStyles';
 const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
     const { showToast } = useToasts();
-    const { setIsLoading } = useGlobalData();
     const [items, setItems] = useState<CardType[]>([]);
     const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState<number | null>(null);
 
     const fetchData = async () => {
         try {
-            setIsLoading(true);
             const data = await requestMiddlePage(page);
 
             setItems(data);
@@ -47,12 +44,6 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
             } else if (customError.status === 500) {
                 showToast('E_500', 'error', page);
             }
-        } finally {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 550);
-
-            return () => clearTimeout(timer);
         }
     };
 
