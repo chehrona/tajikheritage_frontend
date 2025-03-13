@@ -35,7 +35,10 @@ const ForthSection: React.FC<{ bioFour: PoetBioSectionFour }> = ({
         <BoxSix>
             <LeftContainer>
                 <LeftTextWrapper>
-                    <Title $align={true} $color={'var(--regular-black-color)'}>
+                    <Title
+                        $align={'center'}
+                        $color={'var(--regular-black-color)'}
+                    >
                         {bioFour?.year}
                     </Title>
                     <DescWrapper

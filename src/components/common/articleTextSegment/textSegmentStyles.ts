@@ -27,6 +27,14 @@ export const BoxWrapper = styled.div`
     }
 `;
 
+export const HeaderWrapper = styled.div<{ $padding: boolean }>`
+    width: 100%;
+    padding: ${({ $padding }) =>
+        $padding
+            ? '0rem'
+            : 'var(--text-segment-gap) 0rem 0rem var(--page-padding)'};
+`;
+
 export const SlideContainer = styled.div<SlideContainerProps>`
     width: 29rem;
     height: 35rem;

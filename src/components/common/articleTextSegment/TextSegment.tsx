@@ -16,12 +16,13 @@ import {
     LeftText,
     RightText,
     SlideContainer,
+    HeaderWrapper,
 } from './textSegmentStyles';
 
 const TextSegment: React.FC<TextSegmentProps> = ({
     i,
     data,
-    title,
+    title = '',
     reverse = null,
     topLeftRad,
 }) => {
@@ -54,7 +55,9 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                     />
                 </SlideContainer>
             ) : null}
-            {i === 0 && title && <ArticleTitle title={title} />}
+            <HeaderWrapper $padding={hasSlides}>
+                {i === 0 && <ArticleTitle title={title} />}
+            </HeaderWrapper>
             <ArticleSubtitle
                 hasSlides={hasSlides}
                 subtitle={data.subtitle}

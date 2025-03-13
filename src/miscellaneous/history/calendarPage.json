@@ -85,6 +85,12 @@
             }
         }
     ],
+    "MULCHAR_CALC_PLACEHOLDER": {
+        "us": "Year",
+        "ru": "Год",
+        "tj": "Сол",
+        "fa": "سال"
+    },
     "ZODIAC_CHART_IMGS": [
         {
             "id": "aries",

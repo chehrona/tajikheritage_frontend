@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { TitleWrapper } from '../../common/articleTitle/articleTitleStyles';
 
-// Types
-import { YearProps } from './types/styleTypes';
-
 export const MainContainer = styled.div`
     background-image: url(${'/customAssets/noise.png'});
     min-height: 20rem;
@@ -51,9 +48,7 @@ export const MainContainer = styled.div`
     }
 `;
 
-export const Title = styled(TitleWrapper)<YearProps>`
-    text-align: ${({ $align }) => $align && 'center'};
-    color: ${({ $color }) => $color && $color};
+export const Title = styled(TitleWrapper)`
     font-style: normal;
     font-weight: normal;
     text-shadow: none;

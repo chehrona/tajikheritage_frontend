@@ -15,7 +15,9 @@ const FifthSection: React.FC<{ bioFive: PoetBioSectionFive }> = ({
 }) => {
     return (
         <MainContainer>
-            <Title $color={'var(--primary-gold-color)'}>{bioFive?.year}</Title>
+            <Title $color={'var(--primary-gold-color)'} $align={'center'}>
+                {bioFive?.year}
+            </Title>
             <DescWrapper data={bioFive.desc} TextWrapper={FifthBox} />
         </MainContainer>
     );

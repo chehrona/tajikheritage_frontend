@@ -1,6 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
 
-// Slice images
+// Hooks
+import { useGlobalData } from '../../../../hooks/useGlobalData';
+
+// Static
 import staticData from '../../../../miscellaneous/history/calendarPage.json';
 
 // Styles
@@ -20,6 +23,7 @@ import {
 import { SignObj } from '../../../../articlePages/calendar/mulcharPage/types/componentTypes';
 
 const MulcharCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
+    const { lang } = useGlobalData();
     const [year, setYear] = useState<string>('');
     const [index, setIndex] = useState<number | null>(null);
 
@@ -43,6 +47,7 @@ const MulcharCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
                     id="muljar_year"
                     value={year}
                     onChange={handleChange}
+                    placeholder={staticData.MULCHAR_CALC_PLACEHOLDER[lang]}
                 />
             </InputWrapper>
             <CardWrapper>

@@ -78,7 +78,10 @@ const SecondSection: React.FC<{ bioData: PoetBioType }> = ({ bioData }) => {
                         $show={true}
                     />
                     <Info>
-                        <Title $color={'var(--primary-white-color)'}>
+                        <Title
+                            $color={'var(--primary-white-color)'}
+                            $align={'center'}
+                        >
                             {infoArr[0]?.year}
                         </Title>
                         <DescWrapper
