@@ -116,7 +116,7 @@ const Routes: React.FC = () => {
                     element={<MiddlePage page="history/all_calendars" />}
                 />
                 <Route
-                    path="/history/calendars/mūlchar"
+                    path="/history/calendars/mūljar"
                     element={<MulcharPage page="history/calendars/" />}
                 />
                 <Route

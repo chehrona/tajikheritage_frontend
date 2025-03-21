@@ -155,3 +155,8 @@ export const SourceWrapper = styled.div`
             var(--input-radius);
     }
 `;
+
+export const SourcePlaceholder = styled.div`
+    height: calc(10 * var(--text-segment-gap));
+    min-height: calc(10 * var(--text-segment-gap));
+`;

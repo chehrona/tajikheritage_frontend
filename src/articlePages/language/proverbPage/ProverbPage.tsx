@@ -28,6 +28,7 @@ import {
     QuoteWrapper,
     Shadow,
 } from './proverbPageStyles';
+import { SourcePlaceholder } from '../../../components/common/sources/sourceStyles';
 
 const ProverbPage = () => {
     const { id } = useParams();
@@ -97,7 +98,9 @@ const ProverbPage = () => {
                                 )}
                                 {proverb.references ? (
                                     <Sources data={proverb.references[lang]} />
-                                ) : null}
+                                ) : (
+                                    <SourcePlaceholder />
+                                )}
                             </>
                         ) : null}
                     </ProverbInnerContainer>

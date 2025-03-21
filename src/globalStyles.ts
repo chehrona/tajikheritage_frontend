@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+    ul {
+        margin-top: var(--text-segment-gap);
+        margin-bottom: var(--text-segment-gap);
+    }
+
     .quoteContainer {
         display: flex;
         justify-content: center;
@@ -33,6 +38,8 @@ const GlobalStyles = createGlobalStyle`
     .quoteWrapper {
         position: relative;
         z-index: 2;
+        font-size: var(--header-normal);
+        font-family: var(--fancy-font);
         padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
     }
 

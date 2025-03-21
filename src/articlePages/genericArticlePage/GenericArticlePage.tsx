@@ -24,6 +24,9 @@ import Sources from '../../components/common/sources/Sources';
 import ArticlePageFirstContainer from '../../components/common/pageWrapper/ArticlePageFirstContainer';
 import PageInnerContainer from '../../components/common/pageInnerContainer/PageInnerContainer';
 
+// Styles
+import { SourcePlaceholder } from '../../components/common/sources/sourceStyles';
+
 const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     const { id } = useParams();
     const { pathname } = useLocation();
@@ -82,7 +85,11 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                                     />
                                 );
                             })}
-                            <Sources data={data.references[lang]} />
+                            {data.references[lang] ? (
+                                <Sources data={data.references[lang]} />
+                            ) : (
+                                <SourcePlaceholder />
+                            )}
                         </PageInnerContainer>
                     ) : null}
                 </ArticlePageFirstContainer>

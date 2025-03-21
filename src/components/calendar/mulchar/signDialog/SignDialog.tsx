@@ -46,6 +46,7 @@ const SignDialog: React.FC<SignDialogProps> = ({
         return null;
     }
 
+    console.log(signInfo, 'sign info ******');
     return (
         <Dialog
             width={'1050px'}
@@ -55,34 +56,32 @@ const SignDialog: React.FC<SignDialogProps> = ({
             handleClose={handleClose}
         >
             <DialogContentWrapper>
-                {signInfo?.info.desc.map((entry, i) => {
-                    return (
-                        <MainContainer key={`sign_dialog_${i}`}>
-                            <LeftContainer>
-                                <ImageWrapper>
-                                    <SignTitle>
-                                        {signInfo?.info.title}
-                                    </SignTitle>
-                                    <SignImage
-                                        src={
-                                            process.env.REACT_APP_BASE_URL +
-                                            staticData[calendar][index].img.src
-                                        }
-                                    />
-                                </ImageWrapper>
-                            </LeftContainer>
-                            <RightContainer>
-                                <DescContainer>
+                <MainContainer>
+                    <LeftContainer>
+                        <ImageWrapper>
+                            <SignTitle>{signInfo?.info.title}</SignTitle>
+                            <SignImage
+                                src={
+                                    process.env.REACT_APP_BASE_URL +
+                                    staticData[calendar][index].img.src
+                                }
+                            />
+                        </ImageWrapper>
+                    </LeftContainer>
+                    <RightContainer>
+                        {signInfo.info.desc.map((entry, i) => {
+                            return (
+                                <DescContainer key={`sign_dialog_${i}`}>
                                     <Subtitle>{entry.subtitle}</Subtitle>
                                     <DescWrapper
                                         data={entry.body}
                                         TextWrapper={TextWrapper}
                                     />
                                 </DescContainer>
-                            </RightContainer>
-                        </MainContainer>
-                    );
-                })}
+                            );
+                        })}
+                    </RightContainer>
+                </MainContainer>
             </DialogContentWrapper>
         </Dialog>
     );

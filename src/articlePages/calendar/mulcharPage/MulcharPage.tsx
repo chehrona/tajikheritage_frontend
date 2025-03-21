@@ -45,7 +45,7 @@ const MuljarPage: React.FC<{ page: string }> = ({ page }) => {
 
     const fetchData = async () => {
         try {
-            const data = await requestArticleInfo('mūlchar', page);
+            const data = await requestArticleInfo('mūljar', page);
             setData(data);
         } catch (error: unknown) {
             const customError = error as ErrorResponse;
