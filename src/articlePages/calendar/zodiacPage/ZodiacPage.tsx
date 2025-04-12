@@ -70,7 +70,7 @@ const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
             <AppLayout>
                 <ArticlePageFirstContainer>
                     {data ? (
-                        <PageInnerContainer height={40}>
+                        <PageInnerContainer>
                             {data.desc[lang].map((entry, i) => (
                                 <React.Fragment key={i}>
                                     <TextSegment

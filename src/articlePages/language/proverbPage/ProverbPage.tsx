@@ -68,7 +68,7 @@ const ProverbPage = () => {
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <Shadow />
-                    <ProverbInnerContainer $height={40}>
+                    <ProverbInnerContainer>
                         {proverb ? (
                             <>
                                 <ProverbSoundBox proverb={proverb} />

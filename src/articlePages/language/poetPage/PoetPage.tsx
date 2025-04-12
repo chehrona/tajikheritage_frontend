@@ -88,7 +88,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
-                    <PageInnerContainer height={40}>
+                    <PageInnerContainer>
                         {poet ? (
                             <>
                                 <PoetIntro

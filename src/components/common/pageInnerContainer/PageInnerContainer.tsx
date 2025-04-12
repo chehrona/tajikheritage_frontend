@@ -8,9 +8,8 @@ import { MainContainer } from './pageInnerContainerStyles';
 
 const PageInnerContainer: React.FC<PageInnerContainerProps> = ({
     children,
-    height,
 }) => {
-    return <MainContainer $height={height}>{children}</MainContainer>;
+    return <MainContainer>{children}</MainContainer>;
 };
 
 export default PageInnerContainer;

@@ -72,7 +72,7 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
             {/* <Timeline /> */}
             <AppLayout>
                 <ArticlePageFirstContainer>
-                    <PageInnerContainer height={40}>
+                    <PageInnerContainer>
                         {word ? (
                             <>
                                 <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
