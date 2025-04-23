@@ -94,10 +94,11 @@ export const SlideImg = styled.img<{ $show?: boolean }>`
 
     @media (max-width: 480px) {
         width: ${squareSizeMobile}rem;
+        min-width: ${squareSizeMobile}rem;
         min-height: ${squareSizeMobile}rem;
-        max-height: ${squareSizeMobile}rem;
-        display: ${({ $show }) => !$show && 'none'};
+        display: ${({ $show }) => (!$show ? 'none' : 'block')};
         animation: ${slideOut} 0.25s ease-in-out forwards;
+        object-fit: cover;
     }
 `;
 
