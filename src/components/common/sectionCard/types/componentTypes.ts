@@ -1,6 +1,7 @@
 import { Langs } from '../../../../appTypes';
 
 export type SectionDetails = {
+    disabled: boolean;
     link: string;
     cardImg: {
         [key in Langs]: string;
@@ -12,5 +13,4 @@ export type SectionDetails = {
 
 export type SectionCardProps = {
     section: SectionDetails;
-    link: string;
 };

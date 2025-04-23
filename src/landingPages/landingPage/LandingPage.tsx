@@ -66,7 +66,6 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
                                     <SectionCard
                                         key={section.cardTitle[lang]}
                                         section={section}
-                                        link={section?.link}
                                     />
                                 );
                             })}

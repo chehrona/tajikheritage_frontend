@@ -17,11 +17,15 @@ import {
     ImageWrapper,
 } from './sectionCardStyles';
 
-const SectionCard: React.FC<SectionCardProps> = ({ section, link }) => {
+const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
     const { lang } = useGlobalData();
 
     return (
-        <CardWrapper page={link} type={'long'}>
+        <CardWrapper
+            page={section.link}
+            type={'long'}
+            disabled={section.disabled}
+        >
             <SectionCardWrapper>
                 <ImageWrapper>
                     <SectionImage
