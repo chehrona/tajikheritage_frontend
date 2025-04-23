@@ -45,18 +45,8 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
         setPosition(currentScrollPos);
     };
 
-    const handleCopy = async () => {
-        // try {
-        //     const textToCopy =
-        //         'The text is copyright protected by thetajikheritage.com.';
-        //     await navigator.clipboard.writeText(textToCopy);
-        // } catch (error) {
-        //     console.error('Unable to copy text to clipboard:', error);
-        // }
-    };
-
     return (
-        <div className="parent-container" onCopy={handleCopy}>
+        <div className="parent-container">
             {!noHeader ? (
                 <Header
                     setIsMenuShown={setIsMenuShown}
