@@ -13,14 +13,14 @@ const SoundButton: React.FC<{ data: string }> = ({ data }) => {
     };
 
     return (
-        <>
+        <React.Fragment>
             {data.length > 0 ? (
                 <StyledIconButton onClick={(e) => toggleAudio(e)}>
                     <audio src={process.env.REACT_APP_BASE_URL + data}></audio>
                     <VolumeUp />
                 </StyledIconButton>
             ) : null}
-        </>
+        </React.Fragment>
     );
 };
 

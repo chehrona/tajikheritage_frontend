@@ -63,14 +63,14 @@ const ProverbPage = () => {
     }, [pathname]);
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 || proverb?.disabled ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <Shadow />
                     <ProverbInnerContainer>
                         {proverb ? (
-                            <>
+                            <React.Fragment>
                                 <ProverbSoundBox proverb={proverb} />
                                 <QuoteWrapper
                                     dangerouslySetInnerHTML={{
@@ -101,12 +101,12 @@ const ProverbPage = () => {
                                 ) : (
                                     <SourcePlaceholder />
                                 )}
-                            </>
+                            </React.Fragment>
                         ) : null}
                     </ProverbInnerContainer>
                 </ArticlePageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

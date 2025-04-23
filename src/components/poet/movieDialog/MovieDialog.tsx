@@ -79,7 +79,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
                             ref={iframeRef}
                         />
                     ) : (
-                        <>
+                        <React.Fragment>
                             <OverlayContainer $expand={fullSize} $width={false}>
                                 <StyledArrowButton onClick={handleExpand}>
                                     {fullSize ? <SlideDown /> : <SlideUp />}
@@ -155,7 +155,7 @@ const MovieDialog: React.FC<MovieDialogProps> = ({
                                         : 'Watch now'}
                                 </DirectionText>
                             </PlayInstructionWrapper>
-                        </>
+                        </React.Fragment>
                     )}
                 </MainContainer>
             </DialogContentWrapper>

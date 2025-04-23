@@ -22,7 +22,7 @@ const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
         : staticText.ETYM_PAGE_LETTERS_CIRCLES.d[lang];
 
     return (
-        <>
+        <React.Fragment>
             {lettersToRender.map((letter, index) => {
                 const { char, delay } = letter;
                 const top = letter?.position.t;
@@ -49,7 +49,7 @@ const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
                     </CircleWrapper>
                 );
             })}
-        </>
+        </React.Fragment>
     );
 };
 

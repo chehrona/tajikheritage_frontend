@@ -67,14 +67,14 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
     }, [pathname]);
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 || word?.disabled ? <PageNotFound /> : null}
             {/* <Timeline /> */}
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <PageInnerContainer>
                         {word ? (
-                            <>
+                            <React.Fragment>
                                 <WordTitle>{`${word.title[lang]} (${word.syntax[lang]})`}</WordTitle>
                                 <PronunciationWrapper>
                                     <Transcript>{word.transcript}</Transcript>
@@ -91,12 +91,12 @@ const WordPage: React.FC<{ page: string }> = ({ page }) => {
                                     );
                                 })}
                                 <Sources data={word.references[lang]} />
-                            </>
+                            </React.Fragment>
                         ) : null}
                     </PageInnerContainer>
                 </ArticlePageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

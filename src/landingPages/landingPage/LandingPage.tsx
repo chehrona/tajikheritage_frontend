@@ -53,7 +53,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
     }, [pathname]);
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 <LandingPageFirstContainer>
@@ -74,7 +74,7 @@ const LandingPage: React.FC<{ page: string }> = ({ page }) => {
                     ) : null}
                 </LandingPageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

@@ -56,9 +56,9 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
     };
 
     return (
-        <>
+        <React.Fragment>
             <GlobalStyles />
             <TextWrapper>{renderContent()}</TextWrapper>
-        </>
+        </React.Fragment>
     );
 };

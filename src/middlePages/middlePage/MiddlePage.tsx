@@ -56,12 +56,12 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     }, [pathname]);
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 <LandingPageFirstContainer>
                     {items.length > 0 ? (
-                        <>
+                        <React.Fragment>
                             <SearchBar
                                 items={items}
                                 setItems={setItems}
@@ -76,11 +76,11 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                                     ),
                                 )}
                             </InnerBoxContainer>
-                        </>
+                        </React.Fragment>
                     ) : null}
                 </LandingPageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

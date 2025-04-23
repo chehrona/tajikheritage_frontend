@@ -67,7 +67,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
     }, [pathname]);
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
@@ -94,7 +94,7 @@ const GenericArticlePage: React.FC<{ page: string }> = ({ page }) => {
                     ) : null}
                 </ArticlePageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

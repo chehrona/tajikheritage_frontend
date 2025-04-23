@@ -19,7 +19,7 @@ const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
         : staticText.ETYM_PAGE_LETTERS_INSTRUCTION.d[lang];
 
     return (
-        <>
+        <React.Fragment>
             {lettersToRender?.map((letter, index) => {
                 const { char } = letter;
                 const top = letter.position.t;
@@ -44,7 +44,7 @@ const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
                     </InstructionWrapper>
                 );
             })}
-        </>
+        </React.Fragment>
     );
 };
 

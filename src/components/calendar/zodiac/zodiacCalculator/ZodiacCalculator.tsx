@@ -59,13 +59,13 @@ const ZodiacCalculator: React.FC<{ signs: SignObj[] }> = ({ signs }) => {
                         index >= 0 &&
                         index < signs.length &&
                         year.length > 0 ? (
-                            <>
+                            <React.Fragment>
                                 <CardTitle>{signs[index].info.title}</CardTitle>
                                 <SignImage
                                     src={`${process.env.REACT_APP_BASE_URL}${staticData.MULCHAR_CHART_IMGS[index]?.img?.src}`}
                                     alt={signs[index]?.id}
                                 />
-                            </>
+                            </React.Fragment>
                         ) : null}
                     </CardFace>
                     <CardFace $back={false}>

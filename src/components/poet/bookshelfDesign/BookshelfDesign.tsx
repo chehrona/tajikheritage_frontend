@@ -71,7 +71,7 @@ const BookshelfDesign: React.FC<BookshelfDesignProps> = ({
             </BooksContainer>
             <Shelf />
             {bookIndex >= 0 && (
-                <>
+                <React.Fragment>
                     <BookDialog
                         book={poet[bookIndex]}
                         setBookIndex={setBookIndex}
@@ -80,7 +80,7 @@ const BookshelfDesign: React.FC<BookshelfDesignProps> = ({
                         book={poet[bookIndex]}
                         setBookIndex={setBookIndex}
                     />
-                </>
+                </React.Fragment>
             )}
         </div>
     );

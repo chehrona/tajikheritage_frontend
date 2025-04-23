@@ -84,13 +84,13 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
     };
 
     return (
-        <>
+        <React.Fragment>
             {error === 404 ? <PageNotFound /> : null}
             <AppLayout>
                 <ArticlePageFirstContainer>
                     <PageInnerContainer>
                         {poet ? (
-                            <>
+                            <React.Fragment>
                                 <PoetIntro
                                     poet={poet}
                                     scrollToView={scrollToView}
@@ -101,12 +101,12 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
                                 <PoetCareer points={poet?.career} />
                                 <PoetAwards awards={poet?.awards[lang]} />
                                 <Sources data={poet?.references[lang]} />
-                            </>
+                            </React.Fragment>
                         ) : null}
                     </PageInnerContainer>
                 </ArticlePageFirstContainer>
             </AppLayout>
-        </>
+        </React.Fragment>
     );
 };
 

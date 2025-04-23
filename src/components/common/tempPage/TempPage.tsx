@@ -19,12 +19,12 @@ const TempPage: React.FC<{ page: string }> = ({ page }) => {
     useSetHeader(page, 'landing', '');
 
     return (
-        <>
+        <React.Fragment>
             <Loader inProp={true} />
             <TempPageContainer>
                 <TempTitle>{info.TEMP_PAGE_INFO[lang]}</TempTitle>
             </TempPageContainer>
-        </>
+        </React.Fragment>
     );
 };
 
