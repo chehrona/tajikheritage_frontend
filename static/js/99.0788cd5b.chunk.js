@@ -231,10 +231,11 @@
 
     @media (max-width: 480px) {
         width: ${z}rem;
+        min-width: ${z}rem;
         min-height: ${z}rem;
-        max-height: ${z}rem;
-        display: ${e=>{let{$show:r}=e;return!r&&"none"}};
+        display: ${e=>{let{$show:r}=e;return r?"block":"none"}};
         animation: ${I} 0.25s ease-in-out forwards;
+        object-fit: cover;
     }
 `,_=m.Ay.div`
     height: 0.0625rem;
@@ -2029,4 +2030,4 @@
         }
     }
 `}}]);
-//# sourceMappingURL=99.cfa24567.chunk.js.map
+//# sourceMappingURL=99.0788cd5b.chunk.js.map
