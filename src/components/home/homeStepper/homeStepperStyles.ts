@@ -136,7 +136,7 @@ export const LargeTitle = styled.div<{ $fontSize: number }>`
     overflow-wrap: break-word;
     text-transform: uppercase;
     font-family: var(--fancy-font);
-    text-shadow: 1rem 0rem 0rem var(--primary-shadow-color);
+    text-shadow: 0.7rem 0rem 0rem var(--primary-shadow-color);
     ${({ $fontSize }) =>
         $fontSize
             ? css`
@@ -152,7 +152,7 @@ export const LargeTitle = styled.div<{ $fontSize: number }>`
 
     @media (max-width: 480px) {
         width: 100%;
-        text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
+        text-shadow: 0.25rem 0rem 0rem var(--primary-shadow-color);
     }
 `;
 

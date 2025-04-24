@@ -38,8 +38,7 @@ const GlobalStyles = createGlobalStyle`
     .quoteWrapper {
         position: relative;
         z-index: 2;
-        font-size: var(--header-normal);
-        font-family: var(--fancy-font);
+        font-size: var(--header-small);
         padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
     }
 
