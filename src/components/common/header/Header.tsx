@@ -28,19 +28,15 @@ const sequence = [
     [2, 1, 2],
 ];
 
-const Header: React.FC<MenuProps> = ({
-    setIsMenuShown,
-    isMenuShown,
-    menuAnchorEl,
-}) => {
+const Header: React.FC<MenuProps> = ({ menuAnchorEl }) => {
     const { pathname } = useLocation();
-    const { lang, title } = useGlobalData();
+    const { lang, title, isMenuOpen, setIsMenuOpen } = useGlobalData();
     const [titleOrder, setTitleOrder] = useState<number[]>([0, 1, 2]);
     const [sequenceIndex, setSequenceIndex] = useState<number>(0);
 
     const handleLogoClick = useCallback(() => {
-        setIsMenuShown(false);
-    }, [setIsMenuShown]);
+        setIsMenuOpen(false);
+    }, [setIsMenuOpen]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -76,11 +72,7 @@ const Header: React.FC<MenuProps> = ({
                         );
                     })}
                 </TitleContainer>
-                <MenuButton
-                    setIsMenuShown={setIsMenuShown}
-                    isMenuShown={isMenuShown}
-                    menuAnchorEl={menuAnchorEl}
-                />
+                <MenuButton menuAnchorEl={menuAnchorEl} />
             </HeaderInnerBox>
         </HeaderContainer>
     );

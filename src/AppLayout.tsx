@@ -19,7 +19,6 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { pathname } = useLocation();
     const parentRef = useRef<HTMLInputElement>(null);
     const [position, setPosition] = useState<number>(0);
-    const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
     const menuAnchorEl = useRef<HTMLDivElement | null>(null);
 
     const noFooter = pathname.includes('print') || pathname === '/';
@@ -49,18 +48,8 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
     return (
         <div className="parent-container">
-            {!noHeader ? (
-                <Header
-                    setIsMenuShown={setIsMenuShown}
-                    isMenuShown={isMenuShown}
-                    menuAnchorEl={menuAnchorEl}
-                />
-            ) : null}
-            <Menu
-                setIsMenuShown={setIsMenuShown}
-                isMenuShown={isMenuShown}
-                menuAnchorEl={menuAnchorEl}
-            />
+            {!noHeader ? <Header menuAnchorEl={menuAnchorEl} /> : null}
+            <Menu menuAnchorEl={menuAnchorEl} />
             <div
                 ref={parentRef}
                 onScroll={handleScroll}

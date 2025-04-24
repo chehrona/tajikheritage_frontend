@@ -12,6 +12,8 @@ export const DataContext = createContext<ContextTypes>({
     setTitle: () => {},
     lang: 'us',
     setLang: () => {},
+    isMenuOpen: false,
+    setIsMenuOpen: () => {},
     showScrollUpArrow: false,
     setShowScrollUpArrow: () => {},
     showScrollDownArrow: true,
@@ -22,6 +24,8 @@ export const GlobalDataProvider = ({ children }: GlobalDataProviderProps) => {
     const [title, setTitle] = useState<TitleProps>(staticText.HEADER);
     const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
     const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
     const [lang, setLang] = useState<Langs>(() => {
         const storedLang = localStorage.getItem('lang');
         return storedLang === 'us' ||
@@ -42,8 +46,10 @@ export const GlobalDataProvider = ({ children }: GlobalDataProviderProps) => {
             setShowScrollUpArrow,
             showScrollDownArrow,
             setShowScrollDownArrow,
+            isMenuOpen,
+            setIsMenuOpen,
         }),
-        [lang, title, showScrollUpArrow, showScrollDownArrow],
+        [lang, title, showScrollUpArrow, showScrollDownArrow, isMenuOpen],
     );
 
     return (

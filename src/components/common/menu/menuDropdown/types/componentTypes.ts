@@ -1,9 +1,7 @@
 import { Langs } from '../../../../../appTypes';
 
 export type MenuProps = {
-    isMenuShown: boolean;
     menuAnchorEl: React.MutableRefObject<HTMLElement | null>;
-    setIsMenuShown: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type MenuItem = {

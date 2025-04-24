@@ -9,12 +9,8 @@ import { MenuProps } from '../menuDropdown/types/componentTypes';
 // Styled components
 import { MainContainer, ButtonText, StyledMenuIcon } from './menuButtonStyles';
 
-const MenuButton: React.FC<MenuProps> = ({
-    setIsMenuShown,
-    isMenuShown,
-    menuAnchorEl,
-}) => {
-    const { lang } = useGlobalData();
+const MenuButton: React.FC<MenuProps> = ({ menuAnchorEl }) => {
+    const { lang, isMenuOpen, setIsMenuOpen } = useGlobalData();
     const [triggerFadeIn, setTriggerFadeIn] = useState<boolean>(false);
     const [triggerFadeOut, setTriggerFadeOut] = useState<boolean>(false);
 
@@ -24,7 +20,7 @@ const MenuButton: React.FC<MenuProps> = ({
                 menuAnchorEl.current = e.currentTarget;
             }
             setTriggerFadeOut(true);
-            setIsMenuShown((prevState) => !prevState);
+            setIsMenuOpen((prevState) => !prevState);
 
             setTimeout(() => {
                 setTriggerFadeOut(false);
@@ -33,15 +29,15 @@ const MenuButton: React.FC<MenuProps> = ({
                 setTimeout(() => setTriggerFadeIn(false), 150);
             }, 150);
         },
-        [setIsMenuShown, menuAnchorEl],
+        [setIsMenuOpen, menuAnchorEl],
     );
 
     // Button text logic
     const getButtonText = () => {
-        if (lang === 'us') return isMenuShown ? 'CLOSE' : 'MENU';
-        if (lang === 'ru') return isMenuShown ? 'ЗАКРЫТЬ' : 'МЕНЮ';
-        if (lang === 'fa') return isMenuShown ? 'پوشید' : 'منو';
-        return isMenuShown ? 'ПӮШЕД' : 'МЕНЮ';
+        if (lang === 'us') return isMenuOpen ? 'CLOSE' : 'MENU';
+        if (lang === 'ru') return isMenuOpen ? 'ЗАКРЫТЬ' : 'МЕНЮ';
+        if (lang === 'fa') return isMenuOpen ? 'پوشید' : 'منو';
+        return isMenuOpen ? 'ПӮШЕД' : 'МЕНЮ';
     };
 
     return (
@@ -52,7 +48,7 @@ const MenuButton: React.FC<MenuProps> = ({
             >
                 {getButtonText()}
             </ButtonText>
-            <StyledMenuIcon $isMenuShown={isMenuShown} />
+            <StyledMenuIcon $isMenuShown={isMenuOpen} />
         </MainContainer>
     );
 };

@@ -8,12 +8,13 @@ const bounce = keyframes`
 `;
 
 export const ScrollWrapper = styled.div<{ $show: boolean }>`
-    display: ${({ $show }) => ($show ? 'flex' : 'flex')};
+    display: ${({ $show }) => ($show ? 'flex' : 'none')};
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0.75rem;
 
     @media (max-width: 480px) {
-        position: absolute;
         right: 0.5rem;
     }
 `;

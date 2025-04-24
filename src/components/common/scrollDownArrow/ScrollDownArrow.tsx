@@ -2,6 +2,7 @@ import React from 'react';
 
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
+import { useLocation } from 'react-router-dom';
 
 // Helper
 import staticTexts from '../../../miscellaneous/staticTexts.json';
@@ -20,11 +21,13 @@ import {
 } from './scrollDownArrowStyles';
 
 const ScrollDownArrow: React.FC = () => {
+    const { pathname } = useLocation();
     const title = staticTexts.HOME_SCROLL as TitleType;
-    const { lang, showScrollDownArrow } = useGlobalData();
+    const { lang, showScrollDownArrow, isMenuOpen } = useGlobalData();
+    const isArrowShown = showScrollDownArrow && pathname === '/' && !isMenuOpen;
 
     return (
-        <ScrollWrapper $show={showScrollDownArrow}>
+        <ScrollWrapper $show={isArrowShown}>
             <Title>{title[lang]}</Title>
             <IconWrapper>
                 <Line />

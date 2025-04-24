@@ -11,6 +11,8 @@ export type ContextTypes = {
     setTitle: React.Dispatch<React.SetStateAction<TitleProps>>;
     lang: Langs;
     setLang: React.Dispatch<React.SetStateAction<Langs>>;
+    isMenuOpen: boolean;
+    setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
     showScrollUpArrow: boolean;
     setShowScrollUpArrow: React.Dispatch<React.SetStateAction<boolean>>;
     showScrollDownArrow: boolean;

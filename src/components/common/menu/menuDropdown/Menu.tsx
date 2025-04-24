@@ -24,12 +24,8 @@ import {
     MenuItemWrapper,
 } from './menuStyles';
 
-const Menu: React.FC<MenuProps> = ({
-    isMenuShown,
-    setIsMenuShown,
-    menuAnchorEl,
-}) => {
-    const { lang } = useGlobalData();
+const Menu: React.FC<MenuProps> = ({ menuAnchorEl }) => {
+    const { lang, isMenuOpen, setIsMenuOpen } = useGlobalData();
     const pageInfo = staticText.MENU_ITEMS as MenuPage;
 
     // useEffect(() => {
@@ -42,7 +38,7 @@ const Menu: React.FC<MenuProps> = ({
 
     return (
         <StyledMenu
-            open={isMenuShown}
+            open={isMenuOpen}
             anchorEl={menuAnchorEl.current}
             TransitionComponent={Slide}
             TransitionProps={{
@@ -52,7 +48,7 @@ const Menu: React.FC<MenuProps> = ({
             sx={{
                 zIndex: '10',
             }}
-            aria-hidden={!isMenuShown}
+            aria-hidden={!isMenuOpen}
         >
             <LogoContainer>
                 <Logo src={'/customAssets/tajiks.png'}></Logo>
@@ -63,7 +59,7 @@ const Menu: React.FC<MenuProps> = ({
                         <StyledLink
                             to={entry.link}
                             key={i}
-                            onClick={() => setIsMenuShown(false)}
+                            onClick={() => setIsMenuOpen(false)}
                         >
                             <MenuItemWrapper>
                                 <PageName>{entry.title}</PageName>
