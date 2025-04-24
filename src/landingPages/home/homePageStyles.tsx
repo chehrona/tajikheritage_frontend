@@ -41,9 +41,11 @@ export const ScrollWrapper = styled.div`
     bottom: 6.5rem;
 
     @media (max-width: 480px) {
-        bottom: 8rem;
-        right: 2rem;
+        position: fixed;
+        bottom: 15rem;
+        right: 3rem;
         opacity: 1;
+        background-color: red;
     }
 `;
 

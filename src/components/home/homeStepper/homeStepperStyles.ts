@@ -79,7 +79,8 @@ export const StepperContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-        padding: var(--page-padding);
+        padding: calc(2 * var(--page-padding));
+        margin: calc(1.5 * var(--page-padding)) 0rem;
         scroll-snap-type: mandatory;
         scroll-snap-type: y mandatory;
     }
@@ -168,7 +169,6 @@ export const Desc = styled.div`
     @media (max-width: 480px) {
         margin: 0rem;
         width: 100%;
-        padding-left: calc(var(--page-padding) * 2);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
