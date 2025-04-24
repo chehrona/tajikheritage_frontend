@@ -180,7 +180,7 @@
 
     // Done
     @media (max-width: 480px) {
-        gap: calc(3 * var(--text-segment-gap));
+        gap: calc(2 * var(--text-segment-gap));
         width: 100%;
         justify-content: flex-start;
         padding: 10% 0rem;
@@ -678,4 +678,4 @@
     display: flex;
     align-items: center;
 `;var s=t(579);const l=e=>{let{handleLogoClick:r,navTo:t="/"}=e;return(0,s.jsx)(n,{children:(0,s.jsx)(d,{to:t,onClick:r,children:(0,s.jsx)(o,{src:"/customAssets/tajiks.png"})})})}}}]);
-//# sourceMappingURL=260.88fc58c1.chunk.js.map
+//# sourceMappingURL=260.33dfd3f1.chunk.js.map
