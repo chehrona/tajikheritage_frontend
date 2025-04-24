@@ -87,7 +87,7 @@ export const PageNamesContainer = styled.div`
 
     // Done
     @media (max-width: 480px) {
-        gap: calc(3 * var(--text-segment-gap));
+        gap: calc(2 * var(--text-segment-gap));
         width: 100%;
         justify-content: flex-start;
         padding: 10% 0rem;
