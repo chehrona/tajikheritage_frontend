@@ -117,7 +117,7 @@
     overflow-wrap: break-word;
     text-transform: uppercase;
     font-family: var(--fancy-font);
-    text-shadow: 1rem 0rem 0rem var(--primary-shadow-color);
+    text-shadow: 0.7rem 0rem 0rem var(--primary-shadow-color);
     ${t=>{let{$fontSize:e}=t;return e?a.AH`
                   opacity: 1;
                   font-size: calc(${e} * var(--stepper-text));
@@ -130,7 +130,7 @@
 
     @media (max-width: 480px) {
         width: 100%;
-        text-shadow: 0.5rem 0rem 0rem var(--primary-shadow-color);
+        text-shadow: 0.25rem 0rem 0rem var(--primary-shadow-color);
     }
 `,x=a.Ay.div`
     width: 40%;
@@ -452,4 +452,4 @@
     position: absolute;
     top: 0rem;
 `;var K=r(4319);const N=()=>{const t=n.wS,e=n.l0,r=(0,i.useRef)(null),{lang:a,setTitle:d}=(0,o.X)(),l=[(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null)],[m,s]=(0,i.useState)(!0),[h,c]=(0,i.useState)([1,0,0,0,0]);return(0,i.useEffect)((()=>{d(n.El);const t=()=>{const t=r.current;if(null===t)return;const e=t.getBoundingClientRect(),i=e.top,o=e.bottom,n=l.map((t=>{const r=t.current;if(null===r)return 0;const n=r.getBoundingClientRect(),a=n.top;if(n.bottom<i||a>o)return 0;s(!1);return 1-Math.abs(i-a)/(.8*e.height)}));c(n)},e=r.current;return e&&e.addEventListener("scroll",t),()=>{e&&e.removeEventListener("scroll",t)}}),[]),(0,w.jsx)(K.A,{children:(0,w.jsxs)(B,{children:[m&&(0,w.jsxs)(O,{children:[(0,w.jsx)(V,{children:t[a]}),(0,w.jsxs)(q,{children:[(0,w.jsx)(D,{}),(0,w.jsx)(F,{}),(0,w.jsx)(G,{})]})]}),(0,w.jsxs)(T,{children:[(0,w.jsx)(j,{containerRef:r,divRefs:l,opacities:h}),null===e||void 0===e?void 0:e.map(((e,r)=>(0,w.jsxs)(J,{children:[(0,w.jsx)(L,{opacities:h,index:r,entry:e}),(0,w.jsx)(C,{opacities:h,index:r,entry:e}),(0,w.jsx)(X,{opacities:h,index:r,entry:e})]},`${t[a]}_${r}`)))]})]})})}}}]);
-//# sourceMappingURL=10.01ec3e58.chunk.js.map
+//# sourceMappingURL=10.eaaf02d4.chunk.js.map
