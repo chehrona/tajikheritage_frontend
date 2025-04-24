@@ -7,6 +7,7 @@ import { useGlobalData } from '../../hooks/useGlobalData';
 import staticText from '../../miscellaneous/staticTexts.json';
 
 // Components
+import AppLayout from '../../AppLayout';
 import HomeStepper from '../../components/home/homeStepper/HomeStepper';
 import BigCircle from '../../components/home/imageBalls/BigCircle';
 import MediumCircle from '../../components/home/imageBalls/MediumCircle';
@@ -19,21 +20,14 @@ import { TitleType, HomeStepperType } from './types/componentTypes';
 import {
     InnerContainer,
     PageContainer,
-    ScrollWrapper,
-    Title,
-    IconWrapper,
-    Line,
-    Arrow,
-    Circle,
     ImageBallWrapper,
 } from './homePageStyles';
-import AppLayout from '../../AppLayout';
 
 const Home: React.FC = () => {
     const title = staticText.HOME_SCROLL as TitleType;
     const stepInfo = staticText.HOME_STEPPER as HomeStepperType;
     const containerRef = useRef<HTMLDivElement>(null);
-    const { lang, setTitle } = useGlobalData();
+    const { lang, setTitle, setShowScrollDownArrow } = useGlobalData();
     const divRefs = [
         useRef<HTMLDivElement>(null),
         useRef<HTMLDivElement>(null),
@@ -41,7 +35,6 @@ const Home: React.FC = () => {
         useRef<HTMLDivElement>(null),
         useRef<HTMLDivElement>(null),
     ];
-    const [scrollIndicator, setScrollIndicator] = useState<boolean>(true);
     const [opacities, setOpacities] = useState<number[]>([1, 0, 0, 0, 0]);
 
     useEffect(() => {
@@ -69,7 +62,7 @@ const Home: React.FC = () => {
                 if (divBottom < containerTop || divTop > containerBottom) {
                     return 0;
                 } else {
-                    setScrollIndicator(false);
+                    setShowScrollDownArrow(false);
 
                     const opacity =
                         1 -
@@ -97,16 +90,6 @@ const Home: React.FC = () => {
     return (
         <AppLayout>
             <PageContainer>
-                {scrollIndicator && (
-                    <ScrollWrapper>
-                        <Title>{title[lang]}</Title>
-                        <IconWrapper>
-                            <Line />
-                            <Arrow />
-                            <Circle />
-                        </IconWrapper>
-                    </ScrollWrapper>
-                )}
                 <InnerContainer>
                     <HomeStepper
                         containerRef={containerRef}

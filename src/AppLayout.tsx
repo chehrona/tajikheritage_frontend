@@ -2,8 +2,9 @@
 
 import React, { useState, useRef, ReactNode } from 'react';
 
-// Routing
+// Hooks
 import { useLocation } from 'react-router-dom';
+import { useGlobalData } from './hooks/useGlobalData';
 
 // Components
 import Header from './components/common/header/Header';
@@ -11,12 +12,13 @@ import Menu from './components/common/menu/menuDropdown/Menu';
 import Footer from './components/common/footer/Footer';
 import Flags from './components/common/flags/Flags';
 import ScrollUpArrow from './components/common/scrollUpArrow/ScrollUpArrow';
+import ScrollDownArrow from './components/common/scrollDownArrow/ScrollDownArrow';
 
 const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const { setShowScrollUpArrow } = useGlobalData();
     const { pathname } = useLocation();
     const parentRef = useRef<HTMLInputElement>(null);
     const [position, setPosition] = useState<number>(0);
-    const [showArrow, setShowArrow] = useState<boolean>(false);
     const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
     const menuAnchorEl = useRef<HTMLDivElement | null>(null);
 
@@ -37,9 +39,9 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             currentScrollPos < position &&
             currentScrollPos > parentHeight / 2
         ) {
-            setShowArrow(true);
+            setShowScrollUpArrow(true);
         } else {
-            setShowArrow(false);
+            setShowScrollUpArrow(false);
         }
 
         setPosition(currentScrollPos);
@@ -73,7 +75,8 @@ const AppLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             </div>
             <div className="fixed-container">
                 <Flags />
-                {showArrow ? <ScrollUpArrow parentRef={parentRef} /> : null}
+                <ScrollUpArrow parentRef={parentRef} />
+                <ScrollDownArrow />
             </div>
         </div>
     );

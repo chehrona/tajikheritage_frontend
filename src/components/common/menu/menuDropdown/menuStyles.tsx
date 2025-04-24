@@ -87,10 +87,10 @@ export const PageNamesContainer = styled.div`
 
     // Done
     @media (max-width: 480px) {
-        gap: var(--text-segment-gap);
+        gap: calc(3 * var(--text-segment-gap));
         width: 100%;
-        justify-content: start;
-        padding: var(--page-padding) 0rem;
+        justify-content: flex-start;
+        padding: 10% 0rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
@@ -101,7 +101,7 @@ export const PageNamesContainer = styled.div`
 
 export const MenuItemWrapper = styled.div`
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: var(--text-segment-gap);
 `;
 
 export const PageName = styled.div`

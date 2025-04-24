@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { IconButton } from '@mui/material';
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.div<{ $show: boolean }>`
     cursor: pointer;
     height: 5rem;
     width: 5rem;
     pointer-events: auto;
     margin: 0rem -1.8rem -1rem 0rem;
+    display: ${({ $show }) => ($show ? 'block' : 'none')};
 
     @media (max-width: 1024px) {
         display: none;

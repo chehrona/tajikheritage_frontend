@@ -1,20 +1,13 @@
 'use client';
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Routing
 import { ErrorBoundary } from 'react-error-boundary';
 
-// Helper
-import headerText from './miscellaneous/staticTexts.json';
-
 // Contexts
-import { DataContext } from './hooks/useGlobalData';
-
-// Types
-import { TitleProps, ContextTypes } from './hooks/hookTypes';
-import { Langs } from './appTypes';
+import { GlobalDataProvider } from './hooks/useGlobalData';
 
 // Components
 import ErrorPage from './errorPages/ErrorPage';
@@ -23,28 +16,6 @@ import CustomToastContainer from './components/common/customToastContainer/Custo
 import Routes from './components/common/routes/Routes';
 
 function App(): React.JSX.Element {
-    const [lang, setLang] = useState<Langs>(() => {
-        const storedLang = localStorage.getItem('lang');
-        return storedLang === 'us' ||
-            storedLang === 'ru' ||
-            storedLang === 'tj' ||
-            storedLang === 'fa'
-            ? storedLang
-            : 'us';
-    });
-
-    const [title, setTitle] = useState<TitleProps>(headerText.HEADER);
-
-    const value = useMemo<ContextTypes>(
-        () => ({
-            title,
-            setTitle,
-            lang,
-            setLang,
-        }),
-        [lang, title],
-    );
-
     useEffect(() => {
         // Prevent right click
         const handleContextmenu = (e: MouseEvent) => {
@@ -58,11 +29,11 @@ function App(): React.JSX.Element {
 
     return (
         <ErrorBoundary FallbackComponent={ErrorPage}>
-            <DataContext.Provider value={value}>
+            <GlobalDataProvider>
                 <GlobalStyles />
                 <Routes />
                 <CustomToastContainer />
-            </DataContext.Provider>
+            </GlobalDataProvider>
         </ErrorBoundary>
     );
 }

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Langs } from '../appTypes';
 
 // useGlobalData
@@ -10,6 +11,14 @@ export type ContextTypes = {
     setTitle: React.Dispatch<React.SetStateAction<TitleProps>>;
     lang: Langs;
     setLang: React.Dispatch<React.SetStateAction<Langs>>;
+    showScrollUpArrow: boolean;
+    setShowScrollUpArrow: React.Dispatch<React.SetStateAction<boolean>>;
+    showScrollDownArrow: boolean;
+    setShowScrollDownArrow: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type GlobalDataProviderProps = {
+    children: ReactNode;
 };
 
 // useSetHeader
