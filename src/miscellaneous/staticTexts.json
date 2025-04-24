@@ -127,7 +127,7 @@
             "title": {
                 "us": {
                     "text": "Language & literature",
-                    "font": 3.15,
+                    "font": 3,
                     "margin": { "d": 3, "m": -13, "t": 30 }
                 },
                 "ru": {
