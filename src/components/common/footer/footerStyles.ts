@@ -8,6 +8,7 @@ export const FooterContainer = styled.div`
     height: var(--footer-height);
     min-height: var(--footer-height);
     background: var(--primary-black-color);
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
         justify-content: center;
@@ -118,6 +119,7 @@ export const Title = styled.div`
     color: var(--primary-gold-color);
     font-family: var(--fancy-font);
     margin-bottom: 1rem;
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
         margin-bottom: 0.25rem;

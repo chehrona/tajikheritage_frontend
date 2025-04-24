@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
     justify-content: center;
 
     @media (max-width: 480px) {
-        background-size: calc(100vw / 3);
+        background-size: 100vw;
     }
 `;
 
