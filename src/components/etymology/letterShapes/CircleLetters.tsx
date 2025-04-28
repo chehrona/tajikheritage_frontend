@@ -13,7 +13,7 @@ import { LetterProps } from './types/componentTypes';
 // Styled components
 import { CircleWrapper } from '../letterStack/letterStackStyles';
 
-const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
+const OvalLetters: React.FC<LetterProps> = ({ handleClick }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -32,7 +32,6 @@ const OvalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
                     <CircleWrapper
                         $top={top}
                         $left={left}
-                        $open={open}
                         $delay={delay}
                         $empty={char.startsWith('/filler')}
                         key={`${[lang]}_${char}_${index}`}

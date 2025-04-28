@@ -84,28 +84,10 @@ const emptyBackground = ({ $empty }: WrapperBaseProps) =>
         background-image: url('/customAssets/noise.png');
     `;
 
-const delayedAppearance = ({ $open, $delay }: WrapperBaseProps) =>
-    $open
-        ? css`
-              opacity: 0;
-              transition: opacity 150ms;
-              animation: ${bubbleIn} 300ms forwards;
-              animation-delay: ${() => ($delay ? `${$delay}s` : '0s')};
-          `
-        : css`
-              opacity: 1;
-              transition: opacity 150ms;
-              animation: ${bubbleOut} 300ms forwards;
-              animation-delay: ${() => ($delay ? `${$delay}s` : '0s')};
-          `;
-
 export const WrapperBase = styled.div<WrapperBaseProps>`
     height: var(--circle-letter-size);
     width: var(--circle-letter-size);
     position: absolute;
-    left: ${({ $left }) =>
-        $left && `calc(${$left} * var(--circle-letter-size))`};
-    top: ${({ $top }) => $top && `calc(${$top} * var(--circle-letter-size))`};
     background-color: var(--primary-black-color);
     border-radius: var(--circle-letter-size);
     display: flex;
@@ -115,8 +97,14 @@ export const WrapperBase = styled.div<WrapperBaseProps>`
     font-size: var(--header-large);
     will-change: transform;
     font-family: var(--fancy-font);
+    opacity: 0;
+    transition: opacity 150ms;
+    animation: ${bubbleIn} 300ms forwards;
+    animation-delay: ${({ $delay }) => ($delay ? `${$delay}s` : '0s')};
+    left: ${({ $left }) =>
+        $left && `calc(${$left} * var(--circle-letter-size))`};
+    top: ${({ $top }) => $top && `calc(${$top} * var(--circle-letter-size))`};
 
-    ${delayedAppearance}
     ${emptyBackground}
 
     &:hover {

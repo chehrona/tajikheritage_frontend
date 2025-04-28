@@ -13,7 +13,7 @@ import { LetterProps } from './types/componentTypes';
 // Styled components
 import { VerticalWrapper } from '../letterStack/letterStackStyles';
 
-const VerticalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
+const VerticalLetters: React.FC<LetterProps> = ({ handleClick }) => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -32,7 +32,6 @@ const VerticalLetters: React.FC<LetterProps> = ({ open, handleClick }) => {
                     <VerticalWrapper
                         $top={top}
                         $left={left}
-                        $open={open}
                         $delay={delay}
                         key={`${[lang]}_${char}_${index}`}
                         $empty={char.startsWith('/filler')}

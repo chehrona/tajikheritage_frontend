@@ -10,7 +10,7 @@ import staticText from '../../../miscellaneous/language/etymologyPage.json';
 // Styled components
 import { InstructionWrapper } from '../letterStack/letterStackStyles';
 
-const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
+const Instruction: React.FC = () => {
     const { lang } = useGlobalData();
     const isMobile = useMediaQuery({ query: `(max-width: 480px)` });
 
@@ -29,7 +29,6 @@ const Instruction: React.FC<{ open: boolean }> = ({ open }) => {
                     <InstructionWrapper
                         $top={top}
                         $left={left}
-                        $open={open}
                         key={`${[lang]}_${char}_${index}`}
                     >
                         <span>

@@ -49,10 +49,10 @@ const LetterStack: React.FC<LetterStackProps> = ({
     return (
         <LetterStackWrapper>
             <LetterContainer>
-                <OvalLetters open={true} handleClick={handleClick} />
-                <VerticalLetters open={true} handleClick={handleClick} />
-                <CircleLetters open={true} handleClick={handleClick} />
-                <Instruction open={true} />
+                <OvalLetters handleClick={handleClick} />
+                <VerticalLetters handleClick={handleClick} />
+                <CircleLetters handleClick={handleClick} />
+                <Instruction />
             </LetterContainer>
         </LetterStackWrapper>
     );
