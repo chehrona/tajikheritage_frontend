@@ -37,6 +37,20 @@ export const requestMiddlePage = async (page: string) => {
     }
 };
 
+export const requestAllWords = async (page: string, value: string) => {
+    try {
+        const userId = storeVisit(page);
+
+        const response = await axios.get(`${apiUrl}/${page}`, {
+            params: { userId, page, value },
+        });
+
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export const requestArticleInfo = async (id: string, page: string) => {
     try {
         const userId = storeVisit(`${page}${id}`);

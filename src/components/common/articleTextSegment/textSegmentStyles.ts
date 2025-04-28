@@ -33,6 +33,10 @@ export const HeaderWrapper = styled.div<{ $padding: boolean }>`
         $padding
             ? '0rem'
             : 'var(--text-segment-gap) 0rem 0rem var(--page-padding)'};
+
+    @media (max-width: 480px) {
+        padding: 0rem;
+    }
 `;
 
 export const SlideContainer = styled.div<SlideContainerProps>`

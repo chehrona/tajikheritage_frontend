@@ -3,13 +3,13 @@ import { toast } from 'react-toastify';
 
 // Hooks
 import { useGlobalData } from './useGlobalData';
+import { useLocation } from 'react-router-dom';
 
-// Static messgaes
+// Static messages
 import alertMessages from '../miscellaneous/alertMessages.json';
 
 // Types
 import { ToastTypes } from './hookTypes';
-import { useLocation } from 'react-router-dom';
 type AlertMessageKey = keyof typeof alertMessages;
 
 export const useToasts = () => {

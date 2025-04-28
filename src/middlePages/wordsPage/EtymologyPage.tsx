@@ -1,93 +1,109 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
-import { useLocation } from 'react-router-dom';
 import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Helper
 import staticText from '../../miscellaneous/language/etymologyPage.json';
-
-// Services
-import { requestMiddlePage } from '../../services/request';
+import placeholder from '../../miscellaneous/staticTexts.json';
+import alertMessages from '../../miscellaneous/alertMessages.json';
 
 // Components
 import AppLayout from '../../AppLayout';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
-import PageNotFound from '../../errorPages/pageNotFound/PageNotFound';
 
 // Types
-import { ErrorResponse } from '../../appTypes';
 import { CardType } from '../middlePage/types/componentTypes';
 
 // Styled components
 import { PageTitle } from './etymologyStyles';
 import { InnerBoxContainer } from '../middlePage/middlePageStyles';
+import {
+    SearchContainer,
+    InputWrapper,
+    StyledSearchIcon,
+    InputField,
+    InputAlert,
+    StyledIconButton,
+    StyledClearIcon,
+} from '../../components/common/searchBar/searchBarStyles';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
-    const { pathname } = useLocation();
     const { lang } = useGlobalData();
+    const [value, setValue] = useState<string>('');
     const [items, setItems] = useState<CardType[]>([]);
-    const [allItems, setAllItems] = useState<CardType[]>([]);
-    const [error, setError] = useState<number | null>(null);
-    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
+    const [noMatch, setNoMatch] = useState<boolean>(false);
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    const fetchData = async () => {
-        try {
-            const data = await requestMiddlePage(page);
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const enteredValue = e.currentTarget.value;
 
-            setItems(data);
-            setAllItems(data);
-        } catch (error: unknown) {
-            const customError = error as ErrorResponse;
+        setNoMatch(false);
+        setValue(enteredValue);
+    };
 
-            if (customError.status === 404) {
-                setError(404);
-            } else if (customError.status === 500) {
-                setError(500);
-            }
+    // Reset value and focus input when clearing
+    const handleClear = () => {
+        setValue('');
+        setNoMatch(false);
+        setItems([]);
+
+        if (inputRef.current) {
+            inputRef.current.focus();
         }
     };
 
     // Set page title
-    useSetHeader(page, 'middle', allItems);
-
-    useEffect(() => {
-        // Get data
-        fetchData();
-    }, [pathname]);
+    useSetHeader(page, 'middle', items);
 
     return (
-        <>
-            {error === 404 ? <PageNotFound /> : null}
-            <AppLayout>
-                <LandingPageFirstContainer>
-                    <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
+        <AppLayout>
+            <LandingPageFirstContainer>
+                <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
+                <SearchContainer>
+                    <InputWrapper>
+                        <StyledSearchIcon />
+                        <InputField
+                            id="searchbar"
+                            ref={inputRef}
+                            placeholder={
+                                placeholder.SEARCH_BAR_PLACEHOLDER[lang]
+                            }
+                            value={value}
+                            onChange={handleSearch}
+                        />
+                        {value.length ? (
+                            <StyledIconButton onClick={handleClear}>
+                                <StyledClearIcon />
+                            </StyledIconButton>
+                        ) : null}
+                    </InputWrapper>
+                    {noMatch && (
+                        <InputAlert>
+                            {alertMessages.SEARCH_NOT_FOUND[lang]}
+                        </InputAlert>
+                    )}
+                </SearchContainer>
+                <React.Fragment>
                     {items.length > 0 ? (
-                        <>
-                            {/* Don't change to search bar, filtering is different */}
-                            <LetterStack
-                                setItems={setItems}
-                                allItems={allItems}
-                                isDropdownOpen={isDropdownOpen}
-                                setIsDropdownOpen={setIsDropdownOpen}
-                            />
-                            {!isDropdownOpen && (
-                                <InnerBoxContainer
-                                    $center={items.length % 3 === 0}
-                                >
-                                    {items.map((item) => (
-                                        <SquareCard key={item.id} data={item} />
-                                    ))}
-                                </InnerBoxContainer>
-                            )}
-                        </>
-                    ) : null}
-                </LandingPageFirstContainer>
-            </AppLayout>
-        </>
+                        <InnerBoxContainer $center={items.length % 3 === 0}>
+                            {items.map((item) => (
+                                <SquareCard key={item.id} data={item} />
+                            ))}
+                        </InnerBoxContainer>
+                    ) : (
+                        <LetterStack
+                            page={page}
+                            setValue={setValue}
+                            setItems={setItems}
+                        />
+                    )}
+                </React.Fragment>
+            </LandingPageFirstContainer>
+        </AppLayout>
     );
 };
 

@@ -1,8 +1,7 @@
 import { CardType } from '../../../../middlePages/middlePage/types/componentTypes';
 
 export type LetterStackProps = {
-    allItems: CardType[];
+    page: string;
     setItems: React.Dispatch<React.SetStateAction<CardType[]>>;
-    isDropdownOpen: boolean;
-    setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setValue: React.Dispatch<React.SetStateAction<string>>;
 };

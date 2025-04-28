@@ -99,9 +99,8 @@ html {
         --header-medium: 1.75rem;
         --header-normal: 1.5rem;
         --header-small: 1.15rem;
-        --info-text: 0.9rem;
         --stepper-text: 1rem;
-        --body-text: 1rem;
+        --body-text: 1.125rem;
 
         /* Padding */
         --page-padding: 1rem;
