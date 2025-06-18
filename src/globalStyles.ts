@@ -42,6 +42,11 @@ const GlobalStyles = createGlobalStyle`
         padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
     }
 
+    .persianWrapper {
+        direction: rtl;
+        text-align: right;
+    }
+
     .storyWrapper {
         justify-content: center;
         position: relative;

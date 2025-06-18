@@ -44,7 +44,7 @@ const PoetPage: React.FC<{ page: string }> = ({ page }) => {
 
             const data = await requestArticleInfo(id, 'language/poet');
             setPoet(data);
-        } catch (error: unknown) {
+        } catch (error: any) {
             const customError = error as ErrorResponse;
 
             if (customError.status === 404) {

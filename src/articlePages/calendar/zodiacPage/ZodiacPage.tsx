@@ -47,7 +47,7 @@ const ZodiacPage: React.FC<{ page: string }> = ({ page }) => {
         try {
             const data = await requestArticleInfo('burj-i duvāzdahgāna', page);
             setData(data);
-        } catch (error: unknown) {
+        } catch (error: any) {
             const customError = error as ErrorResponse;
 
             if (customError.status === 404) {

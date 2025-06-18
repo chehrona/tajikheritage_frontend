@@ -19,7 +19,7 @@ export const SearchContainer = styled.div`
 export const InputWrapper = styled.div`
     height: 3.5rem;
     width: 30rem;
-    background: url('/customAssets/search.png') center no-repeat;
+    background: url('/customAssets/search.svg') center no-repeat;
     background-size: contain;
     display: flex;
     justify-content: center;

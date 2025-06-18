@@ -36,7 +36,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
 
             setItems(data);
             setAllItems(data);
-        } catch (error: unknown) {
+        } catch (error: any) {
             const customError = error as ErrorResponse;
 
             if (customError.status === 404) {
@@ -62,11 +62,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                 <LandingPageFirstContainer>
                     {items.length > 0 ? (
                         <React.Fragment>
-                            <SearchBar
-                                items={items}
-                                setItems={setItems}
-                                allItems={allItems}
-                            />
+                            <SearchBar setItems={setItems} page={page} />
                             <InnerBoxContainer $center={items.length % 3 === 0}>
                                 {items.map((item, i) =>
                                     page.includes('poets') ? (

@@ -38,7 +38,7 @@ export const useSetHeader = (page: string, type?: string, pageData?: any) => {
                 }
 
                 setTitle(tempHeader);
-            } catch (error: unknown) {
+            } catch (error: any) {
                 setTitle(staticTexts.HEADER);
             }
         };

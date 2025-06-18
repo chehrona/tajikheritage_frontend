@@ -35,7 +35,7 @@ const LetterStack: React.FC<LetterStackProps> = ({
             }
 
             setItems(data);
-        } catch (error: unknown) {
+        } catch (error: any) {
             const customError = error as ErrorResponse;
 
             if (customError.status === 500) {

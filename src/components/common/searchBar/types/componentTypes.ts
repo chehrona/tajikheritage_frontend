@@ -1,9 +1,5 @@
 export type SearchBarProps = {
-    items: any;
+    page: string;
     setItems: React.Dispatch<React.SetStateAction<any>>;
-    allItems: any;
-};
-
-export type EntryDetails = {
-    tags: string[];
+    externalValue?: string;
 };

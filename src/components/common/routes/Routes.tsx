@@ -97,6 +97,14 @@ const Routes: React.FC = () => {
                     path="/customs/traditions/:id"
                     element={<GenericArticlePage page="customs/traditions/" />}
                 />
+                <Route
+                    path="/customs/beliefs"
+                    element={<MiddlePage page="customs/all_beliefs" />}
+                />
+                <Route
+                    path="/customs/beliefs/:id"
+                    element={<GenericArticlePage page="customs/beliefs/" />}
+                />
 
                 {/* History */}
                 <Route

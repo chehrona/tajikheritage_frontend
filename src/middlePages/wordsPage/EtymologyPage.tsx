@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 // Hooks
 import { useGlobalData } from '../../hooks/useGlobalData';
@@ -6,8 +6,6 @@ import { useSetHeader } from '../../hooks/useSetHeader';
 
 // Helper
 import staticText from '../../miscellaneous/language/etymologyPage.json';
-import placeholder from '../../miscellaneous/staticTexts.json';
-import alertMessages from '../../miscellaneous/alertMessages.json';
 
 // Components
 import AppLayout from '../../AppLayout';
@@ -21,40 +19,12 @@ import { CardType } from '../middlePage/types/componentTypes';
 // Styled components
 import { PageTitle } from './etymologyStyles';
 import { InnerBoxContainer } from '../middlePage/middlePageStyles';
-import {
-    SearchContainer,
-    InputWrapper,
-    StyledSearchIcon,
-    InputField,
-    InputAlert,
-    StyledIconButton,
-    StyledClearIcon,
-} from '../../components/common/searchBar/searchBarStyles';
+import SearchBar from '../../components/common/searchBar/SearchBar';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const { lang } = useGlobalData();
     const [value, setValue] = useState<string>('');
     const [items, setItems] = useState<CardType[]>([]);
-    const [noMatch, setNoMatch] = useState<boolean>(false);
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const enteredValue = e.currentTarget.value;
-
-        setNoMatch(false);
-        setValue(enteredValue);
-    };
-
-    // Reset value and focus input when clearing
-    const handleClear = () => {
-        setValue('');
-        setNoMatch(false);
-        setItems([]);
-
-        if (inputRef.current) {
-            inputRef.current.focus();
-        }
-    };
 
     // Set page title
     useSetHeader(page, 'middle', items);
@@ -63,30 +33,11 @@ const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
         <AppLayout>
             <LandingPageFirstContainer>
                 <PageTitle>{staticText.ETYM_PAGE_HEADER[lang]}</PageTitle>
-                <SearchContainer>
-                    <InputWrapper>
-                        <StyledSearchIcon />
-                        <InputField
-                            id="searchbar"
-                            ref={inputRef}
-                            placeholder={
-                                placeholder.SEARCH_BAR_PLACEHOLDER[lang]
-                            }
-                            value={value}
-                            onChange={handleSearch}
-                        />
-                        {value.length ? (
-                            <StyledIconButton onClick={handleClear}>
-                                <StyledClearIcon />
-                            </StyledIconButton>
-                        ) : null}
-                    </InputWrapper>
-                    {noMatch && (
-                        <InputAlert>
-                            {alertMessages.SEARCH_NOT_FOUND[lang]}
-                        </InputAlert>
-                    )}
-                </SearchContainer>
+                <SearchBar
+                    externalValue={value}
+                    setItems={setItems}
+                    page={page}
+                />
                 <React.Fragment>
                     {items.length > 0 ? (
                         <InnerBoxContainer $center={items.length % 3 === 0}>

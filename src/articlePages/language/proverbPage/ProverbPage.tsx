@@ -46,7 +46,7 @@ const ProverbPage = () => {
 
             const data = await requestArticleInfo(id, 'language/proverb');
             setProverb(data);
-        } catch (error: unknown) {
+        } catch (error: any) {
             const customError = error as ErrorResponse;
 
             if (customError.status === 404) {
