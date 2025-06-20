@@ -34,12 +34,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
     const [value, setValue] = useState<string>(externalValue);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    console.log(page, externalValue, 'page ******');
-
     useEffect(() => {
-        if (value.length === 0) {
-            setItems([]);
-        } else if (value.length !== 1) {
+        if (value.length >= 1) {
             const delay = setTimeout(() => {
                 searchEntry(value, page).then((data: any) => {
                     setItems(data);

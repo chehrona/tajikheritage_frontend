@@ -13,7 +13,7 @@ export const SubtitleWrapper = styled.div<{ $reverse?: boolean | null }>`
             : 'var(--text-segment-gap) var(--page-padding) var(--text-segment-gap) 0rem'};
 `;
 
-const LineWrapper = styled.div`
+export const LineWrapper = styled.div`
     z-index: 1;
     flex-grow: 1;
     align-items: center;
@@ -24,9 +24,7 @@ export const RightWrapper = styled(LineWrapper)`
     margin-left: -0.25rem;
 `;
 
-export const LeftWrapper = styled(LineWrapper)<{
-    $show?: boolean;
-}>`
+export const LeftWrapper = styled(LineWrapper)<{ $show?: boolean }>`
     margin-right: -0.25rem;
     display: ${({ $show }) => ($show ? 'flex' : 'none')};
 `;

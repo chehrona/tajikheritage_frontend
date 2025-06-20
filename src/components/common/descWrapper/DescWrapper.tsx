@@ -4,12 +4,14 @@ import React from 'react';
 import { Tooltip } from '../tooltip/Tooltip';
 import Table from '../table/Table';
 import SoundButton from '../soundButton/SoundButton';
+import Video from '../video/Video';
 
 // Types
 import { DescWrapperProps } from './types/componentTypes';
 import { TooltipType } from '../tooltip/types/componentTypes';
 import { SoundType } from '../../proverb/soundBox/types/componentTypes';
 import { TableType } from '../table/types/componentTypes';
+import { VideoType } from '../video/types/componentTypes';
 
 // Styled components
 import { EmptyDiv, SoundBox } from './descWrapperStyles';
@@ -49,6 +51,8 @@ export const DescWrapper: React.FC<DescWrapperProps> = ({
                     );
                 case key.startsWith('table'):
                     return <Table key={key} content={content as TableType} />;
+                case key.startsWith('video'):
+                    return <Video key={key} content={content as VideoType} />;
                 default:
                     return null;
             }

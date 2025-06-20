@@ -37,7 +37,7 @@ export const ImageWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/customAssets/border.png') center no-repeat;
+    background: url('/customAssets/border.svg') center no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
@@ -51,8 +51,8 @@ export const ImageWrapper = styled.div`
 
 export const SectionImage = styled.div<{ $src: string }>`
     background-size: contain;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
     background-position: center;
     background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 1px var(--secondary-white-color));

@@ -27,7 +27,6 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
     const { pathname } = useLocation();
     const { showToast } = useToasts();
     const [items, setItems] = useState<CardType[]>([]);
-    const [allItems, setAllItems] = useState<CardType[]>([]);
     const [error, setError] = useState<number | null>(null);
 
     const fetchData = async () => {
@@ -35,7 +34,6 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
             const data = await requestMiddlePage(page);
 
             setItems(data);
-            setAllItems(data);
         } catch (error: any) {
             const customError = error as ErrorResponse;
 
@@ -64,7 +62,7 @@ const MiddlePage: React.FC<{ page: string }> = ({ page }) => {
                         <React.Fragment>
                             <SearchBar setItems={setItems} page={page} />
                             <InnerBoxContainer $center={items.length % 3 === 0}>
-                                {items.map((item, i) =>
+                                {items.map((item) =>
                                     page.includes('poets') ? (
                                         <PoetCard key={item.id} poet={item} />
                                     ) : (

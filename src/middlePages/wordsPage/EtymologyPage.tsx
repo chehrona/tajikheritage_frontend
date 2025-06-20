@@ -12,6 +12,7 @@ import AppLayout from '../../AppLayout';
 import SquareCard from '../../components/common/squareCard/SquareCard';
 import LetterStack from '../../components/etymology/letterStack/LetterStack';
 import LandingPageFirstContainer from '../../components/common/pageWrapper/LandingPageFirstContainer';
+import SearchBar from '../../components/common/searchBar/SearchBar';
 
 // Types
 import { CardType } from '../middlePage/types/componentTypes';
@@ -19,7 +20,6 @@ import { CardType } from '../middlePage/types/componentTypes';
 // Styled components
 import { PageTitle } from './etymologyStyles';
 import { InnerBoxContainer } from '../middlePage/middlePageStyles';
-import SearchBar from '../../components/common/searchBar/SearchBar';
 
 const EtymologyPage: React.FC<{ page: string }> = ({ page }) => {
     const { lang } = useGlobalData();
