@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
     .quoteInnerBox::before {
         content: '';
-        background-image: url('/customAssets/quotation.png');
+        background-image: url('/customAssets/quotation.svg');
         background-size: 100%;
         background-repeat: no-repeat;
         height: 7rem;
