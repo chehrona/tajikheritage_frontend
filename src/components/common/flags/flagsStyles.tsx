@@ -8,8 +8,8 @@ import { StyledTooltipProps } from '../tooltip/types/styleTypes';
 // Flag logos
 const khorLogo = `${process.env.PUBLIC_URL}/flags/khorasan.png`;
 const usLogo = `${process.env.PUBLIC_URL}/flags/united-states.png`;
-const ruLogo = `${process.env.PUBLIC_URL}/flags/russia.png`;
-const tjLogo = `${process.env.PUBLIC_URL}/flags/tajikistan.png`;
+const ruLogo = `${process.env.PUBLIC_URL}/flags/russia.svg`;
+const tjLogo = `${process.env.PUBLIC_URL}/flags/tajikistan.svg`;
 
 export const FlagWrapper = styled.div<{ $show: boolean }>`
     width: fit-content;
