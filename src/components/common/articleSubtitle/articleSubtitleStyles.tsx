@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const SubtitleWrapper = styled.div<{ $reverse?: boolean | null }>`
     display: flex;

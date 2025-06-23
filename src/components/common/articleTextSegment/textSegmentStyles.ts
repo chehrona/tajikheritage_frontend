@@ -82,7 +82,7 @@ export const BaseText = styled.div`
     color: var(--primary-black-color);
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
-    padding: 0rem var(--page-padding);
+    padding: 0rem var(--page-padding) 0rem var(--page-padding);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;

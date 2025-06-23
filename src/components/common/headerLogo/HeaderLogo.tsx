@@ -13,7 +13,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({
     return (
         <LogoWrapper>
             <StyledLink to={navTo} onClick={handleLogoClick}>
-                <Logo src={'/customAssets/tajiks.svg'}></Logo>
+                <Logo src={'/customAssets/logo.svg'}></Logo>
             </StyledLink>
         </LogoWrapper>
     );
