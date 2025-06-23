@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
         position: relative;
-        min-height: 6rem;
+        min-height: 7rem;
         padding: var(--text-segment-gap);
     }
 
@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         width: fit-content;
         padding: var(--text-segment-gap) 0rem 0rem var(--text-segment-gap);
+        gap: calc(2 * var(--text-segment-gap));
     }
 
     .quoteInnerBox::before {

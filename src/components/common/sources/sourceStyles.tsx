@@ -159,4 +159,9 @@ export const SourceWrapper = styled.div`
 export const SourcePlaceholder = styled.div`
     height: calc(10 * var(--text-segment-gap));
     min-height: calc(10 * var(--text-segment-gap));
+
+    @media (max-width: 480px) {
+        height: calc(5 * var(--text-segment-gap));
+        min-height: calc(5 * var(--text-segment-gap));
+    }
 `;

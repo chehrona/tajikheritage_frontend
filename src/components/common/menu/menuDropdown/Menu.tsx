@@ -51,7 +51,7 @@ const Menu: React.FC<MenuProps> = ({ menuAnchorEl }) => {
             aria-hidden={!isMenuOpen}
         >
             <LogoContainer>
-                <Logo src={'/customAssets/tajiks.png'}></Logo>
+                <Logo src={'/customAssets/tajiks.svg'}></Logo>
             </LogoContainer>
             <PageNamesContainer>
                 {pageInfo[lang]?.map((entry, i) => {

@@ -13,7 +13,7 @@ export const MainContainer = styled.div`
 export const InputWrapper = styled.div`
     height: 3.5rem;
     width: 20rem;
-    background: url('/customAssets/mulchar.png') center no-repeat;
+    background: url('/customAssets/mulchar.svg') center no-repeat;
     background-size: contain;
     display: flex;
     justify-content: center;
