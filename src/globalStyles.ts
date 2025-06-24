@@ -46,6 +46,8 @@ const GlobalStyles = createGlobalStyle`
     .persianWrapper {
         direction: rtl;
         text-align: right;
+        width: fit-content;
+        padding: 0rem 0rem calc(var(--text-segment-gap) / 2) calc(6 * var(--text-segment-gap));
     }
 
     .storyWrapper {

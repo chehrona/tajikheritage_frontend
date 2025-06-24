@@ -91,9 +91,11 @@ export const BaseText = styled.div`
 `;
 
 export const RightText = styled(BaseText)`
-    padding: 0rem var(--page-padding) 0rem var(--page-padding);
+    padding: 0rem var(--page-padding) var(--text-segment-gap)
+        var(--page-padding);
 `;
 
 export const LeftText = styled(BaseText)`
-    padding: 0rem var(--page-padding) 0rem var(--page-padding);
+    padding: 0rem var(--page-padding) var(--text-segment-gap)
+        var(--page-padding);
 `;

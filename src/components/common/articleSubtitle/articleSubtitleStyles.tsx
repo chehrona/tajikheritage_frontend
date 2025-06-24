@@ -11,6 +11,10 @@ export const SubtitleWrapper = styled.div<{ $reverse?: boolean | null }>`
             : $reverse
             ? 'var(--text-segment-gap) 0rem var(--text-segment-gap) var(--page-padding)'
             : 'var(--text-segment-gap) var(--page-padding) var(--text-segment-gap) 0rem'};
+
+    @media (max-width: 480px) {
+        padding: var(--text-segment-gap) var(--page-padding);
+    }
 `;
 
 export const LineWrapper = styled.div`
