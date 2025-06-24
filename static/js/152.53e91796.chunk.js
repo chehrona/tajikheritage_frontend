@@ -50,7 +50,7 @@
 `,h=c.Ay.div`
     width: 35%;
     height: 100%;
-`,m=c.Ay.div`
+`,p=c.Ay.div`
     width: 65%;
     max-height: 100%;
     overflow-y: scroll;
@@ -63,7 +63,7 @@
         background-color: var(--primary-gold-color);
         border-radius: var(--input-radius);
     }
-`,p=c.Ay.div`
+`,m=c.Ay.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,7 +100,7 @@
 `,w=c.Ay.div`
     width: 100%;
     margin-bottom: var(--text-segment-gap);
-`;var b=i(579);const f=e=>{let{signInfo:r,showSignInfo:i,setShowSignInfo:c,calendar:f,index:A}=e;const{lang:$}=(0,o.Xe)(),j=(0,n.Ub)({query:"(max-width: 1024px)"}),k=(0,a.useCallback)((()=>{c(!1)}),[c]);return r?(console.log(r,"sign info ******"),(0,b.jsx)(s.A,{width:"1050px",open:i,background:"light",height:j?"100%":"90%",handleClose:k,children:(0,b.jsx)(d.A,{children:(0,b.jsxs)(g,{children:[(0,b.jsx)(h,{children:(0,b.jsxs)(p,{children:[(0,b.jsx)(v,{children:null===r||void 0===r?void 0:r.info.title}),(0,b.jsx)(u,{src:"https://api.thetajikheritage.com"+t[f][A].img.src})]})}),(0,b.jsx)(m,{children:r.info.desc.map(((e,r)=>(0,b.jsxs)(x,{children:[(0,b.jsx)(y,{children:e.subtitle}),(0,b.jsx)(l.n,{data:e.body,TextWrapper:w})]},`sign_dialog_${r}`)))})]})})})):null}},8546:(e,r,i)=>{i.d(r,{A:()=>w});var a=i(5043),t=i(2958),o=i(4929),n=i(9657),s=i(7972),d=i(579);const l=e=>{let{subtitle:r,hasSlides:i,reverse:a=null}=e;const t=!!(0,n.Ub)({query:"(max-width: 480px)"})||!i,o=i?a:null;return(0,d.jsxs)(s.g$,{$reverse:o,children:[(0,d.jsxs)(s.X4,{$show:t,children:[(0,d.jsx)(s.N1,{}),(0,d.jsx)(s.jl,{})]}),(0,d.jsx)(s.Pd,{dangerouslySetInnerHTML:{__html:r}}),(0,d.jsxs)(s.Mr,{children:[(0,d.jsx)(s.jl,{}),(0,d.jsx)(s.N1,{})]})]})};var c=i(1070);const g=e=>{let{title:r,color:i,align:a}=e;return(0,d.jsx)(c.a,{$align:a,$color:i,children:r})};var h=i(1529);const m=h.Ay.div`
+`;var b=i(579);const f=e=>{let{signInfo:r,showSignInfo:i,setShowSignInfo:c,calendar:f,index:A}=e;const{lang:$}=(0,o.Xe)(),j=(0,n.Ub)({query:"(max-width: 1024px)"}),k=(0,a.useCallback)((()=>{c(!1)}),[c]);return r?(console.log(r,"sign info ******"),(0,b.jsx)(s.A,{width:"1050px",open:i,background:"light",height:j?"100%":"90%",handleClose:k,children:(0,b.jsx)(d.A,{children:(0,b.jsxs)(g,{children:[(0,b.jsx)(h,{children:(0,b.jsxs)(m,{children:[(0,b.jsx)(v,{children:null===r||void 0===r?void 0:r.info.title}),(0,b.jsx)(u,{src:"https://api.thetajikheritage.com"+t[f][A].img.src})]})}),(0,b.jsx)(p,{children:r.info.desc.map(((e,r)=>(0,b.jsxs)(x,{children:[(0,b.jsx)(y,{children:e.subtitle}),(0,b.jsx)(l.n,{data:e.body,TextWrapper:w})]},`sign_dialog_${r}`)))})]})})})):null}},8546:(e,r,i)=>{i.d(r,{A:()=>w});var a=i(5043),t=i(2958),o=i(4929),n=i(9657),s=i(7972),d=i(579);const l=e=>{let{subtitle:r,hasSlides:i,reverse:a=null}=e;const t=!!(0,n.Ub)({query:"(max-width: 480px)"})||!i,o=i?a:null;return(0,d.jsxs)(s.g$,{$reverse:o,children:[(0,d.jsxs)(s.X4,{$show:t,children:[(0,d.jsx)(s.N1,{}),(0,d.jsx)(s.jl,{})]}),(0,d.jsx)(s.Pd,{dangerouslySetInnerHTML:{__html:r}}),(0,d.jsxs)(s.Mr,{children:[(0,d.jsx)(s.jl,{}),(0,d.jsx)(s.N1,{})]})]})};var c=i(1070);const g=e=>{let{title:r,color:i,align:a}=e;return(0,d.jsx)(c.a,{$align:a,$color:i,children:r})};var h=i(1529);const p=h.Ay.div`
     width: 100%;
     display: block;
     position: relative;
@@ -122,7 +122,7 @@
             display: none;
         }
     }
-`,p=h.Ay.div`
+`,m=h.Ay.div`
     width: 100%;
     padding: ${e=>{let{$padding:r}=e;return r?"0rem":"var(--text-segment-gap) 0rem 0rem var(--page-padding)"}};
 
@@ -158,17 +158,19 @@
     color: var(--primary-black-color);
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
-    padding: 0rem var(--page-padding);
+    padding: 0rem var(--page-padding) 0rem var(--page-padding);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
         padding: 0.25rem 0rem 0rem 2rem;
     }
 `,x=(0,h.Ay)(u)`
-    padding: 0rem var(--page-padding) 0rem var(--page-padding);
+    padding: 0rem var(--page-padding) var(--text-segment-gap)
+        var(--page-padding);
 `,y=(0,h.Ay)(u)`
-    padding: 0rem var(--page-padding) 0rem var(--page-padding);
-`,w=e=>{let{i:r,data:i,title:n="",reverse:s=null,topLeftRad:c}=e;const h=(0,a.useRef)(null),[w,b]=(0,a.useState)(0),f=!!(i.slides&&i.slides.length>0);return(0,a.useEffect)((()=>{if(h&&h.current){var e;const r=null===h||void 0===h||null===(e=h.current)||void 0===e?void 0:e.getBoundingClientRect().width;b(r)}}),[]),(0,d.jsxs)(m,{children:[f?(0,d.jsx)(v,{$i:r,ref:h,$reverse:s,$topLeftRad:0===r?c:0,children:(0,d.jsx)(t.A,{width:w,slides:null===i||void 0===i?void 0:i.slides,topLeftRad:0===r?c:0})}):null,(0,d.jsx)(p,{$padding:f,children:0===r&&(0,d.jsx)(g,{title:n})}),(0,d.jsx)(l,{hasSlides:f,subtitle:i.subtitle,reverse:s}),(0,d.jsx)(o.n,{data:null===i||void 0===i?void 0:i.body,TextWrapper:f?s?y:x:u})]})}},3768:(e,r,i)=>{i.d(r,{A:()=>l});i(5043);var a=i(1529),t=i(7392),o=i(3438);const n=(0,a.Ay)(t.A)`
+    padding: 0rem var(--page-padding) var(--text-segment-gap)
+        var(--page-padding);
+`,w=e=>{let{i:r,data:i,title:n="",reverse:s=null,topLeftRad:c}=e;const h=(0,a.useRef)(null),[w,b]=(0,a.useState)(0),f=!!(i.slides&&i.slides.length>0);return(0,a.useEffect)((()=>{if(h&&h.current){var e;const r=null===h||void 0===h||null===(e=h.current)||void 0===e?void 0:e.getBoundingClientRect().width;b(r)}}),[]),(0,d.jsxs)(p,{children:[f?(0,d.jsx)(v,{$i:r,ref:h,$reverse:s,$topLeftRad:0===r?c:0,children:(0,d.jsx)(t.A,{width:w,slides:null===i||void 0===i?void 0:i.slides,topLeftRad:0===r?c:0})}):null,(0,d.jsx)(m,{$padding:f,children:0===r&&(0,d.jsx)(g,{title:n})}),(0,d.jsx)(l,{hasSlides:f,subtitle:i.subtitle,reverse:s}),(0,d.jsx)(o.n,{data:null===i||void 0===i?void 0:i.body,TextWrapper:f?s?y:x:u})]})}},3768:(e,r,i)=>{i.d(r,{A:()=>l});i(5043);var a=i(1529),t=i(7392),o=i(3438);const n=(0,a.Ay)(t.A)`
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -232,7 +234,7 @@
         padding: 0rem;
         overflow: hidden;
     }
-`;var n=i(579);const s=e=>{let{children:r}=e;return(0,n.jsx)(o,{children:r})}},8880:(e,r,i)=>{i.d(r,{A:()=>o});i(5043);var a=i(7542),t=i(579);const o=e=>{let{children:r}=e;return(0,t.jsx)(a.J,{children:r})}},8564:(e,r,i)=>{i.d(r,{Bj:()=>v,J3:()=>s,Mn:()=>p,QB:()=>l,TP:()=>d,Y7:()=>g,_V:()=>m,bu:()=>u,hE:()=>h,wO:()=>c});var a=i(1529),t=i(5456),o=i(7392);const n=a.i7`
+`;var n=i(579);const s=e=>{let{children:r}=e;return(0,n.jsx)(o,{children:r})}},8880:(e,r,i)=>{i.d(r,{A:()=>o});i(5043);var a=i(7542),t=i(579);const o=e=>{let{children:r}=e;return(0,t.jsx)(a.J,{children:r})}},8564:(e,r,i)=>{i.d(r,{Bj:()=>v,J3:()=>s,Mn:()=>m,QB:()=>l,TP:()=>d,Y7:()=>g,_V:()=>p,bu:()=>u,hE:()=>h,wO:()=>c});var a=i(1529),t=i(5456),o=i(7392);const n=a.i7`
     0% {
         transform: translateX(100%);
         opacity: 0;
@@ -332,10 +334,10 @@
 `,h=a.Ay.div`
     text-align: center;
     font-size: var(--header-small);
-`,m=a.Ay.img`
+`,p=a.Ay.img`
     width: 100%;
     height: 100%;
-`,p=a.Ay.div`
+`,m=a.Ay.div`
     font-size: var(--header-large);
     padding-top: var(--input-radius);
     font-family: var(--fancy-font);
@@ -388,4 +390,4 @@
         }
     }
 `},8072:e=>{e.exports=JSON.parse('{"MULCHAR_CHART_IMGS":[{"id":"mouse","img":{"src":"/storage/history/calendars/m\u016bljar/slides/mouse.png","angle":100}},{"id":"ox","img":{"src":"/storage/history/calendars/m\u016bljar/slides/ox.png","angle":150}},{"id":"tiger","img":{"src":"/storage/history/calendars/m\u016bljar/slides/tiger.png","angle":165}},{"id":"rabbit","img":{"src":"/storage/history/calendars/m\u016bljar/slides/rabbit.png","angle":190}},{"id":"whale","img":{"src":"/storage/history/calendars/m\u016bljar/slides/whale.png","angle":230}},{"id":"snake","img":{"src":"/storage/history/calendars/m\u016bljar/slides/snake.png","angle":-105}},{"id":"horse","img":{"src":"/storage/history/calendars/m\u016bljar/slides/horse.png","angle":-60}},{"id":"sheep","img":{"src":"/storage/history/calendars/m\u016bljar/slides/sheep.png","angle":-45}},{"id":"monkey","img":{"src":"/storage/history/calendars/m\u016bljar/slides/monkey.png","angle":350}},{"id":"rooster","img":{"src":"/storage/history/calendars/m\u016bljar/slides/rooster.png","angle":20}},{"id":"dog","img":{"src":"/storage/history/calendars/m\u016bljar/slides/dog.png","angle":40}},{"id":"pig","img":{"src":"/storage/history/calendars/m\u016bljar/slides/pig.png","angle":75}}],"MULCHAR_CALC_PLACEHOLDER":{"us":"Year","ru":"\u0413\u043e\u0434","tj":"\u0421\u043e\u043b","fa":"\u0633\u0627\u0644"},"ZODIAC_CHART_IMGS":[{"id":"aries","img":{"src":"/storage/history/calendars/zodiac/slides/aries.png","icon":"/storage/history/calendars/zodiac/icons/aries.png","angle":185}},{"id":"taurus","img":{"src":"/storage/history/calendars/zodiac/slides/taurus.png","icon":"/storage/history/calendars/zodiac/icons/taurus.png","angle":215}},{"id":"gemini","img":{"src":"/storage/history/calendars/zodiac/slides/gemini.png","icon":"/storage/history/calendars/zodiac/icons/gemini.png","angle":205}},{"id":"cancer","img":{"src":"/storage/history/calendars/zodiac/slides/cancer.png","icon":"/storage/history/calendars/zodiac/icons/cancer.png","angle":220}},{"id":"leo","img":{"src":"/storage/history/calendars/zodiac/slides/leo.png","icon":"/storage/history/calendars/zodiac/icons/leo.png","angle":-60}},{"id":"virgo","img":{"src":"/storage/history/calendars/zodiac/slides/virgo.png","icon":"/storage/history/calendars/zodiac/icons/virgo.png","angle":270}},{"id":"libra","img":{"src":"/storage/history/calendars/zodiac/slides/libra.png","icon":"/storage/history/calendars/zodiac/icons/libra.png","angle":-60}},{"id":"scorpio","img":{"src":"/storage/history/calendars/zodiac/slides/scorpio.png","icon":"/storage/history/calendars/zodiac/icons/scorpio.png","angle":-40}},{"id":"sagittarius","img":{"src":"/storage/history/calendars/zodiac/slides/sagittarius.png","icon":"/storage/history/calendars/zodiac/icons/sagittarius.png","angle":15}},{"id":"capricorn","img":{"src":"/storage/history/calendars/zodiac/slides/capricorn.png","icon":"/storage/history/calendars/zodiac/icons/capricorn.png","angle":25}},{"id":"aquarius","img":{"src":"/storage/history/calendars/zodiac/slides/aquarius.png","icon":"/storage/history/calendars/zodiac/icons/aquarius.png","angle":40}},{"id":"pisces","img":{"src":"/storage/history/calendars/zodiac/slides/pisces.png","icon":"/storage/history/calendars/zodiac/icons/pisces.png","angle":30}}]}')}}]);
-//# sourceMappingURL=152.3bbbf44a.chunk.js.map
+//# sourceMappingURL=152.53e91796.chunk.js.map
