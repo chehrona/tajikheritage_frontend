@@ -28,12 +28,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section }) => {
         >
             <SectionCardWrapper>
                 <ImageWrapper>
-                    <SectionImage
-                        $src={
-                            process.env.REACT_APP_BASE_URL +
-                            section?.cardImg[lang]
-                        }
-                    />
+                    <SectionImage $src={section?.cardImg[lang]} />
                 </ImageWrapper>
                 <SectionTitle $length={section?.cardTitle[lang].length}>
                     {section?.cardTitle[lang]}
