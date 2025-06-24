@@ -173,17 +173,17 @@
                 "medium": {
                     "top": { "d": "-1%", "t": "54%" },
                     "right": { "d": "2%", "t": "3%" },
-                    "img": "/homeImages/lang3.png"
+                    "img": "/homeImages/lang3.webp"
                 },
                 "small": {
                     "top": { "d": "1.5%", "t": "4.5%" },
                     "right": { "d": "29.5%", "t": "50%" },
-                    "img": "/homeImages/lang2.png"
+                    "img": "/homeImages/lang2.webp"
                 },
                 "big": {
                     "bottom": { "d": "-6.75%", "t": "62.5%" },
                     "right": { "d": "10%", "t": "-4.5%" },
-                    "img": "/homeImages/lang1.png"
+                    "img": "/homeImages/lang1.webp"
                 }
             }
         },
@@ -238,17 +238,17 @@
                 "medium": {
                     "top": { "d": "2.25%", "t": "3.5%" },
                     "right": { "d": "27.5%", "t": "3.5%" },
-                    "img": "/homeImages/history3.png"
+                    "img": "/homeImages/history3.webp"
                 },
                 "small": {
                     "top": { "d": "0.5%", "t": "2%" },
                     "right": { "d": "52%", "t": "35%" },
-                    "img": "/homeImages/history2.png"
+                    "img": "/homeImages/history2.webp"
                 },
                 "big": {
                     "bottom": { "d": "-3.5%", "t": "-3.5%" },
                     "right": { "d": "1.5%", "t": "1.5%" },
-                    "img": "/homeImages/history1.png"
+                    "img": "/homeImages/history1.webp"
                 }
             }
         },
@@ -303,17 +303,17 @@
                 "medium": {
                     "bottom": { "d": "-1.75%", "t": "-1.5%" },
                     "right": { "d": "27.5%", "t": "18.5%" },
-                    "img": "/homeImages/craft3.png"
+                    "img": "/homeImages/craft3.webp"
                 },
                 "small": {
                     "bottom": { "d": "5.5%", "t": "25.5%" },
                     "right": { "d": "8.2%", "t": "6.5%" },
-                    "img": "/homeImages/craft2.png"
+                    "img": "/homeImages/craft2.webp"
                 },
                 "big": {
                     "top": { "d": "-13%", "t": "-6.5%" },
                     "right": { "d": "-1.2%", "t": "-2.2%" },
-                    "img": "/homeImages/craft1.png"
+                    "img": "/homeImages/craft1.webp"
                 }
             }
         },
@@ -368,17 +368,17 @@
                 "medium": {
                     "top": { "d": "-7.5%", "t": "-2.5%" },
                     "right": { "d": "29.7%", "t": "32.7%" },
-                    "img": "/homeImages/custom3.png"
+                    "img": "/homeImages/custom3.webp"
                 },
                 "small": {
                     "bottom": { "d": "1.5%", "t": "50.5%" },
                     "right": { "d": "35%", "t": "2.5%" },
-                    "img": "/homeImages/custom2.png"
+                    "img": "/homeImages/custom2.webp"
                 },
                 "big": {
                     "top": { "d": "17%", "t": "55%" },
                     "right": { "d": "1.5%", "t": "2%" },
-                    "img": "/homeImages/custom1.png"
+                    "img": "/homeImages/custom1.webp"
                 }
             }
         },
@@ -433,17 +433,17 @@
                 "medium": {
                     "top": { "d": "0%", "t": "50.5%" },
                     "right": { "d": "27.5%", "t": "2.5%" },
-                    "img": "/homeImages/cuisine3.png"
+                    "img": "/homeImages/cuisine3.webp"
                 },
                 "small": {
                     "top": { "d": "55%", "t": "80.5%" },
                     "right": { "d": "88%", "t": "15.5%" },
-                    "img": "/homeImages/cuisine2.png"
+                    "img": "/homeImages/cuisine2.webp"
                 },
                 "big": {
                     "top": { "d": "25%", "t": "-8%" },
                     "right": { "d": "1%", "t": "16%" },
-                    "img": "/homeImages/cuisine1.png"
+                    "img": "/homeImages/cuisine1.webp"
                 }
             }
         }
