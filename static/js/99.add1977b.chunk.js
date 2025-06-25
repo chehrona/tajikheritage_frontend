@@ -370,7 +370,7 @@
     width: 100%;
     color: var(--primary-gold-color);
     transform: rotateZ(180deg);
-    background-image: url('/customAssets/quote.svg');
+    background-image: url('/customAssets/quotation.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 60%;
@@ -2030,4 +2030,4 @@
         }
     }
 `}}]);
-//# sourceMappingURL=99.9ce9c5b4.chunk.js.map
+//# sourceMappingURL=99.add1977b.chunk.js.map
