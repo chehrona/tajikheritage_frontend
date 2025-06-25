@@ -1196,7 +1196,6 @@
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
     height: 22rem;
-    text-align: justify;
     overflow-y: scroll;
     padding: 0rem calc(var(--page-padding) - 1rem - var(--input-radius))
         var(--text-segment-gap) calc(var(--page-padding) - 1rem);
@@ -2030,4 +2029,4 @@
         }
     }
 `}}]);
-//# sourceMappingURL=99.add1977b.chunk.js.map
+//# sourceMappingURL=99.8abdc92d.chunk.js.map
