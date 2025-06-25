@@ -7,7 +7,7 @@ export const MainContainer = styled.div`
     gap: var(--page-padding);
     padding: var(--page-padding);
     background-color: var(--primary-white-color);
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
 
     @media (max-width: 480px) {
         flex-direction: column-reverse;

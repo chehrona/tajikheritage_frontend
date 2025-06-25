@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
     background: var(--primary-black-color);
     color: var(--regular-white-color);
     position: relative;
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     padding: calc(3rem + 2 * var(--text-segment-gap)) 0rem
         calc(3rem + 6 * var(--text-segment-gap)) 0rem;
 
@@ -13,7 +13,7 @@ export const MainContainer = styled.div`
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${'/customAssets/noise.png'});
+        background-image: url(${'/customAssets/noise.webp'});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         position: absolute;

@@ -81,7 +81,7 @@ const emptyBackground = ({ $empty }: WrapperBaseProps) =>
     $empty &&
     css`
         pointer-events: none;
-        background-image: url('/customAssets/noise.png');
+        background-image: url('/customAssets/noise.webp');
     `;
 
 export const WrapperBase = styled.div<WrapperBaseProps>`
@@ -177,5 +177,5 @@ export const InstructionWrapper = styled(WrapperBase)`
     padding: 0.5rem;
     width: calc(var(--circle-letter-size) * 3);
     pointer-events: none;
-    background-image: url('/customAssets/noise.png');
+    background-image: url('/customAssets/noise.webp');
 `;

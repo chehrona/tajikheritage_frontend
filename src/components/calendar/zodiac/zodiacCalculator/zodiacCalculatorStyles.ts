@@ -75,7 +75,7 @@ export const CardFace = styled(Face)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     background-color: var(--primary-black-color);
     padding: var(--text-segment-gap);
 `;

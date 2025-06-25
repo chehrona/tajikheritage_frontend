@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { TitleWrapper } from '../../common/articleTitle/articleTitleStyles';
 
 export const MainContainer = styled.div`
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     min-height: 20rem;
     padding-bottom: calc(2 * var(--text-segment-gap));
     background-color: var(--primary-white-color);
@@ -19,7 +19,7 @@ export const MainContainer = styled.div`
             padding: 2rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${'/customAssets/noise.png'});
+            background-image: url(${'/customAssets/noise.webp'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;
@@ -38,7 +38,7 @@ export const MainContainer = styled.div`
             padding: 3rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${'/customAssets/noise.png'});
+            background-image: url(${'/customAssets/noise.webp'});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;

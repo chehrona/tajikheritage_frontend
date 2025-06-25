@@ -34,14 +34,14 @@ export const MainContainer = styled.div`
     color: var(--regular-white-color);
     position: relative;
     padding: calc(var(--page-padding) / 1.5) 0rem;
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
 
     &:before {
         content: '';
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${'/customAssets/noise.png'});
+        background-image: url(${'/customAssets/noise.webp'});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;

@@ -58,7 +58,7 @@ export const AwardImg = styled.img`
     width: calc(var(--small-card-width) + 2 * var(--text-segment-gap));
     background: var(--primary-black-color);
     padding: var(--text-segment-gap);
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
 
     @media (max-width: 480px) {

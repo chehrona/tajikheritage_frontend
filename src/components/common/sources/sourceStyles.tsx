@@ -4,7 +4,7 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 export const MainContainer = styled.div`
     border-radius: 0rem 0rem var(--page-radius) var(--page-radius);
     background: var(--primary-white-color);
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     padding: var(--text-segment-gap) var(--page-padding)
         calc(6 * var(--text-segment-gap)) var(--page-padding);
 

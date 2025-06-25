@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     width: 100%;
     height: calc(100svh - var(--header-height));
-    background-image: url('/customAssets/error-grid-1.png');
+    background-image: url('/customAssets/footer_grid.webp.png');
     background-size: calc(100vw / 4);
     background-repeat: repeat;
     background-position: center;

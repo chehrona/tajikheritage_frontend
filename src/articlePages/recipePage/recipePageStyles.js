@@ -19,7 +19,7 @@ export const RecipeContainer = styled.div`
     padding: 3rem;
     border-radius: var(--page-radius);
     background-color: var(--primary-var-color);
-    background-image: url(${'/customAssets/noise.png'});
+    background-image: url(${'/customAssets/noise.webp'});
     margin-right: 0.86rem;
     box-shadow: 0.8rem 0.5rem 0rem 0.08rem var(--primary-shadow-color);
 
