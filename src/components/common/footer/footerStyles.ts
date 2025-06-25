@@ -27,13 +27,13 @@ export const FooterInnerContainer = styled.div`
     box-sizing: border-box;
     color: var(--secondary-grey-color);
     justify-content: space-between;
-    background-image: url('/customAssets/footer_grid.webp.png');
+    background-image: url('/customAssets/footer_grid.webp');
     background-size: calc(100vw / 4);
     background-repeat: repeat;
     background-position: center;
 
     @media (max-width: 480px) {
-        background-image: url('/customAssets/footer_grid.webp.png');
+        background-image: url('/customAssets/footer_grid.webp');
         background-size: calc(100vw / 1.5);
     }
 `;
