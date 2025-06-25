@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     background-color: var(--primary-black-color);
     padding: var(--text-segment-gap);
 `,C=w.Ay.div`
@@ -92,4 +92,4 @@
     justify-content: center;
     align-items: center;
 `,E=e=>{let{page:t}=e;const{pathname:n}=(0,a.zy)(),{showToast:p}=(0,o.Y)(),{lang:f}=(0,s.Xe)(),[w,$]=(0,i.useState)(),[A,M]=(0,i.useState)(null),[b,k]=(0,i.useState)(!1),[S,_]=(0,i.useState)(0),C=(0,r.Ub)({query:"(min-device-width: 481px) and (max-device-width: 1024px)"})?2.5:4;return(0,l.J)(t,"generic",w),(0,i.useEffect)((()=>{(async()=>{try{const e=await(0,d.uu)("m\u016bljar",t);$(e)}catch(A){const n=A;404===n.status?M(404):500===n.status&&p("E_500","error",t)}})()}),[n]),(0,v.jsxs)(i.Fragment,{children:[404===A?(0,v.jsx)(c.default,{}):null,(0,v.jsx)(h.A,{children:(0,v.jsx)(x.A,{children:w?(0,v.jsxs)(u.A,{children:[w.desc[f].map(((e,t)=>(0,v.jsxs)(i.Fragment,{children:[(0,v.jsx)(g.A,{i:t,reverse:t%2>0,data:e,title:w.name[f],topLeftRad:C},`${null===w||void 0===w?void 0:w.name[f]}_${t}`),e.signs?(0,v.jsxs)(R,{children:[(0,v.jsx)(z,{children:(0,v.jsx)(j,{signs:e.signs,setIndex:_,setShowSignInfo:k})}),(0,v.jsx)(y.A,{signInfo:e.signs[S],setShowSignInfo:k,calendar:"MULCHAR_CHART_IMGS",showSignInfo:b,index:S})]}):null,e.predict?(0,v.jsx)(H,{signs:w.desc[f][1].signs}):null]},t))),(0,v.jsx)(m.A,{data:w.references[f]})]}):null})})]})}}}]);
-//# sourceMappingURL=293.2b6c4c6e.chunk.js.map
+//# sourceMappingURL=293.03d89fb4.chunk.js.map

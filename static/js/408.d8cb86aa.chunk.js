@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     background-color: var(--primary-black-color);
     padding: var(--text-segment-gap);
 `,_=w.Ay.div`
@@ -92,4 +92,4 @@
     justify-content: center;
     align-items: center;
 `,L=e=>{let{page:t}=e;const{pathname:i}=(0,a.zy)(),{showToast:p}=(0,o.Y)(),{lang:f}=(0,s.Xe)(),[w,$]=(0,r.useState)(),[A,b]=(0,r.useState)(null),[M,k]=(0,r.useState)(!1),[S,I]=(0,r.useState)(0),_=(0,n.Ub)({query:"(min-device-width: 481px) and (max-device-width: 1024px)"})?2.5:4;return(0,l.J)(t,"generic",w),(0,r.useEffect)((()=>{(async()=>{try{const e=await(0,d.uu)("burj-i duv\u0101zdahg\u0101na",t);$(e)}catch(A){const i=A;404===i.status?b(404):500===i.status&&p("E_500","error",t)}})()}),[i]),(0,v.jsxs)(r.Fragment,{children:[404===A?(0,v.jsx)(h.default,{}):null,(0,v.jsx)(c.A,{children:(0,v.jsx)(x.A,{children:w?(0,v.jsxs)(u.A,{children:[w.desc[f].map(((e,t)=>(0,v.jsxs)(r.Fragment,{children:[(0,v.jsx)(g.A,{i:t,reverse:t%2>0,data:e,title:w.name[f],topLeftRad:_},`${null===w||void 0===w?void 0:w.name[f]}_${t}`),e.signs?(0,v.jsxs)(E,{children:[(0,v.jsx)(F,{children:(0,v.jsx)(j,{signs:e.signs,setIndex:I,setShowSignInfo:k})}),(0,v.jsx)(y.A,{signInfo:e.signs[S],setShowSignInfo:k,calendar:"ZODIAC_CHART_IMGS",showSignInfo:M,index:S})]}):null,e.predict?(0,v.jsx)(H,{signs:w.desc[f][1].signs}):null]},t))),(0,v.jsx)(m.A,{data:w.references[f]})]}):null})})]})}}}]);
-//# sourceMappingURL=408.f9c22973.chunk.js.map
+//# sourceMappingURL=408.d8cb86aa.chunk.js.map

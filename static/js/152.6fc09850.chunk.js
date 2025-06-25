@@ -41,7 +41,7 @@
     gap: var(--page-padding);
     padding: var(--page-padding);
     background-color: var(--primary-white-color);
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
 
     @media (max-width: 480px) {
         flex-direction: column-reverse;
@@ -249,7 +249,7 @@
     }
 `,s=a.Ay.div`
     background: var(--primary-white-color);
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     color: var(--regular-white-color);
     position: relative;
     padding: calc(var(--page-padding) / 2) 0rem;
@@ -259,7 +259,7 @@
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${"/customAssets/noise.png"});
+        background-image: url(${"/customAssets/noise.webp"});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
@@ -390,4 +390,4 @@
         }
     }
 `},8072:e=>{e.exports=JSON.parse('{"MULCHAR_CHART_IMGS":[{"id":"mouse","img":{"src":"/storage/history/calendars/m\u016bljar/slides/mouse.png","angle":100}},{"id":"ox","img":{"src":"/storage/history/calendars/m\u016bljar/slides/ox.png","angle":150}},{"id":"tiger","img":{"src":"/storage/history/calendars/m\u016bljar/slides/tiger.png","angle":165}},{"id":"rabbit","img":{"src":"/storage/history/calendars/m\u016bljar/slides/rabbit.png","angle":190}},{"id":"whale","img":{"src":"/storage/history/calendars/m\u016bljar/slides/whale.png","angle":230}},{"id":"snake","img":{"src":"/storage/history/calendars/m\u016bljar/slides/snake.png","angle":-105}},{"id":"horse","img":{"src":"/storage/history/calendars/m\u016bljar/slides/horse.png","angle":-60}},{"id":"sheep","img":{"src":"/storage/history/calendars/m\u016bljar/slides/sheep.png","angle":-45}},{"id":"monkey","img":{"src":"/storage/history/calendars/m\u016bljar/slides/monkey.png","angle":350}},{"id":"rooster","img":{"src":"/storage/history/calendars/m\u016bljar/slides/rooster.png","angle":20}},{"id":"dog","img":{"src":"/storage/history/calendars/m\u016bljar/slides/dog.png","angle":40}},{"id":"pig","img":{"src":"/storage/history/calendars/m\u016bljar/slides/pig.png","angle":75}}],"MULCHAR_CALC_PLACEHOLDER":{"us":"Year","ru":"\u0413\u043e\u0434","tj":"\u0421\u043e\u043b","fa":"\u0633\u0627\u0644"},"ZODIAC_CHART_IMGS":[{"id":"aries","img":{"src":"/storage/history/calendars/zodiac/slides/aries.png","icon":"/storage/history/calendars/zodiac/icons/aries.png","angle":185}},{"id":"taurus","img":{"src":"/storage/history/calendars/zodiac/slides/taurus.png","icon":"/storage/history/calendars/zodiac/icons/taurus.png","angle":215}},{"id":"gemini","img":{"src":"/storage/history/calendars/zodiac/slides/gemini.png","icon":"/storage/history/calendars/zodiac/icons/gemini.png","angle":205}},{"id":"cancer","img":{"src":"/storage/history/calendars/zodiac/slides/cancer.png","icon":"/storage/history/calendars/zodiac/icons/cancer.png","angle":220}},{"id":"leo","img":{"src":"/storage/history/calendars/zodiac/slides/leo.png","icon":"/storage/history/calendars/zodiac/icons/leo.png","angle":-60}},{"id":"virgo","img":{"src":"/storage/history/calendars/zodiac/slides/virgo.png","icon":"/storage/history/calendars/zodiac/icons/virgo.png","angle":270}},{"id":"libra","img":{"src":"/storage/history/calendars/zodiac/slides/libra.png","icon":"/storage/history/calendars/zodiac/icons/libra.png","angle":-60}},{"id":"scorpio","img":{"src":"/storage/history/calendars/zodiac/slides/scorpio.png","icon":"/storage/history/calendars/zodiac/icons/scorpio.png","angle":-40}},{"id":"sagittarius","img":{"src":"/storage/history/calendars/zodiac/slides/sagittarius.png","icon":"/storage/history/calendars/zodiac/icons/sagittarius.png","angle":15}},{"id":"capricorn","img":{"src":"/storage/history/calendars/zodiac/slides/capricorn.png","icon":"/storage/history/calendars/zodiac/icons/capricorn.png","angle":25}},{"id":"aquarius","img":{"src":"/storage/history/calendars/zodiac/slides/aquarius.png","icon":"/storage/history/calendars/zodiac/icons/aquarius.png","angle":40}},{"id":"pisces","img":{"src":"/storage/history/calendars/zodiac/slides/pisces.png","icon":"/storage/history/calendars/zodiac/icons/pisces.png","angle":30}}]}')}}]);
-//# sourceMappingURL=152.53e91796.chunk.js.map
+//# sourceMappingURL=152.6fc09850.chunk.js.map

@@ -59,7 +59,7 @@
         line-height: 1.3rem;
     }
 `;var v=i(1070);const x=m.Ay.div`
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     min-height: 20rem;
     padding-bottom: calc(2 * var(--text-segment-gap));
     background-color: var(--primary-white-color);
@@ -76,7 +76,7 @@
             padding: 2rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${"/customAssets/noise.png"});
+            background-image: url(${"/customAssets/noise.webp"});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;
@@ -95,7 +95,7 @@
             padding: 3rem;
             width: 100%;
             background: var(--primary-black-color);
-            background-image: url(${"/customAssets/noise.png"});
+            background-image: url(${"/customAssets/noise.webp"});
             -webkit-clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 0% 100%, 100% 100%);
             position: absolute;
@@ -592,7 +592,7 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     border-radius: var(--page-radius) var(--page-radius) 0rem 0rem;
 `,se=m.Ay.img`
     width: 47rem;
@@ -944,7 +944,7 @@
     background: var(--primary-black-color);
     color: var(--regular-white-color);
     position: relative;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     padding: calc(3rem + 2 * var(--text-segment-gap)) 0rem
         calc(3rem + 6 * var(--text-segment-gap)) 0rem;
 
@@ -953,7 +953,7 @@
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${"/customAssets/noise.png"});
+        background-image: url(${"/customAssets/noise.webp"});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         position: absolute;
@@ -1060,7 +1060,7 @@
 `,br=e=>{let{text:r}=e;const{lang:i}=(0,d.Xe)(),[a,o]=(0,t.useState)(!0);return(0,t.useEffect)((()=>{o(!0)}),[i]),a?(0,j.jsxs)(gr,{children:[(0,j.jsx)(yr,{dangerouslySetInnerHTML:{__html:r}}),(0,j.jsx)(vr,{onClick:()=>o(!1),children:(0,j.jsx)(xr,{})})]}):(0,j.jsx)(ur,{onClick:()=>o(!0),children:(0,j.jsx)(wr,{})})},fr=m.Ay.div`
     background: var(--primary-black-color);
     position: relative;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     padding: calc(3rem + (3.75 * var(--text-segment-gap))) 0rem;
 
     &:before {
@@ -1068,7 +1068,7 @@
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${"/customAssets/noise.png"});
+        background-image: url(${"/customAssets/noise.webp"});
         -webkit-clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 0%, 100% 0%, 0% 100%);
         position: absolute;
@@ -1379,7 +1379,7 @@
     width: calc(var(--small-card-width) + 2 * var(--text-segment-gap));
     background: var(--primary-black-color);
     padding: var(--text-segment-gap);
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     box-shadow: var(--primary-box-shadow) var(--primary-gold-color);
 
     @media (max-width: 480px) {
@@ -1695,14 +1695,14 @@
     color: var(--regular-white-color);
     position: relative;
     padding: calc(var(--page-padding) / 1.5) 0rem;
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
 
     &:before {
         content: '';
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${"/customAssets/noise.png"});
+        background-image: url(${"/customAssets/noise.webp"});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
@@ -1889,7 +1889,7 @@
     }
 `,n=t.Ay.div`
     background: var(--primary-white-color);
-    background-image: url(${"/customAssets/noise.png"});
+    background-image: url(${"/customAssets/noise.webp"});
     color: var(--regular-white-color);
     position: relative;
     padding: calc(var(--page-padding) / 2) 0rem;
@@ -1899,7 +1899,7 @@
         padding: 3rem;
         width: 100%;
         background: var(--primary-white-color);
-        background-image: url(${"/customAssets/noise.png"});
+        background-image: url(${"/customAssets/noise.webp"});
         -webkit-clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         clip-path: polygon(-10px 0px, 100% 100%, 100% 100%, 0% 100%);
         position: absolute;
@@ -2030,4 +2030,4 @@
         }
     }
 `}}]);
-//# sourceMappingURL=99.b690d4c6.chunk.js.map
+//# sourceMappingURL=99.9ce9c5b4.chunk.js.map
