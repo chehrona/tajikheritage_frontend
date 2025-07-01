@@ -7,6 +7,7 @@ export const BoxWrapper = styled.div`
     width: 100%;
     display: block;
     position: relative;
+    padding-bottom: var(--text-segment-gap);
 
     &::after {
         content: '';
@@ -27,16 +28,8 @@ export const BoxWrapper = styled.div`
     }
 `;
 
-export const HeaderWrapper = styled.div<{ $padding: boolean }>`
+export const HeaderWrapper = styled.div`
     width: 100%;
-    padding: ${({ $padding }) =>
-        $padding
-            ? '0rem'
-            : 'var(--text-segment-gap) 0rem 0rem var(--page-padding)'};
-
-    @media (max-width: 480px) {
-        padding: 0rem;
-    }
 `;
 
 export const SlideContainer = styled.div<SlideContainerProps>`
@@ -82,7 +75,7 @@ export const BaseText = styled.div`
     color: var(--primary-black-color);
     font-size: var(--body-text);
     line-height: var(--body-text-line-height);
-    padding: 0rem var(--page-padding) 0rem var(--page-padding);
+    padding: 0rem var(--page-padding);
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.3rem;
@@ -91,11 +84,9 @@ export const BaseText = styled.div`
 `;
 
 export const RightText = styled(BaseText)`
-    padding: 0rem var(--page-padding) var(--text-segment-gap)
-        var(--page-padding);
+    padding: 0rem var(--page-padding);
 `;
 
 export const LeftText = styled(BaseText)`
-    padding: 0rem var(--page-padding) var(--text-segment-gap)
-        var(--page-padding);
+    padding: 0rem var(--page-padding);
 `;

@@ -55,7 +55,7 @@ const TextSegment: React.FC<TextSegmentProps> = ({
                     />
                 </SlideContainer>
             ) : null}
-            <HeaderWrapper $padding={hasSlides}>
+            <HeaderWrapper>
                 {i === 0 && <ArticleTitle title={title} />}
             </HeaderWrapper>
             <ArticleSubtitle
