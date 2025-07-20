@@ -95,9 +95,9 @@ export const Text = styled.img`
     top: -1rem;
 
     @media (max-width: 480px) {
-        height: 7rem;
-        width: 7rem;
-        top: -0.15rem;
+        height: 7.5rem;
+        width: 7.5rem;
+        top: -0.65rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {

@@ -108,6 +108,10 @@ export const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     color: var(--secondary-grey-color);
+
+    &:hover {
+        filter: brightness(150%);
+    }
 `;
 
 export const Title = styled.div`

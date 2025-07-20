@@ -37,30 +37,7 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                     src={process.env.REACT_APP_BASE_URL + proverb?.logo.inner}
                 />
             </LogoWrapper>
-            {/* <SvgContainer viewBox="0 0 200 200">
-                <path
-                    id="text-path"
-                    stroke="none"
-                    fill="none"
-                    d="M 100, 200 C 155.23, 200 200, 155.23 200, 100 C 200, 44.77 155.23, 0 100, 0 C 44.77, 0 0, 44.77 0, 100 C 0, 155.23 44.77, 200 100, 200 Z"
-                />
-                <Text>
-                    <textPath
-                        href="#text-path"
-                        startOffset="50%"
-                        textAnchor="middle"
-                    >
-                        {lang === 'us'
-                            ? '• CLICK TO HEAR •'
-                            : lang === 'ru'
-                            ? '• ПОСЛУШАТЬ •'
-                            : lang === 'fa'
-                            ? '• گوش کنید •'
-                            : '• ГӮШ КУНЕД •'}
-                    </textPath>
-                </Text>
-            </SvgContainer> */}
-            <Text src={`./customAssets/lang/${lang}.svg`} />
+            <Text src={`./proverb/${lang}.svg`} />
         </LogoContainer>
     );
 };
