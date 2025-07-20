@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #959595;
+      }
+    </style>
+  </defs>
+  <g id="_x3C_defs">
+    <inkscape:path-effect id="path-effect2" apply_no_radius="true" apply_with_radius="true" chamfer_steps="1" effect="fillet_chamfer" flexible="false" hide_knots="false" is_visible="true" lpeversion="1" method="auto" mode="F" nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1" only_selected="false" radius="0" unit="px" use_knot_distance="true"/>
+  </g>
+  <sodipodi:namedview id="namedview1" bordercolor="#000000" borderopacity="0.25" inkscape:current-layer="Capa_1" inkscape:cx="255.67718" inkscape:cy="263.10214" inkscape:deskcolor="#d1d1d1" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="942" inkscape:window-maximized="0" inkscape:window-width="2256" inkscape:window-x="0" inkscape:window-y="25" inkscape:zoom="1.5488281" pagecolor="#ffffff"/>
+  <path id="path1-4" class="st0" d="M256,0c-69.53,0-78.25.3-105.56,1.54-39.57,1.81-78.87,12.82-107.48,41.43C14.25,71.68,3.35,110.89,1.54,150.44c-1.24,27.31-1.54,36.03-1.54,105.56s.3,78.25,1.54,105.56c1.81,39.53,12.86,78.93,41.43,107.48,28.69,28.69,67.97,39.62,107.48,41.43,27.31,1.24,36.03,1.54,105.56,1.54s78.25-.3,105.56-1.54c39.55-1.81,78.89-12.84,107.48-41.43s39.62-67.93,41.43-107.48c1.24-27.31,1.54-36.03,1.54-105.56s-.3-78.25-1.54-105.56c-1.81-39.57-12.84-78.89-41.43-107.48C440.38,14.31,401,3.33,361.56,1.54c-27.31-1.24-36.03-1.54-105.56-1.54ZM264.52,87.55c88.64,0,157.68,63.17,157.68,147.8s-55.57,159.17-132.63,159.17c-25.9,0-50.32-13.48-58.52-29.48,0,0-7.68,41.73-16,60.84-11.45,29.98-26.35,63.49-47.12,76.74-.7-.02-1.38-.04-2.05-.07-8.32-18.05-4.42-60.08,1.18-89.53,4.63-20.01,29.89-127.17,29.89-127.17,0,0-7.57-15.36-7.57-37.89,0-35.58,20.63-62.1,46.31-62.1,21.89,0,32.43,16.43,32.43,36.01,0,21.89-13.89,54.74-21.27,85.27-6.1,25.47,12.84,46.31,37.89,46.31,45.48,0,80.43-48,80.43-117.06,0-61.27-43.99-104-106.94-104-72.83,0-115.58,54.53-115.58,110.96,0,21.89,8.43,45.48,18.94,58.33,2.13,2.5,2.35,4.82,1.71,7.34-1.9,8-6.31,25.47-7.17,29.06-1.05,4.63-3.8,5.67-8.64,3.37-32-14.95-52.01-61.48-52.01-99.16,0-80.64,58.52-154.73,169.04-154.73Z"/>
+</svg>
