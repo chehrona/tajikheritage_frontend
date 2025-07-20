@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                             >
                                 <StyledIconButton>
                                     <StyledIcon
-                                        src={`${process.env.PUBLIC_URL}/footerIcons/inst.png`}
+                                        src={`./socials/instagram.svg`}
                                         $rad={false}
                                     />
                                 </StyledIconButton>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                             >
                                 <StyledIconButton>
                                     <StyledIcon
-                                        src={`${process.env.PUBLIC_URL}/footerIcons/pin.png`}
+                                        src={`./socials/pinterest.svg`}
                                         $rad={true}
                                     />
                                 </StyledIconButton>
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                             >
                                 <StyledIconButton>
                                     <StyledIcon
-                                        src={`${process.env.PUBLIC_URL}/footerIcons/youtube.png`}
+                                        src={`./socials/youtube.svg`}
                                         $rad={false}
                                     />
                                 </StyledIconButton>
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                             >
                                 <StyledIconButton>
                                     <StyledIcon
-                                        src={`${process.env.PUBLIC_URL}/footerIcons/facebook.png`}
+                                        src={`./socials/facebook.svg`}
                                         $rad={false}
                                     />
                                 </StyledIconButton>
