@@ -646,15 +646,15 @@
         "resources": {
             "us": {
                 "title": "Resources",
-                "list": ["Library"]
+                "list": ["Library", "Dictionary"]
             },
             "ru": {
                 "title": "Ресурсы",
-                "list": ["Библиотека"]
+                "list": ["Библиотека", "Словарь"]
             },
             "tj": {
                 "title": "Ресурсҳо",
-                "list": ["Китобхона"]
+                "list": ["Китобхона", "Фарҳанг"]
             },
             "fa": {
                 "title": "رسورس‌ها",

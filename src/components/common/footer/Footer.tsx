@@ -67,6 +67,20 @@ const Footer: React.FC = () => {
                                         .list[0]
                                 }
                             </StyledLink>
+                            <StyledLink
+                                to={
+                                    process.env.NODE_ENV === 'development'
+                                        ? 'http://localhost:3003'
+                                        : 'https://farhang.thetajikheritage.com'
+                                }
+                                rel="noreferrer"
+                                target={'_blank'}
+                            >
+                                {
+                                    staticText.FOOTER_TITLES.resources[lang]
+                                        .list[1]
+                                }
+                            </StyledLink>
                         </LinksWrapper>
                     </SocialsContainer>
                     <SocialsContainer>
