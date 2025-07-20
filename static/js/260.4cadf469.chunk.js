@@ -217,7 +217,7 @@
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 1.5rem;
     }
-`,C=(0,o.Ay)(y.k2)`
+`,_=(0,o.Ay)(y.k2)`
     text-decoration: none;
     color: inherit;
     border-radius: var(--small-radius);
@@ -258,7 +258,7 @@
             transform: translate(1px, 1px);
         }
     }
-`,_=e=>{var r;let{menuAnchorEl:t}=e;const{lang:i,isMenuOpen:a,setIsMenuOpen:o}=(0,n.Xe)(),d=w.rZ;return(0,h.jsxs)(j,{open:a,anchorEl:t.current,TransitionComponent:f.A,TransitionProps:{timeout:200},marginThreshold:0,sx:{zIndex:"10"},"aria-hidden":!a,children:[(0,h.jsx)(A,{children:(0,h.jsx)(k,{src:"/customAssets/logo.svg"})}),(0,h.jsx)($,{children:null===(r=d[i])||void 0===r?void 0:r.map(((e,r)=>(0,h.jsx)(C,{to:e.link,onClick:()=>o(!1),children:(0,h.jsxs)(z,{children:[(0,h.jsx)(M,{children:e.title}),(0,h.jsx)(S,{children:e.desc})]})},r)))})]})};var E=t(1697);const O=()=>{const{lang:e}=(0,n.Xe)();return(0,h.jsxs)("form",{action:"https://www.paypal.com/donate",method:"post",target:"_blank",children:[(0,h.jsx)("input",{type:"hidden",name:"hosted_button_id",value:"6KEPZEN5G8TRU"}),(0,h.jsx)(E.O,{type:"submit",$width:"fit-content",children:w.AJ.yJ[e].list[1]})]})};var T=t(9475),I=t(7392);const D=o.Ay.div`
+`,C=e=>{var r;let{menuAnchorEl:t}=e;const{lang:i,isMenuOpen:a,setIsMenuOpen:o}=(0,n.Xe)(),d=w.rZ;return(0,h.jsxs)(j,{open:a,anchorEl:t.current,TransitionComponent:f.A,TransitionProps:{timeout:200},marginThreshold:0,sx:{zIndex:"10"},"aria-hidden":!a,children:[(0,h.jsx)(A,{children:(0,h.jsx)(k,{src:"/customAssets/logo.svg"})}),(0,h.jsx)($,{children:null===(r=d[i])||void 0===r?void 0:r.map(((e,r)=>(0,h.jsx)(_,{to:e.link,onClick:()=>o(!1),children:(0,h.jsxs)(z,{children:[(0,h.jsx)(M,{children:e.title}),(0,h.jsx)(S,{children:e.desc})]})},r)))})]})};var E=t(1697);const O=()=>{const{lang:e}=(0,n.Xe)();return(0,h.jsxs)("form",{action:"https://www.paypal.com/donate",method:"post",target:"_blank",children:[(0,h.jsx)("input",{type:"hidden",name:"hosted_button_id",value:"6KEPZEN5G8TRU"}),(0,h.jsx)(E.O,{type:"submit",$width:"fit-content",children:w.AJ.yJ[e].list[1]})]})};var T=t(9475),I=t(7392);const D=o.Ay.div`
     width: 100%;
     height: var(--footer-height);
     min-height: var(--footer-height);
@@ -404,7 +404,7 @@
     &.MuiIconButton-root {
         padding: 0.6rem;
     }
-`,U=()=>{const{lang:e}=(0,n.Xe)();return(0,h.jsx)(D,{children:(0,h.jsxs)(J,{children:[(0,h.jsxs)(B,{children:[(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.yJ[e].title}),(0,h.jsxs)(q,{children:[(0,h.jsx)(H,{to:"mailto:thetajikheritage@gmail.com",rel:"noreferrer",target:"_blank",children:w.AJ.yJ[e].list[0]}),(0,h.jsx)(O,{})]})]}),(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.ES[e].title}),(0,h.jsx)(q,{children:(0,h.jsx)(H,{to:"#",children:w.AJ.ES[e].list[0]})})]}),(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.V$[e]}),(0,h.jsxs)(Y,{children:[(0,h.jsx)(H,{to:"https://www.instagram.com/tajik_heritage/",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/instagram.svg"})})}),(0,h.jsx)(H,{to:"https://www.pinterest.ca/thetajikheritage/",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/pinterest.svg"})})}),(0,h.jsx)(H,{to:"https://www.youtube.com/@thetajikheritage",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/youtube.svg"})})}),(0,h.jsx)(H,{to:"https://www.facebook.com/profile.php?id=61559405503836",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/facebook.svg"})})})]})]})]}),(0,h.jsxs)(L,{children:[(0,h.jsx)(X,{}),`2023-2025 The Tajik Heritage. ${w.AJ.Cv[e]}.`]})]})})};var W=t(36),Q=t(4127),Z=t(8978);const G=o.Ay.div`
+`,U=()=>{const{lang:e}=(0,n.Xe)();return(0,h.jsx)(D,{children:(0,h.jsxs)(J,{children:[(0,h.jsxs)(B,{children:[(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.yJ[e].title}),(0,h.jsxs)(q,{children:[(0,h.jsx)(H,{to:"mailto:thetajikheritage@gmail.com",rel:"noreferrer",target:"_blank",children:w.AJ.yJ[e].list[0]}),(0,h.jsx)(O,{})]})]}),(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.ES[e].title}),(0,h.jsxs)(q,{children:[(0,h.jsx)(H,{to:"#",children:w.AJ.ES[e].list[0]}),(0,h.jsx)(H,{to:"https://farhang.thetajikheritage.com",rel:"noreferrer",target:"_blank",children:w.AJ.ES[e].list[1]})]})]}),(0,h.jsxs)(N,{children:[(0,h.jsx)(R,{children:w.AJ.V$[e]}),(0,h.jsxs)(Y,{children:[(0,h.jsx)(H,{to:"https://www.instagram.com/tajik_heritage/",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/instagram.svg"})})}),(0,h.jsx)(H,{to:"https://www.pinterest.ca/thetajikheritage/",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/pinterest.svg"})})}),(0,h.jsx)(H,{to:"https://www.youtube.com/@thetajikheritage",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/youtube.svg"})})}),(0,h.jsx)(H,{to:"https://www.facebook.com/profile.php?id=61559405503836",rel:"noreferrer",target:"_blank",children:(0,h.jsx)(P,{children:(0,h.jsx)(F,{src:"./socials/facebook.svg"})})})]})]})]}),(0,h.jsxs)(L,{children:[(0,h.jsx)(X,{}),`2023-2025 The Tajik Heritage. ${w.AJ.Cv[e]}.`]})]})})};var W=t(36),Q=t(4127),Z=t(8978);const G=o.Ay.div`
     width: fit-content;
     cursor: pointer;
     pointer-events: auto;
@@ -533,7 +533,7 @@
     height: 2rem;
     border-radius: 50%;
     border: 1px solid var(--primary-gold-color);
-`,ue=()=>{const{pathname:e}=(0,a.zy)(),r=w.wS,{lang:t,showScrollDownArrow:i,isMenuOpen:o}=(0,n.Xe)(),d=i&&"/"===e&&!o;return(0,h.jsxs)(ce,{$show:d,children:[(0,h.jsx)(me,{children:r[t]}),(0,h.jsxs)(he,{children:[(0,h.jsx)(pe,{}),(0,h.jsx)(xe,{}),(0,h.jsx)(ge,{})]})]})},ve=e=>{let{children:r}=e;const{setShowScrollUpArrow:t}=(0,n.Xe)(),{pathname:o}=(0,a.zy)(),d=(0,i.useRef)(null),[s,l]=(0,i.useState)(0),c=(0,i.useRef)(null),m=o.includes("print")||"/"===o,p=o.includes("print");return(0,h.jsxs)("div",{className:"parent-container",children:[p?null:(0,h.jsx)(v,{menuAnchorEl:c}),(0,h.jsx)(_,{menuAnchorEl:c}),(0,h.jsxs)("div",{ref:d,onScroll:()=>{const e=d.current;if(null==e)return;const r=e.scrollTop,i=e.getBoundingClientRect().height;t(r<s&&r>i/2),l(r)},className:m?"content-container":"content-container has_footer",children:[r,m?null:(0,h.jsx)(U,{})]}),(0,h.jsxs)("div",{className:"fixed-container",children:[(0,h.jsx)(te,{}),(0,h.jsx)(de,{parentRef:d}),(0,h.jsx)(ue,{})]})]})}},1697:(e,r,t)=>{t.d(r,{O:()=>n});var i=t(1529),a=t(1906);const n=(0,i.Ay)(a.A)`
+`,ue=()=>{const{pathname:e}=(0,a.zy)(),r=w.wS,{lang:t,showScrollDownArrow:i,isMenuOpen:o}=(0,n.Xe)(),d=i&&"/"===e&&!o;return(0,h.jsxs)(ce,{$show:d,children:[(0,h.jsx)(me,{children:r[t]}),(0,h.jsxs)(he,{children:[(0,h.jsx)(pe,{}),(0,h.jsx)(xe,{}),(0,h.jsx)(ge,{})]})]})},ve=e=>{let{children:r}=e;const{setShowScrollUpArrow:t}=(0,n.Xe)(),{pathname:o}=(0,a.zy)(),d=(0,i.useRef)(null),[s,l]=(0,i.useState)(0),c=(0,i.useRef)(null),m=o.includes("print")||"/"===o,p=o.includes("print");return(0,h.jsxs)("div",{className:"parent-container",children:[p?null:(0,h.jsx)(v,{menuAnchorEl:c}),(0,h.jsx)(C,{menuAnchorEl:c}),(0,h.jsxs)("div",{ref:d,onScroll:()=>{const e=d.current;if(null==e)return;const r=e.scrollTop,i=e.getBoundingClientRect().height;t(r<s&&r>i/2),l(r)},className:m?"content-container":"content-container has_footer",children:[r,m?null:(0,h.jsx)(U,{})]}),(0,h.jsxs)("div",{className:"fixed-container",children:[(0,h.jsx)(te,{}),(0,h.jsx)(de,{parentRef:d}),(0,h.jsx)(ue,{})]})]})}},1697:(e,r,t)=>{t.d(r,{O:()=>n});var i=t(1529),a=t(1906);const n=(0,i.Ay)(a.A)`
     &.MuiButton-root {
         background: var(--primary-shadow-color);
         color: var(--primary-white-color);
@@ -677,4 +677,4 @@
     display: flex;
     align-items: center;
 `;var s=t(579);const l=e=>{let{handleLogoClick:r,navTo:t="/"}=e;return(0,s.jsx)(n,{children:(0,s.jsx)(d,{to:t,onClick:r,children:(0,s.jsx)(o,{src:"/customAssets/logo.svg"})})})}}}]);
-//# sourceMappingURL=260.90a546f6.chunk.js.map
+//# sourceMappingURL=260.4cadf469.chunk.js.map
