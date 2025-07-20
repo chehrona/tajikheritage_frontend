@@ -128,7 +128,7 @@
         padding: var(--page-padding) var(--page-padding)
             calc(4 * var(--page-padding)) var(--page-padding);
     }
-`},2192:(e,r,a)=>{a.d(r,{A:()=>b});var t=a(5043),i=a(6213);var d=a(215),o=a(4330),n=a(2754),s=a(1529),c=a(9662),m=a(579);const h=(0,c.A)((0,m.jsx)("path",{d:"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"}),"Search");var l=a(3438),p=a(7392);const u=s.Ay.div`
+`},2192:(e,r,a)=>{a.d(r,{A:()=>b});var t=a(5043),i=a(6213);var d=a(215),o=a(4330),n=a(2754),s=a(1529),c=a(9662),m=a(579);const h=(0,c.A)((0,m.jsx)("path",{d:"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"}),"Search");var l=a(3438),p=a(7392);const g=s.Ay.div`
     width: 100%;
     height: auto;
     display: flex;
@@ -140,7 +140,7 @@
     @media (max-width: 480px) {
         height: 5.5rem;
     }
-`,g=s.Ay.div`
+`,u=s.Ay.div`
     height: 3.5rem;
     width: 30rem;
     background: url('/customAssets/search.svg') center no-repeat;
@@ -262,16 +262,12 @@
     @media (max-width: 480px) {
         margin-top: 0.25rem;
     }
-`,b=e=>{let{setItems:r,externalValue:a="",page:s}=e;const{lang:c}=(0,d.Xe)(),[h,l]=(0,t.useState)(!1),[p,b]=(0,t.useState)(a),A=(0,t.useRef)(null);(0,t.useEffect)((()=>{if(p.length>=1){const e=setTimeout((()=>{(async(e,r)=>{try{return(await i.A.get(`https://api.thetajikheritage.com/${r}/search/`,{params:{q:encodeURIComponent(e)}})).data}catch(a){throw a}})(p,s).then((e=>{r(e)}))}),450);return()=>clearTimeout(e)}}),[p]);return(0,m.jsxs)(u,{children:[(0,m.jsxs)(g,{children:[(0,m.jsx)(x,{}),(0,m.jsx)(v,{name:"search_bar",id:"search_bar",ref:A,placeholder:n.f1[c],value:p,onChange:e=>(async e=>{const r=e.currentTarget.value;l(!1),b(r)})(e)}),p.length?(0,m.jsx)(y,{onClick:()=>{b(""),l(!1),r([]),A.current&&A.current.focus()},children:(0,m.jsx)(w,{})}):null]}),h&&(0,m.jsx)(f,{children:o.SEARCH_NOT_FOUND[c]})]})}},993:(e,r,a)=>{a.d(r,{A:()=>n});a(5043);var t=a(215),i=a(844);const d=a(1529).Ay.img`
+`,b=e=>{let{setItems:r,externalValue:a="",page:s}=e;const{lang:c}=(0,d.Xe)(),[h,l]=(0,t.useState)(!1),[p,b]=(0,t.useState)(a),A=(0,t.useRef)(null);(0,t.useEffect)((()=>{if(p.length>=1){const e=setTimeout((()=>{(async(e,r)=>{try{return(await i.A.get(`https://api.thetajikheritage.com/${r}/search/`,{params:{q:encodeURIComponent(e)}})).data}catch(a){throw a}})(p,s).then((e=>{r(e)}))}),450);return()=>clearTimeout(e)}}),[p]);return(0,m.jsxs)(g,{children:[(0,m.jsxs)(u,{children:[(0,m.jsx)(x,{}),(0,m.jsx)(v,{name:"search_bar",id:"search_bar",ref:A,placeholder:n.f1[c],value:p,onChange:e=>(async e=>{const r=e.currentTarget.value;l(!1),b(r)})(e)}),p.length?(0,m.jsx)(y,{onClick:()=>{b(""),l(!1),r([]),A.current&&A.current.focus()},children:(0,m.jsx)(w,{})}):null]}),h&&(0,m.jsx)(f,{children:o.SEARCH_NOT_FOUND[c]})]})}},993:(e,r,a)=>{a.d(r,{A:()=>n});a(5043);var t=a(215),i=a(844);const d=a(1529).Ay.img`
     height: 100%;
     width: 100%;
 `;var o=a(579);const n=e=>{let{data:r}=e;const{lang:a}=(0,t.Xe)();return(0,o.jsx)(i.A,{disabled:r.disabled,page:null===r||void 0===r?void 0:r.id,type:"square",children:(0,o.jsx)(d,{src:"https://api.thetajikheritage.com"+(null===r||void 0===r?void 0:r.cardImg[a])})})}},5452:(e,r,a)=>{a.r(r),a.d(r,{default:()=>p});a(5043);var t=a(215),i=a(7683),d=a(4330),o=a(5260),n=a(1529);const s=n.Ay.div`
     width: 100%;
     height: calc(100svh - var(--header-height));
-    background-image: url('/customAssets/footer_grid.webp');
-    background-size: calc(100vw / 4);
-    background-repeat: repeat;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,6 +283,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: var(--text-segment-gap);
     background-color: var(--regular-black-color);
     box-shadow: var(--primary-box-shadow) var(--primary-white-color);
 
@@ -295,16 +292,17 @@
         width: 20rem;
     }
 `,m=n.Ay.div`
-    font-size: 5rem;
-    font-family: var(--blocky-font);
+    font-size: calc(2.75 * var(--header-large));
+    font-weight: bold;
+    font-family: var(--fancy-font);
     color: var(--primary-red-color);
+    line-height: calc(2 * var(--header-large));
 
     @media (max-width: 480px) {
         font-size: var(--header-large);
     }
 `,h=n.Ay.div`
-    font-size: 1.5rem;
-    font-family: var(--fancy-font);
+    font-size: var(--header-small);
     color: var(--primary-white-color);
 
     @media (max-width: 480px) {
@@ -348,7 +346,7 @@
         height: 23.5rem;
         width: 17.5rem;
     }
-`,u=h.Ay.img`
+`,g=h.Ay.img`
     border-radius: 9rem;
     height: 18.5rem;
     width: 13.5rem;
@@ -368,7 +366,7 @@
         height: 22rem;
         width: 16rem;
     }
-`,g=h.Ay.div`
+`,u=h.Ay.div`
     position: absolute;
     top: 17.5rem;
     left: 2rem;
@@ -431,11 +429,11 @@
         padding: 0rem 1.5rem 1.5rem 1.5rem;
         overflow: hidden;
     }
-`;var y=a(579);const f=e=>{let{poet:r}=e;const{lang:a}=(0,c.Xe)(),t=null===r||void 0===r?void 0:r.name[a].split(" ");return(0,y.jsx)(m.A,{type:"long",disabled:r.disabled,page:null===r||void 0===r?void 0:r.id,children:(0,y.jsxs)(l,{children:[(0,y.jsx)(p,{children:(0,y.jsx)(u,{src:"https://api.thetajikheritage.com"+(null===r||void 0===r?void 0:r.img)})}),(0,y.jsxs)(g,{children:[(0,y.jsx)(v,{children:t[0]}),(0,y.jsx)(v,{children:t[1]}),(0,y.jsxs)(x,{children:[null===r||void 0===r?void 0:r.years[0],"-",null===r||void 0===r?void 0:r.years[1]]})]}),(0,y.jsx)(w,{dangerouslySetInnerHTML:{__html:null===r||void 0===r?void 0:r.desc[a]}})]})})};var b=a(993),A=a(2192),j=a(6331),$=a(5452),k=a(5749);const I=e=>{let{page:r}=e;const{pathname:a}=(0,i.zy)(),{showToast:c}=(0,o.Y)(),[m,h]=(0,t.useState)([]),[l,p]=(0,t.useState)(null);return(0,d.J)(r,"middle"),(0,t.useEffect)((()=>{(async()=>{try{const e=await(0,n.Gg)(r);h(e)}catch(l){const a=l;404===a.status?p(404):500===a.status&&c("E_500","error",r)}})()}),[a]),(0,y.jsxs)(t.Fragment,{children:[404===l?(0,y.jsx)($.default,{}):null,(0,y.jsx)(s.A,{children:(0,y.jsx)(j.A,{children:m.length>0?(0,y.jsxs)(t.Fragment,{children:[(0,y.jsx)(A.A,{setItems:h,page:r}),(0,y.jsx)(k.j,{$center:m.length%3===0,children:m.map((e=>r.includes("poets")?(0,y.jsx)(f,{poet:e},e.id):(0,y.jsx)(b.A,{data:e},e.id)))})]}):null})})]})}},5749:(e,r,a)=>{a.d(r,{j:()=>t});const t=a(1529).Ay.div`
+`;var y=a(579);const f=e=>{let{poet:r}=e;const{lang:a}=(0,c.Xe)(),t=null===r||void 0===r?void 0:r.name[a].split(" ");return(0,y.jsx)(m.A,{type:"long",disabled:r.disabled,page:null===r||void 0===r?void 0:r.id,children:(0,y.jsxs)(l,{children:[(0,y.jsx)(p,{children:(0,y.jsx)(g,{src:"https://api.thetajikheritage.com"+(null===r||void 0===r?void 0:r.img)})}),(0,y.jsxs)(u,{children:[(0,y.jsx)(v,{children:t[0]}),(0,y.jsx)(v,{children:t[1]}),(0,y.jsxs)(x,{children:[null===r||void 0===r?void 0:r.years[0],"-",null===r||void 0===r?void 0:r.years[1]]})]}),(0,y.jsx)(w,{dangerouslySetInnerHTML:{__html:null===r||void 0===r?void 0:r.desc[a]}})]})})};var b=a(993),A=a(2192),j=a(6331),$=a(5452),k=a(5749);const I=e=>{let{page:r}=e;const{pathname:a}=(0,i.zy)(),{showToast:c}=(0,o.Y)(),[m,h]=(0,t.useState)([]),[l,p]=(0,t.useState)(null);return(0,d.J)(r,"middle"),(0,t.useEffect)((()=>{(async()=>{try{const e=await(0,n.Gg)(r);h(e)}catch(l){const a=l;404===a.status?p(404):500===a.status&&c("E_500","error",r)}})()}),[a]),(0,y.jsxs)(t.Fragment,{children:[404===l?(0,y.jsx)($.default,{}):null,(0,y.jsx)(s.A,{children:(0,y.jsx)(j.A,{children:m.length>0?(0,y.jsxs)(t.Fragment,{children:[(0,y.jsx)(A.A,{setItems:h,page:r}),(0,y.jsx)(k.j,{$center:m.length%3===0,children:m.map((e=>r.includes("poets")?(0,y.jsx)(f,{poet:e},e.id):(0,y.jsx)(b.A,{data:e},e.id)))})]}):null})})]})}},5749:(e,r,a)=>{a.d(r,{j:()=>t});const t=a(1529).Ay.div`
     gap: var(--square-card-gap);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     min-height: var(--page-height);
 `},910:(e,r,a)=>{a.d(r,{AN:()=>h,_r:()=>s,uu:()=>c,Gg:()=>n,DL:()=>o,c1:()=>m});var t=a(6213);const i=e=>{let r=null;return localStorage.getItem("th_Id")?r=localStorage.getItem("th_Id"):(r=e+"_"+Math.random().toString(36).substring(2,9),localStorage.setItem("th_Id",r)),r},d="https://api.thetajikheritage.com",o=async e=>{e||(e="");try{const r=i(e);return(await t.A.get(`${d}/${e}`,{params:{page:e,userId:r}})).data}catch(r){throw r}},n=async e=>{try{const r=i(e);return(await t.A.get(`${d}/${e}`,{params:{userId:r,page:e}})).data}catch(r){throw r}},s=async(e,r)=>{try{const a=i(e);return(await t.A.get(`${d}/${e}`,{params:{userId:a,page:e,value:r}})).data}catch(a){throw a}},c=async(e,r)=>{try{const a=i(`${r}${e}`);return(await t.A.get(`${d}/${r}`,{params:{id:e,page:`${r}/${e}`,userId:a}})).data}catch(a){throw a}},m=async e=>{try{const r=await t.A.get(`${d+e}`,{responseType:"arraybuffer"}),a=new Blob([r.data],{type:"application/pdf"});return URL.createObjectURL(a)}catch(r){throw r}},h=async e=>{try{return await t.A.post(`${d}/email`,{info:e})}catch(r){throw r}}},3438:(e,r,a)=>{a.d(r,{A:()=>d});var t=a(9662),i=a(579);const d=(0,t.A)((0,i.jsx)("path",{d:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"}),"Close")},4330:e=>{e.exports=JSON.parse('{"SEARCH_NOT_FOUND":{"us":"No items match your search","ru":"\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e","tj":"\u0410\u0437 \u0440\u04ef\u0438 \u0434\u0430\u0440\u0445\u043e\u0441\u0442\u0438 \u0448\u0443\u043c\u043e \u0447\u0438\u0437\u0435 \u0451\u0444\u0442 \u043d\u0430\u0448\u0443\u0434","fa":"\u0627\u0632 \u0631\u0648\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u06cc \u0634\u0645\u0627 \u0686\u06cc\u0632\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f"},"ARTICLE_UNAVAILABLE":{"us":"Article is not available yet","ru":"\u0421\u0442\u0430\u0442\u044c\u044f \u0435\u0449\u0435 \u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430","tj":"\u041c\u0430\u049b\u043e\u043b\u0430 \u04b3\u0430\u043d\u04ef\u0437 \u0432\u0443\u04b7\u0443\u0434 \u043d\u0430\u0434\u043e\u0440\u0430\u0434","fa":"\u0645\u0642\u0627\u0644\u0647 \u0647\u0646\u0648\u0632 \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"},"PAGE_NOT_FOUND":{"us":"Page not found","ru":"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430","tj":"\u0421\u0430\u04b3\u0438\u0444\u0430 \u0451\u0444\u0442 \u043d\u0430\u0448\u0443\u0434","fa":"\u0635\u062d\u06cc\u0641\u0647 \u06cc\u0627\u0641\u062a \u0646\u0634\u062f"},"E_500":{"us":"Internal server error","ru":"\u0412\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u044f\u044f \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430","tj":"\u0425\u0430\u0442\u043e\u0433\u04e3 \u0431\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0438 \u0434\u043e\u0445\u0438\u043b\u04e3","fa":"\u062e\u0637\u0627\u06af\u06cc \u0628\u0627 \u0633\u0631\u0648\u0631\u06cc \u062f\u0627\u062e\u0644\u06cc"},"E_204":{"us":"No data match your request","ru":"\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e","tj":"\u0410\u0437 \u0440\u04ef\u0438 \u0434\u0430\u0440\u0445\u043e\u0441\u0442\u0438 \u0448\u0443\u043c\u043e \u0447\u0438\u0437\u0435 \u0451\u0444\u0442 \u043d\u0430\u0448\u0443\u0434","fa":""}}')}}]);
-//# sourceMappingURL=704.166cd22e.chunk.js.map
+//# sourceMappingURL=704.492fa3b5.chunk.js.map
