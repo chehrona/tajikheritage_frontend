@@ -80,7 +80,6 @@ const Footer: React.FC = () => {
                                 <StyledIconButton>
                                     <StyledIcon
                                         src={`./socials/instagram.svg`}
-                                        $rad={false}
                                     />
                                 </StyledIconButton>
                             </StyledLink>
@@ -92,7 +91,6 @@ const Footer: React.FC = () => {
                                 <StyledIconButton>
                                     <StyledIcon
                                         src={`./socials/pinterest.svg`}
-                                        $rad={true}
                                     />
                                 </StyledIconButton>
                             </StyledLink>
@@ -102,10 +100,7 @@ const Footer: React.FC = () => {
                                 target={'_blank'}
                             >
                                 <StyledIconButton>
-                                    <StyledIcon
-                                        src={`./socials/youtube.svg`}
-                                        $rad={false}
-                                    />
+                                    <StyledIcon src={`./socials/youtube.svg`} />
                                 </StyledIconButton>
                             </StyledLink>
                             <StyledLink
@@ -116,7 +111,6 @@ const Footer: React.FC = () => {
                                 <StyledIconButton>
                                     <StyledIcon
                                         src={`./socials/facebook.svg`}
-                                        $rad={false}
                                     />
                                 </StyledIconButton>
                             </StyledLink>

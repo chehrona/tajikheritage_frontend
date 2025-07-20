@@ -149,10 +149,9 @@ export const SocialsWrapper = styled.div`
     }
 `;
 
-export const StyledIcon = styled.img<{ $rad: boolean }>`
+export const StyledIcon = styled.img`
     width: 1.25rem;
     height: 1.25rem;
-    border-radius: ${({ $rad }) => ($rad ? '100%' : '0%')};
 
     &:hover {
         filter: brightness(150%);
