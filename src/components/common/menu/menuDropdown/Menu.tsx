@@ -28,14 +28,6 @@ const Menu: React.FC<MenuProps> = ({ menuAnchorEl }) => {
     const { lang, isMenuOpen, setIsMenuOpen } = useGlobalData();
     const pageInfo = staticText.MENU_ITEMS as MenuPage;
 
-    // useEffect(() => {
-    //     setTriggerFade(true);
-
-    //     const timer = setTimeout(() => setTriggerFade(false), 250);
-
-    //     return () => clearTimeout(timer);
-    // }, [lang]);
-
     return (
         <StyledMenu
             open={isMenuOpen}
