@@ -78,7 +78,7 @@ export const Text = styled.div`
 export const SocialsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 14rem;
+    width: 23rem;
 
     @media (max-width: 480px) {
         margin-bottom: 2rem;

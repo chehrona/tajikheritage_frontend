@@ -87,42 +87,22 @@ export const LogoInner = styled.img`
     }
 `;
 
-export const SvgContainer = styled.svg`
+export const Text = styled.img`
     position: absolute;
-    width: 7rem;
-    height: 7rem;
+    width: 8rem;
+    height: 8rem;
     z-index: 2;
-    top: -0.75rem;
+    top: -1rem;
 
     @media (max-width: 480px) {
         height: 7rem;
         width: 7rem;
-        top: -0.75rem;
+        top: -0.15rem;
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 9rem;
         width: 9.5rem;
-        top: -1.65rem;
-    }
-`;
-
-export const Text = styled.text`
-    font-size: var(--header-medium);
-    text-anchor: middle;
-    transform: rotateZ(180deg);
-    transform-origin: center;
-    fill: var(--primary-red-color);
-    font-weight: bold;
-    letter-spacing: 2.5px;
-
-    @media (max-width: 480px) {
-        font-size: var(--header-medium);
-        letter-spacing: 3px;
-    }
-
-    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        font-size: 1.85rem;
-        letter-spacing: 3px;
+        top: -0.75rem;
     }
 `;

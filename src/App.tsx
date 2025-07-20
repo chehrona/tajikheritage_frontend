@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Routing
 import { ErrorBoundary } from 'react-error-boundary';
+import Routes from './components/common/routes/Routes';
 
 // Contexts
 import { GlobalDataProvider } from './hooks/useGlobalData';
@@ -13,7 +14,6 @@ import { GlobalDataProvider } from './hooks/useGlobalData';
 import ErrorPage from './errorPages/ErrorPage';
 import GlobalStyles from './globalStyles';
 import CustomToastContainer from './components/common/customToastContainer/CustomToastContainer';
-import Routes from './components/common/routes/Routes';
 
 function App(): React.JSX.Element {
     useEffect(() => {

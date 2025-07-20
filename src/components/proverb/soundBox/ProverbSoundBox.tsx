@@ -12,7 +12,6 @@ import {
     LogoContainer,
     LogoOuter,
     LogoInner,
-    SvgContainer,
     Text,
 } from './proverbSoundBoxStyles';
 
@@ -38,7 +37,7 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                     src={process.env.REACT_APP_BASE_URL + proverb?.logo.inner}
                 />
             </LogoWrapper>
-            <SvgContainer viewBox="0 0 200 200">
+            {/* <SvgContainer viewBox="0 0 200 200">
                 <path
                     id="text-path"
                     stroke="none"
@@ -60,7 +59,8 @@ const ProverbSoundBox: React.FC<{ proverb: ProverbObj }> = ({ proverb }) => {
                             : '• ГӮШ КУНЕД •'}
                     </textPath>
                 </Text>
-            </SvgContainer>
+            </SvgContainer> */}
+            <Text src={`./customAssets/lang/${lang}.svg`} />
         </LogoContainer>
     );
 };
