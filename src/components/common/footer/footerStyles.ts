@@ -7,7 +7,6 @@ export const FooterContainer = styled.div`
     width: 100%;
     height: var(--footer-height);
     min-height: var(--footer-height);
-    background: var(--primary-black-color);
     text-shadow: 0.0625rem 0.0625rem 0.1875rem var(--primary-black-color);
 
     @media (max-width: 480px) {
@@ -17,7 +16,6 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterInnerContainer = styled.div`
-    background: var(--primary-black-color);
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
@@ -27,14 +25,13 @@ export const FooterInnerContainer = styled.div`
     box-sizing: border-box;
     color: var(--secondary-grey-color);
     justify-content: space-between;
-    background-image: url('/customAssets/footer_grid.webp');
-    background-size: calc(100vw / 4);
-    background-repeat: repeat;
-    background-position: center;
 
     @media (max-width: 480px) {
-        background-image: url('/customAssets/footer_grid.webp');
         background-size: calc(100vw / 1.5);
+    }
+
+    @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+        background-size: calc(100vw / 4);
     }
 `;
 

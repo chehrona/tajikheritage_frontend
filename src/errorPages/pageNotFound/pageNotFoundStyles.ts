@@ -3,10 +3,6 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     width: 100%;
     height: calc(100svh - var(--header-height));
-    background-image: url('/customAssets/footer_grid.webp');
-    background-size: calc(100vw / 4);
-    background-repeat: repeat;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +20,7 @@ export const CodeWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: var(--text-segment-gap);
     background-color: var(--regular-black-color);
     box-shadow: var(--primary-box-shadow) var(--primary-white-color);
 
@@ -34,9 +31,11 @@ export const CodeWrapper = styled.div`
 `;
 
 export const Code = styled.div`
-    font-size: 5rem;
-    font-family: var(--blocky-font);
+    font-size: calc(2.75 * var(--header-large));
+    font-weight: bold;
+    font-family: var(--fancy-font);
     color: var(--primary-red-color);
+    line-height: calc(2 * var(--header-large));
 
     @media (max-width: 480px) {
         font-size: var(--header-large);
@@ -44,8 +43,7 @@ export const Code = styled.div`
 `;
 
 export const ErrorMessage = styled.div`
-    font-size: 1.5rem;
-    font-family: var(--fancy-font);
+    font-size: var(--header-small);
     color: var(--primary-white-color);
 
     @media (max-width: 480px) {

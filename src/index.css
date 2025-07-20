@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Caveat:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
-    font-family: 'Blocky';
-    src: url('/public/fonts/blocky.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Carmen';
     src: url('/public/fonts/carmen.ttf');
     font-weight: normal;
@@ -147,6 +140,10 @@ body {
     width: 100%;
     font-family: 'IBM Plex Serif', serif;
     overflow: hidden;
+    background-image: url('/public/customAssets/grid.svg');
+    background-size: calc(100vw / 4);
+    background-repeat: repeat;
+    background-position: center;
 }
 
 body * {
@@ -161,7 +158,6 @@ body * {
     max-width: 1440px;
     min-height: 100svh;
     margin: 0 auto;
-    background: var(--primary-black-color);
 }
 
 .content-container {
