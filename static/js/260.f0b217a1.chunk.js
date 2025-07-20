@@ -323,7 +323,7 @@
 `,N=o.Ay.div`
     display: flex;
     flex-direction: column;
-    width: 14rem;
+    width: 23rem;
 
     @media (max-width: 480px) {
         margin-bottom: 2rem;
@@ -678,4 +678,4 @@
     display: flex;
     align-items: center;
 `;var s=t(579);const l=e=>{let{handleLogoClick:r,navTo:t="/"}=e;return(0,s.jsx)(n,{children:(0,s.jsx)(d,{to:t,onClick:r,children:(0,s.jsx)(o,{src:"/customAssets/logo.svg"})})})}}}]);
-//# sourceMappingURL=260.960da922.chunk.js.map
+//# sourceMappingURL=260.f0b217a1.chunk.js.map
