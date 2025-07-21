@@ -1,8 +1,5 @@
 import React, { useCallback } from 'react';
 
-// Material UI
-import { ArrowUpward } from '@mui/icons-material';
-
 // Hooks
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
@@ -10,10 +7,11 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 import { ScrollUpArrowProps } from './types/componentTypes';
 
 // Styled components
-import { MainContainer, StyledIconButton, Arrow } from './scrollUpArrowStyles';
+import { MainContainer, Arrow } from './scrollUpArrowStyles';
 
 const ScrollUpArrow: React.FC<ScrollUpArrowProps> = ({ parentRef }) => {
     const { showScrollUpArrow } = useGlobalData();
+
     const handleScrollToTop = useCallback(() => {
         if (parentRef.current === null) {
             return;
@@ -27,11 +25,7 @@ const ScrollUpArrow: React.FC<ScrollUpArrowProps> = ({ parentRef }) => {
 
     return (
         <MainContainer onClick={handleScrollToTop} $show={showScrollUpArrow}>
-            <StyledIconButton>
-                <Arrow>
-                    <ArrowUpward />
-                </Arrow>
-            </StyledIconButton>
+            <Arrow src="./customAssets/arrow.svg" />
         </MainContainer>
     );
 };

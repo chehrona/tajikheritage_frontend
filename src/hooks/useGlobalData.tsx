@@ -1,4 +1,12 @@
-import React, { createContext, useContext, useState, useMemo } from 'react';
+import React, {
+    createContext,
+    useContext,
+    useState,
+    useMemo,
+    useEffect,
+} from 'react';
+
+import { useLocation } from 'react-router-dom';
 
 // Helper
 import staticText from '../miscellaneous/staticTexts.json';
@@ -25,6 +33,7 @@ export const GlobalDataProvider = ({ children }: GlobalDataProviderProps) => {
     const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
     const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const { pathname } = useLocation();
 
     const [lang, setLang] = useState<Langs>(() => {
         const storedLang = localStorage.getItem('lang');
@@ -52,6 +61,11 @@ export const GlobalDataProvider = ({ children }: GlobalDataProviderProps) => {
         [lang, title, showScrollUpArrow, showScrollDownArrow, isMenuOpen],
     );
 
+    useEffect(() => {
+        if (pathname === '/') {
+            setShowScrollUpArrow(false);
+        }
+    }, [pathname]);
     return (
         <DataContext.Provider value={value}>{children}</DataContext.Provider>
     );

@@ -11,14 +11,7 @@ import staticTexts from '../../../miscellaneous/staticTexts.json';
 import { TitleType } from '../../../landingPages/home/types/componentTypes';
 
 // Styled components
-import {
-    ScrollWrapper,
-    Title,
-    IconWrapper,
-    Arrow,
-    Line,
-    Circle,
-} from './scrollDownArrowStyles';
+import { MainContainer, Title, Arrow } from './scrollDownArrowStyles';
 
 const ScrollDownArrow: React.FC = () => {
     const { pathname } = useLocation();
@@ -27,14 +20,10 @@ const ScrollDownArrow: React.FC = () => {
     const isArrowShown = showScrollDownArrow && pathname === '/' && !isMenuOpen;
 
     return (
-        <ScrollWrapper $show={isArrowShown}>
+        <MainContainer $show={isArrowShown}>
             <Title>{title[lang]}</Title>
-            <IconWrapper>
-                <Line />
-                <Arrow />
-                <Circle />
-            </IconWrapper>
-        </ScrollWrapper>
+            <Arrow src="./customAssets/arrow.svg" />
+        </MainContainer>
     );
 };
 
