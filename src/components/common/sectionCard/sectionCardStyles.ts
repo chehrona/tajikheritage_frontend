@@ -51,10 +51,10 @@ export const ImageWrapper = styled.div`
 
 export const SectionImage = styled.div<{ $src: string }>`
     background-size: contain;
-    width: 70%;
-    height: 70%;
+    width: 70.5%;
+    height: 70.5%;
     background-position: center;
     background-repeat: no-repeat;
-    filter: drop-shadow(0px 0px 1px var(--secondary-white-color));
+    filter: drop-shadow(0px 0px 0.25px var(--secondary-white-color));
     background-image: ${({ $src }) => $src && `url(${$src})`};
 `;
