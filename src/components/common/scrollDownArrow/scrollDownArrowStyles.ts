@@ -11,7 +11,6 @@ export const MainContainer = styled.div<{ $show: boolean }>`
     justify-content: center;
     align-items: center;
     display: ${({ $show }) => ($show ? 'flex' : 'none')};
-    padding: 0rem var(--text-segment-gap);
 
     @media (max-width: 480px) {
         height: 5rem;
@@ -33,5 +32,5 @@ export const Title = styled.div`
 export const Arrow = styled.img`
     animation: ${bounce} 2s infinite;
     height: 100%;
-    width: 100%;
+    width: 3rem;
 `;

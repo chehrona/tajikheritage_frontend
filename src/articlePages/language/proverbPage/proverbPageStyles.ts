@@ -41,13 +41,13 @@ export const QuoteWrapper = styled.div`
     font-family: var(--fancy-font);
     font-size: var(--header-large);
     line-height: var(--header-big-line-height);
-    padding: 4.5rem var(--page-padding) calc(2 * var(--text-segment-gap))
-        var(--page-padding);
+    padding: calc(6.5 * var(--text-segment-gap)) var(--page-padding)
+        calc(1.5 * var(--text-segment-gap)) var(--page-padding);
 
     @media (max-width: 480px) {
         font-size: var(--header-big);
-        padding: 4.5rem var(--page-padding) var(--text-segment-gap)
-            var(--page-padding);
+        padding: calc(1.5 * var(--text-segment-gap)) var(--page-padding)
+            var(--text-segment-gap) var(--page-padding);
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
