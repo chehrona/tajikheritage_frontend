@@ -1,7 +1,7 @@
 import React from 'react';
 
-// Material UI
-import { VolumeUp } from '@mui/icons-material';
+// Custom components
+import CustomIcon from '../customIcon/CustomIcon';
 
 // Styled components
 import { StyledIconButton } from './soundButtonStyles';
@@ -17,7 +17,7 @@ const SoundButton: React.FC<{ data: string }> = ({ data }) => {
             {data.length > 0 ? (
                 <StyledIconButton onClick={(e) => toggleAudio(e)}>
                     <audio src={process.env.REACT_APP_BASE_URL + data}></audio>
-                    <VolumeUp />
+                    <CustomIcon icon={'speaker'} size={18} />
                 </StyledIconButton>
             ) : null}
         </React.Fragment>

@@ -115,6 +115,7 @@ body * {
     overflow-y: hidden;
     height: 100svh;
     margin-top: var(--header-height);
+    background-color: var(--primary-black-color);
 }
 
 .has_footer {

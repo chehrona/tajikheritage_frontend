@@ -78,9 +78,11 @@ export const StyledMenuIcon = styled.div<{ $isMenuShown: boolean }>`
         $isMenuShown ? 'transparent' : 'var(--primary-gold-color)'};
     transition: background-color 0.3s ease;
     cursor: pointer;
+    border-radius: 999px;
 
     &::before,
     &::after {
+        border-radius: 999px;
         left: 0;
         content: '';
         width: 2.15rem;
@@ -91,6 +93,7 @@ export const StyledMenuIcon = styled.div<{ $isMenuShown: boolean }>`
     }
 
     &::before {
+        border-radius: 999px;
         transform-origin: center;
         transform: ${({ $isMenuShown }) =>
             $isMenuShown ? 'rotate(45deg)' : 'rotate(0deg)'};
@@ -98,13 +101,13 @@ export const StyledMenuIcon = styled.div<{ $isMenuShown: boolean }>`
     }
 
     &::after {
+        border-radius: 999px;
         top: ${({ $isMenuShown }) => ($isMenuShown ? '0' : '0.5rem')};
         transform-origin: center;
         transform: ${({ $isMenuShown }) =>
             $isMenuShown ? 'rotate(-45deg)' : 'rotate(0deg)'};
     }
 
-    // Done
     @media (max-width: 480px) {
         height: 0.2rem;
 

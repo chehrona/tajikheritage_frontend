@@ -6,10 +6,9 @@ import { IconButtonProps } from './types/styleTypes';
 import { StyledTooltipProps } from '../tooltip/types/styleTypes';
 
 // Flag logos
-const khorLogo = `${process.env.PUBLIC_URL}/flags/khorasan.png`;
-const usLogo = `${process.env.PUBLIC_URL}/flags/united-states.png`;
-const ruLogo = `${process.env.PUBLIC_URL}/flags/russia.svg`;
-const tjLogo = `${process.env.PUBLIC_URL}/flags/tajikistan.svg`;
+const usLogo = `${process.env.PUBLIC_URL}/icons/flags/us.svg`;
+const ruLogo = `${process.env.PUBLIC_URL}/icons/flags/ru.svg`;
+const tjLogo = `${process.env.PUBLIC_URL}/icons/flags/tj.svg`;
 
 export const FlagWrapper = styled.div<{ $show: boolean }>`
     width: fit-content;
@@ -41,16 +40,14 @@ export const FlagWrapper = styled.div<{ $show: boolean }>`
 `;
 
 export const StyledFlag = styled.div`
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.85rem;
+    height: 1.85rem;
     border-radius: 50%;
     background-size: 100%;
     background-repeat: no-repeat;
     box-shadow: var(--primary-box-shadow) var(--primary-black-color);
     background-image: ${({ lang }) =>
-        lang === 'kh'
-            ? `url(${khorLogo})`
-            : lang === 'us'
+        lang === 'us'
             ? `url(${usLogo})`
             : lang === 'ru'
             ? `url(${ruLogo})`
