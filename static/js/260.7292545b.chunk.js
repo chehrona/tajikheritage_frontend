@@ -60,9 +60,11 @@
     background-color: ${e=>{let{$isMenuShown:r}=e;return r?"transparent":"var(--primary-gold-color)"}};
     transition: background-color 0.3s ease;
     cursor: pointer;
+    border-radius: 999px;
 
     &::before,
     &::after {
+        border-radius: 999px;
         left: 0;
         content: '';
         width: 2.15rem;
@@ -73,18 +75,19 @@
     }
 
     &::before {
+        border-radius: 999px;
         transform-origin: center;
         transform: ${e=>{let{$isMenuShown:r}=e;return r?"rotate(45deg)":"rotate(0deg)"}};
         top: ${e=>{let{$isMenuShown:r}=e;return r?"0":"-0.5rem"}};
     }
 
     &::after {
+        border-radius: 999px;
         top: ${e=>{let{$isMenuShown:r}=e;return r?"0":"0.5rem"}};
         transform-origin: center;
         transform: ${e=>{let{$isMenuShown:r}=e;return r?"rotate(-45deg)":"rotate(0deg)"}};
     }
 
-    // Done
     @media (max-width: 480px) {
         height: 0.2rem;
 
@@ -405,7 +408,7 @@
     &.MuiIconButton-root {
         padding: 0.6rem;
     }
-`,U=()=>{const{lang:e}=(0,n.Xe)();return(0,m.jsx)(D,{children:(0,m.jsxs)(J,{children:[(0,m.jsxs)(B,{children:[(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.yJ[e].title}),(0,m.jsxs)(q,{children:[(0,m.jsx)(H,{to:"mailto:thetajikheritage@gmail.com",rel:"noreferrer",target:"_blank",children:w.AJ.yJ[e].list[0]}),(0,m.jsx)(O,{})]})]}),(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.ES[e].title}),(0,m.jsxs)(q,{children:[(0,m.jsx)(H,{to:"#",children:w.AJ.ES[e].list[0]}),(0,m.jsx)(H,{to:"https://farhang.thetajikheritage.com",rel:"noreferrer",target:"_blank",children:w.AJ.ES[e].list[1]})]})]}),(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.V$[e]}),(0,m.jsxs)(Y,{children:[(0,m.jsx)(H,{to:"https://www.instagram.com/tajik_heritage/",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./socials/instagram.svg"})})}),(0,m.jsx)(H,{to:"https://www.pinterest.ca/thetajikheritage/",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./socials/pinterest.svg"})})}),(0,m.jsx)(H,{to:"https://www.youtube.com/@thetajikheritage",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./socials/youtube.svg"})})}),(0,m.jsx)(H,{to:"https://www.facebook.com/profile.php?id=61559405503836",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./socials/facebook.svg"})})})]})]})]}),(0,m.jsxs)(L,{children:[(0,m.jsx)(X,{}),`2023-2025 The Tajik Heritage. ${w.AJ.Cv[e]}.`]})]})})};var W=t(36),Z=t(4127),Q=t(8978);const G=o.Ay.div`
+`,U=()=>{const{lang:e}=(0,n.Xe)();return(0,m.jsx)(D,{children:(0,m.jsxs)(J,{children:[(0,m.jsxs)(B,{children:[(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.yJ[e].title}),(0,m.jsxs)(q,{children:[(0,m.jsx)(H,{to:"mailto:thetajikheritage@gmail.com",rel:"noreferrer",target:"_blank",children:w.AJ.yJ[e].list[0]}),(0,m.jsx)(O,{})]})]}),(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.ES[e].title}),(0,m.jsxs)(q,{children:[(0,m.jsx)(H,{to:"#",children:w.AJ.ES[e].list[0]}),(0,m.jsx)(H,{to:"https://farhang.thetajikheritage.com",rel:"noreferrer",target:"_blank",children:w.AJ.ES[e].list[1]})]})]}),(0,m.jsxs)(N,{children:[(0,m.jsx)(R,{children:w.AJ.V$[e]}),(0,m.jsxs)(Y,{children:[(0,m.jsx)(H,{to:"https://www.instagram.com/tajik_heritage/",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./icons/socials/instagram.svg"})})}),(0,m.jsx)(H,{to:"https://www.pinterest.ca/thetajikheritage/",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./icons/socials/pinterest.svg"})})}),(0,m.jsx)(H,{to:"https://www.youtube.com/@thetajikheritage",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./icons/socials/youtube.svg"})})}),(0,m.jsx)(H,{to:"https://www.facebook.com/profile.php?id=61559405503836",rel:"noreferrer",target:"_blank",children:(0,m.jsx)(P,{children:(0,m.jsx)(F,{src:"./icons/socials/facebook.svg"})})})]})]})]}),(0,m.jsxs)(L,{children:[(0,m.jsx)(X,{}),`2023-2025 The Tajik Heritage. ${w.AJ.Cv[e]}.`]})]})})};var W=t(36),Z=t(4127),Q=t(8978);const G=o.Ay.div`
     width: fit-content;
     cursor: pointer;
     pointer-events: auto;
@@ -430,13 +433,13 @@
         bottom: 0.75rem;
     }
 `,K=o.Ay.div`
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.85rem;
+    height: 1.85rem;
     border-radius: 50%;
     background-size: 100%;
     background-repeat: no-repeat;
     box-shadow: var(--primary-box-shadow) var(--primary-black-color);
-    background-image: ${e=>{let{lang:r}=e;return"kh"===r?"url(/flags/khorasan.png)":"us"===r?"url(/flags/united-states.png)":"ru"===r?"url(/flags/russia.svg)":"url(/flags/tajikistan.svg)"}};
+    background-image: ${e=>{let{lang:r}=e;return"us"===r?"url(/icons/flags/us.svg)":"ru"===r?"url(/icons/flags/ru.svg)":"url(/icons/flags/tj.svg)"}};
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         height: 2.25rem;
@@ -644,4 +647,4 @@
     display: flex;
     align-items: center;
 `;var s=t(579);const l=e=>{let{handleLogoClick:r,navTo:t="/"}=e;return(0,s.jsx)(n,{children:(0,s.jsx)(d,{to:t,onClick:r,children:(0,s.jsx)(o,{src:"/logo/logo.svg"})})})}}}]);
-//# sourceMappingURL=260.bf87301c.chunk.js.map
+//# sourceMappingURL=260.7292545b.chunk.js.map
