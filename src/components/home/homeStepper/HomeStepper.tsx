@@ -68,7 +68,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
         <MainContainer>
             <SemiCircle />
             <OtherSteps $bottom={false}>
-                <NumLine />
+                <NumLine src="./arrows/home.svg" />
                 <Step>
                     {stepInfo[visibleStepIndex - 1]?.num ||
                         stepInfo[stepInfo.length - 1]?.num}
@@ -116,7 +116,7 @@ const HomeStepper: React.FC<HomeStepperProps> = ({
                 <Step>
                     {stepInfo[visibleStepIndex + 1]?.num || stepInfo[0]?.num}
                 </Step>
-                <NumLine />
+                <NumLine src="./arrows/home.svg" $bottom={true} />
             </OtherSteps>
         </MainContainer>
     );

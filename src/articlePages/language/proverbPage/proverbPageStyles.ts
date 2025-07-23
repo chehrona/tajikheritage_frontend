@@ -12,8 +12,8 @@ export const Shadow = styled.div`
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         top: 1.5rem;
-        left: 1.3rem;
-        width: calc(100% - 1.65rem);
+        left: 1.53rem;
+        width: calc(100% - 2.955rem);
     }
 `;
 
@@ -27,7 +27,7 @@ export const ProverbInnerContainer = styled(MainContainer)`
     }
 
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
-        margin-top: 3.5rem;
+        margin-top: 3.75rem;
     }
 `;
 

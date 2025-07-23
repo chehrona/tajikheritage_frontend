@@ -25,7 +25,7 @@ const ScrollUpArrow: React.FC<ScrollUpArrowProps> = ({ parentRef }) => {
 
     return (
         <MainContainer onClick={handleScrollToTop} $show={showScrollUpArrow}>
-            <Arrow src="./customAssets/arrow.svg" />
+            <Arrow src="./arrows/side.svg" />
         </MainContainer>
     );
 };

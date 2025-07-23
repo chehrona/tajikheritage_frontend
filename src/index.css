@@ -217,5 +217,8 @@ body * {
 
         /* Border radius */
         --page-radius: 2.5rem;
+
+        /* Size */
+        --page-padding: 1.5rem;
     }
 }

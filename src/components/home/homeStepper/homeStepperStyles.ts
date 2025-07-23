@@ -56,11 +56,10 @@ export const IndicatorStep = styled.div`
     }
 `;
 
-export const NumLine = styled.div`
-    background: var(--primary-gold-color);
-    width: 0.05rem;
-    height: 4rem;
+export const NumLine = styled.img<{ $bottom?: boolean }>`
+    height: 6rem;
     margin-left: 0.5%;
+    transform: ${({ $bottom }) => $bottom && 'rotateZ(180deg)'};
 
     @media (max-width: 1024px) {
         height: 8rem;
@@ -105,7 +104,7 @@ export const StepperBox = styled.div<{ $opacity: number }>`
 `;
 
 export const Step = styled.div`
-    font-size: 1.2rem;
+    font-size: var(--header-small);
     color: var(--secondary-white-color);
     font-family: var(--fancy-font);
     transition: 500ms ease-in-out;
@@ -179,7 +178,7 @@ export const Desc = styled.div`
 `;
 
 export const OtherSteps = styled.div<{ $bottom?: boolean }>`
-    gap: 0.5rem;
+    gap: 0.25rem;
     width: 3%;
     height: 20%;
     margin-left: 10%;

@@ -22,7 +22,7 @@ const ScrollDownArrow: React.FC = () => {
     return (
         <MainContainer $show={isArrowShown}>
             <Title>{title[lang]}</Title>
-            <Arrow src="./customAssets/arrow.svg" />
+            <Arrow src="./arrows/side.svg" />
         </MainContainer>
     );
 };

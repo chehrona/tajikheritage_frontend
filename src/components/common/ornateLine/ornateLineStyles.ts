@@ -14,7 +14,7 @@ export const Image = styled.div<{ $right: boolean }>`
     margin-left: 0.3rem;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('/customAssets/source_arrow.svg');
+    background-image: url('/arrows/source.svg');
 
     ${({ $right }) =>
         !$right &&
