@@ -47,11 +47,10 @@
     @media screen and (min-device-width: 481px) and (max-device-width: 1024px) {
         font-size: 2rem;
     }
-`,c=d.Ay.div`
-    background: var(--primary-gold-color);
-    width: 0.05rem;
-    height: 4rem;
+`,c=d.Ay.img`
+    height: 6rem;
     margin-left: 0.5%;
+    transform: ${t=>{let{$bottom:e}=t;return e&&"rotateZ(180deg)"}};
 
     @media (max-width: 1024px) {
         height: 8rem;
@@ -90,7 +89,7 @@
         opacity: ${t=>{let{$opacity:e}=t;return e&&e+.5}};
     }
 `,$=d.Ay.div`
-    font-size: 1.2rem;
+    font-size: var(--header-small);
     color: var(--secondary-white-color);
     font-family: var(--fancy-font);
     transition: 500ms ease-in-out;
@@ -153,7 +152,7 @@
         font-size: 1.3rem;
     }
 `,b=d.Ay.div`
-    gap: 0.5rem;
+    gap: 0.25rem;
     width: 3%;
     height: 20%;
     margin-left: 10%;
@@ -244,7 +243,7 @@
         opacity: 0.3;
         border: 1px solid var(--primary-gold-color);
     }
-`;var A=r(579);const j=t=>{var e,r,a,d,l;let{containerRef:j,divRefs:k,opacities:z}=t;const H=n.l0,{lang:R}=(0,o.Xe)(),[_,S]=(0,i.useState)(0);return(0,i.useEffect)((()=>{const t=new IntersectionObserver((t=>{t.forEach(((t,e)=>{t.isIntersecting&&S(e)}))}),{root:null,rootMargin:"0px",threshold:.7});if(j&&j.current){return Array.from(j.current.children).forEach((e=>{t.observe(e)})),()=>{t.disconnect()}}}),[k]),(0,A.jsxs)(m,{children:[(0,A.jsx)(s,{}),(0,A.jsxs)(b,{$bottom:!1,children:[(0,A.jsx)(c,{}),(0,A.jsx)($,{children:(null===(e=H[_-1])||void 0===e?void 0:e.num)||(null===(r=H[H.length-1])||void 0===r?void 0:r.num)})]}),(0,A.jsxs)(p,{ref:j,children:[H.map(((t,e)=>(0,A.jsxs)(g,{ref:k[e],$opacity:z[e],children:[(0,A.jsx)(h,{children:null===t||void 0===t?void 0:t.num}),(0,A.jsxs)(u,{children:[(0,A.jsx)(x,{$fontSize:t.title[R].font,children:null===t||void 0===t?void 0:t.title[R].text}),(0,A.jsxs)(v,{children:[(0,A.jsx)("div",{dangerouslySetInnerHTML:{__html:null===t||void 0===t?void 0:t.desc.text[R]}}),(0,A.jsx)(f,{to:null===t||void 0===t?void 0:t.desc.link,children:(0,A.jsx)(y,{$length:n.Ye[R].length,children:n.Ye[R]})})]})]})]},e))),(0,A.jsx)(w,{src:null===(a=H[_])||void 0===a?void 0:a.inner.big.img})]}),(0,A.jsxs)(b,{$bottom:!0,children:[(0,A.jsx)($,{children:(null===(d=H[_+1])||void 0===d?void 0:d.num)||(null===(l=H[0])||void 0===l?void 0:l.num)}),(0,A.jsx)(c,{})]})]})},k=d.Ay.div`
+`;var A=r(579);const j=t=>{var e,r,a,d,l;let{containerRef:j,divRefs:k,opacities:z}=t;const H=n.l0,{lang:R}=(0,o.Xe)(),[_,S]=(0,i.useState)(0);return(0,i.useEffect)((()=>{const t=new IntersectionObserver((t=>{t.forEach(((t,e)=>{t.isIntersecting&&S(e)}))}),{root:null,rootMargin:"0px",threshold:.7});if(j&&j.current){return Array.from(j.current.children).forEach((e=>{t.observe(e)})),()=>{t.disconnect()}}}),[k]),(0,A.jsxs)(m,{children:[(0,A.jsx)(s,{}),(0,A.jsxs)(b,{$bottom:!1,children:[(0,A.jsx)(c,{src:"./arrows/home.svg"}),(0,A.jsx)($,{children:(null===(e=H[_-1])||void 0===e?void 0:e.num)||(null===(r=H[H.length-1])||void 0===r?void 0:r.num)})]}),(0,A.jsxs)(p,{ref:j,children:[H.map(((t,e)=>(0,A.jsxs)(g,{ref:k[e],$opacity:z[e],children:[(0,A.jsx)(h,{children:null===t||void 0===t?void 0:t.num}),(0,A.jsxs)(u,{children:[(0,A.jsx)(x,{$fontSize:t.title[R].font,children:null===t||void 0===t?void 0:t.title[R].text}),(0,A.jsxs)(v,{children:[(0,A.jsx)("div",{dangerouslySetInnerHTML:{__html:null===t||void 0===t?void 0:t.desc.text[R]}}),(0,A.jsx)(f,{to:null===t||void 0===t?void 0:t.desc.link,children:(0,A.jsx)(y,{$length:n.Ye[R].length,children:n.Ye[R]})})]})]})]},e))),(0,A.jsx)(w,{src:null===(a=H[_])||void 0===a?void 0:a.inner.big.img})]}),(0,A.jsxs)(b,{$bottom:!0,children:[(0,A.jsx)($,{children:(null===(d=H[_+1])||void 0===d?void 0:d.num)||(null===(l=H[0])||void 0===l?void 0:l.num)}),(0,A.jsx)(c,{src:"./arrows/home.svg",$bottom:!0})]})]})},k=d.Ay.div`
     height: 100%;
     width: 100%;
     position: absolute;
@@ -410,4 +409,4 @@
     position: absolute;
     top: 0rem;
 `,D=()=>{const t=n.wS,e=n.l0,r=(0,i.useRef)(null),{lang:d,setTitle:l,setShowScrollDownArrow:m}=(0,o.Xe)(),s=[(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null),(0,i.useRef)(null)],[h,c]=(0,i.useState)([1,0,0,0,0]);return(0,i.useEffect)((()=>{l(n.El);const t=()=>{const t=r.current;if(null===t)return;const e=t.getBoundingClientRect(),i=e.top,o=e.bottom,n=s.map((t=>{const r=t.current;if(null===r)return 0;const n=r.getBoundingClientRect(),a=n.top;if(n.bottom<i||a>o)return 0;m(!1);return 1-Math.abs(i-a)/(.8*e.height)}));c(n)},e=r.current;return e&&e.addEventListener("scroll",t),()=>{e&&e.removeEventListener("scroll",t)}}),[]),(0,A.jsx)(a.A,{children:(0,A.jsx)(M,{children:(0,A.jsxs)(B,{children:[(0,A.jsx)(j,{containerRef:r,divRefs:s,opacities:h}),null===e||void 0===e?void 0:e.map(((e,r)=>(0,A.jsxs)(T,{children:[(0,A.jsx)(Y,{opacities:h,index:r,entry:e}),(0,A.jsx)(I,{opacities:h,index:r,entry:e}),(0,A.jsx)(L,{opacities:h,index:r,entry:e})]},`${t[d]}_${r}`)))]})})})}}}]);
-//# sourceMappingURL=7.a60f92c1.chunk.js.map
+//# sourceMappingURL=7.af1e0f92.chunk.js.map

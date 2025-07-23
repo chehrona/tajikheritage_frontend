@@ -473,7 +473,7 @@
     height: 100%;
     width: 100%;
     transform: rotateZ(180deg);
-`,ne=e=>{let{parentRef:r}=e;const{showScrollUpArrow:t}=(0,n.Xe)(),a=(0,i.useCallback)((()=>{null!==r.current&&r.current.scrollTo({top:0,behavior:"smooth"})}),[r]);return(0,m.jsx)(ie,{onClick:a,$show:t,children:(0,m.jsx)(ae,{src:"./customAssets/arrow.svg"})})},oe=o.i7`
+`,ne=e=>{let{parentRef:r}=e;const{showScrollUpArrow:t}=(0,n.Xe)(),a=(0,i.useCallback)((()=>{null!==r.current&&r.current.scrollTo({top:0,behavior:"smooth"})}),[r]);return(0,m.jsx)(ie,{onClick:a,$show:t,children:(0,m.jsx)(ae,{src:"./arrows/side.svg"})})},oe=o.i7`
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
     40% {transform: translateY(-1rem);} 
     60% {transform: translateY(-0.5rem);} 
@@ -500,7 +500,7 @@
     animation: ${oe} 2s infinite;
     height: 100%;
     width: 3rem;
-`,ce=()=>{const{pathname:e}=(0,a.zy)(),r=w.wS,{lang:t,showScrollDownArrow:i,isMenuOpen:o}=(0,n.Xe)(),d=i&&"/"===e&&!o;return(0,m.jsxs)(de,{$show:d,children:[(0,m.jsx)(se,{children:r[t]}),(0,m.jsx)(le,{src:"./customAssets/arrow.svg"})]})},he=e=>{let{children:r}=e;const{setShowScrollUpArrow:t}=(0,n.Xe)(),{pathname:o}=(0,a.zy)(),d=(0,i.useRef)(null),[s,l]=(0,i.useState)(0),c=(0,i.useRef)(null),h=o.includes("print")||"/"===o,x=o.includes("print");return(0,m.jsxs)("div",{className:"parent-container",children:[x?null:(0,m.jsx)(v,{menuAnchorEl:c}),(0,m.jsx)(_,{menuAnchorEl:c}),(0,m.jsxs)("div",{ref:d,onScroll:()=>{const e=d.current;if(null==e)return;const r=e.scrollTop,i=e.getBoundingClientRect().height;t(r<s&&r>i/2),l(r)},className:h?"content-container":"content-container has_footer",children:[r,h?null:(0,m.jsx)(U,{})]}),(0,m.jsxs)("div",{className:"fixed-container",children:[(0,m.jsx)(te,{}),(0,m.jsx)(ne,{parentRef:d}),(0,m.jsx)(ce,{})]})]})}},1697:(e,r,t)=>{t.d(r,{O:()=>n});var i=t(1529),a=t(1906);const n=(0,i.Ay)(a.A)`
+`,ce=()=>{const{pathname:e}=(0,a.zy)(),r=w.wS,{lang:t,showScrollDownArrow:i,isMenuOpen:o}=(0,n.Xe)(),d=i&&"/"===e&&!o;return(0,m.jsxs)(de,{$show:d,children:[(0,m.jsx)(se,{children:r[t]}),(0,m.jsx)(le,{src:"./arrows/side.svg"})]})},he=e=>{let{children:r}=e;const{setShowScrollUpArrow:t}=(0,n.Xe)(),{pathname:o}=(0,a.zy)(),d=(0,i.useRef)(null),[s,l]=(0,i.useState)(0),c=(0,i.useRef)(null),h=o.includes("print")||"/"===o,x=o.includes("print");return(0,m.jsxs)("div",{className:"parent-container",children:[x?null:(0,m.jsx)(v,{menuAnchorEl:c}),(0,m.jsx)(_,{menuAnchorEl:c}),(0,m.jsxs)("div",{ref:d,onScroll:()=>{const e=d.current;if(null==e)return;const r=e.scrollTop,i=e.getBoundingClientRect().height;t(r<s&&r>i/2),l(r)},className:h?"content-container":"content-container has_footer",children:[r,h?null:(0,m.jsx)(U,{})]}),(0,m.jsxs)("div",{className:"fixed-container",children:[(0,m.jsx)(te,{}),(0,m.jsx)(ne,{parentRef:d}),(0,m.jsx)(ce,{})]})]})}},1697:(e,r,t)=>{t.d(r,{O:()=>n});var i=t(1529),a=t(1906);const n=(0,i.Ay)(a.A)`
     &.MuiButton-root {
         background: var(--primary-shadow-color);
         color: var(--primary-white-color);
@@ -644,4 +644,4 @@
     display: flex;
     align-items: center;
 `;var s=t(579);const l=e=>{let{handleLogoClick:r,navTo:t="/"}=e;return(0,s.jsx)(n,{children:(0,s.jsx)(d,{to:t,onClick:r,children:(0,s.jsx)(o,{src:"/logo/logo.svg"})})})}}}]);
-//# sourceMappingURL=260.a84b1440.chunk.js.map
+//# sourceMappingURL=260.bf87301c.chunk.js.map
